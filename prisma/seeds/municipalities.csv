@@ -1,0 +1,11 @@
+jisCode,name,prefectureCode,prefectureName,prefectureSlug,municipalitySlug,url,pdfUrl,status,linkStatus
+011002,札幌市,01,北海道,hokkaido,sapporo,https://www.city.sapporo.jp/hokenjo/eisei/kaiso.html,,true,OK
+041009,仙台市,04,宮城県,miyagi,sendai,https://www.city.sendai.jp/eise-kanri/kurashi/tetsuzuki/koseki/koso.html,,true,OK
+131032,港区,13,東京都,tokyo,minato,https://www.city.minato.tokyo.jp/shibamado/kurashi/tetsuzuki/koseki/kaiso.html,,true,OK
+131041,新宿区,13,東京都,tokyo,shinjuku,https://www.city.shinjuku.lg.jp/soshiki/261900kaiso.html,,true,OK
+131131,渋谷区,13,東京都,tokyo,shibuya,https://www.city.shibuya.tokyo.jp/kurashi/koseki/kaiso.html,,true,OK
+141003,横浜市,14,神奈川県,kanagawa,yokohama,https://www.city.yokohama.lg.jp/kurashi/koseki-zei-hoken/koseki-juminhyo/koseki/kaiso.html,,true,OK
+231002,名古屋市,23,愛知県,aichi,nagoya,https://www.city.nagoya.jp/kenkofukushi/page/0000008544.html,,true,OK
+261009,京都市,26,京都府,kyoto,kyoto,https://www.city.kyoto.lg.jp/hokenfukushi/page/0000004126.html,,true,OK
+271004,大阪市,27,大阪府,osaka,osaka,https://www.city.osaka.lg.jp/shimin/page/0000369806.html,,true,OK
+401307,福岡市,40,福岡県,fukuoka,fukuoka,https://www.city.fukuoka.lg.jp/shimin/koseki/life/003.html,,true,OK

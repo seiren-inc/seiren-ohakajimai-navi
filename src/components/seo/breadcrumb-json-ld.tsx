@@ -1,6 +1,6 @@
 type BreadcrumbItem = {
     name: string
-    item: string
+    url: string
 }
 
 export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
@@ -11,7 +11,7 @@ export function BreadcrumbJsonLd({ items }: { items: BreadcrumbItem[] }) {
             '@type': 'ListItem',
             position: index + 1,
             name: item.name,
-            item: item.item,
+            item: item.url,
         })),
     }
 
