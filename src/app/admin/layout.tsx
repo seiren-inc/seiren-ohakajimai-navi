@@ -10,7 +10,8 @@ import {
     Settings,
     LogOut,
     MessageSquare,
-    Building2
+    Building2,
+    Upload
 } from "lucide-react"
 
 export default async function AdminLayout({
@@ -84,6 +85,11 @@ export default async function AdminLayout({
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
                         <Link href="/admin/municipalities">
                             <Building2 className="mr-2 h-4 w-4" /> 自治体データ管理
+                        </Link>
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
+                        <Link href="/admin/municipalities/import">
+                            <Upload className="mr-2 h-4 w-4" /> CSVインポート
                         </Link>
                     </Button>
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>

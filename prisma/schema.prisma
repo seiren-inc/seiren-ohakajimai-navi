@@ -22,6 +22,8 @@ model AdminUser {
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
 
+  importLogs     ImportLog[]
+
   @@map("admin_users")
 }
 
@@ -68,6 +70,32 @@ model Municipality {
   @@index([prefectureCode])
   @@index([prefectureSlug, municipalitySlug])
   @@map("municipalities")
+}
+
+// -----------------------------------------------------------------------------
+// Import / System Logs
+// -----------------------------------------------------------------------------
+
+model ImportLog {
+  id           String      @id @default(uuid())
+  // Use loose relation or just ID if AdminUser isn't strictly needed for FK, 
+  // but let's try to link it if AdminUser is the actor.
+  // Since AdminUser is our internal auth table:
+  adminUserId  String      @map("admin_user_id")
+  adminUser    AdminUser   @relation(fields: [adminUserId], references: [id])
+
+  filename     String
+  fileType     String?     @map("file_type") // csv or json
+  totalCount   Int         @map("total_count")
+  successCount Int         @map("success_count")
+  failedCount  Int         @map("failed_count")
+  
+  // Optional: Store detailed error log as JSON
+  errorLog     String?     @map("error_log") // JSON string or text
+
+  createdAt    DateTime    @default(now()) @map("created_at")
+
+  @@map("import_logs")
 }
 
 enum LinkStatus {
