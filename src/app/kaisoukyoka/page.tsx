@@ -5,7 +5,7 @@ import KaisoukyokaClient from '@/components/kaisoukyoka/KaisoukyokaClient'
 
 export const metadata: Metadata = constructMetadata({
   title: '改葬許可申請書のダウンロード 全国自治体一覧',
-  description: '全国の自治体別に改葬許可申請の案内ページと申請書ダウンロード先を一覧で掲載。お墓じまいに必要な手続きをスムーズに進めるためのポータルサイトです。',
+  description: '【2026年最新】全国の自治体別に改葬許可申請書のダウンロード先や窓口情報を一覧で掲載。お墓じまい（改葬）に必要な行政手続きをスムーズに進めるためのポータルサイトです。',
 })
 
 export default async function KaisoukyokaPage() {
