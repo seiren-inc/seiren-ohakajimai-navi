@@ -98,21 +98,12 @@ export default async function AdminLayout({
                         </Link>
                     </Button>
                 </nav>
-                <div className="absolute bottom-4 left-4 right-4">
-                    {/* Logout handled via client side usually, using a form action here for simplicity or just a link to Logout page if existed */}
-                    <form action="/auth/signout" method="post">
-                        <Button variant="outline" className="w-full bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700 hover:text-white">
-                            <LogOut className="mr-2 h-4 w-4" /> ログアウト
-                        </Button>
-                    </form>
-                </div>
             </aside>
 
             {/* Main Content */}
             <main className="flex-1 bg-slate-50 overflow-y-auto">
                 <header className="h-16 bg-white border-b flex items-center justify-between px-6 md:hidden">
                     <h1 className="font-bold">管理画面</h1>
-                    {/* Mobile menu could go here */}
                 </header>
                 <div className="p-6 md:p-10">
                     {children}

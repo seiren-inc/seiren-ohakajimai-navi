@@ -1,0 +1,400 @@
+Total Records: 183
+
+--- 1. Prefecture Counts ---
+福岡県: 53
+和歌山県: 1
+宮城県: 2
+佐賀県: 20
+長崎県: 18
+熊本県: 24
+山形県: 1
+大分県: 15
+宮崎県: 16
+鹿児島県: 20
+沖縄県: 13
+
+--- 2/6. Duplicate JIS Codes (Total: 0) ---
+
+--- URL Statistics ---
+3. URL only: 178
+4. PDF URL only: 0
+   Both set: 5
+5. Both empty: 0
+
+--- 7. Unique Municipalities (Normalized) ---
+Unique JIS Codes: 183
+
+--- Fukuoka Prefecture Records ---
+[
+  {
+    "prefecture": "福岡県",
+    "municipality": "北九州市",
+    "jisCode": "401005",
+    "url": "https://www.city.kitakyushu.lg.jp/contents/924_10800.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "福岡市",
+    "jisCode": "401307",
+    "url": "https://www.city.fukuoka.lg.jp/hofuku/seikatsueisei/life/kurashinoeisei/kaisou.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大牟田市",
+    "jisCode": "402028",
+    "url": "https://www.city.omuta.lg.jp/kiji00310866/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "久留米市",
+    "jisCode": "402036",
+    "url": "https://www.city.kurume.fukuoka.jp/1500soshiki/9073kanhozen/3020shinsei/kaisoukyoka.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "直方市",
+    "jisCode": "402044",
+    "url": "https://www.city.nogata.fukuoka.jp/kurashi/_1017/_1280/_2804.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "飯塚市",
+    "jisCode": "402052",
+    "url": "https://www.city.iizuka.lg.jp/k-sebiese/kurashi/bochi/ikotsu.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "田川市",
+    "jisCode": "402061",
+    "url": "https://www.joho.tagawa.fukuoka.jp/kiji0032344/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "柳川市",
+    "jisCode": "402079",
+    "url": "https://www.city.yanagawa.fukuoka.jp/kurashi/bochi/bochi_bochikaisokyoka.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "八女市",
+    "jisCode": "402109",
+    "url": "https://www.city.yame.fukuoka.jp/soshiki/shimin/11/shinseisho/1455882104474.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "筑後市",
+    "jisCode": "402117",
+    "url": "https://www.city.chikugo.lg.jp/kurashi/_30656/_2068/",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大川市",
+    "jisCode": "402125",
+    "url": "https://www.city.okawa.lg.jp/s023/010/010/010/010/010/20150214105643.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "行橋市",
+    "jisCode": "402133",
+    "url": "https://www.city.yukuhashi.fukuoka.jp/soshiki/30/13373.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "豊前市",
+    "jisCode": "402141",
+    "url": "https://www.city.buzen.lg.jp/kankyo/kaisou.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "中間市",
+    "jisCode": "402150",
+    "url": "https://www.city.nakama.lg.jp/soshiki/27/9431.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "小郡市",
+    "jisCode": "402168",
+    "url": "https://www.city.ogori.fukuoka.jp/197/250/658",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "筑紫野市",
+    "jisCode": "402176",
+    "url": "https://www.city.chikushino.fukuoka.jp/soshiki/29/3212.html#yousiki",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "春日市",
+    "jisCode": "402184",
+    "url": "https://www.city.kasuga.fukuoka.jp/kurashi/gomi/1001264.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大野城市",
+    "jisCode": "402192",
+    "url": "https://www.city.onojo.fukuoka.jp/s070/130/010/20231107100530.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "宗像市",
+    "jisCode": "402206",
+    "url": "https://www.city.munakata.lg.jp/kiji0031588/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "太宰府市",
+    "jisCode": "402214",
+    "url": "https://www.city.dazaifu.lg.jp/soshiki/10/1874.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "古賀市",
+    "jisCode": "402231",
+    "url": "https://www.city.koga.fukuoka.jp/cityhall/work/kankyo/protect/protect002/005.php",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "福津市",
+    "jisCode": "402249",
+    "url": "https://www.city.fukutsu.lg.jp/kurashi/seikatsu/7313.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "うきは市",
+    "jisCode": "402257",
+    "url": "https://www.city.ukiha.fukuoka.jp/kiji0036017/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "宮若市",
+    "jisCode": "402265",
+    "url": "https://www.city.miyawaka.lg.jp/kiji003444381/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "嘉麻市",
+    "jisCode": "402273",
+    "url": "https://www.city.kama.lg.jp/soshiki/11/17271.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "朝倉市",
+    "jisCode": "402281",
+    "url": "https://www.city.asakura.lg.jp/www/contents/1326416190913/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "みやま市",
+    "jisCode": "402290",
+    "url": "https://www.city.miyama.lg.jp/s030/kurashi/environ/010/020/20230913163013.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "糸島市",
+    "jisCode": "402303",
+    "url": "https://www.city.itoshima.lg.jp/s011/010/010/010/010/kaisoukyoka.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "宇美町",
+    "jisCode": "403415",
+    "url": "https://www.town.umi.lg.jp/soshiki/40/31879.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "篠栗町",
+    "jisCode": "403423",
+    "url": "https://www.town.sasaguri.fukuoka.jp/soshiki/toshi_seibi/1/2602.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "志免町",
+    "jisCode": "403431",
+    "url": "https://www.town.shime.lg.jp/soshiki/8/kaisoukyokasinnsei.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "須恵町",
+    "jisCode": "403440",
+    "url": "https://www.town.sue.fukuoka.jp/soshiki/chiikishinkoka/1354.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "新宮町",
+    "jisCode": "403458",
+    "url": "https://www.town.shingu.fukuoka.jp/soshiki/kankyo/8/1228.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "久山町",
+    "jisCode": "403482",
+    "url": "https://www.town.hisayama.fukuoka.jp/soshiki/chomin_seikatsu/gyomu/1/2283.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "粕屋町",
+    "jisCode": "403491",
+    "url": "https://www.town.kasuya.fukuoka.jp/s033/download/010/20191106161919.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "芦屋町",
+    "jisCode": "403814",
+    "url": "https://www.town.ashiya.lg.jp/soshiki/7/1188.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "水巻町",
+    "jisCode": "403822",
+    "url": "https://www.town.mizumaki.lg.jp/s035/kurashi/020/160/20200110103000.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "岡垣町",
+    "jisCode": "403831",
+    "url": "https://www.town.okagaki.lg.jp/s010/20190109144822.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "遠賀町",
+    "jisCode": "403849",
+    "url": "https://www.town.onga.lg.jp/soshiki/9/1330.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "小竹町",
+    "jisCode": "404012",
+    "url": "https://town.kotake.lg.jp/hpkiji/pub/detail.aspx?c_id=3&id=1286&bk=slist",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "鞍手町",
+    "jisCode": "404021",
+    "url": "https://www.town.kurate.lg.jp/kankyou/kaisoukyoka-bunnkotusyoumei.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "桂川町",
+    "jisCode": "404217",
+    "url": "https://www.town.keisen.fukuoka.jp/townspeople/download/hoken.php",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大刀洗町",
+    "jisCode": "405035",
+    "url": "https://www.town.tachiarai.fukuoka.jp/kiji00397/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大木町",
+    "jisCode": "405221",
+    "url": "https://www.town.ooki.lg.jp/kurashi/4458.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "香春町",
+    "jisCode": "406015",
+    "url": "https://www.town.kawara.fukuoka.jp/s013/020/030/010/20171122150654.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "添田町",
+    "jisCode": "406023",
+    "url": "https://www.town.soeda.fukuoka.jp/page/1004.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "糸田町",
+    "jisCode": "406040",
+    "url": "https://www.town.itoda.lg.jp/residents/certificates/reburial_permit/reburial_permit_request.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "大任町",
+    "jisCode": "406082",
+    "url": "https://www.town.oto.fukuoka.jp/kiji003481/index.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "福智町",
+    "jisCode": "406104",
+    "url": "https://www.town.fukuchi.lg.jp/life/shoumei/2063.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "苅田町",
+    "jisCode": "406210",
+    "url": "https://www.town.kanda.lg.jp/page/1940.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "みやこ町",
+    "jisCode": "406252",
+    "url": "https://www.town.miyako.lg.jp/jyuumin/kaisoukyokasinnseisyo.html",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "吉富町",
+    "jisCode": "406422",
+    "url": "https://www.town.yoshitomi.lg.jp/gyosei/chosei/v995/y209/jumin/y949/g355/",
+    "pdfUrl": ""
+  },
+  {
+    "prefecture": "福岡県",
+    "municipality": "築上町",
+    "jisCode": "406473",
+    "url": "https://www.town.chikujo.fukuoka.jp/s038/050/080/090/010/kaisokyoka.html",
+    "pdfUrl": ""
+  }
+]

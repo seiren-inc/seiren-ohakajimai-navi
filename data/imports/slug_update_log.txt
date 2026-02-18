@@ -1,0 +1,9 @@
+DEBUG: Kotake found in pending.
+DEBUG: Kotake in master: Yes
+DEBUG: Kotake Romaji: 'Kotake Machi'
+Processing 179 records...
+DEBUG: Kotake No Change. Current: kotake-cho, New: kotake-cho
+DEBUG: BaseName used: 'Kotake', TargetSuffix: '-cho'
+Updated 0 slugs.
+
+--- Sample Changes ---
