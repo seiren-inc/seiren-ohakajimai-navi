@@ -5,7 +5,7 @@ import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, ExternalLink, Phone, Mail, ArrowRight, Download } from "lucide-react"
+import { FileText, ExternalLink, Phone, Mail, ArrowRight, Download, AlertTriangle } from "lucide-react"
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
@@ -75,24 +75,51 @@ export default async function MunicipalityPage(props: PageProps) {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent className="space-y-4">
-                                {municipality.pdfUrl ? (
-                                    <Button size="lg" className="w-full sm:w-auto" asChild>
-                                        <a href={municipality.pdfUrl} target="_blank" rel="noopener noreferrer">
-                                            <Download className="mr-2 h-4 w-4" /> 申請書PDFをダウンロード
-                                        </a>
-                                    </Button>
-                                ) : (
-                                    <div className="text-sm text-muted-foreground bg-slate-50 p-4 rounded-md">
-                                        ※ PDFの直接リンクが見つかりませんでした。以下の公式ページよりご確認ください。
+                                {municipality.hasDomainWarning && (
+                                    <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-200 rounded-md text-amber-800 text-sm">
+                                        <AlertTriangle className="h-4 w-4 shrink-0" />
+                                        <span>ドメイン要確認（独自ドメインのため、内容が最新であることをご確認ください）</span>
                                     </div>
                                 )}
 
-                                {municipality.url && (
-                                    <Button variant="outline" className="w-full sm:w-auto" asChild>
-                                        <a href={municipality.url} target="_blank" rel="noopener noreferrer">
-                                            <ExternalLink className="mr-2 h-4 w-4" /> {municipality.name} 公式ページへ
-                                        </a>
-                                    </Button>
+                                {municipality.linkType === 'REGULATION' && (
+                                    <div className="inline-block px-2 py-0.5 bg-blue-100 text-blue-800 text-xs font-bold rounded">
+                                        例規集リンク
+                                    </div>
+                                )}
+
+                                <div className="flex flex-col sm:flex-row gap-3">
+                                    {municipality.pdfUrl && (
+                                        <Button
+                                            size="lg"
+                                            className="w-full sm:w-auto order-1 sm:order-none"
+                                            variant={municipality.linkType === 'PDF' ? "default" : "outline"}
+                                            asChild
+                                        >
+                                            <a href={municipality.pdfUrl} target="_blank" rel="noopener noreferrer">
+                                                <Download className="mr-2 h-4 w-4" /> 申請書PDFをダウンロード
+                                            </a>
+                                        </Button>
+                                    )}
+
+                                    {municipality.url && (
+                                        <Button
+                                            size="lg"
+                                            className="w-full sm:w-auto order-2 sm:order-none"
+                                            variant={municipality.linkType === 'PDF' ? "outline" : "default"}
+                                            asChild
+                                        >
+                                            <a href={municipality.url} target="_blank" rel="noopener noreferrer">
+                                                <ExternalLink className="mr-2 h-4 w-4" /> {municipality.name} 公式ページへ
+                                            </a>
+                                        </Button>
+                                    )}
+                                </div>
+
+                                {!municipality.pdfUrl && !municipality.url && (
+                                    <div className="text-sm text-muted-foreground bg-slate-50 p-4 rounded-md">
+                                        ※ 現在ダウンロード可能な書類が見つかりませんでした。詳細はお電話や窓口でご確認ください。
+                                    </div>
                                 )}
                             </CardContent>
                         </Card>

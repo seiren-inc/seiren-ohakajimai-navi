@@ -8,23 +8,142 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-// -----------------------------------------------------------------------------
-// Admin / Management
-// -----------------------------------------------------------------------------
-
 model AdminUser {
-  id             String   @id @default(uuid())
-  supabaseUserId String   @unique @map("supabase_user_id")
-  email          String   @unique
-  role           Role     @default(OPERATOR)
-  isActive       Boolean  @default(true) @map("is_active")
-  
-  createdAt      DateTime @default(now()) @map("created_at")
-  updatedAt      DateTime @updatedAt @map("updated_at")
-
+  id             String      @id @default(uuid())
+  supabaseUserId String      @unique @map("supabase_user_id")
+  email          String      @unique
+  role           Role        @default(OPERATOR)
+  isActive       Boolean     @default(true) @map("is_active")
+  createdAt      DateTime    @default(now()) @map("created_at")
+  updatedAt      DateTime    @updatedAt @map("updated_at")
   importLogs     ImportLog[]
 
   @@map("admin_users")
+}
+
+model Municipality {
+  id               String     @id @default(uuid())
+  jisCode          String     @unique @map("jis_code")
+  name             String
+  prefectureCode   String     @map("prefecture_code")
+  prefectureName   String     @map("prefecture_name")
+  prefectureSlug   String     @map("prefecture_slug")
+  municipalitySlug String     @map("municipality_slug")
+  region           String?
+  url              String?
+  pdfUrl           String?    @map("pdf_url")
+  isPublished      Boolean    @default(true) @map("is_published")
+  linkStatus       LinkStatus @default(UNKNOWN) @map("link_status")
+  lastCheckedAt    DateTime?  @map("last_checked_at")
+  notes            String?
+  linkType         LinkType   @default(GUIDE) @map("link_type")
+  seoDescription   String?    @map("seo_description")
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @updatedAt @map("updated_at")
+  hasDomainWarning Boolean    @default(false) @map("has_domain_warning")
+  subLinks         Json?      @map("sub_links")
+  dataQualityLevel Int        @default(0) @map("data_quality_level")
+  auditLogs        AuditLog[]
+
+  @@unique([prefectureCode, municipalitySlug])
+  @@index([prefectureCode])
+  @@index([prefectureSlug, municipalitySlug])
+  @@map("municipalities")
+}
+
+model MunicipalityArchive {
+  id               String     @id
+  jisCode          String     @map("jis_code")
+  name             String
+  prefectureCode   String     @map("prefecture_code")
+  prefectureName   String     @map("prefecture_name")
+  prefectureSlug   String     @map("prefecture_slug")
+  municipalitySlug String     @map("municipality_slug")
+  region           String?
+  url              String?
+  pdfUrl           String?    @map("pdf_url")
+  isPublished      Boolean    @map("is_published")
+  linkStatus       LinkStatus @map("link_status")
+  lastCheckedAt    DateTime?  @map("last_checked_at")
+  notes            String?
+  seoDescription   String?    @map("seo_description")
+  createdAt        DateTime   @map("created_at")
+  updatedAt        DateTime   @map("updated_at")
+  hasDomainWarning Boolean    @map("has_domain_warning")
+  linkType         LinkType   @map("link_type")
+  subLinks         Json?      @map("sub_links")
+  dataQualityLevel Int        @default(0) @map("data_quality_level")
+  archivedAt       DateTime   @default(now()) @map("archived_at")
+
+  @@map("municipalities_archive")
+}
+
+// ... (other models)
+
+enum LinkType {
+  GUIDE
+  PDF
+  E_APPLY
+  REGULATION
+  OTHER
+}
+
+model ImportLog {
+  id           String    @id @default(uuid())
+  adminUserId  String    @map("admin_user_id")
+  filename     String
+  fileType     String?   @map("file_type")
+  totalCount   Int       @map("total_count")
+  successCount Int       @map("success_count")
+  failedCount  Int       @map("failed_count")
+  errorLog     String?   @map("error_log")
+  createdAt    DateTime  @default(now()) @map("created_at")
+  adminUser    AdminUser @relation(fields: [adminUserId], references: [id])
+
+  @@map("import_logs")
+}
+
+model Inquiry {
+  id                  String              @id @default(uuid())
+  status              InquiryStatus       @default(NEW)
+  lastName            String              @map("last_name")
+  firstName           String              @map("first_name")
+  lastNameKana        String              @map("last_name_kana")
+  firstNameKana       String              @map("first_name_kana")
+  email               String
+  phone               String
+  postalCode          String              @map("postal_code")
+  prefecture          String
+  city                String
+  addressDetail       String?             @map("address_detail")
+  cemeteryType        CemeteryType        @map("cemetery_type")
+  considerationPeriod ConsiderationPeriod @map("consideration_period")
+  content             String
+  destinationType     DestinationType?    @map("destination_type")
+  boneServiceType     BoneServiceType?    @map("bone_service_type")
+  containerType       ContainerType?      @map("container_type")
+  ritanConsultation   Boolean?            @map("ritan_consultation")
+  memo                String?
+  ipAddress           String?             @map("ip_address")
+  userAgent           String?             @map("user_agent")
+  createdAt           DateTime            @default(now()) @map("created_at")
+  updatedAt           DateTime            @updatedAt @map("updated_at")
+
+  @@map("inquiries")
+}
+
+model AuditLog {
+  id             BigInt       @id @default(autoincrement())
+  municipalityId String       @map("municipality_id")
+  targetUrl      String       @map("target_url")
+  httpStatus     Int?         @map("http_status")
+  result         AuditResult  @map("result")
+  errorMessage   String?      @map("error_message")
+  checkedAt      DateTime     @default(now()) @map("checked_at")
+  municipality   Municipality @relation(fields: [municipalityId], references: [id])
+
+  @@index([municipalityId])
+  @@map("audit_logs")
 }
 
 enum Role {
@@ -32,121 +151,11 @@ enum Role {
   OPERATOR
 }
 
-// -----------------------------------------------------------------------------
-// Municipality Data
-// -----------------------------------------------------------------------------
-
-model Municipality {
-  id               String      @id @default(uuid())
-  jisCode          String      @unique @map("jis_code") // PK代わり
-  name             String
-  
-  // Region / Slug
-  prefectureCode   String      @map("prefecture_code") // 01-47
-  prefectureName   String      @map("prefecture_name") // 検索用非正規化
-  prefectureSlug   String      @map("prefecture_slug") // slug: "tokyo"
-  municipalitySlug String      @map("municipality_slug") // slug: "shinjuku-ku"
-  region           String?     // e.g. "kanto", "tohoku" (検索・タブ用)
-
-  // URLs
-  url              String?     // 公式HP
-  pdfUrl           String?     @map("pdf_url") // 申請書PDF
-
-  // Status Management
-  isPublished      Boolean     @default(true) @map("is_published")
-  linkStatus       LinkStatus  @default(UNKNOWN) @map("link_status")
-  lastCheckedAt    DateTime?   @map("last_checked_at")
-  
-  // Content / SEO
-  notes            String?     // 管理メモ
-  seoDescription   String?     @map("seo_description")
-
-  // Relations
-  auditLogs        AuditLog[]
-
-  createdAt        DateTime    @default(now()) @map("created_at")
-  updatedAt        DateTime    @updatedAt @map("updated_at")
-
-  @@index([prefectureCode])
-  @@index([prefectureSlug, municipalitySlug])
-  @@map("municipalities")
-}
-
-// -----------------------------------------------------------------------------
-// Import / System Logs
-// -----------------------------------------------------------------------------
-
-model ImportLog {
-  id           String      @id @default(uuid())
-  // Use loose relation or just ID if AdminUser isn't strictly needed for FK, 
-  // but let's try to link it if AdminUser is the actor.
-  // Since AdminUser is our internal auth table:
-  adminUserId  String      @map("admin_user_id")
-  adminUser    AdminUser   @relation(fields: [adminUserId], references: [id])
-
-  filename     String
-  fileType     String?     @map("file_type") // csv or json
-  totalCount   Int         @map("total_count")
-  successCount Int         @map("success_count")
-  failedCount  Int         @map("failed_count")
-  
-  // Optional: Store detailed error log as JSON
-  errorLog     String?     @map("error_log") // JSON string or text
-
-  createdAt    DateTime    @default(now()) @map("created_at")
-
-  @@map("import_logs")
-}
-
 enum LinkStatus {
   OK
   NEEDS_REVIEW
   BROKEN
   UNKNOWN
-}
-
-// -----------------------------------------------------------------------------
-// Inquiry / Form Data
-// -----------------------------------------------------------------------------
-
-model Inquiry {
-  id                  String              @id @default(uuid())
-  status              InquiryStatus       @default(NEW)
-  
-  // Personal Info
-  lastName            String              @map("last_name")
-  firstName           String              @map("first_name")
-  lastNameKana        String              @map("last_name_kana")
-  firstNameKana       String              @map("first_name_kana")
-  email               String
-  phone               String
-  
-  // Address
-  postalCode          String              @map("postal_code")
-  prefecture          String
-  city                String
-  addressDetail       String?             @map("address_detail")
-
-  // Survey / Details
-  cemeteryType        CemeteryType        @map("cemetery_type")
-  considerationPeriod ConsiderationPeriod @map("consideration_period")
-  content             String
-  
-  // Optional Services
-  destinationType     DestinationType?    @map("destination_type")
-  boneServiceType     BoneServiceType?    @map("bone_service_type")
-  containerType       ContainerType?      @map("container_type")
-  ritanConsultation   Boolean?            @map("ritan_consultation")
-
-  // System / Meta
-  memo                String?             // 管理メモ
-  ipAddress           String?             @map("ip_address")
-  userAgent           String?             @map("user_agent")
-  
-  createdAt           DateTime            @default(now()) @map("created_at")
-  updatedAt           DateTime            @updatedAt @map("updated_at")
-
-  @@map("inquiries")
 }
 
 enum InquiryStatus {
@@ -157,62 +166,43 @@ enum InquiryStatus {
 }
 
 enum CemeteryType {
-  TEMPLE      // 寺院墓地
-  PUBLIC      // 公営霊園
-  PRIVATE     // 民営霊園
-  COMMUNITY   // 共同墓地
-  OTHER       // その他
-  UNKNOWN     // 不明
+  TEMPLE
+  PUBLIC
+  PRIVATE
+  COMMUNITY
+  OTHER
+  UNKNOWN
 }
 
 enum ConsiderationPeriod {
-  IMMEDIATE   // すぐにでも
-  WITHIN_HALF_YEAR // 半年以内
-  WITHIN_YEAR      // 1年以内
-  UNDECIDED        // 未定
+  IMMEDIATE
+  WITHIN_HALF_YEAR
+  WITHIN_YEAR
+  UNDECIDED
 }
 
 enum DestinationType {
-  NEW_GRAVE   // 新しいお墓
-  NOUKOTSUDO  // 納骨堂
-  TREE_BURIAL // 樹木葬
-  SCATTERING  // 散骨
-  HOME        // 手元供養
+  NEW_GRAVE
+  NOUKOTSUDO
+  TREE_BURIAL
+  SCATTERING
+  HOME
   OTHER
 }
 
 enum BoneServiceType {
-  POWDER      // 粉骨
-  WASH        // 洗骨
-  BOTH        // 両方
-  NONE        // 不要
+  POWDER
+  WASH
+  BOTH
+  NONE
 }
 
 enum ContainerType {
-  SEALED_BAG  // 密封袋
-  URN         // 骨壷
-  ORIGINAL_BOX // オリジナル骨箱
-  BONE_BAG    // 骨袋
-  UNDECIDED   // 未定
-}
-
-// -----------------------------------------------------------------------------
-// System Logs
-// -----------------------------------------------------------------------------
-
-model AuditLog {
-  id             BigInt       @id @default(autoincrement())
-  municipalityId String       @map("municipality_id")
-  targetUrl      String       @map("target_url")
-  httpStatus     Int?         @map("http_status")
-  result         AuditResult  @map("result") // OK, NG (Enum化)
-  errorMessage   String?      @map("error_message")
-  checkedAt      DateTime     @default(now()) @map("checked_at")
-
-  municipality   Municipality @relation(fields: [municipalityId], references: [id])
-
-  @@index([municipalityId])
-  @@map("audit_logs")
+  SEALED_BAG
+  URN
+  ORIGINAL_BOX
+  BONE_BAG
+  UNDECIDED
 }
 
 enum AuditResult {

@@ -1,147 +1,106 @@
-import fs from "fs"
-import path from "path"
+import fs from 'fs'
+import path from 'path'
 
-interface MunicipalityMap {
-    jisCode: string
-    name: string
-    prefectureName: string
-    municipalitySlug: string
+// 1. Load File
+const targetFile = process.argv[2]
+if (!targetFile) {
+    console.error("Please provide a file content path as an argument.")
+    process.exit(1)
 }
 
-interface OutputRecord {
-    prefecture: string
-    municipality: string
-    jisCode: string
-    url: string
-    pdfUrl: string
+const BLOCK_PATH = path.resolve(targetFile)
+if (!fs.existsSync(BLOCK_PATH)) {
+    console.error(`File ${BLOCK_PATH} not found.`)
+    process.exit(1)
 }
 
-const IMPORTS_DIR = path.join(process.cwd(), "data/imports")
-const MAP_PATH = path.join(IMPORTS_DIR, "municipality_map.json")
-const PENDING_PATH = path.join(IMPORTS_DIR, "pending.json")
+console.log(`Processing file: ${targetFile}`)
+const rawText = fs.readFileSync(BLOCK_PATH, "utf-8")
 
-// Load Map
-function loadMap(): MunicipalityMap[] {
-    if (!fs.existsSync(MAP_PATH)) return []
-    return JSON.parse(fs.readFileSync(MAP_PATH, "utf-8"))
+// 2. Load Map
+const MAP_PATH = path.join(process.cwd(), "data/imports/municipality_map.json")
+const map: { jisCode: string, name: string, prefectureName: string }[] = JSON.parse(fs.readFileSync(MAP_PATH, "utf-8"))
+
+// 3. Load Pending
+const PENDING_PATH = path.join(process.cwd(), "data/imports/pending.json")
+let pending: any[] = []
+if (fs.existsSync(PENDING_PATH)) {
+    pending = JSON.parse(fs.readFileSync(PENDING_PATH, "utf-8"))
 }
 
-function cleanText(text: string): string {
-    return text.replace(/<[^>]*>/g, "").trim()
+// 4. Parse HTML links
+const links: { href: string, text: string }[] = []
+
+// Simple regex for href
+const regex = /<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
+
+let match
+while ((match = regex.exec(rawText)) !== null) {
+    const href = match[1]
+    const rawTextContent = match[2]
+    const text = cleanText(rawTextContent)
+    links.push({ href, text })
 }
 
-// Extract all <a href="...">text</a>
-function extractLinks(html: string): { text: string, href: string }[] {
-    const links: { text: string, href: string }[] = []
-    const regex = /<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi
-    let match
-    while ((match = regex.exec(html)) !== null) {
-        links.push({
-            href: match[1],
-            text: cleanText(match[2])
-        })
-    }
-    return links
+function cleanText(str: string) {
+    return str.replace(/<[^>]+>/g, '').trim()
 }
 
-async function main() {
-    // Read stdin
-    const rawText = fs.readFileSync(0, "utf-8")
-    if (!rawText) return
+console.log(`Found ${links.length} links in text block.`)
 
-    const map = loadMap() // list of all municipalities
+// 5. Match and Append
+let newCount = 0
+let updatedCount = 0
+let dupCount = 0
 
-    // Load existing pending
-    let pending: OutputRecord[] = []
-    if (fs.existsSync(PENDING_PATH)) {
-        try {
-            pending = JSON.parse(fs.readFileSync(PENDING_PATH, "utf-8"))
-        } catch (e) {
-            console.warn("Failed to parse existing pending.json, starting fresh.")
-        }
-    }
+for (const link of links) {
+    // Exact match or match without spaces
+    const found = map.find(m => m.name === link.text || m.name === link.text.replace(/\s/g, ''))
 
-    const extracted: OutputRecord[] = []
-    let newCount = 0
-    let dupCount = 0
-    let updatedCount = 0
+    if (found) {
+        const isPdf = link.href.toLowerCase().endsWith(".pdf")
 
-    // Parse HTML links
-    const links: { href: string, text: string }[] = []
+        // Check pending for existing
+        const existingIdx = pending.findIndex(e => e.jisCode === found.jisCode)
 
-    // Regex: Match simple <a ... href="...">Text</a>
-    const regex = /<a[^>]+href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi
+        if (existingIdx >= 0) {
+            // Update logic: if current is empty and new is not, update.
+            // Or if new is PDF and current is not, update pdfUrl.
+            const current = pending[existingIdx]
+            let updated = false
 
-    let match
-    while ((match = regex.exec(rawText)) !== null) {
-        const href = match[1]
-        const rawTextContent = match[2]
-        const text = cleanText(rawTextContent)
-        links.push({ href, text })
-    }
-
-    // Filter and Map
-    for (const link of links) {
-        // Find match in map
-        const found = map.find(m => m.name === link.text || m.name === link.text.replace(/\s/g, ''))
-
-        if (found) {
-            const isPdf = link.href.toLowerCase().endsWith(".pdf")
-
-            // Check duplication in PENDING (not just current batch)
-            const existingIdx = pending.findIndex(e => e.jisCode === found.jisCode)
-
-            if (existingIdx >= 0) {
-                // Duplicate found.
-                // If the new one is PDF and existing is not, maybe update?
-                // Or if we want to capture "latest", we might update.
-                // For now, if we already have it, we skip or count as dup.
-                // But wait, if we are reparsing the SAME block, it will be all dupes.
-                // The user is "Re-saving full text block".
-                // I should probably just update if the URL is different?
-                const existing = pending[existingIdx]
-                if (existing.url !== link.href && !existing.pdfUrl) {
-                    // If new is PDF, update pdfUrl?
-                    if (isPdf) {
-                        pending[existingIdx].pdfUrl = link.href
-                        updatedCount++
-                    } else {
-                        // Different URL? maybe update it?
-                        pending[existingIdx].url = link.href
-                        updatedCount++
-                    }
-                } else {
-                    dupCount++
-                }
-                continue
+            if (!current.url && !isPdf) {
+                current.url = link.href
+                updated = true
             }
+            if (!current.pdfUrl && isPdf) {
+                current.pdfUrl = link.href
+                updated = true
+            }
+            // If current url is same as new, it's just duplicate
 
-            // Check duplication in current extracted batch (for consistency)
-            // (The extracted array is just for this run, but we are appending to pending immediately? No)
+            if (updated) updatedCount++
+            else dupCount++
 
-            // It's easier to just work on `pending` array directly.
-
+        } else {
             pending.push({
                 prefecture: found.prefectureName,
                 municipality: found.name,
                 jisCode: found.jisCode,
-                url: link.href,
+                url: isPdf ? "" : link.href,
                 pdfUrl: isPdf ? link.href : ""
             })
             newCount++
         }
     }
-
-    fs.writeFileSync(PENDING_PATH, JSON.stringify(pending, null, 2))
-
-    console.log(JSON.stringify({
-        status: "success",
-        totalInPending: pending.length,
-        new: newCount,
-        updated: updatedCount,
-        duplicates: dupCount,
-        sample: pending.slice(0, 3)
-    }, null, 2))
 }
 
-main()
+fs.writeFileSync(PENDING_PATH, JSON.stringify(pending, null, 2))
+
+console.log(JSON.stringify({
+    status: "success",
+    totalInPending: pending.length,
+    new: newCount,
+    updated: updatedCount,
+    duplicates: dupCount
+}, null, 2))
