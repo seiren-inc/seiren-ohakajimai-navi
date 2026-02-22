@@ -2488,12 +2488,13 @@
     "municipality": "羽生市",
     "jisCode": "112160",
     "municipalitySlug": "hanyu-shi",
-    "url": "https://www.city.hanyu.lg.jp/docs/2015031200033/",
+    "url": "https://www.city.hanyu.lg.jp/docs/2015031200037/",
     "pdfUrl": null,
     "linkStatus": "OK",
     "isPublished": true,
     "hasDomainWarning": false,
-    "linkType": "GUIDE"
+    "linkType": "GUIDE",
+    "notes": "prevUrl: https://www.city.hanyu.lg.jp/docs/2015031200033/"
   },
   {
     "prefecture": "埼玉県",
@@ -3724,24 +3725,26 @@
     "municipality": "三宅村",
     "jisCode": "133817",
     "municipalitySlug": "miyake-mura",
-    "url": null,
+    "url": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
     "pdfUrl": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
     "linkStatus": "PDF_ONLY",
     "isPublished": true,
     "hasDomainWarning": false,
-    "linkType": "PDF"
+    "linkType": "PDF",
+    "notes": "prevUrl: null"
   },
   {
     "prefecture": "東京都",
     "municipality": "八丈町",
     "jisCode": "134015",
     "municipalitySlug": "hachijo-machi",
-    "url": null,
+    "url": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
     "pdfUrl": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
     "linkStatus": "PDF_ONLY",
     "isPublished": true,
     "hasDomainWarning": false,
-    "linkType": "PDF"
+    "linkType": "PDF",
+    "notes": "prevUrl: null"
   },
   {
     "prefecture": "神奈川県",
