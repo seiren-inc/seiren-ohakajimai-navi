@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
-@import "@/lib/css/index.css";
 
 @layer base {
   :root {
