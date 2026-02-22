@@ -3725,26 +3725,24 @@
     "municipality": "三宅村",
     "jisCode": "133817",
     "municipalitySlug": "miyake-mura",
-    "url": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
+    "url": null,
     "pdfUrl": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
     "linkStatus": "PDF_ONLY",
     "isPublished": true,
     "hasDomainWarning": false,
-    "linkType": "PDF",
-    "notes": "prevUrl: null"
+    "linkType": "PDF"
   },
   {
     "prefecture": "東京都",
     "municipality": "八丈町",
     "jisCode": "134015",
     "municipalitySlug": "hachijo-machi",
-    "url": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
+    "url": null,
     "pdfUrl": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
     "linkStatus": "PDF_ONLY",
     "isPublished": true,
     "hasDomainWarning": false,
-    "linkType": "PDF",
-    "notes": "prevUrl: null"
+    "linkType": "PDF"
   },
   {
     "prefecture": "神奈川県",
