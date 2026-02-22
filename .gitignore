@@ -41,3 +41,25 @@ yarn-error.log*
 next-env.d.ts
 
 /src/generated/prisma
+
+# generated audit artifacts
+audit_*.txt
+final_*.txt
+full_report.txt
+delivery_proof.txt
+kinki_audit_report.txt
+kinki_result.json
+backup/
+
+# data/imports generated artifacts
+data/imports/*.txt
+data/imports/*.md
+data/imports/*.html
+data/imports/*.csv
+data/imports/kanto_*.json
+data/imports/pending_audited*.json
+data/imports/pending_v2*.json
+data/imports/yasuda_municipality_links*.json
+
+!data/imports/pending.json
+!data/imports/municipality_map.json
