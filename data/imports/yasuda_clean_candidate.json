@@ -1,0 +1,90 @@
+{
+  "summary": {
+    "total": 263,
+    "matched": 255,
+    "newCandidates": 0,
+    "updates": 3,
+    "duplicates": 0,
+    "unmatched": 8,
+    "pdfCount": 3
+  },
+  "unmatched": [
+    {
+      "municipality": "府中市",
+      "url": "https://www.city.fuchu.tokyo.jp/kurashi/tetuduki/sonota/kaisoukyoka.html",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    },
+    {
+      "municipality": "山北町",
+      "url": "https://www.town.yamakita.kanagawa.jp/0000002804.html",
+      "_reason": "NO_MATCH_IN_MASTER"
+    },
+    {
+      "municipality": "南牧村",
+      "url": "https://nanmoku.ne.jp/lifehealth/life/various_application/",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    },
+    {
+      "municipality": "昭和村",
+      "url": "https://www.vill.showa.gunma.jp/kurashi/kurashi/todokede/2024-0513-0826-22.html",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    },
+    {
+      "municipality": "那珂川町",
+      "url": "https://www.town.tochigi-nakagawa.lg.jp/sangyou/shinsei/index.html",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    },
+    {
+      "municipality": "南部町",
+      "url": "https://www.town.nanbu.yamanashi.jp/download/madoguchi.html",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    },
+    {
+      "municipality": "富士川町",
+      "url": "https://www.town.fujikawa.yamanashi.jp/docs/2023080700057/",
+      "_reason": "NO_MATCH_IN_MASTER"
+    },
+    {
+      "municipality": "池田町",
+      "url": "https://www.ikedamachi.net/0000003613.html",
+      "_reason": "DUPLICATE_NAME_IN_MASTER"
+    }
+  ],
+  "duplicates": [],
+  "updates": [
+    {
+      "prefecture": "東京都",
+      "municipality": "三宅村",
+      "jisCode": "133817",
+      "municipalitySlug": "miyake-mura",
+      "url": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
+      "pdfCandidate": true,
+      "_pendingUrl": null,
+      "_pendingPdfUrl": "https://www.vill.miyake.tokyo.jp/kakuka/chiikiseibi/news/files/sinseisyo.pdf",
+      "_diffReason": "URL_MISMATCH"
+    },
+    {
+      "prefecture": "東京都",
+      "municipality": "八丈町",
+      "jisCode": "134015",
+      "municipalitySlug": "hachijo-machi",
+      "url": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
+      "pdfCandidate": true,
+      "_pendingUrl": null,
+      "_pendingPdfUrl": "https://www.town.hachijo.tokyo.jp/kakuka/jyumin/form/form13.pdf",
+      "_diffReason": "URL_MISMATCH"
+    },
+    {
+      "prefecture": "埼玉県",
+      "municipality": "羽生市",
+      "jisCode": "112160",
+      "municipalitySlug": "hanyu-shi",
+      "url": "https://www.city.hanyu.lg.jp/docs/2015031200037/",
+      "pdfCandidate": false,
+      "_pendingUrl": "https://www.city.hanyu.lg.jp/docs/2015031200033/",
+      "_pendingPdfUrl": null,
+      "_diffReason": "URL_MISMATCH"
+    }
+  ],
+  "newCandidates": []
+}
