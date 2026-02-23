@@ -9,7 +9,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "verify": "npm run lint && npm run typecheck",
-    "verify:ci": "npm run verify && prisma validate && ts-node scripts/verify_db_counts_ci.ts && ts-node scripts/verify_invariants.ts"
+    "verify:ci": "npm run verify && prisma validate && npm run quality:gate",
+    "linkcheck:run": "ts-node scripts/link_check_run.ts",
+    "quality:gate": "ts-node scripts/verify_quality_gate.ts"
   },
   "prisma": {
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"

@@ -1,7 +1,65 @@
 import { Suspense } from "react";
+import { prisma } from "@/lib/prisma";
 import { getQualityCounts } from "@/lib/admin/qualityCounts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle, CheckCircle2, FileText, ListChecks } from "lucide-react";
+import { AlertCircle, CheckCircle2, FileText, ListChecks, ArrowRight, History, XCircle } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+
+async function RecentAuditSummary() {
+    // @ts-ignore
+    const lastRun = await prisma.linkCheckRun.findFirst({
+        orderBy: { startedAt: 'desc' }
+    });
+
+    if (!lastRun) {
+        return (
+            <div className="flex h-[200px] flex-col items-center justify-center text-muted-foreground border border-dashed rounded-md bg-gray-50/50">
+                <History className="h-8 w-8 mb-2 opacity-20" />
+                <p className="text-sm">No audit runs recorded yet.</p>
+                <p className="text-xs">Run `npm run linkcheck:run` to start.</p>
+            </div>
+        );
+    }
+
+    return (
+        <div className="space-y-4">
+            <div className="flex items-center justify-between">
+                <div>
+                    <p className="text-xs font-medium text-muted-foreground">Last Run: {new Date(lastRun.startedAt).toLocaleString()}</p>
+                    <div className="flex items-center gap-2 mt-1">
+                        <Badge variant={lastRun.status === "SUCCEEDED" ? "default" : "destructive"}>
+                            {lastRun.status}
+                        </Badge>
+                        <span className="text-sm font-mono text-[10px]">{lastRun.id}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-2">
+                <div className="p-3 border rounded-lg bg-blue-50/30">
+                    <p className="text-[10px] uppercase font-bold text-blue-600">Checked</p>
+                    <p className="text-xl font-bold">{lastRun.totalChecked.toLocaleString()}</p>
+                </div>
+                <div className="p-3 border rounded-lg bg-red-50/30">
+                    <p className="text-[10px] uppercase font-bold text-red-600">Broken</p>
+                    <p className="text-xl font-bold">{lastRun.brokenCount.toLocaleString()}</p>
+                </div>
+                <div className="p-3 border rounded-lg bg-green-50/30">
+                    <p className="text-[10px] uppercase font-bold text-green-600">Fixed</p>
+                    <p className="text-xl font-bold">{lastRun.fixedCount.toLocaleString()}</p>
+                </div>
+            </div>
+
+            <div className="text-xs bg-muted p-2 rounded truncate font-mono">
+                Notes: {lastRun.notes || "N/A"}
+            </div>
+
+            <a href={`/admin/quality/runs/${lastRun.id}`} className="inline-flex items-center text-xs font-medium text-blue-600 hover:underline">
+                View Full Logs <ArrowRight className="ml-1 h-3 w-3" />
+            </a>
+        </div>
+    );
+}
 
 async function QualitySummary() {
     const counts = await getQualityCounts();
@@ -71,9 +129,9 @@ export default function QualityDashboardPage() {
                             </a>
                         </CardHeader>
                         <CardContent>
-                            <div className="flex h-[200px] items-center justify-center text-muted-foreground border-2 border-dashed rounded-md">
-                                Placeholder: LinkCheckRun history will appear here (PHASE 5)
-                            </div>
+                            <Suspense fallback={<div className="h-[200px] flex items-center justify-center">Loading audit history...</div>}>
+                                <RecentAuditSummary />
+                            </Suspense>
                         </CardContent>
                     </Card>
 
