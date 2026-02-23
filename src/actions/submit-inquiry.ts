@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma"
 import { Resend } from 'resend'
 import { headers } from "next/headers"
 import { redirect } from "next/navigation"
+import { sanitizeObject } from "@/lib/sanitize"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -41,8 +42,11 @@ export async function submitInquiry(prevState: State | null, formData: FormData)
         return { success: true, message: "お問い合わせを受け付けました。" }
     }
 
+    // Sanitize input
+    const sanitizedRawData = sanitizeObject(rawData);
+
     // Validate fields
-    const validatedFields = inquirySchema.safeParse(rawData)
+    const validatedFields = inquirySchema.safeParse(sanitizedRawData)
 
     if (!validatedFields.success) {
         return {

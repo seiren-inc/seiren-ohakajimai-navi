@@ -4,6 +4,8 @@ import { prisma } from "@/lib/prisma"
 import { InquiryStatus } from "@prisma/client"
 import { revalidatePath } from "next/cache"
 
+import { sanitizeInput } from "@/lib/sanitize"
+
 export async function updateInquiryStatus(id: string, status: InquiryStatus) {
     try {
         await prisma.inquiry.update({
@@ -21,9 +23,10 @@ export async function updateInquiryStatus(id: string, status: InquiryStatus) {
 
 export async function updateInquiryMemo(id: string, memo: string) {
     try {
+        const sanitizedMemo = sanitizeInput(memo)
         await prisma.inquiry.update({
             where: { id },
-            data: { memo },
+            data: { memo: sanitizedMemo },
         })
         revalidatePath("/admin/inquiries")
         revalidatePath(`/admin/inquiries/${id}`)
