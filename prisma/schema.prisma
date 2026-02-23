@@ -146,6 +146,40 @@ model AuditLog {
   @@map("audit_logs")
 }
 
+model LinkCheckRun {
+  id           String         @id @default(cuid())
+  startedAt    DateTime       @default(now()) @map("started_at")
+  finishedAt   DateTime?      @map("finished_at")
+  status       LinkCheckStatus @default(RUNNING)
+  totalChecked Int            @default(0) @map("total_checked")
+  brokenCount  Int            @default(0) @map("broken_count")
+  fixedCount   Int            @default(0) @map("fixed_count")
+  notes        String?
+
+  @@map("link_check_runs")
+}
+
+model RecoveryCandidate {
+  id           String                 @id @default(cuid())
+  createdAt    DateTime               @default(now()) @map("created_at")
+  jisCode      String                 @map("jis_code")
+  prefecture   String
+  municipality String
+  prevUrl      String?                @map("prev_url")
+  prevPdfUrl   String?                @map("prev_pdf_url")
+  newUrl       String?                @map("new_url")
+  newPdfUrl    String?                @map("new_pdf_url")
+  confidence   Int                    @default(0)
+  source       String
+  status       RecoveryCandidateStatus @default(PENDING)
+  runId        String?                @map("run_id")
+
+  @@index([jisCode])
+  @@index([status])
+  @@index([runId])
+  @@map("recovery_candidates")
+}
+
 enum Role {
   ADMIN
   OPERATOR
@@ -156,6 +190,18 @@ enum LinkStatus {
   NEEDS_REVIEW
   BROKEN
   UNKNOWN
+}
+
+enum LinkCheckStatus {
+  RUNNING
+  SUCCEEDED
+  FAILED
+}
+
+enum RecoveryCandidateStatus {
+  PENDING
+  APPLIED
+  REJECTED
 }
 
 enum InquiryStatus {
