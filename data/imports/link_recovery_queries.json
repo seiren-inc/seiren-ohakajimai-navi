@@ -1,0 +1,444 @@
+[
+  {
+    "jisCode": "015431",
+    "prefecture": "北海道",
+    "municipality": "美幌町",
+    "brokenUrl": "https://www.town.bihoro.hokkaido.jp/page/1042.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "北海道美幌町 改葬許可申請",
+      "北海道美幌町 墓地埋葬 許可",
+      "北海道美幌町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "015458",
+    "prefecture": "北海道",
+    "municipality": "斜里町",
+    "brokenUrl": "https://www.town.shari.hokkaido.jp/soshikikarasagasu/kankyoka/seikatsukankyokakari/reien/1866.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "北海道斜里町 改葬許可申請",
+      "北海道斜里町 墓地埋葬 許可",
+      "北海道斜里町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "062111",
+    "prefecture": "山形県",
+    "municipality": "東根市",
+    "brokenUrl": "https://www.city.higashine.yamagata.jp/files/original/20211029204004653e85eb7ef.pdf",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "山形県東根市 改葬許可申請",
+      "山形県東根市 墓地埋葬 許可",
+      "山形県東根市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "072010",
+    "prefecture": "福島県",
+    "municipality": "福島市",
+    "brokenUrl": "https://www.city.fukushima.fukushima.jp/kankyo-eisei/kurashi/boti/kaisou.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "福島県福島市 改葬許可申請",
+      "福島県福島市 墓地埋葬 許可",
+      "福島県福島市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "064262",
+    "prefecture": "山形県",
+    "municipality": "三川町",
+    "brokenUrl": "https://www.town.mikawa.yamagata.jp/soshiki/juminka/kaiso.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "山形県三川町 改葬許可申請",
+      "山形県三川町 墓地埋葬 許可",
+      "山形県三川町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "073016",
+    "prefecture": "福島県",
+    "municipality": "桑折町",
+    "brokenUrl": "https://www.town.koori.fukushima.jp/soshiki/zeiju/1/3_1/14841.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "福島県桑折町 改葬許可申請",
+      "福島県桑折町 墓地埋葬 許可",
+      "福島県桑折町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "074446",
+    "prefecture": "福島県",
+    "municipality": "三島町",
+    "brokenUrl": "https://www.city.mishima.shizuoka.jp/ipn028468.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "福島県三島町 改葬許可申請",
+      "福島県三島町 墓地埋葬 許可",
+      "福島県三島町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "082341",
+    "prefecture": "茨城県",
+    "municipality": "鉾田市",
+    "brokenUrl": "https://www.city.hokota.lg.jp/page/page004087.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "茨城県鉾田市 改葬許可申請",
+      "茨城県鉾田市 墓地埋葬 許可",
+      "茨城県鉾田市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "085421",
+    "prefecture": "茨城県",
+    "municipality": "五霞町",
+    "brokenUrl": "https://www.town.goka.lg.jp/kurashi/kurashi-tetsuzuki/madoguchi/kakushu-shoumeisho/page003623.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "茨城県五霞町 改葬許可申請",
+      "茨城県五霞町 墓地埋葬 許可",
+      "茨城県五霞町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "102075",
+    "prefecture": "群馬県",
+    "municipality": "館林市",
+    "brokenUrl": "https://www.city.tatebayashi.gunma.jp/s022/kurashi/050/kaisoukyoka.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "群馬県館林市 改葬許可申請",
+      "群馬県館林市 墓地埋葬 許可",
+      "群馬県館林市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "102083",
+    "prefecture": "群馬県",
+    "municipality": "渋川市",
+    "brokenUrl": "https://www.city.shibukawa.lg.jp/kurashi/life_event/okuyami/kaisou.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "群馬県渋川市 改葬許可申請",
+      "群馬県渋川市 墓地埋葬 許可",
+      "群馬県渋川市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "111007",
+    "prefecture": "埼玉県",
+    "municipality": "さいたま市",
+    "brokenUrl": "https://www.city.saitama.lg.jp/002/004/011/p071399.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "埼玉県さいたま市 改葬許可申請",
+      "埼玉県さいたま市 墓地埋葬 許可",
+      "埼玉県さいたま市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "122122",
+    "prefecture": "千葉県",
+    "municipality": "佐倉市",
+    "brokenUrl": "https://www.city.sakura.lg.jp/0000005168.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "千葉県佐倉市 改葬許可申請",
+      "千葉県佐倉市 墓地埋葬 許可",
+      "千葉県佐倉市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "122246",
+    "prefecture": "千葉県",
+    "municipality": "鎌ケ谷市",
+    "brokenUrl": "https://www.city.kamagaya.chiba.jp/download_menu/jumin.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "千葉県鎌ケ谷市 改葬許可申請",
+      "千葉県鎌ケ谷市 墓地埋葬 許可",
+      "千葉県鎌ケ谷市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "132209",
+    "prefecture": "東京都",
+    "municipality": "東大和市",
+    "brokenUrl": "https://www.city.higashiyamato.lg.jp/kurashi/todokede/1001651/1008864.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "東京都東大和市 改葬許可申請",
+      "東京都東大和市 墓地埋葬 許可",
+      "東京都東大和市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "132071",
+    "prefecture": "東京都",
+    "municipality": "昭島市",
+    "brokenUrl": "https://www.city.akishima.lg.jp/s026/010/20240911104221.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "東京都昭島市 改葬許可申請",
+      "東京都昭島市 墓地埋葬 許可",
+      "東京都昭島市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "142115",
+    "prefecture": "神奈川県",
+    "municipality": "秦野市",
+    "brokenUrl": "https://www.city.hadano.kanagawa.jp/www/contents/1001000000158/index.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "神奈川県秦野市 改葬許可申請",
+      "神奈川県秦野市 墓地埋葬 許可",
+      "神奈川県秦野市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "162019",
+    "prefecture": "富山県",
+    "municipality": "富山市",
+    "brokenUrl": "https://www.city.toyama.lg.jp/soshiki/seikatsukankyo/kankyohozenka/12168.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "富山県富山市 改葬許可申請",
+      "富山県富山市 墓地埋葬 許可",
+      "富山県富山市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "202011",
+    "prefecture": "長野県",
+    "municipality": "長野市",
+    "brokenUrl": "https://www.city.nagano.nagano.jp/n085500/contents/p000282.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "長野県長野市 改葬許可申請",
+      "長野県長野市 墓地埋葬 許可",
+      "長野県長野市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "222062",
+    "prefecture": "静岡県",
+    "municipality": "三島市",
+    "brokenUrl": "https://www.city.mishima.shizuoka.jp/ipn028468.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "静岡県三島市 改葬許可申請",
+      "静岡県三島市 墓地埋葬 許可",
+      "静岡県三島市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "222224",
+    "prefecture": "静岡県",
+    "municipality": "伊豆市",
+    "brokenUrl": "https://www.city.izu.shizuoka.jp/soshiki/1011/2/477.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "静岡県伊豆市 改葬許可申請",
+      "静岡県伊豆市 墓地埋葬 許可",
+      "静岡県伊豆市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "243418",
+    "prefecture": "三重県",
+    "municipality": "菰野町",
+    "brokenUrl": "https://www2.town.komono.mie.jp/www/contents/1001000000064/index.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "三重県菰野町 改葬許可申請",
+      "三重県菰野町 墓地埋葬 許可",
+      "三重県菰野町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "252077",
+    "prefecture": "滋賀県",
+    "municipality": "守山市",
+    "brokenUrl": "https://www.city.moriyama.lg.jp/kurashitetsuzuki/koseki/1001510/1009282.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "滋賀県守山市 改葬許可申請",
+      "滋賀県守山市 墓地埋葬 許可",
+      "滋賀県守山市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "262145",
+    "prefecture": "京都府",
+    "municipality": "木津川市",
+    "brokenUrl": "https://www.city.kizugawa.lg.jp/index.cfm/6,0,14,396,html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "京都府木津川市 改葬許可申請",
+      "京都府木津川市 墓地埋葬 許可",
+      "京都府木津川市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "271004",
+    "prefecture": "大阪府",
+    "municipality": "大阪市",
+    "brokenUrl": "https://www.city.osaka.lg.jp/kurashi/category/3011-1-2-1-0-0-0-0-0-0.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "大阪府大阪市 改葬許可申請",
+      "大阪府大阪市 墓地埋葬 許可",
+      "大阪府大阪市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "282103",
+    "prefecture": "兵庫県",
+    "municipality": "加古川市",
+    "brokenUrl": "https://www.city.kakogawa.lg.jp/soshikikarasagasu/shimin部/siminka/koseki_jyumin_inkan/koseki/1511776086416.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "兵庫県加古川市 改葬許可申請",
+      "兵庫県加古川市 墓地埋葬 許可",
+      "兵庫県加古川市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "282286",
+    "prefecture": "兵庫県",
+    "municipality": "加東市",
+    "brokenUrl": "https://www.city.kato.lg.jp/kakukanogoannai/shiminkyoudou部/shiminka/download/1454058624554.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "兵庫県加東市 改葬許可申請",
+      "兵庫県加東市 墓地埋葬 許可",
+      "兵庫県加東市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "285013",
+    "prefecture": "兵庫県",
+    "municipality": "佐用町",
+    "brokenUrl": "https://www.town.sayo.lg.jp/kakuka/juminbu/jumin/shimei/kaiso/",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "兵庫県佐用町 改葬許可申請",
+      "兵庫県佐用町 墓地埋葬 許可",
+      "兵庫県佐用町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "303411",
+    "prefecture": "和歌山県",
+    "municipality": "かつらぎ町",
+    "brokenUrl": "https://www.town.katsuragi.wakayama.jp/soshiki/3/6254.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "和歌山県かつらぎ町 改葬許可申請",
+      "和歌山県かつらぎ町 墓地埋葬 許可",
+      "和歌山県かつらぎ町 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "294446",
+    "prefecture": "奈良県",
+    "municipality": "黒滝村",
+    "brokenUrl": "https://www.vill.kurotaki.nara.jp/reiki/reiki_honbun/k439RG00000519.html#e000000073",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "奈良県黒滝村 改葬許可申請",
+      "奈良県黒滝村 墓地埋葬 許可",
+      "奈良県黒滝村 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "352012",
+    "prefecture": "山口県",
+    "municipality": "下関市",
+    "brokenUrl": "https://www.city.shimonoseki.lg.jp/soshiki/24/85867.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "山口県下関市 改葬許可申請",
+      "山口県下関市 墓地埋葬 許可",
+      "山口県下関市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "422118",
+    "prefecture": "長崎県",
+    "municipality": "五島市",
+    "brokenUrl": "https://www.city.goto.nagasaki.jp/s038/020/050/020/010/20190326184650.html",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "長崎県五島市 改葬許可申請",
+      "長崎県五島市 墓地埋葬 許可",
+      "長崎県五島市 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "473596",
+    "prefecture": "沖縄県",
+    "municipality": "伊平屋村",
+    "brokenUrl": "https://www.vill.iheya.okinawa.jp/uploaded/life/2135_2598_misc.pdf",
+    "errorStatus": "BROKEN_4XX",
+    "errorMessage": null,
+    "queries": [
+      "沖縄県伊平屋村 改葬許可申請",
+      "沖縄県伊平屋村 墓地埋葬 許可",
+      "沖縄県伊平屋村 改葬許可証 filetype:pdf"
+    ]
+  },
+  {
+    "jisCode": "402141",
+    "prefecture": "福岡県",
+    "municipality": "豊前市",
+    "brokenUrl": "https://www.city.buzen.lg.jp/kankyo/kaisou.html",
+    "errorStatus": "TIMEOUT",
+    "errorMessage": "Timeout",
+    "queries": [
+      "福岡県豊前市 改葬許可申請",
+      "福岡県豊前市 墓地埋葬 許可",
+      "福岡県豊前市 改葬許可証 filetype:pdf"
+    ]
+  }
+]
