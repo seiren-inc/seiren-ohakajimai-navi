@@ -296,7 +296,7 @@ export default function TopPage() {
                     <div className="flex flex-wrap justify-center gap-6 md:gap-12">
                         <a href="#" className="font-semibold text-slate-600 hover:text-primary transition-colors">海洋散骨クルーズ</a>
                         <a href="#" className="font-semibold text-slate-600 hover:text-primary transition-colors">遺骨サポートLab</a>
-                        <a href="#" className="font-semibold text-slate-600 hover:text-primary transition-colors">お墓探しナビ</a>
+                        <a href="#" className="font-semibold text-slate-600 hover:text-primary transition-colors">お墓じまいナビ</a>
                     </div>
                 </div>
             </section>
