@@ -1,0 +1,52 @@
+[
+  {
+    "prefecture": "宮城県",
+    "municipality": "青葉区",
+    "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+    "pdfUrl": null,
+    "source": "yasuda_html_import",
+    "rawText": "青葉区",
+    "notes": "文字化けの可能性あり",
+    "reasonTag": "文字化け疑いによる突合失敗"
+  },
+  {
+    "prefecture": "宮城県",
+    "municipality": "宮城野区",
+    "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+    "pdfUrl": null,
+    "source": "yasuda_html_import",
+    "rawText": "宮城野区",
+    "notes": "文字化けの可能性あり",
+    "reasonTag": "文字化け疑いによる突合失敗"
+  },
+  {
+    "prefecture": "宮城県",
+    "municipality": "若林区",
+    "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+    "pdfUrl": null,
+    "source": "yasuda_html_import",
+    "rawText": "若林区",
+    "notes": "文字化けの可能性あり",
+    "reasonTag": "文字化け疑いによる突合失敗"
+  },
+  {
+    "prefecture": "宮城県",
+    "municipality": "太白区",
+    "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+    "pdfUrl": null,
+    "source": "yasuda_html_import",
+    "rawText": "太白区",
+    "notes": "文字化けの可能性あり",
+    "reasonTag": "文字化け疑いによる突合失敗"
+  },
+  {
+    "prefecture": "宮城県",
+    "municipality": "泉区",
+    "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+    "pdfUrl": null,
+    "source": "yasuda_html_import",
+    "rawText": "泉区",
+    "notes": "文字化けの可能性あり",
+    "reasonTag": "文字化け疑いによる突合失敗"
+  }
+]
