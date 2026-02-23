@@ -4,6 +4,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { MapPin } from "lucide-react"
 import { PREFECTURES, REGIONS } from "@/lib/prefectures"
 
+// Revalidate the page every 24 hours
+export const revalidate = 86400
+
 export const metadata = constructMetadata({
     title: "全国の改葬手続き情報・申請書ダウンロード",
     description: "全国の自治体の改葬許可申請書のダウンロード先や、手続き窓口の情報をまとめています。ご自身で手続きを行う際にご活用ください。",
