@@ -1,49 +1,58 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, AuditResult, LinkStatus } from "@prisma/client";
 import axios from "axios";
 import pLimit from "p-limit";
 
 const prisma = new PrismaClient();
 const limit = pLimit(10); // 並列実行数
 
-const TIMEOUT = 8000;
-const RETRIES = 2;
+const TIMEOUT = 10000;
+const RETRIES = 1;
 
-async function checkLink(url: string): Promise<{ ok: boolean; status?: number; error?: string }> {
+async function checkLink(url: string): Promise<{ ok: boolean; status?: number; error?: string; result: AuditResult }> {
     if (!url || !url.startsWith("http")) {
-        return { ok: false, error: "Invalid Format" };
+        return { ok: false, error: "Invalid Format", result: AuditResult.UNKNOWN_ERROR };
     }
 
     for (let i = 0; i <= RETRIES; i++) {
         try {
-            // HEAD リクエストを試行、失敗したら GET
             const response = await axios.get(url, {
                 timeout: TIMEOUT,
                 headers: {
                     'User-Agent': 'Mozilla/5.0 (compatible; SeirenAuditBot/1.0; +https://seiren.co.jp)',
                 },
-                validateStatus: (status) => status < 400, // 2xx, 3xx を成功とする
+                validateStatus: (status) => status < 400,
             });
-            return { ok: true, status: response.status };
+            return { ok: true, status: response.status, result: AuditResult.OK };
         } catch (err: any) {
             if (i === RETRIES) {
+                let result: AuditResult = AuditResult.UNKNOWN_ERROR;
+                const status = err.response?.status;
+
+                if (status) {
+                    if (status >= 500) result = AuditResult.SERVER_ERROR;
+                    else if (status >= 400) result = AuditResult.CLIENT_ERROR;
+                } else if (err.code === 'ECONNABORTED') {
+                    result = AuditResult.TIMEOUT;
+                } else if (err.code === 'ENOTFOUND') {
+                    result = AuditResult.DNS_ERROR;
+                }
+
                 return {
                     ok: false,
-                    status: err.response?.status,
-                    error: err.code || err.message
+                    status: status,
+                    error: err.code || err.message,
+                    result: result
                 };
             }
-            // 短い待機を入れてリトライ
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     }
-    return { ok: false, error: "Unknown" };
+    return { ok: false, error: "Unknown", result: AuditResult.UNKNOWN_ERROR };
 }
 
 async function main() {
     console.log("🚀 Starting Link Check Run...");
 
-    // 実行記録の初期化
-    // @ts-ignore
     const run = await prisma.linkCheckRun.create({
         data: {
             status: "RUNNING",
@@ -56,88 +65,105 @@ async function main() {
         totalChecked: 0,
         okCount: 0,
         brokenCount: 0,
-        fixedCount: 0, // 今回は自動修正しないため0固定
-        temporaryFailureCount: 0,
-        invalidFormatCount: 0,
-        pdfRuleViolationCount: 0,
+        pdfOnlyCount: 0,
+        unknownCount: 0,
     };
 
     const tasks = municipalities.map(m => limit(async () => {
-        let hasIssue = false;
+        let isBroken = false;
+        let targetUrl = m.url || m.pdfUrl;
 
-        // 1. PDF Rule Check
-        // @ts-ignore
-        if (m.linkStatus === "PDF_ONLY" && m.url && m.url.trim() !== "") {
-            stats.pdfRuleViolationCount++;
-            hasIssue = true;
+        if (!targetUrl) {
+            stats.unknownCount++;
+            return;
         }
 
-        // 2. Guide URL Check
-        if (m.url) {
-            stats.totalChecked++;
-            const res = await checkLink(m.url);
-            if (res.ok) {
-                stats.okCount++;
-            } else {
-                if (res.error === "Invalid Format") {
-                    stats.invalidFormatCount++;
-                } else if (res.status && res.status >= 500) {
-                    stats.temporaryFailureCount++;
-                } else {
-                    stats.brokenCount++;
-                }
-                hasIssue = true;
+        const res = await checkLink(targetUrl);
+        stats.totalChecked++;
+
+        // AuditLog 永続化
+        await prisma.auditLog.create({
+            data: {
+                municipalityId: m.id,
+                targetUrl: targetUrl,
+                httpStatus: res.status,
+                result: res.result,
+                errorMessage: res.error,
             }
-        }
+        });
 
-        // 3. PDF URL Check
-        if (m.pdfUrl) {
-            stats.totalChecked++;
-            const res = await checkLink(m.pdfUrl);
-            if (res.ok) {
-                // すでに Guide URL で OK 判定なら重複カウントしないが、stats は純粋な URL 数
-            } else {
-                if (res.error === "Invalid Format") {
-                    stats.invalidFormatCount++;
-                } else if (res.status && res.status >= 500) {
-                    stats.temporaryFailureCount++;
-                } else {
-                    stats.brokenCount++;
+        if (!res.ok) {
+            stats.brokenCount++;
+            isBroken = true;
+
+            // RecoveryCandidate の作成
+            await prisma.recoveryCandidate.create({
+                data: {
+                    jisCode: m.jisCode,
+                    prefecture: m.prefectureName,
+                    municipality: m.name,
+                    prevUrl: m.url,
+                    prevPdfUrl: m.pdfUrl,
+                    source: "Automated Link Check",
+                    status: "PENDING",
+                    runId: run.id,
                 }
-                hasIssue = true;
-            }
+            });
         }
 
-        // 進捗表示 (100件ごと)
-        const processed = stats.totalChecked;
-        if (processed > 0 && processed % 100 === 0) {
-            console.log(`Progress: ${processed} URLs checked...`);
+        // Municipality のステータス更新 (簡易ロジック)
+        let newStatus = m.linkStatus;
+        if (isBroken) {
+            newStatus = LinkStatus.BROKEN;
+        } else if (m.pdfUrl && !m.url) {
+            newStatus = LinkStatus.PDF_ONLY;
+            stats.pdfOnlyCount++;
+        } else if (res.ok) {
+            newStatus = LinkStatus.OK;
+            stats.okCount++;
+        }
+
+        if (newStatus !== m.linkStatus) {
+            await prisma.municipality.update({
+                where: { id: m.id },
+                data: {
+                    linkStatus: newStatus,
+                    lastCheckedAt: new Date()
+                }
+            });
+        }
+
+        // 進捗表示
+        if (stats.totalChecked % 100 === 0) {
+            console.log(`Progress: ${stats.totalChecked}/${municipalities.length} checked...`);
         }
     }));
 
     await Promise.all(tasks);
 
-    // 実行結果を更新
-    // @ts-ignore
+    // IntegrityScore 計算
+    // IntegrityScore = (OK + PDF_ONLY) ÷ 全自治体数 × 100
+    const integrityScore = ((stats.okCount + stats.pdfOnlyCount) / municipalities.length) * 100;
+
     await prisma.linkCheckRun.update({
         where: { id: run.id },
         data: {
             status: "SUCCEEDED",
             finishedAt: new Date(),
             totalChecked: stats.totalChecked,
-            brokenCount: stats.brokenCount + stats.invalidFormatCount,
-            fixedCount: 0,
-            notes: `Check completed. OK: ${stats.okCount}, Broken: ${stats.brokenCount}, TempFail: ${stats.temporaryFailureCount}, PDF-Violation: ${stats.pdfRuleViolationCount}`,
+            brokenCount: stats.brokenCount,
+            notes: `IntegrityScore: ${integrityScore.toFixed(2)}%. OK: ${stats.okCount}, PDF_ONLY: ${stats.pdfOnlyCount}, Broken: ${stats.brokenCount}`,
         }
     });
 
     console.log("\n✅ Link Check Run Completed.");
+    console.log(`Final Integrity Score: ${integrityScore.toFixed(2)}%`);
     console.table(stats);
 }
 
 main()
     .catch(async (e) => {
-        console.error(e);
+        console.error("Fatal Error in Link Check Run:", e);
         process.exit(1);
     })
     .finally(() => prisma.$disconnect());
