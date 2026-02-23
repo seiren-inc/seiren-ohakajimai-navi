@@ -47,17 +47,17 @@ export default function PrefAccordion({ name, municipalities, isSearchActive }: 
             {municipalities.length}件
           </span>
         </div>
-        <ChevronDown 
-          className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-500' : 'group-hover:translate-y-0.5'}`} 
+        <ChevronDown
+          className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-500' : 'group-hover:translate-y-0.5'}`}
         />
       </button>
 
       {/* Accordion Content */}
-      <div 
+      <div
         className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100 border-t border-slate-50' : 'max-h-0 opacity-0 pointer-events-none'}`}
       >
         <div className="p-4 md:p-6 bg-slate-50/30">
-          <MunicipalityList municipalities={municipalities} />
+          {isOpen && <MunicipalityList municipalities={municipalities} />}
         </div>
       </div>
     </div>
