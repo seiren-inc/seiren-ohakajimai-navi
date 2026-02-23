@@ -1,0 +1,164 @@
+[
+  {
+    "jisCode": "263222",
+    "prefecture": "京都府",
+    "municipality": "久御山町",
+    "status": "applied",
+    "before": {
+      "url": "",
+      "linkStatus": "NEEDS_REVIEW",
+      "linkType": "GUIDE",
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.kumiyama.lg.jp/forms/list.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "285013",
+    "prefecture": "兵庫県",
+    "municipality": "佐用町",
+    "status": "applied",
+    "before": {
+      "url": "",
+      "linkStatus": "NEEDS_REVIEW",
+      "linkType": "GUIDE",
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.town.sayo.lg.jp/kakuka/juminbu/jumin/shimei/kaiso/",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "016098",
+    "prefecture": "北海道",
+    "municipality": "えりも町",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.erimo.lg.jp/kurashi/hoken/bochi/",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "122122",
+    "prefecture": "千葉県",
+    "municipality": "佐倉市",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.city.sakura.lg.jp/0000005168.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "303411",
+    "prefecture": "和歌山県",
+    "municipality": "かつらぎ町",
+    "status": "applied",
+    "before": {
+      "url": "",
+      "linkStatus": "NEEDS_REVIEW",
+      "linkType": "GUIDE",
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.town.katsuragi.wakayama.jp/soshiki/3/6254.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "111007",
+    "prefecture": "埼玉県",
+    "municipality": "さいたま市",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.city.saitama.lg.jp/002/004/011/p071399.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "162019",
+    "prefecture": "富山県",
+    "municipality": "富山市",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.city.toyama.lg.jp/soshiki/seikatsukankyo/kankyohozenka/12168.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "352012",
+    "prefecture": "山口県",
+    "municipality": "下関市",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.city.shimonoseki.lg.jp/soshiki/24/85867.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  },
+  {
+    "jisCode": "064262",
+    "prefecture": "山形県",
+    "municipality": "三川町",
+    "status": "applied",
+    "before": {
+      "url": null,
+      "linkStatus": "UNKNOWN",
+      "linkType": null,
+      "isPublished": false
+    },
+    "after": {
+      "url": "https://www.town.mikawa.yamagata.jp/soshiki/juminka/kaiso.html",
+      "linkStatus": "OK",
+      "linkType": "GUIDE",
+      "isPublished": true
+    }
+  }
+]
