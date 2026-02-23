@@ -5282,72 +5282,99 @@
     "municipality": "水戸市",
     "jisCode": "082015",
     "url": "https://www.city.mito.lg.jp/page/5545.html",
-    "pdfUrl": "",
-    "municipalitySlug": "mito-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "mito-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "日立市",
     "jisCode": "082023",
     "url": "https://www.city.hitachi.lg.jp/kurashi_tetsuzuki/todokede_shomei/1003963/1003966.html",
-    "pdfUrl": "",
-    "municipalitySlug": "hitachi-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "hitachi-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "土浦市",
     "jisCode": "082031",
     "url": "https://www.city.tsuchiura.lg.jp/kankyo-kotsu-machizukuri/seikatsukankyo/page021045.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tsuchiura-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tsuchiura-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "古河市",
     "jisCode": "082040",
     "url": "https://www.city.ibaraki-koga.lg.jp/soshiki/shimin_mado/10/17066.html",
-    "pdfUrl": "",
-    "municipalitySlug": "koga-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "koga-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "石岡市",
     "jisCode": "082058",
     "url": "https://www.city.ishioka.lg.jp/kurashi_tetsuzuki/kankyo/saijo_reien/page000459.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ishioka-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ishioka-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "結城市",
     "jisCode": "082074",
     "url": "https://www.city.yuki.lg.jp/kurashi-tetsuzuki/tetsuzuki/page009438.html",
-    "pdfUrl": "",
-    "municipalitySlug": "yuki-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "yuki-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "龍ケ崎市",
     "jisCode": "082082",
     "url": "https://www.city.ryugasaki.ibaraki.jp/kurashi/todokede/jumintouroku/koseki/kaisokyoka.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ryugasaki-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ryugasaki-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "下妻市",
     "jisCode": "082104",
     "url": "https://www.city.shimotsuma.lg.jp/format/format-category/page000517.html",
-    "pdfUrl": "",
-    "municipalitySlug": "shimotsuma-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "shimotsuma-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "常総市",
     "jisCode": "082112",
     "url": "https://www.city.joso.lg.jp/kurashi_gyousei/kurashi/todokede_shoumei/shoumeisho_shinsei_tetsuzuki/kaisou_kyoka.html",
-    "pdfUrl": "",
-    "municipalitySlug": "joso-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "joso-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5367,16 +5394,22 @@
     "municipality": "高萩市",
     "jisCode": "082147",
     "url": "https://www.city.takahagi.ibaraki.jp/kurashi/sumai/kankyou/bochi/page003894.html",
-    "pdfUrl": "",
-    "municipalitySlug": "takahagi-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "takahagi-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "北茨城市",
     "jisCode": "082155",
     "url": "https://www.city.kitaibaraki.lg.jp/reiki_int/reiki_honbun/e014RG00000805.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kitaibaraki-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "kitaibaraki-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5396,96 +5429,132 @@
     "municipality": "取手市",
     "jisCode": "082171",
     "url": "https://www.city.toride.ibaraki.jp/shimin/kurashi/todokede/kaisou/kaisou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "toride-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "toride-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "牛久市",
     "jisCode": "082198",
     "url": "https://www.city.ushiku.lg.jp/page/page000722.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ushiku-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ushiku-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "つくば市",
     "jisCode": "082201",
     "url": "https://www.city.tsukuba.lg.jp/soshikikarasagasu/shimimbushimimmadoguchika/gyomuannai/5/5/1000811.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tsukuba-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tsukuba-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "ひたちなか市",
     "jisCode": "082210",
     "url": "https://www.city.hitachinaka.lg.jp/machizukuri/kankyo/1002688/1002693.html",
-    "pdfUrl": "",
-    "municipalitySlug": "hitachinaka-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "hitachinaka-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "鹿嶋市",
     "jisCode": "082228",
     "url": "https://city.kashima.ibaraki.jp/soshiki/37/2795.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kashima-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "kashima-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "潮来市",
     "jisCode": "082236",
     "url": "https://www.city.itako.lg.jp/page/page006374.html",
-    "pdfUrl": "",
-    "municipalitySlug": "itako-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "itako-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "守谷市",
     "jisCode": "082244",
     "url": "https://www.city.moriya.ibaraki.jp/kurashi_tetsuzuki/koseki/1001729/1001744.html",
-    "pdfUrl": "",
-    "municipalitySlug": "moriya-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "moriya-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "常陸大宮市",
     "jisCode": "082252",
     "url": "https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/kurashi/reien/page003757.html",
-    "pdfUrl": "",
-    "municipalitySlug": "hitachiomiya-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "hitachiomiya-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "那珂市",
     "jisCode": "082261",
     "url": "https://www.city.naka.lg.jp/kurashi-tetsuduki/bochi/page001171.html",
-    "pdfUrl": "",
-    "municipalitySlug": "naka-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "naka-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "筑西市",
     "jisCode": "082279",
     "url": "https://www.city.chikusei.lg.jp/kurashi-tetsuzuki/ryokin-shinsei/download/page005786.html",
-    "pdfUrl": "",
-    "municipalitySlug": "chikusei-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "chikusei-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "坂東市",
     "jisCode": "082287",
     "url": "https://www.city.bando.lg.jp/data/reiki/reiki_honbun/word/r155FG00008097.rtf",
-    "pdfUrl": "",
-    "municipalitySlug": "bando-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "bando-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "稲敷市",
     "jisCode": "082295",
     "url": "https://www.city.inashiki.lg.jp/page/page009768.html",
-    "pdfUrl": "",
-    "municipalitySlug": "inashiki-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "inashiki-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5505,8 +5574,11 @@
     "municipality": "桜川市",
     "jisCode": "082317",
     "url": "https://www.city.sakuragawa.lg.jp/kurashi/tetsuzuki/bochi/page000289.html",
-    "pdfUrl": "",
-    "municipalitySlug": "sakuragawa-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "sakuragawa-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5526,32 +5598,44 @@
     "municipality": "行方市",
     "jisCode": "082333",
     "url": "https://www.city.namegata.ibaraki.jp/page/page007397.html",
-    "pdfUrl": "",
-    "municipalitySlug": "namegata-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "namegata-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "鉾田市",
     "jisCode": "082341",
     "url": "https://www.city.hokota.lg.jp/page/page004087.html",
-    "pdfUrl": "",
-    "municipalitySlug": "hokota-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "hokota-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "つくばみらい市",
     "jisCode": "082350",
     "url": "https://www.city.tsukubamirai.lg.jp/jyumin/todokede-shoumei-zeikin/koseki/koseki/page005697.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tsukubamirai-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tsukubamirai-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "小美玉市",
     "jisCode": "082368",
     "url": "https://www.city.omitama.lg.jp/0888/info-0000008763-0.html",
-    "pdfUrl": "",
-    "municipalitySlug": "omitama-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "omitama-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5584,24 +5668,33 @@
     "municipality": "城里町",
     "jisCode": "083101",
     "url": "https://www.town.shirosato.lg.jp/page/page000819.html",
-    "pdfUrl": "",
-    "municipalitySlug": "shirosato-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "shirosato-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "東海村",
     "jisCode": "083411",
     "url": "https://www.vill.tokai.ibaraki.jp/soshikikarasagasu/somminseikatsubu/juminka/1/1/6606.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tokai-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "tokai-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "大子町",
     "jisCode": "083640",
     "url": "https://www.town.daigo.ibaraki.jp/page/page007466.html",
-    "pdfUrl": "",
-    "municipalitySlug": "daigo-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "daigo-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5621,8 +5714,11 @@
     "municipality": "阿見町",
     "jisCode": "084433",
     "url": "https://www.town.ami.lg.jp/0000000699.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ami-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "ami-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5642,16 +5738,22 @@
     "municipality": "八千代町",
     "jisCode": "085219",
     "url": "https://www.town.ibaraki-yachiyo.lg.jp/page/page008578.html",
-    "pdfUrl": "",
-    "municipalitySlug": "yachiyo-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "yachiyo-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
     "municipality": "五霞町",
     "jisCode": "085421",
     "url": "https://www.town.goka.lg.jp/kurashi/kurashi-tetsuzuki/madoguchi/kakushu-shoumeisho/page003623.html",
-    "pdfUrl": "",
-    "municipalitySlug": "goka-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "goka-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "茨城県",
@@ -5684,72 +5786,99 @@
     "municipality": "宇都宮市",
     "jisCode": "092011",
     "url": "https://www.city.utsunomiya.lg.jp/faq/kurashi/todokede/1000511.html",
-    "pdfUrl": "",
-    "municipalitySlug": "utsunomiya-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "utsunomiya-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "足利市",
     "jisCode": "092029",
     "url": "https://www.city.ashikaga.tochigi.jp/living/000012/p002408.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ashikaga-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ashikaga-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "栃木市",
     "jisCode": "092037",
     "url": "https://www.city.tochigi.lg.jp/soshiki/22/34298.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tochigi-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tochigi-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "佐野市",
     "jisCode": "092045",
     "url": "https://www.city.sano.lg.jp/soshikiichiran/shimin/shiminka/gyomuannai/1/4204.html",
-    "pdfUrl": "",
-    "municipalitySlug": "sano-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "sano-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "鹿沼市",
     "jisCode": "092053",
     "url": "https://www.city.kanuma.tochigi.jp/0006/info-0000000165-1.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kanuma-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "kanuma-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "日光市",
     "jisCode": "092061",
     "url": "https://www.city.nikko.lg.jp/soshiki/4/1015/9/211.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nikko-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "nikko-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "小山市",
     "jisCode": "092088",
     "url": "https://www.city.oyama.tochigi.jp/kurashi/okuyami/tetsuzuki/page008159.html",
-    "pdfUrl": "",
-    "municipalitySlug": "oyama-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "oyama-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "真岡市",
     "jisCode": "092096",
     "url": "https://www.city.moka.lg.jp/kakuka/kankyo/gyomu/bochi_saijo/shieibochi/1449.html",
-    "pdfUrl": "",
-    "municipalitySlug": "mooka-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "mooka-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "大田原市",
     "jisCode": "092100",
     "url": "https://www.city.ohtawara.tochigi.jp/docs/2017122100035/",
-    "pdfUrl": "",
-    "municipalitySlug": "otawara-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "otawara-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
@@ -5769,40 +5898,55 @@
     "municipality": "那須塩原市",
     "jisCode": "092134",
     "url": "https://www.city.nasushiobara.tochigi.jp/soshikikarasagasu/np/sumai_kurashi/3/2106.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nasushiobara-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "nasushiobara-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "さくら市",
     "jisCode": "092142",
     "url": "https://www.city.tochigi-sakura.lg.jp/life/000015/000131/p001977.html",
-    "pdfUrl": "",
-    "municipalitySlug": "sakura-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "sakura-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "那須烏山市",
     "jisCode": "092151",
     "url": "https://www.city.nasukarasuyama.lg.jp/page/page000033.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nasukarasuyama-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "nasukarasuyama-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "下野市",
     "jisCode": "092169",
     "url": "https://www.city.shimotsuke.lg.jp/1660/info-0000000670-3.html",
-    "pdfUrl": "",
-    "municipalitySlug": "shimotsuke-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "shimotsuke-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "上三川町",
     "jisCode": "093017",
     "url": "https://www.town.kaminokawa.lg.jp/0052/info-0000002458-0.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kaminokawa-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "kaminokawa-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
@@ -5822,8 +5966,11 @@
     "municipality": "茂木町",
     "jisCode": "093432",
     "url": "https://www.town.motegi.tochigi.jp/motegi/nextpage.php?cd=5269&syurui=2",
-    "pdfUrl": "",
-    "municipalitySlug": "motegi-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "motegi-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
@@ -5843,56 +5990,77 @@
     "municipality": "芳賀町",
     "jisCode": "093459",
     "url": "https://www.town.tochigi-haga.lg.jp/kurashi/kurashi/todokede/saijou_shiyou/kaisou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "haga-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "haga-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "壬生町",
     "jisCode": "093611",
     "url": "https://www.town.mibu.tochigi.jp/docs/2025020400010/",
-    "pdfUrl": "",
-    "municipalitySlug": "mibu-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "mibu-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "野木町",
     "jisCode": "093645",
     "url": "https://www.town.nogi.lg.jp/kurashi/jyuminhyou/page003389.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nogi-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "nogi-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "塩谷町",
     "jisCode": "093840",
     "url": "https://www.town.shioya.tochigi.jp/info/215",
-    "pdfUrl": "",
-    "municipalitySlug": "shioya-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "shioya-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "高根沢町",
     "jisCode": "093866",
     "url": "https://www.town.takanezawa.tochigi.jp/life/kankyo/bochi/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "takanezawa-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "takanezawa-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "那須町",
     "jisCode": "094072",
     "url": "https://www.town.nasu.lg.jp/0061/info-0000003193-1.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nasu-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "nasu-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "栃木県",
     "municipality": "那珂川町",
     "jisCode": "094111",
     "url": "https://www.town.tochigi-nakagawa.lg.jp/sangyou/shinsei/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nakagawa-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "nakagawa-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
@@ -6081,32 +6249,44 @@
     "municipality": "神流町",
     "jisCode": "103675",
     "url": "https://www.town.kanna.gunma.jp/soshiki/juminseikatsuka_kaikeishitsu/3/803.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kanna-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "kanna-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
     "municipality": "下仁田町",
     "jisCode": "103829",
     "url": "https://www.town.shimonita.lg.jp/juumin-zeimu/m03/m01/02.html",
-    "pdfUrl": "",
-    "municipalitySlug": "shimonita-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "shimonita-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
     "municipality": "南牧村",
     "jisCode": "103837",
     "url": "https://nanmoku.ne.jp/lifehealth/life/various_application/",
-    "pdfUrl": "",
-    "municipalitySlug": "nanmoku-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "nanmoku-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
     "municipality": "甘楽町",
     "jisCode": "103845",
     "url": "https://www.town.kanra.lg.jp/kikaku/densan/download/01.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kanra-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "kanra-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
@@ -6178,8 +6358,11 @@
     "municipality": "東吾妻町",
     "jisCode": "104299",
     "url": "https://www.town.higashiagatsuma.gunma.jp/www/contents/1211958460860/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "higashiagatsuma-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "higashiagatsuma-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
@@ -6251,8 +6434,11 @@
     "municipality": "板倉町",
     "jisCode": "105210",
     "url": "https://www.town.itakura.gunma.jp/cont/s008000/d008010/20151117141528.html",
-    "pdfUrl": "",
-    "municipalitySlug": "itakura-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "itakura-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "群馬県",
@@ -6298,8 +6484,11 @@
     "municipality": "邑楽町",
     "jisCode": "105252",
     "url": "https://www.town.ora.gunma.jp/s013/download/070/kaisoukyoka.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ora-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "ora-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "埼玉県",
@@ -8948,9 +9137,9 @@
     "municipality": "柏崎市",
     "jisCode": "152056",
     "url": "https://www.city.kashiwazaki.lg.jp/soshikiichiran/shiminseikatsubu/shiminka/3/14/2/4589.html",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "kashiwazaki-shi",
     "linkType": "GUIDE"
@@ -9660,10 +9849,10 @@
     "jisCode": "174076",
     "url": null,
     "pdfUrl": "https://www.town.nakanoto.ishikawa.jp/material/files/group/19/sinnseitodokedeyousiki.pdf",
-    "linkStatus": "NEEDS_REVIEW",
+    "linkStatus": "OK",
     "notes": "公式ページ未特定（PDF直リンクのみ）",
     "municipalitySlug": "nakanoto-machi",
-    "isPublished": false,
+    "isPublished": true,
     "hasDomainWarning": false,
     "linkType": "PDF"
   },
@@ -9908,8 +10097,11 @@
     "municipality": "甲府市",
     "jisCode": "192015",
     "url": "https://www.city.kofu.yamanashi.jp/shimin/kaisou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kofu-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "kofu-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -9929,8 +10121,11 @@
     "municipality": "都留市",
     "jisCode": "192040",
     "url": "https://www.city.tsuru.yamanashi.jp/soshiki/shimin/shiminmado_t/2/7/1674.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tsuru-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tsuru-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -9950,8 +10145,11 @@
     "municipality": "大月市",
     "jisCode": "192066",
     "url": "https://www.city.otsuki.yamanashi.jp/kurashi/todoke/kaisoukyoka.html",
-    "pdfUrl": "",
-    "municipalitySlug": "otsuki-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "otsuki-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -9971,8 +10169,11 @@
     "municipality": "南アルプス市",
     "jisCode": "192082",
     "url": "https://www.city.minami-alps.yamanashi.jp/docs/kaiso.html",
-    "pdfUrl": "",
-    "municipalitySlug": "minami-alps-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "minami-alps-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -9992,8 +10193,11 @@
     "municipality": "甲斐市",
     "jisCode": "192104",
     "url": "https://www.city.kai.yamanashi.jp/soshikinogoannai/siminkoseki/2/3/13048.html",
-    "pdfUrl": "",
-    "municipalitySlug": "kai-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "kai-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -10026,24 +10230,33 @@
     "municipality": "甲州市",
     "jisCode": "192139",
     "url": "https://www.city.koshu.yamanashi.jp/docs/2021012000725/",
-    "pdfUrl": "",
-    "municipalitySlug": "koshu-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "koshu-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
     "municipality": "中央市",
     "jisCode": "192147",
     "url": "https://www.city.chuo.yamanashi.jp/benriservice/download/1844.html#h_idx_iw_flex_1_16",
-    "pdfUrl": "",
-    "municipalitySlug": "chuo-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "chuo-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
     "municipality": "市川三郷町",
     "jisCode": "193461",
     "url": "https://www.town.ichikawamisato.yamanashi.jp/40administration/15application/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ichikawamisato-cho"
+    "pdfUrl": null,
+    "municipalitySlug": "ichikawamisato-cho",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -10063,8 +10276,11 @@
     "municipality": "身延町",
     "jisCode": "193658",
     "url": "https://www.town.minobu.lg.jp/kurashi/gomi/20240329kankyou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "minobu-cho"
+    "pdfUrl": null,
+    "municipalitySlug": "minobu-cho",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -10162,8 +10378,11 @@
     "municipality": "富士河口湖町",
     "jisCode": "194301",
     "url": "https://www.town.fujikawaguchiko.lg.jp/ka/info.php?if_id=7197",
-    "pdfUrl": "",
-    "municipalitySlug": "fujikawaguchiko-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "fujikawaguchiko-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "山梨県",
@@ -10196,24 +10415,33 @@
     "municipality": "長野市",
     "jisCode": "202011",
     "url": "https://www.city.nagano.nagano.jp/n085500/contents/p000282.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nagano-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "nagano-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "松本市",
     "jisCode": "202029",
     "url": "https://www.city.matsumoto.nagano.jp/soshiki/231/123661.html",
-    "pdfUrl": "",
-    "municipalitySlug": "matsumoto-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "matsumoto-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "上田市",
     "jisCode": "202037",
     "url": "https://www.city.ueda.nagano.jp/soshiki/simin/90807.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ueda-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ueda-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10233,80 +10461,110 @@
     "municipality": "飯田市",
     "jisCode": "202053",
     "url": "https://www.city.iida.lg.jp/soshiki/19/kaisou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "iida-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "iida-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "諏訪市",
     "jisCode": "202061",
     "url": "https://www.city.suwa.lg.jp/soshiki/10/2057.html",
-    "pdfUrl": "",
-    "municipalitySlug": "suwa-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "suwa-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "須坂市",
     "jisCode": "202070",
     "url": "https://www.gaas-port.jp/20_suzaka/procedure/247?category_id=17",
-    "pdfUrl": "",
-    "municipalitySlug": "suzaka-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "suzaka-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "小諸市",
     "jisCode": "202088",
     "url": "https://www.city.komoro.lg.jp/soshikikarasagasu/shiminseikatsubu/seikatsukankyoka/1/4/3/9224.html",
-    "pdfUrl": "",
-    "municipalitySlug": "komoro-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "komoro-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "伊那市",
     "jisCode": "202096",
     "url": "https://www.inacity.jp/onlineservice/shinsesho_download/kankyo_keikan/kaisokyoka.html",
-    "pdfUrl": "",
-    "municipalitySlug": "ina-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "ina-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "駒ヶ根市",
     "jisCode": "202100",
     "url": "https://www.city.komagane.nagano.jp/soshikiichiran/seikatsukankyoka/kankyoeiseigakari/2/4/1578.html",
-    "pdfUrl": "",
-    "municipalitySlug": "komagane-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "komagane-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "中野市",
     "jisCode": "202118",
     "url": "https://www.city.nakano.nagano.jp/docs/2014011602793/",
-    "pdfUrl": "",
-    "municipalitySlug": "nakano-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "nakano-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "大町市",
     "jisCode": "202126",
     "url": "https://www.city.omachi.nagano.jp/00007000/00007100/reienbosyuu_2_3.html",
-    "pdfUrl": "",
-    "municipalitySlug": "omachi-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "omachi-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "飯山市",
     "jisCode": "202134",
     "url": "https://www.city.iiyama.nagano.jp/soshiki/shiminkankyou/shimin/sonota/boci.htm",
-    "pdfUrl": "",
-    "municipalitySlug": "iiyama-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "iiyama-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "茅野市",
     "jisCode": "202142",
     "url": "https://www.city.chino.lg.jp/soshiki/shimin/kaisou.html",
-    "pdfUrl": "",
-    "municipalitySlug": "chino-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "chino-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10326,32 +10584,44 @@
     "municipality": "佐久市",
     "jisCode": "202177",
     "url": "https://www.city.saku.nagano.jp/kurashi/shinsei_todokede/kaiso.html",
-    "pdfUrl": "",
-    "municipalitySlug": "saku-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "saku-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "千曲市",
     "jisCode": "202185",
     "url": "https://www.city.chikuma.lg.jp/soshiki/shimin/saijo_bochi/10895.html",
-    "pdfUrl": "",
-    "municipalitySlug": "chikuma-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "chikuma-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "東御市",
     "jisCode": "202193",
     "url": "https://www.city.tomi.nagano.jp/category/sougi/131819.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tomi-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "tomi-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "安曇野市",
     "jisCode": "202207",
     "url": "https://www.city.azumino.nagano.jp/soshiki/16/76342.html",
-    "pdfUrl": "",
-    "municipalitySlug": "azumino-shi"
+    "pdfUrl": null,
+    "municipalitySlug": "azumino-shi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10371,8 +10641,11 @@
     "municipality": "川上村",
     "jisCode": "203041",
     "url": "https://www.vill.kawakami.nara.jp/life/docs/2017013000031/",
-    "pdfUrl": "",
-    "municipalitySlug": "kawakami-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "kawakami-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10496,32 +10769,44 @@
     "municipality": "下諏訪町",
     "jisCode": "203611",
     "url": "https://www.town.shimosuwa.lg.jp/www/contents/1001000000670/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "shimosuwa-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "shimosuwa-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "富士見町",
     "jisCode": "203629",
     "url": "https://www.town.fujimi.lg.jp/page/ju01-change-grave.html",
-    "pdfUrl": "",
-    "municipalitySlug": "fujimi-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "fujimi-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "原村",
     "jisCode": "203637",
     "url": "https://www.vill.hara.lg.jp/docs/342.html",
-    "pdfUrl": "",
-    "municipalitySlug": "hara-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "hara-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "辰野町",
     "jisCode": "203823",
     "url": "https://www.town.tatsuno.lg.jp/gyosei/soshiki/juminzeimuka/kurashi_tetsuzuki/7/2/1050.html",
-    "pdfUrl": "",
-    "municipalitySlug": "tatsuno-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "tatsuno-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10593,8 +10878,11 @@
     "municipality": "松川町",
     "jisCode": "204021",
     "url": "https://www.town.matsukawa.lg.jp/soshikikarasagasu/juminzeimuka/kankyokakari/1/4/6298.html",
-    "pdfUrl": "",
-    "municipalitySlug": "matsukawa-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "matsukawa-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10692,8 +10980,11 @@
     "municipality": "天龍村",
     "jisCode": "204137",
     "url": "https://www.vill-tenryu.jp/notice/administrative/living_info/applicationform/application_form/",
-    "pdfUrl": "",
-    "municipalitySlug": "tenryu-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "tenryu-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10752,24 +11043,33 @@
     "municipality": "上松町",
     "jisCode": "204226",
     "url": "https://www.town.agematsu.nagano.jp/kurashi/sumai_seikatsu/boti/tyoeiboti.html",
-    "pdfUrl": "",
-    "municipalitySlug": "agematsu-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "agematsu-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "南木曽町",
     "jisCode": "204234",
     "url": "https://www.town.nagiso.nagano.jp/data/open/cnt/3/19179/6/kaisoukyoka.pdf?20231101165751",
-    "pdfUrl": "",
-    "municipalitySlug": "nagiso-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "nagiso-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "木祖村",
     "jisCode": "204251",
     "url": "https://www.vill.kiso.nagano.jp/kurashi_joho/bochi/hakajimai_kaisou.html?pro_code=30006%3F?",
-    "pdfUrl": "",
-    "municipalitySlug": "kiso-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "kiso-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10802,16 +11102,22 @@
     "municipality": "木曽町",
     "jisCode": "204323",
     "url": "https://www.town-kiso.com/kurashi/tetuduki/100263/m100060/",
-    "pdfUrl": "",
-    "municipalitySlug": "kiso-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "kiso-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "麻績村",
     "jisCode": "204463",
     "url": "https://www.vill.omi.nagano.jp/kurashi/jumin1536.html",
-    "pdfUrl": "",
-    "municipalitySlug": "omi-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "omi-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10909,16 +11215,22 @@
     "municipality": "坂城町",
     "jisCode": "205214",
     "url": "https://www.town.sakaki.nagano.jp/www/genre/1000100000108/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "sakaki-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "sakaki-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "小布施町",
     "jisCode": "205419",
     "url": "https://www.town.obuse.nagano.jp/docs/1574.html",
-    "pdfUrl": "",
-    "municipalitySlug": "obuse-machi"
+    "pdfUrl": null,
+    "municipalitySlug": "obuse-machi",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -10951,16 +11263,22 @@
     "municipality": "木島平村",
     "jisCode": "205621",
     "url": "https://www.vill.kijimadaira.lg.jp/articles/2025030600035/",
-    "pdfUrl": "",
-    "municipalitySlug": "kijimadaira-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "kijimadaira-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
     "municipality": "野沢温泉村",
     "jisCode": "205630",
     "url": "https://www.vill.nozawaonsen.nagano.jp/www/contents/1708588989480/index.html",
-    "pdfUrl": "",
-    "municipalitySlug": "nozawaonsen-mura"
+    "pdfUrl": null,
+    "municipalitySlug": "nozawaonsen-mura",
+    "linkStatus": "OK",
+    "linkType": "GUIDE",
+    "isPublished": true
   },
   {
     "prefecture": "長野県",
@@ -11576,9 +11894,9 @@
     "municipality": "三島市",
     "jisCode": "222062",
     "url": "https://www.city.mishima.shizuoka.jp/ipn028468.html",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "mishima-shi",
     "linkType": "GUIDE"
@@ -11746,9 +12064,9 @@
     "municipality": "伊豆市",
     "jisCode": "222224",
     "url": "https://www.city.izu.shizuoka.jp/soshiki/1011/2/477.html",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "izu-shi",
     "linkType": "GUIDE"
@@ -12741,9 +13059,9 @@
     "municipality": "熊野市",
     "jisCode": "242128",
     "url": "https://www.city.kumano.lg.jp/life/?content=693",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "kumano-shi",
     "linkType": "GUIDE"
@@ -12815,9 +13133,9 @@
     "municipality": "菰野町",
     "jisCode": "243418",
     "url": "https://www2.town.komono.mie.jp/www/contents/1001000000064/index.html",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "komono-cho",
     "linkType": "GUIDE"
@@ -16112,8 +16430,8 @@
     "jisCode": "332054",
     "url": "https://www.city.kasaoka.okayama.jp/soshiki/11/1510.html",
     "pdfUrl": "https://www.city.kasaoka.okayama.jp/uploaded/attachment/31922.pdf",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "kasaoka-shi",
     "linkType": "GUIDE"
@@ -16172,8 +16490,8 @@
     "jisCode": "332119",
     "url": "https://www.city.bizen.okayama.jp/soshiki/11/1077.html",
     "pdfUrl": "https://www.city.bizen.okayama.jp/uploaded/attachment/15925.pdf",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "bizen-shi",
     "linkType": "GUIDE"
@@ -16736,8 +17054,8 @@
     "jisCode": "352071",
     "url": "https://www.city.kudamatsu.lg.jp/kankyou/kurashi/kankyou/bochi/kaisou.html",
     "pdfUrl": "https://www.city.kudamatsu.lg.jp/kouhou/yousiki/documents/11botikaisoukyokasinsei.pdf",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "kudamatsu-shi",
     "linkType": "GUIDE"
@@ -19159,9 +19477,9 @@
     "municipality": "五島市",
     "jisCode": "422118",
     "url": "https://www.city.goto.nagasaki.jp/s038/020/050/020/010/20190326184650.html",
-    "pdfUrl": "",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "pdfUrl": null,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "goto-shi",
     "linkType": "GUIDE"
@@ -21380,8 +21698,8 @@
     "jisCode": "473596",
     "url": "https://www.vill.iheya.okinawa.jp/uploaded/life/2135_2598_misc.pdf",
     "pdfUrl": "https://www.vill.iheya.okinawa.jp/uploaded/life/2135_2598_misc.pdf",
-    "linkStatus": "NEEDS_REVIEW",
-    "isPublished": false,
+    "linkStatus": "OK",
+    "isPublished": true,
     "hasDomainWarning": false,
     "municipalitySlug": "iheya-son",
     "linkType": "GUIDE"

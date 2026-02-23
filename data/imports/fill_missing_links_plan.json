@@ -1,0 +1,1055 @@
+[
+  {
+    "jisCode": "152056",
+    "prefecture": "新潟県",
+    "municipality": "柏崎市",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "174076",
+    "prefecture": "石川県",
+    "municipality": "中能登町",
+    "reason": "NEEDS_REVIEW with pdfUrl only -> promote OK/PDF",
+    "newLinkStatus": "OK",
+    "newLinkType": "PDF",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "222062",
+    "prefecture": "静岡県",
+    "municipality": "三島市",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "222224",
+    "prefecture": "静岡県",
+    "municipality": "伊豆市",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "242128",
+    "prefecture": "三重県",
+    "municipality": "熊野市",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "243418",
+    "prefecture": "三重県",
+    "municipality": "菰野町",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "332054",
+    "prefecture": "岡山県",
+    "municipality": "笠岡市",
+    "reason": "NEEDS_REVIEW with both url+pdfUrl -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "332119",
+    "prefecture": "岡山県",
+    "municipality": "備前市",
+    "reason": "NEEDS_REVIEW with both url+pdfUrl -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "352071",
+    "prefecture": "山口県",
+    "municipality": "下松市",
+    "reason": "NEEDS_REVIEW with both url+pdfUrl -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "422118",
+    "prefecture": "長崎県",
+    "municipality": "五島市",
+    "reason": "NEEDS_REVIEW with url only -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "473596",
+    "prefecture": "沖縄県",
+    "municipality": "伊平屋村",
+    "reason": "NEEDS_REVIEW with both url+pdfUrl -> promote OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082015",
+    "prefecture": "茨城県",
+    "municipality": "水戸市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082023",
+    "prefecture": "茨城県",
+    "municipality": "日立市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082031",
+    "prefecture": "茨城県",
+    "municipality": "土浦市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082040",
+    "prefecture": "茨城県",
+    "municipality": "古河市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082058",
+    "prefecture": "茨城県",
+    "municipality": "石岡市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082074",
+    "prefecture": "茨城県",
+    "municipality": "結城市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082082",
+    "prefecture": "茨城県",
+    "municipality": "龍ケ崎市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082104",
+    "prefecture": "茨城県",
+    "municipality": "下妻市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082112",
+    "prefecture": "茨城県",
+    "municipality": "常総市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082147",
+    "prefecture": "茨城県",
+    "municipality": "高萩市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082155",
+    "prefecture": "茨城県",
+    "municipality": "北茨城市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082171",
+    "prefecture": "茨城県",
+    "municipality": "取手市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082198",
+    "prefecture": "茨城県",
+    "municipality": "牛久市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082201",
+    "prefecture": "茨城県",
+    "municipality": "つくば市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082210",
+    "prefecture": "茨城県",
+    "municipality": "ひたちなか市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082228",
+    "prefecture": "茨城県",
+    "municipality": "鹿嶋市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082236",
+    "prefecture": "茨城県",
+    "municipality": "潮来市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082244",
+    "prefecture": "茨城県",
+    "municipality": "守谷市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082252",
+    "prefecture": "茨城県",
+    "municipality": "常陸大宮市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082261",
+    "prefecture": "茨城県",
+    "municipality": "那珂市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082279",
+    "prefecture": "茨城県",
+    "municipality": "筑西市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082287",
+    "prefecture": "茨城県",
+    "municipality": "坂東市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082295",
+    "prefecture": "茨城県",
+    "municipality": "稲敷市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082317",
+    "prefecture": "茨城県",
+    "municipality": "桜川市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082333",
+    "prefecture": "茨城県",
+    "municipality": "行方市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082341",
+    "prefecture": "茨城県",
+    "municipality": "鉾田市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082350",
+    "prefecture": "茨城県",
+    "municipality": "つくばみらい市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "082368",
+    "prefecture": "茨城県",
+    "municipality": "小美玉市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "083101",
+    "prefecture": "茨城県",
+    "municipality": "城里町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "083411",
+    "prefecture": "茨城県",
+    "municipality": "東海村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "083640",
+    "prefecture": "茨城県",
+    "municipality": "大子町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "084433",
+    "prefecture": "茨城県",
+    "municipality": "阿見町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "085219",
+    "prefecture": "茨城県",
+    "municipality": "八千代町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "085421",
+    "prefecture": "茨城県",
+    "municipality": "五霞町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092011",
+    "prefecture": "栃木県",
+    "municipality": "宇都宮市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092029",
+    "prefecture": "栃木県",
+    "municipality": "足利市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092037",
+    "prefecture": "栃木県",
+    "municipality": "栃木市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092045",
+    "prefecture": "栃木県",
+    "municipality": "佐野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092053",
+    "prefecture": "栃木県",
+    "municipality": "鹿沼市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092061",
+    "prefecture": "栃木県",
+    "municipality": "日光市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092088",
+    "prefecture": "栃木県",
+    "municipality": "小山市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092096",
+    "prefecture": "栃木県",
+    "municipality": "真岡市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092100",
+    "prefecture": "栃木県",
+    "municipality": "大田原市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092134",
+    "prefecture": "栃木県",
+    "municipality": "那須塩原市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092142",
+    "prefecture": "栃木県",
+    "municipality": "さくら市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092151",
+    "prefecture": "栃木県",
+    "municipality": "那須烏山市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "092169",
+    "prefecture": "栃木県",
+    "municipality": "下野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093017",
+    "prefecture": "栃木県",
+    "municipality": "上三川町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093432",
+    "prefecture": "栃木県",
+    "municipality": "茂木町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093459",
+    "prefecture": "栃木県",
+    "municipality": "芳賀町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093611",
+    "prefecture": "栃木県",
+    "municipality": "壬生町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093645",
+    "prefecture": "栃木県",
+    "municipality": "野木町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093840",
+    "prefecture": "栃木県",
+    "municipality": "塩谷町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "093866",
+    "prefecture": "栃木県",
+    "municipality": "高根沢町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "094072",
+    "prefecture": "栃木県",
+    "municipality": "那須町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "094111",
+    "prefecture": "栃木県",
+    "municipality": "那珂川町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "103675",
+    "prefecture": "群馬県",
+    "municipality": "神流町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "103829",
+    "prefecture": "群馬県",
+    "municipality": "下仁田町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "103837",
+    "prefecture": "群馬県",
+    "municipality": "南牧村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "103845",
+    "prefecture": "群馬県",
+    "municipality": "甘楽町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "104299",
+    "prefecture": "群馬県",
+    "municipality": "東吾妻町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "105210",
+    "prefecture": "群馬県",
+    "municipality": "板倉町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "105252",
+    "prefecture": "群馬県",
+    "municipality": "邑楽町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192015",
+    "prefecture": "山梨県",
+    "municipality": "甲府市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192040",
+    "prefecture": "山梨県",
+    "municipality": "都留市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192066",
+    "prefecture": "山梨県",
+    "municipality": "大月市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192082",
+    "prefecture": "山梨県",
+    "municipality": "南アルプス市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192104",
+    "prefecture": "山梨県",
+    "municipality": "甲斐市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192139",
+    "prefecture": "山梨県",
+    "municipality": "甲州市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "192147",
+    "prefecture": "山梨県",
+    "municipality": "中央市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "193461",
+    "prefecture": "山梨県",
+    "municipality": "市川三郷町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "193658",
+    "prefecture": "山梨県",
+    "municipality": "身延町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "194301",
+    "prefecture": "山梨県",
+    "municipality": "富士河口湖町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202011",
+    "prefecture": "長野県",
+    "municipality": "長野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202029",
+    "prefecture": "長野県",
+    "municipality": "松本市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202037",
+    "prefecture": "長野県",
+    "municipality": "上田市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202053",
+    "prefecture": "長野県",
+    "municipality": "飯田市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202061",
+    "prefecture": "長野県",
+    "municipality": "諏訪市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202070",
+    "prefecture": "長野県",
+    "municipality": "須坂市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202088",
+    "prefecture": "長野県",
+    "municipality": "小諸市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202096",
+    "prefecture": "長野県",
+    "municipality": "伊那市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202100",
+    "prefecture": "長野県",
+    "municipality": "駒ヶ根市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202118",
+    "prefecture": "長野県",
+    "municipality": "中野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202126",
+    "prefecture": "長野県",
+    "municipality": "大町市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202134",
+    "prefecture": "長野県",
+    "municipality": "飯山市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202142",
+    "prefecture": "長野県",
+    "municipality": "茅野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202177",
+    "prefecture": "長野県",
+    "municipality": "佐久市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202185",
+    "prefecture": "長野県",
+    "municipality": "千曲市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202193",
+    "prefecture": "長野県",
+    "municipality": "東御市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "202207",
+    "prefecture": "長野県",
+    "municipality": "安曇野市",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "203041",
+    "prefecture": "長野県",
+    "municipality": "川上村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "203611",
+    "prefecture": "長野県",
+    "municipality": "下諏訪町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "203629",
+    "prefecture": "長野県",
+    "municipality": "富士見町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "203637",
+    "prefecture": "長野県",
+    "municipality": "原村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "203823",
+    "prefecture": "長野県",
+    "municipality": "辰野町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204021",
+    "prefecture": "長野県",
+    "municipality": "松川町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204137",
+    "prefecture": "長野県",
+    "municipality": "天龍村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204226",
+    "prefecture": "長野県",
+    "municipality": "上松町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204234",
+    "prefecture": "長野県",
+    "municipality": "南木曽町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204251",
+    "prefecture": "長野県",
+    "municipality": "木祖村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204323",
+    "prefecture": "長野県",
+    "municipality": "木曽町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "204463",
+    "prefecture": "長野県",
+    "municipality": "麻績村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "205214",
+    "prefecture": "長野県",
+    "municipality": "坂城町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "205419",
+    "prefecture": "長野県",
+    "municipality": "小布施町",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "205621",
+    "prefecture": "長野県",
+    "municipality": "木島平村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  },
+  {
+    "jisCode": "205630",
+    "prefecture": "長野県",
+    "municipality": "野沢温泉村",
+    "reason": "null linkStatus with url -> classify OK/GUIDE",
+    "newLinkStatus": "OK",
+    "newLinkType": "GUIDE",
+    "newIsPublished": true
+  }
+]
