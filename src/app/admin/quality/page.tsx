@@ -13,22 +13,31 @@ async function QualitySummary() {
         { label: "Missing / Broken", value: counts.missing_link, icon: AlertCircle, color: "text-red-600" },
     ];
 
+    const lastVerifiedDate = counts.lastVerified
+        ? new Date(counts.lastVerified).toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' })
+        : "not yet";
+
     return (
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {items.map((item) => (
-                <Card key={item.label}>
-                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                        <CardTitle className="text-sm font-medium">{item.label}</CardTitle>
-                        <item.icon className={`h-4 w-4 ${item.color}`} />
-                    </CardHeader>
-                    <CardContent>
-                        <div className="text-2xl font-bold">{item.value.toLocaleString()}</div>
-                        <p className="text-xs text-muted-foreground">
-                            {((item.value / counts.total) * 100).toFixed(1)}% of total
-                        </p>
-                    </CardContent>
-                </Card>
-            ))}
+        <div className="space-y-4">
+            <div className="text-right text-xs text-muted-foreground">
+                Last verification: <span className="font-mono">{lastVerifiedDate}</span>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                {items.map((item) => (
+                    <Card key={item.label}>
+                        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                            <CardTitle className="text-sm font-medium">{item.label}</CardTitle>
+                            <item.icon className={`h-4 w-4 ${item.color}`} />
+                        </CardHeader>
+                        <CardContent>
+                            <div className="text-2xl font-bold">{item.value.toLocaleString()}</div>
+                            <p className="text-xs text-muted-foreground">
+                                {((item.value / counts.total) * 100).toFixed(1)}% of total
+                            </p>
+                        </CardContent>
+                    </Card>
+                ))}
+            </div>
         </div>
     );
 }

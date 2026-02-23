@@ -2,6 +2,11 @@ import { prisma } from "@/lib/prisma";
 import { LinkStatus } from "@prisma/client";
 
 export async function getQualityCounts() {
+    const lastRun = await prisma.linkCheckRun.findFirst({
+        where: { status: 'SUCCEEDED' },
+        orderBy: { finishedAt: 'desc' },
+    });
+
     const counts = await prisma.municipality.groupBy({
         by: ['linkStatus'],
         _count: {
@@ -23,9 +28,6 @@ export async function getQualityCounts() {
     });
 
     const published_ok = statusMap.OK;
-    // Note: Assuming "published_pdf" might be separate in logic but uses the same linkStatus for now 
-    // until we have a more granular field. For now, we follow the core logic.
-    // In the current schema, linkType PDF is what defines it.
 
     const pdfCount = await prisma.municipality.count({
         where: {
@@ -56,6 +58,7 @@ export async function getQualityCounts() {
         published_ok: okCount,
         published_pdf: pdfCount,
         missing_link: missingCount,
-        theoretical_total: okCount + pdfCount + missingCount
+        theoretical_total: okCount + pdfCount + missingCount,
+        lastVerified: lastRun ? lastRun.finishedAt : null,
     };
 }
