@@ -47,6 +47,14 @@ export default function QualityDashboardPage() {
         <div className="flex-1 space-y-4 p-8 pt-6">
             <div className="flex items-center justify-between space-y-2">
                 <h2 className="text-3xl font-bold tracking-tight">Data Quality Dashboard</h2>
+                <div className="flex items-center space-x-2">
+                    <a href="/admin/quality/issues" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+                        View Issues
+                    </a>
+                    <a href="/admin/quality/municipalities" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
+                        All Municipalities
+                    </a>
+                </div>
             </div>
 
             <div className="space-y-4">
@@ -56,8 +64,11 @@ export default function QualityDashboardPage() {
 
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
                     <Card className="col-span-4">
-                        <CardHeader>
+                        <CardHeader className="flex flex-row items-center justify-between">
                             <CardTitle>Recent Link Audits</CardTitle>
+                            <a href="/admin/quality/runs" className="text-sm text-blue-600 hover:underline">
+                                View History
+                            </a>
                         </CardHeader>
                         <CardContent>
                             <div className="flex h-[200px] items-center justify-center text-muted-foreground border-2 border-dashed rounded-md">

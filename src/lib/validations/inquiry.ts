@@ -59,10 +59,10 @@ export const inquirySchema = z.object({
 
     // Survey
     cemeteryType: z.enum(["TEMPLE", "PUBLIC", "PRIVATE", "COMMUNITY", "OTHER", "UNKNOWN"], {
-        errorMap: () => ({ message: "墓地の種類を選択してください" }),
+        message: "墓地の種類を選択してください",
     }),
     considerationPeriod: z.enum(["IMMEDIATE", "WITHIN_HALF_YEAR", "WITHIN_YEAR", "UNDECIDED"], {
-        errorMap: () => ({ message: "検討時期を選択してください" }),
+        message: "検討時期を選択してください",
     }),
 
     // Optional Services (Nullable/Optional in DB, but form might treat as empty string)
