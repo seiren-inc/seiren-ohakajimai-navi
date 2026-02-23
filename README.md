@@ -2,6 +2,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
+### Node.js Version Requirement
+This project requires Node.js v22. If you use `nvm`, you can load the correct version automatically by running:
+```bash
+nvm use
+```
+
 First, run the development server:
 
 ```bash
