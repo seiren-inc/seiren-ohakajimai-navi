@@ -65,8 +65,23 @@ docs/
 
 | Doc ID | タイトル | フォルダ | ファイル名 | 状態 |
 |--------|---------|---------|-----------|------|
-| Doc-01 | 要件定義書 | 01_requirements | Doc-01_Requirements.md | 未投入 |
-| Doc-02 | （予定） | 02_basic_design | — | — |
-| Doc-03 | （予定） | 03_detail_design | — | — |
+| Doc-01 | 要件定義書 | 01_requirements | Doc-01_RequirementsDefinition.md | 投入済 |
+| Doc-02 | 基本設計書 | 02_basic_design | Doc-02_SystemBasicDesign.md | 投入済 |
+| Doc-03 | DB詳細設計書 | 03_detail_design | Doc-03_DatabaseDetailDesign.md | 投入済 |
+| Doc-04 | アプリケーション詳細設計書 | 03_detail_design | Doc-04_ApplicationDetailDesign.md | 投入済 |
+| Doc-05 | テスト設計書 | 05_test_design | Doc-05_TestDesign.md | 投入済 |
+| Doc-06 | セキュリティ設計書 | 06_security | Doc-06_SecurityDesign.md | 投入済 |
+| Doc-07 | パフォーマンス設計書 | 07_performance | Doc-07_PerformanceDesign.md | 投入済 |
+| Doc-08 | 運用設計書 | 08_operations | Doc-08_OperationsRunbook.md | 投入済 |
+| Doc-09 | SEO設計書 | 04_technical_design | Doc-09_SEOIndexingDesign.md | 投入済 |
+| Doc-10 | 監視設計書 | 04_technical_design | Doc-10_MonitoringObservabilityDesign.md | 投入済 |
+| Doc-11 | データガバナンス設計書 | 04_technical_design | Doc-11_DataGovernanceDesign.md | 投入済 |
+| Doc-12 | スケーラビリティ設計書 | 04_technical_design | Doc-12_ScalabilityDesign.md | 投入済 |
+| Doc-13 | リスク管理設計書 | 04_technical_design | Doc-13_RiskManagementDesign.md | 投入済 |
+| Doc-14 | バックアップ・DR設計書 | 04_technical_design | Doc-14_BackupDRDesign.md | 投入済 |
+| Doc-15 | API公開設計書 | 04_technical_design | Doc-15_APIPublicExposureDesign.md | 投入済 |
+| Doc-16 | 統合監査・実装移行ゲート | 00_index | Doc-16_IntegratedAuditReadiness.md | 投入済 |
+| Doc-17 | AI統合アーキテクチャ設計書 | 04_technical_design | Doc-17_AIIntegrationDesign.md | 投入済 |
+| Doc-18 | 実装タスク分解書 | 00_index | Doc-18_ImplementationTaskBreakdown.md | 投入済 |
 
 ※ Doc 投入のたびにこの表を更新する
