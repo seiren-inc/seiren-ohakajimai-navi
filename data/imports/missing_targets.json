@@ -1,0 +1,3740 @@
+[
+  {
+    "jisCode": "012050",
+    "name": "室蘭市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "muroran-shi"
+  },
+  {
+    "jisCode": "041009",
+    "name": "仙台市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "sendai"
+  },
+  {
+    "jisCode": "131131",
+    "name": "渋谷区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "shibuya"
+  },
+  {
+    "jisCode": "231002",
+    "name": "名古屋市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "nagoya"
+  },
+  {
+    "jisCode": "012076",
+    "name": "帯広市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "obihiro-shi"
+  },
+  {
+    "jisCode": "012106",
+    "name": "岩見沢市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "iwamizawa-shi"
+  },
+  {
+    "jisCode": "012173",
+    "name": "江別市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "ebetsu-shi"
+  },
+  {
+    "jisCode": "012220",
+    "name": "三笠市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "mikasa-shi"
+  },
+  {
+    "jisCode": "012238",
+    "name": "根室市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nemuro-shi"
+  },
+  {
+    "jisCode": "012271",
+    "name": "歌志内市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "utashinai-shi"
+  },
+  {
+    "jisCode": "012297",
+    "name": "富良野市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "furano-shi"
+  },
+  {
+    "jisCode": "012319",
+    "name": "恵庭市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "eniwa-shi"
+  },
+  {
+    "jisCode": "012343",
+    "name": "北広島市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kitahiroshima-shi"
+  },
+  {
+    "jisCode": "012351",
+    "name": "石狩市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "ishikari-shi"
+  },
+  {
+    "jisCode": "012360",
+    "name": "北斗市",
+    "prefectureName": "北海道",
+    "municipalitySlug": "hokuto-shi"
+  },
+  {
+    "jisCode": "013048",
+    "name": "新篠津村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shinshinotsu-mura"
+  },
+  {
+    "jisCode": "013315",
+    "name": "松前町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "matsumae-cho"
+  },
+  {
+    "jisCode": "013323",
+    "name": "福島町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "fukushima-cho"
+  },
+  {
+    "jisCode": "013331",
+    "name": "知内町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shiriuchi-cho"
+  },
+  {
+    "jisCode": "013340",
+    "name": "木古内町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kikonai-cho"
+  },
+  {
+    "jisCode": "013374",
+    "name": "七飯町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nanae-cho"
+  },
+  {
+    "jisCode": "013439",
+    "name": "鹿部町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shikabe-cho"
+  },
+  {
+    "jisCode": "013455",
+    "name": "森町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "mori-machi"
+  },
+  {
+    "jisCode": "013463",
+    "name": "八雲町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "yakumo-cho"
+  },
+  {
+    "jisCode": "013471",
+    "name": "長万部町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "oshamanbe-cho"
+  },
+  {
+    "jisCode": "013676",
+    "name": "奥尻町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "okushiri-cho"
+  },
+  {
+    "jisCode": "013706",
+    "name": "今金町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "imakane-cho"
+  },
+  {
+    "jisCode": "013919",
+    "name": "島牧村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shimamaki-mura"
+  },
+  {
+    "jisCode": "013935",
+    "name": "黒松内町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kuromatsunai-cho"
+  },
+  {
+    "jisCode": "013951",
+    "name": "ニセコ町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "niseko-cho"
+  },
+  {
+    "jisCode": "013960",
+    "name": "真狩村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "makkari-mura"
+  },
+  {
+    "jisCode": "013978",
+    "name": "留寿都村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rusutsu-mura"
+  },
+  {
+    "jisCode": "013986",
+    "name": "喜茂別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kimobetsu-cho"
+  },
+  {
+    "jisCode": "013994",
+    "name": "京極町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kyogoku-cho"
+  },
+  {
+    "jisCode": "014028",
+    "name": "岩内町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "iwanai-cho"
+  },
+  {
+    "jisCode": "014036",
+    "name": "泊村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "tomari-mura"
+  },
+  {
+    "jisCode": "014044",
+    "name": "神恵内村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kamoenai-mura"
+  },
+  {
+    "jisCode": "014052",
+    "name": "積丹町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shakotan-cho"
+  },
+  {
+    "jisCode": "014079",
+    "name": "仁木町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "niki-cho"
+  },
+  {
+    "jisCode": "014095",
+    "name": "赤井川村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "akaigawa-mura"
+  },
+  {
+    "jisCode": "014249",
+    "name": "奈井江町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "naie-cho"
+  },
+  {
+    "jisCode": "014257",
+    "name": "上砂川町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kamisunagawa-cho"
+  },
+  {
+    "jisCode": "014281",
+    "name": "長沼町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "naganuma-cho"
+  },
+  {
+    "jisCode": "014290",
+    "name": "栗山町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kuriyama-cho"
+  },
+  {
+    "jisCode": "014303",
+    "name": "月形町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "tsukigata-cho"
+  },
+  {
+    "jisCode": "014346",
+    "name": "秩父別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "chippubetsu-cho"
+  },
+  {
+    "jisCode": "014362",
+    "name": "雨竜町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "uryu-cho"
+  },
+  {
+    "jisCode": "014371",
+    "name": "北竜町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "hokuryu-cho"
+  },
+  {
+    "jisCode": "014389",
+    "name": "沼田町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "numata-cho"
+  },
+  {
+    "jisCode": "014541",
+    "name": "当麻町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "toma-cho"
+  },
+  {
+    "jisCode": "014575",
+    "name": "上川町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kamikawa-cho"
+  },
+  {
+    "jisCode": "014583",
+    "name": "東川町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "higashikawa-cho"
+  },
+  {
+    "jisCode": "014613",
+    "name": "中富良野町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nakafurano-cho"
+  },
+  {
+    "jisCode": "014630",
+    "name": "占冠村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shimukappu-mura"
+  },
+  {
+    "jisCode": "014648",
+    "name": "和寒町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "wassamu-cho"
+  },
+  {
+    "jisCode": "014711",
+    "name": "中川町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nakagawa-cho"
+  },
+  {
+    "jisCode": "014729",
+    "name": "幌加内町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "horokanai-cho"
+  },
+  {
+    "jisCode": "014818",
+    "name": "増毛町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "mashike-cho"
+  },
+  {
+    "jisCode": "014826",
+    "name": "小平町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "obira-cho"
+  },
+  {
+    "jisCode": "014851",
+    "name": "初山別村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shosanbetsu-mura"
+  },
+  {
+    "jisCode": "014877",
+    "name": "天塩町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "teshio-cho"
+  },
+  {
+    "jisCode": "015113",
+    "name": "猿払村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "sarufutsu-mura"
+  },
+  {
+    "jisCode": "015121",
+    "name": "浜頓別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "hamatonbetsu-cho"
+  },
+  {
+    "jisCode": "015130",
+    "name": "中頓別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nakatonbetsu-cho"
+  },
+  {
+    "jisCode": "015164",
+    "name": "豊富町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "toyotomi-cho"
+  },
+  {
+    "jisCode": "015172",
+    "name": "礼文町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rebun-cho"
+  },
+  {
+    "jisCode": "015181",
+    "name": "利尻町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rishiri-cho"
+  },
+  {
+    "jisCode": "015199",
+    "name": "利尻富士町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rishirifuji-cho"
+  },
+  {
+    "jisCode": "015504",
+    "name": "置戸町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "oketo-cho"
+  },
+  {
+    "jisCode": "015598",
+    "name": "湧別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "yubetsu-cho"
+  },
+  {
+    "jisCode": "015601",
+    "name": "滝上町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "takinoue-cho"
+  },
+  {
+    "jisCode": "015610",
+    "name": "興部町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "okoppe-cho"
+  },
+  {
+    "jisCode": "015628",
+    "name": "西興部村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nishiokoppe-mura"
+  },
+  {
+    "jisCode": "015750",
+    "name": "壮瞥町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "sobetsu-cho"
+  },
+  {
+    "jisCode": "015814",
+    "name": "厚真町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "atsuma-cho"
+  },
+  {
+    "jisCode": "015857",
+    "name": "安平町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "abira-cho"
+  },
+  {
+    "jisCode": "015865",
+    "name": "むかわ町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "mukawa-cho"
+  },
+  {
+    "jisCode": "016021",
+    "name": "平取町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "biratori-cho"
+  },
+  {
+    "jisCode": "016047",
+    "name": "新冠町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "niikappu-cho"
+  },
+  {
+    "jisCode": "016071",
+    "name": "浦河町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "urakawa-cho"
+  },
+  {
+    "jisCode": "016080",
+    "name": "様似町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "samani-cho"
+  },
+  {
+    "jisCode": "016098",
+    "name": "えりも町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "erimo-cho"
+  },
+  {
+    "jisCode": "016322",
+    "name": "士幌町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shihoro-cho"
+  },
+  {
+    "jisCode": "016331",
+    "name": "上士幌町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "kamishihoro-cho"
+  },
+  {
+    "jisCode": "016390",
+    "name": "更別村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "sarabetsu-mura"
+  },
+  {
+    "jisCode": "016420",
+    "name": "広尾町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "hiroo-cho"
+  },
+  {
+    "jisCode": "016438",
+    "name": "幕別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "makubetsu-cho"
+  },
+  {
+    "jisCode": "016446",
+    "name": "池田町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "ikeda-cho"
+  },
+  {
+    "jisCode": "016454",
+    "name": "豊頃町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "toyokoro-cho"
+  },
+  {
+    "jisCode": "016462",
+    "name": "本別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "honbetsu-cho"
+  },
+  {
+    "jisCode": "016489",
+    "name": "陸別町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rikubetsu-cho"
+  },
+  {
+    "jisCode": "016675",
+    "name": "鶴居村",
+    "prefectureName": "北海道",
+    "municipalitySlug": "tsurui-mura"
+  },
+  {
+    "jisCode": "016918",
+    "name": "別海町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "betsukai-cho"
+  },
+  {
+    "jisCode": "016926",
+    "name": "中標津町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "nakashibetsu-cho"
+  },
+  {
+    "jisCode": "016934",
+    "name": "標津町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "shibetsu-cho"
+  },
+  {
+    "jisCode": "016942",
+    "name": "羅臼町",
+    "prefectureName": "北海道",
+    "municipalitySlug": "rausu-cho"
+  },
+  {
+    "jisCode": "022039",
+    "name": "八戸市",
+    "prefectureName": "青森県",
+    "municipalitySlug": "hachinohe-shi"
+  },
+  {
+    "jisCode": "022047",
+    "name": "黒石市",
+    "prefectureName": "青森県",
+    "municipalitySlug": "kuroishi-shi"
+  },
+  {
+    "jisCode": "022055",
+    "name": "五所川原市",
+    "prefectureName": "青森県",
+    "municipalitySlug": "goshogawara-shi"
+  },
+  {
+    "jisCode": "022063",
+    "name": "十和田市",
+    "prefectureName": "青森県",
+    "municipalitySlug": "towada-shi"
+  },
+  {
+    "jisCode": "022071",
+    "name": "三沢市",
+    "prefectureName": "青森県",
+    "municipalitySlug": "misawa-shi"
+  },
+  {
+    "jisCode": "023019",
+    "name": "平内町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "hiranai-machi"
+  },
+  {
+    "jisCode": "023035",
+    "name": "今別町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "imabetsu-machi"
+  },
+  {
+    "jisCode": "023043",
+    "name": "蓬田村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "yomogita-mura"
+  },
+  {
+    "jisCode": "023213",
+    "name": "鰺ヶ沢町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "ajigasawa-machi"
+  },
+  {
+    "jisCode": "023230",
+    "name": "深浦町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "fukaura-machi"
+  },
+  {
+    "jisCode": "023434",
+    "name": "西目屋村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "nishimeya-mura"
+  },
+  {
+    "jisCode": "023621",
+    "name": "大鰐町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "owani-machi"
+  },
+  {
+    "jisCode": "023671",
+    "name": "田舎館村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "inakadate-mura"
+  },
+  {
+    "jisCode": "023817",
+    "name": "板柳町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "itayanagi-machi"
+  },
+  {
+    "jisCode": "023876",
+    "name": "中泊町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "nakadomari-machi"
+  },
+  {
+    "jisCode": "024015",
+    "name": "野辺地町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "noheji-machi"
+  },
+  {
+    "jisCode": "024023",
+    "name": "七戸町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "shichinohe-machi"
+  },
+  {
+    "jisCode": "024058",
+    "name": "六戸町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "rokunohe-machi"
+  },
+  {
+    "jisCode": "024066",
+    "name": "横浜町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "yokohama-machi"
+  },
+  {
+    "jisCode": "024082",
+    "name": "東北町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "tohoku-machi"
+  },
+  {
+    "jisCode": "024112",
+    "name": "六ヶ所村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "rokkasho-mura"
+  },
+  {
+    "jisCode": "024121",
+    "name": "おいらせ町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "oirase-cho"
+  },
+  {
+    "jisCode": "024236",
+    "name": "大間町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "oma-machi"
+  },
+  {
+    "jisCode": "024244",
+    "name": "東通村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "higashidori-mura"
+  },
+  {
+    "jisCode": "024252",
+    "name": "風間浦村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "kazamaura-mura"
+  },
+  {
+    "jisCode": "024261",
+    "name": "佐井村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "sai-mura"
+  },
+  {
+    "jisCode": "024414",
+    "name": "三戸町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "sannohe-machi"
+  },
+  {
+    "jisCode": "024431",
+    "name": "田子町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "takko-machi"
+  },
+  {
+    "jisCode": "024457",
+    "name": "南部町",
+    "prefectureName": "青森県",
+    "municipalitySlug": "nanbu-cho"
+  },
+  {
+    "jisCode": "024503",
+    "name": "新郷村",
+    "prefectureName": "青森県",
+    "municipalitySlug": "shingo-mura"
+  },
+  {
+    "jisCode": "032051",
+    "name": "花巻市",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "hanamaki-shi"
+  },
+  {
+    "jisCode": "032077",
+    "name": "久慈市",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "kuji-shi"
+  },
+  {
+    "jisCode": "032115",
+    "name": "釜石市",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "kamaishi-shi"
+  },
+  {
+    "jisCode": "032131",
+    "name": "二戸市",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "ninohe-shi"
+  },
+  {
+    "jisCode": "032140",
+    "name": "八幡平市",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "hachimantai-shi"
+  },
+  {
+    "jisCode": "033014",
+    "name": "雫石町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "shizukuishi-cho"
+  },
+  {
+    "jisCode": "033022",
+    "name": "葛巻町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "kuzumaki-machi"
+  },
+  {
+    "jisCode": "033031",
+    "name": "岩手町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "iwate-machi"
+  },
+  {
+    "jisCode": "033219",
+    "name": "紫波町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "shiwa-cho"
+  },
+  {
+    "jisCode": "033227",
+    "name": "矢巾町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "yahaba-cho"
+  },
+  {
+    "jisCode": "033669",
+    "name": "西和賀町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "nishiwaga-machi"
+  },
+  {
+    "jisCode": "033812",
+    "name": "金ケ崎町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "kanegasaki-cho"
+  },
+  {
+    "jisCode": "034029",
+    "name": "平泉町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "hiraizumi-cho"
+  },
+  {
+    "jisCode": "034410",
+    "name": "住田町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "sumita-cho"
+  },
+  {
+    "jisCode": "034614",
+    "name": "大槌町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "otsuchi-cho"
+  },
+  {
+    "jisCode": "034827",
+    "name": "山田町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "yamada-machi"
+  },
+  {
+    "jisCode": "034835",
+    "name": "岩泉町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "iwaizumi-cho"
+  },
+  {
+    "jisCode": "034851",
+    "name": "普代村",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "fudai-mura"
+  },
+  {
+    "jisCode": "035017",
+    "name": "軽米町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "karumai-machi"
+  },
+  {
+    "jisCode": "035033",
+    "name": "野田村",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "noda-mura"
+  },
+  {
+    "jisCode": "035068",
+    "name": "九戸村",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "kunohe-mura"
+  },
+  {
+    "jisCode": "035076",
+    "name": "洋野町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "hirono-cho"
+  },
+  {
+    "jisCode": "035246",
+    "name": "一戸町",
+    "prefectureName": "岩手県",
+    "municipalitySlug": "ichinohe-machi"
+  },
+  {
+    "jisCode": "042056",
+    "name": "気仙沼市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "kesennuma-shi"
+  },
+  {
+    "jisCode": "042064",
+    "name": "白石市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "shiroishi-shi"
+  },
+  {
+    "jisCode": "042111",
+    "name": "岩沼市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "iwanuma-shi"
+  },
+  {
+    "jisCode": "042145",
+    "name": "東松島市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "higashimatsushima-shi"
+  },
+  {
+    "jisCode": "042153",
+    "name": "大崎市",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "osaki-shi"
+  },
+  {
+    "jisCode": "043010",
+    "name": "蔵王町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "zao-machi"
+  },
+  {
+    "jisCode": "043028",
+    "name": "七ヶ宿町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "shichikashuku-machi"
+  },
+  {
+    "jisCode": "043222",
+    "name": "村田町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "murata-machi"
+  },
+  {
+    "jisCode": "043231",
+    "name": "柴田町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "shibata-machi"
+  },
+  {
+    "jisCode": "043249",
+    "name": "川崎町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "kawasaki-machi"
+  },
+  {
+    "jisCode": "043621",
+    "name": "山元町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "yamamoto-cho"
+  },
+  {
+    "jisCode": "044211",
+    "name": "大和町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "taiwa-cho"
+  },
+  {
+    "jisCode": "044229",
+    "name": "大郷町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "osato-cho"
+  },
+  {
+    "jisCode": "044245",
+    "name": "大衡村",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "ohira-mura"
+  },
+  {
+    "jisCode": "044440",
+    "name": "色麻町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "shikama-cho"
+  },
+  {
+    "jisCode": "045055",
+    "name": "美里町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "misato-machi"
+  },
+  {
+    "jisCode": "046060",
+    "name": "南三陸町",
+    "prefectureName": "宮城県",
+    "municipalitySlug": "minamisanriku-cho"
+  },
+  {
+    "jisCode": "052019",
+    "name": "秋田市",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "akita-shi"
+  },
+  {
+    "jisCode": "052060",
+    "name": "男鹿市",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "oga-shi"
+  },
+  {
+    "jisCode": "052116",
+    "name": "潟上市",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "katagami-shi"
+  },
+  {
+    "jisCode": "052159",
+    "name": "仙北市",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "senboku-shi"
+  },
+  {
+    "jisCode": "053031",
+    "name": "小坂町",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "kosaka-machi"
+  },
+  {
+    "jisCode": "053279",
+    "name": "上小阿仁村",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "kamikoani-mura"
+  },
+  {
+    "jisCode": "053465",
+    "name": "藤里町",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "fujisato-machi"
+  },
+  {
+    "jisCode": "053490",
+    "name": "八峰町",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "happo-cho"
+  },
+  {
+    "jisCode": "053635",
+    "name": "八郎潟町",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "hachirogata-machi"
+  },
+  {
+    "jisCode": "053660",
+    "name": "井川町",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "ikawa-machi"
+  },
+  {
+    "jisCode": "053686",
+    "name": "大潟村",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "ogata-mura"
+  },
+  {
+    "jisCode": "054640",
+    "name": "東成瀬村",
+    "prefectureName": "秋田県",
+    "municipalitySlug": "higashinaruse-mura"
+  },
+  {
+    "jisCode": "062022",
+    "name": "米沢市",
+    "prefectureName": "山形県",
+    "municipalitySlug": "yonezawa-shi"
+  },
+  {
+    "jisCode": "062081",
+    "name": "村山市",
+    "prefectureName": "山形県",
+    "municipalitySlug": "murayama-shi"
+  },
+  {
+    "jisCode": "062090",
+    "name": "長井市",
+    "prefectureName": "山形県",
+    "municipalitySlug": "nagai-shi"
+  },
+  {
+    "jisCode": "062120",
+    "name": "尾花沢市",
+    "prefectureName": "山形県",
+    "municipalitySlug": "obanazawa-shi"
+  },
+  {
+    "jisCode": "063011",
+    "name": "山辺町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "yamanobe-machi"
+  },
+  {
+    "jisCode": "063029",
+    "name": "中山町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "nakayama-machi"
+  },
+  {
+    "jisCode": "063215",
+    "name": "河北町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "kahoku-cho"
+  },
+  {
+    "jisCode": "063223",
+    "name": "西川町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "nishikawa-machi"
+  },
+  {
+    "jisCode": "063231",
+    "name": "朝日町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "asahi-machi"
+  },
+  {
+    "jisCode": "063240",
+    "name": "大江町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "oe-machi"
+  },
+  {
+    "jisCode": "063614",
+    "name": "金山町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "kaneyama-machi"
+  },
+  {
+    "jisCode": "063622",
+    "name": "最上町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "mogami-machi"
+  },
+  {
+    "jisCode": "063631",
+    "name": "舟形町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "funagata-machi"
+  },
+  {
+    "jisCode": "063649",
+    "name": "真室川町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "mamurogawa-machi"
+  },
+  {
+    "jisCode": "063673",
+    "name": "戸沢村",
+    "prefectureName": "山形県",
+    "municipalitySlug": "tozawa-mura"
+  },
+  {
+    "jisCode": "063819",
+    "name": "高畠町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "takahata-machi"
+  },
+  {
+    "jisCode": "064017",
+    "name": "小国町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "oguni-machi"
+  },
+  {
+    "jisCode": "064025",
+    "name": "白鷹町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "shirataka-machi"
+  },
+  {
+    "jisCode": "064033",
+    "name": "飯豊町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "iide-machi"
+  },
+  {
+    "jisCode": "064262",
+    "name": "三川町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "mikawa-machi"
+  },
+  {
+    "jisCode": "064611",
+    "name": "遊佐町",
+    "prefectureName": "山形県",
+    "municipalitySlug": "yuza-machi"
+  },
+  {
+    "jisCode": "072095",
+    "name": "相馬市",
+    "prefectureName": "福島県",
+    "municipalitySlug": "soma-shi"
+  },
+  {
+    "jisCode": "072133",
+    "name": "伊達市",
+    "prefectureName": "福島県",
+    "municipalitySlug": "date-shi"
+  },
+  {
+    "jisCode": "073440",
+    "name": "天栄村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "ten-ei-mura"
+  },
+  {
+    "jisCode": "073628",
+    "name": "下郷町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "shimogo-machi"
+  },
+  {
+    "jisCode": "073644",
+    "name": "檜枝岐村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "hinoemata-mura"
+  },
+  {
+    "jisCode": "073679",
+    "name": "只見町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "tadami-machi"
+  },
+  {
+    "jisCode": "074021",
+    "name": "北塩原村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "kitashiobara-mura"
+  },
+  {
+    "jisCode": "074055",
+    "name": "西会津町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "nishiaizu-machi"
+  },
+  {
+    "jisCode": "074071",
+    "name": "磐梯町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "bandai-machi"
+  },
+  {
+    "jisCode": "074217",
+    "name": "会津坂下町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "aizubange-machi"
+  },
+  {
+    "jisCode": "074233",
+    "name": "柳津町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "yanaizu-machi"
+  },
+  {
+    "jisCode": "074454",
+    "name": "金山町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "kaneyama-machi"
+  },
+  {
+    "jisCode": "074641",
+    "name": "泉崎村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "izumizaki-mura"
+  },
+  {
+    "jisCode": "074659",
+    "name": "中島村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "nakajima-mura"
+  },
+  {
+    "jisCode": "074845",
+    "name": "鮫川村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "samegawa-mura"
+  },
+  {
+    "jisCode": "075019",
+    "name": "石川町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "ishikawa-machi"
+  },
+  {
+    "jisCode": "075027",
+    "name": "玉川村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "tamakawa-mura"
+  },
+  {
+    "jisCode": "075035",
+    "name": "平田村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "hirata-mura"
+  },
+  {
+    "jisCode": "075043",
+    "name": "浅川町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "asakawa-machi"
+  },
+  {
+    "jisCode": "075051",
+    "name": "古殿町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "furudono-machi"
+  },
+  {
+    "jisCode": "075418",
+    "name": "広野町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "hirono-machi"
+  },
+  {
+    "jisCode": "075434",
+    "name": "富岡町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "tomioka-machi"
+  },
+  {
+    "jisCode": "075442",
+    "name": "川内村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "kawauchi-mura"
+  },
+  {
+    "jisCode": "075451",
+    "name": "大熊町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "okuma-machi"
+  },
+  {
+    "jisCode": "075477",
+    "name": "浪江町",
+    "prefectureName": "福島県",
+    "municipalitySlug": "namie-machi"
+  },
+  {
+    "jisCode": "075485",
+    "name": "葛尾村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "katsurao-mura"
+  },
+  {
+    "jisCode": "075647",
+    "name": "飯舘村",
+    "prefectureName": "福島県",
+    "municipalitySlug": "iitate-mura"
+  },
+  {
+    "jisCode": "082121",
+    "name": "常陸太田市",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "hitachiota-shi"
+  },
+  {
+    "jisCode": "082163",
+    "name": "笠間市",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "kasama-shi"
+  },
+  {
+    "jisCode": "082309",
+    "name": "かすみがうら市",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "kasumigaura-shi"
+  },
+  {
+    "jisCode": "082325",
+    "name": "神栖市",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "kamisu-shi"
+  },
+  {
+    "jisCode": "083020",
+    "name": "茨城町",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "ibaraki-machi"
+  },
+  {
+    "jisCode": "083097",
+    "name": "大洗町",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "oarai-machi"
+  },
+  {
+    "jisCode": "084425",
+    "name": "美浦村",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "miho-mura"
+  },
+  {
+    "jisCode": "084476",
+    "name": "河内町",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "kawachi-machi"
+  },
+  {
+    "jisCode": "085464",
+    "name": "境町",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "sakai-machi"
+  },
+  {
+    "jisCode": "085642",
+    "name": "利根町",
+    "prefectureName": "茨城県",
+    "municipalitySlug": "tone-machi"
+  },
+  {
+    "jisCode": "092118",
+    "name": "矢板市",
+    "prefectureName": "栃木県",
+    "municipalitySlug": "yaita-shi"
+  },
+  {
+    "jisCode": "093424",
+    "name": "益子町",
+    "prefectureName": "栃木県",
+    "municipalitySlug": "mashiko-machi"
+  },
+  {
+    "jisCode": "093441",
+    "name": "市貝町",
+    "prefectureName": "栃木県",
+    "municipalitySlug": "ichikai-machi"
+  },
+  {
+    "jisCode": "103446",
+    "name": "榛東村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "shinto-mura"
+  },
+  {
+    "jisCode": "103667",
+    "name": "上野村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "ueno-mura"
+  },
+  {
+    "jisCode": "104213",
+    "name": "中之条町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "nakanojo-machi"
+  },
+  {
+    "jisCode": "104248",
+    "name": "長野原町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "naganohara-machi"
+  },
+  {
+    "jisCode": "104256",
+    "name": "嬬恋村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "tsumagoi-mura"
+  },
+  {
+    "jisCode": "104264",
+    "name": "草津町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "kusatsu-machi"
+  },
+  {
+    "jisCode": "104281",
+    "name": "高山村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "takayama-mura"
+  },
+  {
+    "jisCode": "104434",
+    "name": "片品村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "katashina-mura"
+  },
+  {
+    "jisCode": "104442",
+    "name": "川場村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "kawaba-mura"
+  },
+  {
+    "jisCode": "104485",
+    "name": "昭和村",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "showa-mura"
+  },
+  {
+    "jisCode": "104493",
+    "name": "みなかみ町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "minakami-machi"
+  },
+  {
+    "jisCode": "104647",
+    "name": "玉村町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "tamamura-machi"
+  },
+  {
+    "jisCode": "105228",
+    "name": "明和町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "meiwa-machi"
+  },
+  {
+    "jisCode": "105236",
+    "name": "千代田町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "chiyoda-machi"
+  },
+  {
+    "jisCode": "105244",
+    "name": "大泉町",
+    "prefectureName": "群馬県",
+    "municipalitySlug": "oizumi-machi"
+  },
+  {
+    "jisCode": "111007",
+    "name": "さいたま市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "saitama-shi"
+  },
+  {
+    "jisCode": "112232",
+    "name": "蕨市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "warabi-shi"
+  },
+  {
+    "jisCode": "112241",
+    "name": "戸田市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "toda-shi"
+  },
+  {
+    "jisCode": "112313",
+    "name": "桶川市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "okegawa-shi"
+  },
+  {
+    "jisCode": "112372",
+    "name": "三郷市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "misato-shi"
+  },
+  {
+    "jisCode": "112381",
+    "name": "蓮田市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "hasuda-shi"
+  },
+  {
+    "jisCode": "112402",
+    "name": "幸手市",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "satte-shi"
+  },
+  {
+    "jisCode": "113018",
+    "name": "伊奈町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "ina-machi"
+  },
+  {
+    "jisCode": "113247",
+    "name": "三芳町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "miyoshi-machi"
+  },
+  {
+    "jisCode": "113263",
+    "name": "毛呂山町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "moroyama-machi"
+  },
+  {
+    "jisCode": "113271",
+    "name": "越生町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "ogose-machi"
+  },
+  {
+    "jisCode": "113417",
+    "name": "滑川町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "namegawa-machi"
+  },
+  {
+    "jisCode": "113425",
+    "name": "嵐山町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "ranzan-machi"
+  },
+  {
+    "jisCode": "113433",
+    "name": "小川町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "ogawa-machi"
+  },
+  {
+    "jisCode": "113468",
+    "name": "川島町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "kawajima-machi"
+  },
+  {
+    "jisCode": "113476",
+    "name": "吉見町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "yoshimi-machi"
+  },
+  {
+    "jisCode": "113484",
+    "name": "鳩山町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "hatoyama-machi"
+  },
+  {
+    "jisCode": "113492",
+    "name": "ときがわ町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "tokigawa-machi"
+  },
+  {
+    "jisCode": "113611",
+    "name": "横瀬町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "yokoze-machi"
+  },
+  {
+    "jisCode": "113620",
+    "name": "皆野町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "minano-machi"
+  },
+  {
+    "jisCode": "113638",
+    "name": "長瀞町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "nagatoro-machi"
+  },
+  {
+    "jisCode": "113654",
+    "name": "小鹿野町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "ogano-machi"
+  },
+  {
+    "jisCode": "113697",
+    "name": "東秩父村",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "higashichichibu-mura"
+  },
+  {
+    "jisCode": "113816",
+    "name": "美里町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "misato-machi"
+  },
+  {
+    "jisCode": "113832",
+    "name": "神川町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "kamikawa-machi"
+  },
+  {
+    "jisCode": "113859",
+    "name": "上里町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "kamisato-machi"
+  },
+  {
+    "jisCode": "114081",
+    "name": "寄居町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "yorii-machi"
+  },
+  {
+    "jisCode": "114421",
+    "name": "宮代町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "miyashiro-machi"
+  },
+  {
+    "jisCode": "114642",
+    "name": "杉戸町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "sugito-machi"
+  },
+  {
+    "jisCode": "114651",
+    "name": "松伏町",
+    "prefectureName": "埼玉県",
+    "municipalitySlug": "matsubushi-machi"
+  },
+  {
+    "jisCode": "122076",
+    "name": "松戸市",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "matsudo-shi"
+  },
+  {
+    "jisCode": "122122",
+    "name": "佐倉市",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "sakura-shi"
+  },
+  {
+    "jisCode": "122335",
+    "name": "富里市",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "tomisato-shi"
+  },
+  {
+    "jisCode": "123226",
+    "name": "酒々井町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "shisui-machi"
+  },
+  {
+    "jisCode": "123421",
+    "name": "神崎町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "kozaki-machi"
+  },
+  {
+    "jisCode": "123498",
+    "name": "東庄町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "tonosho-machi"
+  },
+  {
+    "jisCode": "124095",
+    "name": "芝山町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "shibayama-machi"
+  },
+  {
+    "jisCode": "124222",
+    "name": "睦沢町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "mutsuzawa-machi"
+  },
+  {
+    "jisCode": "124231",
+    "name": "長生村",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "chosei-mura"
+  },
+  {
+    "jisCode": "124265",
+    "name": "長柄町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "nagara-machi"
+  },
+  {
+    "jisCode": "124419",
+    "name": "大多喜町",
+    "prefectureName": "千葉県",
+    "municipalitySlug": "otaki-machi"
+  },
+  {
+    "jisCode": "131016",
+    "name": "千代田区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "chiyoda-ku"
+  },
+  {
+    "jisCode": "131024",
+    "name": "中央区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "chuo-ku"
+  },
+  {
+    "jisCode": "131130",
+    "name": "渋谷区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "shibuya-ku"
+  },
+  {
+    "jisCode": "131156",
+    "name": "杉並区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "suginami-ku"
+  },
+  {
+    "jisCode": "131229",
+    "name": "葛飾区",
+    "prefectureName": "東京都",
+    "municipalitySlug": "katsushika-ku"
+  },
+  {
+    "jisCode": "132080",
+    "name": "調布市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "chofu-shi"
+  },
+  {
+    "jisCode": "132101",
+    "name": "小金井市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "koganei-shi"
+  },
+  {
+    "jisCode": "132144",
+    "name": "国分寺市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "kokubunji-shi"
+  },
+  {
+    "jisCode": "132152",
+    "name": "国立市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "kunitachi-shi"
+  },
+  {
+    "jisCode": "132233",
+    "name": "武蔵村山市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "musashimurayama-shi"
+  },
+  {
+    "jisCode": "132250",
+    "name": "稲城市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "inagi-shi"
+  },
+  {
+    "jisCode": "132292",
+    "name": "西東京市",
+    "prefectureName": "東京都",
+    "municipalitySlug": "nishitokyo-shi"
+  },
+  {
+    "jisCode": "133035",
+    "name": "瑞穂町",
+    "prefectureName": "東京都",
+    "municipalitySlug": "mizuho-machi"
+  },
+  {
+    "jisCode": "133078",
+    "name": "檜原村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "hinohara-mura"
+  },
+  {
+    "jisCode": "133612",
+    "name": "大島町",
+    "prefectureName": "東京都",
+    "municipalitySlug": "oshima-machi"
+  },
+  {
+    "jisCode": "133621",
+    "name": "利島村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "toshima-mura"
+  },
+  {
+    "jisCode": "133639",
+    "name": "新島村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "niijima-mura"
+  },
+  {
+    "jisCode": "133647",
+    "name": "神津島村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "kozushima-mura"
+  },
+  {
+    "jisCode": "133825",
+    "name": "御蔵島村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "mikurajima-mura"
+  },
+  {
+    "jisCode": "134023",
+    "name": "青ヶ島村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "aogashima"
+  },
+  {
+    "jisCode": "134210",
+    "name": "小笠原村",
+    "prefectureName": "東京都",
+    "municipalitySlug": "ogasawara-mura"
+  },
+  {
+    "jisCode": "143219",
+    "name": "寒川町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "samukawa-machi"
+  },
+  {
+    "jisCode": "143413",
+    "name": "大磯町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "oiso-machi"
+  },
+  {
+    "jisCode": "143634",
+    "name": "松田町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "matsuda-machi"
+  },
+  {
+    "jisCode": "143669",
+    "name": "開成町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "kaisei-machi"
+  },
+  {
+    "jisCode": "143821",
+    "name": "箱根町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "hakone-machi"
+  },
+  {
+    "jisCode": "143839",
+    "name": "真鶴町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "manazuru-machi"
+  },
+  {
+    "jisCode": "144011",
+    "name": "愛川町",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "aikawa-machi"
+  },
+  {
+    "jisCode": "144029",
+    "name": "清川村",
+    "prefectureName": "神奈川県",
+    "municipalitySlug": "kiyokawa-mura"
+  },
+  {
+    "jisCode": "151009",
+    "name": "新潟市",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "niigata-shi"
+  },
+  {
+    "jisCode": "152021",
+    "name": "長岡市",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "nagaoka-shi"
+  },
+  {
+    "jisCode": "152102",
+    "name": "十日町市",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "tokamachi-shi"
+  },
+  {
+    "jisCode": "153079",
+    "name": "聖籠町",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "seiro-machi"
+  },
+  {
+    "jisCode": "153427",
+    "name": "弥彦村",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "yahiko-mura"
+  },
+  {
+    "jisCode": "153613",
+    "name": "田上町",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "tagami-machi"
+  },
+  {
+    "jisCode": "155811",
+    "name": "関川村",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "sekikawa-mura"
+  },
+  {
+    "jisCode": "155861",
+    "name": "粟島浦村",
+    "prefectureName": "新潟県",
+    "municipalitySlug": "awashimaura-mura"
+  },
+  {
+    "jisCode": "162019",
+    "name": "富山市",
+    "prefectureName": "富山県",
+    "municipalitySlug": "toyama-shi"
+  },
+  {
+    "jisCode": "162060",
+    "name": "滑川市",
+    "prefectureName": "富山県",
+    "municipalitySlug": "namerikawa-shi"
+  },
+  {
+    "jisCode": "163210",
+    "name": "舟橋村",
+    "prefectureName": "富山県",
+    "municipalitySlug": "funahashi-mura"
+  },
+  {
+    "jisCode": "163236",
+    "name": "立山町",
+    "prefectureName": "富山県",
+    "municipalitySlug": "tateyama-machi"
+  },
+  {
+    "jisCode": "163431",
+    "name": "朝日町",
+    "prefectureName": "富山県",
+    "municipalitySlug": "asahi-machi"
+  },
+  {
+    "jisCode": "172014",
+    "name": "金沢市",
+    "prefectureName": "石川県",
+    "municipalitySlug": "kanazawa-shi"
+  },
+  {
+    "jisCode": "172057",
+    "name": "珠洲市",
+    "prefectureName": "石川県",
+    "municipalitySlug": "suzu-shi"
+  },
+  {
+    "jisCode": "173240",
+    "name": "川北町",
+    "prefectureName": "石川県",
+    "municipalitySlug": "kawakita-machi"
+  },
+  {
+    "jisCode": "173614",
+    "name": "津幡町",
+    "prefectureName": "石川県",
+    "municipalitySlug": "tsubata-machi"
+  },
+  {
+    "jisCode": "174611",
+    "name": "穴水町",
+    "prefectureName": "石川県",
+    "municipalitySlug": "anamizu-machi"
+  },
+  {
+    "jisCode": "182044",
+    "name": "小浜市",
+    "prefectureName": "福井県",
+    "municipalitySlug": "obama-shi"
+  },
+  {
+    "jisCode": "182079",
+    "name": "鯖江市",
+    "prefectureName": "福井県",
+    "municipalitySlug": "sabae-shi"
+  },
+  {
+    "jisCode": "183229",
+    "name": "永平寺町",
+    "prefectureName": "福井県",
+    "municipalitySlug": "eiheiji-cho"
+  },
+  {
+    "jisCode": "183822",
+    "name": "池田町",
+    "prefectureName": "福井県",
+    "municipalitySlug": "ikeda-cho"
+  },
+  {
+    "jisCode": "184811",
+    "name": "高浜町",
+    "prefectureName": "福井県",
+    "municipalitySlug": "takahama-cho"
+  },
+  {
+    "jisCode": "184837",
+    "name": "おおい町",
+    "prefectureName": "福井県",
+    "municipalitySlug": "oi-cho"
+  },
+  {
+    "jisCode": "185019",
+    "name": "若狭町",
+    "prefectureName": "福井県",
+    "municipalitySlug": "wakasa-cho"
+  },
+  {
+    "jisCode": "192023",
+    "name": "富士吉田市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "fujiyoshida-shi"
+  },
+  {
+    "jisCode": "192058",
+    "name": "山梨市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "yamanashi-shi"
+  },
+  {
+    "jisCode": "192074",
+    "name": "韮崎市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "nirasaki-shi"
+  },
+  {
+    "jisCode": "192091",
+    "name": "北杜市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "hokuto-shi"
+  },
+  {
+    "jisCode": "192112",
+    "name": "笛吹市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "fuefuki-shi"
+  },
+  {
+    "jisCode": "192121",
+    "name": "上野原市",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "uenohara-shi"
+  },
+  {
+    "jisCode": "193640",
+    "name": "早川町",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "hayakawa-cho"
+  },
+  {
+    "jisCode": "193666",
+    "name": "南部町",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "nanbu-cho"
+  },
+  {
+    "jisCode": "193844",
+    "name": "昭和町",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "showa-cho"
+  },
+  {
+    "jisCode": "194221",
+    "name": "道志村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "doshi-mura"
+  },
+  {
+    "jisCode": "194239",
+    "name": "西桂町",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "nishikatsura-cho"
+  },
+  {
+    "jisCode": "194247",
+    "name": "忍野村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "oshino-mura"
+  },
+  {
+    "jisCode": "194255",
+    "name": "山中湖村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "yamanakako-mura"
+  },
+  {
+    "jisCode": "194298",
+    "name": "鳴沢村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "narusawa-mura"
+  },
+  {
+    "jisCode": "194425",
+    "name": "小菅村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "kosuge-mura"
+  },
+  {
+    "jisCode": "194433",
+    "name": "丹波山村",
+    "prefectureName": "山梨県",
+    "municipalitySlug": "tabayama-mura"
+  },
+  {
+    "jisCode": "202045",
+    "name": "岡谷市",
+    "prefectureName": "長野県",
+    "municipalitySlug": "okaya-shi"
+  },
+  {
+    "jisCode": "202151",
+    "name": "塩尻市",
+    "prefectureName": "長野県",
+    "municipalitySlug": "shiojiri-shi"
+  },
+  {
+    "jisCode": "203033",
+    "name": "小海町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "koumi-machi"
+  },
+  {
+    "jisCode": "203050",
+    "name": "南牧村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "minamimaki-mura"
+  },
+  {
+    "jisCode": "203068",
+    "name": "南相木村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "minamiaiki-mura"
+  },
+  {
+    "jisCode": "203076",
+    "name": "北相木村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "kitaaiki-mura"
+  },
+  {
+    "jisCode": "203092",
+    "name": "佐久穂町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "sakuho-machi"
+  },
+  {
+    "jisCode": "203211",
+    "name": "軽井沢町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "karuizawa-machi"
+  },
+  {
+    "jisCode": "203238",
+    "name": "御代田町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "miyota-machi"
+  },
+  {
+    "jisCode": "203246",
+    "name": "立科町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "tateshina-machi"
+  },
+  {
+    "jisCode": "203491",
+    "name": "青木村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "aoki-mura"
+  },
+  {
+    "jisCode": "203505",
+    "name": "長和町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "nagawa-machi"
+  },
+  {
+    "jisCode": "203831",
+    "name": "箕輪町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "minowa-machi"
+  },
+  {
+    "jisCode": "203840",
+    "name": "飯島町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "iijima-machi"
+  },
+  {
+    "jisCode": "203858",
+    "name": "南箕輪村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "minamiminowa-mura"
+  },
+  {
+    "jisCode": "203866",
+    "name": "中川村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "nakagawa-mura"
+  },
+  {
+    "jisCode": "203882",
+    "name": "宮田村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "miyada-mura"
+  },
+  {
+    "jisCode": "204030",
+    "name": "高森町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "takamori-machi"
+  },
+  {
+    "jisCode": "204048",
+    "name": "阿南町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "anan-cho"
+  },
+  {
+    "jisCode": "204072",
+    "name": "阿智村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "achi-mura"
+  },
+  {
+    "jisCode": "204099",
+    "name": "平谷村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "hiraya-mura"
+  },
+  {
+    "jisCode": "204102",
+    "name": "根羽村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "neba-mura"
+  },
+  {
+    "jisCode": "204111",
+    "name": "下條村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "shimojo-mura"
+  },
+  {
+    "jisCode": "204129",
+    "name": "売木村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "urugi-mura"
+  },
+  {
+    "jisCode": "204145",
+    "name": "泰阜村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "yasuoka-mura"
+  },
+  {
+    "jisCode": "204153",
+    "name": "喬木村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "takagi-mura"
+  },
+  {
+    "jisCode": "204161",
+    "name": "豊丘村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "toyooka-mura"
+  },
+  {
+    "jisCode": "204170",
+    "name": "大鹿村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "oshika-mura"
+  },
+  {
+    "jisCode": "204293",
+    "name": "王滝村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "otaki-mura"
+  },
+  {
+    "jisCode": "204307",
+    "name": "大桑村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "okuwa-mura"
+  },
+  {
+    "jisCode": "204480",
+    "name": "生坂村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "ikusaka-mura"
+  },
+  {
+    "jisCode": "204501",
+    "name": "山形村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "yamagata-mura"
+  },
+  {
+    "jisCode": "204528",
+    "name": "筑北村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "chikuhoku-mura"
+  },
+  {
+    "jisCode": "204811",
+    "name": "池田町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "ikeda-machi"
+  },
+  {
+    "jisCode": "204820",
+    "name": "松川村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "matsukawa-mura"
+  },
+  {
+    "jisCode": "204854",
+    "name": "白馬村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "hakuba-mura"
+  },
+  {
+    "jisCode": "204862",
+    "name": "小谷村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "otari-mura"
+  },
+  {
+    "jisCode": "205435",
+    "name": "高山村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "takayama-mura"
+  },
+  {
+    "jisCode": "205613",
+    "name": "山ノ内町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "yamanouchi-machi"
+  },
+  {
+    "jisCode": "205834",
+    "name": "信濃町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "shinano-machi"
+  },
+  {
+    "jisCode": "205885",
+    "name": "小川村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "ogawa-mura"
+  },
+  {
+    "jisCode": "205907",
+    "name": "飯綱町",
+    "prefectureName": "長野県",
+    "municipalitySlug": "iizuna-machi"
+  },
+  {
+    "jisCode": "206024",
+    "name": "栄村",
+    "prefectureName": "長野県",
+    "municipalitySlug": "sakae-mura"
+  },
+  {
+    "jisCode": "212164",
+    "name": "瑞穂市",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "mizuho-shi"
+  },
+  {
+    "jisCode": "212199",
+    "name": "郡上市",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "gujo-shi"
+  },
+  {
+    "jisCode": "212211",
+    "name": "海津市",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "kaizu-shi"
+  },
+  {
+    "jisCode": "213039",
+    "name": "笠松町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "kasamatsu-cho"
+  },
+  {
+    "jisCode": "213411",
+    "name": "養老町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "yoro-cho"
+  },
+  {
+    "jisCode": "213829",
+    "name": "輪之内町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "wanouchi-cho"
+  },
+  {
+    "jisCode": "213837",
+    "name": "安八町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "anpachi-cho"
+  },
+  {
+    "jisCode": "214019",
+    "name": "揖斐川町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "ibigawa-cho"
+  },
+  {
+    "jisCode": "214043",
+    "name": "池田町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "ikeda-cho"
+  },
+  {
+    "jisCode": "215023",
+    "name": "富加町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "tomika-cho"
+  },
+  {
+    "jisCode": "215058",
+    "name": "八百津町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "yaotsu-cho"
+  },
+  {
+    "jisCode": "215066",
+    "name": "白川町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "shirakawa-cho"
+  },
+  {
+    "jisCode": "215074",
+    "name": "東白川村",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "higashishirakawa-mura"
+  },
+  {
+    "jisCode": "215210",
+    "name": "御嵩町",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "mitake-cho"
+  },
+  {
+    "jisCode": "216046",
+    "name": "白川村",
+    "prefectureName": "岐阜県",
+    "municipalitySlug": "shirakawa-mura"
+  },
+  {
+    "jisCode": "221007",
+    "name": "静岡市",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "shizuoka-shi"
+  },
+  {
+    "jisCode": "221309",
+    "name": "浜松市",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "hamamatsu-shi"
+  },
+  {
+    "jisCode": "222097",
+    "name": "島田市",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "shimada-shi"
+  },
+  {
+    "jisCode": "222216",
+    "name": "湖西市",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "kosai-shi"
+  },
+  {
+    "jisCode": "222241",
+    "name": "菊川市",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "kikugawa-shi"
+  },
+  {
+    "jisCode": "223018",
+    "name": "東伊豆町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "higashiizu-cho"
+  },
+  {
+    "jisCode": "223026",
+    "name": "河津町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "kawazu-cho"
+  },
+  {
+    "jisCode": "223069",
+    "name": "西伊豆町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "nishiizu-cho"
+  },
+  {
+    "jisCode": "223417",
+    "name": "清水町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "shimizu-cho"
+  },
+  {
+    "jisCode": "224294",
+    "name": "川根本町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "kawanehon-cho"
+  },
+  {
+    "jisCode": "224618",
+    "name": "森町",
+    "prefectureName": "静岡県",
+    "municipalitySlug": "mori-machi"
+  },
+  {
+    "jisCode": "232076",
+    "name": "豊川市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "toyokawa-shi"
+  },
+  {
+    "jisCode": "232238",
+    "name": "大府市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "obu-shi"
+  },
+  {
+    "jisCode": "232254",
+    "name": "知立市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "chiryu-shi"
+  },
+  {
+    "jisCode": "232271",
+    "name": "高浜市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "takahama-shi"
+  },
+  {
+    "jisCode": "232289",
+    "name": "岩倉市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "iwakura-shi"
+  },
+  {
+    "jisCode": "232335",
+    "name": "清須市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "kiyosu-shi"
+  },
+  {
+    "jisCode": "232386",
+    "name": "長久手市",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "nagakute-shi"
+  },
+  {
+    "jisCode": "233421",
+    "name": "豊山町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "toyoyama-cho"
+  },
+  {
+    "jisCode": "233617",
+    "name": "大口町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "oguchi-cho"
+  },
+  {
+    "jisCode": "233625",
+    "name": "扶桑町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "fuso-cho"
+  },
+  {
+    "jisCode": "234249",
+    "name": "大治町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "oharu-cho"
+  },
+  {
+    "jisCode": "234273",
+    "name": "飛島村",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "tobishima-mura"
+  },
+  {
+    "jisCode": "234460",
+    "name": "美浜町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "mihama-cho"
+  },
+  {
+    "jisCode": "235610",
+    "name": "設楽町",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "shitara-cho"
+  },
+  {
+    "jisCode": "235636",
+    "name": "豊根村",
+    "prefectureName": "愛知県",
+    "municipalitySlug": "toyone-mura"
+  },
+  {
+    "jisCode": "243035",
+    "name": "木曽岬町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "kisosaki-cho"
+  },
+  {
+    "jisCode": "243248",
+    "name": "東員町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "toin-cho"
+  },
+  {
+    "jisCode": "243434",
+    "name": "朝日町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "asahi-cho"
+  },
+  {
+    "jisCode": "243442",
+    "name": "川越町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "kawagoe-cho"
+  },
+  {
+    "jisCode": "244414",
+    "name": "多気町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "taki-cho"
+  },
+  {
+    "jisCode": "244422",
+    "name": "明和町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "meiwa-cho"
+  },
+  {
+    "jisCode": "244431",
+    "name": "大台町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "odai-cho"
+  },
+  {
+    "jisCode": "244619",
+    "name": "玉城町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "tamaki-cho"
+  },
+  {
+    "jisCode": "244708",
+    "name": "度会町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "watarai-cho"
+  },
+  {
+    "jisCode": "244716",
+    "name": "大紀町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "taiki-cho"
+  },
+  {
+    "jisCode": "245437",
+    "name": "紀北町",
+    "prefectureName": "三重県",
+    "municipalitySlug": "kihoku-cho"
+  },
+  {
+    "jisCode": "312029",
+    "name": "米子市",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "yonago-shi"
+  },
+  {
+    "jisCode": "313254",
+    "name": "若桜町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "wakasa-cho"
+  },
+  {
+    "jisCode": "313289",
+    "name": "智頭町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "chizu-cho"
+  },
+  {
+    "jisCode": "313297",
+    "name": "八頭町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "yazu-cho"
+  },
+  {
+    "jisCode": "313645",
+    "name": "三朝町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "misasa-cho"
+  },
+  {
+    "jisCode": "313840",
+    "name": "日吉津村",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "hiezu-son"
+  },
+  {
+    "jisCode": "313866",
+    "name": "大山町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "daisen-cho"
+  },
+  {
+    "jisCode": "313891",
+    "name": "南部町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "nanbu-cho"
+  },
+  {
+    "jisCode": "313904",
+    "name": "伯耆町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "hoki-cho"
+  },
+  {
+    "jisCode": "314021",
+    "name": "日野町",
+    "prefectureName": "鳥取県",
+    "municipalitySlug": "hino-cho"
+  },
+  {
+    "jisCode": "322067",
+    "name": "安来市",
+    "prefectureName": "島根県",
+    "municipalitySlug": "yasugi-shi"
+  },
+  {
+    "jisCode": "324485",
+    "name": "美郷町",
+    "prefectureName": "島根県",
+    "municipalitySlug": "misato-cho"
+  },
+  {
+    "jisCode": "325252",
+    "name": "海士町",
+    "prefectureName": "島根県",
+    "municipalitySlug": "ama-cho"
+  },
+  {
+    "jisCode": "325261",
+    "name": "西ノ島町",
+    "prefectureName": "島根県",
+    "municipalitySlug": "nishinoshima-cho"
+  },
+  {
+    "jisCode": "325279",
+    "name": "知夫村",
+    "prefectureName": "島根県",
+    "municipalitySlug": "chibu-mura"
+  },
+  {
+    "jisCode": "332135",
+    "name": "赤磐市",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "akaiwa-shi"
+  },
+  {
+    "jisCode": "333468",
+    "name": "和気町",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "wake-cho"
+  },
+  {
+    "jisCode": "334235",
+    "name": "早島町",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "hayashima-cho"
+  },
+  {
+    "jisCode": "334456",
+    "name": "里庄町",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "satosho-cho"
+  },
+  {
+    "jisCode": "335860",
+    "name": "新庄村",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "shinjo-son"
+  },
+  {
+    "jisCode": "336238",
+    "name": "奈義町",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "nagi-cho"
+  },
+  {
+    "jisCode": "336432",
+    "name": "西粟倉村",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "nishiawakura-son"
+  },
+  {
+    "jisCode": "336637",
+    "name": "久米南町",
+    "prefectureName": "岡山県",
+    "municipalitySlug": "kumenan-cho"
+  },
+  {
+    "jisCode": "342084",
+    "name": "府中市",
+    "prefectureName": "広島県",
+    "municipalitySlug": "fuchu-shi"
+  },
+  {
+    "jisCode": "343072",
+    "name": "熊野町",
+    "prefectureName": "広島県",
+    "municipalitySlug": "kumano-cho"
+  },
+  {
+    "jisCode": "344311",
+    "name": "大崎上島町",
+    "prefectureName": "広島県",
+    "municipalitySlug": "osakikamijima-cho"
+  },
+  {
+    "jisCode": "352012",
+    "name": "下関市",
+    "prefectureName": "山口県",
+    "municipalitySlug": "shimonoseki-shi"
+  },
+  {
+    "jisCode": "353213",
+    "name": "和木町",
+    "prefectureName": "山口県",
+    "municipalitySlug": "waki-cho"
+  },
+  {
+    "jisCode": "362018",
+    "name": "徳島市",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "tokushima-shi"
+  },
+  {
+    "jisCode": "362069",
+    "name": "阿波市",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "awa-shi"
+  },
+  {
+    "jisCode": "363014",
+    "name": "勝浦町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "katsuura-cho"
+  },
+  {
+    "jisCode": "363022",
+    "name": "上勝町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "kamikatsu-cho"
+  },
+  {
+    "jisCode": "363219",
+    "name": "佐那河内村",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "sanagochi-son"
+  },
+  {
+    "jisCode": "363413",
+    "name": "石井町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "ishii-cho"
+  },
+  {
+    "jisCode": "363871",
+    "name": "美波町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "minami-cho"
+  },
+  {
+    "jisCode": "363880",
+    "name": "海陽町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "kaiyo-cho"
+  },
+  {
+    "jisCode": "364011",
+    "name": "松茂町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "matsushige-cho"
+  },
+  {
+    "jisCode": "364029",
+    "name": "北島町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "kitajima-cho"
+  },
+  {
+    "jisCode": "364037",
+    "name": "藍住町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "aizumi-cho"
+  },
+  {
+    "jisCode": "364045",
+    "name": "板野町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "itano-cho"
+  },
+  {
+    "jisCode": "364053",
+    "name": "上板町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "kamiita-cho"
+  },
+  {
+    "jisCode": "364681",
+    "name": "つるぎ町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "tsurugi-cho"
+  },
+  {
+    "jisCode": "364894",
+    "name": "東みよし町",
+    "prefectureName": "徳島県",
+    "municipalitySlug": "higashimiyoshi-cho"
+  },
+  {
+    "jisCode": "372030",
+    "name": "坂出市",
+    "prefectureName": "香川県",
+    "municipalitySlug": "sakaide-shi"
+  },
+  {
+    "jisCode": "373648",
+    "name": "直島町",
+    "prefectureName": "香川県",
+    "municipalitySlug": "naoshima-cho"
+  },
+  {
+    "jisCode": "373869",
+    "name": "宇多津町",
+    "prefectureName": "香川県",
+    "municipalitySlug": "utazu-cho"
+  },
+  {
+    "jisCode": "373877",
+    "name": "綾川町",
+    "prefectureName": "香川県",
+    "municipalitySlug": "ayagawa-cho"
+  },
+  {
+    "jisCode": "374032",
+    "name": "琴平町",
+    "prefectureName": "香川県",
+    "municipalitySlug": "kotohira-cho"
+  },
+  {
+    "jisCode": "374067",
+    "name": "まんのう町",
+    "prefectureName": "香川県",
+    "municipalitySlug": "manno-cho"
+  },
+  {
+    "jisCode": "383864",
+    "name": "久万高原町",
+    "prefectureName": "愛媛県",
+    "municipalitySlug": "kumakogen-cho"
+  },
+  {
+    "jisCode": "384011",
+    "name": "松前町",
+    "prefectureName": "愛媛県",
+    "municipalitySlug": "masaki-cho"
+  },
+  {
+    "jisCode": "384020",
+    "name": "砥部町",
+    "prefectureName": "愛媛県",
+    "municipalitySlug": "tobe-cho"
+  },
+  {
+    "jisCode": "385069",
+    "name": "愛南町",
+    "prefectureName": "愛媛県",
+    "municipalitySlug": "ainan-cho"
+  },
+  {
+    "jisCode": "392031",
+    "name": "安芸市",
+    "prefectureName": "高知県",
+    "municipalitySlug": "aki-shi"
+  },
+  {
+    "jisCode": "392049",
+    "name": "南国市",
+    "prefectureName": "高知県",
+    "municipalitySlug": "nankoku-shi"
+  },
+  {
+    "jisCode": "392090",
+    "name": "土佐清水市",
+    "prefectureName": "高知県",
+    "municipalitySlug": "tosashimizu-shi"
+  },
+  {
+    "jisCode": "392103",
+    "name": "四万十市",
+    "prefectureName": "高知県",
+    "municipalitySlug": "shimanto-shi"
+  },
+  {
+    "jisCode": "393053",
+    "name": "北川村",
+    "prefectureName": "高知県",
+    "municipalitySlug": "kitagawa-mura"
+  },
+  {
+    "jisCode": "393070",
+    "name": "芸西村",
+    "prefectureName": "高知県",
+    "municipalitySlug": "geisei-mura"
+  },
+  {
+    "jisCode": "393410",
+    "name": "本山町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "motoyama-cho"
+  },
+  {
+    "jisCode": "393649",
+    "name": "大川村",
+    "prefectureName": "高知県",
+    "municipalitySlug": "okawa-mura"
+  },
+  {
+    "jisCode": "393878",
+    "name": "仁淀川町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "niyodogawa-cho"
+  },
+  {
+    "jisCode": "394017",
+    "name": "中土佐町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "nakatosa-cho"
+  },
+  {
+    "jisCode": "394033",
+    "name": "越知町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "ochi-cho"
+  },
+  {
+    "jisCode": "394050",
+    "name": "梼原町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "yusuhara-machi"
+  },
+  {
+    "jisCode": "394114",
+    "name": "津野町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "tsuno-cho"
+  },
+  {
+    "jisCode": "394246",
+    "name": "大月町",
+    "prefectureName": "高知県",
+    "municipalitySlug": "otsuki-cho"
+  },
+  {
+    "jisCode": "394271",
+    "name": "三原村",
+    "prefectureName": "高知県",
+    "municipalitySlug": "mihara-mura"
+  },
+  {
+    "jisCode": "403059",
+    "name": "那珂川町",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "nakagawa-machi"
+  },
+  {
+    "jisCode": "404471",
+    "name": "筑前町",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "chikuzen-machi"
+  },
+  {
+    "jisCode": "404489",
+    "name": "東峰村",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "toho-mura"
+  },
+  {
+    "jisCode": "405442",
+    "name": "広川町",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "hirokawa-machi"
+  },
+  {
+    "jisCode": "406058",
+    "name": "川崎町",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "kawasaki-machi"
+  },
+  {
+    "jisCode": "406091",
+    "name": "赤村",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "akamura"
+  },
+  {
+    "jisCode": "406465",
+    "name": "上毛町",
+    "prefectureName": "福岡県",
+    "municipalitySlug": "koge-machi"
+  },
+  {
+    "jisCode": "422126",
+    "name": "西海市",
+    "prefectureName": "長崎県",
+    "municipalitySlug": "saikai-shi"
+  },
+  {
+    "jisCode": "422142",
+    "name": "南島原市",
+    "prefectureName": "長崎県",
+    "municipalitySlug": "minamishimabara-shi"
+  },
+  {
+    "jisCode": "423084",
+    "name": "時津町",
+    "prefectureName": "長崎県",
+    "municipalitySlug": "togitsu-cho"
+  },
+  {
+    "jisCode": "432059",
+    "name": "水俣市",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "minamata-shi"
+  },
+  {
+    "jisCode": "432083",
+    "name": "山鹿市",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "yamaga-shi"
+  },
+  {
+    "jisCode": "433489",
+    "name": "美里町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "misato-machi"
+  },
+  {
+    "jisCode": "433641",
+    "name": "玉東町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "gyokuto-machi"
+  },
+  {
+    "jisCode": "433691",
+    "name": "和水町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "nagomi-machi"
+  },
+  {
+    "jisCode": "434035",
+    "name": "大津町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "ozu-machi"
+  },
+  {
+    "jisCode": "434043",
+    "name": "菊陽町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "kikuyo-machi"
+  },
+  {
+    "jisCode": "434248",
+    "name": "小国町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "oguni-machi"
+  },
+  {
+    "jisCode": "434256",
+    "name": "産山村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "ubuyama-mura"
+  },
+  {
+    "jisCode": "434281",
+    "name": "高森町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "takamori-machi"
+  },
+  {
+    "jisCode": "434329",
+    "name": "西原村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "nishihara-mura"
+  },
+  {
+    "jisCode": "434337",
+    "name": "南阿蘇村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "minamiaso-mura"
+  },
+  {
+    "jisCode": "434477",
+    "name": "山都町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "yamato-cho"
+  },
+  {
+    "jisCode": "434680",
+    "name": "氷川町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "hikawa-cho"
+  },
+  {
+    "jisCode": "434825",
+    "name": "芦北町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "ashikita-machi"
+  },
+  {
+    "jisCode": "435015",
+    "name": "錦町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "nishiki-machi"
+  },
+  {
+    "jisCode": "435074",
+    "name": "水上村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "mizukami-mura"
+  },
+  {
+    "jisCode": "435112",
+    "name": "五木村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "itsuki-mura"
+  },
+  {
+    "jisCode": "435121",
+    "name": "山江村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "yamae-mura"
+  },
+  {
+    "jisCode": "435139",
+    "name": "球磨村",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "kuma-mura"
+  },
+  {
+    "jisCode": "435317",
+    "name": "苓北町",
+    "prefectureName": "熊本県",
+    "municipalitySlug": "reihoku-machi"
+  },
+  {
+    "jisCode": "442089",
+    "name": "竹田市",
+    "prefectureName": "大分県",
+    "municipalitySlug": "taketa-shi"
+  },
+  {
+    "jisCode": "443221",
+    "name": "姫島村",
+    "prefectureName": "大分県",
+    "municipalitySlug": "himeshima-mura"
+  },
+  {
+    "jisCode": "443417",
+    "name": "日出町",
+    "prefectureName": "大分県",
+    "municipalitySlug": "hiji-machi"
+  },
+  {
+    "jisCode": "453820",
+    "name": "国富町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "kunitomi-cho"
+  },
+  {
+    "jisCode": "453838",
+    "name": "綾町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "aya-cho"
+  },
+  {
+    "jisCode": "454036",
+    "name": "西米良村",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "nishimera-son"
+  },
+  {
+    "jisCode": "454044",
+    "name": "木城町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "kijo-cho"
+  },
+  {
+    "jisCode": "454214",
+    "name": "門川町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "kadogawa-cho"
+  },
+  {
+    "jisCode": "454290",
+    "name": "諸塚村",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "morotsuka-son"
+  },
+  {
+    "jisCode": "454303",
+    "name": "椎葉村",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "shiiba-son"
+  },
+  {
+    "jisCode": "454311",
+    "name": "美郷町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "misato-cho"
+  },
+  {
+    "jisCode": "454419",
+    "name": "高千穂町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "takachiho-cho"
+  },
+  {
+    "jisCode": "454427",
+    "name": "日之影町",
+    "prefectureName": "宮崎県",
+    "municipalitySlug": "hinokage-cho"
+  },
+  {
+    "jisCode": "462080",
+    "name": "出水市",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "izumi-shi"
+  },
+  {
+    "jisCode": "462161",
+    "name": "日置市",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "hioki-shi"
+  },
+  {
+    "jisCode": "462195",
+    "name": "いちき串木野市",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "ichikikushikino-shi"
+  },
+  {
+    "jisCode": "463035",
+    "name": "三島村",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "mishima-mura"
+  },
+  {
+    "jisCode": "463043",
+    "name": "十島村",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "toshima-mura"
+  },
+  {
+    "jisCode": "464040",
+    "name": "長島町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "nagashima-cho"
+  },
+  {
+    "jisCode": "464520",
+    "name": "湧水町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "yusui-cho"
+  },
+  {
+    "jisCode": "464821",
+    "name": "東串良町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "higashikushira-cho"
+  },
+  {
+    "jisCode": "464902",
+    "name": "錦江町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "kinko-cho"
+  },
+  {
+    "jisCode": "464911",
+    "name": "南大隅町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "minamiosumi-cho"
+  },
+  {
+    "jisCode": "464929",
+    "name": "肝付町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "kimotsuki-cho"
+  },
+  {
+    "jisCode": "465011",
+    "name": "中種子町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "nakatane-cho"
+  },
+  {
+    "jisCode": "465054",
+    "name": "屋久島町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "yakushima-cho"
+  },
+  {
+    "jisCode": "465232",
+    "name": "大和村",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "yamato-son"
+  },
+  {
+    "jisCode": "465241",
+    "name": "宇検村",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "uken-son"
+  },
+  {
+    "jisCode": "465259",
+    "name": "瀬戸内町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "setouchi-cho"
+  },
+  {
+    "jisCode": "465275",
+    "name": "龍郷町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "tatsugo-cho"
+  },
+  {
+    "jisCode": "465305",
+    "name": "徳之島町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "tokunoshima-cho"
+  },
+  {
+    "jisCode": "465313",
+    "name": "天城町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "amagi-cho"
+  },
+  {
+    "jisCode": "465321",
+    "name": "伊仙町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "isen-cho"
+  },
+  {
+    "jisCode": "465330",
+    "name": "和泊町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "wadomari-cho"
+  },
+  {
+    "jisCode": "465348",
+    "name": "知名町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "china-cho"
+  },
+  {
+    "jisCode": "465356",
+    "name": "与論町",
+    "prefectureName": "鹿児島県",
+    "municipalitySlug": "yoron-cho"
+  },
+  {
+    "jisCode": "472051",
+    "name": "宜野湾市",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "ginowan-shi"
+  },
+  {
+    "jisCode": "472085",
+    "name": "浦添市",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "urasoe-shi"
+  },
+  {
+    "jisCode": "472093",
+    "name": "名護市",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "nago-shi"
+  },
+  {
+    "jisCode": "472131",
+    "name": "うるま市",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "uruma-shi"
+  },
+  {
+    "jisCode": "473022",
+    "name": "大宜味村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "ogimi-son"
+  },
+  {
+    "jisCode": "473031",
+    "name": "東村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "higashison"
+  },
+  {
+    "jisCode": "473065",
+    "name": "今帰仁村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "nakijin-son"
+  },
+  {
+    "jisCode": "473081",
+    "name": "本部町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "motobu-cho"
+  },
+  {
+    "jisCode": "473111",
+    "name": "恩納村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "onna-son"
+  },
+  {
+    "jisCode": "473138",
+    "name": "宜野座村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "ginoza-son"
+  },
+  {
+    "jisCode": "473146",
+    "name": "金武町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "kin-cho"
+  },
+  {
+    "jisCode": "473154",
+    "name": "伊江村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "ie-son"
+  },
+  {
+    "jisCode": "473243",
+    "name": "読谷村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "yomitan-son"
+  },
+  {
+    "jisCode": "473251",
+    "name": "嘉手納町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "kadena-cho"
+  },
+  {
+    "jisCode": "473260",
+    "name": "北谷町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "chatan-cho"
+  },
+  {
+    "jisCode": "473278",
+    "name": "北中城村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "kitanakagusuku-son"
+  },
+  {
+    "jisCode": "473286",
+    "name": "中城村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "nakagusuku-son"
+  },
+  {
+    "jisCode": "473294",
+    "name": "西原町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "nishihara-cho"
+  },
+  {
+    "jisCode": "473481",
+    "name": "与那原町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "yonabaru-cho"
+  },
+  {
+    "jisCode": "473537",
+    "name": "渡嘉敷村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "tokashiki-son"
+  },
+  {
+    "jisCode": "473545",
+    "name": "座間味村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "zamami-son"
+  },
+  {
+    "jisCode": "473561",
+    "name": "渡名喜村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "tonaki-son"
+  },
+  {
+    "jisCode": "473570",
+    "name": "南大東村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "minamidaito-son"
+  },
+  {
+    "jisCode": "473588",
+    "name": "北大東村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "kitadaito-son"
+  },
+  {
+    "jisCode": "473626",
+    "name": "八重瀬町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "yaese-cho"
+  },
+  {
+    "jisCode": "473758",
+    "name": "多良間村",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "tarama-son"
+  },
+  {
+    "jisCode": "473812",
+    "name": "竹富町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "taketomi-cho"
+  },
+  {
+    "jisCode": "473821",
+    "name": "与那国町",
+    "prefectureName": "沖縄県",
+    "municipalitySlug": "yonaguni-cho"
+  }
+]

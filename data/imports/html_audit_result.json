@@ -1,0 +1,4448 @@
+{
+  "newCandidates": [
+    {
+      "jisCode": "072133",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "伊達市",
+        "url": "https://www.city.fukushima-date.lg.jp/soshiki/86/50119.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "伊達市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "伊達市",
+        "jisCode": "072133",
+        "url": null,
+        "pdfUrl": null,
+        "linkStatus": "UNKNOWN",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "date-shi",
+        "linkType": null,
+        "notes": "No URL found in initial text blocks"
+      }
+    }
+  ],
+  "urlDiffCandidates": [
+    {
+      "jisCode": "072125",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "南相馬市",
+        "url": null,
+        "pdfUrl": "https://www.city.minamisoma.lg.jp/material/files/group/13/20230207_9vae6.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "南相馬市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "南相馬市",
+        "jisCode": "072125",
+        "url": "https://www.city.minamisoma.lg.jp/portal/sections/13/1360/13601/10/1616.html",
+        "pdfUrl": "https://www.city.minamisoma.lg.jp/material/files/group/13/20230207_9vae6.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "minamisoma-shi",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062111",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "東根市",
+        "url": null,
+        "pdfUrl": "https://www.city.higashine.yamagata.jp/files/original/20211029204004653e85eb7ef.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "東根市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "東根市",
+        "jisCode": "062111",
+        "url": "https://www.city.higashine.yamagata.jp/news/3046",
+        "pdfUrl": "https://www.city.higashine.yamagata.jp/files/original/20211029204004653e85eb7ef.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "higashine-shi",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062138",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "南陽市",
+        "url": null,
+        "pdfUrl": "http://www.city.nanyo.yamagata.jp/up/files/siminkurasi/bousai/seikatuibento/sinnseisyo.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "南陽市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "南陽市",
+        "jisCode": "062138",
+        "url": "https://www.city.nanyo.yamagata.jp/okuyamisinsei/3351",
+        "pdfUrl": "http://www.city.nanyo.yamagata.jp/up/files/siminkurasi/bousai/seikatuibento/sinnseisyo.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "nan-yo-shi",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042030",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "塩竈市",
+        "url": null,
+        "pdfUrl": "https://www.city.shiogama.miyagi.jp/uploaded/attachment/16743.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "塩竈市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "塩竈市",
+        "jisCode": "042030",
+        "url": "https://www.city.shiogama.miyagi.jp/soshiki/50/52370.html",
+        "pdfUrl": "https://www.city.shiogama.miyagi.jp/uploaded/attachment/16743.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "shiogama-shi",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012246",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "千歳市",
+        "url": null,
+        "pdfUrl": "https://www.city.chitose.lg.jp/fs/5/4/1/8/3/9/_/_______.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "千歳市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "千歳市",
+        "jisCode": "012246",
+        "url": "https://www.city.chitose.lg.jp/docs/8290.html",
+        "pdfUrl": "https://www.city.chitose.lg.jp/fs/5/4/1/8/3/9/_/_______.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "chitose-shi",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012335",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "伊達市",
+        "url": "https://www.city.date.hokkaido.jp/hotnews/detail/00000888.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "伊達市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "伊達市",
+        "jisCode": "012335",
+        "url": "https://www.city.fukushima-date.lg.jp/soshiki/86/50119.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "date-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014320",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "新十津川町",
+        "url": null,
+        "pdfUrl": "https://www.town.shintotsukawa.lg.jp/hotnews/files/00002800/00002827/%E6%94%B9%E8%91%AC%E8%A8%B1%E5%8F%AF.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "新十津川町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "新十津川町",
+        "jisCode": "014320",
+        "url": "https://www.town.shintotsukawa.lg.jp/hotnews/detail/00002827.html",
+        "pdfUrl": "https://www.town.shintotsukawa.lg.jp/hotnews/files/00002800/00002827/%E6%94%B9%E8%91%AC%E8%A8%B1%E5%8F%AF.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "shintotsukawa-cho",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014621",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "南富良野町",
+        "url": null,
+        "pdfUrl": "https://www.town.minamifurano.hokkaido.jp/wp-content/uploads/1970/01/e8bf4f851afdef87f3ba8b4d10635995.pdf",
+        "source": "yasuda_html_import",
+        "rawText": "南富良野町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "南富良野町",
+        "jisCode": "014621",
+        "url": "https://www.town.minamifurano.hokkaido.jp/kurashi-info/farewell/%E6%96%8E%E5%A0%B4%E3%83%BB%E5%A2%93%E5%9C%B0/",
+        "pdfUrl": "https://www.town.minamifurano.hokkaido.jp/wp-content/uploads/1970/01/e8bf4f851afdef87f3ba8b4d10635995.pdf",
+        "linkStatus": "UPDATED",
+        "municipalitySlug": "minamifurano-cho",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "linkType": "GUIDE"
+      }
+    }
+  ],
+  "identical": [
+    {
+      "jisCode": "072010",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "福島市",
+        "url": "https://www.city.fukushima.fukushima.jp/kankyo-eisei/kurashi/boti/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "福島市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "福島市",
+        "jisCode": "072010",
+        "url": "https://www.city.fukushima.fukushima.jp/kankyo-eisei/kurashi/boti/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "NEEDS_REVIEW",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "fukushima-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072028",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "会津若松市",
+        "url": "https://www.city.aizuwakamatsu.fukushima.jp/docs/2016111000042/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "会津若松市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "会津若松市",
+        "jisCode": "072028",
+        "url": "https://www.city.aizuwakamatsu.fukushima.jp/docs/2016111000042/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "aizuwakamatsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072036",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "郡山市",
+        "url": "https://www.city.koriyama.lg.jp/soshiki/37/4993.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "郡山市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "郡山市",
+        "jisCode": "072036",
+        "url": "https://www.city.koriyama.lg.jp/soshiki/37/4993.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "koriyama-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072044",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "いわき市",
+        "url": "https://www.city.iwaki.lg.jp/www/contents/1001000003050/index.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "いわき市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "いわき市",
+        "jisCode": "072044",
+        "url": "https://www.city.iwaki.lg.jp/www/contents/1001000003050/index.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "iwaki-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072052",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "白河市",
+        "url": "https://www.city.shirakawa.fukushima.jp/page/page001045.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "白河市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "白河市",
+        "jisCode": "072052",
+        "url": "https://www.city.shirakawa.fukushima.jp/page/page001045.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shirakawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072079",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "須賀川市",
+        "url": "https://www.city.sukagawa.fukushima.jp/kurashi/okuyami/okuyami_sonota/1002466.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "須賀川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "須賀川市",
+        "jisCode": "072079",
+        "url": "https://www.city.sukagawa.fukushima.jp/kurashi/okuyami/okuyami_sonota/1002466.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sukagawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072087",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "喜多方市",
+        "url": "https://www.city.kitakata.fukushima.jp/soshiki/shimin/548.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "喜多方市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "喜多方市",
+        "jisCode": "072087",
+        "url": "https://www.city.kitakata.fukushima.jp/soshiki/shimin/548.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kitakata-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072109",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "二本松市",
+        "url": "https://www.city.nihonmatsu.lg.jp/kurashi_tetsuduki/se_bo_energy/bochi_kasou/page001902.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "二本松市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "二本松市",
+        "jisCode": "072109",
+        "url": "https://www.city.nihonmatsu.lg.jp/kurashi_tetsuduki/se_bo_energy/bochi_kasou/page001902.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nihonmatsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072117",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "田村市",
+        "url": "https://www.city.tamura.lg.jp/soshiki/59/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "田村市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "田村市",
+        "jisCode": "072117",
+        "url": "https://www.city.tamura.lg.jp/soshiki/59/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tamura-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "072141",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "本宮市",
+        "url": "https://www.city.motomiya.lg.jp/soshiki/9/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "本宮市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "本宮市",
+        "jisCode": "072141",
+        "url": "https://www.city.motomiya.lg.jp/soshiki/9/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "motomiya-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073016",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "桑折町",
+        "url": "https://www.town.koori.fukushima.jp/soshiki/zeiju/1/3_1/14841.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "桑折町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "桑折町",
+        "jisCode": "073016",
+        "url": "https://www.town.koori.fukushima.jp/soshiki/zeiju/1/3_1/14841.html",
+        "pdfUrl": "",
+        "linkStatus": "NEEDS_REVIEW",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "koori-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073032",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "国見町",
+        "url": "https://www.town.kunimi.fukushima.jp/soshiki/4/141.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "国見町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "国見町",
+        "jisCode": "073032",
+        "url": "https://www.town.kunimi.fukushima.jp/soshiki/4/141.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kunimi-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073083",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "川俣町",
+        "url": "https://www.town.kawamata.lg.jp/site/kurashi-tetsuzuki/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "川俣町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "川俣町",
+        "jisCode": "073083",
+        "url": "https://www.town.kawamata.lg.jp/site/kurashi-tetsuzuki/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kawamata-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073229",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "大玉村",
+        "url": "https://www.vill.otama.fukushima.jp/download/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大玉村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "大玉村",
+        "jisCode": "073229",
+        "url": "https://www.vill.otama.fukushima.jp/download/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "otama-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073423",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "鏡石町",
+        "url": "https://www.town.kagamiishi.fukushima.jp/machi/download.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鏡石町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "鏡石町",
+        "jisCode": "073423",
+        "url": "https://www.town.kagamiishi.fukushima.jp/machi/download.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kagamiishi-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "073687",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "南会津町",
+        "url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.town.minamiaizu.lg.jp%2Fmaterial%2Ffiles%2Fgroup%2F10%2F20190821140418.doc&wdOrigin=BROWSELINK",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "南会津町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "南会津町",
+        "jisCode": "073687",
+        "url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.town.minamiaizu.lg.jp%2Fmaterial%2Ffiles%2Fgroup%2F10%2F20190821140418.doc&wdOrigin=BROWSELINK",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "minamiaizu-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074080",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "猪苗代町",
+        "url": "https://www.town.inawashiro.fukushima.jp/cb/hpc/Article-27478.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "猪苗代町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "猪苗代町",
+        "jisCode": "074080",
+        "url": "https://www.town.inawashiro.fukushima.jp/cb/hpc/Article-27478.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "inawashiro-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074225",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "湯川村",
+        "url": "https://www.vill.yugawa.fukushima.jp/site/kurashi-top/die-shibou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "湯川村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "湯川村",
+        "jisCode": "074225",
+        "url": "https://www.vill.yugawa.fukushima.jp/site/kurashi-top/die-shibou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yugawa-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074446",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "三島町",
+        "url": "https://www.city.mishima.shizuoka.jp/ipn028468.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "三島町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "三島町",
+        "jisCode": "074446",
+        "url": "https://www.city.mishima.shizuoka.jp/ipn028468.html",
+        "pdfUrl": "",
+        "linkStatus": "NEEDS_REVIEW",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "mishima-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074462",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "昭和村",
+        "url": "https://www.vill.showa.gunma.jp/kurashi/kurashi/todokede/2024-0513-0826-22.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "昭和村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "昭和村",
+        "jisCode": "074462",
+        "url": "https://www.vill.showa.gunma.jp/kurashi/kurashi/todokede/2024-0513-0826-22.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "showa-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074471",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "会津美里町",
+        "url": "https://www.town.aizumisato.fukushima.jp/soshiki/1009/2/3/2/6159.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "会津美里町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "会津美里町",
+        "jisCode": "074471",
+        "url": "https://www.town.aizumisato.fukushima.jp/soshiki/1009/2/3/2/6159.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "aizumisato-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074616",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "西郷村",
+        "url": "https://www.vill.nishigo.fukushima.jp/soshiki/juminseikatsuka/sumai_pet/1/496.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "西郷村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "西郷村",
+        "jisCode": "074616",
+        "url": "https://www.vill.nishigo.fukushima.jp/soshiki/juminseikatsuka/sumai_pet/1/496.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nishigo-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074667",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "矢吹町",
+        "url": "https://www.town.yabuki.fukushima.jp/page/page003365.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "矢吹町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "矢吹町",
+        "jisCode": "074667",
+        "url": "https://www.town.yabuki.fukushima.jp/page/page003365.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yabuki-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074811",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "棚倉町",
+        "url": "https://www.town.tanagura.fukushima.jp/page/page002574.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "棚倉町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "棚倉町",
+        "jisCode": "074811",
+        "url": "https://www.town.tanagura.fukushima.jp/page/page002574.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tanagura-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074829",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "矢祭町",
+        "url": "https://www.town.yamatsuri.fukushima.jp/page/page000106.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "矢祭町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "矢祭町",
+        "jisCode": "074829",
+        "url": "https://www.town.yamatsuri.fukushima.jp/page/page000106.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yamatsuri-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "074837",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "塙町",
+        "url": "https://www.town.hanawa.fukushima.jp/page/page002311.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "塙町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "塙町",
+        "jisCode": "074837",
+        "url": "https://www.town.hanawa.fukushima.jp/page/page002311.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hanawa-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "075213",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "三春町",
+        "url": "https://www.town.miharu.fukushima.jp/soshiki/4/kaisou.html#:~:text=%E6%94%B9%E8%91%AC%E3%82%92%E8%A1%8C%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB,%E8%A8%BC%E3%82%92%E4%BA%A4%E4%BB%98%E3%81%97%E3%81%BE%E3%81%99%E3%80%82",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "三春町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "三春町",
+        "jisCode": "075213",
+        "url": "https://www.town.miharu.fukushima.jp/soshiki/4/kaisou.html#:~:text=%E6%94%B9%E8%91%AC%E3%82%92%E8%A1%8C%E3%81%86%E3%81%9F%E3%82%81%E3%81%AB,%E8%A8%BC%E3%82%92%E4%BA%A4%E4%BB%98%E3%81%97%E3%81%BE%E3%81%99%E3%80%82",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "miharu-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "075221",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "小野町",
+        "url": "https://www.town.ono.fukushima.jp/soshiki/5/download-tyoumin3.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "小野町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "小野町",
+        "jisCode": "075221",
+        "url": "https://www.town.ono.fukushima.jp/soshiki/5/download-tyoumin3.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ono-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "075426",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "楢葉町",
+        "url": "https://www.town.naraha.lg.jp/life/006948.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "楢葉町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "楢葉町",
+        "jisCode": "075426",
+        "url": "https://www.town.naraha.lg.jp/life/006948.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "naraha-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "075469",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "双葉町",
+        "url": "https://www.town.fukushima-futaba.lg.jp/4750.htm",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "双葉町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "双葉町",
+        "jisCode": "075469",
+        "url": "https://www.town.fukushima-futaba.lg.jp/4750.htm",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "futaba-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "075612",
+      "candidate": {
+        "prefecture": "福島県",
+        "municipality": "新地町",
+        "url": "https://www.shinchi-town.jp/soshiki/6/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "新地町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "福島県",
+        "municipality": "新地町",
+        "jisCode": "075612",
+        "url": "https://www.shinchi-town.jp/soshiki/6/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shinchi-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062014",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "山形市",
+        "url": "https://www.city.yamagata-yamagata.lg.jp/kurashi/todokede/1006442/1006443/1004083.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "山形市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "山形市",
+        "jisCode": "062014",
+        "url": "https://www.city.yamagata-yamagata.lg.jp/kurashi/todokede/1006442/1006443/1004083.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yamagata-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062031",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "鶴岡市",
+        "url": "https://www.city.tsuruoka.lg.jp/kurashi/todokede-tetuduki/jyuminhyokoseki/kaisoukyoka.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鶴岡市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "鶴岡市",
+        "jisCode": "062031",
+        "url": "https://www.city.tsuruoka.lg.jp/kurashi/todokede-tetuduki/jyuminhyokoseki/kaisoukyoka.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tsuruoka-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062049",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "酒田市",
+        "url": "https://www.city.sakata.lg.jp/kurashi/bochi/kaisoukyoka.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "酒田市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "酒田市",
+        "jisCode": "062049",
+        "url": "https://www.city.sakata.lg.jp/kurashi/bochi/kaisoukyoka.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sakata-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062057",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "新庄市",
+        "url": "https://www.city.shinjo.yamagata.jp/s005/070/050/20150227103632.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "新庄市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "新庄市",
+        "jisCode": "062057",
+        "url": "https://www.city.shinjo.yamagata.jp/s005/070/050/20150227103632.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shinjo-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062065",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "寒河江市",
+        "url": "https://www.city.sagae.yamagata.jp/kurashi/tetuduki/kaisoukyoka.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "寒河江市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "寒河江市",
+        "jisCode": "062065",
+        "url": "https://www.city.sagae.yamagata.jp/kurashi/tetuduki/kaisoukyoka.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sagae-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062073",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "上山市",
+        "url": "https://www.city.kaminoyama.yamagata.jp/soshiki/6/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "上山市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "上山市",
+        "jisCode": "062073",
+        "url": "https://www.city.kaminoyama.yamagata.jp/soshiki/6/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kaminoyama-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "062103",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "天童市",
+        "url": "https://www.city.tendo.yamagata.jp/lifeinfo/tetsuduki/kaisoukyoka.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "天童市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "天童市",
+        "jisCode": "062103",
+        "url": "https://www.city.tendo.yamagata.jp/lifeinfo/tetsuduki/kaisoukyoka.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tendo-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "063410",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "大石田町",
+        "url": "https://www.town.oishida.yamagata.jp/life/kosekijuumin/hak20191024141115436.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大石田町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "大石田町",
+        "jisCode": "063410",
+        "url": "https://www.town.oishida.yamagata.jp/life/kosekijuumin/hak20191024141115436.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "oishida-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "063657",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "大蔵村",
+        "url": "https://www.vill.ohkura.yamagata.jp/soshikikarasagasu/juminzeimuka/gyomuannai/8/1667.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大蔵村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "大蔵村",
+        "jisCode": "063657",
+        "url": "https://www.vill.ohkura.yamagata.jp/soshikikarasagasu/juminzeimuka/gyomuannai/8/1667.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "okura-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "063665",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "鮭川村",
+        "url": "https://www.vill.sakegawa.yamagata.jp/seikatsu/koseki-syoumei/814",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鮭川村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "鮭川村",
+        "jisCode": "063665",
+        "url": "https://www.vill.sakegawa.yamagata.jp/seikatsu/koseki-syoumei/814",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sakegawa-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "063827",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "川西町",
+        "url": "https://www.town.kawanishi.yamagata.jp/reiki_int/reiki_honbun/c430RG00000291.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "川西町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "川西町",
+        "jisCode": "063827",
+        "url": "https://www.town.kawanishi.yamagata.jp/reiki_int/reiki_honbun/c430RG00000291.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kawanishi-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "064289",
+      "candidate": {
+        "prefecture": "山形県",
+        "municipality": "庄内町",
+        "url": "https://www.town.shonai.lg.jp/life/okuyami/kaiso/kaisoukyokasinsei.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "庄内町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "山形県",
+        "municipality": "庄内町",
+        "jisCode": "064289",
+        "url": "https://www.town.shonai.lg.jp/life/okuyami/kaiso/kaisoukyokasinsei.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shonai-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042021",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "石巻市",
+        "url": "https://www.city.ishinomaki.lg.jp/cont/10301000/0005/20190110125630.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "石巻市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "石巻市",
+        "jisCode": "042021",
+        "url": "https://www.city.ishinomaki.lg.jp/cont/10301000/0005/20190110125630.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ishinomaki-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042072",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "名取市",
+        "url": "https://www.city.natori.miyagi.jp/page/22965.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "名取市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "名取市",
+        "jisCode": "042072",
+        "url": "https://www.city.natori.miyagi.jp/page/22965.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "natori-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042081",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "角田市",
+        "url": "https://www.city.kakuda.lg.jp/soshiki/7/474.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "角田市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "角田市",
+        "jisCode": "042081",
+        "url": "https://www.city.kakuda.lg.jp/soshiki/7/474.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kakuda-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042099",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "多賀城市",
+        "url": "https://www.city.tagajo.miyagi.jp/kankyo/kurashi/bochi/bochi.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "多賀城市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "多賀城市",
+        "jisCode": "042099",
+        "url": "https://www.city.tagajo.miyagi.jp/kankyo/kurashi/bochi/bochi.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tagajo-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042129",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "登米市",
+        "url": "https://www.city.tome.miyagi.jp/kankyo/kurashi/sekatsukankyo/boti/snonotanoboti.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "登米市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "登米市",
+        "jisCode": "042129",
+        "url": "https://www.city.tome.miyagi.jp/kankyo/kurashi/sekatsukankyo/boti/snonotanoboti.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tome-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042137",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "栗原市",
+        "url": "https://www.kuriharacity.jp/w012/010/010/020/250/PAGE000000000000008473.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "栗原市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "栗原市",
+        "jisCode": "042137",
+        "url": "https://www.kuriharacity.jp/w012/010/010/020/250/PAGE000000000000008473.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kurihara-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "042161",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "富谷市",
+        "url": "https://www.tomiya-city.miyagi.jp/kurashi/boti/167dc1435d9bd4d0a7ba89da84e17a513f041fa6.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "富谷市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "富谷市",
+        "jisCode": "042161",
+        "url": "https://www.tomiya-city.miyagi.jp/kurashi/boti/167dc1435d9bd4d0a7ba89da84e17a513f041fa6.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tomiya-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "043214",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "大河原町",
+        "url": "https://www.town.ogawara.miyagi.jp/1351.htm",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大河原町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "大河原町",
+        "jisCode": "043214",
+        "url": "https://www.town.ogawara.miyagi.jp/1351.htm",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ogawara-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "043419",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "丸森町",
+        "url": "https://www.town.marumori.miyagi.jp/life/detail.php?content=697",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "丸森町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "丸森町",
+        "jisCode": "043419",
+        "url": "https://www.town.marumori.miyagi.jp/life/detail.php?content=697",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "marumori-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "043613",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "亘理町",
+        "url": "https://www.town.watari.miyagi.jp/life/detail.php?content=86",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "亘理町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "亘理町",
+        "jisCode": "043613",
+        "url": "https://www.town.watari.miyagi.jp/life/detail.php?content=86",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "watari-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "044016",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "松島町",
+        "url": "https://www.town.miyagi-matsushima.lg.jp/index.cfm/6,5952,120,html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "松島町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "松島町",
+        "jisCode": "044016",
+        "url": "https://www.town.miyagi-matsushima.lg.jp/index.cfm/6,5952,120,html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "matsushima-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "044041",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "七ヶ浜町",
+        "url": "https://www.shichigahama.com/benricho/otoiawase/kankyo2-030-6618.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "七ヶ浜町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "七ヶ浜町",
+        "jisCode": "044041",
+        "url": "https://www.shichigahama.com/benricho/otoiawase/kankyo2-030-6618.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shichigahama-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "044067",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "利府町",
+        "url": "https://www.town.rifu.miyagi.jp/gyosei/soshikikarasagasu/seikatu/kankyou/2/1/3378.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "利府町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "利府町",
+        "jisCode": "044067",
+        "url": "https://www.town.rifu.miyagi.jp/gyosei/soshikikarasagasu/seikatu/kankyou/2/1/3378.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "rifu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "044458",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "加美町",
+        "url": "https://www.town.kami.miyagi.jp/soshikikarasagasu/chominka/sogi_bochi/3834.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "加美町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "加美町",
+        "jisCode": "044458",
+        "url": "https://www.town.kami.miyagi.jp/soshikikarasagasu/chominka/sogi_bochi/3834.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kami-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "045012",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "涌谷町",
+        "url": "https://www.town.wakuya.miyagi.jp/kurashi/koseki/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "涌谷町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "涌谷町",
+        "jisCode": "045012",
+        "url": "https://www.town.wakuya.miyagi.jp/kurashi/koseki/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "wakuya-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "045811",
+      "candidate": {
+        "prefecture": "宮城県",
+        "municipality": "女川町",
+        "url": "https://www.town.onagawa.miyagi.jp/05_05_07_01.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "女川町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "宮城県",
+        "municipality": "女川町",
+        "jisCode": "045811",
+        "url": "https://www.town.onagawa.miyagi.jp/05_05_07_01.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "onagawa-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052027",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "能代市",
+        "url": "https://www.city.noshiro.lg.jp/section/kankyo-sangyo/kankyo-eisei/kankyo-eisei/bochi/20676",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "能代市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "能代市",
+        "jisCode": "052027",
+        "url": "https://www.city.noshiro.lg.jp/section/kankyo-sangyo/kankyo-eisei/kankyo-eisei/bochi/20676",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "noshiro-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052035",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "横手市",
+        "url": "https://www.city.yokote.lg.jp/kurashi/1001146/1001298/1002681.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "横手市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "横手市",
+        "jisCode": "052035",
+        "url": "https://www.city.yokote.lg.jp/kurashi/1001146/1001298/1002681.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yokote-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052043",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "大館市",
+        "url": "https://www.city.odate.lg.jp/city/soshiki/shimin/p667",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大館市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "大館市",
+        "jisCode": "052043",
+        "url": "https://www.city.odate.lg.jp/city/soshiki/shimin/p667",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "odate-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052078",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "湯沢市",
+        "url": "https://www.city-yuzawa.jp/soshiki/18/187.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "湯沢市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "湯沢市",
+        "jisCode": "052078",
+        "url": "https://www.city-yuzawa.jp/soshiki/18/187.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yuzawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052094",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "鹿角市",
+        "url": "https://www.city.kazuno.lg.jp/soshiki/shimin/kosekinenkin/gyomu/2/3/5600.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鹿角市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "鹿角市",
+        "jisCode": "052094",
+        "url": "https://www.city.kazuno.lg.jp/soshiki/shimin/kosekinenkin/gyomu/2/3/5600.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kazuno-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052108",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "由利本荘市",
+        "url": "https://www.city.yurihonjo.lg.jp/1000002/1001868/1002949.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "由利本荘市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "由利本荘市",
+        "jisCode": "052108",
+        "url": "https://www.city.yurihonjo.lg.jp/1000002/1001868/1002949.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yurihonjo-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052124",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "大仙市",
+        "url": "https://www.city.daisen.lg.jp/archive/contents-7684",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大仙市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "大仙市",
+        "jisCode": "052124",
+        "url": "https://www.city.daisen.lg.jp/archive/contents-7684",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "daisen-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052132",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "北秋田市",
+        "url": "https://www.city.kitaakita.akita.jp/archive/contents-5651",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "北秋田市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "北秋田市",
+        "jisCode": "052132",
+        "url": "https://www.city.kitaakita.akita.jp/archive/contents-5651",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kitaakita-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "052141",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "にかほ市",
+        "url": "https://www.city.nikaho.akita.jp/soshikikarasagasu/seikatsukankyoka/shinseishodownload/1/1836.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "にかほ市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "にかほ市",
+        "jisCode": "052141",
+        "url": "https://www.city.nikaho.akita.jp/soshikikarasagasu/seikatsukankyoka/shinseishodownload/1/1836.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nikaho-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "053481",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "三種町",
+        "url": "https://www.town.mitane.akita.jp/soshikikarasagasu/chominseikatsuka/2/3510.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "三種町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "三種町",
+        "jisCode": "053481",
+        "url": "https://www.town.mitane.akita.jp/soshikikarasagasu/chominseikatsuka/2/3510.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "mitane-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "053619",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "五城目町",
+        "url": "https://www.town.gojome.akita.jp/kurashi/sinseisyo/588",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "五城目町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "五城目町",
+        "jisCode": "053619",
+        "url": "https://www.town.gojome.akita.jp/kurashi/sinseisyo/588",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "gojome-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "054348",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "美郷町",
+        "url": "https://gov.town.shimane-misato.lg.jp/jinsei/okuyami/1030",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "美郷町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "美郷町",
+        "jisCode": "054348",
+        "url": "https://gov.town.shimane-misato.lg.jp/jinsei/okuyami/1030",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "misato-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "054631",
+      "candidate": {
+        "prefecture": "秋田県",
+        "municipality": "羽後町",
+        "url": "https://www.town.ugo.lg.jp/life/detail.html?id=2001&category_id=241",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "羽後町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "秋田県",
+        "municipality": "羽後町",
+        "jisCode": "054631",
+        "url": "https://www.town.ugo.lg.jp/life/detail.html?id=2001&category_id=241",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ugo-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032018",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "盛岡市",
+        "url": "https://www.city.morioka.iwate.jp/kenkou/hokenjo/1016527/1032647.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "盛岡市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "盛岡市",
+        "jisCode": "032018",
+        "url": "https://www.city.morioka.iwate.jp/kenkou/hokenjo/1016527/1032647.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "morioka-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032026",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "宮古市",
+        "url": "https://www.city.miyako.iwate.jp/gyosei/soshiki/sogomadoguchi/9/1509.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "宮古市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "宮古市",
+        "jisCode": "032026",
+        "url": "https://www.city.miyako.iwate.jp/gyosei/soshiki/sogomadoguchi/9/1509.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "miyako-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032034",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "大船渡市",
+        "url": "https://www.city.ofunato.iwate.jp/archive/contents-32242",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大船渡市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "大船渡市",
+        "jisCode": "032034",
+        "url": "https://www.city.ofunato.iwate.jp/archive/contents-32242",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ofunato-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032069",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "北上市",
+        "url": "https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/shiminka/shiminkakari/4/11758.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "北上市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "北上市",
+        "jisCode": "032069",
+        "url": "https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/shiminka/shiminkakari/4/11758.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kitakami-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032085",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "遠野市",
+        "url": "https://www1.g-reiki.net/tono/reiki_honbun/r212RG00000339.html#e000000179",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "遠野市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "遠野市",
+        "jisCode": "032085",
+        "url": "https://www1.g-reiki.net/tono/reiki_honbun/r212RG00000339.html#e000000179",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tono-shi",
+        "linkType": "REGULATION"
+      }
+    },
+    {
+      "jisCode": "032093",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "一関市",
+        "url": "https://www.city.ichinoseki.iwate.jp/index.cfm/8,80561,54,html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "一関市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "一関市",
+        "jisCode": "032093",
+        "url": "https://www.city.ichinoseki.iwate.jp/index.cfm/8,80561,54,html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ichinoseki-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032107",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "陸前高田市",
+        "url": "https://www.city.rikuzentakata.iwate.jp/kurashinojoho/okuyami/7130.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "陸前高田市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "陸前高田市",
+        "jisCode": "032107",
+        "url": "https://www.city.rikuzentakata.iwate.jp/kurashinojoho/okuyami/7130.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "rikuzentakata-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032158",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "奥州市",
+        "url": "https://www.city.oshu.iwate.jp/soshiki/5/1050/4/4494.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "奥州市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "奥州市",
+        "jisCode": "032158",
+        "url": "https://www.city.oshu.iwate.jp/soshiki/5/1050/4/4494.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "oshu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "032166",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "滝沢市",
+        "url": "https://www.city.takizawa.iwate.jp/kurashi/contents-6909/contents-15142",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "滝沢市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "滝沢市",
+        "jisCode": "032166",
+        "url": "https://www.city.takizawa.iwate.jp/kurashi/contents-6909/contents-15142",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "takizawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "034843",
+      "candidate": {
+        "prefecture": "岩手県",
+        "municipality": "田野畑村",
+        "url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.vill.tanohata.iwate.jp%2Freiki%2Fact%2Factdata%2F110001025%2Fcurrent%2FFormEtc%2F13000190801000000013.xls&wdOrigin=BROWSELINK",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "田野畑村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "岩手県",
+        "municipality": "田野畑村",
+        "jisCode": "034843",
+        "url": "https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.vill.tanohata.iwate.jp%2Freiki%2Fact%2Factdata%2F110001025%2Fcurrent%2FFormEtc%2F13000190801000000013.xls&wdOrigin=BROWSELINK",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tanohata-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "022012",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "青森市",
+        "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/saijou/1002160/1002164.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "青森市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "青森市",
+        "jisCode": "022012",
+        "url": "https://www.city.aomori.aomori.jp/kurashi_kankyo/saijou/1002160/1002164.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "aomori-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "022021",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "弘前市",
+        "url": "https://www.city.hirosaki.aomori.jp/kurashi/todoke/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "弘前市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "弘前市",
+        "jisCode": "022021",
+        "url": "https://www.city.hirosaki.aomori.jp/kurashi/todoke/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hirosaki-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "022080",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "むつ市",
+        "url": "https://www.city.mutsu.lg.jp/kurashi/kankyo/bochi/kaiso.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "むつ市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "むつ市",
+        "jisCode": "022080",
+        "url": "https://www.city.mutsu.lg.jp/kurashi/kankyo/bochi/kaiso.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "mutsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "022098",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "つがる市",
+        "url": "https://www.city.tsugaru.aomori.jp/soshiki/minsei/shimin/kankyoeisei/saizyoureien/9417.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "つがる市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "つがる市",
+        "jisCode": "022098",
+        "url": "https://www.city.tsugaru.aomori.jp/soshiki/minsei/shimin/kankyoeisei/saizyoureien/9417.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tsugaru-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "022101",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "平川市",
+        "url": "https://www.city.hirakawa.lg.jp/kurashi/sumai/saijou/kyoudoubochi.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "平川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "平川市",
+        "jisCode": "022101",
+        "url": "https://www.city.hirakawa.lg.jp/kurashi/sumai/saijou/kyoudoubochi.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hirakawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "023078",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "外ヶ浜町",
+        "url": "https://www.town.sotogahama.lg.jp/kurashi/todokede/shinseisho/koseki.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "外ヶ浜町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "外ヶ浜町",
+        "jisCode": "023078",
+        "url": "https://www.town.sotogahama.lg.jp/kurashi/todokede/shinseisho/koseki.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sotogahama-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "023612",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "藤崎町",
+        "url": "http://www.town.fujisaki.lg.jp/index.cfm/7,0,14,417,html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "藤崎町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "藤崎町",
+        "jisCode": "023612",
+        "url": "http://www.town.fujisaki.lg.jp/index.cfm/7,0,14,417,html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "fujisaki-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "023841",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "鶴田町",
+        "url": "http://www.town.tsuruta.lg.jp/kurashi/kurashi-koseki/post-1016.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鶴田町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "鶴田町",
+        "jisCode": "023841",
+        "url": "http://www.town.tsuruta.lg.jp/kurashi/kurashi-koseki/post-1016.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tsuruta-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "024422",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "五戸町",
+        "url": "https://www.town.gonohe.aomori.jp/kurashi/jumin/e-9_syoumei_kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "五戸町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "五戸町",
+        "jisCode": "024422",
+        "url": "https://www.town.gonohe.aomori.jp/kurashi/jumin/e-9_syoumei_kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "gonohe-machi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "024465",
+      "candidate": {
+        "prefecture": "青森県",
+        "municipality": "階上町",
+        "url": "https://www.town.hashikami.lg.jp/index.cfm/7,0,72,310,html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "階上町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "青森県",
+        "municipality": "階上町",
+        "jisCode": "024465",
+        "url": "https://www.town.hashikami.lg.jp/index.cfm/7,0,72,310,html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hashikami-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "011002",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "札幌市",
+        "url": "https://www3.city.sapporo.jp/download/shinsei/search/procedure_view.asp?ProcID=2834",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "札幌市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "札幌市",
+        "jisCode": "011002",
+        "url": "https://www3.city.sapporo.jp/download/shinsei/search/procedure_view.asp?ProcID=2834",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sapporo-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012025",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "函館市",
+        "url": "https://www.city.hakodate.hokkaido.jp/shinsei/docs/2014012200608/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "函館市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "函館市",
+        "jisCode": "012025",
+        "url": "https://www.city.hakodate.hokkaido.jp/shinsei/docs/2014012200608/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hakodate-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012033",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "小樽市",
+        "url": "https://www.city.otaru.lg.jp/docs/2024010400054/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "小樽市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "小樽市",
+        "jisCode": "012033",
+        "url": "https://www.city.otaru.lg.jp/docs/2024010400054/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "otaru-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012041",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "旭川市",
+        "url": "https://www.city.asahikawa.hokkaido.jp/800/852/856/p006209.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "旭川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "旭川市",
+        "jisCode": "012041",
+        "url": "https://www.city.asahikawa.hokkaido.jp/800/852/856/p006209.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "asahikawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012068",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "釧路市",
+        "url": "https://www.city.kushiro.lg.jp/kurashi/shinseisho/1007204/1007209/1007210.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "釧路市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "釧路市",
+        "jisCode": "012068",
+        "url": "https://www.city.kushiro.lg.jp/kurashi/shinseisho/1007204/1007209/1007210.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kushiro-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012084",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "北見市",
+        "url": "https://www.city.kitami.lg.jp/administration/town/detail.php?content=10373",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "北見市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "北見市",
+        "jisCode": "012084",
+        "url": "https://www.city.kitami.lg.jp/administration/town/detail.php?content=10373",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kitami-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012092",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "夕張市",
+        "url": "https://www.city.yubari.lg.jp/soshiki/9/1493.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "夕張市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "夕張市",
+        "jisCode": "012092",
+        "url": "https://www.city.yubari.lg.jp/soshiki/9/1493.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yubari-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012114",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "網走市",
+        "url": "https://www.city.abashiri.hokkaido.jp/soshiki/10/1907.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "網走市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "網走市",
+        "jisCode": "012114",
+        "url": "https://www.city.abashiri.hokkaido.jp/soshiki/10/1907.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "abashiri-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012122",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "留萌市",
+        "url": "https://www.e-rumoi.jp/shimin/shi_00001.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "留萌市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "留萌市",
+        "jisCode": "012122",
+        "url": "https://www.e-rumoi.jp/shimin/shi_00001.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "rumoi-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012131",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "苫小牧市",
+        "url": "https://www.city.tomakomai.hokkaido.jp/kurashi/sonota/reien/shieireien/tetsuzuki.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "苫小牧市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "苫小牧市",
+        "jisCode": "012131",
+        "url": "https://www.city.tomakomai.hokkaido.jp/kurashi/sonota/reien/shieireien/tetsuzuki.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tomakomai-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012149",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "稚内市",
+        "url": "https://www.city.wakkanai.hokkaido.jp/kurashi/kankyoesei/bochikasoba/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "稚内市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "稚内市",
+        "jisCode": "012149",
+        "url": "https://www.city.wakkanai.hokkaido.jp/kurashi/kankyoesei/bochikasoba/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "wakkanai-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012157",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "美唄市",
+        "url": "https://www.city.bibai.hokkaido.jp/soshiki/6/846.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "美唄市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "美唄市",
+        "jisCode": "012157",
+        "url": "https://www.city.bibai.hokkaido.jp/soshiki/6/846.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "bibai-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012165",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "芦別市",
+        "url": "https://www.city.ashibetsu.hokkaido.jp/docs/5458.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "芦別市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "芦別市",
+        "jisCode": "012165",
+        "url": "https://www.city.ashibetsu.hokkaido.jp/docs/5458.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ashibetsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012181",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "赤平市",
+        "url": "https://www.city.akabira.hokkaido.jp/docs/2013030800029.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "赤平市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "赤平市",
+        "jisCode": "012181",
+        "url": "https://www.city.akabira.hokkaido.jp/docs/2013030800029.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "akabira-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012190",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "紋別市",
+        "url": "https://mombetsu.jp/life/?content=688",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "紋別市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "紋別市",
+        "jisCode": "012190",
+        "url": "https://mombetsu.jp/life/?content=688",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": true,
+        "municipalitySlug": "monbetsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012203",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "士別市",
+        "url": "https://www.city.shibetsu.lg.jp/soshikikarasagasu/toshikankyouka/toshikanrikakari/652.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "士別市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "士別市",
+        "jisCode": "012203",
+        "url": "https://www.city.shibetsu.lg.jp/soshikikarasagasu/toshikankyouka/toshikanrikakari/652.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shibetsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012211",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "名寄市",
+        "url": "http://www.city.nayoro.lg.jp/section/kankyou/prkeql000002rh3x.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "名寄市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "名寄市",
+        "jisCode": "012211",
+        "url": "http://www.city.nayoro.lg.jp/section/kankyou/prkeql000002rh3x.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nayoro-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012254",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "滝川市",
+        "url": "https://www.city.takikawa.lg.jp/page/1743.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "滝川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "滝川市",
+        "jisCode": "012254",
+        "url": "https://www.city.takikawa.lg.jp/page/1743.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "takikawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012262",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "砂川市",
+        "url": "https://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/kankyou_eisei/haka.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "砂川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "砂川市",
+        "jisCode": "012262",
+        "url": "https://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/kankyou_eisei/haka.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "sunagawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012289",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "深川市",
+        "url": "https://www.city.fukagawa.lg.jp/cms/section/shimin/ik75k4000000fqmk.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "深川市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "深川市",
+        "jisCode": "012289",
+        "url": "https://www.city.fukagawa.lg.jp/cms/section/shimin/ik75k4000000fqmk.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "fukagawa-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "012301",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "登別市",
+        "url": "https://www.city.noboribetsu.lg.jp/docs/2020051200028/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "登別市",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "登別市",
+        "jisCode": "012301",
+        "url": "https://www.city.noboribetsu.lg.jp/docs/2020051200028/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "noboribetsu-shi",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013030",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "当別町",
+        "url": "https://www.town.tobetsu.hokkaido.jp/soshiki/kankyo/19376.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "当別町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "当別町",
+        "jisCode": "013030",
+        "url": "https://www.town.tobetsu.hokkaido.jp/soshiki/kankyo/19376.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tobetsu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013617",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "江差町",
+        "url": "https://www.hokkaido-esashi.jp/modules/lifeinfo/content0090.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "江差町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "江差町",
+        "jisCode": "013617",
+        "url": "https://www.hokkaido-esashi.jp/modules/lifeinfo/content0090.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "esashi-cho-hiyama",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013625",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "上ノ国町",
+        "url": "https://www.town.kaminokuni.lg.jp/hotnews/detail_sp/00002943.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "上ノ国町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "上ノ国町",
+        "jisCode": "013625",
+        "url": "https://www.town.kaminokuni.lg.jp/hotnews/detail_sp/00002943.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kaminokuni-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013633",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "厚沢部町",
+        "url": "https://www.town.assabu.lg.jp/page/1152.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "厚沢部町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "厚沢部町",
+        "jisCode": "013633",
+        "url": "https://www.town.assabu.lg.jp/page/1152.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "assabu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013641",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "乙部町",
+        "url": "https://www.town.otobe.lg.jp/section/choumin/lfsrqq000000610h.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "乙部町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "乙部町",
+        "jisCode": "013641",
+        "url": "https://www.town.otobe.lg.jp/section/choumin/lfsrqq000000610h.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "otobe-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013714",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "せたな町",
+        "url": "https://www.town.setana.lg.jp/kurashi/kankyou/post_579.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "せたな町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "せたな町",
+        "jisCode": "013714",
+        "url": "https://www.town.setana.lg.jp/kurashi/kankyou/post_579.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "setana-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013927",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "寿都町",
+        "url": "http://www.town.suttu.lg.jp/life/detail.php?id=4",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "寿都町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "寿都町",
+        "jisCode": "013927",
+        "url": "http://www.town.suttu.lg.jp/life/detail.php?id=4",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "suttsu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "013943",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "蘭越町",
+        "url": "https://www.town.rankoshi.hokkaido.jp/administration/life/detail.html?content=47",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "蘭越町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "蘭越町",
+        "jisCode": "013943",
+        "url": "https://www.town.rankoshi.hokkaido.jp/administration/life/detail.html?content=47",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "rankoshi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014001",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "倶知安町",
+        "url": "https://www.town.kutchan.hokkaido.jp/Living_Information/todokede-shoumei/kaisou/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "倶知安町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "倶知安町",
+        "jisCode": "014001",
+        "url": "https://www.town.kutchan.hokkaido.jp/Living_Information/todokede-shoumei/kaisou/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kutchan-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014010",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "共和町",
+        "url": "https://www.town.kyowa.hokkaido.jp/life/?content=860",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "共和町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "共和町",
+        "jisCode": "014010",
+        "url": "https://www.town.kyowa.hokkaido.jp/life/?content=860",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kyowa-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014061",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "古平町",
+        "url": "https://www.town.furubira.lg.jp/life/detail.php?id=10",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "古平町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "古平町",
+        "jisCode": "014061",
+        "url": "https://www.town.furubira.lg.jp/life/detail.php?id=10",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "furubira-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014087",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "余市町",
+        "url": "https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/eisei-gomi/bochi.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "余市町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "余市町",
+        "jisCode": "014087",
+        "url": "https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/eisei-gomi/bochi.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yoichi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014231",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "南幌町",
+        "url": "https://www.town.nanporo.hokkaido.jp/life/graveyard/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "南幌町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "南幌町",
+        "jisCode": "014231",
+        "url": "https://www.town.nanporo.hokkaido.jp/life/graveyard/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nanporo-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014273",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "由仁町",
+        "url": "https://www.town.yuni.lg.jp/kurashi/docu-download",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "由仁町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "由仁町",
+        "jisCode": "014273",
+        "url": "https://www.town.yuni.lg.jp/kurashi/docu-download",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "yuni-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014311",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "浦臼町",
+        "url": "https://www.town.urausu.hokkaido.jp/kurashi/kurashi/seikatu_kankyo/2022-0728-1615-26.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "浦臼町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "浦臼町",
+        "jisCode": "014311",
+        "url": "https://www.town.urausu.hokkaido.jp/kurashi/kurashi/seikatu_kankyo/2022-0728-1615-26.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "urausu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014338",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "妹背牛町",
+        "url": "https://www.town.moseushi.hokkaido.jp/kurashi/gomi/2020-0513-1111-22.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "妹背牛町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "妹背牛町",
+        "jisCode": "014338",
+        "url": "https://www.town.moseushi.hokkaido.jp/kurashi/gomi/2020-0513-1111-22.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "moseushi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014524",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "鷹栖町",
+        "url": "https://www.town.takasu.hokkaido.jp/gyosei/environment/detail.html?content=295",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鷹栖町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "鷹栖町",
+        "jisCode": "014524",
+        "url": "https://www.town.takasu.hokkaido.jp/gyosei/environment/detail.html?content=295",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "takasu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014532",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "東神楽町",
+        "url": "https://www.town.higashikagura.lg.jp/docs/14440.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "東神楽町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "東神楽町",
+        "jisCode": "014532",
+        "url": "https://www.town.higashikagura.lg.jp/docs/14440.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "higashikagura-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014559",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "比布町",
+        "url": "https://www.town.pippu.hokkaido.jp/cms/section/jyuuminn/elhgch0000002hgh.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "比布町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "比布町",
+        "jisCode": "014559",
+        "url": "https://www.town.pippu.hokkaido.jp/cms/section/jyuuminn/elhgch0000002hgh.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "pippu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014567",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "愛別町",
+        "url": "https://www.town.aibetsu.hokkaido.jp/01/01/06/784",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "愛別町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "愛別町",
+        "jisCode": "014567",
+        "url": "https://www.town.aibetsu.hokkaido.jp/01/01/06/784",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "aibetsu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014591",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "美瑛町",
+        "url": "https://town.biei.hokkaido.jp/life/notification/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "美瑛町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "美瑛町",
+        "jisCode": "014591",
+        "url": "https://town.biei.hokkaido.jp/life/notification/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "biei-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014605",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "上富良野町",
+        "url": "https://www.town.kamifurano.hokkaido.jp/index.php?id=2810#:~:text=%E4%B8%8A%E5%AF%8C%E8%89%AF%E9%87%8E%E7%94%BA%E3%81%A7%E5%9F%8B%E8%91%AC,%E3%80%8C%E8%BF%94%E9%82%84%E3%80%8D%E3%82%82%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "上富良野町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "上富良野町",
+        "jisCode": "014605",
+        "url": "https://www.town.kamifurano.hokkaido.jp/index.php?id=2810#:~:text=%E4%B8%8A%E5%AF%8C%E8%89%AF%E9%87%8E%E7%94%BA%E3%81%A7%E5%9F%8B%E8%91%AC,%E3%80%8C%E8%BF%94%E9%82%84%E3%80%8D%E3%82%82%E3%81%94%E8%A6%A7%E3%81%8F%E3%81%A0%E3%81%95%E3%81%84%E3%80%82",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kamifurano-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014656",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "剣淵町",
+        "url": "https://www.town.kembuchi.hokkaido.jp/kurashi/%E3%81%94%E3%81%BF%E3%83%BB%E3%83%9A%E3%83%83%E3%83%88%E3%83%BB%E6%96%8E%E5%A0%B4/%E5%A2%93%E5%9C%B0%E3%83%BB%E6%96%8E%E5%A0%B4/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "剣淵町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "剣淵町",
+        "jisCode": "014656",
+        "url": "https://www.town.kembuchi.hokkaido.jp/kurashi/%E3%81%94%E3%81%BF%E3%83%BB%E3%83%9A%E3%83%83%E3%83%88%E3%83%BB%E6%96%8E%E5%A0%B4/%E5%A2%93%E5%9C%B0%E3%83%BB%E6%96%8E%E5%A0%B4/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kenbuchi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014681",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "下川町",
+        "url": "https://www.town.shimokawa.hokkaido.jp/section/2020/01/post-183.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "下川町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "下川町",
+        "jisCode": "014681",
+        "url": "https://www.town.shimokawa.hokkaido.jp/section/2020/01/post-183.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shimokawa-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014699",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "美深町",
+        "url": "http://www.town.bifuka.hokkaido.jp/cms/section/jyuuminn/qlmcaj0000006zju.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "美深町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "美深町",
+        "jisCode": "014699",
+        "url": "http://www.town.bifuka.hokkaido.jp/cms/section/jyuuminn/qlmcaj0000006zju.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "bifuka-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014702",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "音威子府村",
+        "url": "https://www.vill.otoineppu.hokkaido.jp/kakuka/juuminseikatsu/2014-0109-1050-14.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "音威子府村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "音威子府村",
+        "jisCode": "014702",
+        "url": "https://www.vill.otoineppu.hokkaido.jp/kakuka/juuminseikatsu/2014-0109-1050-14.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "otoineppu-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014834",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "苫前町",
+        "url": "http://www.town.tomamae.lg.jp/section/chomin/t55cub0000003elo.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "苫前町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "苫前町",
+        "jisCode": "014834",
+        "url": "http://www.town.tomamae.lg.jp/section/chomin/t55cub0000003elo.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tomamae-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014842",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "羽幌町",
+        "url": "https://www.town.haboro.lg.jp/kurashi/kankyo/reien/tetsuzuki02.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "羽幌町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "羽幌町",
+        "jisCode": "014842",
+        "url": "https://www.town.haboro.lg.jp/kurashi/kankyo/reien/tetsuzuki02.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "haboro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "014869",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "遠別町",
+        "url": "https://www.town.embetsu.hokkaido.jp/docs/page2020062400011.html?cat=/c60/c6110/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "遠別町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "遠別町",
+        "jisCode": "014869",
+        "url": "https://www.town.embetsu.hokkaido.jp/docs/page2020062400011.html?cat=/c60/c6110/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "enbetsu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015148",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "枝幸町",
+        "url": "https://www.esashi.jp/life/family_register/bochi.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "枝幸町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "枝幸町",
+        "jisCode": "015148",
+        "url": "https://www.esashi.jp/life/family_register/bochi.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "esashi-cho-soya",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015202",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "幌延町",
+        "url": "https://www.town.horonobe.lg.jp/www4/section/jumin/le009f0000000byg.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "幌延町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "幌延町",
+        "jisCode": "015202",
+        "url": "https://www.town.horonobe.lg.jp/www4/section/jumin/le009f0000000byg.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "horonobe-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015431",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "美幌町",
+        "url": "https://www.town.bihoro.hokkaido.jp/page/1042.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "美幌町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "美幌町",
+        "jisCode": "015431",
+        "url": "https://www.town.bihoro.hokkaido.jp/page/1042.html",
+        "pdfUrl": "",
+        "linkStatus": "NEEDS_REVIEW",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "bihoro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015440",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "津別町",
+        "url": "https://www.town.tsubetsu.hokkaido.jp/soshiki/hokenfukushi/12/600.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "津別町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "津別町",
+        "jisCode": "015440",
+        "url": "https://www.town.tsubetsu.hokkaido.jp/soshiki/hokenfukushi/12/600.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "tsubetsu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015644",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "大空町",
+        "url": "https://www.town.ozora.hokkaido.jp/soshiki/1006/18/3083.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大空町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "大空町",
+        "jisCode": "015644",
+        "url": "https://www.town.ozora.hokkaido.jp/soshiki/1006/18/3083.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ozora-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015458",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "斜里町",
+        "url": "https://www.town.shari.hokkaido.jp/soshikikarasagasu/kankyoka/seikatsukankyokakari/reien/1866.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "斜里町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "斜里町",
+        "jisCode": "015458",
+        "url": "https://www.town.shari.hokkaido.jp/soshikikarasagasu/kankyoka/seikatsukankyokakari/reien/1866.html",
+        "pdfUrl": "",
+        "linkStatus": "NEEDS_REVIEW",
+        "isPublished": false,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shari-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015466",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "清里町",
+        "url": "https://www.town.kiyosato.hokkaido.jp/life/?content=759",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "清里町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "清里町",
+        "jisCode": "015466",
+        "url": "https://www.town.kiyosato.hokkaido.jp/life/?content=759",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kiyosato-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015474",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "小清水町",
+        "url": "https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00008164.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "小清水町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "小清水町",
+        "jisCode": "015474",
+        "url": "https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00008164.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "koshimizu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015491",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "訓子府町",
+        "url": "https://www.town.kunneppu.hokkaido.jp/life/tyomin/boti.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "訓子府町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "訓子府町",
+        "jisCode": "015491",
+        "url": "https://www.town.kunneppu.hokkaido.jp/life/tyomin/boti.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kunneppu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015521",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "佐呂間町",
+        "url": "https://www.town.saroma.hokkaido.jp/kakuka/chouminka/kasouzyou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "佐呂間町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "佐呂間町",
+        "jisCode": "015521",
+        "url": "https://www.town.saroma.hokkaido.jp/kakuka/chouminka/kasouzyou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "saroma-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015555",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "遠軽町",
+        "url": "https://engaru.jp/life/page.php?id=8",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "遠軽町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "遠軽町",
+        "jisCode": "015555",
+        "url": "https://engaru.jp/life/page.php?id=8",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "engaru-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015636",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "雄武町",
+        "url": "https://www.town.oumu.hokkaido.jp/soshiki/juminseikatsuka/kankyoueisei/2128.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "雄武町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "雄武町",
+        "jisCode": "015636",
+        "url": "https://www.town.oumu.hokkaido.jp/soshiki/juminseikatsuka/kankyoueisei/2128.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "omu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015717",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "豊浦町",
+        "url": "https://www.town.toyoura.hokkaido.jp/hotnews/detail/00000246.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "豊浦町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "豊浦町",
+        "jisCode": "015717",
+        "url": "https://www.town.toyoura.hokkaido.jp/hotnews/detail/00000246.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "toyoura-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015849",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "洞爺湖町",
+        "url": "http://www.town.toyako.hokkaido.jp/town_guide/condolences/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "洞爺湖町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "洞爺湖町",
+        "jisCode": "015849",
+        "url": "http://www.town.toyako.hokkaido.jp/town_guide/condolences/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "toyako-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "015784",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "白老町",
+        "url": "https://www.town.shiraoi.hokkaido.jp/docs/page2013022800037.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "白老町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "白老町",
+        "jisCode": "015784",
+        "url": "https://www.town.shiraoi.hokkaido.jp/docs/page2013022800037.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shiraoi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016012",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "日高町",
+        "url": "https://www.town.hidaka.hokkaido.jp/life/?content=782",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "日高町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "日高町",
+        "jisCode": "016012",
+        "url": "https://www.town.hidaka.hokkaido.jp/life/?content=782",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hidaka-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016101",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "新ひだか町",
+        "url": "https://www.shinhidaka-hokkaido.jp/hotnews/detail/00005011.html#a2_4",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "新ひだか町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "新ひだか町",
+        "jisCode": "016101",
+        "url": "https://www.shinhidaka-hokkaido.jp/hotnews/detail/00005011.html#a2_4",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shinhidaka-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016314",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "音更町",
+        "url": "https://www.town.otofuke.hokkaido.jp/machi/shisetsu/shisetsu/goudounoukotsu.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "音更町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "音更町",
+        "jisCode": "016314",
+        "url": "https://www.town.otofuke.hokkaido.jp/machi/shisetsu/shisetsu/goudounoukotsu.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "otofuke-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016349",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "鹿追町",
+        "url": "https://www.town.shikaoi.lg.jp/kurashi/life/sogi_bochi/bochi/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "鹿追町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "鹿追町",
+        "jisCode": "016349",
+        "url": "https://www.town.shikaoi.lg.jp/kurashi/life/sogi_bochi/bochi/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shikaoi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016357",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "新得町",
+        "url": "https://www.shintoku-town.jp/kurashi-tetuduki/jyuuminhyou-koseki/koseki/kaisou/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "新得町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "新得町",
+        "jisCode": "016357",
+        "url": "https://www.shintoku-town.jp/kurashi-tetuduki/jyuuminhyou-koseki/koseki/kaisou/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shintoku-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016365",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "清水町",
+        "url": "https://www.town.shimizu.hokkaido.jp/life-event/04/details/post.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "清水町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "清水町",
+        "jisCode": "016365",
+        "url": "https://www.town.shimizu.hokkaido.jp/life-event/04/details/post.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shimizu-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016373",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "芽室町",
+        "url": "https://www.memuro.net/website/download/bunya-new.html#gomi",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "芽室町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "芽室町",
+        "jisCode": "016373",
+        "url": "https://www.memuro.net/website/download/bunya-new.html#gomi",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "memuro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016381",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "中札内村",
+        "url": "https://www.vill.nakasatsunai.hokkaido.jp/kurashi/todokede_syoumei/bochi_kasouba/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "中札内村",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "中札内村",
+        "jisCode": "016381",
+        "url": "https://www.vill.nakasatsunai.hokkaido.jp/kurashi/todokede_syoumei/bochi_kasouba/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "nakasatsunai-mura",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016411",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "大樹町",
+        "url": "https://www.town.taiki.hokkaido.jp/soshiki/juminka/3/1/1/652.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "大樹町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "大樹町",
+        "jisCode": "016411",
+        "url": "https://www.town.taiki.hokkaido.jp/soshiki/juminka/3/1/1/652.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "taiki-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016471",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "足寄町",
+        "url": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/okuyami/folder_5/page_110.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "足寄町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "足寄町",
+        "jisCode": "016471",
+        "url": "https://www.town.ashoro.hokkaido.jp/kurashi/kurashi-tetsuzuki/okuyami/folder_5/page_110.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "ashoro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016497",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "浦幌町",
+        "url": "https://www.urahoro.jp/life/?content=688",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "浦幌町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "浦幌町",
+        "jisCode": "016497",
+        "url": "https://www.urahoro.jp/life/?content=688",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "urahoro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016616",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "釧路町",
+        "url": "https://www.city.kushiro.lg.jp/kurashi/shinseisho/1007204/1007209/1007210.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "釧路町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "釧路町",
+        "jisCode": "016616",
+        "url": "https://www.city.kushiro.lg.jp/kurashi/shinseisho/1007204/1007209/1007210.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "kushiro-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016624",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "厚岸町",
+        "url": "https://www.akkeshi-town.jp/kurashi/sumai/kaiso_tetuduki/",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "厚岸町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "厚岸町",
+        "jisCode": "016624",
+        "url": "https://www.akkeshi-town.jp/kurashi/sumai/kaiso_tetuduki/",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "akkeshi-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016632",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "浜中町",
+        "url": "https://www.townhamanaka.jp/kurashi_kankyou/kankyou/2022-0808-1615-52.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "浜中町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "浜中町",
+        "jisCode": "016632",
+        "url": "https://www.townhamanaka.jp/kurashi_kankyou/kankyou/2022-0808-1615-52.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "hamanaka-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016641",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "標茶町",
+        "url": "https://town.shibecha.hokkaido.jp/kurashi/sougou/sonota/ohaka/kaisou.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "標茶町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "標茶町",
+        "jisCode": "016641",
+        "url": "https://town.shibecha.hokkaido.jp/kurashi/sougou/sonota/ohaka/kaisou.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shibecha-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016659",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "弟子屈町",
+        "url": "https://www.town.teshikaga.hokkaido.jp/kurashi/soshikiichiran/kankyoseikatsuka/5/1/421.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "弟子屈町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "弟子屈町",
+        "jisCode": "016659",
+        "url": "https://www.town.teshikaga.hokkaido.jp/kurashi/soshikiichiran/kankyoseikatsuka/5/1/421.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "teshikaga-cho",
+        "linkType": "GUIDE"
+      }
+    },
+    {
+      "jisCode": "016683",
+      "candidate": {
+        "prefecture": "北海道",
+        "municipality": "白糠町",
+        "url": "https://www.town.shiranuka.lg.jp/section/hoken/qvum4j00000014ir.html",
+        "pdfUrl": null,
+        "source": "yasuda_html_import",
+        "rawText": "白糠町",
+        "notes": "文字化けの可能性あり"
+      },
+      "pending": {
+        "prefecture": "北海道",
+        "municipality": "白糠町",
+        "jisCode": "016683",
+        "url": "https://www.town.shiranuka.lg.jp/section/hoken/qvum4j00000014ir.html",
+        "pdfUrl": "",
+        "linkStatus": "OK",
+        "isPublished": true,
+        "hasDomainWarning": false,
+        "municipalitySlug": "shiranuka-cho",
+        "linkType": "GUIDE"
+      }
+    }
+  ],
+  "unmatched": [
+    {
+      "prefecture": "宮城県",
+      "municipality": "青葉区",
+      "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+      "pdfUrl": null,
+      "source": "yasuda_html_import",
+      "rawText": "青葉区",
+      "notes": "文字化けの可能性あり"
+    },
+    {
+      "prefecture": "宮城県",
+      "municipality": "宮城野区",
+      "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+      "pdfUrl": null,
+      "source": "yasuda_html_import",
+      "rawText": "宮城野区",
+      "notes": "文字化けの可能性あり"
+    },
+    {
+      "prefecture": "宮城県",
+      "municipality": "若林区",
+      "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+      "pdfUrl": null,
+      "source": "yasuda_html_import",
+      "rawText": "若林区",
+      "notes": "文字化けの可能性あり"
+    },
+    {
+      "prefecture": "宮城県",
+      "municipality": "太白区",
+      "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+      "pdfUrl": null,
+      "source": "yasuda_html_import",
+      "rawText": "太白区",
+      "notes": "文字化けの可能性あり"
+    },
+    {
+      "prefecture": "宮城県",
+      "municipality": "泉区",
+      "url": "https://www.city.sendai.jp/boenkanri/kurashi/tetsuzuki/koseki/kofu/kaiso.html",
+      "pdfUrl": null,
+      "source": "yasuda_html_import",
+      "rawText": "泉区",
+      "notes": "文字化けの可能性あり"
+    }
+  ]
+}
