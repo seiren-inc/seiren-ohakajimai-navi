@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle } from "lucide-react"
+import CommonKaisouGuide from "@/components/kaisou/CommonKaisouGuide"
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
@@ -112,7 +113,7 @@ export default async function MunicipalityPage(props: PageProps) {
                                     {municipality.pdfUrl && (
                                         <Button
                                             size="lg"
-                                            className="w-full sm:w-auto order-1 sm:order-none"
+                                            className="w-full sm:w-auto order-1 sm:order-0"
                                             variant={municipality.linkType === 'PDF' ? "default" : "outline"}
                                             asChild
                                         >
@@ -125,7 +126,7 @@ export default async function MunicipalityPage(props: PageProps) {
                                     {municipality.url && (
                                         <Button
                                             size="lg"
-                                            className="w-full sm:w-auto order-2 sm:order-none"
+                                            className="w-full sm:w-auto order-2 sm:order-0"
                                             variant={municipality.linkType === 'PDF' ? "outline" : "default"}
                                             asChild
                                         >
@@ -179,6 +180,9 @@ export default async function MunicipalityPage(props: PageProps) {
                             </div>
                         </div>
                     </section>
+
+                    {/* 共通：改葬手続き完全ガイド */}
+                    <CommonKaisouGuide />
                 </div>
 
                 {/* Sidebar CTA */}
