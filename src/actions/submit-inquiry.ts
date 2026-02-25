@@ -19,14 +19,14 @@ export type State = {
 
 export async function submitInquiry(prevState: State | null, formData: FormData): Promise<State> {
     // Convert FormData to object
-    const rawData: Record<string, any> = {}
+    const rawData: Record<string, unknown> = {}
     formData.forEach((value, key) => {
         // Handle checkbox arrays or single values
         if (rawData[key]) {
             if (!Array.isArray(rawData[key])) {
-                rawData[key] = [rawData[key]]
+                rawData[key] = [rawData[key]] as unknown[]
             }
-            rawData[key].push(value)
+            (rawData[key] as unknown[]).push(value)
         } else {
             rawData[key] = value
         }

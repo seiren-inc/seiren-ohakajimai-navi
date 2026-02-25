@@ -5,8 +5,7 @@ import { cookies } from "next/headers"
 import { prisma } from "@/lib/prisma"
 import { municipalityImportSchema, type MunicipalityImportData } from "@/lib/validations/municipality"
 import { revalidatePath } from "next/cache"
-import { parse } from "csv-parse/sync" // If we need server-side parsing, but we agreed on client-side parsing. 
-// Actually, for "execute", we receive the data array.
+// csv-parse is available for future server-side parsing needs.
 
 // Result Types
 type AnalysisResult = {
@@ -37,7 +36,7 @@ async function requireAdmin() {
         {
             cookies: {
                 getAll() { return cookieStore.getAll() },
-                setAll(cookiesToSet) {
+                setAll() {
                     // Server Actions can't always set cookies unless in a specific context, 
                     // but for reading auth it's fine.
                 }
@@ -56,7 +55,7 @@ async function requireAdmin() {
     return adminUser
 }
 
-export async function analyzeImport(data: any[]): Promise<AnalysisResult> {
+export async function analyzeImport(data: Record<string, unknown>[]): Promise<AnalysisResult> {
     await requireAdmin()
 
     const analysis: AnalysisResult = {
@@ -75,7 +74,7 @@ export async function analyzeImport(data: any[]): Promise<AnalysisResult> {
         if (!result.success) {
             analysis.errors.push({
                 row: i + 1,
-                message: result.error.errors.map(e => `${e.path.join(".")}: ${e.message}`).join(", ")
+                message: result.error.issues.map(e => `${e.path.join(".")}: ${e.message}`).join(", ")
             })
         } else {
             analysis.validData.push(result.data)
@@ -150,9 +149,10 @@ export async function executeImport(
                 },
             })
             successCount++
-        } catch (e: any) {
+        } catch (e: unknown) {
             failedCount++
-            errorDetails.push(`Failed to upsert ${item.jisCode}: ${e.message}`)
+            const message = e instanceof Error ? e.message : String(e)
+            errorDetails.push(`Failed to upsert ${item.jisCode}: ${message}`)
         }
     }
 
