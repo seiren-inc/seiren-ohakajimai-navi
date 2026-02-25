@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { ExternalLink, FileText, BadgeCheck, Info, MessageSquare } from 'lucide-react'
+import { ExternalLink, FileCheck, FileText, Search, AlertCircle } from 'lucide-react'
 
 interface SubLink {
   name: string
@@ -21,73 +21,119 @@ interface Municipality {
 
 interface MunicipalityListProps {
   municipalities: Municipality[]
+  onLinkClick?: (name: string) => void
 }
 
-const QualityBadge = ({ level }: { level: number }) => {
-  switch (level) {
-    case 3:
-      return (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700 border border-emerald-200 uppercase tracking-tighter">
-          <BadgeCheck className="w-3 h-3" />
-          専用案内あり
-        </span>
-      )
-    case 2:
-      return (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-600 border border-blue-100 uppercase tracking-tighter">
-          <Info className="w-3 h-3" />
-          一般案内
-        </span>
-      )
-    case 1:
-      return (
-        <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-bold bg-amber-50 text-amber-600 border border-amber-100 uppercase tracking-tighter">
-          <MessageSquare className="w-3 h-3" />
-          窓口案内
-        </span>
-      )
-    default:
-      return null
-  }
+function cn(...classes: (string | boolean | undefined)[]) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default function MunicipalityList({ municipalities }: MunicipalityListProps) {
+export default function MunicipalityList({ municipalities, onLinkClick }: MunicipalityListProps) {
   const getTargetUrl = (m: Pick<Municipality, 'url' | 'pdfUrl'>) => {
     return m.pdfUrl || m.url || '#'
   }
 
-  const isPdf = (m: Pick<Municipality, 'url' | 'pdfUrl'>) => {
-    return !!m.pdfUrl
-  }
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+    <div className="space-y-2">
       {municipalities.map((m) => {
+        const hasLink = !!(m.url || m.pdfUrl)
         const targetUrl = getTargetUrl(m)
+        const isDedicated = m.dataQualityLevel >= 3
         const hasSubLinks = Array.isArray(m.subLinks) && m.subLinks.length > 0
 
         return (
           <div key={m.jisCode} className="flex flex-col gap-2">
-            {/* Main Municipality Link */}
-            <a
-              href={targetUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between p-4 bg-white rounded-xl border border-slate-200 transition-all hover:border-blue-300 hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
-            >
-              <div className="flex flex-col gap-1.5 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className="font-bold text-slate-800 group-hover:text-blue-600 truncate">
-                    {m.name}
-                  </span>
-                  <QualityBadge level={m.dataQualityLevel} />
+            {hasLink ? (
+              /* ── リンクあり：通常表示 ── */
+              <a
+                href={targetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => onLinkClick?.(m.name)}
+                className={cn(
+                  'flex items-center justify-between rounded-lg px-4 py-3 transition-colors',
+                  isDedicated
+                    ? 'border-l-4 border-l-emerald-500 bg-emerald-50/50 hover:bg-emerald-50'
+                    : 'border border-border hover:bg-muted/50'
+                )}
+              >
+                {/* 左側: アイコン + 名前 + JISコード */}
+                <div className="flex items-center gap-3">
+                  <div
+                    className={cn(
+                      'flex h-8 w-8 shrink-0 items-center justify-center rounded-full',
+                      isDedicated ? 'bg-emerald-100' : 'bg-muted'
+                    )}
+                  >
+                    {isDedicated ? (
+                      <FileCheck className="h-4 w-4 text-emerald-600" />
+                    ) : (
+                      <FileText className="h-4 w-4 text-muted-foreground" />
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{m.name}</p>
+                    <p className="text-xs text-muted-foreground">#{m.jisCode}</p>
+                  </div>
                 </div>
-                <span className="text-[10px] text-slate-400 font-mono tracking-tight">#{m.jisCode}</span>
+
+                {/* 右側: ラベル + 外部リンクアイコン */}
+                <div className="flex items-center gap-2">
+                  <span
+                    className={cn(
+                      'hidden rounded-full px-2.5 py-0.5 text-xs font-medium sm:inline-flex',
+                      isDedicated
+                        ? 'bg-emerald-100 text-emerald-700'
+                        : 'bg-muted text-muted-foreground'
+                    )}
+                  >
+                    {isDedicated ? '専用案内あり' : '一般案内'}
+                  </span>
+                  <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground" />
+                </div>
+              </a>
+            ) : (
+              /* ── リンクなし：代替UIを表示 ── */
+              <div className="rounded-lg border border-dashed border-border bg-muted/20 px-4 py-3">
+                <div className="flex items-start gap-3">
+                  {/* アイコン */}
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-muted">
+                    <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                  </div>
+
+                  {/* 自治体名 + ステータス */}
+                  <div className="min-w-0 flex-1 space-y-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-sm font-medium text-foreground">{m.name}</p>
+                      <span className="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
+                        申請書リンク未登録
+                      </span>
+                    </div>
+                    <p className="text-xs text-muted-foreground">#{m.jisCode}</p>
+
+                    {/* 代替導線 */}
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      {/* Google 検索ボタン */}
+                      <a
+                        href={`https://www.google.com/search?q=${encodeURIComponent(m.name + ' 改葬許可申請書')}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => onLinkClick?.(m.name)}
+                        className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground shadow-sm transition-colors hover:bg-muted"
+                      >
+                        <Search className="h-3 w-3" />
+                        公式サイトで申請書を検索
+                      </a>
+                    </div>
+
+                    {/* 窓口案内 */}
+                    <p className="text-xs text-muted-foreground">
+                      窓口：住民課・戸籍課などで入手できます。
+                    </p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-slate-300 group-hover:text-blue-500 transition-colors flex-shrink-0">
-                {isPdf(m) ? <FileText className="w-5 h-5" /> : <ExternalLink className="w-5 h-5" />}
-              </div>
-            </a>
+            )}
 
             {/* SubLinks (Wards/Districts) */}
             {hasSubLinks && (
@@ -98,13 +144,14 @@ export default function MunicipalityList({ municipalities }: MunicipalityListPro
                     href={sub.url || '#'}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between py-2 px-3 bg-white/50 rounded-lg border border-slate-100 hover:bg-blue-50/50 hover:border-blue-200 transition-all text-sm group/sub"
+                    onClick={() => onLinkClick?.(sub.name)}
+                    className="flex items-center justify-between py-2 px-3 bg-white/50 rounded-lg border border-slate-100 hover:bg-emerald-50/50 hover:border-emerald-200 transition-all text-sm group/sub"
                   >
                     <div className="flex items-center gap-2 min-w-0">
-                      <span className="text-slate-600 group-hover/sub:text-blue-600 truncate">{sub.name}</span>
+                      <span className="text-slate-600 group-hover/sub:text-emerald-600 truncate">{sub.name}</span>
                       <span className="text-[10px] font-bold text-slate-400 border border-slate-200 px-1 rounded bg-slate-50 uppercase tracking-tighter">区</span>
                     </div>
-                    <ExternalLink className="w-3.5 h-3.5 text-slate-300 group-hover/sub:text-blue-400 transition-colors" />
+                    <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover/sub:text-emerald-500 transition-colors" />
                   </a>
                 ))}
               </div>
