@@ -67,7 +67,7 @@ docs/
 | ------ | -------------------------- | --------------------------- | ------------------------------------------- | ------ |
 | Doc-01 | 要件定義書                 | 01_requirements             | Doc-01_RequirementsDefinition.md            | 投入済 |
 | Doc-02 | 基本設計書                 | 02_basic_design             | Doc-02_SystemBasicDesign.md                 | 投入済 |
-| Doc-03 | DB詳細設計書               | 03_detail_design            | Doc-03_DatabaseDetailDesign.md              | 投入済 |
+| Doc-03 | DB詳細設計書               | 03_detail_design            | Doc-03_DatabaseDetailDesign_v1.1.md         | 投入済 |
 | Doc-04 | アプリケーション詳細設計書 | 03_detail_design            | Doc-04_ApplicationDetailDesign.md           | 投入済 |
 | Doc-05 | テスト設計書               | 05_test_design              | Doc-05_TestDesign.md                        | 投入済 |
 | Doc-06 | セキュリティ設計書         | 06_security                 | Doc-06_SecurityDesign.md                    | 投入済 |
