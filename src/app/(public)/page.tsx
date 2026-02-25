@@ -7,18 +7,17 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Separator } from "@/components/ui/separator"
 import Link from "next/link"
 import { constructMetadata } from "@/lib/seo"
-import { Phone, Mail, FileText, CheckCircle2, ArrowRight, MapPin, Milestone, Building2, HelpCircle, Download } from "lucide-react"
+import { Phone, Mail, CheckCircle2, ArrowRight, MapPin, Milestone, Building2, Download } from "lucide-react"
 
 export const metadata = constructMetadata({
     title: "お墓じまいナビ｜全国対応・ワンストップの改葬代行サービス",
     description: "【全国対応】面倒な改葬手続きから墓石撤去、新しい供養先（永代供養・散骨・粉骨）の手配まで、お墓じまいのすべてをワンストップでサポートします。株式会社清蓮が運営。",
     image: "/og-image-home.jpg",
 })
+
+export const revalidate = 86400
 
 export default function TopPage() {
     return (

@@ -1,8 +1,13 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 import MunicipalityList from './MunicipalityList'
+
+interface SubLink {
+  name: string
+  url: string
+}
 
 interface Municipality {
   jisCode: string
@@ -11,7 +16,7 @@ interface Municipality {
   municipalitySlug: string
   url: string | null
   pdfUrl: string | null
-  subLinks: any
+  subLinks: SubLink[] | null
   dataQualityLevel: number
 }
 
@@ -23,13 +28,18 @@ interface PrefAccordionProps {
 
 export default function PrefAccordion({ name, municipalities, isSearchActive }: PrefAccordionProps) {
   const [isOpen, setIsOpen] = useState(false)
-
-  // Auto-open when search is active and matches are found
+  // Auto-open/close when search state changes (ref-guarded to avoid cascading renders)
+  const prevSearchActive = useRef(isSearchActive)
   useEffect(() => {
-    if (isSearchActive && municipalities.length > 0) {
-      setIsOpen(true)
-    } else if (!isSearchActive) {
-      setIsOpen(false)
+    if (prevSearchActive.current !== isSearchActive) {
+      prevSearchActive.current = isSearchActive
+      if (isSearchActive && municipalities.length > 0) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- ref-guarded: runs only on prop transition, not every render
+        setIsOpen(true)
+      } else if (!isSearchActive) {
+         
+        setIsOpen(false)
+      }
     }
   }, [isSearchActive, municipalities])
 

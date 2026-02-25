@@ -3,6 +3,11 @@
 import React from 'react'
 import { ExternalLink, FileText, BadgeCheck, Info, MessageSquare } from 'lucide-react'
 
+interface SubLink {
+  name: string
+  url: string
+}
+
 interface Municipality {
   jisCode: string
   name: string
@@ -10,7 +15,7 @@ interface Municipality {
   municipalitySlug: string
   url: string | null
   pdfUrl: string | null
-  subLinks: any // Should be an array of objects if exists
+  subLinks: SubLink[] | null
   dataQualityLevel: number
 }
 
@@ -87,7 +92,7 @@ export default function MunicipalityList({ municipalities }: MunicipalityListPro
             {/* SubLinks (Wards/Districts) */}
             {hasSubLinks && (
               <div className="ml-4 pl-4 border-l-2 border-slate-200 py-1 grid grid-cols-1 gap-2">
-                {m.subLinks.map((sub: any, idx: number) => (
+                {m.subLinks!.map((sub, idx) => (
                   <a
                     key={`${m.jisCode}-sub-${idx}`}
                     href={sub.url || '#'}

@@ -41,6 +41,12 @@ export default async function PrefecturePage(props: PageProps) {
             prefectureSlug: params.prefecture,
             isPublished: true,
         },
+        select: {
+            id: true,
+            name: true,
+            prefectureSlug: true,
+            municipalitySlug: true,
+        },
         orderBy: { jisCode: "asc" },
     })
 

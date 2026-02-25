@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useTransition } from "react"
+import { useTransition } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
@@ -80,24 +80,17 @@ export function ContactForm() {
                     toast.error(result.message || "送信に失敗しました")
                     if (result.errors) {
                         Object.entries(result.errors).forEach(([key, messages]) => {
-                            form.setError(key as any, { message: messages[0] })
+                            form.setError(key as keyof InquiryFormData, { message: messages[0] })
                         })
                     }
                 }
-            } catch (error) {
+            } catch {
                 toast.error("予期せぬエラーが発生しました")
             }
         })
     }
 
-    // Address Auto-fill via Postal Code (Client-side API call if needed, simple implementation placeholder)
-    const handlePostalCodeChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
-        const code = e.target.value.replace(/-/g, "")
-        if (code.length === 7) {
-            // Here you would call an address API like zipcloud
-            // For now, let's just leave it manual or implement basic fetch later
-        }
-    }
+
 
     return (
         <Form {...form}>

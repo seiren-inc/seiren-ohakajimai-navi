@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Menu } from 'lucide-react'
+import { Phone } from 'lucide-react'
 
 export function Header() {
     return (
@@ -11,19 +11,19 @@ export function Header() {
                 </Link>
 
                 <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-                    <Link href="/about" className="transition-colors hover:text-foreground/80 text-foreground/60">お墓じまいとは</Link>
                     <Link href="/flow" className="transition-colors hover:text-foreground/80 text-foreground/60">流れ</Link>
                     <Link href="/price" className="transition-colors hover:text-foreground/80 text-foreground/60">料金</Link>
                     <Link href="/kaissou" className="transition-colors hover:text-foreground/80 text-foreground/60">対応地域</Link>
-                    <Link href="/company" className="transition-colors hover:text-foreground/80 text-foreground/60">会社概要</Link>
+                    <Link href="/kaisoukyoka" className="transition-colors hover:text-foreground/80 text-foreground/60">申請書DL</Link>
                 </nav>
 
-                <div className="flex items-center gap-4">
-                    <Button variant="default" className="hidden md:inline-flex bg-accent text-accent-foreground hover:bg-accent/90">
-                        無料相談・お見積り
-                    </Button>
-                    <Button variant="ghost" size="icon" className="md:hidden">
-                        <Menu className="h-6 w-6" />
+                <div className="flex items-center gap-3">
+                    <a href="tel:0120-000-000" className="hidden lg:flex items-center gap-1.5 text-sm font-bold text-foreground/80 hover:text-primary transition-colors">
+                        <Phone className="h-4 w-4" />
+                        0120-000-000
+                    </a>
+                    <Button variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 text-sm" asChild>
+                        <Link href="/contact">無料相談・お見積り</Link>
                     </Button>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, ExternalLink, Phone, Mail, ArrowRight, Download, AlertTriangle } from "lucide-react"
+import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle } from "lucide-react"
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
@@ -19,6 +19,26 @@ async function getMunicipality(prefSlug: string, muniSlug: string) {
             isPublished: true,
         },
     })
+}
+
+// Revalidate the page every 24 hours (86400 seconds)
+export const revalidate = 86400
+
+// Pre-build the most common/popular municipalities at build time
+export async function generateStaticParams() {
+    // Fetch a subset of important or frequently accessed municipalities to pre-build.
+    // Let's pre-build the designated ordinance cities (政令指定都市) or top 100 to save build time,
+    // while the rest will be generated on-demand (ISR).
+    const topMunicipalities = await prisma.municipality.findMany({
+        where: { isPublished: true },
+        select: { prefectureSlug: true, municipalitySlug: true },
+        take: 100, // Pre-building the first 100 as an example
+    })
+
+    return topMunicipalities.map((m) => ({
+        prefecture: m.prefectureSlug,
+        municipality: m.municipalitySlug,
+    }))
 }
 
 export async function generateMetadata(props: PageProps) {

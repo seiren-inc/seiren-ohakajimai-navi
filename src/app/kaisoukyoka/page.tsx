@@ -35,7 +35,7 @@ export default async function KaisoukyokaPage() {
   })
 
   // Group by prefecture
-  const groupedData: Record<string, any[]> = {}
+  const groupedData: Record<string, typeof municipalities> = {}
   municipalities.forEach(m => {
     if (!groupedData[m.prefectureName]) {
       groupedData[m.prefectureName] = []
@@ -55,7 +55,8 @@ export default async function KaisoukyokaPage() {
           </p>
         </header>
 
-        <KaisoukyokaClient initialData={groupedData} />
+        {/* subLinks は Prisma が JsonValue で返すが、ランタイムでは SubLink[] 構造が保証されている */}
+        <KaisoukyokaClient initialData={groupedData as React.ComponentProps<typeof KaisoukyokaClient>['initialData']} />
       </div>
     </main>
   )

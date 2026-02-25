@@ -5,6 +5,11 @@ import { AREAS } from '@/lib/areas'
 import PrefAccordion from './PrefAccordion'
 import { Search, X } from 'lucide-react'
 
+interface SubLink {
+  name: string
+  url: string
+}
+
 interface Municipality {
   jisCode: string
   name: string
@@ -12,7 +17,7 @@ interface Municipality {
   municipalitySlug: string
   url: string | null
   pdfUrl: string | null
-  subLinks: any
+  subLinks: SubLink[] | null
   dataQualityLevel: number
 }
 
@@ -31,7 +36,7 @@ export default function KaisoukyokaClient({ initialData }: KaisoukyokaClientProp
 
     Object.entries(initialData).forEach(([pref, items]) => {
       const matchPref = pref.includes(query)
-      const matchingItems = items.filter(item => 
+      const matchingItems = items.filter(item =>
         item.name.includes(query) || matchPref
       )
 
@@ -77,7 +82,7 @@ export default function KaisoukyokaClient({ initialData }: KaisoukyokaClientProp
             onChange={(e) => setSearchQuery(e.target.value)}
           />
           {searchQuery && (
-            <button 
+            <button
               onClick={() => setSearchQuery('')}
               className="p-1 hover:bg-slate-100 rounded-full transition-colors mr-1"
             >
@@ -122,12 +127,12 @@ export default function KaisoukyokaClient({ initialData }: KaisoukyokaClientProp
               {area.prefectures.map((pref) => {
                 const items = filteredData[pref]
                 if (searchQuery && !items) return null
-                
+
                 return (
-                  <PrefAccordion 
-                    key={pref} 
-                    name={pref} 
-                    municipalities={items || []} 
+                  <PrefAccordion
+                    key={pref}
+                    name={pref}
+                    municipalities={items || []}
                     isSearchActive={!!searchQuery}
                   />
                 )
