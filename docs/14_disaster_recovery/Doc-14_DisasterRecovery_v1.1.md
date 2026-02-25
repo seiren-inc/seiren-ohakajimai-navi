@@ -1,4 +1,4 @@
-# Doc-14 Backup & Disaster Recovery Design v1.0
+# Doc-14 Backup & Disaster Recovery Design v1.1
 
 Project: seiren-ohakajimai-navi
 
@@ -56,6 +56,24 @@ Project: seiren-ohakajimai-navi
 
 本プロジェクトでは **RPO = 1 commit**
 
+追加定義：
+
+重要マイルストーンごとに必ず Git Tag を付与する。
+以下のタイミングはタグ必須。
+
+- Docフェーズ完了時
+- スキーマ確定時
+- SEO生成物確定時
+- AI公開前
+- 本番リリース前
+
+タグ命名規則：
+
+- `release-x.y.z`
+- `milestone-yyyymmdd-description`
+
+タグ未付与の状態での本番反映は禁止。
+
 理由：
 全変更は git commit 単位で管理されるため、
 最悪でも直近コミット以前へ戻せれば良い。
@@ -72,10 +90,10 @@ Project: seiren-ohakajimai-navi
 
 ### 4.1 コードバックアップ
 
-| 区分 | 保存先 |
-|------|--------|
-| Primary | GitHub（remote SSH） |
-| Secondary | ローカル clone |
+| 区分      | 保存先               |
+| --------- | -------------------- |
+| Primary   | GitHub（remote SSH） |
+| Secondary | ローカル clone       |
 
 原則：
 
@@ -222,12 +240,12 @@ Project: seiren-ohakajimai-navi
 
 ## 9. ディザスターレベル分類
 
-| Level | 深刻度 | 例 |
-|-------|--------|-----|
-| Level 1 | 軽微 | ビルド失敗 |
-| Level 2 | 中規模 | データ破損 |
-| Level 3 | 重大 | 履歴消失、リポジトリ削除 |
-| Level 4 | 致命的 | バックアップなし |
+| Level   | 深刻度 | 例                       |
+| ------- | ------ | ------------------------ |
+| Level 1 | 軽微   | ビルド失敗               |
+| Level 2 | 中規模 | データ破損               |
+| Level 3 | 重大   | 履歴消失、リポジトリ削除 |
+| Level 4 | 致命的 | バックアップなし         |
 
 ※Level 4 は設計上発生しない構造とする
 
@@ -288,6 +306,7 @@ Project: seiren-ohakajimai-navi
 
 ## 14. 変更履歴
 
-| Version | 内容 |
-|---------|------|
-| v1.0 | 初版 |
+| Version | 内容                                                  |
+| ------- | ----------------------------------------------------- |
+| v1.0    | 初版                                                  |
+| v1.1    | RPO定義強化（重要マイルストーンタグ付与ルールの追加） |
