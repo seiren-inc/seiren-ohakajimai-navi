@@ -38,7 +38,7 @@ export default function LoginPage() {
                 router.push("/admin")
                 router.refresh()
             }
-        } catch (error) {
+        } catch {
             toast.error("予期せぬエラーが発生しました")
         } finally {
             setIsLoading(false)
