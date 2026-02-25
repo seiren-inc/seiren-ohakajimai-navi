@@ -4,7 +4,7 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 describe('Municipality Data Integrity (1737 items)', () => {
-    let municipalities: any[] = []
+    let municipalities: Record<string, unknown>[] = []
 
     beforeAll(async () => {
         municipalities = await prisma.municipality.findMany()
