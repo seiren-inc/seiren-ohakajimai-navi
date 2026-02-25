@@ -2,11 +2,11 @@ import { Suspense } from "react";
 import { prisma } from "@/lib/prisma";
 import { getQualityCounts } from "@/lib/admin/qualityCounts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AlertCircle, CheckCircle2, FileText, ListChecks, ArrowRight, History, XCircle } from "lucide-react";
+import { AlertCircle, CheckCircle2, FileText, ListChecks, ArrowRight, History } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 
 async function RecentAuditSummary() {
-    // @ts-ignore
     const lastRun = await prisma.linkCheckRun.findFirst({
         orderBy: { startedAt: 'desc' }
     });
@@ -106,12 +106,12 @@ export default function QualityDashboardPage() {
             <div className="flex items-center justify-between space-y-2">
                 <h2 className="text-3xl font-bold tracking-tight">Data Quality Dashboard</h2>
                 <div className="flex items-center space-x-2">
-                    <a href="/admin/quality/issues" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+                    <Link href="/admin/quality/issues" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
                         View Issues
-                    </a>
-                    <a href="/admin/quality/municipalities" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
+                    </Link>
+                    <Link href="/admin/quality/municipalities" className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
                         All Municipalities
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -124,9 +124,9 @@ export default function QualityDashboardPage() {
                     <Card className="col-span-4">
                         <CardHeader className="flex flex-row items-center justify-between">
                             <CardTitle>Recent Link Audits</CardTitle>
-                            <a href="/admin/quality/runs" className="text-sm text-blue-600 hover:underline">
+                            <Link href="/admin/quality/runs" className="text-sm text-blue-600 hover:underline">
                                 View History
-                            </a>
+                            </Link>
                         </CardHeader>
                         <CardContent>
                             <Suspense fallback={<div className="h-[200px] flex items-center justify-center">Loading audit history...</div>}>

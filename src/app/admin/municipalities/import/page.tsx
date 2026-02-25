@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
-import { Loader2, Upload, FileJson, CheckCircle2, AlertCircle } from "lucide-react"
+import { Loader2, Upload, CheckCircle2, AlertCircle } from "lucide-react"
 import Papa from "papaparse"
 import { toast } from "sonner"
 import { analyzeImport, executeImport } from "@/actions/admin/import-municipalities"
@@ -15,7 +15,7 @@ import { type MunicipalityImportData } from "@/lib/validations/municipality"
 
 export default function ImportPage() {
     const [file, setFile] = useState<File | null>(null)
-    const [parsedData, setParsedData] = useState<any[]>([])
+    const [parsedData, setParsedData] = useState<Record<string, unknown>[]>([])
     const [analysis, setAnalysis] = useState<{
         total: number
         newCount: number
@@ -53,7 +53,7 @@ export default function ImportPage() {
                     } else {
                         toast.error("JSONは配列形式である必要があります")
                     }
-                } catch (error) {
+                } catch {
                     toast.error("無効なJSONファイルです")
                 }
             }
@@ -64,7 +64,7 @@ export default function ImportPage() {
                 header: true,
                 skipEmptyLines: true,
                 complete: (results) => {
-                    setParsedData(results.data)
+                    setParsedData(results.data as Record<string, unknown>[])
                 },
                 error: (error) => {
                     toast.error(`CSV Parse Error: ${error.message}`)
@@ -85,8 +85,9 @@ export default function ImportPage() {
                 } else {
                     toast.success("プレビュー完了: エラーなし")
                 }
-            } catch (e: any) {
-                toast.error(`分析エラー: ${e.message}`)
+            } catch (e: unknown) {
+                const message = e instanceof Error ? e.message : String(e)
+                toast.error(`分析エラー: ${message}`)
             }
         })
     }
@@ -107,8 +108,9 @@ export default function ImportPage() {
                 } else {
                     toast.error("インポートに失敗しました")
                 }
-            } catch (e: any) {
-                toast.error(`実行エラー: ${e.message}`)
+            } catch (e: unknown) {
+                const message = e instanceof Error ? e.message : String(e)
+                toast.error(`実行エラー: ${message}`)
             }
         })
     }

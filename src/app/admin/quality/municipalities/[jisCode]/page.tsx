@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Link as LinkIcon, FileCheck, AlertTriangle, Calendar, Info } from "lucide-react";
@@ -24,8 +25,8 @@ export default async function MunicipalityDetailPage({
             <div className="flex items-center justify-between space-y-2">
                 <div>
                     <nav className="text-sm text-muted-foreground mb-2">
-                        <a href="/admin/quality" className="hover:text-primary">Quality Dashboard</a> &gt;
-                        <a href="/admin/quality/municipalities" className="hover:text-primary ml-1">Municipalities</a> &gt; {m.jisCode}
+                        <Link href="/admin/quality" className="hover:text-primary">Quality Dashboard</Link> &gt;
+                        <Link href="/admin/quality/municipalities" className="hover:text-primary ml-1">Municipalities</Link> &gt; {m.jisCode}
                     </nav>
                     <h2 className="text-3xl font-bold tracking-tight">{m.name} ({m.jisCode})</h2>
                 </div>

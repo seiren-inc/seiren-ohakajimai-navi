@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import { prisma } from "@/lib/prisma";
+import { Prisma } from "@prisma/client";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
@@ -17,7 +19,7 @@ async function MunicipalityList({
     const pageSize = 50;
     const skip = (page - 1) * pageSize;
 
-    const where: any = {};
+    const where: Prisma.MunicipalityWhereInput = {};
     if (q) {
         where.OR = [
             { name: { contains: q, mode: 'insensitive' } },
@@ -65,9 +67,9 @@ async function MunicipalityList({
                                     </Badge>
                                 </TableCell>
                                 <TableCell className="text-right">
-                                    <a href={`/admin/quality/municipalities/${m.jisCode}`} className="text-sm font-medium text-blue-600 hover:underline">
+                                    <Link href={`/admin/quality/municipalities/${m.jisCode}`} className="text-sm font-medium text-blue-600 hover:underline">
                                         View
-                                    </a>
+                                    </Link>
                                 </TableCell>
                             </TableRow>
                         ))}
@@ -81,21 +83,21 @@ async function MunicipalityList({
                 </div>
                 <div className="flex items-center space-x-2">
                     {page > 1 && (
-                        <a
+                        <Link
                             href={`/admin/quality/municipalities?q=${q}&pref=${pref}&page=${page - 1}`}
                             className="rounded border px-2 py-1 hover:bg-gray-50"
                         >
                             Prev
-                        </a>
+                        </Link>
                     )}
                     <span className="font-medium">Page {page}</span>
                     {total > page * pageSize && (
-                        <a
+                        <Link
                             href={`/admin/quality/municipalities?q=${q}&pref=${pref}&page=${page + 1}`}
                             className="rounded border px-2 py-1 hover:bg-gray-50"
                         >
                             Next
-                        </a>
+                        </Link>
                     )}
                 </div>
             </div>
@@ -118,7 +120,7 @@ export default async function MunicipalitiesPage({
             <div className="flex items-center justify-between space-y-2">
                 <div>
                     <nav className="text-sm text-muted-foreground mb-2">
-                        <a href="/admin/quality" className="hover:text-primary">Quality Dashboard</a> &gt; Municipalities
+                        <Link href="/admin/quality" className="hover:text-primary">Quality Dashboard</Link> &gt; Municipalities
                     </nav>
                     <h2 className="text-3xl font-bold tracking-tight">All Municipalities</h2>
                 </div>
@@ -139,9 +141,9 @@ export default async function MunicipalitiesPage({
                         <button type="submit" className="inline-flex items-center justify-center rounded-md text-sm font-medium bg-primary text-primary-foreground h-9 px-4 py-2 shadow hover:bg-primary/90">
                             Search
                         </button>
-                        <a href="/admin/quality/municipalities" className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-input bg-background h-9 px-4 py-2 hover:bg-accent">
+                        <Link href="/admin/quality/municipalities" className="inline-flex items-center justify-center rounded-md text-sm font-medium border border-input bg-background h-9 px-4 py-2 hover:bg-accent">
                             Reset
-                        </a>
+                        </Link>
                     </form>
                 </CardContent>
             </Card>

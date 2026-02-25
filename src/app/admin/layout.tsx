@@ -6,9 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
     AppWindow,
-    LayoutDashboard,
     Settings,
-    LogOut,
     MessageSquare,
     Building2,
     Upload

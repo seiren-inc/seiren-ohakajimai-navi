@@ -6,31 +6,19 @@ import { type Inquiry, InquiryStatus } from "@prisma/client"
 import { format } from "date-fns"
 import { ja } from "date-fns/locale"
 import { toast } from "sonner"
-import { Loader2, ArrowLeft, Save } from "lucide-react"
+import { Loader2, ArrowLeft } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { Badge } from "@/components/ui/badge"
+
 import { updateInquiryStatus, updateInquiryMemo } from "@/actions/admin/inquiry"
 import Link from "next/link"
 
-// Status Helper
-const statusMap: Record<InquiryStatus, { label: string; variant: "default" | "secondary" | "destructive" | "outline" }> = {
-    NEW: { label: "新規", variant: "destructive" },
-    IN_PROGRESS: { label: "対応中", variant: "default" },
-    DONE: { label: "完了", variant: "secondary" },
-    ARCHIVED: { label: "アーカイブ", variant: "outline" },
-}
 
-// Translation Helper for Enums
-const translateEnum = (key: string | null | undefined, type: 'Cemetery' | 'Period' | 'Destination' | 'Bone' | 'Container') => {
-    if (!key) return "未指定"
-    // Simple mapping based on known values (could be centralized)
-    // For now, returning the raw key if simple, or we can import the mapping from validation file if allowed
-    return key
-}
+
+
 
 export function InquiryDetail({ inquiry }: { inquiry: Inquiry }) {
     const router = useRouter()

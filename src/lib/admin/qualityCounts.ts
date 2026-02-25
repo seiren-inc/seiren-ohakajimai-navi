@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import { LinkStatus } from "@prisma/client";
+
 
 export async function getQualityCounts() {
     const lastRun = await prisma.linkCheckRun.findFirst({
@@ -7,7 +7,8 @@ export async function getQualityCounts() {
         orderBy: { finishedAt: 'desc' },
     });
 
-    const counts = await prisma.municipality.groupBy({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- Prisma groupBy 型定義のユニオン互換性問題
+    const counts = await (prisma.municipality.groupBy as any)({
         by: ['linkStatus'],
         _count: {
             id: true,
@@ -23,11 +24,11 @@ export async function getQualityCounts() {
         UNKNOWN: 0,
     };
 
-    counts.forEach((c) => {
+    counts.forEach((c: { linkStatus: string; _count: { id: number } }) => {
         statusMap[c.linkStatus] = c._count.id;
     });
 
-    const published_ok = statusMap.OK;
+
 
     const pdfCount = await prisma.municipality.count({
         where: {

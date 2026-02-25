@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Info, Terminal } from "lucide-react";
@@ -10,7 +11,6 @@ export default async function RunDetailPage({
     params: Promise<{ id: string }>;
 }) {
     const { id } = await params;
-    // @ts-ignore
     const run = await prisma.linkCheckRun.findUnique({
         where: { id }
     });
@@ -24,8 +24,8 @@ export default async function RunDetailPage({
             <div className="flex items-center justify-between space-y-2">
                 <div>
                     <nav className="text-sm text-muted-foreground mb-2">
-                        <a href="/admin/quality" className="hover:text-primary">Quality Dashboard</a> &gt;
-                        <a href="/admin/quality/runs" className="hover:text-primary ml-1">Audit Runs</a> &gt; Run Detail
+                        <Link href="/admin/quality" className="hover:text-primary">Quality Dashboard</Link> &gt;
+                        <Link href="/admin/quality/runs" className="hover:text-primary ml-1">Audit Runs</Link> &gt; Run Detail
                     </nav>
                     <h2 className="text-3xl font-bold tracking-tight">Run: {run.id}</h2>
                 </div>

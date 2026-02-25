@@ -1,9 +1,11 @@
 import { Suspense } from "react";
 import { prisma } from "@/lib/prisma";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Prisma } from "@prisma/client";
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, AlertTriangle, Link as LinkIcon, FileCheck } from "lucide-react";
+import Link from "next/link";
 
 async function IssuesList({
     type = "missing",
@@ -15,7 +17,7 @@ async function IssuesList({
     const pageSize = 50;
     const skip = (page - 1) * pageSize;
 
-    let where: any = {};
+    let where: Prisma.MunicipalityWhereInput = {};
     switch (type) {
         case "missing":
             where = { url: null, pdfUrl: null };
@@ -166,7 +168,7 @@ export default async function QualityIssuesPage({
     const countsData = await prisma.municipality.groupBy({
         by: ['linkStatus'],
         _count: { id: true },
-    });
+    }) as { linkStatus: string; _count: { id: number } }[];
 
     const missingTotal = await prisma.municipality.count({
         where: { url: null, pdfUrl: null }
@@ -194,8 +196,8 @@ export default async function QualityIssuesPage({
 
     const tabs = [
         { id: "missing", label: "Missing Links", count: missingTotal },
-        { id: "review", label: "Needs Review", count: countsData.find(c => c.linkStatus === "NEEDS_REVIEW")?._count.id || 0 },
-        { id: "broken", label: "Broken", count: countsData.find(c => c.linkStatus === "BROKEN")?._count.id || 0 },
+        { id: "review", label: "Needs Review", count: countsData.find((c: { linkStatus: string; _count: { id: number } }) => c.linkStatus === "NEEDS_REVIEW")?._count.id || 0 },
+        { id: "broken", label: "Broken", count: countsData.find((c: { linkStatus: string; _count: { id: number } }) => c.linkStatus === "BROKEN")?._count.id || 0 },
         { id: "pdf_violation", label: "PDF rule violation", count: pdfViolationTotal },
         { id: "invalid_format", label: "Invalid Format", count: invalidFormatTotal },
         { id: "warning", label: "Warnings", count: warningTotal },
@@ -206,7 +208,7 @@ export default async function QualityIssuesPage({
             <div className="flex items-center justify-between space-y-2">
                 <div>
                     <nav className="text-sm text-muted-foreground mb-2">
-                        <a href="/admin/quality" className="hover:text-primary">Quality Dashboard</a> &gt; Issues
+                        <Link href="/admin/quality" className="hover:text-primary">Quality Dashboard</Link> &gt; Issues
                     </nav>
                     <h2 className="text-3xl font-bold tracking-tight">Data Quality Issues</h2>
                 </div>

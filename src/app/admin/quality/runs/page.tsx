@@ -3,9 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
 import { History, CheckCircle2, XCircle, Loader2 } from "lucide-react";
+import Link from "next/link";
 
 export default async function AuditRunsPage() {
-    // @ts-ignore
     const runs = await prisma.linkCheckRun.findMany({
         orderBy: { startedAt: 'desc' },
         take: 50
@@ -16,7 +16,7 @@ export default async function AuditRunsPage() {
             <div className="flex items-center justify-between space-y-2">
                 <div>
                     <nav className="text-sm text-muted-foreground mb-2">
-                        <a href="/admin/quality" className="hover:text-primary">Quality Dashboard</a> &gt; Audit Runs
+                        <Link href="/admin/quality" className="hover:text-primary">Quality Dashboard</Link> &gt; Audit Runs
                     </nav>
                     <h2 className="text-3xl font-bold tracking-tight">Audit History</h2>
                 </div>
@@ -51,7 +51,7 @@ export default async function AuditRunsPage() {
                                         </TableCell>
                                     </TableRow>
                                 ) : (
-                                    runs.map((run: any) => (
+                                    runs.map((run) => (
                                         <TableRow key={run.id}>
                                             <td className="px-4 py-2 text-sm">
                                                 {new Date(run.startedAt).toLocaleString()}
@@ -81,9 +81,9 @@ export default async function AuditRunsPage() {
                                                 {run.finishedAt ? new Date(run.finishedAt).toLocaleString() : "-"}
                                             </td>
                                             <td className="px-4 py-2 text-right">
-                                                <a href={`/admin/quality/runs/${run.id}`} className="text-sm font-medium text-blue-600 hover:underline">
+                                                <Link href={`/admin/quality/runs/${run.id}`} className="text-sm font-medium text-blue-600 hover:underline">
                                                     Details
-                                                </a>
+                                                </Link>
                                             </td>
                                         </TableRow>
                                     ))
