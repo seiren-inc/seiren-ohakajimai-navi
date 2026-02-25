@@ -48,6 +48,7 @@ model Municipality {
   @@unique([prefectureCode, municipalitySlug])
   @@index([prefectureCode])
   @@index([prefectureSlug, municipalitySlug])
+  @@index([linkStatus])
   @@map("municipalities")
 }
 
@@ -187,6 +188,7 @@ enum Role {
 
 enum LinkStatus {
   OK
+  PDF_ONLY
   NEEDS_REVIEW
   BROKEN
   UNKNOWN
