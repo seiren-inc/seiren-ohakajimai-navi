@@ -355,19 +355,17 @@ export default function HomepageClient() {
             </div>
           </div>
 
-          {/* Hero image (optional – shows if file exists) */}
+          {/* Hero image */}
           <div className="absolute inset-0">
             <Image
               src="/images/hero-garden.jpg"
-              alt=""
+              alt="静かな日本の墓地の庭園風景。朝の柔らかい自然光と整然と並ぶ墓石"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
-              onError={(e) => {
-                e.currentTarget.style.display = "none"
-              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 md:via-white/85 md:to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/70 md:via-white/85 md:to-transparent" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:py-32">
