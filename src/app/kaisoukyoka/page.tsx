@@ -36,9 +36,6 @@ const breadcrumbJsonLd = {
 
 export default async function KaisoukyokaPage() {
   const municipalities = await prisma.municipality.findMany({
-    where: {
-      isPublished: true,
-    },
     select: {
       jisCode: true,
       name: true,
@@ -54,6 +51,7 @@ export default async function KaisoukyokaPage() {
       { jisCode: 'asc' }
     ]
   })
+
 
 
   // Group by prefecture
