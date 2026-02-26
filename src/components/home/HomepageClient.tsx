@@ -345,7 +345,7 @@ export default function HomepageClient() {
         {/* ============================================================
             [B] ヒーロー
         ============================================================ */}
-        <section className="relative flex min-h-[92vh] items-center overflow-hidden">
+        <section className="relative flex min-h-[86vh] items-center overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0 bg-linear-to-br from-emerald-50 via-white to-gray-50" />
 
@@ -362,22 +362,14 @@ export default function HomepageClient() {
             <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/60 md:via-white/80 md:to-transparent" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-40">
+          <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-32">
             <div
               className="max-w-xl"
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-600">
-                全国対応・法令遵守
-              </p>
-              <h1 className="mt-5 text-balance text-[40px] font-bold leading-[1.06] tracking-[-0.02em] text-[#1A1A1A] md:text-[64px] lg:text-[80px]">
-                お墓じまいのすべてを、プロにお任せ。
-              </h1>
-              <p className="mt-7 text-pretty text-[17px] leading-[1.65] text-[#6B7280] md:text-[19px]">
-                改葬手続きの案内と書類サポート、提携行政書士のご紹介、
-                墓石撤去、遺骨のケア、新しい供養先まで。
-                株式会社清蓮がワンストップでサポートします。
-              </p>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-600">全国対応・法令遵守</p>
+              <h1 className="typography-heading mt-5 max-w-[16ch] text-3xl font-semibold leading-[1.15] tracking-tight text-[#1A1A1A] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、プロにお任せ。</h1>
+              <p className="typography-body mt-6 max-w-[46ch] text-base leading-[1.85] text-[#6B7280] md:text-lg">改葬手続きの案内と書類サポート、提携行政書士のご紹介、墓石撤去、遺骨のケア、新しい供養先まで。株式会社清蓮がワンストップでサポートします。</p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
