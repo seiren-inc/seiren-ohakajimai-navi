@@ -439,11 +439,11 @@ export default function HomepageClient() {
                     />
                   </div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">01</span>
                   <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">全国対応と提携ネットワーク</h3>
-                  <p className="typography-body mt-5 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">全国の提携石材店と連携しているため、地域差のある手続きや工事も進めやすい体制です。</p>
-                  <p className="typography-body mt-4 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">独自のネットワークで、地域ごとの条例や慣習に精通した優良石材店を手配します。</p>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">全国の提携石材店と連携しているため、地域差のある手続きや工事も進めやすい体制です。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">独自のネットワークで、地域ごとの条例や慣習に精通した優良石材店を手配します。</p>
                 </div>
               </div>
 
@@ -460,11 +460,11 @@ export default function HomepageClient() {
                     />
                   </div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">02</span>
                   <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">法令遵守の安心設計</h3>
-                  <p className="typography-body mt-5 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬手続きは「案内」と「行政書士紹介」に限定。違法リスクのある代行は行いません。</p>
-                  <p className="typography-body mt-4 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬許可申請の代理提出が必要な場合は、提携行政書士をご紹介します。</p>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬手続きは「案内」と「行政書士紹介」に限定。違法リスクのある代行は行いません。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬許可申請の代理提出が必要な場合は、提携行政書士をご紹介します。</p>
                 </div>
               </div>
 
@@ -481,11 +481,11 @@ export default function HomepageClient() {
                     />
                   </div>
                 </div>
-                <div className="w-full md:w-1/2">
+                <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">03</span>
                   <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">離檀交渉サポート</h3>
-                  <p className="typography-body mt-5 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">寺院・墓地管理者との離檀交渉で悩む方が多い領域を、実務目線でサポートします。</p>
-                  <p className="typography-body mt-4 max-w-[26ch] text-base leading-[1.9] text-[#6B7280] md:text-lg">高額な離檀料を請求された場合もご相談ください。</p>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">寺院・墓地管理者との離檀交渉で悩む方が多い領域を、実務目線でサポートします。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">高額な離檀料を請求された場合もご相談ください。</p>
                   <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
                     <Star className="h-4 w-4" />
                     他社にない独自サービス
