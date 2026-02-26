@@ -5,8 +5,8 @@ import KaisoukyokaClient from '@/components/kaisoukyoka/KaisoukyokaClient'
 import { ChevronRight } from 'lucide-react'
 
 export const metadata: Metadata = constructMetadata({
-  title: '改葬許可申請書のダウンロード 全国自治体一覧',
-  description: '【2026年最新】全国の自治体別に改葬許可申請書のダウンロード先や窓口情報を一覧で掲載。お墓じまい（改葬）に必要な行政手続きをスムーズに進めるためのポータルサイトです。',
+  title: '改葬許可申請書ダウンロード｜全国自治体一覧・書き方・改葬 自分で手続きする方へ｜お墓じまいナビ',
+  description: '【2026年最新】改葬許可申請書を都道府県・市区町村別に一覧掲載。お墓じまい（改葬）・墓じまいに必要な書類・書き方・取得方法を詳しく解説。自分で改葬手続きしたい方のポータルサイト。',
 })
 
 // 改善11: パンくずリスト JSON-LD
