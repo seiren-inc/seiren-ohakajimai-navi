@@ -1,0 +1,1073 @@
+"use client"
+
+import React, { useState, useEffect, useRef } from "react"
+import Link from "next/link"
+import Image from "next/image"
+import {
+  Phone,
+  Mail,
+  MapPin,
+  FileText,
+  UserCheck,
+  Droplets,
+  Landmark,
+  Waves,
+  Check,
+  ShieldAlert,
+  AlertTriangle,
+  Info,
+  ChevronDown,
+  Download,
+  ArrowRight,
+  ShieldCheck,
+  Star,
+  MessageSquare,
+  ClipboardList,
+  CheckCircle,
+  Eye,
+  Undo2,
+  Menu,
+  X,
+  Hammer,
+} from "lucide-react"
+
+// ----------------------------------------------------------------
+// Reveal Hook (IntersectionObserver)
+// ----------------------------------------------------------------
+function useReveal(threshold = 0.15) {
+  const ref = useRef<HTMLElement>(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          obs.disconnect()
+        }
+      },
+      { threshold, rootMargin: "0px 0px -40px 0px" }
+    )
+    obs.observe(el)
+    return () => obs.disconnect()
+  }, [threshold])
+  return { ref, visible }
+}
+
+// ----------------------------------------------------------------
+// Reveal Section Wrapper
+// ----------------------------------------------------------------
+function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  id,
+}: {
+  children: React.ReactNode
+  className?: string
+  delay?: number
+  id?: string
+}) {
+  const { ref, visible } = useReveal()
+  return (
+    <section
+      ref={ref}
+      id={id}
+      className={className}
+      style={{
+        transition: `opacity 0.7s ease-out ${delay}ms, transform 0.7s ease-out ${delay}ms`,
+        opacity: visible ? 1 : 0,
+        transform: visible ? "translateY(0)" : "translateY(32px)",
+        willChange: "opacity, transform",
+      }}
+    >
+      {children}
+    </section>
+  )
+}
+
+// ----------------------------------------------------------------
+// Count Up (for Trust Bar)
+// ----------------------------------------------------------------
+function CountUp({ target, duration = 1200 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0)
+  const { ref, visible } = useReveal()
+  useEffect(() => {
+    if (!visible || target === 0) {
+      setCount(target)
+      return
+    }
+    let start = 0
+    const step = Math.ceil(target / (duration / 16))
+    const timer = setInterval(() => {
+      start += step
+      if (start >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(start)
+      }
+    }, 16)
+    return () => clearInterval(timer)
+  }, [visible, target, duration])
+  return <span ref={ref as React.RefObject<HTMLSpanElement>}>{count}</span>
+}
+
+// ----------------------------------------------------------------
+// Service Data
+// ----------------------------------------------------------------
+const services = [
+  {
+    icon: FileText,
+    title: "改葬手続きの案内",
+    description:
+      "流れの説明、書類の取得方法、一般的な記入ポイントをご案内します。全国自治体の申請書ダウンロード導線もご用意。",
+    span: "md:col-span-2",
+  },
+  {
+    icon: UserCheck,
+    title: "行政書士のご紹介",
+    description: "代理提出や個別事情がある場合は、提携行政書士をご紹介します。",
+    span: "",
+  },
+  {
+    icon: Hammer,
+    title: "墓石撤去工事の手配",
+    description: "現地状況に応じた撤去・整地・原状回復を手配します。",
+    span: "",
+  },
+  {
+    icon: Droplets,
+    title: "遺骨の取扱い（洗骨・粉骨）",
+    description:
+      "取り出したご遺骨の洗骨・粉骨、保管容器への納め替えに対応します。",
+    span: "",
+  },
+  {
+    icon: Landmark,
+    title: "改葬先のご提案",
+    description:
+      "納骨堂・樹木葬・合祀など、改葬後の選択肢をご提案します。",
+    span: "",
+  },
+  {
+    icon: Waves,
+    title: "海洋散骨",
+    description:
+      "海洋散骨の場合、一般に改葬手続きが不要となるケースがあります。状況に応じてご案内します。",
+    span: "",
+  },
+]
+
+// ----------------------------------------------------------------
+// FAQ Data
+// ----------------------------------------------------------------
+const faqs = [
+  {
+    q: "改葬手続きの代行もお願いできますか？",
+    a: "代理提出は行政書士等の有資格者業務です。清蓮は代行せず、必要な場合は提携行政書士をご紹介します。",
+  },
+  {
+    q: "受入証明と埋葬証明はどこでもらえますか？",
+    a: "受入証明は新しい納骨先、埋葬証明は現在のお墓の管理者（寺院・霊園等）から取得します。",
+  },
+  {
+    q: "離檀交渉サポートとは何ですか？",
+    a: "寺院・管理者との手続き上の交渉や段取りで詰まりやすいポイントを整理し、円滑化を支援します。",
+  },
+  {
+    q: "海洋散骨の場合は改葬手続きが必要ですか？",
+    a: "状況により異なります。個別事情を確認してご案内します。",
+  },
+  {
+    q: "見積り後に追加費用が発生することはありますか？",
+    a: "原則ありません。現地調査で正確に状況を確認した上でお見積りを提示します。ただし、調査時に確認できなかった地中障害物等が発見された場合のみ、事前にご相談のうえ追加費用が発生する場合があります。",
+  },
+  {
+    q: "全国どこでも対応していますか？",
+    a: "はい、47都道府県対応しています。全国の提携石材店ネットワークを活用して対応いたします。",
+  },
+]
+
+// ----------------------------------------------------------------
+// Main Component
+// ----------------------------------------------------------------
+export default function HomepageClient() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id)
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" })
+      setMenuOpen(false)
+    }
+  }
+
+  const navLinks = [
+    { label: "お墓じまいとは", id: "kaisou-steps" },
+    { label: "流れ", id: "flow" },
+    { label: "料金", id: "pricing" },
+    { label: "申請書DL", href: "/kaissou" },
+  ]
+
+  // ----------------------------------------------------------------
+  // JSON-LD
+  // ----------------------------------------------------------------
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "お墓じまいナビ",
+    description: "改葬手続き案内から供養までの一括サポートサービス",
+    provider: { "@type": "Organization", name: "株式会社清蓮" },
+    areaServed: "JP",
+    telephone: "0120-000-000",
+    priceRange: "お見積り無料",
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <div className="flex flex-col min-h-screen text-[#1A1A1A] selection:bg-emerald-100 selection:text-emerald-900 pb-20 md:pb-0">
+
+        {/* ============================================================
+            [A] グローバルナビ
+        ============================================================ */}
+        <header
+          className={`sticky top-0 z-50 border-b border-gray-200/50 bg-white/80 backdrop-blur-xl transition-shadow ${
+            scrolled ? "shadow-sm" : ""
+          }`}
+        >
+          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+            {/* Logo */}
+            <a href="/" className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
+                <span className="text-sm font-bold text-white">N</span>
+              </div>
+              <span className="text-base font-bold tracking-tight">お墓じまいナビ</span>
+            </a>
+
+            {/* Desktop Nav */}
+            <nav className="hidden items-center gap-8 md:flex">
+              {navLinks.map((item) =>
+                item.href ? (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-sm font-medium text-[#6B7280] transition-colors hover:text-[#1A1A1A]"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.label}
+                    onClick={() => scrollTo(item.id!)}
+                    className="text-sm font-medium text-[#6B7280] transition-colors hover:text-[#1A1A1A]"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
+            </nav>
+
+            {/* CTA + Mobile Menu */}
+            <div className="flex items-center gap-3">
+              <a
+                href="tel:0120000000"
+                className="hidden items-center gap-1.5 text-sm font-medium text-emerald-600 md:flex"
+              >
+                <Phone className="h-4 w-4" />
+                0120-000-000
+              </a>
+              <Link
+                href="/contact"
+                className="hidden rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 md:inline-flex"
+              >
+                無料相談
+              </Link>
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="flex h-10 w-10 items-center justify-center md:hidden"
+                aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+              >
+                {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu Drawer */}
+          {menuOpen && (
+            <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((item) =>
+                  item.href ? (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="min-h-[44px] flex items-center text-sm font-medium text-[#1A1A1A]"
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.label}
+                      onClick={() => scrollTo(item.id!)}
+                      className="min-h-[44px] flex items-center text-left text-sm font-medium text-[#1A1A1A]"
+                    >
+                      {item.label}
+                    </button>
+                  )
+                )}
+                <Link
+                  href="/contact"
+                  className="mt-2 flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  無料相談・お見積り
+                </Link>
+              </nav>
+            </div>
+          )}
+        </header>
+
+        {/* ============================================================
+            [B] ヒーロー
+        ============================================================ */}
+        <section className="relative flex min-h-[90vh] items-center overflow-hidden">
+          {/* Background: gradient fallback (images go here when ready) */}
+          <div className="absolute inset-0 bg-linear-to-br from-emerald-50 via-white to-gray-50" />
+          <div className="absolute inset-0 pointer-events-none">
+            {/* Subtle decorative blobs */}
+            <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-l from-emerald-100/30 to-transparent" />
+            </div>
+          </div>
+
+          {/* Hero image (optional – shows if file exists) */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/hero-garden.jpg"
+              alt=""
+              fill
+              className="object-cover"
+              priority
+              onError={(e) => {
+                e.currentTarget.style.display = "none"
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/70 md:via-white/85 md:to-transparent" />
+          </div>
+
+          <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:py-32">
+            <div
+              className="max-w-2xl"
+              style={{
+                animation: "fadeUp 0.9s ease-out both",
+              }}
+            >
+              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
+                全国対応・法令遵守
+              </p>
+              <h1 className="mt-4 text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl text-[#1A1A1A]">
+                お墓じまいのすべてを、
+                <br />
+                プロにお任せ。
+              </h1>
+              <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-[#6B7280] md:text-lg">
+                改葬手続きの案内と書類サポート、提携行政書士のご紹介、
+                墓石撤去、遺骨のケア、新しい供養先まで。
+                <br className="hidden md:inline" />
+                株式会社清蓮がワンストップでサポートします。
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-[56px] items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl"
+                >
+                  無料相談・お見積り
+                </Link>
+                <a
+                  href="tel:0120000000"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-base font-semibold text-[#1A1A1A] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
+                >
+                  <Phone className="h-5 w-5 text-emerald-600" />
+                  0120-000-000
+                </a>
+              </div>
+
+              <p className="mt-4 text-xs text-[#6B7280]">
+                24時間365日受付 / お見積り無料 / 無理な勧誘なし
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ============================================================
+            [C] 信頼バー
+        ============================================================ */}
+        <div className="border-y bg-[#F9FAFB]/50">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 divide-y md:grid-cols-3 md:divide-x md:divide-y-0">
+            {[
+              { target: 47, unit: "都道府県", label: "全国対応" },
+              { target: 24, unit: "時間", label: "受付対応" },
+              { target: 0, unit: "円", label: "お見積り" },
+            ].map((item) => (
+              <div key={item.label} className="flex flex-col items-center px-6 py-8 text-center">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold tracking-tight text-emerald-600 md:text-5xl">
+                    <CountUp target={item.target} />
+                  </span>
+                  <span className="text-base font-medium text-[#6B7280]">{item.unit}</span>
+                </div>
+                <p className="mt-2 text-sm font-medium text-[#6B7280]">{item.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ============================================================
+            [D] 選ばれる3つの理由
+        ============================================================ */}
+        <Reveal className="py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                選ばれる3つの理由
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                安さだけではありません。法令遵守と確かな実績で選ばれています。
+              </p>
+            </div>
+
+            <div className="mt-16 space-y-20 md:mt-20 md:space-y-28">
+              {/* 理由1: 全国対応 */}
+              <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
+                <div className="w-full md:w-1/2">
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
+                    <MapPin className="h-24 w-24 text-emerald-400" />
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2">
+                  <span className="text-sm font-semibold text-emerald-600">01</span>
+                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
+                    全国対応と
+                    <br />
+                    提携ネットワーク
+                  </h3>
+                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
+                    全国の提携石材店と連携。地域差のある手続きや工事も
+                    進めやすい体制です。独自のネットワークで、地域ごとの
+                    条例や慣習に精通した優良石材店を手配します。
+                  </p>
+                </div>
+              </div>
+
+              {/* 理由2: 法令遵守（画像とテキストの左右反転） */}
+              <div className="flex flex-col items-center gap-10 md:flex-row-reverse md:gap-16">
+                <div className="w-full md:w-1/2">
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center">
+                    <ShieldCheck className="h-24 w-24 text-gray-400" />
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2">
+                  <span className="text-sm font-semibold text-emerald-600">02</span>
+                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
+                    法令遵守の
+                    <br />
+                    安心設計
+                  </h3>
+                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
+                    改葬手続きは「案内」と「行政書士紹介」に限定。
+                    違法リスクのある代行は行いません。
+                    改葬許可申請の代理提出が必要な場合は、
+                    提携行政書士をご紹介します。
+                  </p>
+                </div>
+              </div>
+
+              {/* 理由3: 離檀交渉サポート */}
+              <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
+                <div className="w-full md:w-1/2">
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 flex items-center justify-center">
+                    <MessageSquare className="h-24 w-24 text-amber-300" />
+                  </div>
+                </div>
+                <div className="w-full md:w-1/2">
+                  <span className="text-sm font-semibold text-emerald-600">03</span>
+                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
+                    離檀交渉
+                    <br />
+                    サポート
+                  </h3>
+                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
+                    寺院・墓地管理者との離檀交渉で悩む方が多い領域を、
+                    実務目線でサポートします。
+                    高額な離檀料を請求された場合もご相談ください。
+                  </p>
+                  <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
+                    <Star className="h-4 w-4" />
+                    他社にない独自サービス
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [E] サービス内容
+        ============================================================ */}
+        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                サービス内容
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                お墓じまいに関わるすべての工程をサポートします。
+              </p>
+            </div>
+
+            <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((service, i) => (
+                <div
+                  key={i}
+                  className={`group relative overflow-hidden rounded-3xl bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${service.span}`}
+                >
+                  <span className="text-sm font-semibold text-emerald-600">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50">
+                    <service.icon className="h-7 w-7 text-emerald-600" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">{service.title}</h3>
+                  <p className="mt-3 leading-relaxed text-[#6B7280]">{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [F] 改葬手続きとは
+        ============================================================ */}
+        <Reveal id="kaisou-steps" className="py-20 md:py-28">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                改葬手続きとは
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。
+                <br />
+                墓じまいでは「改葬許可証」の取得が必要になります。
+              </p>
+            </div>
+
+            <div className="mt-16 grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  step: "Step 1",
+                  title: "受入証明の取得",
+                  description: "新しい納骨先から「受入証明書」を発行してもらいます。",
+                  icon: FileText,
+                  gradient: "from-blue-50 to-blue-100",
+                  iconColor: "text-blue-400",
+                },
+                {
+                  step: "Step 2",
+                  title: "埋葬証明の取得",
+                  description: "現在のお墓の管理者から「埋葬証明書」を発行してもらいます。",
+                  icon: ClipboardList,
+                  gradient: "from-purple-50 to-purple-100",
+                  iconColor: "text-purple-400",
+                },
+                {
+                  step: "Step 3",
+                  title: "改葬許可の申請",
+                  description: "お墓のある自治体に書類を提出し、「改葬許可証」を受領します。",
+                  icon: CheckCircle,
+                  gradient: "from-emerald-50 to-emerald-100",
+                  iconColor: "text-emerald-500",
+                },
+              ].map((item, i) => (
+                <div key={i} className="group overflow-hidden rounded-3xl bg-[#F9FAFB]">
+                  <div
+                    className={`flex aspect-16/10 items-center justify-center bg-linear-to-br ${item.gradient}`}
+                  >
+                    <item.icon className={`h-20 w-20 ${item.iconColor}`} />
+                  </div>
+                  <div className="p-8">
+                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">
+                      {item.step}
+                    </span>
+                    <h3 className="mt-2 text-xl font-bold text-[#1A1A1A]">{item.title}</h3>
+                    <p className="mt-3 leading-relaxed text-[#6B7280]">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl bg-[#F9FAFB] px-6 py-4">
+              <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#6B7280]" />
+              <p className="text-sm leading-relaxed text-[#6B7280]">
+                許可証の発行までの期間は自治体により異なります（数日〜1、2週間程度が目安）。
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [G] 清蓮ができること / 行わないこと（最重要）
+        ============================================================ */}
+        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                私たちの対応範囲
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                法令を遵守し、できることとできないことを明確にしています。
+              </p>
+            </div>
+
+            <div className="mt-16 grid gap-6 md:grid-cols-2">
+              {/* できること */}
+              <div className="rounded-3xl bg-white p-8 md:p-10 shadow-sm">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50">
+                  <Check className="h-6 w-6 text-emerald-600" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">清蓮ができること</h3>
+                <ul className="mt-6 space-y-4">
+                  {[
+                    "改葬手続きの流れのご説明",
+                    "必要書類の取得方法のご案内",
+                    "全国自治体の申請書ダウンロード導線",
+                    "記入方法の一般的なご説明",
+                    "提携行政書士のご紹介",
+                    "墓石撤去工事の手配",
+                    "離檀交渉サポート",
+                    "遺骨の洗骨・粉骨",
+                    "改葬先に合わせた容器への納め替え",
+                    "海洋散骨の手配",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-sm text-[#1A1A1A]">
+                      <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100">
+                        <Check className="h-3 w-3 text-emerald-600" />
+                      </div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* 行わないこと */}
+              <div className="rounded-3xl border-2 border-amber-200 bg-amber-50/30 p-8 md:p-10">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100">
+                  <ShieldAlert className="h-6 w-6 text-amber-600" />
+                </div>
+                <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">清蓮が行わないこと</h3>
+                <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">
+                  改葬許可申請の「代理提出」「行政手続きの代行」は、
+                  行政書士等の有資格者が行う業務です。
+                  清蓮は無資格での代行を行いません。
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">
+                  必要な場合は提携行政書士をご紹介します。
+                </p>
+
+                <div className="mt-8 rounded-xl bg-amber-100/50 px-5 py-4">
+                  <div className="flex items-start gap-3">
+                    <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-amber-600" />
+                    <div>
+                      <p className="text-sm font-semibold text-amber-800">ご注意</p>
+                      <p className="mt-1 text-xs leading-relaxed text-amber-700">
+                        「代行可」とうたう業者でも、実態が無資格対応のケースがあります。
+                        依頼前に資格者の関与を確認してください。
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <Link
+                  href="/contact?type=gyoseishoshi"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-emerald-600 px-5 py-2.5 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+                >
+                  提携行政書士を紹介してもらう
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [H] ご依頼の流れ
+        ============================================================ */}
+        <Reveal id="flow" className="py-20 md:py-28">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                ご依頼の流れ
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                お問い合わせから完了まで、5つのステップで進めます。
+              </p>
+            </div>
+
+            <div className="mt-16 space-y-0">
+              {[
+                {
+                  step: "01",
+                  title: "無料相談",
+                  description:
+                    "状況確認（現墓地、改葬先、寺院/管理者との関係、希望日程）。お電話またはフォームで。",
+                  badge: "24時間受付",
+                  icon: MessageSquare,
+                  last: false,
+                },
+                {
+                  step: "02",
+                  title: "現地調査・概算見積",
+                  description:
+                    "撤去規模、搬出経路、必要作業を確認。お見積りは無料です。",
+                  badge: "無料",
+                  icon: MapPin,
+                  last: false,
+                },
+                {
+                  step: "03",
+                  title: "事前準備",
+                  description:
+                    "受入証明、埋葬証明、申請書の取得と記入ポイント案内。代理提出が必要な場合は行政書士へ接続。",
+                  badge: null,
+                  icon: ClipboardList,
+                  last: false,
+                },
+                {
+                  step: "04",
+                  title: "工事・ご遺骨の取扱い",
+                  description:
+                    "撤去工事、洗骨・粉骨、容器への納め替え。施工後の写真報告をお送りします。",
+                  badge: null,
+                  icon: Hammer,
+                  last: false,
+                },
+                {
+                  step: "05",
+                  title: "完了",
+                  description:
+                    "改葬先への納骨、散骨など希望に合わせて完了。アフターフォローも対応。",
+                  badge: null,
+                  icon: CheckCircle,
+                  last: true,
+                },
+              ].map((item, i) => (
+                <div key={item.step} className="relative flex gap-6 pb-12 last:pb-0">
+                  {!item.last && (
+                    <div className="absolute left-6 top-16 h-full w-px bg-gray-200" />
+                  )}
+                  <div
+                    className={`relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-sm font-bold ${
+                      item.last
+                        ? "bg-emerald-600 text-white"
+                        : "border-2 border-emerald-600 bg-white text-emerald-600"
+                    }`}
+                  >
+                    {item.step}
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <div className="flex items-center gap-3">
+                      <h3 className="text-lg font-bold text-[#1A1A1A]">{item.title}</h3>
+                      {item.badge && (
+                        <span className="rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-600">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="mt-2 leading-relaxed text-[#6B7280]">{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [I] 料金について
+        ============================================================ */}
+        <Reveal id="pricing" className="bg-[#F9FAFB]/50 py-20 md:py-28">
+          <div className="mx-auto max-w-4xl px-6">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                料金について
+              </h2>
+              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+                現地状況で変動するため、まずは無料で概算をご案内します。
+                <br />
+                追加費用が出やすいポイントも事前にご説明します。
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
+              {[
+                {
+                  icon: ShieldCheck,
+                  title: "追加費用なし",
+                  description: "お見積り後の追加請求は原則ありません",
+                },
+                {
+                  icon: Eye,
+                  title: "明朗会計",
+                  description: "すべて税込の明確な料金体系",
+                },
+                {
+                  icon: Undo2,
+                  title: "キャンセル無料",
+                  description: "お見積り後のお断りも費用ゼロ",
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm">
+                  <item.icon className="h-8 w-8 text-emerald-600" />
+                  <h3 className="mt-4 text-base font-bold text-[#1A1A1A]">{item.title}</h3>
+                  <p className="mt-2 text-sm text-[#6B7280]">{item.description}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white transition-colors hover:bg-emerald-700"
+              >
+                無料相談・概算を依頼する
+              </Link>
+              <Link
+                href="/price"
+                className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-6 text-base font-semibold text-emerald-600 transition-colors hover:bg-emerald-50"
+              >
+                料金プランを見る
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [J] ご自分で手続きされる方へ
+        ============================================================ */}
+        <Reveal className="py-20 md:py-28">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 via-white to-gray-50 p-10 md:p-16">
+              <div className="relative z-10 mx-auto max-w-2xl text-center">
+                <h2 className="text-2xl font-bold tracking-tight md:text-3xl text-[#1A1A1A]">
+                  ご自分で手続きされる方へ
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-[#6B7280] md:text-lg">
+                  全国自治体の改葬許可申請書のダウンロードと、
+                  一般的な記入ポイントをまとめています。
+                  <br className="hidden md:inline" />
+                  まずはお墓の所在地の自治体を検索してください。
+                </p>
+                <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                  <Link
+                    href="/kaissou"
+                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#1A1A1A] px-8 text-base font-semibold text-white transition-colors hover:bg-gray-800"
+                  >
+                    <Download className="h-5 w-5" />
+                    改葬許可申請書 全国一覧
+                  </Link>
+                  <Link
+                    href="/kaissou"
+                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-6 text-base font-semibold text-[#1A1A1A] transition-colors hover:bg-gray-50"
+                  >
+                    改葬手続きの流れ
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [K] よくある質問
+        ============================================================ */}
+        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+                よくあるご質問
+              </h2>
+            </div>
+
+            <div className="mt-12 divide-y divide-gray-200">
+              {faqs.map((faq, i) => (
+                <details key={i} className="group">
+                  <summary className="flex min-h-[56px] cursor-pointer items-center justify-between gap-4 py-6 text-left text-base font-medium text-[#1A1A1A] transition-colors hover:text-emerald-600 [&::-webkit-details-marker]:hidden list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-lg">
+                    <span>{faq.q}</span>
+                    <ChevronDown className="h-5 w-5 shrink-0 text-[#6B7280] transition-transform group-open:rotate-180" />
+                  </summary>
+                  <p className="pb-6 pr-10 leading-relaxed text-[#6B7280]">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [L] 最終CTA
+        ============================================================ */}
+        <section className="relative overflow-hidden py-24 md:py-32">
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-600 to-emerald-700" />
+          <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+            <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
+              まずはお気軽に
+              <br />
+              ご相談ください
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-base text-emerald-100 md:text-lg">
+              お見積りは無料です。無理な勧誘は一切いたしません。
+            </p>
+
+            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-[56px] w-full items-center justify-center rounded-full bg-white px-10 text-base font-bold text-emerald-600 shadow-lg transition-all hover:shadow-xl sm:w-auto"
+              >
+                <Mail className="mr-2 h-5 w-5" />
+                無料相談・お見積りフォーム
+              </Link>
+              <a
+                href="tel:0120000000"
+                className="inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full border-2 border-white/30 px-8 text-base font-semibold text-white transition-all hover:bg-white/10 sm:w-auto"
+              >
+                <Phone className="h-5 w-5" />
+                0120-000-000
+              </a>
+            </div>
+
+            <p className="mt-4 text-sm text-emerald-200">24時間365日受付</p>
+          </div>
+        </section>
+
+        {/* ============================================================
+            [M] フッター
+        ============================================================ */}
+        <footer className="border-t bg-white py-16 print:hidden">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-12 md:grid-cols-4">
+              <div className="md:col-span-1">
+                <a href="/" className="flex items-center gap-2">
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
+                    <span className="text-sm font-bold text-white">N</span>
+                  </div>
+                  <span className="text-base font-bold text-[#1A1A1A]">お墓じまいナビ</span>
+                </a>
+                <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">
+                  株式会社清蓮が運営する、改葬手続きから供養までの
+                  一括サポートサービス。
+                </p>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-[#1A1A1A]">サービス</h4>
+                <ul className="mt-4 space-y-3">
+                  {["お墓じまいとは", "手続きの流れ", "料金プラン", "対応エリア"].map((item) => (
+                    <li key={item}>
+                      <a href="#" className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-[#1A1A1A]">関連サービス</h4>
+                <ul className="mt-4 space-y-3">
+                  {[
+                    { label: "海洋散骨クルーズ", href: "#" },
+                    { label: "遺骨サポートLab", href: "#" },
+                    { label: "改葬許可申請書DL", href: "/kaissou" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-semibold text-[#1A1A1A]">会社情報</h4>
+                <ul className="mt-4 space-y-3">
+                  {["運営会社", "プライバシーポリシー", "お問い合わせ"].map((item) => (
+                    <li key={item}>
+                      <a href="#" className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                        {item}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-12 border-t pt-8 text-center text-xs text-[#6B7280]">
+              © 2026 Seiren Co., Ltd. All rights reserved.
+            </div>
+          </div>
+        </footer>
+
+        {/* ============================================================
+            [N] フローティングCTA（モバイルのみ）
+        ============================================================ */}
+        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 p-3 backdrop-blur-xl md:hidden print:hidden">
+          <div className="flex gap-2">
+            <a
+              href="tel:0120000000"
+              className="flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+            >
+              <Phone className="h-4 w-4" />
+              電話で相談
+            </a>
+            <Link
+              href="/contact"
+              className="flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
+            >
+              無料相談・お見積り
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Keyframe animation */}
+      <style jsx global>{`
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(32px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+    </>
+  )
+}
