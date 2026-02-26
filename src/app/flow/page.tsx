@@ -1,5 +1,6 @@
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+import { HowToJsonLd, kaisouHowToSteps } from "@/components/seo/howto-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -117,6 +118,12 @@ export default function FlowPage() {
                     { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://www.osohiki-navi.jp" },
                     { name: "ご依頼の流れ", url: `${process.env.NEXT_PUBLIC_BASE_URL}/flow` },
                 ]}
+            />
+            <HowToJsonLd
+                name="改葬（お墓じまい）手続きの方法"
+                description="現在のお墓からご遺骨を取り出し、別の納骨先へ移す「改葬」の正式手続きの流れ。改葬許可申請書の取得から墓石撤去・新しい供養先への納骨まで5ステップで解説。"
+                totalTime="P3M"
+                steps={kaisouHowToSteps}
             />
 
             {/* Hero */}
