@@ -6,7 +6,7 @@ import PrefAccordion from './PrefAccordion'
 import {
   Search, X, Clock, History, MapPin, Phone,
   HelpCircle, AlertCircle, Globe, Building2, FileCheck,
-  ArrowUp,
+  ArrowUp, Sparkles
 } from 'lucide-react'
 
 interface SubLink {
@@ -99,18 +99,34 @@ function FloatingCTA() {
         visible ? 'translate-y-0' : 'translate-y-full'
       )}
     >
-      <a
-        href="/contact"
-        aria-label="無料相談・お見積りのお問い合わせ"
-        className={cn(
-          'flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 font-bold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl active:scale-[0.98]',
-          'min-h-[52px] px-6 text-base',
-          'md:w-auto md:rounded-full md:px-8 md:py-4'
-        )}
-      >
-        <Phone className="h-5 w-5" />
-        無料相談・お見積り
-      </a>
+      <div className="flex w-full flex-col gap-2 sm:flex-row md:w-auto md:flex-col">
+        {/* 新規：AI見積もり（CV特化） */}
+        <a
+          href="/estimation"
+          className={cn(
+            'flex w-full items-center justify-center gap-2 rounded-xl bg-slate-900 font-bold text-white shadow-lg transition-all hover:bg-slate-800 hover:shadow-xl active:scale-[0.98]',
+            'min-h-[52px] px-6 text-sm sm:text-base',
+            'md:w-auto md:rounded-full md:px-8 md:py-3.5'
+          )}
+        >
+          <Sparkles className="h-4 w-4 text-emerald-400" />
+          AI自動見積もりを試す
+        </a>
+        
+        {/* 既存：無料相談 */}
+        <a
+          href="/contact"
+          aria-label="無料相談・お見積りのお問い合わせ"
+          className={cn(
+            'flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 font-bold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl active:scale-[0.98]',
+            'min-h-[52px] px-6 text-sm sm:text-base',
+            'md:w-auto md:rounded-full md:px-8 md:py-3.5'
+          )}
+        >
+          <Phone className="h-4 w-4" />
+          無料電話・ご相談
+        </a>
+      </div>
     </div>
   )
 }
