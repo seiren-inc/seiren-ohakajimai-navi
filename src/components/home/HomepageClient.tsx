@@ -123,40 +123,34 @@ const services = [
     title: "改葬手続きの案内",
     description:
       "流れの説明、書類の取得方法、一般的な記入ポイントをご案内します。全国自治体の申請書ダウンロード導線もご用意。",
-    span: "md:col-span-2",
   },
   {
     icon: UserCheck,
     title: "行政書士のご紹介",
     description: "代理提出や個別事情がある場合は、提携行政書士をご紹介します。",
-    span: "",
   },
   {
     icon: Hammer,
     title: "墓石撤去工事の手配",
     description: "現地状況に応じた撤去・整地・原状回復を手配します。",
-    span: "",
   },
   {
     icon: Droplets,
     title: "遺骨の取扱い（洗骨・粉骨）",
     description:
       "取り出したご遺骨の洗骨・粉骨、保管容器への納め替えに対応します。",
-    span: "",
   },
   {
     icon: Landmark,
     title: "改葬先のご提案",
     description:
       "納骨堂・樹木葬・合祀など、改葬後の選択肢をご提案します。",
-    span: "",
   },
   {
     icon: Waves,
     title: "海洋散骨",
     description:
       "海洋散骨の場合、一般に改葬手続きが不要となるケースがあります。状況に応じてご案内します。",
-    span: "",
   },
 ]
 
@@ -502,28 +496,22 @@ export default function HomepageClient() {
         <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
-                サービス内容
-              </h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
-                お墓じまいに関わるすべての工程をサポートします。
-              </p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">サービス内容</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">お墓じまいに関わるすべての工程をサポートします。</p>
             </div>
 
-            <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
               {services.map((service, i) => (
                 <div
                   key={i}
-                  className={`group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl ${service.span}`}
+                  className="flex flex-col h-full rounded-2xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
                 >
-                  <span className="text-[12px] font-semibold tracking-widest text-emerald-600">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50">
-                    <service.icon className="h-7 w-7 text-emerald-600" />
+                  <span className="text-xs font-medium tracking-widest text-emerald-600">{String(i + 1).padStart(2, "0")}</span>
+                  <div className="mt-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50">
+                    <service.icon className="h-6 w-6 text-emerald-600" />
                   </div>
-                  <h3 className="mt-5 text-[19px] font-semibold text-[#1A1A1A]">{service.title}</h3>
-                  <p className="mt-3 text-[15px] leading-[1.65] text-[#6B7280]">{service.description}</p>
+                  <h3 className="mt-6 text-lg font-semibold leading-snug text-neutral-900">{service.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600 line-clamp-3">{service.description}</p>
                 </div>
               ))}
             </div>
