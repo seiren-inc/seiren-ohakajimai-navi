@@ -745,9 +745,7 @@ export default function PricingPageClient() {
                   <span>{faq.q}</span>
                   <ChevronDown className="h-5 w-5 shrink-0 text-emerald-600 transition-transform duration-300 group-open:rotate-180 print:hidden" />
                 </summary>
-                <p className="mt-4 text-[15px] leading-relaxed text-[#6E6E73] md:pr-12 pointer-events-none">
-                  {faq.a}
-                </p>
+                <p className="mt-4 text-[15px] leading-[1.85] text-[#6E6E73] md:pr-12 pointer-events-none">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -757,13 +755,8 @@ export default function PricingPageClient() {
       {/* [11] Final CTA */}
       <section className="py-24 bg-[#1D1D1F] text-white print:bg-white! print:text-black!">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">
-            まずは無料でご相談ください。
-          </h2>
-          <p className="mx-auto max-w-xl text-lg text-white/70 leading-relaxed mb-12 print:text-black!">
-            現地調査・お見積りはすべて無料です。<br className="hidden sm:block"/>
-            お墓じまいの専門スタッフが丁寧にご対応します。
-          </p>
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-balance">まずは無料でご相談ください。</h2>
+          <p className="mx-auto max-w-xl text-[17px] leading-[1.85] text-white/70 mb-12 print:text-black!">現地調査・お見積りはすべて無料です。お墓じまいの専門スタッフが丁寧にご対応します。</p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <Link 
