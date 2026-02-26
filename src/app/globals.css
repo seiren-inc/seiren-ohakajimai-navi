@@ -74,3 +74,56 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* スクロールバー非表示（エリアタブのモバイル横スクロール用） */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ─────────────────────────────────────────────────────────
+   共通タイポグラフィ
+   使い方:
+     本文      → <p className="typography-body">
+     見出し    → <h2 className="typography-heading">
+     注釈/補足 → <p className="typography-caption">
+   max-w-[xxch] は呼び元で付与（中央寄せ: mx-auto、左寄せ: そのまま）
+───────────────────────────────────────────────────────── */
+
+/* 本文: 自然な折り返し + 適切な行間 */
+.typography-body {
+  text-wrap: pretty;
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* 見出し: バランスのとれた折り返し */
+.typography-heading {
+  text-wrap: balance;
+  line-height: 1.15;
+  word-break: keep-all;
+}
+
+/* 注釈・補足: 小さいテキスト向け */
+.typography-caption {
+  text-wrap: pretty;
+  line-height: 1.7;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+/* アニメーション: Hero フェードイン */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

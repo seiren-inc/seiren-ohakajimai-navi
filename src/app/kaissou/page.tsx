@@ -29,9 +29,9 @@ export default function KaissouPage() {
 
             <div className="max-w-4xl mx-auto space-y-12">
                 <div className="text-center space-y-4">
-                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">全国の改葬手続き情報</h1>
-                    <p className="text-muted-foreground text-lg">
-                        都道府県から該当の市区町村を選択してください。<br />
+                    <h1 className="typography-heading mx-auto max-w-[28ch] text-3xl font-bold tracking-tight sm:text-4xl">全国の改葬手続き情報</h1>
+                    <p className="typography-body mx-auto max-w-[48ch] text-muted-foreground text-[17px]">
+                        都道府県から該当の市区町村を選択してください。
                         各自治体の改葬許可申請書のダウンロード先や、窓口情報を確認できます。
                     </p>
                 </div>

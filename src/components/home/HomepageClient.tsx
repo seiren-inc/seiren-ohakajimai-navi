@@ -454,14 +454,12 @@ export default function HomepageClient() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
-                  <span className="text-sm font-semibold text-emerald-600">01</span>
-                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
-                    全国対応と
-                    <br />
-                    提携ネットワーク
+                  <span className="text-[12px] font-semibold tracking-widest text-emerald-600">01</span>
+                  <h3 className="typography-heading mt-3 text-[28px] font-bold tracking-tight text-[#1A1A1A] md:text-[34px]">
+                    全国対応と提携ネットワーク
                   </h3>
-                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
-                    全国の提携石材店と連携。地域差のある手続きや工事も
+                  <p className="typography-body mt-5 max-w-[38ch] text-[17px] leading-[1.7] text-[#6B7280]">
+                    全国の提携石材店と連携しているため、地域差のある手続きや工事も
                     進めやすい体制です。独自のネットワークで、地域ごとの
                     条例や慣習に精通した優良石材店を手配します。
                   </p>
@@ -482,13 +480,11 @@ export default function HomepageClient() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
-                  <span className="text-sm font-semibold text-emerald-600">02</span>
-                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
-                    法令遵守の
-                    <br />
-                    安心設計
+                  <span className="text-[12px] font-semibold tracking-widest text-emerald-600">02</span>
+                  <h3 className="typography-heading mt-3 text-[28px] font-bold tracking-tight text-[#1A1A1A] md:text-[34px]">
+                    法令遵守の安心設計
                   </h3>
-                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
+                  <p className="typography-body mt-5 max-w-[38ch] text-[17px] leading-[1.7] text-[#6B7280]">
                     改葬手続きは「案内」と「行政書士紹介」に限定。
                     違法リスクのある代行は行いません。
                     改葬許可申請の代理提出が必要な場合は、
@@ -511,13 +507,11 @@ export default function HomepageClient() {
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
-                  <span className="text-sm font-semibold text-emerald-600">03</span>
-                  <h3 className="mt-2 text-2xl font-bold md:text-3xl text-[#1A1A1A]">
-                    離檀交渉
-                    <br />
-                    サポート
+                  <span className="text-[12px] font-semibold tracking-widest text-emerald-600">03</span>
+                  <h3 className="typography-heading mt-3 text-[28px] font-bold tracking-tight text-[#1A1A1A] md:text-[34px]">
+                    離檀交渉サポート
                   </h3>
-                  <p className="mt-4 leading-relaxed text-[#6B7280] md:text-lg">
+                  <p className="typography-body mt-5 max-w-[38ch] text-[17px] leading-[1.7] text-[#6B7280]">
                     寺院・墓地管理者との離檀交渉で悩む方が多い領域を、
                     実務目線でサポートします。
                     高額な離檀料を請求された場合もご相談ください。
