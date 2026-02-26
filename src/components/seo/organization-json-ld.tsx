@@ -2,16 +2,16 @@ export function OrganizationJsonLd() {
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': ['Organization', 'LocalBusiness'],
-        '@id': 'https://www.osohiki-navi.jp/#organization',
+        '@id': 'https://www.ohakajimai-navi.jp/#organization',
         name: '株式会社清蓮',
         alternateName: ['お墓じまいナビ', 'Seiren'],
         description: 'お墓じまい・改葬・海洋散骨など供養に関わる実務を専門に行う会社。法令遵守を最優先に、全国対応でご家族の不安に寄り添います。',
-        url: 'https://www.osohiki-navi.jp',
+        url: 'https://www.ohakajimai-navi.jp',
         logo: {
             '@type': 'ImageObject',
-            url: 'https://www.osohiki-navi.jp/og-image.jpg',
+            url: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         },
-        image: 'https://www.osohiki-navi.jp/og-image.jpg',
+        image: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         telephone: '045-881-9952',
         email: 'contact@seiren.ne.jp',
         address: {

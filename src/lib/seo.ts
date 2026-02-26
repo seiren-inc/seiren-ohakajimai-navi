@@ -3,7 +3,7 @@ import { Metadata } from 'next'
 export const siteConfig = {
     name: 'お墓じまいナビ',
     description: '全国対応の改葬手続き代行から墓石撤去、遺骨供養までワンストップでサポート。',
-    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.osohiki-navi.jp',
+    url: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp',
     ogImage: '/og-image.jpg',
     links: {
         twitter: 'https://twitter.com/seiren_official',
