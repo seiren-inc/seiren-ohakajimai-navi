@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
@@ -10,6 +10,12 @@ const fontSans = Noto_Sans_JP({
   subsets: ['latin'],
   variable: '--font-sans',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = constructMetadata()
 

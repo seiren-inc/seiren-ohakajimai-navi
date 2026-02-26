@@ -210,6 +210,7 @@ export default function HomepageClient() {
     { label: "ご依頼の流れ", href: "/flow" },
     { label: "料金", href: "/price" },
     { label: "申請書DL", href: "/kaisoukyoka" },
+    { label: "改葬手続き情報", href: "/kaissou" },
     { label: "会社概要", href: "/company" },
   ]
 
@@ -244,22 +245,22 @@ export default function HomepageClient() {
             scrolled ? "shadow-sm" : ""
           }`}
         >
-          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 shrink-0">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
                 <span className="text-sm font-bold text-white">N</span>
               </div>
-              <span className="text-base font-bold tracking-tight">お墓じまいナビ</span>
+              <span className="text-sm font-bold tracking-tight lg:text-base">お墓じまいナビ</span>
             </Link>
 
-            {/* Desktop Nav */}
-            <nav className="hidden items-center gap-8 md:flex">
+            {/* Desktop Nav (lg以上のみ) */}
+            <nav className="hidden items-center gap-6 lg:flex">
               {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
+                  className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900 whitespace-nowrap"
                 >
                   {item.label}
                 </Link>
@@ -267,23 +268,30 @@ export default function HomepageClient() {
             </nav>
 
             {/* CTA + Mobile Menu */}
-            <div className="flex items-center gap-4 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
               <a
-                href="tel:0120000000"
-                className="hidden items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors md:flex"
+                href="tel:045-881-9952"
+                className="hidden items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors lg:flex"
               >
                 <Phone className="h-4 w-4" />
-                0120-000-000
+                045-881-9952
               </a>
               <Link
                 href="/contact"
-                className="hidden rounded-full bg-emerald-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 md:inline-flex"
+                className="hidden rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-emerald-700 lg:inline-flex"
+              >
+                無料相談
+              </Link>
+              {/* モバイル専用CTAミニボタン */}
+              <Link
+                href="/contact"
+                className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-emerald-700 lg:hidden"
               >
                 無料相談
               </Link>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
+                className="flex h-10 w-10 items-center justify-center rounded-lg lg:hidden"
                 aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
               >
                 {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -291,32 +299,32 @@ export default function HomepageClient() {
             </div>
           </div>
 
-          {/* Mobile Menu Drawer */}
+          {/* Mobile/Tablet Menu Drawer */}
           {menuOpen && (
-            <div className="border-t border-neutral-100 bg-white px-6 py-6 md:hidden">
-              <nav className="flex flex-col gap-6 text-base">
+            <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
+              <nav className="flex flex-col">
                 {navLinks.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="text-base font-medium text-neutral-700"
+                    className="flex min-h-[52px] items-center border-b border-neutral-100 text-base font-medium text-neutral-700"
                     onClick={() => setMenuOpen(false)}
                   >
                     {item.label}
                   </Link>
                 ))}
               </nav>
-              <div className="mt-8 flex flex-col gap-3">
+              <div className="mt-5 flex flex-col gap-3">
                 <a
-                  href="tel:0120000000"
-                  className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+                  href="tel:045-881-9952"
+                  className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
                 >
                   <Phone className="h-4 w-4" />
-                  電話で相談
+                  045-881-9952
                 </a>
                 <Link
                   href="/contact"
-                  className="flex min-h-[48px] items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
+                  className="flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
                   onClick={() => setMenuOpen(false)}
                 >
                   無料相談・お見積り
