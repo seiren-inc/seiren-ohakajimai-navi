@@ -206,10 +206,11 @@ export default function HomepageClient() {
   }
 
   const navLinks = [
-    { label: "お墓じまいとは", id: "kaisou-steps" },
-    { label: "流れ", id: "flow" },
-    { label: "料金", id: "pricing" },
-    { label: "申請書DL", href: "/kaissou" },
+    { label: "お墓じまいとは", href: "/about" },
+    { label: "ご依頼の流れ", href: "/flow" },
+    { label: "料金", href: "/price" },
+    { label: "申請書DL", href: "/kaisoukyoka" },
+    { label: "会社概要", href: "/company" },
   ]
 
   // ----------------------------------------------------------------
@@ -239,47 +240,37 @@ export default function HomepageClient() {
             [A] グローバルナビ
         ============================================================ */}
         <header
-          className={`sticky top-0 z-50 border-b border-gray-200/50 bg-white/80 backdrop-blur-xl transition-shadow ${
+          className={`sticky top-0 z-50 border-b border-neutral-200/70 bg-white/95 backdrop-blur-xl transition-shadow ${
             scrolled ? "shadow-sm" : ""
           }`}
         >
-          <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+          <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2 shrink-0">
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
                 <span className="text-sm font-bold text-white">N</span>
               </div>
               <span className="text-base font-bold tracking-tight">お墓じまいナビ</span>
-            </a>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden items-center gap-8 md:flex">
-              {navLinks.map((item) =>
-                item.href ? (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="text-sm font-medium text-[#6B7280] transition-colors hover:text-[#1A1A1A]"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.label}
-                    onClick={() => scrollTo(item.id!)}
-                    className="text-sm font-medium text-[#6B7280] transition-colors hover:text-[#1A1A1A]"
-                  >
-                    {item.label}
-                  </button>
-                )
-              )}
+              {navLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm font-medium text-neutral-600 transition-colors hover:text-neutral-900"
+                >
+                  {item.label}
+                </Link>
+              ))}
             </nav>
 
             {/* CTA + Mobile Menu */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4 shrink-0">
               <a
                 href="tel:0120000000"
-                className="hidden items-center gap-1.5 text-sm font-medium text-emerald-600 md:flex"
+                className="hidden items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors md:flex"
               >
                 <Phone className="h-4 w-4" />
                 0120-000-000
@@ -292,7 +283,7 @@ export default function HomepageClient() {
               </Link>
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="flex h-10 w-10 items-center justify-center md:hidden"
+                className="flex h-10 w-10 items-center justify-center rounded-lg md:hidden"
                 aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
               >
                 {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -302,36 +293,35 @@ export default function HomepageClient() {
 
           {/* Mobile Menu Drawer */}
           {menuOpen && (
-            <div className="border-t border-gray-100 bg-white px-6 py-4 md:hidden">
-              <nav className="flex flex-col gap-4">
-                {navLinks.map((item) =>
-                  item.href ? (
-                    <Link
-                      key={item.label}
-                      href={item.href}
-                      className="min-h-[44px] flex items-center text-sm font-medium text-[#1A1A1A]"
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ) : (
-                    <button
-                      key={item.label}
-                      onClick={() => scrollTo(item.id!)}
-                      className="min-h-[44px] flex items-center text-left text-sm font-medium text-[#1A1A1A]"
-                    >
-                      {item.label}
-                    </button>
-                  )
-                )}
+            <div className="border-t border-neutral-100 bg-white px-6 py-6 md:hidden">
+              <nav className="flex flex-col gap-6 text-base">
+                {navLinks.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-base font-medium text-neutral-700"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href="tel:0120000000"
+                  className="flex min-h-[48px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+                >
+                  <Phone className="h-4 w-4" />
+                  電話で相談
+                </a>
                 <Link
                   href="/contact"
-                  className="mt-2 flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white"
+                  className="flex min-h-[48px] items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
                   onClick={() => setMenuOpen(false)}
                 >
                   無料相談・お見積り
                 </Link>
-              </nav>
+              </div>
             </div>
           )}
         </header>
@@ -346,14 +336,14 @@ export default function HomepageClient() {
           {/* Hero image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/hero-garden.jpg"
+              src="/images/hero-garden-v3.jpg"
               alt="静かな日本の墓地の庭園風景。朝の柔らかい自然光と整然と並ぶ墓石"
               fill
               sizes="100vw"
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/60 md:via-white/80 md:to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-white via-white/98 to-white/70 md:via-white/95 md:to-transparent" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-32">
@@ -361,9 +351,13 @@ export default function HomepageClient() {
               className="max-w-xl"
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-600">全国対応・法令遵守</p>
-              <h1 className="typography-heading mt-5 max-w-[16ch] text-3xl font-semibold leading-[1.15] tracking-tight text-[#1A1A1A] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、プロにお任せ。</h1>
-              <p className="typography-body mt-6 max-w-[46ch] text-base leading-[1.85] text-[#6B7280] md:text-lg">改葬手続きの案内と書類サポート、提携行政書士のご紹介、墓石撤去、遺骨のケア、新しい供養先まで。株式会社清蓮がワンストップでサポートします。</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
+              <h1 className="typography-heading mt-5 max-w-[16ch] text-3xl font-semibold leading-[1.15] tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、プロにお任せ。</h1>
+              <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-[#374151] md:text-lg">
+                改葬手続きの案内と書類サポート、提携行政書士の<br className="hidden md:block" />
+                ご紹介、墓石撤去、遺骨のケア、新しい供養先まで。<br className="hidden md:block" />
+                株式会社清蓮がワンストップでサポートします。
+              </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
@@ -374,14 +368,14 @@ export default function HomepageClient() {
                 </Link>
                 <a
                   href="tel:0120000000"
-                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-[#1A1A1A] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
+                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-[#111827] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
                 >
                   <Phone className="h-5 w-5 text-emerald-600" />
                   0120-000-000
                 </a>
               </div>
 
-              <p className="mt-5 text-[13px] text-[#9CA3AF]">24時間365日受付 / お見積り無料 / 無理な勧誘なし</p>
+              <p className="mt-5 text-[13px] font-medium text-[#4B5563]">24時間365日受付 / お見積り無料 / 無理な勧誘なし</p>
             </div>
           </div>
         </section>
@@ -425,7 +419,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 to-emerald-100 relative">
                     <Image
-                      src="/images/reason-nationwide.jpg"
+                      src="/images/reason-nationwide-v3.jpg"
                       alt="日本列島と全国ネットワークを象徴するインフォグラフィック風デザイン"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -446,7 +440,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-gray-50 to-gray-100 relative">
                     <Image
-                      src="/images/reason-compliance.jpg"
+                      src="/images/reason-compliance-v2.jpg"
                       alt="デスクの上に整然と置かれた書類と万年筆"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -467,7 +461,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 relative">
                     <Image
-                      src="/images/reason-negotiation.jpg"
+                      src="/images/reason-negotiation-v2.jpg"
                       alt="落ち着いた和室で交渉している様子"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -534,7 +528,7 @@ export default function HomepageClient() {
                   step: "Step 1",
                   title: "受入証明の取得",
                   description: "新しい納骨先から「受入証明書」を発行してもらいます。",
-                  image: "/images/step-acceptance.jpg",
+                  image: "/images/step-acceptance-v3.jpg",
                   alt: "書類を丁寧に受け取る手元のクローズアップ",
                 },
                 {
@@ -902,11 +896,16 @@ export default function HomepageClient() {
               <div>
                 <h4 className="text-sm font-semibold text-[#1A1A1A]">サービス</h4>
                 <ul className="mt-4 space-y-3">
-                  {["お墓じまいとは", "手続きの流れ", "料金プラン", "対応エリア"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
-                        {item}
-                      </a>
+                  {[
+                    { label: "お墓じまいとは", href: "#kaisou-steps" },
+                    { label: "手続きの流れ", href: "/flow" },
+                    { label: "料金プラン", href: "/price" },
+                    { label: "対応エリア", href: "/kaissou" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -918,7 +917,7 @@ export default function HomepageClient() {
                   {[
                     { label: "海洋散骨クルーズ", href: "#" },
                     { label: "遺骨サポートLab", href: "#" },
-                    { label: "改葬許可申請書DL", href: "/kaissou" },
+                    { label: "改葬許可申請書DL", href: "/kaisoukyoka" },
                   ].map((item) => (
                     <li key={item.label}>
                       <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
@@ -932,11 +931,15 @@ export default function HomepageClient() {
               <div>
                 <h4 className="text-sm font-semibold text-[#1A1A1A]">会社情報</h4>
                 <ul className="mt-4 space-y-3">
-                  {["運営会社", "プライバシーポリシー", "お問い合わせ"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
-                        {item}
-                      </a>
+                  {[
+                    { label: "運営会社", href: "#" },
+                    { label: "プライバシーポリシー", href: "#" },
+                    { label: "お問い合わせ", href: "/contact" },
+                  ].map((item) => (
+                    <li key={item.label}>
+                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                        {item.label}
+                      </Link>
                     </li>
                   ))}
                 </ul>
