@@ -345,15 +345,9 @@ export default function HomepageClient() {
         {/* ============================================================
             [B] ヒーロー
         ============================================================ */}
-        <section className="relative flex min-h-[90vh] items-center overflow-hidden">
-          {/* Background: gradient fallback (images go here when ready) */}
+        <section className="relative flex min-h-[92vh] items-center overflow-hidden">
+          {/* Background */}
           <div className="absolute inset-0 bg-linear-to-br from-emerald-50 via-white to-gray-50" />
-          <div className="absolute inset-0 pointer-events-none">
-            {/* Subtle decorative blobs */}
-            <div className="absolute top-0 right-0 w-1/2 h-full overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-l from-emerald-100/30 to-transparent" />
-            </div>
-          </div>
 
           {/* Hero image */}
           <div className="absolute inset-0">
@@ -365,48 +359,43 @@ export default function HomepageClient() {
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/70 md:via-white/85 md:to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-r from-white via-white/95 to-white/60 md:via-white/80 md:to-transparent" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:py-32">
+          <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-40">
             <div
-              className="max-w-2xl"
-              style={{
-                animation: "fadeUp 0.9s ease-out both",
-              }}
+              className="max-w-xl"
+              style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
-              <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-600">
                 全国対応・法令遵守
               </p>
-              <h1 className="mt-4 text-balance text-4xl font-bold leading-[1.1] tracking-tight md:text-6xl lg:text-7xl text-[#1A1A1A]">
-                お墓じまいのすべてを、
-                <br />
-                プロにお任せ。
+              <h1 className="mt-5 text-balance text-[40px] font-bold leading-[1.06] tracking-[-0.02em] text-[#1A1A1A] md:text-[64px] lg:text-[80px]">
+                お墓じまいのすべてを、プロにお任せ。
               </h1>
-              <p className="mt-6 max-w-lg text-pretty text-base leading-relaxed text-[#6B7280] md:text-lg">
+              <p className="mt-7 text-pretty text-[17px] leading-[1.65] text-[#6B7280] md:text-[19px]">
                 改葬手続きの案内と書類サポート、提携行政書士のご紹介、
                 墓石撤去、遺骨のケア、新しい供養先まで。
-                <br className="hidden md:inline" />
                 株式会社清蓮がワンストップでサポートします。
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-[56px] items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl"
+                  className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-emerald-600 px-9 text-[17px] font-semibold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl"
                 >
                   無料相談・お見積り
                 </Link>
                 <a
                   href="tel:0120000000"
-                  className="inline-flex min-h-[56px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-base font-semibold text-[#1A1A1A] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
+                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-[#1A1A1A] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
                 >
                   <Phone className="h-5 w-5 text-emerald-600" />
                   0120-000-000
                 </a>
               </div>
 
-              <p className="mt-4 text-xs text-[#6B7280]">
+              <p className="mt-5 text-[13px] text-[#9CA3AF]">
                 24時間365日受付 / お見積り無料 / 無理な勧誘なし
               </p>
             </div>
@@ -416,21 +405,21 @@ export default function HomepageClient() {
         {/* ============================================================
             [C] 信頼バー
         ============================================================ */}
-        <div className="border-y bg-[#F9FAFB]/50">
-          <div className="mx-auto grid max-w-4xl grid-cols-1 divide-y md:grid-cols-3 md:divide-x md:divide-y-0">
+        <div className="border-y border-gray-100 bg-white">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 divide-y divide-gray-100 md:grid-cols-3 md:divide-x md:divide-y-0">
             {[
               { target: 47, unit: "都道府県", label: "全国対応" },
               { target: 24, unit: "時間", label: "受付対応" },
               { target: 0, unit: "円", label: "お見積り" },
             ].map((item) => (
-              <div key={item.label} className="flex flex-col items-center px-6 py-8 text-center">
+              <div key={item.label} className="flex flex-col items-center px-8 py-10 text-center">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold tracking-tight text-emerald-600 md:text-5xl">
+                  <span className="text-[44px] font-bold tracking-tight text-emerald-600 md:text-[52px]">
                     <CountUp target={item.target} />
                   </span>
-                  <span className="text-base font-medium text-[#6B7280]">{item.unit}</span>
+                  <span className="text-[15px] font-medium text-[#6B7280]">{item.unit}</span>
                 </div>
-                <p className="mt-2 text-sm font-medium text-[#6B7280]">{item.label}</p>
+                <p className="mt-2 text-[13px] font-medium text-[#9CA3AF]">{item.label}</p>
               </div>
             ))}
           </div>
@@ -439,13 +428,13 @@ export default function HomepageClient() {
         {/* ============================================================
             [D] 選ばれる3つの理由
         ============================================================ */}
-        <Reveal className="py-20 md:py-28">
+        <Reveal className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 選ばれる3つの理由
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 安さだけではありません。法令遵守と確かな実績で選ばれています。
               </p>
             </div>
@@ -546,13 +535,13 @@ export default function HomepageClient() {
         {/* ============================================================
             [E] サービス内容
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 サービス内容
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 お墓じまいに関わるすべての工程をサポートします。
               </p>
             </div>
@@ -561,16 +550,16 @@ export default function HomepageClient() {
               {services.map((service, i) => (
                 <div
                   key={i}
-                  className={`group relative overflow-hidden rounded-3xl bg-white p-8 transition-all hover:-translate-y-1 hover:shadow-xl ${service.span}`}
+                  className={`group relative overflow-hidden rounded-3xl bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl ${service.span}`}
                 >
-                  <span className="text-sm font-semibold text-emerald-600">
+                  <span className="text-[12px] font-semibold tracking-widest text-emerald-600">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="mt-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-50">
                     <service.icon className="h-7 w-7 text-emerald-600" />
                   </div>
-                  <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">{service.title}</h3>
-                  <p className="mt-3 leading-relaxed text-[#6B7280]">{service.description}</p>
+                  <h3 className="mt-5 text-[19px] font-semibold text-[#1A1A1A]">{service.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.65] text-[#6B7280]">{service.description}</p>
                 </div>
               ))}
             </div>
@@ -580,15 +569,14 @@ export default function HomepageClient() {
         {/* ============================================================
             [F] 改葬手続きとは
         ============================================================ */}
-        <Reveal id="kaisou-steps" className="py-20 md:py-28">
+        <Reveal id="kaisou-steps" className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 改葬手続きとは
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。
-                <br />
                 墓じまいでは「改葬許可証」の取得が必要になります。
               </p>
             </div>
@@ -630,19 +618,19 @@ export default function HomepageClient() {
                     />
                   </div>
                   <div className="p-8">
-                    <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">
+                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
                       {item.step}
                     </span>
-                    <h3 className="mt-2 text-xl font-bold text-[#1A1A1A]">{item.title}</h3>
-                    <p className="mt-3 leading-relaxed text-[#6B7280]">{item.description}</p>
+                    <h3 className="mt-3 text-[20px] font-semibold text-[#1A1A1A]">{item.title}</h3>
+                    <p className="mt-3 text-[15px] leading-[1.65] text-[#6B7280]">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl bg-[#F9FAFB] px-6 py-4">
-              <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#6B7280]" />
-              <p className="text-sm leading-relaxed text-[#6B7280]">
+              <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#9CA3AF]" />
+              <p className="text-[14px] leading-[1.65] text-[#9CA3AF]">
                 許可証の発行までの期間は自治体により異なります（数日〜1、2週間程度が目安）。
               </p>
             </div>
@@ -652,13 +640,13 @@ export default function HomepageClient() {
         {/* ============================================================
             [G] 清蓮ができること / 行わないこと（最重要）
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
           <div className="mx-auto max-w-5xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 私たちの対応範囲
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 法令を遵守し、できることとできないことを明確にしています。
               </p>
             </div>
@@ -736,13 +724,13 @@ export default function HomepageClient() {
         {/* ============================================================
             [H] ご依頼の流れ
         ============================================================ */}
-        <Reveal id="flow" className="py-20 md:py-28">
+        <Reveal id="flow" className="py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 ご依頼の流れ
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 お問い合わせから完了まで、5つのステップで進めます。
               </p>
             </div>
@@ -810,14 +798,14 @@ export default function HomepageClient() {
                   </div>
                   <div className="flex-1 pt-1">
                     <div className="flex items-center gap-3">
-                      <h3 className="text-lg font-bold text-[#1A1A1A]">{item.title}</h3>
+                      <h3 className="text-[19px] font-semibold text-[#1A1A1A]">{item.title}</h3>
                       {item.badge && (
                         <span className="rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-600">
                           {item.badge}
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 leading-relaxed text-[#6B7280]">{item.description}</p>
+                    <p className="mt-2 text-[16px] leading-[1.65] text-[#6B7280]">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -828,15 +816,14 @@ export default function HomepageClient() {
         {/* ============================================================
             [I] 料金について
         ============================================================ */}
-        <Reveal id="pricing" className="bg-[#F9FAFB]/50 py-20 md:py-28">
+        <Reveal id="pricing" className="bg-[#F9FAFB] py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 料金について
               </h2>
-              <p className="mt-4 text-base text-[#6B7280] md:text-lg">
+              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                 現地状況で変動するため、まずは無料で概算をご案内します。
-                <br />
                 追加費用が出やすいポイントも事前にご説明します。
               </p>
             </div>
@@ -859,10 +846,10 @@ export default function HomepageClient() {
                   description: "お見積り後のお断りも費用ゼロ",
                 },
               ].map((item) => (
-                <div key={item.title} className="flex flex-col items-center rounded-2xl bg-white p-6 text-center shadow-sm">
+                <div key={item.title} className="flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm">
                   <item.icon className="h-8 w-8 text-emerald-600" />
-                  <h3 className="mt-4 text-base font-bold text-[#1A1A1A]">{item.title}</h3>
-                  <p className="mt-2 text-sm text-[#6B7280]">{item.description}</p>
+                  <h3 className="mt-4 text-[17px] font-semibold text-[#1A1A1A]">{item.title}</h3>
+                  <p className="mt-2 text-[14px] leading-[1.65] text-[#6B7280]">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -888,17 +875,16 @@ export default function HomepageClient() {
         {/* ============================================================
             [J] ご自分で手続きされる方へ
         ============================================================ */}
-        <Reveal className="py-20 md:py-28">
+        <Reveal className="py-24 md:py-36">
           <div className="mx-auto max-w-5xl px-6">
-            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 via-white to-gray-50 p-10 md:p-16">
+            <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 via-white to-gray-50 p-10 md:p-20">
               <div className="relative z-10 mx-auto max-w-2xl text-center">
-                <h2 className="text-2xl font-bold tracking-tight md:text-3xl text-[#1A1A1A]">
+                <h2 className="text-balance text-[28px] font-bold tracking-tight text-[#1A1A1A] md:text-[36px]">
                   ご自分で手続きされる方へ
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-[#6B7280] md:text-lg">
+                <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">
                   全国自治体の改葬許可申請書のダウンロードと、
                   一般的な記入ポイントをまとめています。
-                  <br className="hidden md:inline" />
                   まずはお墓の所在地の自治体を検索してください。
                 </p>
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -925,22 +911,22 @@ export default function HomepageClient() {
         {/* ============================================================
             [K] よくある質問
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB]/50 py-20 md:py-28">
+        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
           <div className="mx-auto max-w-3xl px-6">
             <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight md:text-4xl text-[#1A1A1A]">
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">
                 よくあるご質問
               </h2>
             </div>
 
-            <div className="mt-12 divide-y divide-gray-200">
+            <div className="mt-14 divide-y divide-gray-200">
               {faqs.map((faq, i) => (
                 <details key={i} className="group">
-                  <summary className="flex min-h-[56px] cursor-pointer items-center justify-between gap-4 py-6 text-left text-base font-medium text-[#1A1A1A] transition-colors hover:text-emerald-600 [&::-webkit-details-marker]:hidden list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-lg">
+                  <summary className="flex min-h-[64px] cursor-pointer items-center justify-between gap-4 py-6 text-left text-[17px] font-semibold text-[#1A1A1A] transition-colors hover:text-emerald-600 [&::-webkit-details-marker]:hidden list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-lg">
                     <span>{faq.q}</span>
-                    <ChevronDown className="h-5 w-5 shrink-0 text-[#6B7280] transition-transform group-open:rotate-180" />
+                    <ChevronDown className="h-5 w-5 shrink-0 text-[#9CA3AF] transition-transform group-open:rotate-180" />
                   </summary>
-                  <p className="pb-6 pr-10 leading-relaxed text-[#6B7280]">{faq.a}</p>
+                  <p className="pb-7 pr-10 text-[16px] leading-[1.7] text-[#6B7280]">{faq.a}</p>
                 </details>
               ))}
             </div>
@@ -953,12 +939,10 @@ export default function HomepageClient() {
         <section className="relative overflow-hidden py-24 md:py-32">
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-600 to-emerald-700" />
           <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
-            <h2 className="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-              まずはお気軽に
-              <br />
-              ご相談ください
+            <h2 className="text-balance text-[36px] font-bold text-white md:text-[48px] lg:text-[56px]">
+              まずはお気軽にご相談ください
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-base text-emerald-100 md:text-lg">
+            <p className="mx-auto mt-6 max-w-lg text-[17px] leading-[1.65] text-emerald-100">
               お見積りは無料です。無理な勧誘は一切いたしません。
             </p>
 
