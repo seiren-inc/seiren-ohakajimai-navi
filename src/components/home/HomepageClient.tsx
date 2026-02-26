@@ -454,8 +454,14 @@ export default function HomepageClient() {
               {/* 理由1: 全国対応 */}
               <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
                 <div className="w-full md:w-1/2">
-                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 to-emerald-100 flex items-center justify-center">
-                    <MapPin className="h-24 w-24 text-emerald-400" />
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 to-emerald-100 relative">
+                    <Image
+                      src="/images/reason-nationwide.jpg"
+                      alt="日本列島と全国ネットワークを象徴するインフォグラフィック風デザイン"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -476,8 +482,14 @@ export default function HomepageClient() {
               {/* 理由2: 法令遵守（画像とテキストの左右反転） */}
               <div className="flex flex-col items-center gap-10 md:flex-row-reverse md:gap-16">
                 <div className="w-full md:w-1/2">
-                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-gray-50 to-gray-100 flex items-center justify-center">
-                    <ShieldCheck className="h-24 w-24 text-gray-400" />
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-gray-50 to-gray-100 relative">
+                    <Image
+                      src="/images/reason-compliance.jpg"
+                      alt="デスクの上に整然と置かれた書類と万年筆"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
@@ -499,8 +511,14 @@ export default function HomepageClient() {
               {/* 理由3: 離檀交渉サポート */}
               <div className="flex flex-col items-center gap-10 md:flex-row md:gap-16">
                 <div className="w-full md:w-1/2">
-                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 flex items-center justify-center">
-                    <MessageSquare className="h-24 w-24 text-amber-300" />
+                  <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 relative">
+                    <Image
+                      src="/images/reason-negotiation.jpg"
+                      alt="落ち着いた和室で交渉している様子"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover"
+                    />
                   </div>
                 </div>
                 <div className="w-full md:w-1/2">
