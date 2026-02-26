@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/layouts/header'
-import { Footer } from '@/components/layouts/footer'
+import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
 import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
@@ -25,11 +24,9 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased flex flex-col",
         fontSans.variable
       )}>
-        <Header />
-        <main className="flex-1">
+        <ConditionalLayout>
           {children}
-        </main>
-        <Footer />
+        </ConditionalLayout>
         <OrganizationJsonLd />
       </body>
     </html>
