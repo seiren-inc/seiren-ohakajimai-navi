@@ -599,32 +599,35 @@ export default function HomepageClient() {
                   step: "Step 1",
                   title: "受入証明の取得",
                   description: "新しい納骨先から「受入証明書」を発行してもらいます。",
-                  icon: FileText,
-                  gradient: "from-blue-50 to-blue-100",
-                  iconColor: "text-blue-400",
+                  image: "/images/step-acceptance.jpg",
+                  alt: "書類を丁寧に受け取る手元のクローズアップ",
                 },
                 {
                   step: "Step 2",
                   title: "埋葬証明の取得",
                   description: "現在のお墓の管理者から「埋葬証明書」を発行してもらいます。",
-                  icon: ClipboardList,
-                  gradient: "from-purple-50 to-purple-100",
-                  iconColor: "text-purple-400",
+                  image: "/images/step-burial-cert.jpg",
+                  alt: "寺院または霊園の管理事務所に置かれた書類と印鑑",
                 },
                 {
                   step: "Step 3",
                   title: "改葬許可の申請",
                   description: "お墓のある自治体に書類を提出し、「改葬許可証」を受領します。",
-                  icon: CheckCircle,
-                  gradient: "from-emerald-50 to-emerald-100",
-                  iconColor: "text-emerald-500",
+                  image: "/images/step-permit.jpg",
+                  alt: "机の上に置かれた許可証風の無地書類",
                 },
               ].map((item, i) => (
                 <div key={i} className="group overflow-hidden rounded-3xl bg-[#F9FAFB]">
                   <div
-                    className={`flex aspect-16/10 items-center justify-center bg-linear-to-br ${item.gradient}`}
+                    className="flex aspect-16/10 items-center justify-center bg-gray-100 relative"
                   >
-                    <item.icon className={`h-20 w-20 ${item.iconColor}`} />
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                   </div>
                   <div className="p-8">
                     <span className="text-xs font-bold uppercase tracking-widest text-emerald-600">
