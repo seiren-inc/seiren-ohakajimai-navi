@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export async function POST(request: NextRequest) {
+  // Resend は環境変数が揃っているリクエスト時に初期化（ビルド時クラッシュ防止）
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.error('[notify-ohakanavi] RESEND_API_KEY is not set')
+    return NextResponse.json({ error: 'サーバー設定エラー' }, { status: 500 })
+  }
+  const resend = new Resend(apiKey)
+
   try {
     const { email } = await request.json()
 
