@@ -300,20 +300,6 @@ export default function PrivacyPage() {
         ))}
       </div>
 
-      {/* ── フッターナビ ── */}
-      <div className="border-t border-neutral-100 bg-neutral-50">
-        <div className="mx-auto max-w-3xl px-6 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-xs text-neutral-400">
-            © 2026 Seiren Co., Ltd. All rights reserved.
-          </p>
-          <Link
-            href="/contact"
-            className="rounded-full border border-neutral-200 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
-          >
-            個人情報に関するお問い合わせ →
-          </Link>
-        </div>
-      </div>
     </div>
   )
 }
