@@ -338,7 +338,7 @@ export default function HomepageClient() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2.5 shrink-0">
               <Image
-                src="/logo.png"
+                src="/logo2.png"
                 alt="清蓮 ロゴ"
                 width={36}
                 height={36}
@@ -1062,7 +1062,7 @@ export default function HomepageClient() {
               <div className="md:col-span-1">
                 <a href="/" className="flex items-center gap-2.5">
                   <Image
-                    src="/logo.png"
+                    src="/logo2.png"
                     alt="清蓮 ロゴ"
                     width={28}
                     height={28}

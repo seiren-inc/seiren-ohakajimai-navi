@@ -222,7 +222,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
             <Image
-              src="/logo.png"
+              src="/logo2.png"
               alt="清蓮 ロゴ"
               width={36}
               height={36}

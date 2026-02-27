@@ -9,7 +9,7 @@ export function Footer() {
                     <div className="space-y-4">
                         <Link href="/" className="inline-flex items-center gap-2">
                             <Image
-                                src="/logo.png"
+                                src="/logo2.png"
                                 alt="清蓮 ロゴ"
                                 width={28}
                                 height={28}
