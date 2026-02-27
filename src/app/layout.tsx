@@ -17,7 +17,18 @@ export const viewport: Viewport = {
   maximumScale: 5,
 }
 
-export const metadata: Metadata = constructMetadata()
+export const metadata: Metadata = {
+  ...constructMetadata(),
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/logo.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+  },
+}
 
 export default function RootLayout({
   children,

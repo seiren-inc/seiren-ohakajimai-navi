@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useRef } from "react"
@@ -219,10 +220,15 @@ export function Header() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
-              <span className="text-sm font-bold text-white">N</span>
-            </div>
+          <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <Image
+              src="/logo.png"
+              alt="清蓮 ロゴ"
+              width={36}
+              height={36}
+              className="h-9 w-auto object-contain"
+              priority
+            />
             <span className="text-sm font-bold tracking-tight text-neutral-900 lg:text-base">お墓じまいナビ</span>
           </Link>
 

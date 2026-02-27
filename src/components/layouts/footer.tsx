@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Footer() {
@@ -6,7 +7,16 @@ export function Footer() {
             <div className="container py-10">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="space-y-4">
-                        <h3 className="text-lg font-bold">お墓じまいナビ</h3>
+                        <Link href="/" className="inline-flex items-center gap-2">
+                            <Image
+                                src="/logo.png"
+                                alt="清蓮 ロゴ"
+                                width={28}
+                                height={28}
+                                className="h-7 w-auto object-contain"
+                            />
+                            <span className="text-lg font-bold">お墓じまいナビ</span>
+                        </Link>
                         <p className="text-sm text-muted-foreground">
                             株式会社清蓮が運営する、改葬手続きから供養までの一括サポートサービス。
                         </p>
@@ -14,7 +24,7 @@ export function Footer() {
                     <div>
                         <h4 className="font-semibold mb-4">サービス</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="/about" className="hover:underline">お墓じまいとは</Link></li>
+                            <li><Link href="/#kaisou-steps" className="hover:underline">お墓じまいとは</Link></li>
                             <li><Link href="/flow" className="hover:underline">手続きの流れ</Link></li>
                             <li><Link href="/price" className="hover:underline">料金プラン</Link></li>
                         </ul>

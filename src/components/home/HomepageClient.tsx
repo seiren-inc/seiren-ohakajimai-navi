@@ -336,10 +336,15 @@ export default function HomepageClient() {
         >
           <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 shrink-0">
-              <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
-                <span className="text-sm font-bold text-white">N</span>
-              </div>
+            <Link href="/" className="flex items-center gap-2.5 shrink-0">
+              <Image
+                src="/logo.png"
+                alt="清蓮 ロゴ"
+                width={36}
+                height={36}
+                className="h-9 w-auto object-contain"
+                priority
+              />
               <span className="text-sm font-bold tracking-tight lg:text-base">お墓じまいナビ</span>
             </Link>
 
@@ -1055,10 +1060,14 @@ export default function HomepageClient() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-12 md:grid-cols-4">
               <div className="md:col-span-1">
-                <a href="/" className="flex items-center gap-2">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
-                    <span className="text-sm font-bold text-white">N</span>
-                  </div>
+                <a href="/" className="flex items-center gap-2.5">
+                  <Image
+                    src="/logo.png"
+                    alt="清蓮 ロゴ"
+                    width={28}
+                    height={28}
+                    className="h-7 w-auto object-contain"
+                  />
                   <span className="text-base font-bold text-[#1A1A1A]">お墓じまいナビ</span>
                 </a>
                 <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">
