@@ -89,7 +89,7 @@ export async function analyzeImport(data: Record<string, unknown>[]): Promise<An
             where: { jisCode: { in: jisCodes } },
             select: { jisCode: true }
         })
-        const existingSet = new Set(existing.map(e => e.jisCode))
+        const existingSet = new Set(existing.map((e: { jisCode: string }) => e.jisCode))
 
         for (const item of analysis.validData) {
             if (existingSet.has(item.jisCode)) {
