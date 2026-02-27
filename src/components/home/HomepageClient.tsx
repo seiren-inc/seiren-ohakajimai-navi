@@ -955,13 +955,13 @@ export default function HomepageClient() {
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link
                 href="/contact"
-                className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white transition-colors hover:bg-emerald-700"
+                className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white transition-colors hover:bg-emerald-700 sm:w-auto"
               >
                 無料相談・概算を依頼する
               </Link>
               <Link
                 href="/price"
-                className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full px-6 text-base font-semibold text-emerald-600 transition-colors hover:bg-emerald-50"
+                className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border-2 border-emerald-600 px-8 text-base font-semibold text-emerald-600 transition-colors hover:bg-emerald-50 sm:w-auto"
               >
                 料金プランを見る
                 <ArrowRight className="h-4 w-4" />
