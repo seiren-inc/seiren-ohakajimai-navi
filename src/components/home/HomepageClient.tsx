@@ -982,14 +982,14 @@ export default function HomepageClient() {
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                   <Link
                     href="/kaisoukyoka"
-                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-[#1A1A1A] px-8 text-base font-semibold text-white transition-colors hover:bg-gray-800"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-[#1A1A1A] px-8 text-base font-semibold text-white transition-colors hover:bg-gray-800 sm:w-auto"
                   >
                     <Download className="h-5 w-5" />
                     改葬許可申請書 全国一覧
                   </Link>
                   <Link
                     href="/flow"
-                    className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-6 text-base font-semibold text-[#1A1A1A] transition-colors hover:bg-gray-50"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-8 text-base font-semibold text-[#1A1A1A] transition-colors hover:bg-gray-50 sm:w-auto"
                   >
                     改葬手続きの流れ
                     <ArrowRight className="h-4 w-4" />
