@@ -209,8 +209,8 @@ export default function PricingPageClient() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
               {/* Text Content (Left) */}
               <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="typography-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#1D1D1F] mb-6 max-w-[22ch]">
-                  明確な料金で安心のお墓じまい
+                <h3 className="typography-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#1D1D1F] mb-6">
+                  明確な料金で<br />安心の墓じまい
                 </h3>
                 <p className="typography-body max-w-[34ch] text-[17px] text-[#6E6E73] mb-10">
                   見積り後の追加費用は原則なし。
