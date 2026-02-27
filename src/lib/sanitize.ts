@@ -1,4 +1,4 @@
-import xss from 'xss';
+import { FilterXSS } from 'xss';
 
 // Customize xss options if needed. By default, it removes all dangerous tags like <script>.
 const defaultXssOptions = {
@@ -7,15 +7,18 @@ const defaultXssOptions = {
     stripIgnoreTagBody: ['script', 'style'] // Strip the content inside these tags
 };
 
-const customXss = new xss.FilterXSS(defaultXssOptions);
+const customXss = new FilterXSS(defaultXssOptions);
 
 /**
  * Sanitizes a string input by removing all HTML tags and preventing XSS.
  * If the input is null or undefined, it returns the input as is.
  */
-export function sanitizeInput(input: string | undefined | null): string {
+export function sanitizeInput(input: string): string;
+export function sanitizeInput(input: undefined): undefined;
+export function sanitizeInput(input: null): null;
+export function sanitizeInput(input: string | undefined | null): string | undefined | null {
     if (typeof input !== 'string') {
-        return input as any;
+        return input;
     }
     return customXss.process(input);
 }
@@ -33,7 +36,7 @@ export function sanitizeObject<T>(obj: T): T {
         return obj.map(item => sanitizeObject(item)) as unknown as T;
     }
 
-    const sanitizedObj: any = {};
+    const sanitizedObj: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(obj)) {
         if (typeof value === 'string') {
             sanitizedObj[key] = sanitizeInput(value);
@@ -44,5 +47,5 @@ export function sanitizeObject<T>(obj: T): T {
         }
     }
 
-    return sanitizedObj;
+    return sanitizedObj as unknown as T;
 }

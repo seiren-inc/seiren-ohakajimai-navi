@@ -1,3 +1,11 @@
+## 開発環境ルール
+
+- **開発ルート**: `/Users/takumashinnyo/Workspace/projects/seiren-ohakajimai-navi`
+- **iCloud は使用しない**
+- **GitHub を正規履歴とする**: https://github.com/seiren-inc/seiren-ohakajimai-navi
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

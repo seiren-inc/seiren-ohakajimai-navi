@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, FileCheck } from 'lucide-react'
 import MunicipalityList from './MunicipalityList'
 
 interface SubLink {
@@ -24,12 +24,13 @@ interface PrefAccordionProps {
   name: string
   municipalities: Municipality[]
   isSearchActive: boolean
+  onLinkClick?: (name: string) => void
 }
 
-export default function PrefAccordion({ name, municipalities, isSearchActive }: PrefAccordionProps) {
+export default function PrefAccordion({ name, municipalities, isSearchActive, onLinkClick }: PrefAccordionProps) {
   const [isOpen, setIsOpen] = useState(false)
-  // Auto-open/close when search state changes (ref-guarded to avoid cascading renders)
   const prevSearchActive = useRef(isSearchActive)
+
   useEffect(() => {
     if (prevSearchActive.current !== isSearchActive) {
       prevSearchActive.current = isSearchActive
@@ -37,7 +38,6 @@ export default function PrefAccordion({ name, municipalities, isSearchActive }: 
         // eslint-disable-next-line react-hooks/set-state-in-effect -- ref-guarded: runs only on prop transition, not every render
         setIsOpen(true)
       } else if (!isSearchActive) {
-         
         setIsOpen(false)
       }
     }
@@ -45,29 +45,44 @@ export default function PrefAccordion({ name, municipalities, isSearchActive }: 
 
   if (municipalities.length === 0) return null
 
+  const dedicatedCount = municipalities.filter(m => m.dataQualityLevel >= 3).length
+
   return (
-    <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden transition-all hover:shadow-md">
+    <div className="overflow-hidden rounded-xl border bg-background">
+      {/* Accordion Trigger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-5 flex items-center justify-between text-left group"
+        className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-muted/30 data-[state=open]:bg-muted/30 transition-colors"
+        data-state={isOpen ? 'open' : 'closed'}
       >
         <div className="flex items-center gap-3">
-          <span className="text-xl font-bold text-slate-700">{name}</span>
-          <span className="text-sm text-slate-400 font-medium bg-slate-50 px-2 py-0.5 rounded-md">
-            {municipalities.length}件
-          </span>
+          <span className="text-base font-semibold text-foreground">{name}</span>
+          <span className="text-sm text-muted-foreground">{municipalities.length}件</span>
+          {dedicatedCount > 0 && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 border border-emerald-200">
+              <FileCheck className="h-3 w-3" />
+              専用案内 {dedicatedCount}件
+            </span>
+          )}
         </div>
         <ChevronDown
-          className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-blue-500' : 'group-hover:translate-y-0.5'}`}
+          className={`h-5 w-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
       {/* Accordion Content */}
       <div
-        className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[2000px] opacity-100 border-t border-slate-50' : 'max-h-0 opacity-0 pointer-events-none'}`}
+        className={`transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[4000px] opacity-100 border-t border-border' : 'max-h-0 opacity-0 pointer-events-none overflow-hidden'}`}
       >
-        <div className="p-4 md:p-6 bg-slate-50/30">
-          {isOpen && <MunicipalityList municipalities={municipalities} />}
+        <div className="px-4 pb-4 pt-2">
+          {isOpen && (
+            <MunicipalityList
+              municipalities={[...municipalities].sort((a, b) =>
+                a.dataQualityLevel > b.dataQualityLevel ? -1 : 1
+              )}
+              onLinkClick={onLinkClick}
+            />
+          )}
         </div>
       </div>
     </div>

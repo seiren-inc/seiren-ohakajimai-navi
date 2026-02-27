@@ -41,7 +41,7 @@ export default function CommonKaisouGuide() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
-            <CheckSquare className="h-5 w-5 w-5 text-primary" />
+            <CheckSquare className="h-5 w-5 text-primary" />
             改葬手続きの流れ
           </CardTitle>
         </CardHeader>

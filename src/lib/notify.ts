@@ -9,7 +9,7 @@ export interface NotificationPayload {
     title: string;
     message: string;
     level: "INFO" | "WARNING" | "CRITICAL";
-    metadata?: Record<string, any>;
+    metadata?: Record<string, unknown>;
     url?: string;
 }
 

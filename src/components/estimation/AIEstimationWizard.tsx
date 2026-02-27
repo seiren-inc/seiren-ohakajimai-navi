@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import QRCode from 'react-qr-code'
 import { 
   Building2,
   Trees,
@@ -111,6 +112,19 @@ export default function AIEstimationWizard() {
   const [step, setStep] = useState(-1) // -1: Start, 0-3: Questions, 4: Loading, 5: Result
   const [answers, setAnswers] = useState<Record<string, Option>>({})
   const [progressValue, setProgressValue] = useState(0)
+  
+  // スマホ/PC判定
+  const [isMounted, setIsMounted] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
+  
+  useEffect(() => {
+    setIsMounted(true);
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
 
   // 進行状況によるスムーズスクロール（モバイル等のため）
   useEffect(() => {
@@ -380,15 +394,85 @@ export default function AIEstimationWizard() {
               </p>
               
               <div className="flex flex-col gap-3">
-                <a
-                  href="/contact"
-                  className="group flex w-full items-center justify-between rounded-xl bg-emerald-500 px-5 py-4 font-bold text-white transition-all hover:bg-emerald-400"
-                >
-                  <span className="flex items-center gap-2">
-                    LINEで結果を送って相談する
-                  </span>
-                  <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-                </a>
+                {(() => {
+                  const message = `【AIお墓じまい見積もり結果】
+■算出条件
+・場所：${answers['q1_type']?.label}
+・広さ：${answers['q2_size']?.label}
+・アクセス：${answers['q3_access']?.label}
+・次の供養：${answers['q4_next']?.label}
+
+■概算費用
+${(result.min / 10000).toLocaleString()}万 〜 ${(result.max / 10000).toLocaleString()}万円
+
+この条件で詳しく相談したいです。`;
+                  
+                  const lineUrl = `https://lin.ee/h0TINzZ`; 
+
+
+                  // SSR / ハイドレーション中は安全なフォールバックUIを表示
+                  if (!isMounted) {
+                    return (
+                      <div className="group flex w-full items-center justify-between rounded-xl bg-emerald-500 px-5 py-4 font-bold text-white opacity-80">
+                        <span className="flex items-center gap-2">
+                          LINEを開く準備中...
+                        </span>
+                        <Loader2 className="h-5 w-5 animate-spin" />
+                      </div>
+                    )
+                  }
+
+                  if (!isMobile) {
+                    return (
+                      <div className="rounded-xl bg-white/10 border border-white/20 p-5 text-center">
+                        <p className="text-sm font-bold text-white mb-4">
+                          スマホでQRコードを読み取ってLINE相談
+                        </p>
+                        <div className="bg-white p-3 rounded-xl inline-block mb-3">
+                          <QRCode value={lineUrl} size={120} />
+                        </div>
+                        <p className="text-xs text-slate-300 leading-relaxed">
+                          1. スマホのカメラでQRコードを読み取る<br/>
+                          2. 「清蓮」公式アカウントを友だち追加<br/>
+                          3. 以下のテキストをコピーして送信
+                        </p>
+                        <button
+                          onClick={async () => {
+                            await navigator.clipboard.writeText(message);
+                            alert('結果をコピーしました！LINEのトークに貼り付けてください。');
+                          }}
+                          className="mt-4 px-4 py-2 bg-slate-800 text-white rounded-lg text-xs font-bold hover:bg-slate-700 transition-colors"
+                        >
+                          結果テキストをコピーする
+                        </button>
+                      </div>
+                    )
+                  }
+
+
+                  // モバイル向け：直接LINEを開くボタン
+                  return (
+                    <button
+                      onClick={async () => {
+                        try {
+                          await navigator.clipboard.writeText(message);
+                          alert('見積もり結果をコピーしました！\nLINEのトーク画面に「貼り付け」して送信してください。');
+                          window.open(lineUrl, '_blank');
+                        } catch (err) {
+                          window.open(lineUrl, '_blank');
+                        }
+                      }}
+                      className="group flex w-full items-center justify-between rounded-xl bg-emerald-500 px-5 py-4 font-bold text-white transition-all hover:bg-emerald-400 focus:outline-none focus:ring-4 focus:ring-emerald-500/30"
+                    >
+                      <span className="flex items-center gap-2">
+                        LINEを開く <span className="text-xs font-normal opacity-90">（結果を自動コピーします）</span>
+                      </span>
+                      <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  )
+                })()}
+
+
                 <a
                   href="/contact"
                   className="group flex w-full items-center justify-between rounded-xl bg-white/10 border border-white/20 px-5 py-4 font-bold text-white transition-all hover:bg-white/20"

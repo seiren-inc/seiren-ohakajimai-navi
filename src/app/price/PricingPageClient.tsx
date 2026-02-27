@@ -768,7 +768,7 @@ export default function PricingPageClient() {
             
             {/* Mobile optimized phone call button */}
             <a 
-              href="tel:0120000000"
+              href="tel:08008888788"
               className="w-full sm:w-auto px-8 py-4 rounded-full border-2 border-white/30 text-white font-bold flex items-center justify-center hover:bg-white/10 transition duration-300 min-h-[56px]"
             >
               <Phone className="h-5 w-5 mr-2" />

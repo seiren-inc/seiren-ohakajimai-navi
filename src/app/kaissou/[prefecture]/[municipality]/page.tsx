@@ -6,7 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle } from "lucide-react"
-import CommonKaisouGuide from "@/components/kaisou/CommonKaisouGuide"
+import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
@@ -182,7 +182,7 @@ export default async function MunicipalityPage(props: PageProps) {
                     </section>
 
                     {/* 共通：改葬手続き完全ガイド */}
-                    <CommonKaisouGuide />
+                    <ReKaisouGuide />
                 </div>
 
                 {/* Sidebar CTA */}
@@ -213,8 +213,8 @@ export default async function MunicipalityPage(props: PageProps) {
                             </Button>
                             <div className="text-center">
                                 <p className="text-xs text-muted-foreground mb-1">お電話でも受付中</p>
-                                <a href="tel:0120-000-000" className="text-xl font-bold block hover:text-primary transition-colors">
-                                    <Phone className="inline mr-1 h-4 w-4" /> 0120-000-000
+                                <a href="tel:08008888788" className="text-xl font-bold block hover:text-primary transition-colors">
+                                    <Phone className="inline mr-1 h-4 w-4" /> 0800-888-8788
                                 </a>
                             </div>
                         </CardContent>

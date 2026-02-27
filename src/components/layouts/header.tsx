@@ -259,11 +259,14 @@ export function Header() {
           {/* Desktop CTA (lg以上のみ表示) */}
           <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
-              href="tel:045-881-9952"
-              className="flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors"
+              href="tel:08008888788"
+              className="flex flex-col items-end text-right leading-none"
             >
-              <Phone className="h-4 w-4" />
-              045-881-9952
+              <span className="flex items-center gap-1 text-sm font-bold text-emerald-700 hover:text-emerald-800 transition-colors tracking-wide">
+                <Phone className="h-3.5 w-3.5" />
+                0800-888-8788
+              </span>
+              <span className="text-[10px] text-neutral-400 mt-0.5">フリーコール｜9:00〜19:00</span>
             </a>
             <Link
               href="/contact"
@@ -318,11 +321,14 @@ export function Header() {
             {/* 電話・CTA */}
             <div className="mt-5 flex flex-col gap-3">
               <a
-                href="tel:045-881-9952"
-                className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+                href="tel:08008888788"
+                className="flex min-h-[52px] flex-col items-center justify-center rounded-full border-2 border-emerald-600 text-emerald-600"
               >
-                <Phone className="h-4 w-4" />
-                045-881-9952
+                <span className="flex items-center gap-1.5 text-sm font-bold">
+                  <Phone className="h-4 w-4" />
+                  0800-888-8788
+                </span>
+                <span className="text-[10px] text-emerald-500 mt-0.5">フリーコール｜9:00〜19:00</span>
               </a>
               <Link
                 href="/contact"

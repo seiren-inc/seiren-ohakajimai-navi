@@ -221,8 +221,8 @@ export default function FlowPage() {
                     </div>
                     <div className="mt-6">
                         <p className="text-sm text-slate-400 mb-1">お電話（24時間受付）</p>
-                        <a href="tel:0120-000-000" className="text-2xl font-bold hover:text-blue-300 transition-colors">
-                            <Phone className="inline mr-2 h-5 w-5" />0120-000-000
+                        <a href="tel:08008888788" className="text-2xl font-bold hover:text-blue-300 transition-colors">
+                            <Phone className="inline mr-2 h-5 w-5" />0800-888-8788
                         </a>
                     </div>
                 </div>

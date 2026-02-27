@@ -313,7 +313,7 @@ export default function HomepageClient() {
     description: "改葬手続き案内から供養までの一括サポートサービス",
     provider: { "@type": "Organization", name: "株式会社清蓮" },
     areaServed: "JP",
-    telephone: "0120-000-000",
+    telephone: "0800-888-8788",
     priceRange: "お見積り無料",
   }
 
@@ -407,11 +407,11 @@ export default function HomepageClient() {
             {/* CTA + Mobile Menu */}
             <div className="flex items-center gap-2 shrink-0">
               <a
-                href="tel:045-881-9952"
+                href="tel:08008888788"
                 className="hidden items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors lg:flex"
               >
                 <Phone className="h-4 w-4" />
-                045-881-9952
+                0800-888-8788
               </a>
               <Link
                 href="/contact"
@@ -453,11 +453,11 @@ export default function HomepageClient() {
               </nav>
               <div className="mt-5 flex flex-col gap-3">
                 <a
-                  href="tel:045-881-9952"
+                  href="tel:08008888788"
                   className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
                 >
                   <Phone className="h-4 w-4" />
-                  045-881-9952
+                  0800-888-8788
                 </a>
                 <Link
                   href="/contact"
@@ -546,11 +546,11 @@ export default function HomepageClient() {
                   無料相談・お見積り
                 </Link>
                 <a
-                  href="tel:0120000000"
+                  href="tel:08008888788"
                   className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-[#111827] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
                 >
                   <Phone className="h-5 w-5 text-emerald-600" />
-                  0120-000-000
+                  0800-888-8788
                 </a>
               </div>
 
@@ -1041,11 +1041,11 @@ export default function HomepageClient() {
                 無料相談・お見積りフォーム
               </Link>
               <a
-                href="tel:0120000000"
+                href="tel:08008888788"
                 className="inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full border-2 border-white/30 px-8 text-base font-semibold text-white transition-all hover:bg-white/10 sm:w-auto"
               >
                 <Phone className="h-5 w-5" />
-                0120-000-000
+                0800-888-8788
               </a>
             </div>
 
@@ -1141,7 +1141,7 @@ export default function HomepageClient() {
         <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 p-3 backdrop-blur-xl md:hidden print:hidden">
           <div className="flex gap-2">
             <a
-              href="tel:0120000000"
+              href="tel:08008888788"
               className="flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
             >
               <Phone className="h-4 w-4" />
