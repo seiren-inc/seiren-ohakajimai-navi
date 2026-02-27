@@ -155,7 +155,7 @@ export default function PrivacyPage() {
             <span className="text-neutral-700">プライバシーポリシー</span>
           </nav>
 
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl">
+          <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
             Privacy Policy
           </h1>
           <p className="mt-3 text-lg font-medium text-neutral-900">プライバシーポリシー</p>

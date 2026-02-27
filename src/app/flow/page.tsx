@@ -155,14 +155,14 @@ export default function FlowPage() {
             <span aria-hidden="true">/</span>
             <span className="text-neutral-700">ご依頼の流れ</span>
           </nav>
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-neutral-900 md:text-5xl">
+          <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
             ご依頼の流れ
           </h1>
           <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-neutral-600 md:text-lg">
             お墓じまいは、現地確認から工事・遺骨のケア・改葬先の手配まで段取りが多い手続きです。
             清蓮は工事と遺骨のケアを軸に、改葬手続きは「案内」と「行政書士紹介」で法令遵守の形で支えます。
           </p>
-          <div className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-100 px-4 py-2 text-sm text-neutral-500">
+          <div className="mt-5 flex flex-wrap items-center gap-2 rounded-full bg-neutral-100 px-4 py-2 text-xs text-neutral-500 w-fit">
             <Clock className="h-3.5 w-3.5" />
             全体目安：2〜4ヶ月（墓地規模・自治体・改葬先の受入状況により前後します）
           </div>

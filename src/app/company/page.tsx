@@ -115,7 +115,7 @@ export default function CompanyPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600">
               Seiren Co., Ltd.
             </p>
-            <h1 className="mt-6 text-4xl font-semibold tracking-tight leading-[1.15] text-neutral-900 md:text-5xl">
+            <h1 className="mt-6 text-2xl font-semibold tracking-tight leading-[1.15] text-neutral-900 md:text-4xl lg:text-5xl">
               供養を、誠実に。
             </h1>
             <p className="mx-auto mt-6 max-w-[42ch] text-lg leading-relaxed text-neutral-600">
