@@ -192,6 +192,86 @@ const faqs = [
 ]
 
 // ----------------------------------------------------------------
+// Coming Soon Modal（お墓探しナビ）
+// ----------------------------------------------------------------
+function HomepageComingSoonModal({ onClose }: { onClose: () => void }) {
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email) return
+    setLoading(true)
+    setError("")
+    try {
+      const res = await fetch("/api/notify-ohakanavi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+      if (!res.ok) throw new Error()
+      setSubmitted(true)
+    } catch {
+      setError("送信に失敗しました。しばらくしてから再度お試しください。")
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl" onClick={(e) => e.stopPropagation()}>
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Coming Soon</p>
+            <h2 className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
+          </div>
+          <button onClick={onClose} className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700" aria-label="閉じる">
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+        {submitted ? (
+          <div className="mt-6 rounded-xl bg-emerald-50 py-6 text-center">
+            <p className="text-sm font-semibold text-emerald-700">登録しました ✓</p>
+            <p className="mt-1 text-xs text-emerald-600">公開時にご連絡します</p>
+          </div>
+        ) : (
+          <>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+              全国の霊園・納骨堂・樹木葬を探せるサービスを準備中です。公開時にお知らせします。
+            </p>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="メールアドレスを入力"
+                required
+                disabled={loading}
+                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+              />
+              {error && <p className="text-xs text-red-500">{error}</p>}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors disabled:opacity-60"
+              >
+                {loading ? "送信中..." : "公開時に通知を受け取る"}
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ----------------------------------------------------------------
 // Main Component
 // ----------------------------------------------------------------
 export default function HomepageClient() {
@@ -417,45 +497,7 @@ export default function HomepageClient() {
 
         {/* 準備中モーダル */}
         {modalOpen && (
-          <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
-            onClick={() => setModalOpen(false)}
-          >
-            <div
-              className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Coming Soon</p>
-                  <h2 className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
-                </div>
-                <button onClick={() => setModalOpen(false)} className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700" aria-label="閉じる">
-                  <X className="h-5 w-5" />
-                </button>
-              </div>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-                全国の霊団・納骨堂・樹木葬を探せるサービスを準備中です。公開時にお知らせします。
-              </p>
-              <form
-                onSubmit={(e) => { e.preventDefault(); setModalOpen(false) }}
-                className="mt-6 space-y-3"
-              >
-                <input
-                  type="email"
-                  placeholder="メールアドレスを入力"
-                  required
-                  className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
-                />
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
-                >
-                  公開時に通知を受け取る
-                </button>
-              </form>
-            </div>
-          </div>
+          <HomepageComingSoonModal onClose={() => setModalOpen(false)} />
         )}
 
         {/* ============================================================

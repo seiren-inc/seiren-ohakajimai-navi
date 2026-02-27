@@ -42,15 +42,35 @@ const relatedServices = [
 function ComingSoonModal({ onClose }: { onClose: () => void }) {
   const [email, setEmail] = useState("")
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (email) setSubmitted(true)
+    if (!email) return
+
+    setLoading(true)
+    setError("")
+
+    try {
+      const res = await fetch("/api/notify-ohakanavi", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      })
+
+      if (!res.ok) throw new Error("送信エラー")
+      setSubmitted(true)
+    } catch {
+      setError("送信に失敗しました。しばらくしてから再度お試しください。")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
+      className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
       onClick={onClose}
     >
       <div
@@ -74,8 +94,8 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {submitted ? (
-          <div className="mt-6 rounded-xl bg-emerald-50 py-5 text-center">
-            <p className="text-sm font-semibold text-emerald-700">登録しました</p>
+          <div className="mt-6 rounded-xl bg-emerald-50 py-6 text-center">
+            <p className="text-sm font-semibold text-emerald-700">登録しました ✓</p>
             <p className="mt-1 text-xs text-emerald-600">公開時にご連絡します</p>
           </div>
         ) : (
@@ -91,13 +111,18 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="メールアドレスを入力"
                 required
-                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
+                disabled={loading}
+                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
               />
+              {error && (
+                <p className="text-xs text-red-500">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+                disabled={loading}
+                className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors disabled:opacity-60"
               >
-                公開時に通知を受け取る
+                {loading ? "送信中..." : "公開時に通知を受け取る"}
               </button>
             </form>
           </>
