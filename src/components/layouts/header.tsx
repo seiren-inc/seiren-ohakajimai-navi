@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
-import { Phone, Menu, X } from "lucide-react"
+import { useState, useRef } from "react"
+import { Phone, Menu, X, ChevronDown } from "lucide-react"
 
 const navItems = [
   { label: "お墓じまいとは", href: "/about" },
@@ -14,117 +14,336 @@ const navItems = [
   { label: "会社概要", href: "/company" },
 ]
 
+const relatedServices = [
+  {
+    label: "散骨クルーズ",
+    href: "https://www.sankotu-cruise.com/",
+    description: "海洋散骨の専門サービス",
+    external: true,
+    comingSoon: false,
+  },
+  {
+    label: "遺骨ラボ",
+    href: "https://ikotsu-lab.com/",
+    description: "遺骨の専門処理・粉骨",
+    external: true,
+    comingSoon: false,
+  },
+  {
+    label: "お墓探しナビ",
+    href: "#",
+    description: "全国の霊園・納骨堂を検索",
+    external: false,
+    comingSoon: true,
+  },
+]
+
+// お墓探しナビ 準備中モーダル
+function ComingSoonModal({ onClose }: { onClose: () => void }) {
+  const [email, setEmail] = useState("")
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (email) setSubmitted(true)
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
+              Coming Soon
+            </p>
+            <h2 className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
+          </div>
+          <button
+            onClick={onClose}
+            className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700"
+            aria-label="閉じる"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {submitted ? (
+          <div className="mt-6 rounded-xl bg-emerald-50 py-5 text-center">
+            <p className="text-sm font-semibold text-emerald-700">登録しました</p>
+            <p className="mt-1 text-xs text-emerald-600">公開時にご連絡します</p>
+          </div>
+        ) : (
+          <>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+              全国の霊園・納骨堂・樹木葬を探せるサービスを準備中です。
+              公開時にお知らせします。
+            </p>
+            <form onSubmit={handleSubmit} className="mt-6 space-y-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="メールアドレスを入力"
+                required
+                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100"
+              />
+              <button
+                type="submit"
+                className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+              >
+                公開時に通知を受け取る
+              </button>
+            </form>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// 関連サービス ドロップダウン（PC）
+function RelatedServicesDropdown() {
+  const [open, setOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150)
+  }
+
+  return (
+    <>
+      <div
+        className="relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <button
+          className="flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-800 transition-colors"
+          aria-expanded={open}
+          aria-haspopup="true"
+        >
+          関連サービス
+          <ChevronDown
+            className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          />
+        </button>
+
+        {open && (
+          <div className="absolute right-0 top-full z-50 mt-2 w-56 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
+            {relatedServices.map((service) =>
+              service.comingSoon ? (
+                <button
+                  key={service.label}
+                  onClick={() => {
+                    setOpen(false)
+                    setModalOpen(true)
+                  }}
+                  className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+                >
+                  <span className="flex flex-col">
+                    <span>{service.label}</span>
+                    <span className="text-xs text-neutral-400">{service.description}</span>
+                  </span>
+                  <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-500">
+                    準備中
+                  </span>
+                </button>
+              ) : (
+                <a
+                  key={service.label}
+                  href={service.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="flex flex-col rounded-md px-3 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+                >
+                  <span>{service.label}</span>
+                  <span className="text-xs text-neutral-400">{service.description}</span>
+                </a>
+              )
+            )}
+          </div>
+        )}
+      </div>
+
+      {modalOpen && <ComingSoonModal onClose={() => setModalOpen(false)} />}
+    </>
+  )
+}
+
 export function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-neutral-200/70 bg-white/95 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
+    <>
+      <header className="sticky top-0 z-50 w-full border-b border-neutral-200/70 bg-white/95 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
-            <span className="text-sm font-bold text-white">N</span>
-          </div>
-          <span className="text-sm font-bold tracking-tight text-neutral-900 lg:text-base">お墓じまいナビ</span>
-        </Link>
-
-        {/* Desktop Nav (lg以上のみ表示) */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={
-                  isActive
-                    ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                    : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
-                }
-              >
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
-
-        {/* Desktop CTA (lg以上のみ表示) */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
-          <a
-            href="tel:045-881-9952"
-            className="flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors"
-          >
-            <Phone className="h-4 w-4" />
-            045-881-9952
-          </a>
-          <Link
-            href="/contact"
-            className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
-          >
-            無料相談
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600">
+              <span className="text-sm font-bold text-white">N</span>
+            </div>
+            <span className="text-sm font-bold tracking-tight text-neutral-900 lg:text-base">お墓じまいナビ</span>
           </Link>
-        </div>
 
-        {/* Mobile/Tablet: Hamburger (lg未満で表示) */}
-        <div className="flex items-center gap-2 lg:hidden">
-          <Link
-            href="/contact"
-            className="rounded-full bg-emerald-600 px-4 py-2 text-xs font-semibold text-white hover:bg-emerald-700 transition-colors"
-          >
-            無料相談
-          </Link>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg"
-            aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
-          >
-            {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile/Tablet Drawer */}
-      {menuOpen && (
-        <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
-          <nav className="flex flex-col">
+          {/* Desktop Nav (lg以上のみ表示) */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  onClick={() => setMenuOpen(false)}
-                  className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                  className={
                     isActive
-                      ? "font-semibold text-emerald-600"
-                      : "font-medium text-neutral-700"
-                  }`}
+                      ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
+                      : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+                  }
                 >
                   {item.label}
                 </Link>
               )
             })}
+
+            {/* 関連サービス（補助ナビ） */}
+            <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
+            <RelatedServicesDropdown />
           </nav>
-          <div className="mt-5 flex flex-col gap-3">
+
+          {/* Desktop CTA (lg以上のみ表示) */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <a
               href="tel:045-881-9952"
-              className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+              className="flex items-center gap-1.5 text-sm font-medium text-neutral-600 hover:text-emerald-700 transition-colors"
             >
               <Phone className="h-4 w-4" />
               045-881-9952
             </a>
             <Link
               href="/contact"
-              onClick={() => setMenuOpen(false)}
-              className="flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
+              className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
             >
-              無料相談・お見積り
+              無料相談
             </Link>
           </div>
+
+          {/* Mobile/Tablet: CTA + Hamburger (lg未満で表示) */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <Link
+              href="/contact"
+              className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white hover:bg-emerald-700 transition-colors"
+            >
+              無料相談
+            </Link>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg"
+              aria-label={menuOpen ? "メニューを閉じる" : "メニューを開く"}
+            >
+              {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
-      )}
-    </header>
+
+        {/* Mobile/Tablet Drawer */}
+        {menuOpen && (
+          <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
+            {/* メインナビ */}
+            <nav className="flex flex-col">
+              {navItems.map((item) => {
+                const isActive = pathname === item.href
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                      isActive
+                        ? "font-semibold text-emerald-600"
+                        : "font-medium text-neutral-700"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              })}
+            </nav>
+
+            {/* 電話・CTA */}
+            <div className="mt-5 flex flex-col gap-3">
+              <a
+                href="tel:045-881-9952"
+                className="flex min-h-[52px] items-center justify-center gap-2 rounded-full border-2 border-emerald-600 text-sm font-bold text-emerald-600"
+              >
+                <Phone className="h-4 w-4" />
+                045-881-9952
+              </a>
+              <Link
+                href="/contact"
+                onClick={() => setMenuOpen(false)}
+                className="flex min-h-[52px] items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
+              >
+                無料相談・お見積り
+              </Link>
+            </div>
+
+            {/* 関連サービス（モバイル最下部） */}
+            <div className="mt-8 border-t border-neutral-100 pt-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+                関連サービス
+              </p>
+              <div className="mt-3 flex flex-col gap-1">
+                {relatedServices.map((service) =>
+                  service.comingSoon ? (
+                    <button
+                      key={service.label}
+                      onClick={() => {
+                        setMenuOpen(false)
+                        setModalOpen(true)
+                      }}
+                      className="flex items-center justify-between rounded-lg px-2 py-3 text-left text-sm text-neutral-500 hover:bg-neutral-50"
+                    >
+                      <span>{service.label}</span>
+                      <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-400">
+                        準備中
+                      </span>
+                    </button>
+                  ) : (
+                    <a
+                      key={service.label}
+                      href={service.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMenuOpen(false)}
+                      className="rounded-lg px-2 py-3 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-700"
+                    >
+                      {service.label}
+                    </a>
+                  )
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* 準備中モーダル（ヘッダー外） */}
+      {modalOpen && <ComingSoonModal onClose={() => setModalOpen(false)} />}
+    </>
   )
 }
