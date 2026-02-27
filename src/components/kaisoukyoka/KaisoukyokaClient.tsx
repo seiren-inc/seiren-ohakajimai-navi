@@ -183,15 +183,15 @@ function StatsSummary({ totalMunicipalities, dedicatedCount }: { totalMunicipali
   ]
 
   return (
-    <div className="mx-auto flex max-w-2xl items-center justify-center gap-6 pt-6 md:gap-10">
+    <div className="mx-auto flex max-w-2xl items-center justify-center gap-3 pt-6 sm:gap-8 md:gap-10">
       {stats.map((stat) => (
-        <div key={stat.label} className="flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50">
-            <stat.icon className="h-4 w-4 text-emerald-600" />
+        <div key={stat.label} className="flex items-center gap-2">
+          <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-50 sm:h-9 sm:w-9">
+            <stat.icon className="h-3 w-3 text-emerald-600 sm:h-4 sm:w-4" />
           </div>
           <div>
-            <p className="text-lg font-bold leading-tight text-foreground">{stat.value}</p>
-            <p className="text-xs text-muted-foreground">{stat.label}</p>
+            <p className="text-base font-bold leading-tight text-foreground sm:text-lg">{stat.value}</p>
+            <p className="text-[10px] text-muted-foreground sm:text-xs">{stat.label}</p>
           </div>
         </div>
       ))}
