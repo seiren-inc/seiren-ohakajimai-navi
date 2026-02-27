@@ -27,20 +27,24 @@ export const revalidate = 86400
 
 // Pre-build the most common/popular municipalities at build time
 export async function generateStaticParams() {
-    // Fetch a subset of important or frequently accessed municipalities to pre-build.
-    // Let's pre-build the designated ordinance cities (政令指定都市) or top 100 to save build time,
-    // while the rest will be generated on-demand (ISR).
-    const topMunicipalities = await prisma.municipality.findMany({
-        where: { isPublished: true },
-        select: { prefectureSlug: true, municipalitySlug: true },
-        take: 100, // Pre-building the first 100 as an example
-    })
-
-    return topMunicipalities.map((m) => ({
-        prefecture: m.prefectureSlug,
-        municipality: m.municipalitySlug,
-    }))
+    try {
+        const topMunicipalities = await prisma.municipality.findMany({
+            where: { isPublished: true },
+            select: { prefectureSlug: true, municipalitySlug: true },
+            take: 100,
+        })
+        return topMunicipalities.map((m) => ({
+            prefecture: m.prefectureSlug,
+            municipality: m.municipalitySlug,
+        }))
+    } catch (e) {
+        // DATABASE_URL 未設定など DB 接続不可の場合はビルドを中断させず、
+        // ページは ISR (on-demand) で生成する
+        console.warn('[generateStaticParams] DB unavailable, skipping pre-build:', e)
+        return []
+    }
 }
+
 
 export async function generateMetadata(props: PageProps) {
     const params = await props.params
