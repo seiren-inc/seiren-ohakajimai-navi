@@ -531,7 +531,7 @@ export default function HomepageClient() {
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
-              <h1 className="typography-heading mt-5 text-2xl font-semibold leading-tight tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、プロにお任せ。</h1>
+              <h1 className="typography-heading mt-5 text-2xl font-semibold leading-tight tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
               <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-[#374151] md:text-lg">
                 改葬手続きの案内と書類サポート、提携行政書士の<br className="hidden md:block" />
                 ご紹介、墓石撤去、遺骨のケア、新しい供養先まで。<br className="hidden md:block" />
