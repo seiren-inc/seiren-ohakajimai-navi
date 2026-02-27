@@ -1107,7 +1107,7 @@ export default function HomepageClient() {
                 <ul className="mt-4 space-y-3">
                   {[
                     { label: "運営会社", href: "#" },
-                    { label: "プライバシーポリシー", href: "#" },
+                    { label: "プライバシーポリシー", href: "/privacy" },
                     { label: "お問い合わせ", href: "/contact" },
                   ].map((item) => (
                     <li key={item.label}>
