@@ -27,6 +27,7 @@ export function Footer() {
                             <li><Link href="/#kaisou-steps" className="hover:underline">お墓じまいとは</Link></li>
                             <li><Link href="/flow" className="hover:underline">手続きの流れ</Link></li>
                             <li><Link href="/price" className="hover:underline">料金プラン</Link></li>
+                            <li><Link href="/gyoseishoshi" className="hover:underline">行政書士マッチング</Link></li>
                         </ul>
                     </div>
                     <div>

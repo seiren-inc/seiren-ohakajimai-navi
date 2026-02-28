@@ -113,6 +113,22 @@ export default async function KaisoukyokaPage() {
 
       {/* subLinks は Prisma が JsonValue で返すが、ランタイムでは SubLink[] 構造が保証されている */}
       <KaisoukyokaClient initialData={groupedData as React.ComponentProps<typeof KaisoukyokaClient>['initialData']} />
+
+      {/* Doc-09 §7: 行政書士への導線 */}
+      <section className="border-t bg-muted/30 px-4 py-10 text-center">
+        <div className="mx-auto max-w-2xl">
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            申請書の書き方や提出方法に不安がある方は、改葬許可申請に詳しい行政書士にご相談いただけます。
+          </p>
+          <a
+            href="/gyoseishoshi"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+          >
+            行政書士に相談する
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        </div>
+      </section>
     </main>
   )
 }

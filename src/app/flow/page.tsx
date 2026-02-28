@@ -266,10 +266,10 @@ export default function FlowPage() {
           清蓮は代行を行わず、ご紹介に留まります。依頼契約は行政書士と直接締結いただく形となります。
         </p>
         <Link
-          href="/contact"
+          href="/gyoseishoshi"
           className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
         >
-          行政書士紹介について相談する（無料）
+          行政書士に相談する（無料）
           <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
@@ -314,6 +314,9 @@ export default function FlowPage() {
           </Link>
           <Link href="/kaisoukyoka" className="flex items-center gap-1 text-emerald-700 font-medium hover:underline">
             申請書DL <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/gyoseishoshi" className="flex items-center gap-1 text-emerald-700 font-medium hover:underline">
+            行政書士マッチング <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

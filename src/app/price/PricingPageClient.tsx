@@ -752,6 +752,23 @@ export default function PricingPageClient() {
         </div>
       </Section>
 
+      {/* Doc-09 §7: 行政書士への導線 */}
+      <Section className="py-16 bg-white">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h3 className="text-xl font-bold text-[#1D1D1F] mb-4">改葬許可申請に不安がある方へ</h3>
+          <p className="text-sm text-[#6E6E73] leading-relaxed max-w-[48ch] mx-auto mb-6">
+            改葬許可申請書の作成や提出代行は行政書士の業務範囲です。
+            専門の行政書士にご相談いただけます。
+          </p>
+          <Link
+            href="/gyoseishoshi"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-600 text-white font-semibold hover:bg-emerald-700 transition duration-300"
+          >
+            行政書士に相談する（無料）
+          </Link>
+        </div>
+      </Section>
+
       {/* [11] Final CTA */}
       <section className="py-24 bg-[#1D1D1F] text-white print:bg-white! print:text-black!">
         <div className="mx-auto max-w-4xl px-6 text-center">

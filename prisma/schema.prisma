@@ -79,7 +79,80 @@ model MunicipalityArchive {
   @@map("municipalities_archive")
 }
 
-// ... (other models)
+// --- 行政書士マッチング ---
+
+enum InquiryType {
+  OHaka
+  GYoseishoshi
+}
+
+// Doc-35 + 実行計画に統一: BASIC / STANDARD / PREMIUM
+enum ScrivenerPlanType {
+  BASIC
+  STANDARD
+  PREMIUM
+}
+
+// Doc-10 §8, Doc-16 §5: 支払いステータス
+enum PaymentStatus {
+  UNPAID
+  PAID
+  SUSPENDED
+}
+
+model AdministrativeScrivener {
+  id                 String             @id @default(cuid())
+  officeName         String             @map("office_name")
+  representativeName String?            @map("representative_name")
+  registrationNumber String?            @map("registration_number") // Doc-16 §3: 登録番号
+  prefecture         String
+  city               String?
+  addressLine        String?            @map("address_line")
+  phone              String?
+  email              String?
+  websiteUrl         String?            @map("website_url")
+  priceRangeText     String?            @map("price_range_text")
+  specialties        String[]           @default([])
+  profileText        String             @map("profile_text")
+  businessHours      String?            @map("business_hours") // Doc-16 §3: 営業時間
+  planType           ScrivenerPlanType  @default(BASIC) @map("plan_type")
+  priorityScore      Int                @default(0) @map("priority_score")
+  isApproved         Boolean            @default(false) @map("is_approved")
+  isActive           Boolean            @default(true) @map("is_active")
+  complaintFlag      Boolean            @default(false) @map("complaint_flag") // Doc-18 §7: 苦情フラグ
+  paymentStatus      PaymentStatus      @default(UNPAID) @map("payment_status") // Doc-10 §8
+  contractStartDate  DateTime?          @map("contract_start_date") // Doc-18 §5
+  contractEndDate    DateTime?          @map("contract_end_date")
+  createdAt          DateTime           @default(now()) @map("created_at")
+  updatedAt          DateTime           @updatedAt @map("updated_at")
+  inquiries          Inquiry[]
+  auditLogs          ScrivenerAuditLog[]
+
+  @@index([prefecture, isApproved, isActive])
+  @@index([planType, priorityScore])
+  @@index([isApproved, isActive])
+  @@index([paymentStatus])
+  @@map("administrative_scriveners")
+}
+
+// Doc-16 §8, Doc-17 §8: 監査ログ（削除禁止）
+model ScrivenerAuditLog {
+  id            String                  @id @default(cuid())
+  scrivenerId   String                  @map("scrivener_id")
+  scrivener     AdministrativeScrivener @relation(fields: [scrivenerId], references: [id], onDelete: Cascade)
+  actionType    String                  @map("action_type") // APPROVE / SUSPEND / UPDATE / PLAN_CHANGE / PAYMENT_UPDATE
+  beforeValue   Json?                   @map("before_value")
+  afterValue    Json?                   @map("after_value")
+  adminUserId   String                  @map("admin_user_id")
+  createdAt     DateTime                @default(now()) @map("created_at")
+
+  @@index([scrivenerId])
+  @@index([createdAt])
+  @@map("scrivener_audit_logs")
+}
+
+
+// --- 既存 enum ---
 
 enum LinkType {
   GUIDE
@@ -105,31 +178,37 @@ model ImportLog {
 }
 
 model Inquiry {
-  id                  String              @id @default(uuid())
-  status              InquiryStatus       @default(NEW)
-  lastName            String              @map("last_name")
-  firstName           String              @map("first_name")
-  lastNameKana        String              @map("last_name_kana")
-  firstNameKana       String              @map("first_name_kana")
+  id                  String                      @id @default(uuid())
+  inquiryType         InquiryType                 @default(OHaka) @map("inquiry_type")
+  status              InquiryStatus               @default(NEW)
+  lastName            String                      @map("last_name")
+  firstName           String                      @map("first_name")
+  lastNameKana        String?                     @map("last_name_kana")
+  firstNameKana       String?                     @map("first_name_kana")
   email               String
   phone               String
-  postalCode          String              @map("postal_code")
-  prefecture          String
-  city                String
-  addressDetail       String?             @map("address_detail")
-  cemeteryType        CemeteryType        @map("cemetery_type")
-  considerationPeriod ConsiderationPeriod @map("consideration_period")
+  postalCode          String?                     @map("postal_code")
+  prefecture          String?
+  city                String?
+  addressDetail       String?                     @map("address_detail")
+  cemeteryType        CemeteryType?               @map("cemetery_type")
+  considerationPeriod ConsiderationPeriod?         @map("consideration_period")
   content             String
-  destinationType     DestinationType?    @map("destination_type")
-  boneServiceType     BoneServiceType?    @map("bone_service_type")
-  containerType       ContainerType?      @map("container_type")
-  ritanConsultation   Boolean?            @map("ritan_consultation")
+  destinationType     DestinationType?             @map("destination_type")
+  boneServiceType     BoneServiceType?             @map("bone_service_type")
+  containerType       ContainerType?               @map("container_type")
+  ritanConsultation   Boolean?                     @map("ritan_consultation")
+  preferredContact    String?                      @map("preferred_contact")
   memo                String?
-  ipAddress           String?             @map("ip_address")
-  userAgent           String?             @map("user_agent")
-  createdAt           DateTime            @default(now()) @map("created_at")
-  updatedAt           DateTime            @updatedAt @map("updated_at")
+  ipAddress           String?                      @map("ip_address")
+  userAgent           String?                      @map("user_agent")
+  scrivenerId         String?                      @map("scrivener_id")
+  scrivener           AdministrativeScrivener?     @relation(fields: [scrivenerId], references: [id], onDelete: SetNull)
+  createdAt           DateTime                     @default(now()) @map("created_at")
+  updatedAt           DateTime                     @updatedAt @map("updated_at")
 
+  @@index([inquiryType, status, createdAt])
+  @@index([scrivenerId])
   @@map("inquiries")
 }
 

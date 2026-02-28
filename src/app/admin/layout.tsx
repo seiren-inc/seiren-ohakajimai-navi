@@ -9,7 +9,8 @@ import {
     Settings,
     MessageSquare,
     Building2,
-    Upload
+    Upload,
+    UserPlus
 } from "lucide-react"
 
 export default async function AdminLayout({
@@ -66,7 +67,7 @@ export default async function AdminLayout({
     return (
         <div className="flex min-h-screen">
             {/* Sidebar */}
-            <aside className="w-64 bg-slate-900 text-slate-50 flex-shrink-0 hidden md:block">
+            <aside className="w-64 bg-slate-900 text-slate-50 shrink-0 hidden md:block">
                 <div className="p-6">
                     <h1 className="text-xl font-bold flex items-center gap-2">
                         <AppWindow className="h-6 w-6" />
@@ -88,6 +89,11 @@ export default async function AdminLayout({
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
                         <Link href="/admin/municipalities/import">
                             <Upload className="mr-2 h-4 w-4" /> CSVインポート
+                        </Link>
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
+                        <Link href="/admin/gyoseishoshi">
+                            <UserPlus className="mr-2 h-4 w-4" /> 行政書士管理
                         </Link>
                     </Button>
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>

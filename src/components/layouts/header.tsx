@@ -10,9 +10,12 @@ const navItems = [
   { label: "お墓じまいとは", href: "/about" },
   { label: "ご依頼の流れ", href: "/flow" },
   { label: "料金", href: "/price" },
-  { label: "申請書DL", href: "/kaisoukyoka" },
-  { label: "改葬手続き情報", href: "/kaissou" },
-  { label: "会社概要", href: "/company" },
+  { label: "行政書士マッチング", href: "/gyoseishoshi" },
+]
+
+const kaisouSubItems = [
+  { label: "申請書ダウンロード", href: "/kaisoukyoka", description: "全国自治体の申請書一覧" },
+  { label: "改葬手続き情報", href: "/kaissou", description: "都道府県別の手続きガイド" },
 ]
 
 const relatedServices = [
@@ -209,6 +212,66 @@ function RelatedServicesDropdown() {
   )
 }
 
+// 改葬手続き関連 ドロップダウン（PC）
+function KaisouDropdown() {
+  const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isActive = kaisouSubItems.some(item => pathname === item.href)
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    setOpen(true)
+  }
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => setOpen(false), 150)
+  }
+
+  return (
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        className={`flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
+          isActive
+            ? "text-neutral-900"
+            : "text-neutral-600 hover:text-neutral-900"
+        }`}
+        aria-expanded={open}
+        aria-haspopup="true"
+      >
+        改葬手続き関連
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
+          {kaisouSubItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={`flex flex-col rounded-md px-3 py-2.5 text-sm transition-colors ${
+                pathname === item.href
+                  ? "bg-emerald-50 text-emerald-700"
+                  : "text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"
+              }`}
+            >
+              <span className="font-medium">{item.label}</span>
+              <span className="text-xs text-neutral-400">{item.description}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function Header() {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -250,6 +313,9 @@ export function Header() {
                 </Link>
               )
             })}
+
+            {/* 改葬手続き関連プルダウン */}
+            <KaisouDropdown />
 
             {/* 関連サービス（補助ナビ） */}
             <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
@@ -316,6 +382,33 @@ export function Header() {
                   </Link>
                 )
               })}
+
+              {/* 改葬手続き関連（モバイル） */}
+              <div className="border-b border-neutral-100">
+                <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
+                  改葬手続き関連
+                </p>
+                <div className="flex flex-col gap-1 pb-3 pl-4">
+                  {kaisouSubItems.map((item) => {
+                    const isActive = pathname === item.href
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className={`flex flex-col rounded-lg px-2 py-2.5 text-sm ${
+                          isActive
+                            ? "bg-emerald-50 text-emerald-700 font-semibold"
+                            : "text-neutral-600 hover:bg-neutral-50"
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <span className="text-xs text-neutral-400">{item.description}</span>
+                      </Link>
+                    )
+                  })}
+                </div>
+              </div>
             </nav>
 
             {/* 電話・CTA */}
