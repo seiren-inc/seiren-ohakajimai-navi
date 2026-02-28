@@ -298,10 +298,16 @@ export default function HomepageClient() {
     { label: "お墓じまいとは", href: "/about" },
     { label: "ご依頼の流れ", href: "/flow" },
     { label: "料金", href: "/price" },
-    { label: "申請書DL", href: "/kaisoukyoka" },
-    { label: "改葬手続き情報", href: "/kaissou" },
+    { label: "行政書士マッチング", href: "/gyoseishoshi" },
     { label: "会社概要", href: "/company" },
   ]
+
+  const kaisouSubItems = [
+    { label: "申請書ダウンロード", href: "/kaisoukyoka", description: "全国自治体の申請書一覧" },
+    { label: "改葬手続き情報", href: "/kaissou", description: "都道府県別の手続きガイド" },
+  ]
+
+  const [kaisouOpen, setKaisouOpen] = useState(false)
 
   // ----------------------------------------------------------------
   // JSON-LD
@@ -359,6 +365,34 @@ export default function HomepageClient() {
                   {item.label}
                 </Link>
               ))}
+
+              {/* 改葬手続き関連プルダウン */}
+              <div
+                className="relative"
+                onMouseEnter={() => setKaisouOpen(true)}
+                onMouseLeave={() => setKaisouOpen(false)}
+              >
+                <button className="flex items-center gap-1 text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap">
+                  改葬手続き関連
+                  <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${kaisouOpen ? "rotate-180" : ""}`} />
+                </button>
+                {kaisouOpen && (
+                  <div className="absolute left-0 top-full z-50 mt-2 w-56 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
+                    {kaisouSubItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setKaisouOpen(false)}
+                        className="flex flex-col rounded-md px-3 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+                      >
+                        <span className="font-medium">{item.label}</span>
+                        <span className="text-xs text-neutral-400">{item.description}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               {/* 関連サービス補助ナビ */}
               <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
               <div
@@ -450,6 +484,26 @@ export default function HomepageClient() {
                     {item.label}
                   </Link>
                 ))}
+
+                {/* 改葬手続き関連（モバイル） */}
+                <div className="border-b border-neutral-100">
+                  <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
+                    改葬手続き関連
+                  </p>
+                  <div className="flex flex-col gap-1 pb-3 pl-4">
+                    {kaisouSubItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={() => setMenuOpen(false)}
+                        className="flex flex-col rounded-lg px-2 py-2.5 text-sm text-neutral-600 hover:bg-neutral-50"
+                      >
+                        <span>{item.label}</span>
+                        <span className="text-xs text-neutral-400">{item.description}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </nav>
               <div className="mt-5 flex flex-col gap-3">
                 <a
