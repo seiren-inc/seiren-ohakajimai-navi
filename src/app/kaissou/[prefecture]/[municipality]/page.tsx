@@ -25,24 +25,10 @@ async function getMunicipality(prefSlug: string, muniSlug: string) {
 // Revalidate the page every 24 hours (86400 seconds)
 export const revalidate = 86400
 
-// Pre-build the most common/popular municipalities at build time
+// ビルド時は静的生成しない（ISR: 初回アクセス時に生成）
+// Vercelビルド時のDB接続数上限超過を回避
 export async function generateStaticParams() {
-    try {
-        const topMunicipalities = await prisma.municipality.findMany({
-            where: { isPublished: true },
-            select: { prefectureSlug: true, municipalitySlug: true },
-            take: 100,
-        })
-        return topMunicipalities.map((m) => ({
-            prefecture: m.prefectureSlug,
-            municipality: m.municipalitySlug,
-        }))
-    } catch (e) {
-        // DATABASE_URL 未設定など DB 接続不可の場合はビルドを中断させず、
-        // ページは ISR (on-demand) で生成する
-        console.warn('[generateStaticParams] DB unavailable, skipping pre-build:', e)
-        return []
-    }
+    return []
 }
 
 
