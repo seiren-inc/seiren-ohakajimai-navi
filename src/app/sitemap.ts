@@ -58,6 +58,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         // DB接続エラー時はスキップ
     }
 
-    return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes]
+    return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes, ...getGyoseishoshiPrefRoutes(BASE_URL, now)]
+}
+
+function getGyoseishoshiPrefRoutes(baseUrl: string, now: Date): MetadataRoute.Sitemap {
+    const prefectures = [
+        'hokkaido', 'aomori', 'iwate', 'miyagi', 'akita', 'yamagata', 'fukushima',
+        'ibaraki', 'tochigi', 'gunma', 'saitama', 'chiba', 'tokyo', 'kanagawa',
+        'niigata', 'toyama', 'ishikawa', 'fukui', 'yamanashi', 'nagano',
+        'shizuoka', 'aichi', 'gifu', 'mie',
+        'shiga', 'kyoto', 'osaka', 'hyogo', 'nara', 'wakayama',
+        'tottori', 'shimane', 'okayama', 'hiroshima', 'yamaguchi',
+        'tokushima', 'kagawa', 'ehime', 'kochi',
+        'fukuoka', 'saga', 'nagasaki', 'kumamoto', 'oita', 'miyazaki', 'kagoshima', 'okinawa',
+    ]
+    return prefectures.map((pref) => ({
+        url: `${baseUrl}/gyoseishoshi/area/${pref}`,
+        lastModified: now,
+        changeFrequency: 'monthly' as const,
+        priority: 0.6,
+    }))
 }
 

@@ -15,9 +15,10 @@ import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { PREFECTURES } from "@/lib/prefectures"
 import Link from "next/link"
-import { ArrowLeft, AlertTriangle } from "lucide-react"
+import { ArrowLeft, AlertTriangle, CreditCard } from "lucide-react"
 import { format } from "date-fns"
 import { ja } from "date-fns/locale"
+import { StripeCheckoutButton } from "@/components/admin/StripeCheckoutButton"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
@@ -116,6 +117,30 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                         論理削除
                     </Button>
                 </form>
+            </div>
+
+            {/* Stripe 決済リンク発行 */}
+            <div className="rounded-lg border bg-white p-4 space-y-2">
+                <div className="flex items-center gap-2 mb-2">
+                    <CreditCard className="h-4 w-4 text-muted-foreground" />
+                    <h3 className="text-sm font-semibold">Stripe 決済リンク発行</h3>
+                    {scrivener.paymentStatus === "PAID" && (
+                        <span className="text-xs text-emerald-600 font-medium">（支払済）</span>
+                    )}
+                </div>
+                <p className="text-xs text-muted-foreground">
+                    プラン: <strong>{scrivener.planType}</strong>　
+                    {scrivener.stripeSubscriptionId && (
+                        <span>Subscription ID: {scrivener.stripeSubscriptionId}</span>
+                    )}
+                </p>
+                <StripeCheckoutButton
+                    scrivenerId={scrivener.id}
+                    disabled={!scrivener.isApproved}
+                />
+                {!scrivener.isApproved && (
+                    <p className="text-xs text-amber-600">※ 承認後に決済リンクを発行できます</p>
+                )}
             </div>
 
             {/* 編集フォーム */}
