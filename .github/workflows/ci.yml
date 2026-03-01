@@ -1,0 +1,62 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Cache pnpm
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Prisma generate
+        run: pnpm exec prisma generate
+
+      - name: Prisma validate
+        run: pnpm exec prisma validate
+
+      - name: TypeCheck
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm exec next lint
+
+      - name: Build
+        run: pnpm run build
+        env:
+          DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy?pgbouncer=true"
+          DIRECT_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
+          NEXT_PUBLIC_SUPABASE_URL: "https://dummy.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: "dummy"
+          NEXT_PUBLIC_BASE_URL: "https://dummy.example.com"
+          NEXT_PUBLIC_SITE_URL: "https://dummy.example.com"
