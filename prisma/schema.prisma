@@ -123,6 +123,9 @@ model AdministrativeScrivener {
   paymentStatus      PaymentStatus      @default(UNPAID) @map("payment_status") // Doc-10 §8
   contractStartDate  DateTime?          @map("contract_start_date") // Doc-18 §5
   contractEndDate    DateTime?          @map("contract_end_date")
+  stripeCustomerId       String?   @map("stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map("stripe_subscription_id")
+  currentPeriodEnd       DateTime? @map("current_period_end")
   createdAt          DateTime           @default(now()) @map("created_at")
   updatedAt          DateTime           @updatedAt @map("updated_at")
   inquiries          Inquiry[]
