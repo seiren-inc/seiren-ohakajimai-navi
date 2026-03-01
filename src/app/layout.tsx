@@ -6,6 +6,7 @@ import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
 import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
+import { Analytics } from '@vercel/analytics/next'
 
 const fontSans = Noto_Sans_JP({
   subsets: ['latin'],
@@ -65,6 +66,7 @@ export default function RootLayout({
           {children}
         </ConditionalLayout>
         <OrganizationJsonLd />
+        <Analytics />
       </body>
     </html>
   )
