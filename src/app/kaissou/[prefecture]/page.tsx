@@ -6,6 +6,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { ChevronRight, FileText } from "lucide-react"
 import { PREFECTURES } from "@/lib/prefectures"
 
+// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
+export const dynamic = "force-dynamic"
+
 // Correct type definition for params in Next.js 15
 type PageProps = {
     params: Promise<{ prefecture: string }>

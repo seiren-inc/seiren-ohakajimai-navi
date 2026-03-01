@@ -8,6 +8,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import Link from "next/link"
 import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle } from "lucide-react"
 
+// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
+export const dynamic = "force-dynamic"
+
 // Doc-09 §3-1: SEO Title/Description
 export const metadata = constructMetadata({
     title: "改葬許可申請の行政書士相談｜お墓じまいナビ",

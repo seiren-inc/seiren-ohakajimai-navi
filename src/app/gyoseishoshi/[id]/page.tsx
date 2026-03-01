@@ -6,6 +6,9 @@ import Link from "next/link"
 import { MapPin, Globe, MessageCircle, ArrowLeft, Clock } from "lucide-react"
 import type { Metadata } from "next"
 
+// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
+export const dynamic = "force-dynamic"
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
 
