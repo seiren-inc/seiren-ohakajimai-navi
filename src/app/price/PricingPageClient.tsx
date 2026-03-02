@@ -789,7 +789,7 @@ export default function PricingPageClient() {
               className="w-full sm:w-auto px-8 py-4 rounded-full border-2 border-white/30 text-white font-bold flex items-center justify-center hover:bg-white/10 transition duration-300 min-h-[56px]"
             >
               <Phone className="h-5 w-5 mr-2" />
-              0120-000-000 に電話する
+              0800-888-8788 に電話する
             </a>
           </div>
           
