@@ -196,13 +196,13 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                                 <p className="text-xs text-neutral-500">
                                     改葬許可申請についてのご相談を受け付けています。
                                 </p>
-                                <a
+                                <Link
                                     href="/gyoseishoshi#contact-form"
                                     className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors w-full"
                                 >
                                     <MessageCircle className="h-4 w-4" />
                                     無料で相談する
-                                </a>
+                                </Link>
                                 <p className="text-[10px] text-center text-neutral-400">
                                     ※ 本サービスは広告掲載です。当社は行政書士業務の受任・仲介を行いません。
                                 </p>

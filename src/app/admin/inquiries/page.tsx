@@ -111,7 +111,7 @@ export default async function InquiriesPage(props: PageProps) {
                                 </TableCell>
                                 <TableCell>
                                     <Badge variant="outline">
-                                        {inquiryTypeLabels[(inquiry as any).inquiryType] || "お墓じまい"}
+                                        {inquiryTypeLabels[inquiry.inquiryType as string] || "お墓じまい"}
                                     </Badge>
                                 </TableCell>
                                 <TableCell>

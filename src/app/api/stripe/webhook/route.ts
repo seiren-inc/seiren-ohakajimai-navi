@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
                 let currentPeriodEnd: Date | undefined
                 if (subscriptionId) {
                     const sub = await getStripe().subscriptions.retrieve(subscriptionId)
-                    currentPeriodEnd = new Date((sub as any).current_period_end * 1000)
+                    currentPeriodEnd = new Date((sub as unknown as { current_period_end: number }).current_period_end * 1000)
                 }
 
                 await db.administrativeScrivener.update({

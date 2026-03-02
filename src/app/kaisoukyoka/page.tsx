@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
 import KaisoukyokaClient from '@/components/kaisoukyoka/KaisoukyokaClient'
 import { ChevronRight } from 'lucide-react'
+import Link from 'next/link'
 
 export const metadata: Metadata = constructMetadata({
   title: '改葬許可申請書ダウンロード｜全国自治体一覧・書き方・改葬 自分で手続きする方へ｜お墓じまいナビ',
@@ -71,13 +72,13 @@ export default async function KaisoukyokaPage() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             申請書の書き方や提出方法に不安がある方は、改葬許可申請に詳しい行政書士にご相談いただけます。
           </p>
-          <a
+          <Link
             href="/gyoseishoshi"
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
           >
             行政書士に相談する
             <ChevronRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </section>
     </main>

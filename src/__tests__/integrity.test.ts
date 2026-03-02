@@ -1,10 +1,10 @@
 import { describe, it, expect, beforeAll, afterAll } from 'vitest'
-import { PrismaClient } from '@prisma/client'
+import { PrismaClient, Municipality } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 describe('Municipality Data Integrity (1737 items)', () => {
-    let municipalities: Record<string, unknown>[] = []
+    let municipalities: Municipality[] = []
 
     beforeAll(async () => {
         municipalities = await prisma.municipality.findMany()
@@ -30,10 +30,10 @@ describe('Municipality Data Integrity (1737 items)', () => {
 
     it('ensures URLs starting with http if they exist', () => {
         municipalities.forEach((m) => {
-            if (m.url) {
+            if (m.url && typeof m.url === 'string') {
                 expect(m.url.startsWith('http')).toBe(true)
             }
-            if (m.pdfUrl) {
+            if (m.pdfUrl && typeof m.pdfUrl === 'string') {
                 expect(m.pdfUrl.startsWith('http')).toBe(true)
             }
         })

@@ -40,7 +40,10 @@ function RecentlyViewed({ onSelect }: { onSelect: (name: string) => void }) {
   useEffect(() => {
     const stored = localStorage.getItem('recent-municipalities')
     if (stored) {
-      try { setRecent(JSON.parse(stored)) } catch { /* ignore */ }
+      try { 
+        const parsed = JSON.parse(stored)
+        setTimeout(() => setRecent(parsed), 0)
+      } catch { /* ignore */ }
     }
   }, [])
 

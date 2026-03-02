@@ -103,8 +103,8 @@ function CountUp({ target, duration = 1200 }: { target: number; duration?: numbe
   const { ref, visible } = useReveal()
   useEffect(() => {
     if (!visible || target === 0) {
-      setCount(target)
-      return
+      const initTimer = setTimeout(() => setCount(target), 0)
+      return () => clearTimeout(initTimer)
     }
     let start = 0
     const step = Math.ceil(target / (duration / 16))
@@ -892,7 +892,7 @@ export default function HomepageClient() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-12 md:grid-cols-4">
               <div className="md:col-span-1">
-                <a href="/" className="flex items-center gap-2.5">
+                <Link href="/" className="flex items-center gap-2.5">
                   <Image
                     src="/logo2.png"
                     alt="清蓮 ロゴ"
@@ -901,7 +901,7 @@ export default function HomepageClient() {
                     className="h-7 w-auto object-contain"
                   />
                   <span className="text-base font-bold text-[#1A1A1A]">お墓じまいナビ</span>
-                </a>
+                </Link>
                 <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">
                   株式会社清蓮が運営する、改葬手続きから供養までの
                   一括サポートサービス。

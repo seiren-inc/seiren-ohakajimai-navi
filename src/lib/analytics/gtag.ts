@@ -12,7 +12,7 @@ declare global {
       targetId: string,
       config?: ControlParams | EventParams | CustomParams
     ) => void;
-    dataLayer: Record<string, any>[];
+    dataLayer: Record<string, unknown>[];
   }
 }
 
@@ -32,10 +32,10 @@ interface EventParams {
   currency?: string;
   description?: string;
   fatal?: boolean;
-  items?: any[];
+  items?: unknown[];
   method?: string;
   number?: string;
-  promotions?: any[];
+  promotions?: unknown[];
   screen_name?: string;
   search_term?: string;
   shipping?: number;
@@ -47,7 +47,7 @@ interface EventParams {
 }
 
 interface CustomParams {
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 /**
