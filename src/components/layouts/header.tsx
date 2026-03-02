@@ -10,10 +10,13 @@ import { Phone, Menu, X, ChevronDown, Mail, ExternalLink } from "lucide-react"
 // データ定義
 // -----------------------------------------------
 
+const serviceItems = [
+  { label: "お墓じまいとは", href: "/about", description: "お墓じまいの基礎知識" },
+  { label: "ご依頼の流れ", href: "/flow", description: "相談からお墓じまい完了まで" },
+  { label: "料金", href: "/price", description: "明朗な料金体系" },
+]
+
 const navItems = [
-  { label: "お墓じまいとは", href: "/about" },
-  { label: "ご依頼の流れ", href: "/flow" },
-  { label: "料金", href: "/price" },
   { label: "行政書士紹介", href: "/gyoseishoshi" },
   { label: "会社概要", href: "/company" },
 ]
@@ -311,6 +314,15 @@ export function Header() {
   const [modalOpen, setModalOpen] = useState(false)
   const [mobileConsultOpen, setMobileConsultOpen] = useState(false)
 
+  // サービスドロップダウン items
+  const serviceDropdownItems: DropdownItem[] = serviceItems.map((item) => ({
+    type: "link",
+    label: item.label,
+    href: item.href,
+    description: item.description,
+  }))
+
+  const isServiceActive = serviceItems.some((item) => pathname === item.href)
   const isKaisouActive = kaisouSubItems.some((item) => pathname === item.href)
 
   // 申請書・手続きドロップダウン items
@@ -362,6 +374,14 @@ export function Header() {
 
           {/* Desktop Nav (lg以上のみ表示) */}
           <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
+            {/* サービス ▼ */}
+            <NavDropdown
+              label="サービス"
+              items={serviceDropdownItems}
+              isActive={isServiceActive}
+              align="left"
+            />
+
             {/* メインナビゲーション */}
             {navItems.map((item) => (
               <Link
@@ -423,6 +443,30 @@ export function Header() {
         {menuOpen && (
           <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
             <nav className="flex flex-col">
+              {/* サービス（モバイル） */}
+              <div className="border-b border-neutral-100">
+                <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
+                  サービス
+                </p>
+                <div className="flex flex-col gap-1 pb-3 pl-4">
+                  {serviceItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`flex flex-col rounded-lg px-2 py-2.5 text-sm ${
+                        pathname === item.href
+                          ? "bg-emerald-50 text-emerald-700 font-semibold"
+                          : "text-neutral-600 hover:bg-neutral-50"
+                      }`}
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xs text-neutral-400">{item.description}</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
               {/* メインナビゲーション */}
               <div className="border-b border-neutral-100 flex flex-col pt-2 pb-2">
                 {navItems.map((item) => (
