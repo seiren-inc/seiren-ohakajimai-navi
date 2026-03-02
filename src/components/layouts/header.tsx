@@ -16,10 +16,7 @@ const serviceItems = [
   { label: "料金", href: "/price", description: "明朗な料金体系" },
 ]
 
-const navItems = [
-  { label: "行政書士紹介", href: "/gyoseishoshi" },
-  { label: "会社概要", href: "/company" },
-]
+
 
 const kaisouSubItems = [
   { label: "申請書ダウンロード", href: "/kaisoukyoka", description: "全国自治体の申請書一覧" },
@@ -382,20 +379,17 @@ export function Header() {
               align="left"
             />
 
-            {/* メインナビゲーション */}
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={
-                  pathname === item.href
-                    ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                    : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
-                }
-              >
-                {item.label}
-              </Link>
-            ))}
+            {/* 行政書士紹介 */}
+            <Link
+              href="/gyoseishoshi"
+              className={
+                pathname === "/gyoseishoshi"
+                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
+                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+              }
+            >
+              行政書士紹介
+            </Link>
 
             {/* 改葬手続き関連 ▼ */}
             <NavDropdown
@@ -404,6 +398,18 @@ export function Header() {
               isActive={isKaisouActive}
               align="left"
             />
+
+            {/* 会社概要 */}
+            <Link
+              href="/company"
+              className={
+                pathname === "/company"
+                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
+                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+              }
+            >
+              会社概要
+            </Link>
 
             {/* セパレーター */}
             <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
@@ -467,23 +473,18 @@ export function Header() {
                 </div>
               </div>
 
-              {/* メインナビゲーション */}
-              <div className="border-b border-neutral-100 flex flex-col pt-2 pb-2">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMenuOpen(false)}
-                    className={`flex min-h-[52px] items-center text-base ${
-                      pathname === item.href
-                        ? "font-semibold text-emerald-600"
-                        : "font-medium text-neutral-700"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-              </div>
+              {/* 行政書士紹介 */}
+              <Link
+                href="/gyoseishoshi"
+                onClick={() => setMenuOpen(false)}
+                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                  pathname === "/gyoseishoshi"
+                    ? "font-semibold text-emerald-600"
+                    : "font-medium text-neutral-700"
+                }`}
+              >
+                行政書士紹介
+              </Link>
 
               {/* 改葬手続き関連 */}
               <div className="border-b border-neutral-100">
@@ -508,6 +509,19 @@ export function Header() {
                   ))}
                 </div>
               </div>
+
+              {/* 会社概要 */}
+              <Link
+                href="/company"
+                onClick={() => setMenuOpen(false)}
+                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                  pathname === "/company"
+                    ? "font-semibold text-emerald-600"
+                    : "font-medium text-neutral-700"
+                }`}
+              >
+                会社概要
+              </Link>
             </nav>
 
             {/* お問い合わせ選択 */}
