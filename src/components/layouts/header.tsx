@@ -10,10 +10,12 @@ import { Phone, Menu, X, ChevronDown, Mail, ExternalLink } from "lucide-react"
 // データ定義
 // -----------------------------------------------
 
-const serviceItems = [
-  { label: "お墓じまいとは", href: "/about", description: "お墓じまいの基礎知識" },
-  { label: "ご依頼の流れ", href: "/flow", description: "相談からお墓じまい完了まで" },
-  { label: "料金", href: "/price", description: "明朗な料金体系" },
+const navItems = [
+  { label: "お墓じまいとは", href: "/about" },
+  { label: "ご依頼の流れ", href: "/flow" },
+  { label: "料金", href: "/price" },
+  { label: "行政書士紹介", href: "/gyoseishoshi" },
+  { label: "会社概要", href: "/company" },
 ]
 
 const kaisouSubItems = [
@@ -309,13 +311,7 @@ export function Header() {
   const [modalOpen, setModalOpen] = useState(false)
   const [mobileConsultOpen, setMobileConsultOpen] = useState(false)
 
-  // サービスドロップダウン items
-  const serviceDropdownItems: DropdownItem[] = serviceItems.map((item) => ({
-    type: "link",
-    label: item.label,
-    href: item.href,
-    description: item.description,
-  }))
+  const isKaisouActive = kaisouSubItems.some((item) => pathname === item.href)
 
   // 申請書・手続きドロップダウン items
   const kaisouDropdownItems: DropdownItem[] = kaisouSubItems.map((item) => ({
@@ -344,9 +340,6 @@ export function Header() {
         }
   )
 
-  const isServiceActive = serviceItems.some((item) => pathname === item.href)
-  const isKaisouActive = kaisouSubItems.some((item) => pathname === item.href)
-
   return (
     <>
       <header className="sticky top-0 z-50 w-full border-b border-neutral-200/70 bg-white/95 backdrop-blur-xl">
@@ -369,45 +362,28 @@ export function Header() {
 
           {/* Desktop Nav (lg以上のみ表示) */}
           <nav className="hidden lg:flex items-center gap-5 xl:gap-6">
-            {/* サービス ▼ */}
-            <NavDropdown
-              label="サービス"
-              items={serviceDropdownItems}
-              isActive={isServiceActive}
-              align="left"
-            />
+            {/* メインナビゲーション */}
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={
+                  pathname === item.href
+                    ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
+                    : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+                }
+              >
+                {item.label}
+              </Link>
+            ))}
 
-            {/* 申請書・手続き ▼ */}
+            {/* 改葬手続き関連 ▼ */}
             <NavDropdown
-              label="申請書・手続き"
+              label="改葬手続き関連"
               items={kaisouDropdownItems}
               isActive={isKaisouActive}
               align="left"
             />
-
-            {/* 行政書士 */}
-            <Link
-              href="/gyoseishoshi"
-              className={
-                pathname === "/gyoseishoshi"
-                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
-              }
-            >
-              行政書士
-            </Link>
-
-            {/* 会社概要 */}
-            <Link
-              href="/company"
-              className={
-                pathname === "/company"
-                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
-              }
-            >
-              会社概要
-            </Link>
 
             {/* セパレーター */}
             <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
@@ -447,34 +423,28 @@ export function Header() {
         {menuOpen && (
           <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
             <nav className="flex flex-col">
-              {/* サービス */}
-              <div className="border-b border-neutral-100">
-                <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
-                  サービス
-                </p>
-                <div className="flex flex-col gap-1 pb-3 pl-4">
-                  {serviceItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setMenuOpen(false)}
-                      className={`flex flex-col rounded-lg px-2 py-2.5 text-sm ${
-                        pathname === item.href
-                          ? "bg-emerald-50 text-emerald-700 font-semibold"
-                          : "text-neutral-600 hover:bg-neutral-50"
-                      }`}
-                    >
-                      <span>{item.label}</span>
-                      <span className="text-xs text-neutral-400">{item.description}</span>
-                    </Link>
-                  ))}
-                </div>
+              {/* メインナビゲーション */}
+              <div className="border-b border-neutral-100 flex flex-col pt-2 pb-2">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`flex min-h-[52px] items-center text-base ${
+                      pathname === item.href
+                        ? "font-semibold text-emerald-600"
+                        : "font-medium text-neutral-700"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
 
-              {/* 申請書・手続き */}
+              {/* 改葬手続き関連 */}
               <div className="border-b border-neutral-100">
                 <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
-                  申請書・手続き
+                  改葬手続き関連
                 </p>
                 <div className="flex flex-col gap-1 pb-3 pl-4">
                   {kaisouSubItems.map((item) => (
@@ -494,32 +464,6 @@ export function Header() {
                   ))}
                 </div>
               </div>
-
-              {/* 行政書士 */}
-              <Link
-                href="/gyoseishoshi"
-                onClick={() => setMenuOpen(false)}
-                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
-                  pathname === "/gyoseishoshi"
-                    ? "font-semibold text-emerald-600"
-                    : "font-medium text-neutral-700"
-                }`}
-              >
-                行政書士
-              </Link>
-
-              {/* 会社概要 */}
-              <Link
-                href="/company"
-                onClick={() => setMenuOpen(false)}
-                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
-                  pathname === "/company"
-                    ? "font-semibold text-emerald-600"
-                    : "font-medium text-neutral-700"
-                }`}
-              >
-                会社概要
-              </Link>
             </nav>
 
             {/* お問い合わせ選択 */}
