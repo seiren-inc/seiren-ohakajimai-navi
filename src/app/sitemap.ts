@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { prisma } from '@/lib/prisma'
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.osohiki-navi.jp'
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
