@@ -59,6 +59,9 @@ export function constructMetadata({
             images: [absoluteImageUrl],
         },
         icons,
+        verification: {
+            google: 'google-site-verification=_P2nElnAz-2wkA-U0R3BXPd1f9nICnmoPv3O1nx1agk',
+        },
         metadataBase: new URL(siteConfig.url),
         ...(noIndex && {
             robots: {
