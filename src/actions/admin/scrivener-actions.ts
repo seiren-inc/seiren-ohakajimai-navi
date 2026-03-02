@@ -104,6 +104,7 @@ export async function updateScrivener(id: string, formData: FormData) {
             businessHours: (formData.get("businessHours") as string) || null,
             planType: (formData.get("planType") as string) || "BASIC",
             priorityScore: Number(formData.get("priorityScore")) || 0,
+            stripeSubscriptionId: (formData.get("stripeSubscriptionId") as string) || null,
         },
     })
 
@@ -169,6 +170,20 @@ export async function updatePaymentStatus(id: string, paymentStatus: string) {
     })
 
     await recordAuditLog(id, "PAYMENT_UPDATE", null, { paymentStatus })
+
+    revalidatePath("/admin/gyoseishoshi")
+}
+
+/**
+ * Stripe サブスクリプション ID の紐付け
+ */
+export async function linkStripeSubscription(id: string, stripeSubscriptionId: string) {
+    await db.administrativeScrivener.update({
+        where: { id },
+        data: { stripeSubscriptionId },
+    })
+
+    await recordAuditLog(id, "LINK_STRIPE", null, { stripeSubscriptionId })
 
     revalidatePath("/admin/gyoseishoshi")
 }

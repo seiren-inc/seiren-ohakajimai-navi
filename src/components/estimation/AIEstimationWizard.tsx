@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import QRCode from 'react-qr-code'
+import { trackDiagnosisComplete } from '@/lib/analytics/gtag'
 import { 
   Building2,
   Trees,
@@ -126,10 +127,29 @@ export default function AIEstimationWizard() {
   }, []);
 
 
-  // 進行状況によるスムーズスクロール（モバイル等のため）
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [step])
+
+  // GA4: 診断完了トラッキング
+  useEffect(() => {
+    if (step === QUESTIONS.length + 1) {
+      const resultStr = `${answers['q1_type']?.label} / ${answers['q2_size']?.label}`
+      trackDiagnosisComplete(resultStr)
+
+      // Supabase: ログ保存
+      const result = calculateEstimate(answers)
+      fetch("/api/simulation-log", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "AI_ESTIMATION",
+          inputParams: answers,
+          resultAmount: result.max, // 最大値を代表値として保存
+        }),
+      }).catch(err => console.error("Failed to save simulation log:", err))
+    }
+  }, [step, answers])
 
   const handleSelect = (questionId: string, option: Option) => {
     setAnswers(prev => ({ ...prev, [questionId]: option }))

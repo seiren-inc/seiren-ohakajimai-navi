@@ -138,6 +138,24 @@ model AdministrativeScrivener {
   @@map("administrative_scriveners")
 }
 
+enum SimulationLogType {
+  AI_ESTIMATION
+  PRICING_SIMULATION
+}
+
+model SimulationLog {
+  id           String            @id @default(cuid())
+  type         SimulationLogType
+  inputParams  Json              @map("input_params")
+  resultAmount Int               @map("result_amount")
+  ipAddress    String?           @map("ip_address")
+  userAgent    String?           @map("user_agent")
+  createdAt    DateTime          @default(now()) @map("created_at")
+
+  @@index([type, createdAt])
+  @@map("simulation_logs")
+}
+
 // Doc-16 §8, Doc-17 §8: 監査ログ（削除禁止）
 model ScrivenerAuditLog {
   id            String                  @id @default(cuid())

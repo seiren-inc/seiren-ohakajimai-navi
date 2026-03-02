@@ -6,6 +6,7 @@ import {
   Check, ShieldCheck, Banknote, Users, Info, Plus, Minus, 
   Droplets, Sparkles, MessageCircle, ChevronDown, Phone, Mail, Clock, Undo2, Eye, FileText
 } from "lucide-react"
+import { trackSimulation } from "@/lib/analytics/gtag"
 
 // --- CSS Utilities ---
 function cn(...classes: (string | boolean | undefined)[]) {
@@ -194,6 +195,29 @@ export default function PricingPageClient() {
   const typeExtra = TEMPLE_TYPES.find(t => t.id === templeType)?.extra || 0
   const subsidyAmount = hasSubsidy ? -30000 : 0
   const simulateTotal = basePrice + typeExtra + subsidyAmount
+
+  // GA4: シミュレーション実行トラッキング
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      trackSimulation(simulateTotal)
+
+      // Supabase: ログ保存
+      fetch("/api/simulation-log", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "PRICING_SIMULATION",
+          inputParams: {
+            areaSize,
+            templeType,
+            hasSubsidy,
+          },
+          resultAmount: simulateTotal,
+        }),
+      }).catch(err => console.error("Failed to save simulation log:", err))
+    }, 2000) // 2秒間操作が止まったら送信（デバウンス相当）
+    return () => clearTimeout(timer)
+  }, [simulateTotal, areaSize, templeType, hasSubsidy])
 
   return (
     <div className="flex min-h-screen flex-col bg-[#FFFFFF] text-[#1D1D1F] selection:bg-emerald-100 selection:text-emerald-900 overflow-x-hidden">

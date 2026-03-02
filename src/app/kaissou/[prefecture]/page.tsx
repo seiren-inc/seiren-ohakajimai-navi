@@ -6,6 +6,10 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { ChevronRight, FileText } from "lucide-react"
 import { PREFECTURES } from "@/lib/prefectures"
 
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+
 // ビルド時のプリレンダリングを無効化（DBクエリを含むため）
 export const dynamic = "force-dynamic"
 
@@ -53,18 +57,19 @@ export default async function PrefecturePage(props: PageProps) {
         orderBy: { jisCode: "asc" },
     })
 
-    // Grouping logic could be added here if needed (e.g. by city/town/village), 
-    // but flat list is fine for MVP
-
     return (
-        <div className="container py-12 px-4 md:px-6">
+        <div className="bg-white">
             <BreadcrumbJsonLd
                 items={[
-                    { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://www.osohiki-navi.jp" },
-                    { name: "改葬手続き情報", url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou` },
-                    { name: prefName, url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou/${params.prefecture}` },
+                    { name: "ホーム", url: SITE_URL },
+                    { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
+                    { name: prefName, url: `${SITE_URL}/kaissou/${params.prefecture}` },
                 ]}
             />
+            <Breadcrumb items={[
+                { name: "改葬手続き情報", href: "/kaissou" },
+                { name: prefName, href: `/kaissou/${params.prefecture}` },
+            ]} />
 
             <div className="max-w-4xl mx-auto space-y-10">
                 <div className="space-y-4">

@@ -1,5 +1,8 @@
 import { constructMetadata } from "@/lib/seo"
-import Link from "next/link"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
   title: "プライバシーポリシー｜株式会社清蓮 お墓じまいナビ",
@@ -94,7 +97,7 @@ const sections = [
 ・アクセス権限の適切な管理と定期的な見直し
 ・個人情報を取り扱う従業者への教育・監督
 ・不正アクセス防止のためのセキュリティ対策の実施
-・個人情報の保存期間の設定と期限超過データの適切な廃棄`,
+・個人情報の保存期間の設定と定期的な破棄処理`,
   },
   {
     id: "07",
@@ -145,15 +148,15 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
+      <BreadcrumbJsonLd items={[
+        { name: "ホーム", url: SITE_URL },
+        { name: "プライバシーポリシー", url: `${SITE_URL}/privacy` },
+      ]} />
+      <Breadcrumb items={[{ name: "プライバシーポリシー", href: "/privacy" }]} />
 
       {/* ── Hero ── */}
       <div className="border-b border-neutral-100 bg-neutral-50">
         <div className="mx-auto max-w-3xl px-6 py-20">
-          <nav className="flex items-center gap-2 text-xs text-neutral-400" aria-label="パンくず">
-            <Link href="/" className="hover:text-neutral-600 transition-colors">ホーム</Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-neutral-700">プライバシーポリシー</span>
-          </nav>
 
           <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
             Privacy Policy

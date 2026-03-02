@@ -246,6 +246,25 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                     <h3 className="font-semibold border-b pb-2">契約情報</h3>
                     <div className="grid grid-cols-2 gap-4">
                         <div>
+                            <label className="text-sm font-medium">Stripe Subscription ID</label>
+                            <Input
+                                name="stripeSubscriptionId"
+                                defaultValue={scrivener.stripeSubscriptionId || ""}
+                                placeholder="sub_..."
+                                className="mt-1"
+                            />
+                        </div>
+                        <div>
+                            <label className="text-sm font-medium">Stripe 支払期限 (current_period_end)</label>
+                            <p className="mt-2 text-sm font-medium text-emerald-700">
+                                {scrivener.currentPeriodEnd
+                                    ? format(scrivener.currentPeriodEnd, "yyyy/MM/dd HH:mm", { locale: ja })
+                                    : "未設定"}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                        <div>
                             <label className="text-sm font-medium">契約開始日</label>
                             <p className="mt-1 text-sm text-muted-foreground">
                                 {scrivener.contractStartDate

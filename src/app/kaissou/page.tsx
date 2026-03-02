@@ -3,9 +3,12 @@ import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { MapPin } from "lucide-react"
 import { PREFECTURES, REGIONS } from "@/lib/prefectures"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
 // Revalidate the page every 24 hours
 export const revalidate = 86400
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
     title: "全国の改葬手続き情報・申請書ダウンロード",
@@ -19,13 +22,14 @@ export default function KaissouPage() {
     }))
 
     return (
-        <div className="container py-12 px-4 md:px-6">
+        <div className="bg-white">
             <BreadcrumbJsonLd
                 items={[
-                    { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://www.osohiki-navi.jp" },
-                    { name: "改葬手続き情報", url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou` },
+                    { name: "ホーム", url: SITE_URL },
+                    { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
                 ]}
             />
+            <Breadcrumb items={[{ name: "改葬手続き情報", href: "/kaissou" }]} />
 
             <div className="max-w-4xl mx-auto space-y-12">
                 <div className="text-center space-y-4">

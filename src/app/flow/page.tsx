@@ -17,6 +17,7 @@ import {
   Phone,
 } from "lucide-react"
 import Link from "next/link"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
 export const metadata = constructMetadata({
   title: "ご依頼の流れ｜お墓じまい・改葬・墓石撤去の手続きを7ステップで解説｜お墓じまいナビ",
@@ -149,12 +150,8 @@ export default function FlowPage() {
 
       {/* ─── Hero ─── */}
       <div className="border-b border-neutral-100 bg-neutral-50">
-        <div className="mx-auto max-w-3xl px-6 py-20">
-          <nav className="flex items-center gap-2 text-xs text-neutral-400" aria-label="パンくず">
-            <Link href="/" className="hover:text-neutral-600 transition-colors">ホーム</Link>
-            <span aria-hidden="true">/</span>
-            <span className="text-neutral-700">ご依頼の流れ</span>
-          </nav>
+        <Breadcrumb items={[{ name: "ご依頼の流れ", href: "/flow" }]} />
+        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
           <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
             ご依頼の流れ
           </h1>
