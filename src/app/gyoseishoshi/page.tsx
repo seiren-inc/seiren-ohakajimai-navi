@@ -6,7 +6,9 @@ import { GyoseishoshiInquiryForm } from "@/components/features/gyoseishoshi/Gyos
 import { GyoseishoshiFaqJsonLd } from "@/components/seo/gyoseishoshi-faq-json-ld"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import Link from "next/link"
-import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle } from "lucide-react"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { PREFECTURES, REGIONS } from "@/lib/prefectures"
+import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle, MapPin } from "lucide-react"
 
 // ビルド時のプリレンダリングを無効化（DBクエリを含むため）
 export const dynamic = "force-dynamic"
@@ -92,8 +94,9 @@ export default async function GyoseishoshiPage() {
             ]} />
 
             {/* ===== Hero（Doc-05 §3-1） ===== */}
-            <section className="relative bg-linear-to-b from-emerald-50 to-white py-16 md:py-24">
-                <div className="container max-w-4xl text-center px-4">
+            <section className="relative bg-linear-to-b from-emerald-50 to-white">
+                <Breadcrumb items={[{ name: "行政書士マッチング", href: "/gyoseishoshi" }]} />
+                <div className="container max-w-4xl text-center px-4 py-12 md:py-16">
                     <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
                         行政書士マッチング
                     </p>
@@ -237,6 +240,39 @@ export default async function GyoseishoshiPage() {
                             <p className="mt-2 text-2xl font-bold text-emerald-700">8万円〜</p>
                             <p className="mt-1 text-xs text-neutral-500">複数自治体・特殊ケース</p>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== 地域から探す (Regional Search) ===== */}
+            <section className="py-12 md:py-16 bg-white border-t">
+                <div className="container max-w-5xl px-4">
+                    <div className="flex items-center gap-2 mb-8 justify-center">
+                        <MapPin className="h-6 w-6 text-emerald-600" />
+                        <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
+                            地域から行政書士を探す
+                        </h2>
+                    </div>
+                    
+                    <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        {REGIONS.map((region) => (
+                            <div key={region} className="flex flex-col">
+                                <h3 className="text-sm font-bold text-neutral-500 mb-3 border-l-4 border-emerald-500 pl-2 uppercase tracking-wider">
+                                    {region}
+                                </h3>
+                                <div className="flex flex-wrap gap-x-4 gap-y-2">
+                                    {PREFECTURES.filter(p => p.region === region).map((p) => (
+                                        <Link
+                                            key={p.code}
+                                            href={`/gyoseishoshi/area/${p.slug}`}
+                                            className="text-sm text-neutral-700 hover:text-emerald-700 hover:underline transition-colors"
+                                        >
+                                            {p.name}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

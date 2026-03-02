@@ -1,6 +1,7 @@
 import { constructMetadata } from "@/lib/seo"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
 export const metadata = constructMetadata({
   title: "お墓じまいとは？改葬・墓じまいの意味・手続き・費用をわかりやすく解説｜お墓じまいナビ",
@@ -12,8 +13,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <div className="border-b border-neutral-100 bg-neutral-50 py-16">
-        <div className="mx-auto max-w-4xl px-6">
+      <div className="border-b border-neutral-100 bg-neutral-50">
+        <Breadcrumb items={[{ name: "お墓じまいとは", href: "/about" }]} />
+        <div className="mx-auto max-w-4xl px-6 py-12 md:py-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">About</p>
           <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
             お墓じまいとは

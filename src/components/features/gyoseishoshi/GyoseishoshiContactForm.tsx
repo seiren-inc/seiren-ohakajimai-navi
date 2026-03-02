@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
+import { trackFormSubmit } from "@/lib/analytics/gtag"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -60,6 +61,7 @@ export function GyoseishoshiContactForm() {
 
                 if (result.success) {
                     toast.success("ご相談を受け付けました")
+                    trackFormSubmit("gyoseishoshi_contact")
                     form.reset()
                 } else {
                     toast.error(result.message || "送信に失敗しました")

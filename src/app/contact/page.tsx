@@ -1,4 +1,5 @@
 import { ContactForm } from "@/components/features/contact/contact-form"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { constructMetadata } from "@/lib/seo"
 
 export const metadata = constructMetadata({
@@ -9,6 +10,7 @@ export const metadata = constructMetadata({
 export default function ContactPage() {
     return (
         <div className="flex flex-col min-h-screen bg-slate-50">
+            <Breadcrumb items={[{ name: "お問い合わせ", href: "/contact" }]} />
             <div className="container max-w-3xl py-12 md:py-20 px-4 md:px-6">
                 <div className="text-center mb-10">
                     <h1 className="typography-heading mx-auto max-w-[28ch] text-3xl font-bold tracking-tight sm:text-4xl">お問い合わせ・無料見積り</h1>

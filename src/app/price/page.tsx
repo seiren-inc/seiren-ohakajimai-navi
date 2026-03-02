@@ -1,5 +1,6 @@
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import PricingPageClient from "./PricingPageClient"
 
 export const metadata = constructMetadata({
@@ -17,6 +18,9 @@ export default function PricePage() {
           { name: "料金について", url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"}/price` },
         ]}
       />
+      <div className="bg-[#F5F5F7]/80">
+        <Breadcrumb items={[{ name: "料金について", href: "/price" }]} />
+      </div>
       <PricingPageClient />
     </>
   )

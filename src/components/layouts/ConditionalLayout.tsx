@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { Header } from "./header"
 import { Footer } from "./footer"
+import { FixedCTA } from "@/components/ui/FixedCTA"
 
 /**
  * トップページ（/）では独自のヘッダー・フッターを使うため、
@@ -20,6 +21,7 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
       {!hideGlobalLayout && <Header />}
       <main className={hideGlobalLayout ? "" : "flex-1"}>{children}</main>
       {!hideGlobalLayout && <Footer />}
+      <FixedCTA />
     </>
   )
 }

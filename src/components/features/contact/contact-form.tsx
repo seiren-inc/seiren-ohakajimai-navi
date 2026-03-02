@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
+import { trackFormSubmit } from "@/lib/analytics/gtag"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -74,6 +75,7 @@ export function ContactForm() {
 
                 if (result.success) {
                     toast.success("お問い合わせを受け付けました")
+                    trackFormSubmit("contact")
                     // Redirect is handled in Server Action, but we can reset form here just in case
                     form.reset()
                 } else {

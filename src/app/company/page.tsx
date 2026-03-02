@@ -2,6 +2,10 @@ import { constructMetadata } from "@/lib/seo"
 import Image from "next/image"
 import Link from "next/link"
 import { Phone, Mail } from "lucide-react"
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
   title: "会社概要｜お墓じまい・改葬・墓石撤去の株式会社清蓮（横浜・全国対応）",
@@ -91,6 +95,11 @@ const snsLinks = [
 export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
+      <BreadcrumbJsonLd items={[
+        { name: "ホーム", url: SITE_URL },
+        { name: "会社概要", url: `${SITE_URL}/company` },
+      ]} />
+      <Breadcrumb items={[{ name: "会社概要", href: "/company" }]} />
 
       {/* ─────────────────────────────────────────
           1. ヒーロー

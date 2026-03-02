@@ -8,6 +8,10 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle } from "lucide-react"
 import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
 
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
 }
@@ -39,7 +43,7 @@ export async function generateMetadata(props: PageProps) {
     if (!municipality) return constructMetadata({ title: "ページが見つかりません" })
 
     return constructMetadata({
-        title: `${municipality.name}の改葬許可申請書ダウンロード・手続きガイド`,
+        title: `${municipality.name}の改葬許可申請書ダウンロード・手続きガイド｜お墓じまいナビ`,
         description: `${municipality.prefectureName}${municipality.name}での改葬（お墓じまい）に必要な「改葬許可申請書」のダウンロードや、手続き窓口の情報をまとめています。`,
     })
 }
@@ -53,15 +57,20 @@ export default async function MunicipalityPage(props: PageProps) {
     }
 
     return (
-        <div className="container py-12 px-4 md:px-6">
+        <div className="bg-white">
             <BreadcrumbJsonLd
                 items={[
-                    { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://www.osohiki-navi.jp" },
-                    { name: "改葬手続き情報", url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou` },
-                    { name: municipality.prefectureName, url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou/${params.prefecture}` },
-                    { name: municipality.name, url: `${process.env.NEXT_PUBLIC_BASE_URL}/kaissou/${params.prefecture}/${params.municipality}` },
+                    { name: "ホーム", url: SITE_URL },
+                    { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
+                    { name: municipality.prefectureName, url: `${SITE_URL}/kaissou/${params.prefecture}` },
+                    { name: municipality.name, url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}` },
                 ]}
             />
+            <Breadcrumb items={[
+                { name: "改葬手続き情報", href: "/kaissou" },
+                { name: municipality.prefectureName, href: `/kaissou/${params.prefecture}` },
+                { name: municipality.name, href: `/kaissou/${params.prefecture}/${params.municipality}` },
+            ]} />
 
             <div className="grid gap-12 lg:grid-cols-[1fr_350px] max-w-6xl mx-auto">
                 {/* Main Content */}
