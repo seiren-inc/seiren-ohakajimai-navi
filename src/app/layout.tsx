@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
 import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const fontSans = Noto_Sans_JP({
   subsets: ['latin'],
@@ -67,6 +68,7 @@ export default function RootLayout({
         </ConditionalLayout>
         <OrganizationJsonLd />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
