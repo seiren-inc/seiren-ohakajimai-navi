@@ -3,9 +3,10 @@ import { notFound } from "next/navigation"
 import { prisma } from "@/lib/prisma"
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle } from "lucide-react"
+import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle, MapPin, UserCheck, ChevronRight } from "lucide-react"
 import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
@@ -44,7 +45,8 @@ export async function generateMetadata(props: PageProps) {
 
     return constructMetadata({
         title: `${municipality.name}の改葬許可申請書ダウンロード・手続きガイド｜お墓じまいナビ`,
-        description: `${municipality.prefectureName}${municipality.name}での改葬（お墓じまい）に必要な「改葬許可申請書」のダウンロードや、手続き窓口の情報をまとめています。`,
+        description: `${municipality.prefectureName}${municipality.name}での改葬（お墓じまい）に必要な「改葬許可申請書」のダウンロードや、手続き窓口の情報をまとめています。${municipality.name}でお墓の引越しでお悩みなら無料相談へ。`,
+        path: `/kaissou/${params.prefecture}/${params.municipality}`,
     })
 }
 
@@ -54,6 +56,52 @@ export default async function MunicipalityPage(props: PageProps) {
 
     if (!municipality) {
         notFound()
+    }
+
+    // 都道府県対応の提携行政書士を取得
+    const scriveners = await prisma.administrativeScrivener.findMany({
+        where: { prefecture: municipality.prefectureName, isApproved: true, isActive: true },
+        take: 3,
+        orderBy: { priorityScore: "desc" }
+    })
+
+    // 自治体固有のFAQ生成（GEO対策）
+    const geoFaqs = [
+        {
+            question: `${municipality.name}で改葬許可申請を行う窓口はどこですか？`,
+            answer: `${municipality.name}に現在のお墓がある場合、${municipality.name}役所の担当窓口（環境衛生課、市民課、戸籍住民課など自治体により異なります）に改葬許可申請書を提出します。申請には現在の墓地管理者の埋蔵証明と、新しい供養先の受入証明が必要です。詳細はページ内の公式リンクより最新情報をご確認ください。`,
+        },
+        {
+            question: `${municipality.name}でのお墓じまいにかかる費用相場は？`,
+            answer: `一般的なお墓じまい（墓石撤去・処分）の費用は10万円～50万円程度が目安ですが、${municipality.name}内の墓地の立地（山間部、階段の有無、重機が入れるか等）や区画の広さによって大きく変動します。正確な費用は無料の現地調査の後にお見積りとなります。`,
+        },
+        {
+            question: `${municipality.name}の改葬手続きを専門家に代行してもらえますか？`,
+            answer: `はい、可能です。お墓じまいナビでは、${municipality.prefectureName}対応の行政書士をご紹介し、面倒な役所手続きを代行サポートします。また、墓石の解体撤去工事も全国対応で行っておりますので、ワンストップでお任せいただけます。`,
+        }
+    ]
+
+    // Dataset用JSON-LD構成
+    const datasetJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Dataset',
+        name: `${municipality.prefectureName}${municipality.name} 改葬許可申請書データ`,
+        description: `${municipality.prefectureName}${municipality.name}でお墓じまい・改葬を行う際に必要な改葬許可申請書の公式ダウンロードリンクや手続き窓口情報をまとめたデータです。`,
+        url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}`,
+        creator: {
+            '@type': 'Organization',
+            name: '株式会社清蓮',
+            url: SITE_URL,
+        },
+        inLanguage: 'ja-JP',
+        keywords: [municipality.name, '改葬許可申請書', 'ダウンロード', 'お墓じまい', municipality.prefectureName],
+        ...(municipality.pdfUrl ? {
+            distribution: [{
+                '@type': 'DataDownload',
+                encodingFormat: 'application/pdf',
+                contentUrl: municipality.pdfUrl
+            }]
+        } : {})
     }
 
     return (
@@ -71,8 +119,13 @@ export default async function MunicipalityPage(props: PageProps) {
                 { name: municipality.prefectureName, href: `/kaissou/${params.prefecture}` },
                 { name: municipality.name, href: `/kaissou/${params.prefecture}/${params.municipality}` },
             ]} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd) }}
+            />
+            <FaqJsonLd faqs={geoFaqs} />
 
-            <div className="grid gap-12 lg:grid-cols-[1fr_350px] max-w-6xl mx-auto">
+            <div className="grid gap-12 lg:grid-cols-[1fr_350px] max-w-6xl mx-auto py-10 px-4 md:px-0">
                 {/* Main Content */}
                 <div className="space-y-10">
                     <div className="space-y-4">
@@ -182,6 +235,42 @@ export default async function MunicipalityPage(props: PageProps) {
 
                     {/* 共通：改葬手続き完全ガイド */}
                     <ReKaisouGuide />
+
+                    {/* E-E-A-T: 地元専門家の表示 */}
+                    {scriveners.length > 0 && (
+                        <div className="mt-16 pt-10 border-t">
+                            <div className="flex items-center gap-2 mb-6">
+                                <UserCheck className="h-6 w-6 text-primary" />
+                                <h2 className="text-2xl font-bold">{municipality.prefectureName}対応の提携行政書士</h2>
+                            </div>
+                            <p className="text-muted-foreground mb-6">
+                                {municipality.name}での改葬手続きに不安がある方は、対応エリアの専門家に代行を依頼することができます。
+                            </p>
+                            <div className="grid gap-4 sm:grid-cols-2">
+                                {scriveners.slice(0, 2).map(s => (
+                                    <Link key={s.id} href={`/gyoseishoshi/${s.id}`}>
+                                        <Card className="hover:border-primary/50 transition-colors h-full flex flex-col cursor-pointer bg-slate-50 border-primary/10">
+                                            <CardContent className="p-5 flex flex-col flex-1">
+                                                <h3 className="font-bold mb-2 line-clamp-1">{s.officeName}</h3>
+                                                <div className="text-sm text-muted-foreground mb-3 flex items-center gap-1">
+                                                    <MapPin className="h-3.5 w-3.5" />
+                                                    {s.prefecture}{s.city || ''}
+                                                </div>
+                                                <div className="text-primary text-sm font-medium flex items-center justify-end mt-auto">
+                                                    詳細を見る <ChevronRight className="h-4 w-4 ml-1" />
+                                                </div>
+                                            </CardContent>
+                                        </Card>
+                                    </Link>
+                                ))}
+                            </div>
+                            <div className="mt-4 text-center sm:text-right">
+                                <Link href="/gyoseishoshi" className="text-primary hover:underline text-sm font-medium">
+                                    すべての行政書士を見る →
+                                </Link>
+                            </div>
+                        </div>
+                    )}
                 </div>
 
                 {/* Sidebar CTA */}
