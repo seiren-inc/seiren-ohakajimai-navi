@@ -113,6 +113,7 @@ export function ServiceJsonLd({
         name,
         description,
         url: url.startsWith('http') ? url : `${BASE}${url}`,
+        image: `${BASE}/og-image.jpg`,
         serviceType,
         areaServed,
         provider: {
@@ -122,6 +123,14 @@ export function ServiceJsonLd({
             '@type': 'ServiceChannel',
             serviceUrl: `${BASE}/contact`,
             servicePhone: '045-881-9952',
+        },
+        address: {
+            '@type': 'PostalAddress',
+            streetAddress: '戸塚町4170 高橋ビル1階',
+            addressLocality: '横浜市戸塚区',
+            addressRegion: '神奈川県',
+            postalCode: '244-0003',
+            addressCountry: 'JP',
         },
     }
 
