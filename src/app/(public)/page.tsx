@@ -1,6 +1,7 @@
 import { constructMetadata } from "@/lib/seo"
 import HomepageClient from "@/components/home/HomepageClient"
 import { FaqJsonLd, homepageFaqs } from "@/components/seo/faq-json-ld"
+import { WebSiteJsonLd } from "@/components/seo/page-json-ld"
 
 export const metadata = constructMetadata({
   title: "お墓じまい・改葬手続きならお墓じまいナビ｜墓じまい・墓石撤去・全国対応",
@@ -14,6 +15,7 @@ export const revalidate = 86400
 export default function TopPage() {
   return (
     <>
+      <WebSiteJsonLd />
       <FaqJsonLd faqs={homepageFaqs} />
       <HomepageClient />
     </>
