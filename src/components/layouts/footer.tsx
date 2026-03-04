@@ -49,8 +49,25 @@ export function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-10 pt-6 border-t text-center text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} Seiren Co., Ltd. All rights reserved.
+                <div className="mt-10 pt-6 border-t space-y-4">
+                    {/* E-E-A-T: 信頼性・専門性シグナル */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-muted-foreground">
+                        <div>
+                            <p className="font-semibold text-foreground mb-1">専門性・実績</p>
+                            <p>2008年創業。改葬・お墓じまい・海洋散骨の専門会社として全国47都道府県で累計多数の実績。代表取締役：眞如 理恵。</p>
+                        </div>
+                        <div>
+                            <p className="font-semibold text-foreground mb-1">法令遵守</p>
+                            <p>改葬許可申請の代行は行政書士等の有資格者業務です。当社は申請の案内・書類取得方法の説明・提携行政書士のご紹介を行います。</p>
+                        </div>
+                        <div>
+                            <p className="font-semibold text-foreground mb-1">会社情報</p>
+                            <p>株式会社清蓮<br />〒244-0003 神奈川県横浜市戸塚区戸塚町4170 高橋ビル1階<br />TEL: 045-881-9952</p>
+                        </div>
+                    </div>
+                    <div className="text-center text-sm text-muted-foreground">
+                        © {new Date().getFullYear()} Seiren Co., Ltd. All rights reserved.
+                    </div>
                 </div>
             </div>
         </footer>

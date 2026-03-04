@@ -2,7 +2,7 @@ import { constructMetadata } from "@/lib/seo"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
   title: "プライバシーポリシー｜株式会社清蓮 お墓じまいナビ",

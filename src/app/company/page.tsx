@@ -5,7 +5,7 @@ import { Phone, Mail } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
   title: "会社概要｜お墓じまい・改葬・墓石撤去の株式会社清蓮（横浜・全国対応）",

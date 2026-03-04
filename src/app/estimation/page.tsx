@@ -3,8 +3,8 @@ import { constructMetadata } from '@/lib/seo'
 import AIEstimationWizard from '@/components/estimation/AIEstimationWizard'
 
 export const metadata: Metadata = constructMetadata({
-  title: 'AI自動見積もり | お墓じまい改葬費用',
-  description: 'たった4つの質問に答えるだけ。最新AIがあなたのお墓じまいに必要な概算費用を即座に算出します。個人情報の入力なしで何度でもご利用いただけます。',
+  title: 'お墓じまいAI見積もり【無料・即時】4問で改葬費用の概算を算出',
+  description: 'たった4つの質問に答えるだけ。AIがお墓じまい・改葬に必要な費用（墓石撤去・改葬先・行政書士費用）の概算を即座に算出します。個人情報不要・何度でも無料。全国対応。',
   path: '/estimation',
 })
 

@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
 
 type PageProps = {
     params: Promise<{ id: string }>
@@ -34,9 +34,13 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     if (!scrivener) return constructMetadata({ title: "行政書士が見つかりません" })
 
     const area = scrivener.city ? `${scrivener.prefecture}${scrivener.city}` : scrivener.prefecture
+    const description = scrivener.profileText
+        ? scrivener.profileText.slice(0, 140)
+        : `${area}の改葬許可申請専門行政書士「${scrivener.officeName}」。お墓じまい・改葬手続きの無料相談受付中。お墓じまいナビ経由でお気軽にご相談さい。`
     return constructMetadata({
-        title: `${scrivener.officeName}｜${area}の行政書士｜お墓じまいナビ`,
-        description: scrivener.profileText?.slice(0, 120) || `${area}の行政書士 ${scrivener.officeName}。改葬許可申請のご相談はお墓じまいナビへ。`,
+        title: `${scrivener.officeName}｜${area}の改葬許可申請専門行政書士｜お墓じまいナビ`,
+        description,
+        path: `/gyoseishoshi/${scrivener.id ?? params.id}`,
     })
 }
 
@@ -69,19 +73,42 @@ export default async function ScrivenerDetailPage(props: PageProps) {
     }
 
     const area = scrivener.city ? `${scrivener.prefecture} ${scrivener.city}` : scrivener.prefecture
+    const specialties: string[] = Array.isArray(scrivener.specialties) ? scrivener.specialties as string[] : []
 
-    // LocalBusiness JSON-LD（Doc-09 §4）
-    const localBusinessJsonLd = {
-        "@context": "https://schema.org",
-        "@type": "LegalService",
-        "name": scrivener.officeName,
-        "description": scrivener.profileText,
-        "areaServed": {
-            "@type": "AdministrativeArea",
-            "name": scrivener.prefecture,
+    // Person + ProfessionalService JSON-LD（SEO強化・Google行政書士認識用）
+    const jsonLdParts = [
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": scrivener.representativeName ?? scrivener.officeName,
+            "jobTitle": "行政書士",
+            "worksFor": {
+                "@type": "ProfessionalService",
+                "name": scrivener.officeName,
+                "areaServed": scrivener.prefecture,
+            },
         },
-        ...(scrivener.websiteUrl ? { "url": scrivener.websiteUrl } : {}),
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": scrivener.officeName,
+            "description": scrivener.profileText ?? `${area}の改葬許可申請専門行政書士事務所。`,
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": scrivener.prefecture,
+            },
+            "priceRange": scrivener.priceRangeText ?? "無料相談受付中",
+            ...(scrivener.websiteUrl ? { "url": scrivener.websiteUrl } : {}),
+            ...(specialties.length > 0 ? { "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "専門分野",
+                "itemListElement": specialties.map((s: string) => ({
+                    "@type": "Offer",
+                    "name": s,
+                })),
+            }} : {}),
+        },
+    ]
 
     return (
         <>
@@ -90,10 +117,13 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                 { name: "行政書士マッチング", url: `${SITE_URL}/gyoseishoshi` },
                 { name: scrivener.officeName, url: `${SITE_URL}/gyoseishoshi/${scrivener.id}` },
             ]} />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-            />
+            {jsonLdParts.map((jsonLd, i) => (
+                <script
+                    key={i}
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                />
+            ))}
 
             {/* ナビ */}
             <div className="bg-slate-50 border-b">

@@ -11,7 +11,7 @@ export const metadata: Metadata = constructMetadata({
         "改葬許可申請専門サイト「お墓じまいナビ」への行政書士掲載申込ページ。プラン選択から事務所情報入力・決済まで、WEB上で完結できます。",
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
 
 const MERITS = [
     {
