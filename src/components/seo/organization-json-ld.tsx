@@ -14,6 +14,7 @@ export function OrganizationJsonLd() {
         image: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         telephone: '045-881-9952',
         email: 'contact@seiren.ne.jp',
+        priceRange: 'お見積り無料',
         address: {
             '@type': 'PostalAddress',
             streetAddress: '戸塚町4170 高橋ビル1階',
