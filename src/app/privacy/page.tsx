@@ -8,6 +8,7 @@ export const metadata = constructMetadata({
   title: "プライバシーポリシー｜株式会社清蓮 お墓じまいナビ",
   description:
     "株式会社清蓮が運営するお墓じまいナビにおける個人情報の取り扱い方針。個人情報保護法に基づく取得目的・第三者提供・Cookie・お客様の権利について。",
+  path: '/privacy',
 })
 
 // 最終更新日

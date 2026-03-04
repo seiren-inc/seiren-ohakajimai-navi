@@ -3,11 +3,32 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { ArticleJsonLd } from "@/components/seo/page-json-ld"
+import { FaqJsonLd } from "@/components/seo/faq-json-ld"
+
+const aboutFaqs = [
+  {
+    question: 'お墓じまいは自分でできますか？',
+    answer: '改葬許可申請書の記入・提出自体は自分で行うことができます。ただし、改葬許可申請書の取得・埋葬証明書の取得・受入証明書の入手と、複数の市区町村にアプローチする手順が複雑なため、専門家のサポートを受けることをお勧めします。株式会社清蓮では手続きの案内・書類サポートを提供しています。',
+  },
+  {
+    question: '墓石はどこに頼めば撤去できますか？',
+    answer: '墓石の撤去工事は石材店に依頼します。株式会社清蓮では全国の優良提携石材店と連携し、現地状況に合わせた墓石撤去工事を手配します。关東地方から沖縄まで全国対応で、現地調査は無料で行います。',
+  },
+  {
+    question: 'お墓の引越し先は決まっていなくても相談できますか？',
+    answer: 'はい、改葬先が決まっていない段階でもご相談いただけます。永代供養墓・納骨堂・樹木葬・海洋散骨などすべての改葬先の選択肢に対応しております。ご家族の状況・希望・費用に合わせた選択肢をご提案しますので、まずはお気軽にお問い合わせください。',
+  },
+  {
+    question: '墓じまいにどのくらいの期間がかかりますか？',
+    answer: '一般的に2〜4ヶ月程度が目安です。改葬許可証の発行期間（市区町村により数日〜2週間）、墓石撤去工事の日程調整、寂院・莫a園との調整などが含まれます。廃備から山間の墓地、自治体の対応速度によって大きく左右されます。お急ぎの場合は个別にご相談ください。',
+  },
+]
 
 export const metadata = constructMetadata({
   title: "お墓じまいとは？改葬・墓じまいの意味・手続き・費用をわかりやすく解説｜お墓じまいナビ",
   description:
     "お墓じまい（改葬）とは現在のお墓を撤去し遺骨を別の供養先へ移す手続き。改葬と墓じまいの違い・改葬許可証の取得方法・費用相場（30万〜100万円）・注意点を解説。法令遵守の株式会社清蓮が全国対応でサポート。",
+  path: '/about',
 })
 
 export default function AboutPage() {
@@ -19,6 +40,7 @@ export default function AboutPage() {
         url="/about"
         datePublished="2024-01-15"
       />
+      <FaqJsonLd faqs={aboutFaqs} />
       <div className="min-h-screen bg-white">
         {/* Hero */}
         <div className="border-b border-neutral-100 bg-neutral-50">

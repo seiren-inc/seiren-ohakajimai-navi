@@ -13,6 +13,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp
 export const metadata = constructMetadata({
     title: "全国の改葬手続き情報・申請書ダウンロード",
     description: "全国の自治体の改葬許可申請書のダウンロード先や、手続き窓口の情報をまとめています。ご自身で手続きを行う際にご活用ください。",
+  path: '/kaissou',
 })
 
 export default function KaissouPage() {

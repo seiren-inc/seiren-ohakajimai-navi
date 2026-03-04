@@ -5,6 +5,7 @@ import AIEstimationWizard from '@/components/estimation/AIEstimationWizard'
 export const metadata: Metadata = constructMetadata({
   title: 'AI自動見積もり | お墓じまい改葬費用',
   description: 'たった4つの質問に答えるだけ。最新AIがあなたのお墓じまいに必要な概算費用を即座に算出します。個人情報の入力なしで何度でもご利用いただけます。',
+  path: '/estimation',
 })
 
 export default function EstimationPage() {

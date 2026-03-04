@@ -10,6 +10,7 @@ import Link from 'next/link'
 export const metadata: Metadata = constructMetadata({
   title: '改葬許可申請書ダウンロード｜全国自治体一覧・書き方・改葬 自分で手続きする方へ｜お墓じまいナビ',
   description: '【2026年最新】改葬許可申請書を都道府県・市区町村別に一覧掲載。お墓じまい（改葬）・墓じまいに必要な書類・書き方・取得方法を詳しく解説。自分で改葬手続きしたい方のポータルサイト。',
+  path: '/kaisoukyoka',
 })
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://ohakajimai-navi.jp'
@@ -47,6 +48,27 @@ export default async function KaisoukyokaPage() {
         { name: 'ホーム', url: SITE_URL },
         { name: '改葬許可申請書ダウンロード 全国一覧', url: `${SITE_URL}/kaisoukyoka` },
       ]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Dataset',
+            name: '全国市区町村の改葬許可申請書情報データベース',
+            description: '全国47都道府県・1,700以上の市区町村の改葬許可申請書PDFダウンロードリンク・窓口情報を掃羅。また・西自治体別の申請書書式と記入方法を敒参記載。',
+            url: `${SITE_URL}/kaisoukyoka`,
+            creator: {
+              '@type': 'Organization',
+              name: '株式会社清蓮',
+              url: SITE_URL,
+            },
+            license: 'https://creativecommons.org/licenses/by/4.0/',
+            inLanguage: 'ja-JP',
+            keywords: ['改葬許可申請書', '改葬', 'お墓じまい', '市区町村', '全国', 'ダウンロード'],
+            variableMeasured: '全国市区町村の改葬許可申請書',
+          }),
+        }}
+      />
 
       <Breadcrumb items={[{ name: '改葬許可申請書ダウンロード 全国一覧', href: '/kaisoukyoka' }]} />
 

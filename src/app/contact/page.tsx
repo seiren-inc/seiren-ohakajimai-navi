@@ -4,7 +4,8 @@ import { constructMetadata } from "@/lib/seo"
 
 export const metadata = constructMetadata({
     title: "お問い合わせ・無料見積り",
-    description: "お墓じまいに関するご相談・お見積りは無料です。24時間365日受付中。",
+    description: "お墓じまい・改葬・墓石撤去・海洋散骨のご相談・お見積りは無料。24時間365日受付中。電話（0800-888-8788）またはフォームでお気軽にどうぞ。全国対応・追加費用なし。",
+    path: '/contact',
 })
 
 export default function ContactPage() {

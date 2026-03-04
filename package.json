@@ -21,7 +21,7 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "engines": {
-    "node": ">=22 <23"
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

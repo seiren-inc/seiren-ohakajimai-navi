@@ -18,14 +18,20 @@ export function constructMetadata({
     image = siteConfig.ogImage,
     icons = '/favicon.ico',
     noIndex = false,
+    path,
 }: {
     title?: string
     description?: string
     image?: string
     icons?: string
     noIndex?: boolean
+    /** ページのパス（例: '/about'）。指定するとcanonical URLが設定される */
+    path?: string
 } = {}): Metadata {
     const absoluteImageUrl = new URL(image, siteConfig.url).toString()
+    const canonicalUrl = path
+        ? new URL(path, siteConfig.url).toString()
+        : undefined
 
     return {
         title: {
@@ -44,7 +50,7 @@ export function constructMetadata({
                     url: absoluteImageUrl,
                 },
             ],
-            url: siteConfig.url,
+            url: canonicalUrl ?? siteConfig.url,
             siteName: siteConfig.name,
             locale: 'ja_JP',
             type: 'website',
@@ -63,6 +69,11 @@ export function constructMetadata({
             google: 'google-site-verification=_P2nElnAz-2wkA-U0R3BXPd1f9nICnmoPv3O1nx1agk',
         },
         metadataBase: new URL(siteConfig.url),
+        ...(canonicalUrl && {
+            alternates: {
+                canonical: canonicalUrl,
+            },
+        }),
         ...(noIndex && {
             robots: {
                 index: false,

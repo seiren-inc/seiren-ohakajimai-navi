@@ -17,6 +17,7 @@ export const dynamic = "force-dynamic"
 export const metadata = constructMetadata({
     title: "改葬許可申請の行政書士相談｜お墓じまいナビ",
     description: "改葬許可申請の手続きでお悩みの方へ。専門の行政書士によるサポートをご案内します。無料相談受付中。",
+  path: '/gyoseishoshi',
 })
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://ohakajimai-navi.jp"
