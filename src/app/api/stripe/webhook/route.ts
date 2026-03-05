@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
                     where: { id: scrivenerId },
                     data: {
                         paymentStatus: "PAID",
+                        onboardingStep: "PAYMENT_COMPLETED",
                         contractStartDate: new Date(),
                         stripeSubscriptionId: subscriptionId ?? undefined,
                         currentPeriodEnd: currentPeriodEnd,

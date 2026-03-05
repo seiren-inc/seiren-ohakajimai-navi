@@ -338,6 +338,40 @@ export default async function GyoseishoshiPage() {
                 </div>
             </section>
 
+            {/* ===== 行政書士の方へ（掲載登録CTA） ===== */}
+            <section className="py-16 md:py-20 bg-emerald-700">
+                <div className="container max-w-3xl px-4 text-center">
+                    <p className="text-sm font-semibold uppercase tracking-widest text-emerald-200 mb-4">
+                        行政書士の方へ
+                    </p>
+                    <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                        お墓じまいナビに掲載しませんか？
+                    </h2>
+                    <p className="mt-4 text-emerald-100 text-sm leading-relaxed max-w-xl mx-auto">
+                        改葬許可申請を検索しているユーザーに直接アプローチできます。
+                        アカウント登録からプラン決済、情報登録まで、すべてWEB上で完結。
+                        最短翌営業日に審査を開始します。
+                    </p>
+                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <Link
+                            href="/scrivener/signup"
+                            className="inline-flex items-center rounded-full bg-white px-8 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors shadow"
+                        >
+                            無料でアカウントを作成する
+                        </Link>
+                        <Link
+                            href="/scrivener/login"
+                            className="inline-flex items-center rounded-full border-2 border-white/50 px-8 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+                        >
+                            ログイン（登録済みの方）
+                        </Link>
+                    </div>
+                    <p className="mt-6 text-xs text-emerald-300">
+                        14日間の無料トライアルあり。月額制・いつでも解約可能。
+                    </p>
+                </div>
+            </section>
+
             {/* ===== 相談フォーム（Doc-05 §3-7） ===== */}
             <section id="contact-form" className="py-16 md:py-20 bg-slate-50 scroll-mt-20">
                 <div className="container max-w-3xl px-4">

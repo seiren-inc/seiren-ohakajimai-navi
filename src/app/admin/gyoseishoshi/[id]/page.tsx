@@ -15,7 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { PREFECTURES } from "@/lib/prefectures"
 import Link from "next/link"
-import { ArrowLeft, AlertTriangle, CreditCard } from "lucide-react"
+import { ArrowLeft, AlertTriangle, CreditCard, ExternalLink } from "lucide-react"
 import { format } from "date-fns"
 import { ja } from "date-fns/locale"
 import { StripeCheckoutButton } from "@/components/admin/StripeCheckoutButton"
@@ -60,6 +60,9 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                 </Badge>
                 <Badge variant={scrivener.isActive ? "default" : "outline"}>
                     {scrivener.isActive ? "公開中" : "停止中"}
+                </Badge>
+                <Badge variant={scrivener.onboardingStep === 'APPROVED_ACTIVE' ? 'default' : 'secondary'}>
+                    ステップ: {scrivener.onboardingStep || '未設定'}
                 </Badge>
                 <Badge variant="secondary">{scrivener.planType}</Badge>
                 <Badge variant={scrivener.paymentStatus === "PAID" ? "default" : "destructive"}>
@@ -156,8 +159,20 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                         <Input name="representativeName" defaultValue={scrivener.representativeName || ""} className="mt-1" />
                     </div>
                     <div>
-                        <label className="text-sm font-medium">登録番号</label>
-                        <Input name="registrationNumber" defaultValue={scrivener.registrationNumber || ""} placeholder="例: 第12345号" className="mt-1" />
+                        <div className="flex items-center justify-between mb-1">
+                            <label className="text-sm font-medium">登録番号</label>
+                            {scrivener.registrationNumber && (
+                                <a 
+                                    href={`https://www.gyosei.or.jp/members-search/`}
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="text-xs text-indigo-600 hover:underline flex items-center"
+                                >
+                                    日本行政書士会連合会で検索 <ExternalLink className="h-3 w-3 ml-1" />
+                                </a>
+                            )}
+                        </div>
+                        <Input name="registrationNumber" defaultValue={scrivener.registrationNumber || ""} placeholder="例: 第12345号" />
                     </div>
                     <div className="grid grid-cols-2 gap-4">
                         <div>

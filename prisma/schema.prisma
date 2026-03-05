@@ -100,6 +100,14 @@ enum PaymentStatus {
   SUSPENDED
 }
 
+enum OnboardingStep {
+  ACCOUNT_CREATED     // アカウントのみ作成
+  PROFILE_INPUT       // プロフィール情報入力完了
+  PAYMENT_COMPLETED   // 決済完了（審査待ち）
+  APPROVED_ACTIVE     // 承認済み・掲載中
+}
+
+
 model AdministrativeScrivener {
   id                 String             @id @default(cuid())
   officeName         String             @map("office_name")
@@ -126,7 +134,10 @@ model AdministrativeScrivener {
   stripeCustomerId       String?   @map("stripe_customer_id")
   stripeSubscriptionId   String?   @unique @map("stripe_subscription_id")
   currentPeriodEnd       DateTime? @map("current_period_end")
-  createdAt          DateTime           @default(now()) @map("created_at")
+  authUserId             String?   @unique @map("auth_user_id")
+  onboardingStep         OnboardingStep @default(ACCOUNT_CREATED) @map("onboarding_step")
+  adminMemo              String?   @map("admin_memo")
+  createdAt              DateTime  @default(now()) @map("created_at")
   updatedAt          DateTime           @updatedAt @map("updated_at")
   inquiries          Inquiry[]
   auditLogs          ScrivenerAuditLog[]
