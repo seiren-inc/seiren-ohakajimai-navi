@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
+    "build:stats": "ts-node scripts/record_build_stats.ts",
     "start": "next start",
     "lint": "eslint src",
     "typecheck": "tsc --noEmit",
