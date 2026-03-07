@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma"
+import Image from "next/image"
 import { constructMetadata } from "@/lib/seo"
 import type { PublicScrivener } from "@/lib/scrivener-types"
 import { ScrivenerCard } from "@/components/features/gyoseishoshi/ScrivenerCard"
@@ -97,33 +98,47 @@ export default async function GyoseishoshiPage() {
             {/* ===== Hero（Doc-05 §3-1） ===== */}
             <section className="relative bg-linear-to-b from-emerald-50 to-white">
                 <Breadcrumb items={[{ name: "行政書士マッチング", href: "/gyoseishoshi" }]} />
-                <div className="container max-w-4xl text-center px-4 py-12 md:py-16">
-                    <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
-                        行政書士マッチング
-                    </p>
-                    {/* Doc-05 §3-1, Doc-09 §3-1: H1 */}
-                    <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl leading-tight">
-                        改葬許可申請、<br className="hidden sm:inline" />
-                        ひとりで悩んでいませんか？
-                    </h1>
-                    <p className="mt-6 text-base md:text-lg text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                        手続きの不安を行政書士がサポートします。<br className="hidden sm:inline" />
-                        書類の書き方や提出先がわからなくても、専門家に安心して任せられます。
-                    </p>
-                    <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                        <a
-                            href="#contact-form"
-                            className="inline-flex items-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
-                        >
-                            無料で相談する
-                        </a>
-                        <a
-                            href="tel:08008888788"
-                            className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
-                        >
-                            <Phone className="h-4 w-4" />
-                            0800-888-8788
-                        </a>
+                <div className="container max-w-5xl px-4 py-12 md:py-16">
+                    <div className="grid gap-12 md:grid-cols-2 md:items-center">
+                        <div className="text-left">
+                            <p className="text-sm font-semibold uppercase tracking-widest text-emerald-600">
+                                行政書士マッチング
+                            </p>
+                            {/* Doc-05 §3-1, Doc-09 §3-1: H1 */}
+                            <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl leading-tight">
+                                改葬許可申請、<br className="hidden sm:inline" />
+                                ひとりで悩んでいませんか？
+                            </h1>
+                            <p className="mt-6 text-base md:text-lg text-neutral-600 leading-relaxed">
+                                手続きの不安を行政書士がサポートします。<br className="hidden sm:inline" />
+                                書類の書き方や提出先がわからなくても、専門家に安心して任せられます。
+                            </p>
+                            <div className="mt-8 flex flex-col sm:flex-row items-center gap-3">
+                                <a
+                                    href="#contact-form"
+                                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+                                >
+                                    無料で相談する
+                                </a>
+                                <a
+                                    href="tel:08008888788"
+                                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border-2 border-emerald-600 px-6 py-3 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+                                >
+                                    <Phone className="h-4 w-4 shrink-0" />
+                                    0800-888-8788
+                                </a>
+                            </div>
+                        </div>
+                        <div className="relative aspect-4/3 overflow-hidden rounded-2xl md:aspect-auto md:h-full md:min-h-[340px] shadow-sm">
+                            <Image
+                                src="/images/gyoseishoshi-doc-desk.png"
+                                alt="信頼できる行政書士の相談デスク"
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
                     </div>
                 </div>
             </section>

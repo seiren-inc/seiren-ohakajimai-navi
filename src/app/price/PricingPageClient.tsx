@@ -262,9 +262,9 @@ export default function PricingPageClient() {
                 <div className="relative w-full max-w-[500px] aspect-[4/3] md:aspect-square overflow-hidden rounded-4xl mask-image-circle">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
-                    src="/hero-pricing.png" 
-                    alt="お墓じまいナビの無料相談スタッフ" 
-                    className="w-full h-full object-cover object-top scale-[1.02]"
+                    src="/images/price-consultation-desk.png" 
+                    alt="洗練された無料相談デスク" 
+                    className="w-full h-full object-cover scale-[1.02]"
                   />
                   {/* Image Gradient Overlay for blending */}
                   <div className="absolute inset-0 rounded-4xl bg-linear-to-tr from-black/5 to-transparent pointer-events-none" />
