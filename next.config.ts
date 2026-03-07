@@ -50,6 +50,10 @@ const nextConfig: NextConfig = {
     // ビルド時のESLintチェックを無効化（CIで別途実行）
     ignoreDuringBuilds: true,
   },
+  typescript: {
+    // ビルド時の型チェックを無効化（CIで別途実行）
+    ignoreBuildErrors: true,
+  },
   async headers() {
     return [
       {
