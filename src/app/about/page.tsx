@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { ArticleJsonLd } from "@/components/seo/page-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
+import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
+import { AuthorJsonLd } from "@/components/seo/author-json-ld"
 
 const aboutFaqs = [
   {
@@ -42,6 +44,17 @@ export default function AboutPage() {
         datePublished="2024-01-15"
       />
       <FaqJsonLd faqs={aboutFaqs} />
+      <SpeakableJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/about"
+        cssSelector={["h1", "h2", ".about-definition"]}
+      />
+      <AuthorJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/about"
+        headline="お墓じまいとは？改葬・墓じまいの意味・手続き・費用をわかりやすく解説"
+        description="お墓じまい（改葬）とは現在のお墓を撤去し遺骨を別の供養先へ移す手続き。改葬と墓じまいの違い・改葬許可証の取得方法・費用相場（30万〜100万円）・注意点を解説。"
+        datePublished="2024-01-15"
+        dateModified="2026-03-08"
+      />
       <div className="min-h-screen bg-white">
         {/* Hero */}
         <div className="border-b border-neutral-100 bg-neutral-50">

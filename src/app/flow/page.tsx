@@ -1,6 +1,8 @@
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { HowToJsonLd, kaisouHowToSteps } from "@/components/seo/howto-json-ld"
+import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
+import { AuthorJsonLd } from "@/components/seo/author-json-ld"
 import {
   MessageCircle,
   FileText,
@@ -147,6 +149,17 @@ export default function FlowPage() {
         description="現在のお墓からご遺骨を取り出し、別の納骨先へ移す「改葬」の正式手続きの流れ。"
         totalTime="P3M"
         steps={kaisouHowToSteps}
+      />
+      <SpeakableJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/flow"
+        cssSelector={["h1", "h2", "h3"]}
+      />
+      <AuthorJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/flow"
+        headline="お墓じまいの流れ・手順｜御相談から工事完了まで"
+        description="お墓じまいの相談から現地調査・改葬手続き・墓石撤去工事までの全工程を専門スタッフが丁寧に説明。"
+        datePublished="2024-01-15"
+        dateModified="2026-03-08"
       />
 
       {/* ─── Hero ─── */}

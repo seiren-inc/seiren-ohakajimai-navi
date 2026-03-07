@@ -4,8 +4,29 @@ import Link from "next/link"
 import { Phone, Mail } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
+import { FaqJsonLd } from "@/components/seo/faq-json-ld"
+import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+
+const companyFaqs = [
+  {
+    question: "株式会社清蓮はどこにありますか？",
+    answer: "神奈川県横浜市戈塚区戈塚町4170 高橋ビル1階に本社を置いております。山手線戈塚駅から徒欩約。7分です。展示指定・現地調査は全国対応です。",
+  },
+  {
+    question: "株式会社清蓮の設立はいつですか？",
+    answer: "2008年8月6日に設立しました。代表取締役の真如理恵が「お墓じまい」「改葬」の専門会社として設立。法令遵守と誠実な対話を理念に全国対応を続けています。",
+  },
+  {
+    question: "オンラインイベントなどの展示指定は受けていますか？",
+    answer: "はい。行政書士・石材店・宅地建物管理業者など守山に関わる专門業者とのネットワークがあります。詳細はお問い合わせください。",
+  },
+  {
+    question: "相談は無料ですか？",
+    answer: "はい、初回す1時間のお相談は無料です。お電話・メール・お問い合わせフォームいずれからでも受全平日・ル事可能です。検索ペイド掲載や訪問販売は一切行っておりません。",
+  },
+]
 
 export const metadata = constructMetadata({
   title: "会社概要｜お墓じまい・改葬・墓石撤去の株式会社清蓮（横浜・全国対応）",
@@ -96,6 +117,11 @@ const snsLinks = [
 export default function CompanyPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
+      <FaqJsonLd faqs={companyFaqs} />
+      <SpeakableJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/company"
+        cssSelector={["h1", "h2"]}
+      />
       <BreadcrumbJsonLd items={[
         { name: "ホーム", url: SITE_URL },
         { name: "会社概要", url: `${SITE_URL}/company` },

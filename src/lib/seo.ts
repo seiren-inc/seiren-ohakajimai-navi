@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const siteConfig = {
     name: 'お墓じまいナビ',
-    description: '全国対応の改葬手続き代行から墓石撤去、遺骨供養までワンストップでサポート。',
+    description: 'お墓じまい（墓じまい・改葬）の専門会社「株式会社清蓮」が運営する情報サイト。墓石撤去・改葬許可申請・遺骨のケア・海洋散骨を全国対応でワンストップサポート。改葬手続きの説明・行政書士紹介・料金シミュレーション・改葬許可申請書ダウンロードなど、お墓じまいに関わる情報を絡網的に提供。迷ったらまずここへ。視蔽料調査・お見積りは無料。',
     url: process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp',
     ogImage: '/og-image.jpg',
     links: {

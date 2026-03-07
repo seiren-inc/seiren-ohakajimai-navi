@@ -3,6 +3,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import PricingPageClient from "./PricingPageClient"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
+import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 
 const priceFaqs = [
   {
@@ -34,6 +35,10 @@ export default function PricePage() {
   return (
     <>
       <FaqJsonLd faqs={priceFaqs} />
+      <SpeakableJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp/price"
+        cssSelector={["h1", "h2", "h3"]}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp" },
