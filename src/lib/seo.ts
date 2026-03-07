@@ -16,7 +16,7 @@ export function constructMetadata({
     title = siteConfig.name,
     description = siteConfig.description,
     image = siteConfig.ogImage,
-    icons = '/favicon.ico',
+    icons = undefined,
     noIndex = false,
     path,
 }: {
@@ -64,7 +64,7 @@ export function constructMetadata({
             description,
             images: [absoluteImageUrl],
         },
-        icons,
+        ...(icons ? { icons } : {}),
         verification: {
             google: 'google-site-verification=_P2nElnAz-2wkA-U0R3BXPd1f9nICnmoPv3O1nx1agk',
         },
