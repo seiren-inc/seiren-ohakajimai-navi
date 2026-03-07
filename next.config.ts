@@ -46,6 +46,10 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  eslint: {
+    // ビルド時のESLintチェックを無効化（CIで別途実行）
+    ignoreDuringBuilds: true,
+  },
   async headers() {
     return [
       {
