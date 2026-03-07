@@ -1,47 +1,115 @@
 "use client"
 
-import { useChat } from "@ai-sdk/react"
-
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Bot, Send, User, X, MessageSquare } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { cn } from "@/lib/utils"
 
+type Message = {
+  id: string
+  role: "user" | "assistant"
+  content: string
+}
+
 export function RagChatbot() {
   const [isOpen, setIsOpen] = useState(false)
-  
-  // クライアントサイドでのみ一意のIDを生成し、サーバー側のHydration不一致を防ぐ
-  const [sessionId] = useState(() => 
-    typeof window !== 'undefined' ? Math.random().toString(36).substring(7) : "anonymous"
+  const [messages, setMessages] = useState<Message[]>([])
+  const [input, setInput] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
+  const [sessionId] = useState(() =>
+    typeof window !== "undefined" ? Math.random().toString(36).substring(7) : "anonymous"
   )
+  const bottomRef = useRef<HTMLDivElement>(null)
 
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
-    api: "/api/chat",
-    body: { sessionId },
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    onError: (err: any) => {
-      console.error(err)
-      alert("チャットの接続でエラーが発生しました。")
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  } as any) as any // Vercel AI SDK 3.x の一部環境での型不整合をバイパス
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages, isLoading])
 
-  // サジェストの質問
   const suggestions = [
     "東京都の改葬の手続きは？",
     "お墓じまいの料金はいくらですか？",
-    "行政書士に依頼できますか？"
+    "行政書士に依頼できますか？",
   ]
 
-  const handleSuggestion = (text: string) => {
-    const fakeEvent = {
-        preventDefault: () => {},
-    } as React.FormEvent<HTMLFormElement>
-    
-    // inputにテキストを入れて送信
-    handleInputChange({ target: { value: text } } as React.ChangeEvent<HTMLInputElement>)
-    setTimeout(() => handleSubmit(fakeEvent), 50)
+  const sendMessage = async (text: string) => {
+    if (!text.trim() || isLoading) return
+
+    const userMsg: Message = {
+      id: Date.now().toString(),
+      role: "user",
+      content: text,
+    }
+    const nextMessages = [...messages, userMsg]
+    setMessages(nextMessages)
+    setInput("")
+    setIsLoading(true)
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: nextMessages, sessionId }),
+      })
+
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}`)
+      }
+
+      // ストリーミングレスポンスを読み込む
+      const reader = res.body?.getReader()
+      const decoder = new TextDecoder()
+      let assistantContent = ""
+      const assistantId = (Date.now() + 1).toString()
+
+      setMessages((prev) => [
+        ...prev,
+        { id: assistantId, role: "assistant", content: "" },
+      ])
+
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+
+          const chunk = decoder.decode(value, { stream: true })
+          // Vercel AI SDK のストリーム形式をパース
+          const lines = chunk.split("\n")
+          for (const line of lines) {
+            if (line.startsWith("0:")) {
+              try {
+                const jsonStr = line.slice(2)
+                const parsed = JSON.parse(jsonStr)
+                assistantContent += parsed
+                setMessages((prev) =>
+                  prev.map((m) =>
+                    m.id === assistantId ? { ...m, content: assistantContent } : m
+                  )
+                )
+              } catch {
+                // パースエラーは無視
+              }
+            }
+          }
+        }
+      }
+    } catch {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: (Date.now() + 1).toString(),
+          role: "assistant",
+          content: "申し訳ありません、エラーが発生しました。しばらくしてから再度お試しください。",
+        },
+      ])
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    sendMessage(input)
   }
 
   return (
@@ -79,7 +147,7 @@ export function RagChatbot() {
                     {suggestions.map((text, i) => (
                       <button
                         key={i}
-                        onClick={() => handleSuggestion(text)}
+                        onClick={() => sendMessage(text)}
                         className="text-xs bg-white border border-primary/20 text-primary px-3 py-1.5 rounded-full hover:bg-primary/5 transition-colors"
                       >
                         {text}
@@ -89,29 +157,24 @@ export function RagChatbot() {
                 </div>
               )}
 
-              {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-              {messages.map((m: any) => (
+              {messages.map((m) => (
                 <div key={m.id} className={cn("flex w-full", m.role === "user" ? "justify-end" : "justify-start")}>
                   <div className={cn("flex gap-2 max-w-[85%]", m.role === "user" ? "flex-row-reverse" : "flex-row")}>
-                    <div className={cn("flex items-center justify-center h-8 w-8 rounded-full shrink-0", 
+                    <div className={cn("flex items-center justify-center h-8 w-8 rounded-full shrink-0",
                       m.role === "user" ? "bg-primary text-primary-foreground" : "bg-blue-100 text-blue-600"
                     )}>
                       {m.role === "user" ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
                     </div>
-                    <div className={cn("p-3 rounded-2xl text-sm whitespace-pre-wrap break-words", 
+                    <div className={cn("p-3 rounded-2xl text-sm whitespace-pre-wrap break-words",
                       m.role === "user" ? "bg-primary text-primary-foreground rounded-tr-sm" : "bg-white border text-slate-700 rounded-tl-sm shadow-sm"
                     )}>
-                      {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-                      {m.toolInvocations?.map((tool: any, index: number) => {
-                        if (tool.state === 'call') return <div key={index} className="text-xs text-muted-foreground flex items-center gap-1 animate-pulse">データベースを検索中...</div>
-                        return null
-                      })}
                       {m.content}
                     </div>
                   </div>
                 </div>
               ))}
-              {isLoading && messages[messages.length - 1]?.role === "user" && (
+
+              {isLoading && (
                 <div className="flex w-full justify-start">
                   <div className="flex gap-2 max-w-[85%] flex-row">
                     <div className="flex items-center justify-center h-8 w-8 rounded-full bg-blue-100 text-blue-600 shrink-0">
@@ -125,20 +188,21 @@ export function RagChatbot() {
                   </div>
                 </div>
               )}
+              <div ref={bottomRef} />
             </div>
 
             <div className="p-3 bg-white border-t">
               <form onSubmit={handleSubmit} className="flex flex-row gap-2 relative">
                 <Input
                   value={input}
-                  onChange={handleInputChange}
+                  onChange={(e) => setInput(e.target.value)}
                   placeholder="質問を入力..."
                   disabled={isLoading}
                   className="pr-10 bg-slate-50 focus-visible:ring-1"
                 />
-                <Button 
-                  type="submit" 
-                  size="icon" 
+                <Button
+                  type="submit"
+                  size="icon"
                   disabled={isLoading || !input.trim()}
                   className="absolute right-1 top-1 h-8 w-8 bg-transparent text-primary hover:bg-primary/10 shadow-none"
                 >
