@@ -1,6 +1,5 @@
 'use client'
 
-import { useCompletion } from '@ai-sdk/react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
@@ -18,20 +17,50 @@ interface Props {
 export function ScrivenerProfileOnboardingForm({ initialOfficeName, initialProfile }: Props) {
     const [officeName, setOfficeName] = useState(initialOfficeName)
     const [keywords, setKeywords] = useState('相続専門, 無料出張相談, スピード対応, 女性スタッフ対応可')
+    const [completion, setCompletion] = useState(initialProfile || '')
+    const [isLoading, setIsLoading] = useState(false)
     const [isSaving, setIsSaving] = useState(false)
 
-    // Vercel AI SDK hook
-    const { completion, isLoading, complete, setCompletion } = useCompletion({
-        api: '/api/scrivener/ai-profile',
-        initialCompletion: initialProfile || '',
-        body: {
-            officeName,
-            keywords,
-        }
-    })
-
     const handleGenerate = async () => {
-        await complete(keywords, { body: { officeName, keywords } })
+        setIsLoading(true)
+        try {
+            const res = await fetch('/api/scrivener/ai-profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ officeName, keywords }),
+            })
+            if (!res.ok) throw new Error(`HTTP ${res.status}`)
+
+            // ストリーミングレスポンスを読み込む
+            const reader = res.body?.getReader()
+            const decoder = new TextDecoder()
+            let result = ''
+            setCompletion('')
+
+            if (reader) {
+                while (true) {
+                    const { done, value } = await reader.read()
+                    if (done) break
+                    const chunk = decoder.decode(value, { stream: true })
+                    const lines = chunk.split('\n')
+                    for (const line of lines) {
+                        if (line.startsWith('0:')) {
+                            try {
+                                const parsed = JSON.parse(line.slice(2))
+                                result += parsed
+                                setCompletion(result)
+                            } catch {
+                                // パースエラーは無視
+                            }
+                        }
+                    }
+                }
+            }
+        } catch {
+            alert('プロフィールの生成に失敗しました。再度お試しください。')
+        } finally {
+            setIsLoading(false)
+        }
     }
 
     const handleSave = async (e: React.FormEvent) => {
