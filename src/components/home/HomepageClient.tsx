@@ -3,7 +3,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Header } from "@/components/layouts/header"
 import {
   Phone,
   Mail,
@@ -333,10 +332,6 @@ export default function HomepageClient() {
 
       <div className="flex flex-col min-h-screen text-neutral-900 selection:bg-emerald-100 selection:text-emerald-900 pb-20 md:pb-0">
 
-        {/* ============================================================
-            [A] グローバルナビ（共通ヘッダー）
-        ============================================================ */}
-        <Header />
         {/* ============================================================
             [B] ヒーロー
         ============================================================ */}

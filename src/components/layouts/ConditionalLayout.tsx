@@ -18,7 +18,7 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {!hideGlobalLayout && <Header />}
+      <Header />
       <main className={hideGlobalLayout ? "" : "flex-1"}>{children}</main>
       {!hideGlobalLayout && <Footer />}
       <FixedCTA />
