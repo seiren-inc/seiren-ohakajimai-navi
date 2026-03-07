@@ -150,19 +150,20 @@ export default function FlowPage() {
       />
 
       {/* ─── Hero ─── */}
-      <div className="border-b border-neutral-100 bg-neutral-50">
-        <Breadcrumb items={[{ name: "ご依頼の流れ", href: "/flow" }]} />
-        <div className="mx-auto max-w-3xl px-6 py-12 md:py-16">
-          <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
+      <div className="border-b border-neutral-100 bg-neutral-50 px-6 py-12 md:py-20 text-center">
+        <div className="mx-auto max-w-3xl">
+          <Breadcrumb items={[{ name: "ご依頼の流れ", href: "/flow" }]} className="mb-6 justify-center" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600 mb-2">Flow</p>
+          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
             ご依頼の流れ
           </h1>
-          <p className="mt-5 max-w-[44ch] text-base leading-relaxed text-neutral-600 md:text-lg">
+          <p className="mx-auto mt-6 max-w-[44ch] text-[17px] leading-relaxed text-neutral-600">
             お墓じまいは、現地確認から工事・遺骨のケア・改葬先の手配まで段取りが多い手続きです。
             清蓮は工事と遺骨のケアを軸に、改葬手続きは「案内」と「行政書士紹介」で法令遵守の形で支えます。
           </p>
-          <div className="mt-5 flex flex-wrap items-center gap-2 rounded-full bg-neutral-100 px-4 py-2 text-xs text-neutral-500 w-fit">
-            <Clock className="h-3.5 w-3.5" />
-            全体目安：2〜4ヶ月（墓地規模・自治体・改葬先の受入状況により前後します）
+          <div className="mx-auto mt-8 flex flex-wrap items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-5 py-2.5 text-xs text-neutral-600 w-fit shadow-sm">
+            <Clock className="h-4 w-4" />
+            全体目安：2〜4ヶ月（墓地・自治体により前後します）
           </div>
         </div>
       </div>
