@@ -13,6 +13,7 @@
     "verify:ci": "npm run verify && prisma validate && npm run quality:gate && npm run verify:seo",
     "verify:perf": "lighthouse http://localhost:3000 --view --only-categories=performance,accessibility,best-practices,seo",
     "verify:seo": "ts-node scripts/verify_seo_sitemap.ts && ts-node scripts/verify_seo_meta.ts",
+    "audit:ai": "tsx scripts/run_ai_audit.ts",
     "test": "vitest",
     "test:e2e": "playwright test",
     "linkcheck:run": "ts-node scripts/link_check_run.ts",
