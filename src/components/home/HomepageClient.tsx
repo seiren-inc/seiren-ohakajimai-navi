@@ -331,7 +331,7 @@ export default function HomepageClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="flex flex-col min-h-screen text-[#1A1A1A] selection:bg-emerald-100 selection:text-emerald-900 pb-20 md:pb-0">
+      <div className="flex flex-col min-h-screen text-neutral-900 selection:bg-emerald-100 selection:text-emerald-900 pb-20 md:pb-0">
 
         {/* ============================================================
             [A] グローバルナビ（共通ヘッダー）
@@ -363,8 +363,8 @@ export default function HomepageClient() {
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
-              <h1 className="typography-heading mt-5 text-2xl font-semibold leading-tight tracking-tight text-[#111827] sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
-              <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-[#374151] md:text-lg">
+              <h1 className="typography-heading mt-5 text-2xl font-semibold leading-tight tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
+              <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-neutral-700 md:text-lg">
                 改葬手続きの案内と書類サポート、提携行政書士の<br className="hidden md:block" />
                 ご紹介、墓石撤去、遺骨のケア、新しい供養先まで。<br className="hidden md:block" />
                 株式会社清蓮がワンストップでサポートします。
@@ -379,14 +379,14 @@ export default function HomepageClient() {
                 </Link>
                 <a
                   href="tel:08008888788"
-                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-[#111827] backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
+                  className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border-2 border-gray-200 bg-white/80 px-8 text-[17px] font-semibold text-neutral-900 backdrop-blur transition-all hover:border-gray-300 hover:bg-white"
                 >
                   <Phone className="h-5 w-5 text-emerald-600" />
                   0800-888-8788
                 </a>
               </div>
 
-              <p className="mt-5 text-[13px] font-medium text-[#4B5563]">24時間365日受付 / お見積り無料 / 無理な勧誘なし</p>
+              <p className="mt-5 text-[13px] font-medium text-neutral-600">24時間365日受付 / お見積り無料 / 無理な勧誘なし</p>
             </div>
           </div>
         </section>
@@ -406,9 +406,9 @@ export default function HomepageClient() {
                   <span className="text-[44px] font-bold tracking-tight text-emerald-600 md:text-[52px]">
                     <CountUp target={item.target} />
                   </span>
-                  <span className="text-[15px] font-medium text-[#6B7280]">{item.unit}</span>
+                  <span className="text-[15px] font-medium text-neutral-500">{item.unit}</span>
                 </div>
-                <p className="mt-2 text-[13px] font-medium text-[#9CA3AF]">{item.label}</p>
+                <p className="mt-2 text-[13px] font-medium text-neutral-400">{item.label}</p>
               </div>
             ))}
           </div>
@@ -420,8 +420,8 @@ export default function HomepageClient() {
         <Reveal className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">選ばれる3つの理由</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">安さだけではありません。法令遵守と確かな実績で選ばれています。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">選ばれる3つの理由</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">安さだけではありません。法令遵守と確かな実績で選ばれています。</p>
             </div>
 
             <div className="mt-16 space-y-20 md:mt-20 md:space-y-28">
@@ -440,9 +440,9 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">01</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">全国対応と提携ネットワーク</h3>
-                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">全国の提携石材店と連携しているため、地域差のある手続きや工事も進めやすい体制です。</p>
-                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">独自のネットワークで、地域ごとの条例や慣習に精通した優良石材店を手配します。</p>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">全国対応と提携ネットワーク</h3>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">全国の提携石材店と連携しているため、地域差のある手続きや工事も進めやすい体制です。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">独自のネットワークで、地域ごとの条例や慣習に精通した優良石材店を手配します。</p>
                 </div>
               </div>
 
@@ -461,9 +461,9 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">02</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">法令遵守の安心設計</h3>
-                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬手続きは「案内」と「行政書士紹介」に限定。違法リスクのある代行は行いません。</p>
-                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">改葬許可申請の代理提出が必要な場合は、提携行政書士をご紹介します。</p>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">法令遵守の安心設計</h3>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">改葬手続きは「案内」と「行政書士紹介」に限定。違法リスクのある代行は行いません。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">改葬許可申請の代理提出が必要な場合は、提携行政書士をご紹介します。</p>
                 </div>
               </div>
 
@@ -482,9 +482,9 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">03</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-[#1A1A1A] md:text-3xl lg:text-4xl">離檀交渉サポート</h3>
-                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">寺院・墓地管理者との離檀交渉で悩む方が多い領域を、実務目線でサポートします。</p>
-                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-[#6B7280] md:text-lg">高額な離檀料を請求された場合もご相談ください。</p>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">離檀交渉サポート</h3>
+                  <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">寺院・墓地管理者との離檀交渉で悩む方が多い領域を、実務目線でサポートします。</p>
+                  <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">高額な離檀料を請求された場合もご相談ください。</p>
                   <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
                     <Star className="h-4 w-4" />
                     他社にない独自サービス
@@ -498,11 +498,11 @@ export default function HomepageClient() {
         {/* ============================================================
             [E] サービス内容
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
+        <Reveal className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">サービス内容</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">お墓じまいに関わるすべての工程をサポートします。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">サービス内容</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お墓じまいに関わるすべての工程をサポートします。</p>
             </div>
 
             <div className="mt-16 grid gap-6 md:grid-cols-3 items-stretch">
@@ -529,8 +529,8 @@ export default function HomepageClient() {
         <Reveal id="kaisou-steps" className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">改葬手続きとは</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。墓じまいでは「改葬許可証」の取得が必要になります。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">改葬手続きとは</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。墓じまいでは「改葬許可証」の取得が必要になります。</p>
             </div>
 
             <div className="mt-16 grid gap-6 md:grid-cols-3">
@@ -557,7 +557,7 @@ export default function HomepageClient() {
                   alt: "机の上に置かれた許可証風の無地書類",
                 },
               ].map((item, i) => (
-                <div key={i} className="group overflow-hidden rounded-3xl bg-[#F9FAFB]">
+                <div key={i} className="group overflow-hidden rounded-3xl bg-neutral-50">
                   <div
                     className="flex aspect-16/10 items-center justify-center bg-gray-100 relative"
                   >
@@ -573,16 +573,16 @@ export default function HomepageClient() {
                     <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
                       {item.step}
                     </span>
-                    <h3 className="mt-3 text-[20px] font-semibold text-[#1A1A1A]">{item.title}</h3>
-                    <p className="mt-3 text-[15px] leading-[1.65] text-[#6B7280]">{item.description}</p>
+                    <h3 className="mt-3 text-[20px] font-semibold text-neutral-900">{item.title}</h3>
+                    <p className="mt-3 text-[15px] leading-[1.65] text-neutral-500">{item.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl bg-[#F9FAFB] px-6 py-4">
-              <Info className="mt-0.5 h-5 w-5 shrink-0 text-[#9CA3AF]" />
-              <p className="text-[14px] leading-[1.65] text-[#9CA3AF]">
+            <div className="mx-auto mt-10 flex max-w-2xl items-start gap-3 rounded-2xl bg-neutral-50 px-6 py-4">
+              <Info className="mt-0.5 h-5 w-5 shrink-0 text-neutral-400" />
+              <p className="text-[14px] leading-[1.65] text-neutral-400">
                 許可証の発行までの期間は自治体により異なります（数日〜1、2週間程度が目安）。
               </p>
             </div>
@@ -592,11 +592,11 @@ export default function HomepageClient() {
         {/* ============================================================
             [G] 清蓮ができること / 行わないこと（最重要）
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
+        <Reveal className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-5xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">私たちの対応範囲</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">法令を遵守し、できることとできないことを明確にしています。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">私たちの対応範囲</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">法令を遵守し、できることとできないことを明確にしています。</p>
             </div>
 
             <div className="mt-16 grid gap-6 md:grid-cols-2">
@@ -605,7 +605,7 @@ export default function HomepageClient() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-50">
                   <Check className="h-6 w-6 text-emerald-600" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">清蓮ができること</h3>
+                <h3 className="mt-5 text-xl font-bold text-neutral-900">清蓮ができること</h3>
                 <ul className="mt-6 space-y-4">
                   {[
                     "改葬手続きの流れのご説明",
@@ -619,7 +619,7 @@ export default function HomepageClient() {
                     "改葬先に合わせた容器への納め替え",
                     "海洋散骨の手配",
                   ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-[#1A1A1A]">
+                    <li key={item} className="flex items-start gap-3 text-sm text-neutral-900">
                       <div className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100">
                         <Check className="h-3 w-3 text-emerald-600" />
                       </div>
@@ -634,9 +634,9 @@ export default function HomepageClient() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100">
                   <ShieldAlert className="h-6 w-6 text-amber-600" />
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-[#1A1A1A]">清蓮が行わないこと</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#6B7280]">改葬許可申請の「代理提出」「行政手続きの代行」は、行政書士等の有資格者が行う業務です。清蓮は無資格での代行を行いません。</p>
-                <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">必要な場合は提携行政書士をご紹介します。</p>
+                <h3 className="mt-5 text-xl font-bold text-neutral-900">清蓮が行わないこと</h3>
+                <p className="mt-3 text-sm leading-relaxed text-neutral-500">改葬許可申請の「代理提出」「行政手続きの代行」は、行政書士等の有資格者が行う業務です。清蓮は無資格での代行を行いません。</p>
+                <p className="mt-4 text-sm leading-relaxed text-neutral-500">必要な場合は提携行政書士をご紹介します。</p>
 
                 <div className="mt-8 rounded-xl bg-amber-100/50 px-5 py-4">
                   <div className="flex items-start gap-3">
@@ -666,8 +666,8 @@ export default function HomepageClient() {
         <Reveal id="flow" className="py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">ご依頼の流れ</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">お問い合わせから完了まで、5つのステップで進めます。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">ご依頼の流れ</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お問い合わせから完了まで、5つのステップで進めます。</p>
             </div>
 
             <div className="mt-16 space-y-0">
@@ -733,14 +733,14 @@ export default function HomepageClient() {
                   </div>
                   <div className="flex-1 pt-1">
                     <div className="flex items-center gap-3">
-                      <h3 className="text-[19px] font-semibold text-[#1A1A1A]">{item.title}</h3>
+                      <h3 className="text-[19px] font-semibold text-neutral-900">{item.title}</h3>
                       {item.badge && (
                         <span className="rounded-full bg-emerald-50 px-3 py-0.5 text-xs font-semibold text-emerald-600">
                           {item.badge}
                         </span>
                       )}
                     </div>
-                    <p className="mt-2 text-[16px] leading-[1.65] text-[#6B7280]">{item.description}</p>
+                    <p className="mt-2 text-[16px] leading-[1.65] text-neutral-500">{item.description}</p>
                   </div>
                 </div>
               ))}
@@ -751,11 +751,11 @@ export default function HomepageClient() {
         {/* ============================================================
             [I] 料金について
         ============================================================ */}
-        <Reveal id="pricing" className="bg-[#F9FAFB] py-24 md:py-36">
+        <Reveal id="pricing" className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">料金について</h2>
-              <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">現地状況で変動するため、まずは無料で概算をご案内します。追加費用が出やすいポイントも事前にご説明します。</p>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">料金について</h2>
+              <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現地状況で変動するため、まずは無料で概算をご案内します。追加費用が出やすいポイントも事前にご説明します。</p>
             </div>
 
             <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -778,8 +778,8 @@ export default function HomepageClient() {
               ].map((item) => (
                 <div key={item.title} className="flex flex-col items-center rounded-2xl bg-white p-8 text-center shadow-sm">
                   <item.icon className="h-8 w-8 text-emerald-600" />
-                  <h3 className="mt-4 text-[17px] font-semibold text-[#1A1A1A]">{item.title}</h3>
-                  <p className="mt-2 text-[14px] leading-[1.65] text-[#6B7280]">{item.description}</p>
+                  <h3 className="mt-4 text-[17px] font-semibold text-neutral-900">{item.title}</h3>
+                  <p className="mt-2 text-[14px] leading-[1.65] text-neutral-500">{item.description}</p>
                 </div>
               ))}
             </div>
@@ -809,8 +809,8 @@ export default function HomepageClient() {
           <div className="mx-auto max-w-5xl px-6">
             <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 via-white to-gray-50 p-10 md:p-20">
               <div className="relative z-10 mx-auto max-w-2xl text-center">
-                <h2 className="text-balance text-[28px] font-bold tracking-tight text-[#1A1A1A] md:text-[36px]">ご自分で手続きされる方へ</h2>
-                <p className="mt-5 text-[17px] leading-[1.65] text-[#6B7280]">全国自治体の改葬許可申請書のダウンロードと、一般的な記入ポイントをまとめています。まずはお墓の所在地の自治体を検索してください。</p>
+                <h2 className="text-balance text-[28px] font-bold tracking-tight text-neutral-900 md:text-[36px]">ご自分で手続きされる方へ</h2>
+                <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">全国自治体の改葬許可申請書のダウンロードと、一般的な記入ポイントをまとめています。まずはお墓の所在地の自治体を検索してください。</p>
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                   <Link
                     href="/kaisoukyoka"
@@ -821,7 +821,7 @@ export default function HomepageClient() {
                   </Link>
                   <Link
                     href="/flow"
-                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-8 text-base font-semibold text-[#1A1A1A] transition-colors hover:bg-gray-50 sm:w-auto"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full border-2 border-gray-200 px-8 text-base font-semibold text-neutral-900 transition-colors hover:bg-gray-50 sm:w-auto"
                   >
                     改葬手続きの流れ
                     <ArrowRight className="h-4 w-4" />
@@ -835,20 +835,20 @@ export default function HomepageClient() {
         {/* ============================================================
             [K] よくある質問
         ============================================================ */}
-        <Reveal className="bg-[#F9FAFB] py-24 md:py-36">
+        <Reveal className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-3xl px-6">
             <div className="text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-[#1A1A1A] md:text-[44px]">よくあるご質問</h2>
+              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">よくあるご質問</h2>
             </div>
 
             <div className="mt-14 divide-y divide-gray-200">
               {faqs.map((faq, i) => (
                 <details key={i} className="group">
-                  <summary className="flex min-h-[64px] cursor-pointer items-center justify-between gap-4 py-6 text-left text-[17px] font-semibold text-[#1A1A1A] transition-colors hover:text-emerald-600 [&::-webkit-details-marker]:hidden list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-lg">
+                  <summary className="flex min-h-[64px] cursor-pointer items-center justify-between gap-4 py-6 text-left text-[17px] font-semibold text-neutral-900 transition-colors hover:text-emerald-600 [&::-webkit-details-marker]:hidden list-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 rounded-lg">
                     <span>{faq.q}</span>
-                    <ChevronDown className="h-5 w-5 shrink-0 text-[#9CA3AF] transition-transform group-open:rotate-180" />
+                    <ChevronDown className="h-5 w-5 shrink-0 text-neutral-400 transition-transform group-open:rotate-180" />
                   </summary>
-                  <p className="pb-7 pr-10 text-[16px] leading-[1.7] text-[#6B7280]">{faq.a}</p>
+                  <p className="pb-7 pr-10 text-[16px] leading-[1.7] text-neutral-500">{faq.a}</p>
                 </details>
               ))}
             </div>
@@ -900,16 +900,16 @@ export default function HomepageClient() {
                     height={28}
                     className="h-7 w-auto object-contain"
                   />
-                  <span className="text-base font-bold text-[#1A1A1A]">お墓じまいナビ</span>
+                  <span className="text-base font-bold text-neutral-900">お墓じまいナビ</span>
                 </Link>
-                <p className="mt-4 text-sm leading-relaxed text-[#6B7280]">
+                <p className="mt-4 text-sm leading-relaxed text-neutral-500">
                   株式会社清蓮が運営する、改葬手続きから供養までの
                   一括サポートサービス。
                 </p>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-[#1A1A1A]">サービス</h4>
+                <h4 className="text-sm font-semibold text-neutral-900">サービス</h4>
                 <ul className="mt-4 space-y-3">
                   {[
                     { label: "お墓じまいとは", href: "#kaisou-steps" },
@@ -918,7 +918,7 @@ export default function HomepageClient() {
                     { label: "対応エリア", href: "/kaissou" },
                   ].map((item) => (
                     <li key={item.label}>
-                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                      <Link href={item.href} className="text-sm text-neutral-500 transition-colors hover:text-neutral-900">
                         {item.label}
                       </Link>
                     </li>
@@ -927,7 +927,7 @@ export default function HomepageClient() {
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-[#1A1A1A]">関連サービス</h4>
+                <h4 className="text-sm font-semibold text-neutral-900">関連サービス</h4>
                 <ul className="mt-4 space-y-3">
                   {[
                     { label: "海洋散骨クルーズ", href: "#" },
@@ -935,7 +935,7 @@ export default function HomepageClient() {
                     { label: "改葬許可申請書DL", href: "/kaisoukyoka" },
                   ].map((item) => (
                     <li key={item.label}>
-                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                      <Link href={item.href} className="text-sm text-neutral-500 transition-colors hover:text-neutral-900">
                         {item.label}
                       </Link>
                     </li>
@@ -944,7 +944,7 @@ export default function HomepageClient() {
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-[#1A1A1A]">会社情報</h4>
+                <h4 className="text-sm font-semibold text-neutral-900">会社情報</h4>
                 <ul className="mt-4 space-y-3">
                   {[
                     { label: "運営会社", href: "#" },
@@ -952,7 +952,7 @@ export default function HomepageClient() {
                     { label: "お問い合わせ", href: "/contact" },
                   ].map((item) => (
                     <li key={item.label}>
-                      <Link href={item.href} className="text-sm text-[#6B7280] transition-colors hover:text-[#1A1A1A]">
+                      <Link href={item.href} className="text-sm text-neutral-500 transition-colors hover:text-neutral-900">
                         {item.label}
                       </Link>
                     </li>
@@ -961,7 +961,7 @@ export default function HomepageClient() {
               </div>
             </div>
 
-            <div className="mt-12 border-t pt-8 text-center text-xs text-[#6B7280]">
+            <div className="mt-12 border-t pt-8 text-center text-xs text-neutral-500">
               © 2026 Seiren Co., Ltd. All rights reserved.
             </div>
           </div>

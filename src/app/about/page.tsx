@@ -1,5 +1,6 @@
 import { constructMetadata } from "@/lib/seo"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { ArticleJsonLd } from "@/components/seo/page-json-ld"
@@ -45,17 +46,28 @@ export default function AboutPage() {
         {/* Hero */}
         <div className="border-b border-neutral-100 bg-neutral-50">
           <Breadcrumb items={[{ name: "お墓じまいとは", href: "/about" }]} />
-          <div className="mx-auto max-w-4xl px-6 py-12 md:py-16">
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">About</p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
-              お墓じまいとは
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-neutral-600 max-w-2xl">
-              「お墓じまい（墓じまい）」とは、現在のお墓からご遺骨を取り出し、
-              別の納骨先へ移す一連の手続きのことです。
-              正式には<strong>「改葬（かいそう）」</strong>と呼ばれ、
-              市区町村への<strong>改葬許可申請</strong>が必要な法的手続きです。
-            </p>
+          <div className="mx-auto max-w-5xl px-6 py-12 md:py-16">
+            <div className="grid gap-12 md:grid-cols-2 md:items-center">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">About</p>
+                <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+                  お墓じまいとは
+                </h1>
+                <p className="mt-6 text-[17px] leading-relaxed text-neutral-600">
+                  「お墓じまい（墓じまい）」とは、現在のお墓からご遺骨を取り出し、別の納骨先へ移す一連の手続きのことです。正式には<strong>「改葬（かいそう）」</strong>と呼ばれ、市区町村への<strong>改葬許可申請</strong>が必要な法的手続きです。
+                </p>
+              </div>
+              <div className="relative aspect-4/3 overflow-hidden rounded-2xl md:aspect-auto md:h-full md:min-h-[280px]">
+                <Image
+                  src="/images/hero-garden-v3.jpg"
+                  alt="静かな日本の庭園風景"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
 
