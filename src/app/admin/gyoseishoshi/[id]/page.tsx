@@ -15,7 +15,7 @@ import { Badge } from "@/components/ui/badge"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { PREFECTURES } from "@/lib/prefectures"
 import Link from "next/link"
-import { ArrowLeft, AlertTriangle, CreditCard, ExternalLink } from "lucide-react"
+import { ArrowLeft, AlertTriangle, CreditCard, ExternalLink, History } from "lucide-react"
 import { format } from "date-fns"
 import { ja } from "date-fns/locale"
 import { StripeCheckoutButton } from "@/components/admin/StripeCheckoutButton"
@@ -31,6 +31,12 @@ export default async function ScrivenerDetailPage(props: PageProps) {
     const params = await props.params
     const scrivener = await db.administrativeScrivener.findUnique({
         where: { id: params.id },
+        include: {
+            auditLogs: {
+                orderBy: { createdAt: 'desc' },
+                take: 20,
+            },
+        },
     })
 
     if (!scrivener) notFound()
@@ -146,7 +152,6 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                 )}
             </div>
 
-            {/* 編集フォーム */}
             <form action={updateWithId} className="max-w-2xl space-y-6 rounded-lg border bg-white p-6">
                 <div className="space-y-4">
                     <h3 className="font-semibold border-b pb-2">基本情報</h3>
@@ -300,6 +305,60 @@ export default async function ScrivenerDetailPage(props: PageProps) {
 
                 <Button type="submit" className="w-full">保存する</Button>
             </form>
+            {/* ===== T5-05: 操作履歴（ScrivenerAuditLog） ===== */}
+            <div className="max-w-2xl rounded-lg border bg-white p-6">
+                <h3 className="flex items-center gap-2 text-base font-semibold border-b pb-3 mb-4">
+                    <History className="h-4 w-4 text-muted-foreground" />
+                    操作履歴（最新20件）
+                </h3>
+                {scrivener.auditLogs.length === 0 ? (
+                    <p className="text-sm text-muted-foreground">操作履歴はありません。</p>
+                ) : (
+                    <div className="overflow-x-auto">
+                        <table className="w-full text-xs">
+                            <thead>
+                                <tr className="border-b text-left text-muted-foreground">
+                                    <th className="pb-2 pr-4 font-medium">日時</th>
+                                    <th className="pb-2 pr-4 font-medium">操作</th>
+                                    <th className="pb-2 pr-4 font-medium">変更前</th>
+                                    <th className="pb-2 font-medium">変更後</th>
+                                </tr>
+                            </thead>
+                            <tbody className="divide-y">
+                                {scrivener.auditLogs.map((log: {
+                                    id: string
+                                    createdAt: Date
+                                    actionType: string
+                                    beforeValue: unknown
+                                    afterValue: unknown
+                                    adminUserId: string
+                                }) => (
+                                    <tr key={log.id} className="align-top">
+                                        <td className="py-2 pr-4 whitespace-nowrap text-muted-foreground">
+                                            {format(log.createdAt, 'MM/dd HH:mm', { locale: ja })}
+                                        </td>
+                                        <td className="py-2 pr-4">
+                                            <span className="inline-block rounded bg-slate-100 px-1.5 py-0.5 font-mono font-semibold">
+                                                {log.actionType}
+                                            </span>
+                                        </td>
+                                        <td className="py-2 pr-4 text-muted-foreground max-w-[160px] truncate">
+                                            {log.beforeValue
+                                                ? JSON.stringify(log.beforeValue)
+                                                : '—'}
+                                        </td>
+                                        <td className="py-2 text-muted-foreground max-w-[160px] truncate">
+                                            {log.afterValue
+                                                ? JSON.stringify(log.afterValue)
+                                                : '—'}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
