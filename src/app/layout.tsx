@@ -22,15 +22,6 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   ...constructMetadata(),
-  icons: {
-    icon: [
-      { url: "/logo2.png", type: "image/png" },
-    ],
-    apple: [
-      { url: "/logo2.png", type: "image/png" },
-    ],
-    shortcut: "/logo2.png",
-  },
 }
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID
