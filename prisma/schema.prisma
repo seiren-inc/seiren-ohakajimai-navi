@@ -101,46 +101,45 @@ enum PaymentStatus {
 }
 
 enum OnboardingStep {
-  ACCOUNT_CREATED     // アカウントのみ作成
-  PROFILE_INPUT       // プロフィール情報入力完了
-  PAYMENT_COMPLETED   // 決済完了（審査待ち）
-  APPROVED_ACTIVE     // 承認済み・掲載中
+  ACCOUNT_CREATED // アカウントのみ作成
+  PROFILE_INPUT // プロフィール情報入力完了
+  PAYMENT_COMPLETED // 決済完了（審査待ち）
+  APPROVED_ACTIVE // 承認済み・掲載中
 }
 
-
 model AdministrativeScrivener {
-  id                 String             @id @default(cuid())
-  officeName         String             @map("office_name")
-  representativeName String?            @map("representative_name")
-  registrationNumber String?            @map("registration_number") // Doc-16 §3: 登録番号
-  prefecture         String
-  city               String?
-  addressLine        String?            @map("address_line")
-  phone              String?
-  email              String?
-  websiteUrl         String?            @map("website_url")
-  priceRangeText     String?            @map("price_range_text")
-  specialties        String[]           @default([])
-  profileText        String             @map("profile_text")
-  businessHours      String?            @map("business_hours") // Doc-16 §3: 営業時間
-  planType           ScrivenerPlanType  @default(BASIC) @map("plan_type")
-  priorityScore      Int                @default(0) @map("priority_score")
-  isApproved         Boolean            @default(false) @map("is_approved")
-  isActive           Boolean            @default(true) @map("is_active")
-  complaintFlag      Boolean            @default(false) @map("complaint_flag") // Doc-18 §7: 苦情フラグ
-  paymentStatus      PaymentStatus      @default(UNPAID) @map("payment_status") // Doc-10 §8
-  contractStartDate  DateTime?          @map("contract_start_date") // Doc-18 §5
-  contractEndDate    DateTime?          @map("contract_end_date")
-  stripeCustomerId       String?   @map("stripe_customer_id")
-  stripeSubscriptionId   String?   @unique @map("stripe_subscription_id")
-  currentPeriodEnd       DateTime? @map("current_period_end")
-  authUserId             String?   @unique @map("auth_user_id")
-  onboardingStep         OnboardingStep @default(ACCOUNT_CREATED) @map("onboarding_step")
-  adminMemo              String?   @map("admin_memo")
-  createdAt              DateTime  @default(now()) @map("created_at")
-  updatedAt          DateTime           @updatedAt @map("updated_at")
-  inquiries          Inquiry[]
-  auditLogs          ScrivenerAuditLog[]
+  id                   String              @id @default(cuid())
+  officeName           String              @map("office_name")
+  representativeName   String?             @map("representative_name")
+  registrationNumber   String?             @map("registration_number") // Doc-16 §3: 登録番号
+  prefecture           String
+  city                 String?
+  addressLine          String?             @map("address_line")
+  phone                String?
+  email                String?
+  websiteUrl           String?             @map("website_url")
+  priceRangeText       String?             @map("price_range_text")
+  specialties          String[]            @default([])
+  profileText          String              @map("profile_text")
+  businessHours        String?             @map("business_hours") // Doc-16 §3: 営業時間
+  planType             ScrivenerPlanType   @default(BASIC) @map("plan_type")
+  priorityScore        Int                 @default(0) @map("priority_score")
+  isApproved           Boolean             @default(false) @map("is_approved")
+  isActive             Boolean             @default(true) @map("is_active")
+  complaintFlag        Boolean             @default(false) @map("complaint_flag") // Doc-18 §7: 苦情フラグ
+  paymentStatus        PaymentStatus       @default(UNPAID) @map("payment_status") // Doc-10 §8
+  contractStartDate    DateTime?           @map("contract_start_date") // Doc-18 §5
+  contractEndDate      DateTime?           @map("contract_end_date")
+  stripeCustomerId     String?             @map("stripe_customer_id")
+  stripeSubscriptionId String?             @unique @map("stripe_subscription_id")
+  currentPeriodEnd     DateTime?           @map("current_period_end")
+  authUserId           String?             @unique @map("auth_user_id")
+  onboardingStep       OnboardingStep      @default(ACCOUNT_CREATED) @map("onboarding_step")
+  adminMemo            String?             @map("admin_memo")
+  createdAt            DateTime            @default(now()) @map("created_at")
+  updatedAt            DateTime            @updatedAt @map("updated_at")
+  inquiries            Inquiry[]
+  auditLogs            ScrivenerAuditLog[]
 
   @@index([prefecture, isApproved, isActive])
   @@index([planType, priorityScore])
@@ -169,20 +168,19 @@ model SimulationLog {
 
 // Doc-16 §8, Doc-17 §8: 監査ログ（削除禁止）
 model ScrivenerAuditLog {
-  id            String                  @id @default(cuid())
-  scrivenerId   String                  @map("scrivener_id")
-  scrivener     AdministrativeScrivener @relation(fields: [scrivenerId], references: [id], onDelete: Cascade)
-  actionType    String                  @map("action_type") // APPROVE / SUSPEND / UPDATE / PLAN_CHANGE / PAYMENT_UPDATE
-  beforeValue   Json?                   @map("before_value")
-  afterValue    Json?                   @map("after_value")
-  adminUserId   String                  @map("admin_user_id")
-  createdAt     DateTime                @default(now()) @map("created_at")
+  id          String                  @id @default(cuid())
+  scrivenerId String                  @map("scrivener_id")
+  scrivener   AdministrativeScrivener @relation(fields: [scrivenerId], references: [id], onDelete: Cascade)
+  actionType  String                  @map("action_type") // APPROVE / SUSPEND / UPDATE / PLAN_CHANGE / PAYMENT_UPDATE
+  beforeValue Json?                   @map("before_value")
+  afterValue  Json?                   @map("after_value")
+  adminUserId String                  @map("admin_user_id")
+  createdAt   DateTime                @default(now()) @map("created_at")
 
   @@index([scrivenerId])
   @@index([createdAt])
   @@map("scrivener_audit_logs")
 }
-
 
 // --- 既存 enum ---
 
@@ -210,34 +208,34 @@ model ImportLog {
 }
 
 model Inquiry {
-  id                  String                      @id @default(uuid())
-  inquiryType         InquiryType                 @default(OHaka) @map("inquiry_type")
-  status              InquiryStatus               @default(NEW)
-  lastName            String                      @map("last_name")
-  firstName           String                      @map("first_name")
-  lastNameKana        String?                     @map("last_name_kana")
-  firstNameKana       String?                     @map("first_name_kana")
+  id                  String                   @id @default(uuid())
+  inquiryType         InquiryType              @default(OHaka) @map("inquiry_type")
+  status              InquiryStatus            @default(NEW)
+  lastName            String                   @map("last_name")
+  firstName           String                   @map("first_name")
+  lastNameKana        String?                  @map("last_name_kana")
+  firstNameKana       String?                  @map("first_name_kana")
   email               String
   phone               String
-  postalCode          String?                     @map("postal_code")
+  postalCode          String?                  @map("postal_code")
   prefecture          String?
   city                String?
-  addressDetail       String?                     @map("address_detail")
-  cemeteryType        CemeteryType?               @map("cemetery_type")
-  considerationPeriod ConsiderationPeriod?         @map("consideration_period")
+  addressDetail       String?                  @map("address_detail")
+  cemeteryType        CemeteryType?            @map("cemetery_type")
+  considerationPeriod ConsiderationPeriod?     @map("consideration_period")
   content             String
-  destinationType     DestinationType?             @map("destination_type")
-  boneServiceType     BoneServiceType?             @map("bone_service_type")
-  containerType       ContainerType?               @map("container_type")
-  ritanConsultation   Boolean?                     @map("ritan_consultation")
-  preferredContact    String?                      @map("preferred_contact")
+  destinationType     DestinationType?         @map("destination_type")
+  boneServiceType     BoneServiceType?         @map("bone_service_type")
+  containerType       ContainerType?           @map("container_type")
+  ritanConsultation   Boolean?                 @map("ritan_consultation")
+  preferredContact    String?                  @map("preferred_contact")
   memo                String?
-  ipAddress           String?                      @map("ip_address")
-  userAgent           String?                      @map("user_agent")
-  scrivenerId         String?                      @map("scrivener_id")
-  scrivener           AdministrativeScrivener?     @relation(fields: [scrivenerId], references: [id], onDelete: SetNull)
-  createdAt           DateTime                     @default(now()) @map("created_at")
-  updatedAt           DateTime                     @updatedAt @map("updated_at")
+  ipAddress           String?                  @map("ip_address")
+  userAgent           String?                  @map("user_agent")
+  scrivenerId         String?                  @map("scrivener_id")
+  scrivener           AdministrativeScrivener? @relation(fields: [scrivenerId], references: [id], onDelete: SetNull)
+  createdAt           DateTime                 @default(now()) @map("created_at")
+  updatedAt           DateTime                 @updatedAt @map("updated_at")
 
   @@index([inquiryType, status, createdAt])
   @@index([scrivenerId])
@@ -259,32 +257,32 @@ model AuditLog {
 }
 
 model LinkCheckRun {
-  id           String         @id @default(cuid())
-  startedAt    DateTime       @default(now()) @map("started_at")
-  finishedAt   DateTime?      @map("finished_at")
+  id           String          @id @default(cuid())
+  startedAt    DateTime        @default(now()) @map("started_at")
+  finishedAt   DateTime?       @map("finished_at")
   status       LinkCheckStatus @default(RUNNING)
-  totalChecked Int            @default(0) @map("total_checked")
-  brokenCount  Int            @default(0) @map("broken_count")
-  fixedCount   Int            @default(0) @map("fixed_count")
+  totalChecked Int             @default(0) @map("total_checked")
+  brokenCount  Int             @default(0) @map("broken_count")
+  fixedCount   Int             @default(0) @map("fixed_count")
   notes        String?
 
   @@map("link_check_runs")
 }
 
 model RecoveryCandidate {
-  id           String                 @id @default(cuid())
-  createdAt    DateTime               @default(now()) @map("created_at")
-  jisCode      String                 @map("jis_code")
+  id           String                  @id @default(cuid())
+  createdAt    DateTime                @default(now()) @map("created_at")
+  jisCode      String                  @map("jis_code")
   prefecture   String
   municipality String
-  prevUrl      String?                @map("prev_url")
-  prevPdfUrl   String?                @map("prev_pdf_url")
-  newUrl       String?                @map("new_url")
-  newPdfUrl    String?                @map("new_pdf_url")
-  confidence   Int                    @default(0)
+  prevUrl      String?                 @map("prev_url")
+  prevPdfUrl   String?                 @map("prev_pdf_url")
+  newUrl       String?                 @map("new_url")
+  newPdfUrl    String?                 @map("new_pdf_url")
+  confidence   Int                     @default(0)
   source       String
   status       RecoveryCandidateStatus @default(PENDING)
-  runId        String?                @map("run_id")
+  runId        String?                 @map("run_id")
 
   @@index([jisCode])
   @@index([status])
@@ -372,4 +370,33 @@ enum AuditResult {
   TIMEOUT
   DNS_ERROR
   UNKNOWN_ERROR
+}
+
+// ==========================================
+// Stage 7: AI Chat Logs
+// 公開RAGシステムでの会話履歴を保存・追跡するためのテーブル
+// ==========================================
+model RagChatLog {
+  id        String @id @default(uuid())
+  sessionId String // クライアント毎のセッション（匿名）
+
+  // 入力されたユーザーメッセージ
+  userMessage String @db.Text
+
+  // 意図分類結果（例: REGION_SEARCH, GENERAL_FAQ, UNKNOWN）
+  detectedIntent String?
+
+  // 検索ヒットした場合に根拠とした自治体のJISコード
+  referenceJisCode String?
+
+  // AIが返却したメッセージ
+  aiResponse String @db.Text
+
+  // 根拠不足等で回答を拒否（フォールバック）したかどうかのフラグ
+  isRejected Boolean @default(false)
+
+  // リクエスト元のIP（レート制限検証やスパム解析用）
+  ipAddress String?
+
+  createdAt DateTime @default(now())
 }

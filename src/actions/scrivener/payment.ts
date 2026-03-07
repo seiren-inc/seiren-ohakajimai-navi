@@ -6,7 +6,7 @@ import { getStripe, STRIPE_PRICE_IDS } from '@/lib/stripe'
 import { ScrivenerPlanType } from '@prisma/client'
 import { redirect } from 'next/navigation'
 
-export async function createScrivenerCheckoutSession(prevState: any, formData: FormData) {
+export async function createScrivenerCheckoutSession(prevState: unknown, formData: FormData) {
     const planType = formData.get('planType') as ScrivenerPlanType
     
     if (!planType || !STRIPE_PRICE_IDS[planType]) {
