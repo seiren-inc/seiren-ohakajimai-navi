@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function Footer() {
@@ -7,10 +8,13 @@ export function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div className="space-y-4">
                         <Link href="/" className="inline-flex items-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" className="h-7 w-7" aria-hidden="true">
-                              <circle cx="14" cy="14" r="14" fill="#059669" />
-                              <text x="14" y="18" textAnchor="middle" fontSize="11" fontWeight="bold" fill="white" fontFamily="serif">清蓮</text>
-                            </svg>
+                            <Image
+                                src="/web-app-manifest-192x192.png"
+                                alt="清蓮 ロゴ"
+                                width={28}
+                                height={28}
+                                className="h-7 w-auto object-contain"
+                            />
                             <span className="text-lg font-bold">お墓じまいナビ</span>
                         </Link>
                         <p className="text-sm text-muted-foreground">

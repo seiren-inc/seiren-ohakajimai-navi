@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useRef } from "react"
@@ -355,10 +356,14 @@ export function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" className="h-9 w-9" aria-hidden="true">
-              <circle cx="18" cy="18" r="18" fill="#059669" />
-              <text x="18" y="23" textAnchor="middle" fontSize="16" fontWeight="bold" fill="white" fontFamily="serif">清蓮</text>
-            </svg>
+            <Image
+              src="/web-app-manifest-192x192.png"
+              alt="清蓮 ロゴ"
+              width={36}
+              height={36}
+              className="h-9 w-auto object-contain"
+              priority
+            />
             <span className="text-sm font-bold tracking-tight text-neutral-900 lg:text-base">
               お墓じまいナビ
             </span>
