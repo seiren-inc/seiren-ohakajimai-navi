@@ -46,8 +46,6 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  // Next.js 16でTurbopackがデフォルト化されたが、ビルドパニックが発生するため無効化
-  turbopack: false,
   async headers() {
     return [
       {
