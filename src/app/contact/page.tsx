@@ -3,8 +3,8 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { constructMetadata } from "@/lib/seo"
 
 export const metadata = constructMetadata({
-    title: "お問い合わせ・無料見積り",
-    description: "お墓じまい・改葬・墓石撤去・海洋散骨のご相談・お見積りは無料。24時間365日受付中。電話（0800-888-8788）またはフォームでお気軽にどうぞ。全国対応・追加費用なし。",
+    title: "お問い合わせ・無料相談・お見積り｜お墓じまいナビ",
+    description: "お墓じまい・改葬・墓じまい・墓石撤去・海洋散骨・離橉交渉のご相談・お見積りは無料。改葬許可申請・改葬手続きを自分で進めたい方・行政書士を探したい方・遠方のお墓の墒管でお困りの方もお気軽に。００８０－８８８－８７８８・２４時間受付・全国対応。",
     path: '/contact',
 })
 

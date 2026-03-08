@@ -11,8 +11,8 @@ export const revalidate = 86400
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
-    title: "全国の改葬手続き情報・申請書ダウンロード",
-    description: "全国の自治体の改葬許可申請書のダウンロード先や、手続き窓口の情報をまとめています。ご自身で手続きを行う際にご活用ください。",
+    title: "改葬手続き・改葬許可申請書ダウンロード｜全国都道府県・市区町村別まとめ",
+    description: "お墓じまい・改葬（墓じまい）に必要な改葬許可申請書を全国自治体別に掲載。改葬手続きの流れ・申請書の書き方・提出先・改葬許可証の取得方法を都道府県・市区町村ごとに解説。自分で改葬手続きを行いたい方の情報ポータル。株式会社清蓮（全国対応）監修。",
   path: '/kaissou',
 })
 

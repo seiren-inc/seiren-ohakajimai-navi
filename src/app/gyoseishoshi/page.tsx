@@ -15,8 +15,8 @@ export const dynamic = "force-dynamic"
 
 // Doc-09 §3-1: SEO Title/Description
 export const metadata = constructMetadata({
-    title: "改葬許可申請の行政書士相談｜お墓じまいナビ",
-    description: "改葬許可申請の手続きでお悩みの方へ。専門の行政書士によるサポートをご案内します。無料相談受付中。",
+    title: "改葬手続き対応の行政書士相談・紹介｜お墓じまいナビ",
+    description: "改葬許可申請・墓じまい手続きに対応する行政書士を地域別に紹介。改葬許可申請書の作成・提出代行・離橉交渉サポートを専門に行う行政書士への無料相談・お問い合わせを受付中。お墓じまい・改葬・墓じまいの手続きでお困りの方はお気軽にどうぞ。",
   path: '/gyoseishoshi',
 })
 
