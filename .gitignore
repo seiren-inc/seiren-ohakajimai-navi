@@ -63,3 +63,4 @@ data/imports/yasuda_municipality_links*.json
 
 !data/imports/pending.json
 !data/imports/municipality_map.json
+pnpm-lock.yaml
