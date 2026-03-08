@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+import { submitToIndexNow } from "@/lib/indexnow"
 
 // prisma generate 前は型未解決のため any 経由
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -128,6 +129,11 @@ export async function toggleApproval(id: string, isApproved: boolean) {
 
     await recordAuditLog(id, isApproved ? "APPROVE" : "UNAPPROVE", { isApproved: !isApproved }, { isApproved })
 
+    if (isApproved) {
+        // 承認されたらBing等の検索エンジンに通知
+        await submitToIndexNow([`https://www.ohakajimai-navi.jp/gyoseishoshi/${id}`])
+    }
+
     revalidatePath("/admin/gyoseishoshi")
 }
 
@@ -141,6 +147,11 @@ export async function toggleActive(id: string, isActive: boolean) {
     })
 
     await recordAuditLog(id, isActive ? "ACTIVATE" : "SUSPEND", { isActive: !isActive }, { isActive })
+
+    if (isActive) {
+        // 公開に切り替わったらBing等の検索エンジンに通知
+        await submitToIndexNow([`https://www.ohakajimai-navi.jp/gyoseishoshi/${id}`])
+    }
 
     revalidatePath("/admin/gyoseishoshi")
 }
@@ -170,6 +181,11 @@ export async function updatePaymentStatus(id: string, paymentStatus: string) {
     })
 
     await recordAuditLog(id, "PAYMENT_UPDATE", null, { paymentStatus })
+
+    if (paymentStatus === "PAID") {
+        // 支払いが完了して公開状態になったらBing等の検索エンジンに通知
+        await submitToIndexNow([`https://www.ohakajimai-navi.jp/gyoseishoshi/${id}`])
+    }
 
     revalidatePath("/admin/gyoseishoshi")
 }
