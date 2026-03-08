@@ -1,6 +1,5 @@
 import { MetadataRoute } from 'next'
 import { prisma } from '@/lib/prisma'
-import { getBlogSummaries } from '@/lib/blog'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
@@ -64,13 +63,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     // ブログ（コラム）の動的ページ
-    const blogPosts = getBlogSummaries()
-    const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-        url: `${BASE_URL}/column/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-    }))
+    let blogRoutes: MetadataRoute.Sitemap = []
+    try {
+        const { getBlogSummaries } = await import('@/lib/blog')
+        const blogPosts = getBlogSummaries()
+        blogRoutes = blogPosts.map((post) => ({
+            url: `${BASE_URL}/column/${post.slug}`,
+            lastModified: new Date(post.date),
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        }))
+    } catch {
+        // blog モジュールが利用できない場合はスキップ
+    }
 
     return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes, ...getGyoseishoshiPrefRoutes(BASE_URL, now), ...blogRoutes]
 }
