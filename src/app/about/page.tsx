@@ -4,6 +4,7 @@ import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { ArticleJsonLd } from "@/components/seo/page-json-ld"
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 import { AuthorJsonLd } from "@/components/seo/author-json-ld"
@@ -25,6 +26,30 @@ const aboutFaqs = [
     question: '墓じまいにどのくらいの期間がかかりますか？',
     answer: '一般的に2〜4ヶ月程度が目安です。改葬許可証の発行期間（市区町村により数日〜2週間）、墓石撤去工事の日程調整、寂院・莫a園との調整などが含まれます。廃備から山間の墓地、自治体の対応速度によって大きく左右されます。お急ぎの場合は个別にご相談ください。',
   },
+  {
+    question: '親族の同意は必要ですか？',
+    answer: '法律上は祭祀承継者（お墓の継承者）の独断で進めることも可能ですが、後の親族間トラブルを防ぐため、事前に親族間で話し合い、同意を得ることを強くおすすめします。お墓じまいはご家族全体の問題です。',
+  },
+  {
+    question: '離檀料（高額な請求）が不安ですがどうすればいいですか？',
+    answer: '離檀料に法的な支払い義務はありませんが、これまでのお礼として「お布施」を包むのが一般的です（相場は3万〜10万円程度）。もし高額な請求を受けた場合は、すぐに支払わずに行政書士や弊社のような専門業者にご相談ください。',
+  },
+  {
+    question: '改葬と墓じまいの違いは何ですか？',
+    answer: '「墓じまい」はお墓を解体・撤去して更地に戻す行為自体を指します。「改葬」は、元のお墓から新しい納骨先へ遺骨を移動させる法的な手続き全体を指します。お墓じまいをするには、必ず改葬の手続きを伴います。',
+  },
+  {
+    question: '遠方にあるお墓でも対応してもらえますか？',
+    answer: 'はい、全国どこでも対応可能です。ご実家が遠方でなかなか現地に行けない場合でも、弊社スタッフが現地に赴き、写真や動画で状況をご報告しながら手続きや工事を進めることができます。',
+  },
+  {
+    question: '遺骨の状態が悪くても（泥だらけ・水浸し）大丈夫ですか？',
+    answer: '古いお墓の場合、カロート（納骨室）内に水が溜まり、骨壺や遺骨が汚れているケースがよくあります。弊社では取り出した遺骨の「洗骨（洗浄）」や「乾燥」を専用設備で行い、綺麗な状態にしてから新しい納骨先へお渡しします。',
+  },
+  {
+    question: '改葬許可証がないとどうなりますか？',
+    answer: '改葬許可証がないまま遺骨を別のお墓や納骨堂へ納めることは、「墓地、埋葬等に関する法律」違反となり、事実上納骨を拒否されます。自宅供養や一部の海洋散骨を除き、必ず事前の取得が必要です。',
+  },
 ]
 
 export const metadata = constructMetadata({
@@ -37,6 +62,12 @@ export const metadata = constructMetadata({
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "ホーム", url: "https://www.ohakajimai-navi.jp" },
+          { name: "お墓じまいとは", url: "https://www.ohakajimai-navi.jp/about" },
+        ]}
+      />
       <ArticleJsonLd
         headline="お墓じまいとは？改葬・墓じまいの意味・手続き・費用をわかりやすく解説"
         description="お墓じまい（改葬）とは現在のお墓を撤去し遺骨を別の供養先へ移す手続き。改葬と墓じまいの違い・改葬許可証の取得方法・費用相場（30万〜100万円）・注意点を解説。"
