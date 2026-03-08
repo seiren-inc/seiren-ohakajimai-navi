@@ -5,6 +5,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
 import { ArticleJsonLd } from '@/components/seo/page-json-ld'
 import { AuthorJsonLd } from '@/components/seo/author-json-ld'
+import { FaqJsonLd } from '@/components/seo/faq-json-ld'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
@@ -90,6 +91,9 @@ export default async function BlogPostPage({ params }: PageProps) {
         description={metadata.description}
         datePublished={metadata.date}
       />
+      {metadata.faqs && metadata.faqs.length > 0 && (
+        <FaqJsonLd faqs={metadata.faqs} />
+      )}
 
       {/* Header */}
       <header className="border-b border-neutral-200 bg-white px-6 py-8 md:py-12">
