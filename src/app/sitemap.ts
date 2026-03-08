@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { prisma } from '@/lib/prisma'
+import { getBlogSummaries } from '@/lib/blog'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
@@ -18,7 +19,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${BASE_URL}/kaisoukyoka`, priority: 0.8, changeFrequency: 'weekly'  as const },
         { url: `${BASE_URL}/kaissou`,     priority: 0.8, changeFrequency: 'weekly'  as const },
         { url: `${BASE_URL}/gyoseishoshi`, priority: 0.8, changeFrequency: 'weekly' as const },
+        { url: `${BASE_URL}/sankotsu`,     priority: 0.8, changeFrequency: 'monthly' as const },
+        { url: `${BASE_URL}/ridanryou`,    priority: 0.7, changeFrequency: 'monthly' as const },
+        { url: `${BASE_URL}/kaisougo`,     priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/company`,     priority: 0.7, changeFrequency: 'monthly' as const },
+        { url: `${BASE_URL}/column`,      priority: 0.8, changeFrequency: 'weekly'  as const },
         { url: `${BASE_URL}/contact`,     priority: 0.7, changeFrequency: 'monthly' as const },
     ].map((r) => ({ ...r, lastModified: now }))
 
@@ -58,7 +63,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         // DB接続エラー時はスキップ
     }
 
-    return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes, ...getGyoseishoshiPrefRoutes(BASE_URL, now)]
+    // ブログ（コラム）の動的ページ
+    const blogPosts = getBlogSummaries()
+    const blogRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+        url: `${BASE_URL}/column/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+    }))
+
+    return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes, ...getGyoseishoshiPrefRoutes(BASE_URL, now), ...blogRoutes]
 }
 
 function getGyoseishoshiPrefRoutes(baseUrl: string, now: Date): MetadataRoute.Sitemap {
