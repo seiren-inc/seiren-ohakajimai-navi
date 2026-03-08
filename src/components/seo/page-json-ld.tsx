@@ -34,8 +34,8 @@ export function WebSiteJsonLd() {
 }
 
 /**
- * Article JSON-LD — 解説記事・ガイドページ用
- * https://schema.org/Article
+ * Article JSON-LD — コラム記事（BlogPosting）用
+ * https://schema.org/BlogPosting
  */
 interface ArticleJsonLdProps {
     headline: string
@@ -44,6 +44,7 @@ interface ArticleJsonLdProps {
     datePublished?: string
     dateModified?: string
     imagePath?: string
+    keywords?: string[]
 }
 
 export function ArticleJsonLd({
@@ -53,11 +54,12 @@ export function ArticleJsonLd({
     datePublished = '2024-01-01',
     dateModified,
     imagePath = '/og-image.jpg',
+    keywords = [],
 }: ArticleJsonLdProps) {
     const BASE = 'https://www.ohakajimai-navi.jp'
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': 'Article',
+        '@type': 'BlogPosting',
         headline,
         description,
         url: url.startsWith('http') ? url : `${BASE}${url}`,
@@ -65,17 +67,31 @@ export function ArticleJsonLd({
         datePublished,
         dateModified: dateModified ?? datePublished,
         inLanguage: 'ja-JP',
+        ...(keywords.length > 0 && { keywords: keywords.join(', ') }),
         author: {
-            '@type': 'Organization',
-            '@id': `${BASE}/#organization`,
-            name: '株式会社清蓮',
+            '@type': 'Person',
+            name: '眞如理恵',
+            jobTitle: '代表取締役',
+            worksFor: {
+                '@id': `${BASE}/#organization`,
+            },
+            url: `${BASE}/company`,
         },
         publisher: {
             '@id': `${BASE}/#organization`,
         },
+        isPartOf: {
+            '@type': 'Blog',
+            '@id': `${BASE}/column`,
+            name: 'お墓じまいナビ お役立ちコラム',
+        },
         mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': url.startsWith('http') ? url : `${BASE}${url}`,
+        },
+        speakable: {
+            '@type': 'SpeakableSpecification',
+            cssSelector: ['h1', 'h2', 'article p:first-of-type'],
         },
     }
 
