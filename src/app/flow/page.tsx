@@ -167,7 +167,7 @@ export default function FlowPage() {
         <div className="mx-auto max-w-3xl">
           <Breadcrumb items={[{ name: "ご依頼の流れ", href: "/flow" }]} className="mb-6 justify-center" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-600 mb-2">Flow</p>
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
+          <h1 className="text-xl font-bold tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">
             ご依頼の流れ
           </h1>
           <p className="mx-auto mt-6 max-w-[44ch] text-[17px] leading-relaxed text-neutral-600">
@@ -289,7 +289,7 @@ export default function FlowPage() {
       {/* ─── CTA ─── */}
       <div className="border-t border-neutral-100 bg-neutral-900">
         <div className="mx-auto max-w-3xl px-6 py-20 text-center">
-          <h2 className="text-2xl font-bold text-white md:text-3xl">
+          <h2 className="text-xl font-bold text-white md:text-2xl lg:text-3xl">
             まずは無料でご相談ください
           </h2>
           <p className="mt-3 text-sm text-neutral-400">見積り無料。強引な勧誘はしません。</p>

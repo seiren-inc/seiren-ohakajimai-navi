@@ -116,7 +116,7 @@ export default function ReKaisouGuide() {
           </p>
           <h2
             id="reKaisouGuide-heading"
-            className="text-2xl md:text-3xl font-bold tracking-tight text-[#1D1D1F]"
+            className="text-lg font-bold tracking-tight text-[#1D1D1F] md:text-2xl"
           >
             改葬（お墓じまい）の手続きについて
           </h2>

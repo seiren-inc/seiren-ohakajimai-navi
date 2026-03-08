@@ -129,14 +129,14 @@ export default async function MunicipalityPage(props: PageProps) {
                 {/* Main Content */}
                 <div className="space-y-10">
                     <div className="space-y-4">
-                        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{municipality.name}の改葬手続き</h1>
+                        <h1 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">{municipality.name}の改葬手続き</h1>
                         <p className="text-muted-foreground text-lg">
                             {municipality.prefectureName}{municipality.name}でのお墓じまい（改葬）に必要な書類や窓口をご案内します。
                         </p>
                     </div>
 
                     <section className="space-y-6">
-                        <h2 className="text-2xl font-bold border-b pb-2">1. 改葬許可申請書の入手</h2>
+                        <h2 className="text-lg font-bold border-b pb-2 md:text-xl">1. 改葬許可申請書の入手</h2>
                         <Card>
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-2">
@@ -199,7 +199,7 @@ export default async function MunicipalityPage(props: PageProps) {
                     </section>
 
                     <section className="space-y-6">
-                        <h2 className="text-2xl font-bold border-b pb-2">2. 手続きの流れ</h2>
+                        <h2 className="text-lg font-bold border-b pb-2 md:text-xl">2. 手続きの流れ</h2>
                         <div className="space-y-4">
                             <div className="flex gap-4">
                                 <div className="flex flex-col items-center">
@@ -241,7 +241,7 @@ export default async function MunicipalityPage(props: PageProps) {
                         <div className="mt-16 pt-10 border-t">
                             <div className="flex items-center gap-2 mb-6">
                                 <UserCheck className="h-6 w-6 text-primary" />
-                                <h2 className="text-2xl font-bold">{municipality.prefectureName}対応の提携行政書士</h2>
+                                <h2 className="text-lg font-bold md:text-xl">{municipality.prefectureName}対応の提携行政書士</h2>
                             </div>
                             <p className="text-muted-foreground mb-6">
                                 {municipality.name}での改葬手続きに不安がある方は、対応エリアの専門家に代行を依頼することができます。

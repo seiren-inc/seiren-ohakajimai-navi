@@ -358,7 +358,7 @@ export default function HomepageClient() {
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
-              <h1 className="typography-heading mt-5 text-2xl font-semibold leading-tight tracking-tight text-neutral-900 sm:text-4xl md:text-5xl lg:text-6xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
+              <h1 className="typography-heading mt-5 text-xl font-semibold leading-tight tracking-tight text-neutral-900 sm:text-3xl md:text-4xl lg:text-5xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
               <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-neutral-700 md:text-lg">
                 改葬手続きの案内と書類サポート、提携行政書士の<br className="hidden md:block" />
                 ご紹介、墓石撤去、遺骨のケア、新しい供養先まで。<br className="hidden md:block" />
@@ -415,7 +415,7 @@ export default function HomepageClient() {
         <Reveal className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">選ばれる3つの理由</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">選ばれる3つの理由</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">安さだけではありません。法令遵守と確かな実績で選ばれています。</p>
             </div>
 
@@ -435,7 +435,7 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">01</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">全国対応と提携ネットワーク</h3>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-2xl lg:text-3xl">全国対応と提携ネットワーク</h3>
                   <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">全国の提携石材店と連携しているため、地域差のある手続きや工事も進めやすい体制です。</p>
                   <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">独自のネットワークで、地域ごとの条例や慣習に精通した優良石材店を手配します。</p>
                 </div>
@@ -456,7 +456,7 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">02</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">法令遵守の安心設計</h3>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-2xl lg:text-3xl">法令遵守の安心設計</h3>
                   <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">改葬手続きは「案内」と「行政書士紹介」に限定。違法リスクのある代行は行いません。</p>
                   <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">改葬許可申請の代理提出が必要な場合は、提携行政書士をご紹介します。</p>
                 </div>
@@ -477,7 +477,7 @@ export default function HomepageClient() {
                 </div>
                 <div className="min-w-0 w-full md:w-1/2">
                   <span className="text-[12px] font-semibold tracking-widest text-emerald-600">03</span>
-                  <h3 className="typography-heading mt-3 max-w-[22ch] text-2xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">離檀交渉サポート</h3>
+                  <h3 className="typography-heading mt-3 max-w-[22ch] text-xl font-semibold leading-[1.2] tracking-tight text-neutral-900 md:text-2xl lg:text-3xl">離檀交渉サポート</h3>
                   <p className="typography-body mt-5 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">寺院・墓地管理者との離檀交渉で悩む方が多い領域を、実務目線でサポートします。</p>
                   <p className="typography-body mt-4 max-w-[640px] wrap-break-word text-base leading-[1.9] text-neutral-500 md:text-lg">高額な離檀料を請求された場合もご相談ください。</p>
                   <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
@@ -496,7 +496,7 @@ export default function HomepageClient() {
         <Reveal className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">サービス内容</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">サービス内容</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お墓じまいに関わるすべての工程をサポートします。</p>
             </div>
 
@@ -524,7 +524,7 @@ export default function HomepageClient() {
         <Reveal id="kaisou-steps" className="py-24 md:py-36">
           <div className="mx-auto max-w-6xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">改葬手続きとは</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">改葬手続きとは</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。墓じまいでは「改葬許可証」の取得が必要になります。</p>
             </div>
 
@@ -590,7 +590,7 @@ export default function HomepageClient() {
         <Reveal className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-5xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">私たちの対応範囲</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">私たちの対応範囲</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">法令を遵守し、できることとできないことを明確にしています。</p>
             </div>
 
@@ -661,7 +661,7 @@ export default function HomepageClient() {
         <Reveal id="flow" className="py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">ご依頼の流れ</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">ご依頼の流れ</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お問い合わせから完了まで、5つのステップで進めます。</p>
             </div>
 
@@ -749,7 +749,7 @@ export default function HomepageClient() {
         <Reveal id="pricing" className="bg-neutral-50 py-24 md:py-36">
           <div className="mx-auto max-w-4xl px-6">
             <div className="mx-auto max-w-2xl text-center">
-              <h2 className="text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">料金について</h2>
+              <h2 className="text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">料金について</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現地状況で変動するため、まずは無料で概算をご案内します。追加費用が出やすいポイントも事前にご説明します。</p>
             </div>
 

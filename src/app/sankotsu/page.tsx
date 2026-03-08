@@ -57,7 +57,7 @@ export default function SankotsuPage() {
           <Breadcrumb items={[{ name: "海洋散骨とは", href: "/sankotsu" }]} />
           <div className="mx-auto max-w-4xl px-6 py-12 md:py-16">
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Scattering at Sea</p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+            <h1 className="mt-4 text-xl font-bold tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">
               海洋散骨とは
             </h1>
             <p className="mt-6 text-base leading-relaxed text-neutral-600 max-w-[50ch]">
@@ -70,7 +70,7 @@ export default function SankotsuPage() {
         <div className="mx-auto max-w-4xl px-6 py-16 space-y-16">
           {/* 基本説明 */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">海洋散骨（散骨）の基礎知識</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">海洋散骨（散骨）の基礎知識</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {[
                 {
@@ -108,7 +108,7 @@ export default function SankotsuPage() {
 
           {/* 注意点 */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">散骨を行う際の注意点</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">散骨を行う際の注意点</h2>
             <div className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-6 space-y-3">
               <div className="flex items-start gap-2"><AlertCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" /><p className="text-sm text-amber-800">漁場・海水浴場・港湾・航路付近では散骨できません</p></div>
               <div className="flex items-start gap-2"><AlertCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" /><p className="text-sm text-amber-800">自治体によっては散骨に関する独自条例がある場合があります</p></div>
@@ -119,7 +119,7 @@ export default function SankotsuPage() {
 
           {/* FAQ */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">よくある質問</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">よくある質問</h2>
             <div className="mt-6 divide-y divide-neutral-100 rounded-2xl border border-neutral-200">
               {faqs.map((item, i) => (
                 <details key={i} className="group px-6">

@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
           </div>
 
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-neutral-900 mb-6">
+          <h1 className="text-xl md:text-2xl lg:text-3xl font-bold leading-tight text-neutral-900 mb-6">
             {metadata.title}
           </h1>
 

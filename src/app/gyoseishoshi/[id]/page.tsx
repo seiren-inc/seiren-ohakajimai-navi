@@ -145,7 +145,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                         {/* 左カラム: 詳細情報 */}
                         <div className="md:col-span-2 space-y-8">
                             <div>
-                                <h1 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
+                                <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">
                                     {scrivener.officeName}
                                 </h1>
                                 {scrivener.representativeName && (

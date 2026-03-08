@@ -91,7 +91,7 @@ export default async function PrefectureScrivenerPage(props: PageProps) {
             <section className="py-12 md:py-16">
                 <div className="container max-w-5xl px-4">
                     <div className="mb-8">
-                        <h1 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
+                        <h1 className="text-xl font-bold text-neutral-900 sm:text-2xl">
                             {pref.name}の行政書士一覧
                         </h1>
                         <p className="mt-2 text-sm text-neutral-500">

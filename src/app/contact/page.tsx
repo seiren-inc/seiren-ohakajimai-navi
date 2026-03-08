@@ -14,7 +14,7 @@ export default function ContactPage() {
             <Breadcrumb items={[{ name: "お問い合わせ", href: "/contact" }]} />
             <div className="container max-w-3xl py-12 md:py-20 px-4 md:px-6">
                 <div className="text-center mb-10">
-                    <h1 className="typography-heading mx-auto max-w-[28ch] text-3xl font-bold tracking-tight sm:text-4xl">お問い合わせ・無料見積り</h1>
+                    <h1 className="typography-heading mx-auto max-w-[28ch] text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">お問い合わせ・無料見積り</h1>
                     <p className="typography-body mt-5 text-muted-foreground max-w-[44ch] mx-auto">
                         以下のフォームよりお気軽にご相談ください。
                         担当者が内容を確認次第、2営業日以内にご連絡させていただきます。

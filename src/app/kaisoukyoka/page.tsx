@@ -75,7 +75,7 @@ export default async function KaisoukyokaPage() {
       {/* ページタイトル + 説明文 */}
       <section className="border-b bg-muted/30 px-4 py-10 text-center md:py-14">
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+          <h1 className="text-balance text-xl font-bold tracking-tight text-foreground sm:text-2xl md:text-3xl">
             改葬許可申請書ダウンロード 全国一覧
           </h1>
           <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">

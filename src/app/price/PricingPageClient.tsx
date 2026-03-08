@@ -233,7 +233,7 @@ export default function PricingPageClient() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
               {/* Text Content (Left) */}
               <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="typography-heading text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#1D1D1F] mb-6">
+                <h3 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-6 md:text-3xl lg:text-4xl">
                   明確な料金で<br />安心の墓じまい
                 </h3>
                 <p className="typography-body max-w-[34ch] text-[17px] text-[#6E6E73] mb-10">
@@ -324,7 +324,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#FFFFFF]">
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center mb-16">
-            <h2 className="typography-heading text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto">基本サービス料金</h2>
+            <h2 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto md:text-2xl">基本サービス料金</h2>
             <p className="typography-body text-[#6E6E73] max-w-[44ch] mx-auto">お墓じまいに必要な2つの基本工程です。</p>
           </div>
 
@@ -460,7 +460,7 @@ export default function PricingPageClient() {
       {/* [5] 料金の透明性 (Dark Mode) */}
       <Section className="py-24 bg-[#1D1D1F] text-white print:bg-white! print:text-black! print:border-y!">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-8 text-balance leading-tight">
+          <h2 className="text-xl font-bold tracking-tight mb-8 text-balance leading-tight md:text-3xl lg:text-4xl">
             見積り後の追加費用は、<br className="max-md:hidden"/>原則ありません。
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-white/70 leading-relaxed mb-12 print:text-black!">
@@ -481,7 +481,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#F5F5F7] print:bg-white!">
         <div className="mx-auto max-w-4xl px-6">
           <div className="text-center mb-16">
-            <h2 className="typography-heading text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto">他社サービスとの違い</h2>
+            <h2 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto md:text-2xl">他社サービスとの違い</h2>
             <p className="typography-body text-[#6E6E73] max-w-[48ch] mx-auto">なぜ「お墓じまいナビ」が選ばれるのか、明確な理由があります。</p>
           </div>
           
@@ -522,7 +522,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#FFFFFF]">
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center mb-16">
-            <h2 className="typography-heading text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto">オプション</h2>
+            <h2 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto md:text-2xl">オプション</h2>
             <p className="typography-body text-[#6E6E73] max-w-[48ch] mx-auto">基本サービスに組み合わせてご利用いただけるサポートです。</p>
           </div>
 
@@ -550,7 +550,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#F5F5F7] print:bg-white!">
         <div className="mx-auto max-w-5xl px-6">
           <div className="text-center mb-16">
-            <h2 className="typography-heading text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto">料金シミュレーション</h2>
+            <h2 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 max-w-[28ch] mx-auto md:text-2xl">料金シミュレーション</h2>
             <p className="typography-body text-[#6E6E73] max-w-[48ch] mx-auto">簡単な条件を選ぶだけで、すぐにおおよその費用がわかります。</p>
           </div>
 
@@ -721,7 +721,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#FFFFFF]">
         <div className="mx-auto max-w-3xl px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4">お問合せから完了まで</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 md:text-2xl">お問合せから完了まで</h2>
             <p className="text-[#6E6E73]">お見積りは4つのステップで完了。ご相談から現地調査まですべて無料です。</p>
           </div>
 
@@ -758,7 +758,7 @@ export default function PricingPageClient() {
       <Section className="py-20 md:py-28 bg-[#F5F5F7] print:bg-white!">
         <div className="mx-auto max-w-3xl px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-[#1D1D1F] mb-4">料金に関するよくある質問</h2>
+            <h2 className="text-xl font-bold tracking-tight text-[#1D1D1F] mb-4 md:text-2xl">料金に関するよくある質問</h2>
             <p className="text-[#6E6E73]">お客様からよくいただくご質問をご案内します。</p>
           </div>
 
@@ -796,7 +796,7 @@ export default function PricingPageClient() {
       {/* [11] Final CTA */}
       <section className="py-24 bg-[#1D1D1F] text-white print:bg-white! print:text-black!">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">まずは無料でご相談ください。</h2>
+          <h2 className="text-xl font-bold tracking-tight mb-6 text-balance md:text-3xl lg:text-4xl">まずは無料でご相談ください。</h2>
           <p className="mx-auto max-w-xl text-[17px] leading-[1.85] text-white/70 mb-12 print:text-black!">現地調査・お見積りはすべて無料です。お墓じまいの専門スタッフが丁寧にご対応します。</p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

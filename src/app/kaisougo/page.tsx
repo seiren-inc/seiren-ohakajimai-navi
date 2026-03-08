@@ -100,7 +100,7 @@ export default function KaisougoPage() {
           <Breadcrumb items={[{ name: "改葬後の供養先", href: "/kaisougo" }]} />
           <div className="mx-auto max-w-4xl px-6 py-12 md:py-16">
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">After Reinterment</p>
-            <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+            <h1 className="mt-4 text-xl font-bold tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">
               改葬後の供養先・遺骨の行き先を比較
             </h1>
             <p className="mt-6 text-base leading-relaxed text-neutral-600 max-w-[50ch]">
@@ -114,7 +114,7 @@ export default function KaisougoPage() {
 
           {/* 比較表 */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">供養先の選択肢を比較</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">供養先の選択肢を比較</h2>
             <div className="mt-8 space-y-6">
               {options.map((opt) => (
                 <div key={opt.name} className="rounded-2xl border border-neutral-200 p-6">
@@ -133,7 +133,7 @@ export default function KaisougoPage() {
 
           {/* FAQ */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">よくある質問</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">よくある質問</h2>
             <div className="mt-6 divide-y divide-neutral-100 rounded-2xl border border-neutral-200">
               {faqs.map((item, i) => (
                 <details key={i} className="group px-6">

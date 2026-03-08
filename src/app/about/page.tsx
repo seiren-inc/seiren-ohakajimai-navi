@@ -94,7 +94,7 @@ export default function AboutPage() {
             <div className="grid gap-12 md:grid-cols-2 md:items-center">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">About</p>
-                <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 md:text-4xl">
+                <h1 className="mt-4 text-xl font-bold tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">
                   お墓じまいとは
                 </h1>
                 <p className="mt-6 text-[17px] leading-relaxed text-neutral-600">
@@ -119,7 +119,7 @@ export default function AboutPage() {
 
           {/* 基礎知識グリッド */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">お墓じまい・改葬の基礎知識</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">お墓じまい・改葬の基礎知識</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-2">
               {[
                 {
@@ -165,7 +165,7 @@ export default function AboutPage() {
 
           {/* お墓じまいが増えている背景 */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">お墓じまいが増えている背景</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">お墓じまいが増えている背景</h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-neutral-600">
               <p>
                 少子化・核家族化の進行により、お墓の継承者がいない「無縁墓」が社会問題となっています。
@@ -197,7 +197,7 @@ export default function AboutPage() {
 
           {/* FAQ ミニ */}
           <section>
-            <h2 className="text-2xl font-bold text-neutral-900">よくある質問</h2>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">よくある質問</h2>
             <div className="mt-6 divide-y divide-neutral-100 rounded-2xl border border-neutral-200">
               {[
                 { q: "お墓じまいは自分でできますか？", a: "改葬許可申請書の記入・提出自体は自分で行うことができます。ただし、書類の取得や手続きの段取りが複雑なため、専門家のサポートを受けることをお勧めします。清蓮では手続きの案内・書類サポートを提供しています。" },

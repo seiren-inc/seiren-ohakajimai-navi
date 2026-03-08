@@ -99,7 +99,7 @@ export default async function PrefecturePage(props: PageProps) {
 
             <div className="max-w-4xl mx-auto space-y-10">
                 <div className="space-y-4">
-                    <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">{prefName}の改葬手続き情報</h1>
+                    <h1 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">{prefName}の改葬手続き情報</h1>
                     <p className="text-muted-foreground text-lg">
                         手続きを行う市区町村を選択してください。
                     </p>
@@ -134,7 +134,7 @@ export default async function PrefecturePage(props: PageProps) {
                     <div className="mt-16 pt-10 border-t">
                         <div className="flex items-center gap-2 mb-6">
                             <UserCheck className="h-6 w-6 text-primary" />
-                            <h2 className="text-2xl font-bold">{prefName}対応の提携行政書士</h2>
+                            <h2 className="text-lg font-bold md:text-2xl">{prefName}対応の提携行政書士</h2>
                         </div>
                         <p className="text-muted-foreground mb-6">
                             改葬の手続きに不安がある方は、地元の専門家に代行を依頼することができます。

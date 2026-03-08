@@ -14,6 +14,7 @@ const serviceItems = [
   { label: "お墓じまいとは", href: "/about", description: "お墓じまいの基礎知識" },
   { label: "ご依頼の流れ", href: "/flow", description: "相談からお墓じまい完了まで" },
   { label: "料金", href: "/price", description: "明朗な料金体系" },
+  { label: "お役立ちコラム", href: "/column", description: "費用や手続きの専門解説" },
 ]
 
 

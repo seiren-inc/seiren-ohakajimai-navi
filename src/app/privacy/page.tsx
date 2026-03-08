@@ -159,7 +159,7 @@ export default function PrivacyPage() {
       <div className="border-b border-neutral-100 bg-neutral-50">
         <div className="mx-auto max-w-3xl px-6 py-20">
 
-          <h1 className="mt-6 text-2xl font-bold tracking-tight text-neutral-900 md:text-4xl lg:text-5xl">
+          <h1 className="mt-6 text-xl font-bold tracking-tight text-neutral-900 md:text-3xl lg:text-4xl">
             Privacy Policy
           </h1>
           <p className="mt-3 text-lg font-medium text-neutral-900">プライバシーポリシー</p>

@@ -102,7 +102,7 @@ export default async function GyoseishoshiPage() {
                         行政書士マッチング
                     </p>
                     {/* Doc-05 §3-1, Doc-09 §3-1: H1 */}
-                    <h1 className="mt-4 text-3xl font-bold tracking-tight text-neutral-900 sm:text-4xl md:text-5xl leading-tight">
+                    <h1 className="mt-4 text-xl font-bold tracking-tight text-neutral-900 sm:text-2xl md:text-3xl leading-tight">
                         改葬許可申請、<br className="hidden sm:inline" />
                         ひとりで悩んでいませんか？
                     </h1>
@@ -131,7 +131,7 @@ export default async function GyoseishoshiPage() {
             {/* ===== 問題提起セクション（Doc-05 §3-2, Doc-13 §3②） ===== */}
             <section className="py-12 md:py-16 bg-white">
                 <div className="container max-w-3xl px-4">
-                    <h2 className="text-2xl font-bold text-center text-neutral-900 sm:text-3xl">
+                    <h2 className="text-lg font-bold text-center text-neutral-900 md:text-2xl">
                         改葬手続きでよくあるお悩み
                     </h2>
                     <ul className="mt-8 space-y-4">
@@ -157,7 +157,7 @@ export default async function GyoseishoshiPage() {
             {/* ===== できること / できないこと（Doc-05 §3-3） ===== */}
             <section className="py-16 md:py-20 bg-slate-50">
                 <div className="container max-w-5xl px-4">
-                    <h2 className="text-2xl font-bold text-center text-neutral-900 sm:text-3xl">
+                    <h2 className="text-lg font-bold text-center text-neutral-900 md:text-2xl">
                         行政書士が対応できること
                     </h2>
                     <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -216,7 +216,7 @@ export default async function GyoseishoshiPage() {
             {/* ===== 料金目安（Doc-05 §3-5） ===== */}
             <section className="py-16 md:py-20 bg-white">
                 <div className="container max-w-4xl px-4">
-                    <h2 className="text-2xl font-bold text-center text-neutral-900 sm:text-3xl">
+                    <h2 className="text-lg font-bold text-center text-neutral-900 md:text-2xl">
                         料金の目安
                     </h2>
                     <p className="mt-4 text-center text-sm text-neutral-600">
@@ -250,7 +250,7 @@ export default async function GyoseishoshiPage() {
                 <div className="container max-w-5xl px-4">
                     <div className="flex items-center gap-2 mb-8 justify-center">
                         <MapPin className="h-6 w-6 text-emerald-600" />
-                        <h2 className="text-2xl font-bold text-neutral-900 sm:text-3xl">
+                        <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">
                             地域から行政書士を探す
                         </h2>
                     </div>
@@ -281,7 +281,7 @@ export default async function GyoseishoshiPage() {
             {/* ===== 行政書士一覧（Doc-05 §3-4） ===== */}
             <section className="py-16 md:py-20 bg-slate-50">
                 <div className="container max-w-5xl px-4">
-                    <h2 className="text-2xl font-bold text-center text-neutral-900 sm:text-3xl">
+                    <h2 className="text-lg font-bold text-center text-neutral-900 md:text-2xl">
                         行政書士一覧
                     </h2>
                     <p className="mt-3 text-center text-sm text-neutral-600">
@@ -312,7 +312,7 @@ export default async function GyoseishoshiPage() {
             {/* ===== FAQ（Doc-05 §3-6） ===== */}
             <section className="py-16 md:py-20 bg-white">
                 <div className="container max-w-3xl px-4">
-                    <h2 className="text-2xl font-bold text-center text-neutral-900 sm:text-3xl">
+                    <h2 className="text-lg font-bold text-center text-neutral-900 md:text-2xl">
                         よくある質問
                     </h2>
                     <div className="mt-10 space-y-4">
@@ -344,7 +344,7 @@ export default async function GyoseishoshiPage() {
                     <p className="text-sm font-semibold uppercase tracking-widest text-emerald-200 mb-4">
                         行政書士の方へ
                     </p>
-                    <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                    <h2 className="text-xl font-bold text-white md:text-2xl">
                         お墓じまいナビに掲載しませんか？
                     </h2>
                     <p className="mt-4 text-emerald-100 text-sm leading-relaxed max-w-xl mx-auto">
@@ -376,7 +376,7 @@ export default async function GyoseishoshiPage() {
             <section id="contact-form" className="py-16 md:py-20 bg-slate-50 scroll-mt-20">
                 <div className="container max-w-3xl px-4">
                     <div className="text-center mb-10">
-                        <h2 className="text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">
+                        <h2 className="text-lg font-bold tracking-tight text-neutral-900 md:text-2xl">
                             無料相談フォーム
                         </h2>
                         <p className="mt-4 text-sm text-neutral-600 max-w-lg mx-auto">
