@@ -1,6 +1,5 @@
 import { notFound } from 'next/navigation'
 import { getBlogPost, getBlogSummaries } from '@/lib/blog'
-import { markdownToHtml } from '@/lib/markdown'
 import { constructMetadata } from '@/lib/seo'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
@@ -8,7 +7,8 @@ import { ArticleJsonLd } from '@/components/seo/page-json-ld'
 import { AuthorJsonLd } from '@/components/seo/author-json-ld'
 import { FaqJsonLd } from '@/components/seo/faq-json-ld'
 import { RelatedArticles } from '@/components/blog/RelatedArticles'
-import { Clock, Tag, ChevronRight } from 'lucide-react'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
 
@@ -37,6 +37,27 @@ export async function generateMetadata({ params }: PageProps) {
   })
 }
 
+// MDX Components for custom styling
+const components = {
+  h2: (props: any) => <h2 className="mt-12 mb-6 text-2xl font-bold text-neutral-900 pb-2 border-b-2 border-emerald-100" {...props} />,
+  h3: (props: any) => <h3 className="mt-8 mb-4 text-xl font-bold text-neutral-800 flex items-center gap-2 before:content-[''] before:block before:w-1.5 before:h-5 before:bg-emerald-500 before:rounded-full" {...props} />,
+  p: (props: any) => <p className="mb-6 leading-relaxed text-neutral-700 text-[16px] md:text-[17px]" {...props} />,
+  ul: (props: any) => <ul className="mb-6 ml-6 list-disc [&>li]:mt-2 text-neutral-700" {...props} />,
+  ol: (props: any) => <ol className="mb-6 ml-6 list-decimal [&>li]:mt-2 text-neutral-700 font-medium" {...props} />,
+  li: (props: any) => <li className="leading-relaxed" {...props} />,
+  a: (props: any) => <a className="text-emerald-600 underline underline-offset-4 hover:text-emerald-700" {...props} />,
+  strong: (props: any) => <strong className="font-bold text-neutral-900 bg-amber-50 px-1 rounded" {...props} />,
+  blockquote: (props: any) => (
+    <blockquote className="border-l-4 border-emerald-500 bg-emerald-50/50 p-4 my-6 rounded-r-lg text-neutral-700 italic" {...props} />
+  ),
+  InfoBox: ({ children, title }: { children: React.ReactNode; title?: string }) => (
+    <div className="my-8 rounded-xl border border-emerald-100 bg-emerald-50/50 p-5 overflow-hidden">
+      {title && <h4 className="flex items-center gap-2 font-bold text-emerald-800 mb-3"><Info className="w-5 h-5" />{title}</h4>}
+      <div className="text-neutral-700 text-sm leading-relaxed">{children}</div>
+    </div>
+  ),
+}
+
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params
   const post = getBlogPost(slug)
@@ -47,7 +68,6 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   const { metadata, content } = post
   const pageUrl = `${SITE_URL}/column/${metadata.slug}`
-  const htmlContent = markdownToHtml(content)
 
   return (
     <div className="min-h-screen bg-neutral-50 pb-20">
@@ -115,10 +135,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
       {/* Content */}
       <main className="mx-auto max-w-3xl px-6 py-12">
-        <article
-          className="prose prose-neutral md:prose-lg max-w-none"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
+        <article className="prose prose-neutral md:prose-lg max-w-none">
+          <MDXRemote source={content} components={components} />
+        </article>
 
         {/* Author block */}
         <div className="mt-16 rounded-2xl bg-white p-8 border border-neutral-200 shadow-sm text-center">
