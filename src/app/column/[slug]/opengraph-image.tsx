@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og'
-import { getBlogPost } from '@/lib/blog'
 
-export const runtime = 'edge'
+// Node.js ランタイムを使用（gray-matter/fs との互換性のため）
+// export const runtime = 'edge' は使用しない
 
 type Props = {
   params: Promise<{ slug: string }>
@@ -13,12 +13,23 @@ export const size = {
 }
 export const contentType = 'image/png'
 
+// スラッグからタイトル・カテゴリを取得（動的import でNode.js専用モジュールをEdge外で解決）
+async function getPostMeta(slug: string) {
+  try {
+    const { getBlogPost } = await import('@/lib/blog')
+    const post = getBlogPost(slug)
+    return {
+      title: post?.metadata.title ?? 'お役立ちコラム',
+      category: post?.metadata.category ?? '改葬・お墓じまい',
+    }
+  } catch {
+    return { title: 'お役立ちコラム', category: '改葬・お墓じまい' }
+  }
+}
+
 export default async function Image({ params }: Props) {
   const { slug } = await params
-  const post = getBlogPost(slug)
-
-  const title = post?.metadata.title ?? 'お役立ちコラム'
-  const category = post?.metadata.category ?? '改葬・お墓じまい'
+  const { title, category } = await getPostMeta(slug)
 
   return new ImageResponse(
     (
