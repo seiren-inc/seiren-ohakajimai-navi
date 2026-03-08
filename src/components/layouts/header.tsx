@@ -40,10 +40,10 @@ const relatedServices = [
   },
   {
     label: "お墓探しナビ",
-    href: "#",
+    href: "https://www.ohakanavi.jp",
     description: "全国の霊園・納骨堂を検索",
-    external: false,
-    comingSoon: true,
+    external: true,
+    comingSoon: false,
   },
 ]
 

@@ -34,8 +34,8 @@ import {
 // 関連サービスデータ（header.tsx と共通定義）
 const relatedServices = [
   { label: "散骨クルーズ", href: "https://www.sankotu-cruise.com/", description: "海洋散骨の専門サービス", external: true, comingSoon: false },
-  { label: "遠骨ラボ", href: "https://ikotsu-lab.com/", description: "遠骨の専門処理・粉骨", external: true, comingSoon: false },
-  { label: "お墓探しナビ", href: "#", description: "全国の霊団・納骨堂を検索", external: false, comingSoon: true },
+  { label: "遺骨ラボ", href: "https://ikotsu-lab.com/", description: "遺骨の専門処理・粉骨", external: true, comingSoon: false },
+  { label: "お墓探しナビ", href: "https://www.ohakanavi.jp", description: "全国の霊園・納骨堂を検索", external: true, comingSoon: false },
 ]
 
 // ----------------------------------------------------------------
