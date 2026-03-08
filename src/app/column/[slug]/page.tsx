@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
 import { ArticleJsonLd } from '@/components/seo/page-json-ld'
 import { AuthorJsonLd } from '@/components/seo/author-json-ld'
 import { FaqJsonLd } from '@/components/seo/faq-json-ld'
+import { RelatedArticles } from '@/components/blog/RelatedArticles'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
@@ -153,6 +154,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             </Link>
           </div>
         </div>
+
+        {/* 関連記事 */}
+        <RelatedArticles currentSlug={metadata.slug} tags={metadata.tags} />
       </main>
     </div>
   )

@@ -89,6 +89,10 @@ export function OrganizationJsonLd() {
                 },
             ],
         },
+        knowsAbout: [
+            '改葬手続き', 'お墓じまい', '墓石撤去工事', '離檀交渉',
+            '海洋散骨', '粉骨', '洗骨', '永代供養', '改葬許可申請書',
+        ],
     }
 
     return (
