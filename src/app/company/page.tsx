@@ -7,7 +7,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
 const companyFaqs = [
   {

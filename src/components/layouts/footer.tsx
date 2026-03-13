@@ -38,6 +38,9 @@ export function Footer() {
                             <li><Link href="/kaissou/kanagawa" className="hover:underline">神奈川県</Link></li>
                             <li><Link href="/kaissou/saitama" className="hover:underline">埼玉県</Link></li>
                             <li><Link href="/kaissou/chiba" className="hover:underline">千葉県</Link></li>
+                            <li><Link href="/kaissou/osaka" className="hover:underline">大阪府</Link></li>
+                            <li><Link href="/kaissou/aichi" className="hover:underline">愛知県</Link></li>
+                            <li><Link href="/kaissou/fukuoka" className="hover:underline">福岡県</Link></li>
                         </ul>
                     </div>
                     <div>
@@ -49,7 +52,30 @@ export function Footer() {
                         </ul>
                     </div>
                 </div>
-                <div className="mt-10 pt-6 border-t space-y-4">
+                {/* SEOキーワードリンク */}
+                <div className="mt-8 pt-6 border-t">
+                    <div className="flex flex-wrap gap-x-4 gap-y-2 text-xs text-muted-foreground">
+                        <Link href="/price" className="hover:underline hover:text-foreground">お墓じまい 費用</Link>
+                        <Link href="/flow" className="hover:underline hover:text-foreground">改葬手続き 流れ</Link>
+                        <Link href="/kaisoukyoka" className="hover:underline hover:text-foreground">改葬許可申請書 ダウンロード</Link>
+                        <Link href="/ridanryou" className="hover:underline hover:text-foreground">離檀料 相場</Link>
+                        <Link href="/sankotsu" className="hover:underline hover:text-foreground">海洋散骨</Link>
+                        <Link href="/kaisougo" className="hover:underline hover:text-foreground">永代供養とは</Link>
+                        <Link href="/gyoseishoshi" className="hover:underline hover:text-foreground">行政書士 改葬</Link>
+                        <Link href="/column/how-to-get-kaisoukyoka" className="hover:underline hover:text-foreground">改葬許可証 取り方</Link>
+                        <Link href="/column/cost-of-hakajimai" className="hover:underline hover:text-foreground">墓じまい 費用相場</Link>
+                        <Link href="/column/kaisou-vs-hakajimai" className="hover:underline hover:text-foreground">改葬と墓じまいの違い</Link>
+                        <Link href="/about" className="hover:underline hover:text-foreground">お墓じまいとは</Link>
+                        <Link href="/column/ridanryou-soba" className="hover:underline hover:text-foreground">離檀料とは</Link>
+                        <Link href="/column/kaiyou-sankotsu-guide" className="hover:underline hover:text-foreground">海洋散骨ガイド</Link>
+                        <Link href="/column/eitaikuyo-toha" className="hover:underline hover:text-foreground">永代供養 費用</Link>
+                        <Link href="/kaissou/tokyo" className="hover:underline hover:text-foreground">東京都 改葬</Link>
+                        <Link href="/kaissou/osaka" className="hover:underline hover:text-foreground">大阪府 改葬</Link>
+                        <Link href="/kaissou/aichi" className="hover:underline hover:text-foreground">愛知県 改葬</Link>
+                        <Link href="/kaissou/fukuoka" className="hover:underline hover:text-foreground">福岡県 改葬</Link>
+                    </div>
+                </div>
+                <div className="mt-6 pt-6 border-t space-y-4">
                     {/* E-E-A-T: 信頼性・専門性シグナル */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-muted-foreground">
                         <div>

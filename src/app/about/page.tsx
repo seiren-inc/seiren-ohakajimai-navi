@@ -104,7 +104,7 @@ export default function AboutPage() {
               <div className="relative aspect-4/3 overflow-hidden rounded-2xl md:aspect-auto md:h-full md:min-h-[280px]">
                 <Image
                   src="/images/hero-garden-v3.jpg"
-                  alt="静かな日本の庭園風景"
+                  alt="お墓じまい後に整備された落ち着いた雰囲気の日本庭園風永代供養墓"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"

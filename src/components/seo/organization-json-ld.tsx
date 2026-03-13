@@ -62,6 +62,8 @@ export function OrganizationJsonLd() {
             'https://line.me/R/ti/p/@956lieqb',
             'https://www.instagram.com/sankotu.cruise_seiren',
             'https://www.facebook.com/seirenjapan',
+            'https://twitter.com/seiren_official',
+            'https://www.google.com/maps/place/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E6%B8%85%E8%93%AE/@35.3960962,139.5274523,16z/data=!4m14!1m7!3m6!1s0x60185a9d066972b1:0xb59c13b10318f6c0!2z5qCq5byP5Lya56S-5riF6JOu!8m2!3d35.3960962!4d139.5300272!16s%2Fg%2F11h9vq64qd!3m5!1s0x60185a9d066972b1:0xb59c13b10318f6c0!8m2!3d35.3960962!4d139.5300272!16s%2Fg%2F11h9vq64qd?entry=ttu',
         ],
         hasOfferCatalog: {
             '@type': 'OfferCatalog',

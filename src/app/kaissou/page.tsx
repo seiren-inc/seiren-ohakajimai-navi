@@ -8,7 +8,7 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb"
 // Revalidate the page every 24 hours
 export const revalidate = 86400
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
     title: "改葬手続き・改葬許可申請書ダウンロード｜全国都道府県・市区町村別まとめ",

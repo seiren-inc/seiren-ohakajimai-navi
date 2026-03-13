@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
 type PageProps = {
     params: Promise<{ id: string }>

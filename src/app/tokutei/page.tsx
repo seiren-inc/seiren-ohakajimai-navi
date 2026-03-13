@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
 export const metadata = constructMetadata({
   title: "特定商取引法に基づく表記｜お墓じまいナビ（株式会社清蓮）",

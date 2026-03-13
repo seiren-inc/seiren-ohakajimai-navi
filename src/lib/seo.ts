@@ -19,6 +19,7 @@ export function constructMetadata({
     icons = undefined,
     noIndex = false,
     path,
+    ogType = 'website',
 }: {
     title?: string
     description?: string
@@ -27,6 +28,8 @@ export function constructMetadata({
     noIndex?: boolean
     /** ページのパス（例: '/about'）。指定するとcanonical URLが設定される */
     path?: string
+    /** og:typeの指定（デフォルト: 'website'、コラム記事は 'article'） */
+    ogType?: 'website' | 'article'
 } = {}): Metadata {
     const absoluteImageUrl = new URL(image, siteConfig.url).toString()
     const canonicalUrl = path
@@ -53,7 +56,7 @@ export function constructMetadata({
             url: canonicalUrl ?? siteConfig.url,
             siteName: siteConfig.name,
             locale: 'ja_JP',
-            type: 'website',
+            type: ogType,
         },
         twitter: {
             card: 'summary_large_image',

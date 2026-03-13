@@ -11,7 +11,7 @@ import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>

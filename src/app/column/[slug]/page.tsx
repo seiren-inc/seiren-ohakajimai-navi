@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${post.metadata.title}｜お墓じまい・改葬に関するお役立ちコラム`,
     description: post.metadata.description,
     path: `/column/${slug}`,
+    ogType: 'article',
   })
 }
 

@@ -13,7 +13,7 @@ export const metadata: Metadata = constructMetadata({
   path: '/kaisoukyoka',
 })
 
-const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://ohakajimai-navi.jp'
+const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
 export default async function KaisoukyokaPage() {
   const municipalities = await prisma.municipality.findMany({

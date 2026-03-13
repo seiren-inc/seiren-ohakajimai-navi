@@ -376,7 +376,7 @@ export default function PricingPageClient() {
                   {/* BEFORE Image */}
                   <div className="flex-1 relative overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/pricing-before.jpg" alt="お墓の撤去前" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="/pricing-before.jpg" alt="お墓じまい前の墓石がある状態の墓地区画" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                     <div className="absolute inset-0 bg-black/10" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
                       <span className="text-[10px] md:text-xs font-bold text-white tracking-widest bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">BEFORE</span>
@@ -389,7 +389,7 @@ export default function PricingPageClient() {
                   {/* AFTER Image */}
                   <div className="flex-1 relative overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/pricing-after.jpg" alt="お墓の撤去後" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <img src="/pricing-after.jpg" alt="お墓じまい完了後に更地に整地された墓地区画" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                     <div className="absolute inset-0 bg-black/5" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
                       <span className="text-[10px] md:text-xs font-bold text-emerald-900 tracking-widest bg-emerald-100/90 backdrop-blur-md px-3 py-1 rounded-full">AFTER</span>
