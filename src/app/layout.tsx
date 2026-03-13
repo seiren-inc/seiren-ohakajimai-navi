@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   ...constructMetadata(),
 }
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID
+  const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
+
   return (
     <html lang="ja">
       <body className={cn(
