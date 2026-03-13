@@ -10,6 +10,7 @@ import { WebSiteJsonLd } from '@/components/seo/website-json-ld'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { RagChatbot } from '@/components/chat/RagChatbot'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const fontSans = Noto_Sans_JP({
   subsets: ['latin'],
@@ -40,29 +41,16 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased flex flex-col",
         fontSans.variable
       )}>
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ST0LJE688M"
-          strategy="afterInteractive"
-        />
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-ST0LJE688M');
-          `}
-        </Script>
         {/* Microsoft Clarity */}
-        <Script id="clarity-init" strategy="afterInteractive">
-          {`
+        <Script id="clarity-init" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
             (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
             })(window, document, "clarity", "script", "vqwdzj2jcl");
-          `}
-        </Script>
+          `
+        }} />
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
@@ -72,6 +60,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
       </body>
+      <GoogleAnalytics gaId="G-ST0LJE688M" />
     </html>
   )
 }

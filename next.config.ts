@@ -2,16 +2,16 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://www.clarity.ms;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.googletagmanager.com https://www.clarity.ms;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https:;
+    img-src 'self' blob: data: https: https://*.google-analytics.com https://*.googletagmanager.com;
     font-src 'self' data:;
     object-src 'none';
     base-uri 'self';
     form-action 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests;
-    connect-src 'self' https://*.supabase.co https://region1.google-analytics.com https://*.clarity.ms;
+    connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms;
 `;
 
 const securityHeaders = [
