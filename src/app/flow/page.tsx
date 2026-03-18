@@ -3,6 +3,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { HowToJsonLd, kaisouHowToSteps } from "@/components/seo/howto-json-ld"
 import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 import { AuthorJsonLd } from "@/components/seo/author-json-ld"
+import { VideoJsonLd } from "@/components/seo/video-json-ld"
 import {
   MessageCircle,
   FileText,
@@ -160,6 +161,15 @@ export default function FlowPage() {
         description="お墓じまいの相談から現地調査・改葬手続き・墓石撤去工事までの全工程を専門スタッフが丁寧に説明。"
         datePublished="2024-01-15"
         dateModified="2026-03-08"
+      />
+      <VideoJsonLd
+        name="お墓じまいの流れ・全工程をわかりやすく解説｜株式会社清蓮"
+        description="無料相談から書類確認・現地調査・ご契約・墓石撤去工事・遺骨ケア・改葬先への移送まで、お墓じまいの全7ステップを動画でわかりやすく解説します。"
+        thumbnailUrl="https://www.ohakajimai-navi.jp/og-image.jpg"
+        uploadDate="2026-03-08"
+        duration="PT7M"
+        embedUrl="https://www.youtube.com/@seiren-kaisou"
+        pageUrl="https://www.ohakajimai-navi.jp/flow"
       />
 
       {/* ─── Hero ─── */}

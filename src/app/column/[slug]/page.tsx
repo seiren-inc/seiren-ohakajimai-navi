@@ -7,6 +7,7 @@ import { ArticleJsonLd } from '@/components/seo/page-json-ld'
 import { AuthorJsonLd } from '@/components/seo/author-json-ld'
 import { FaqJsonLd } from '@/components/seo/faq-json-ld'
 import { RelatedArticles } from '@/components/blog/RelatedArticles'
+import { ExpertBadge } from '@/components/seo/expert-badge'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
@@ -56,6 +57,21 @@ const components = {
       {title && <h4 className="flex items-center gap-2 font-bold text-emerald-800 mb-3"><Info className="w-5 h-5" />{title}</h4>}
       <div className="text-neutral-700 text-sm leading-relaxed">{children}</div>
     </div>
+  ),
+  ExpertBadge: ({ name, qualification, officeName, comment, profileUrl }: {
+    name: string
+    qualification: string
+    officeName?: string
+    comment?: string
+    profileUrl?: string
+  }) => (
+    <ExpertBadge
+      name={name}
+      qualification={qualification}
+      officeName={officeName}
+      comment={comment}
+      profileUrl={profileUrl}
+    />
   ),
 }
 
