@@ -10,7 +10,8 @@ import {
     MessageSquare,
     Building2,
     Upload,
-    UserPlus
+    UserPlus,
+    ShieldAlert,
 } from "lucide-react"
 
 export default async function AdminLayout({
@@ -94,6 +95,11 @@ export default async function AdminLayout({
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
                         <Link href="/admin/gyoseishoshi">
                             <UserPlus className="mr-2 h-4 w-4" /> 行政書士管理
+                        </Link>
+                    </Button>
+                    <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
+                        <Link href="/admin/link-check">
+                            <ShieldAlert className="mr-2 h-4 w-4" /> リンク検査
                         </Link>
                     </Button>
                     <Button variant="ghost" className="w-full justify-start text-slate-300 hover:text-white hover:bg-slate-800" asChild>
