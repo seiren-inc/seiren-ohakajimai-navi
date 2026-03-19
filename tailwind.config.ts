@@ -72,10 +72,38 @@ const config = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: "0" },
                 },
+                // 2026: Shimmer — スケルトンローディング・プレミアム感演出
+                shimmer: {
+                    "0%":   { backgroundPosition: "-200% 0" },
+                    "100%": { backgroundPosition: "200% 0" },
+                },
+                // 2026: Floating — 要素の浮遊感（清蓮向け・緩やか）
+                floating: {
+                    "0%, 100%": { transform: "translateY(0px)" },
+                    "50%":      { transform: "translateY(-10px)" },
+                },
+                // 2026: FloatingSlow — 背景・装飾要素向けの超緩やか浮遊
+                "floating-slow": {
+                    "0%, 100%": { transform: "translateY(0px) rotate(0deg)" },
+                    "33%":      { transform: "translateY(-6px) rotate(0.5deg)" },
+                    "66%":      { transform: "translateY(-3px) rotate(-0.3deg)" },
+                },
+                // 2026: PulseGlow — グロー効果（清蓮向け：水の輝き）
+                "pulse-glow": {
+                    "0%, 100%": { opacity: "0.6", filter: "blur(12px)" },
+                    "50%":      { opacity: "1",   filter: "blur(8px)" },
+                },
             },
             animation: {
-                "accordion-down": "accordion-down 0.2s ease-out",
-                "accordion-up": "accordion-up 0.2s ease-out",
+                "accordion-down":  "accordion-down 0.2s ease-out",
+                "accordion-up":    "accordion-up 0.2s ease-out",
+                // Shimmer: スケルトンUI・ボタンのシマー効果
+                shimmer:           "shimmer 2.0s linear infinite",
+                // Floating: アイコン・カード・装飾要素の浮遊
+                floating:          "floating 4.0s ease-in-out infinite",
+                "floating-slow":   "floating-slow 8.0s ease-in-out infinite",
+                // Glow: 清蓮ブランドの水の輝き演出
+                "pulse-glow":      "pulse-glow 3.0s ease-in-out infinite",
             },
         },
     },

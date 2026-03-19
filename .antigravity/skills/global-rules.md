@@ -216,3 +216,143 @@ const ratelimit = new Ratelimit({ redis, limiter: Ratelimit.slidingWindow(10, "1
 - `!important` の使用（Tailwind競合解決は `cn()` で行う）
 - `useEffect` 内での非同期データフェッチ（Server Componentまたは `use()` を使用）
 - 画像の `<img>` タグ直接使用（`next/image` を必ず使用）
+
+---
+
+## 9. アニメーション アクセシビリティ基準（2026追加）
+
+### useReducedMotion 必須ルール
+
+**すべてのアニメーションコンポーネントに `useReducedMotion` を実装すること。**
+
+```tsx
+// lib/motion.ts — 全プロジェクト共通のモーション設定
+import { useReducedMotion } from "framer-motion"
+
+/**
+ * OS の「視差効果を減らす」設定を尊重する共通フック。
+ * アニメーションが有効か否かをboolean で返す。
+ */
+export function useMotionSafe() {
+  const prefersReduced = useReducedMotion()
+  return !prefersReduced
+}
+```
+
+```tsx
+// 使用例：FadeUpコンポーネントでの適用
+"use client"
+import { motion, useReducedMotion } from "framer-motion"
+
+export function FadeUp({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const prefersReduced = useReducedMotion()
+
+  return (
+    <motion.div
+      initial={prefersReduced ? false : { opacity: 0, y: 24 }}
+      whileInView={prefersReduced ? {} : { opacity: 1, y: 0 }}
+      transition={prefersReduced ? {} : { duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
+      viewport={{ once: true }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+```
+
+### Suspense による複雑エフェクトの遅延
+
+**Lighthouse パフォーマンスに影響する複雑なエフェクトは必ず `Suspense` でラップする。**
+
+```tsx
+// Three.js・重いCanvas・インタラクティブマップは必ずこのパターン
+import { Suspense } from "react"
+import dynamic from "next/dynamic"
+
+const HeavyEffect = dynamic(() => import("@/components/HeavyEffect"), { ssr: false })
+
+export function PageSection() {
+  return (
+    <section>
+      {/* LCP対象コンテンツは先に表示 */}
+      <h2>見出し</h2>
+      {/* 重いエフェクトはSuspense + dynamic import */}
+      <Suspense fallback={<div className="animate-pulse bg-gray-100 h-64 rounded-2xl" />}>
+        <HeavyEffect />
+      </Suspense>
+    </section>
+  )
+}
+```
+
+### パフォーマンス基準
+- `animation-duration` が不要に長い場合（2秒超）は `useReducedMotion` がOFF時も短縮を検討
+- `will-change: transform` は必要な要素のみに適用（多用禁止）
+- LCP要素（hero画像・h1）にアニメーションを付けることは禁止
+
+---
+
+## Tailwind CSS v4 アニメーション定義（2026追加）
+
+> このプロジェクトはTailwind CSS v4 対応のため、以下の @keyframes を `app/globals.css` に追加する。
+> ※ seiren-ohakajimai-navi は tailwind.config.ts でも定義済み（両方利用可）。
+
+### app/globals.css への追記
+
+```css
+/* =============================================
+   2026: Shimmer・Floating・Glow アニメーション（清蓮向け）
+   ============================================= */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes floating-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-6px) rotate(0.5deg); }
+  66%       { transform: translateY(-3px) rotate(-0.3deg); }
+}
+
+/* 清蓮専用: 水の輝き（pulse-glow） */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; filter: blur(14px); }
+  50%       { opacity: 1;   filter: blur(8px); }
+}
+
+/* =============================================
+   Shimmer ユーティリティ（スケルトンUI用）
+   ============================================= */
+@utility shimmer-bg {
+  background: linear-gradient(
+    90deg,
+    #e8f4f8 25%,
+    #f5f9fb 50%,
+    #e8f4f8 75%
+  );
+  background-size: 200% 100%;
+}
+
+@utility animate-shimmer       { animation: shimmer 2.0s linear infinite; }
+@utility animate-floating      { animation: floating 5.0s ease-in-out infinite; }
+@utility animate-floating-slow { animation: floating-slow 10.0s ease-in-out infinite; }
+@utility animate-pulse-glow    { animation: pulse-glow 4.0s ease-in-out infinite; }
+```
+
+### 使用例
+
+```tsx
+// スケルトンローディング（清蓮ブランドカラーベース）
+<div className="animate-shimmer shimmer-bg h-48 rounded-2xl" />
+
+// 浮遊するアイコン・バッジ
+<div className="animate-floating">
+  <Image src="/icon-lotus.svg" alt="清蓮" width={48} height={48} />
+</div>
+```
+
