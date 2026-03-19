@@ -234,9 +234,9 @@ export default function PricingPageClient() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-12 md:gap-8">
               {/* Text Content (Left) */}
               <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                <h3 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-6 md:text-3xl lg:text-4xl">
+                <h1 className="typography-heading text-xl font-bold tracking-tight text-[#1D1D1F] mb-6 md:text-3xl lg:text-4xl">
                   明確な料金で<br />安心の墓じまい
-                </h3>
+                </h1>
                 <p className="typography-body max-w-[34ch] text-[17px] text-[#6E6E73] mb-10">
                   見積り後の追加費用は原則なし。
                   すべて税込の明朗会計です。
@@ -585,6 +585,10 @@ export default function PricingPageClient() {
                   value={areaSize}
                   onChange={(e) => setAreaSize(parseInt(e.target.value))}
                   className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-emerald-600"
+                  aria-label="お墓の広さ（1〜10 m²）"
+                  aria-valuenow={areaSize}
+                  aria-valuemin={1}
+                  aria-valuemax={10}
                 />
                 <div className="flex justify-between text-xs text-[#6E6E73] px-1">
                   <span>1 m²</span>
@@ -653,6 +657,9 @@ export default function PricingPageClient() {
                   </div>
                   <button 
                     onClick={() => setHasSubsidy(!hasSubsidy)}
+                    aria-label={hasSubsidy ? '補助金適用：オン' : '補助金適用：オフ'}
+                    aria-checked={hasSubsidy}
+                    role="switch"
                     className={cn(
                       "relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2",
                       hasSubsidy ? "bg-emerald-600" : "bg-gray-200"
