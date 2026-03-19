@@ -1,6 +1,20 @@
 import { Metadata } from 'next'
 import { constructMetadata } from '@/lib/seo'
-import AIEstimationWizard from '@/components/estimation/AIEstimationWizard'
+import dynamic from 'next/dynamic'
+
+// framer-motion / react-qr-code を全体バンドルから分離
+// これにより First Load JS で framer-motion が不要なすべてのページのバンドルが削減される
+const AIEstimationWizard = dynamic(
+  () => import('@/components/estimation/AIEstimationWizard'),
+  {
+    loading: () => (
+      <div className="relative mx-auto w-full max-w-2xl rounded-3xl border border-white/40 bg-white/60 p-10 shadow-2xl backdrop-blur-xl text-center">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-emerald-600 border-t-transparent mx-auto mb-4" />
+        <p className="text-slate-500 text-sm">ウィザードを読み込み中...</p>
+      </div>
+    ),
+  }
+)
 
 export const metadata: Metadata = constructMetadata({
   title: 'お墓じまいAI見積もり【無料・即時】4問で改葬費用の概算を算出',
