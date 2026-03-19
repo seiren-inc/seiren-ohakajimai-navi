@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
-import Script from 'next/script'
 import './globals.css'
 import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
@@ -10,12 +9,14 @@ import { WebSiteJsonLd } from '@/components/seo/website-json-ld'
 import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { RagChatbot } from '@/components/chat/RagChatbot'
 import { GoogleTagManager } from '@next/third-parties/google'
+import { RagChatbot } from '@/components/chat/RagChatbot'
 
 const fontSans = Noto_Sans_JP({
   subsets: ['latin'],
   variable: '--font-sans',
+  // display:swap でフォントロード中にシステムフォントでレンダーを開始（FOIT 排除）
+  display: 'swap',
 })
 
 export const viewport: Viewport = {
@@ -33,9 +34,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID
-  const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID
-
   return (
     <html lang="ja">
       <head>
@@ -48,6 +46,9 @@ export default function RootLayout({
           // @ts-expect-error: fetchpriority is valid HTML but not yet in React types
           fetchpriority="high"
         />
+        {/* Google Fonts の事前接続（フォント取得を高速化） */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased flex flex-col",

@@ -13,6 +13,9 @@ type Message = {
 }
 
 export function RagChatbot() {
+  // ページ読み込みから 3 秒後にチャットウィジェットを DOM にマウント
+  // フックは条件分岐の前にすべて宣言（React Hooks ルール遵守）
+  const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState("")
@@ -21,6 +24,12 @@ export function RagChatbot() {
     typeof window !== "undefined" ? Math.random().toString(36).substring(7) : "anonymous"
   )
   const bottomRef = useRef<HTMLDivElement>(null)
+
+  // 3 秒遅延マウント：FCP / LCP に影響しない（メインスレッドをブロックしない）
+  useEffect(() => {
+    const timer = setTimeout(() => setMounted(true), 3000)
+    return () => clearTimeout(timer)
+  }, [])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -111,6 +120,8 @@ export function RagChatbot() {
     e.preventDefault()
     sendMessage(input)
   }
+
+  if (!mounted) return null
 
   return (
     <>

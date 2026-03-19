@@ -61,6 +61,11 @@ const nextConfig: NextConfig = {
     // 最適化済み画像の最小キャッシュ期間：30日
     minimumCacheTTL: 2592000,
   },
+  // ─── バンドル最適化 ────────────────────────────────────────────
+  experimental: {
+    // lucide-react の tree-shaking を強化し、未使用アイコンをバンドルから除外
+    optimizePackageImports: ['lucide-react'],
+  },
   async headers() {
     return [
       {
