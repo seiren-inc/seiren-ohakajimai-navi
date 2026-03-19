@@ -262,7 +262,7 @@ export default function PricingPageClient() {
               <div className="w-full md:w-1/2 relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[500px] aspect-[4/3] md:aspect-square overflow-hidden rounded-4xl mask-image-circle">
                   <Image 
-                    src="/hero-pricing.png" 
+                    src="/images/hero-pricing.webp" 
                     alt="お墓じまいナビの無料相談スタッフ" 
                     fill
                     className="object-cover object-top scale-[1.02]"
@@ -379,7 +379,7 @@ export default function PricingPageClient() {
                   {/* BEFORE Image */}
                   <div className="flex-1 relative overflow-hidden">
                     <Image
-                      src="/pricing-before.jpg"
+                      src="/images/pricing-before.webp"
                       alt="お墓じまい前の墓石がある状態の墓地区画"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -397,7 +397,7 @@ export default function PricingPageClient() {
                   {/* AFTER Image */}
                   <div className="flex-1 relative overflow-hidden">
                     <Image
-                      src="/pricing-after.jpg"
+                      src="/images/pricing-after.webp"
                       alt="お墓じまい完了後に更地に整地された墓地区画"
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

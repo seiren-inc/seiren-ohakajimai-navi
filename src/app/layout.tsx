@@ -38,6 +38,17 @@ export default function RootLayout({
 
   return (
     <html lang="ja">
+      <head>
+        {/* ─── LCP 最適化: Hero 画像を最優先で preload ─── */}
+        <link
+          rel="preload"
+          href="/images/hero-garden-v3.webp"
+          as="image"
+          type="image/webp"
+          // @ts-expect-error: fetchpriority is valid HTML but not yet in React types
+          fetchpriority="high"
+        />
+      </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased flex flex-col",
         fontSans.variable

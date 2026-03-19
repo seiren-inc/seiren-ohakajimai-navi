@@ -151,7 +151,7 @@ export default function CompanyPage() {
         {/* Hero Image */}
         <div className="relative h-[60vh] min-h-[480px] w-full">
           <Image
-            src="/images/company-hero-zen.jpg"
+            src="/images/company-hero-zen.webp"
             alt="静寂な禅庭 — 清蓮の理念を象徴する空間"
             fill
             className="object-cover"
@@ -198,7 +198,7 @@ export default function CompanyPage() {
             </div>
             <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
               <Image
-                src="/images/company-office.jpg"
+                src="/images/company-office.webp"
                 alt="清蓮のオフィス — 信頼と誠実さが宿る空間"
                 fill
                 className="object-cover"
@@ -242,7 +242,7 @@ export default function CompanyPage() {
           {/* 画像 */}
           <div className="relative aspect-21/9 overflow-hidden rounded-2xl mb-20">
             <Image
-              src="/images/company-grave.jpg"
+              src="/images/company-grave.webp"
               alt="丁寧に整えられた日本のお墓 — 清蓮が守る、供養の尊厳"
               fill
               className="object-cover"

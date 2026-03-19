@@ -389,7 +389,7 @@ export default function HomepageClient() {
           {/* Hero image */}
           <div className="absolute inset-0">
             <Image
-              src="/images/hero-garden-v3.jpg"
+              src="/images/hero-garden-v3.webp"
               alt="静かな日本の墓地の庭園風景。朝の柔らかい自然光と整然と並ぶ墓石"
               fill
               sizes="100vw"
@@ -468,7 +468,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-emerald-50 to-emerald-100 relative">
                     <Image
-                      src="/images/reason-nationwide-v3.jpg"
+                      src="/images/reason-nationwide-v3.webp"
                       alt="日本列島と全国ネットワークを象徴するインフォグラフィック風デザイン"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -489,7 +489,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-gray-50 to-gray-100 relative">
                     <Image
-                      src="/images/reason-compliance-v2.jpg"
+                      src="/images/reason-compliance-v2.webp"
                       alt="デスクの上に整然と置かれた書類と万年筆"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -510,7 +510,7 @@ export default function HomepageClient() {
                 <div className="w-full md:w-1/2">
                   <div className="aspect-4/3 overflow-hidden rounded-3xl bg-linear-to-br from-amber-50 to-orange-50 relative">
                     <Image
-                      src="/images/reason-negotiation-v2.jpg"
+                      src="/images/reason-negotiation-v2.webp"
                       alt="落ち着いた和室で交渉している様子"
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
