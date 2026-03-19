@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { 
   Check, ShieldCheck, Banknote, Users, Info, Plus, Minus, 
   Droplets, Sparkles, MessageCircle, ChevronDown, Phone, Mail, Clock, Undo2, Eye, FileText
@@ -260,11 +261,13 @@ export default function PricingPageClient() {
               {/* Image Content (Right) */}
               <div className="w-full md:w-1/2 relative flex justify-center md:justify-end">
                 <div className="relative w-full max-w-[500px] aspect-[4/3] md:aspect-square overflow-hidden rounded-4xl mask-image-circle">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
+                  <Image 
                     src="/hero-pricing.png" 
                     alt="お墓じまいナビの無料相談スタッフ" 
-                    className="w-full h-full object-cover object-top scale-[1.02]"
+                    fill
+                    className="object-cover object-top scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 500px"
+                    priority
                   />
                   {/* Image Gradient Overlay for blending */}
                   <div className="absolute inset-0 rounded-4xl bg-linear-to-tr from-black/5 to-transparent pointer-events-none" />
@@ -375,8 +378,13 @@ export default function PricingPageClient() {
                 <div className="flex w-full h-full relative">
                   {/* BEFORE Image */}
                   <div className="flex-1 relative overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/pricing-before.jpg" alt="お墓じまい前の墓石がある状態の墓地区画" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <Image
+                      src="/pricing-before.jpg"
+                      alt="お墓じまい前の墓石がある状態の墓地区画"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 50vw, 250px"
+                    />
                     <div className="absolute inset-0 bg-black/10" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
                       <span className="text-[10px] md:text-xs font-bold text-white tracking-widest bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">BEFORE</span>
@@ -388,8 +396,13 @@ export default function PricingPageClient() {
                   
                   {/* AFTER Image */}
                   <div className="flex-1 relative overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src="/pricing-after.jpg" alt="お墓じまい完了後に更地に整地された墓地区画" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                    <Image
+                      src="/pricing-after.jpg"
+                      alt="お墓じまい完了後に更地に整地された墓地区画"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 50vw, 250px"
+                    />
                     <div className="absolute inset-0 bg-black/5" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
                       <span className="text-[10px] md:text-xs font-bold text-emerald-900 tracking-widest bg-emerald-100/90 backdrop-blur-md px-3 py-1 rounded-full">AFTER</span>

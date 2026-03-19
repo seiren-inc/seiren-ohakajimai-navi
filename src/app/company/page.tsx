@@ -155,6 +155,7 @@ export default function CompanyPage() {
             alt="静寂な禅庭 — 清蓮の理念を象徴する空間"
             fill
             className="object-cover"
+            sizes="100vw"
             priority
           />
           {/* Subtle overlay */}
@@ -201,6 +202,7 @@ export default function CompanyPage() {
                 alt="清蓮のオフィス — 信頼と誠実さが宿る空間"
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -244,6 +246,7 @@ export default function CompanyPage() {
               alt="丁寧に整えられた日本のお墓 — 清蓮が守る、供養の尊厳"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 83vw"
             />
           </div>
 

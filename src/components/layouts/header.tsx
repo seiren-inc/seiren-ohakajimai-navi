@@ -85,13 +85,16 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
       <div
         className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title-header"
       >
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
               Coming Soon
             </p>
-            <h2 className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
+            <h2 id="modal-title-header" className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
           </div>
           <button
             onClick={onClose}

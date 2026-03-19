@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
 import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
 import { WebSiteJsonLd } from '@/components/seo/website-json-ld'
+import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { RagChatbot } from '@/components/chat/RagChatbot'
@@ -46,6 +47,7 @@ export default function RootLayout({
         </ConditionalLayout>
         <OrganizationJsonLd />
         <WebSiteJsonLd />
+        <LocalBusinessJsonLd />
         <RagChatbot />
         <Analytics />
         <SpeedInsights />

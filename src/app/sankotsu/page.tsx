@@ -2,6 +2,8 @@ import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
+import { VideoJsonLd } from "@/components/seo/video-json-ld"
+import { LocalBusinessJsonLd } from "@/components/seo/local-business-json-ld"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react"
@@ -51,6 +53,18 @@ export default function SankotsuPage() {
         pageUrl={`${BASE_URL}/sankotsu`}
         cssSelector={["h1", "h2"]}
       />
+      {/* 海洋散骨の動画コンテンツ（YouTube / 散骨クルーズチャンネル） */}
+      <VideoJsonLd
+        name="海洋散骨（相模湾・東京湾）の流れを解説｜株式会社清蓮 散骨クルーズ"
+        description="神奈川県横浜市を拠点に、相模湾・東京湾での海洋散骨をご案内。粉骨から乗船・散骨完了まで全工程を動画で解説。チャーター・合同・委託散骨に対応。"
+        thumbnailUrl={`${BASE_URL}/og-image.jpg`}
+        uploadDate="2026-01-15"
+        duration="PT5M"
+        embedUrl="https://www.youtube.com/@seiren-kaisou"
+        pageUrl={`${BASE_URL}/sankotsu`}
+      />
+      {/* 海洋散骨 × 横浜・湘南エリアに特化した LocalBusiness */}
+      <LocalBusinessJsonLd />
 
       <div className="min-h-screen bg-white">
         <div className="border-b border-neutral-100 bg-neutral-50">

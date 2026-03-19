@@ -266,11 +266,17 @@ function HomepageComingSoonModal({ onClose }: { onClose: () => void }) {
       className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
       onClick={onClose}
     >
-      <div className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title-homepage"
+      >
         <div className="flex items-start justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">Coming Soon</p>
-            <h2 className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
+            <h2 id="modal-title-homepage" className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
           </div>
           <button onClick={onClose} className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700" aria-label="閉じる">
             <X className="h-5 w-5" />
