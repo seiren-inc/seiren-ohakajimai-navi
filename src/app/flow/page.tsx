@@ -319,7 +319,7 @@ export default function FlowPage() {
                 <Phone className="h-4 w-4" />
                 0800-888-8788
               </span>
-              <span className="text-[10px] font-normal text-neutral-400 mt-0.5">フリーコール｜9:00〜19:00</span>
+              <span className="text-xs font-normal text-neutral-400 mt-0.5">フリーコール｜9:00〜19:00</span>
             </a>
           </div>
         </div>

@@ -12,7 +12,7 @@ export function FixedCTA() {
   if (hidePaths.includes(pathname)) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 p-3 backdrop-blur-xl md:hidden print:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 p-3 backdrop-blur-xl md:hidden print:hidden pb-safe">
       <div className="flex gap-2">
         <a
           href="tel:08008888788"

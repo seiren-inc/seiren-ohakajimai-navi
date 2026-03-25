@@ -303,7 +303,7 @@ export default function AIEstimationWizard() {
                         {opt.label}
                       </span>
                       {opt.desc && (
-                        <span className={cn("text-[11px] mt-0.5", isSelected ? "text-emerald-600" : "text-slate-400")}>
+                        <span className={cn("text-xs mt-0.5", isSelected ? "text-emerald-600" : "text-slate-400")}>
                           {opt.desc}
                         </span>
                       )}

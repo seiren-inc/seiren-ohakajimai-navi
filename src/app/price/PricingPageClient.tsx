@@ -387,7 +387,7 @@ export default function PricingPageClient() {
                     />
                     <div className="absolute inset-0 bg-black/10" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
-                      <span className="text-[10px] md:text-xs font-bold text-white tracking-widest bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">BEFORE</span>
+                      <span className="text-xs md:text-xs font-bold text-white tracking-widest bg-black/40 backdrop-blur-md px-3 py-1 rounded-full">BEFORE</span>
                     </div>
                   </div>
                   
@@ -405,7 +405,7 @@ export default function PricingPageClient() {
                     />
                     <div className="absolute inset-0 bg-black/5" />
                     <div className="absolute bottom-4 left-0 w-full flex justify-center text-center">
-                      <span className="text-[10px] md:text-xs font-bold text-emerald-900 tracking-widest bg-emerald-100/90 backdrop-blur-md px-3 py-1 rounded-full">AFTER</span>
+                      <span className="text-xs md:text-xs font-bold text-emerald-900 tracking-widest bg-emerald-100/90 backdrop-blur-md px-3 py-1 rounded-full">AFTER</span>
                     </div>
                   </div>
                 </div>

@@ -33,6 +33,8 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --safe-area-inset-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-inset-right: env(safe-area-inset-right, 0px);
   }
 
   .dark {
@@ -93,6 +95,10 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.pb-safe {
+  padding-bottom: var(--safe-area-inset-bottom);
 }
 
 /* ─────────────────────────────────────────────────────────
@@ -177,5 +183,25 @@ button[class*="rounded-full"]:active {
   button[class*="rounded-full"]:hover {
     transform: none;
     box-shadow: none;
+  }
+}
+
+/* UIUX-Guard: mobile tiny text normalization */
+@media (max-width: 767px) {
+  .text-\[9px\],
+  .text-\[10px\],
+  .text-\[11px\] {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  [style*="font-size: 12px"],
+  [style*="font-size: 12px"],
+  [style*="font-size: 12px"],
+  [style*="font-size: 12px"],
+  [style*="font-size: 12px"],
+  [style*="font-size: 12px"] {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
   }
 }

@@ -30,22 +30,22 @@ async function RecentAuditSummary() {
                         <Badge variant={lastRun.status === "SUCCEEDED" ? "default" : "destructive"}>
                             {lastRun.status}
                         </Badge>
-                        <span className="text-sm font-mono text-[10px]">{lastRun.id}</span>
+                        <span className="text-sm font-mono text-xs">{lastRun.id}</span>
                     </div>
                 </div>
             </div>
 
             <div className="grid grid-cols-3 gap-2">
                 <div className="p-3 border rounded-lg bg-blue-50/30">
-                    <p className="text-[10px] uppercase font-bold text-blue-600">Checked</p>
+                    <p className="text-xs uppercase font-bold text-blue-600">Checked</p>
                     <p className="text-xl font-bold">{lastRun.totalChecked.toLocaleString()}</p>
                 </div>
                 <div className="p-3 border rounded-lg bg-red-50/30">
-                    <p className="text-[10px] uppercase font-bold text-red-600">Broken</p>
+                    <p className="text-xs uppercase font-bold text-red-600">Broken</p>
                     <p className="text-xl font-bold">{lastRun.brokenCount.toLocaleString()}</p>
                 </div>
                 <div className="p-3 border rounded-lg bg-green-50/30">
-                    <p className="text-[10px] uppercase font-bold text-green-600">Fixed</p>
+                    <p className="text-xs uppercase font-bold text-green-600">Fixed</p>
                     <p className="text-xl font-bold">{lastRun.fixedCount.toLocaleString()}</p>
                 </div>
             </div>
@@ -142,23 +142,23 @@ export default function QualityDashboardPage() {
                         <CardContent>
                             <ul className="space-y-4 text-sm">
                                 <li className="flex items-start gap-2">
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-600">1</span>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600">1</span>
                                     <span>Implement secure HTTP headers (PHASE 1)</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-600">2</span>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600">2</span>
                                     <span>Optimize query performance & indexing (PHASE 2)</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-600">3</span>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-100 text-xs font-bold text-blue-600">3</span>
                                     <span>Establish automated testing suite (PHASE 3)</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-[10px] font-bold text-gray-600">4</span>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-600">4</span>
                                     <span>Deploy Public API v1 (PHASE 4)</span>
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-[10px] font-bold text-gray-600">5</span>
+                                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gray-100 text-xs font-bold text-gray-600">5</span>
                                     <span>Persist audit logs & history (PHASE 5)</span>
                                 </li>
                             </ul>

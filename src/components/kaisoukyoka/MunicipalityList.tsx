@@ -149,7 +149,7 @@ export default function MunicipalityList({ municipalities, onLinkClick }: Munici
                   >
                     <div className="flex items-center gap-2 min-w-0">
                       <span className="text-slate-600 group-hover/sub:text-emerald-600 truncate">{sub.name}</span>
-                      <span className="text-[10px] font-bold text-slate-400 border border-slate-200 px-1 rounded bg-slate-50 uppercase tracking-tighter">区</span>
+                      <span className="text-xs font-bold text-slate-400 border border-slate-200 px-1 rounded bg-slate-50 uppercase tracking-tighter">区</span>
                     </div>
                     <ExternalLink className="w-3.5 h-3.5 text-muted-foreground group-hover/sub:text-emerald-500 transition-colors" />
                   </a>

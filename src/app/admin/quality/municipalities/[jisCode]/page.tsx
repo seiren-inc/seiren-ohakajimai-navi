@@ -139,7 +139,7 @@ export default async function MunicipalityDetailPage({
                         <CardTitle className="text-lg">Sub-Links (JSON)</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <pre className="text-[10px] bg-gray-50 p-2 rounded border max-h-[200px] overflow-y-auto">
+                        <pre className="text-xs bg-gray-50 p-2 rounded border max-h-[200px] overflow-y-auto">
                             {JSON.stringify(m.subLinks, null, 2)}
                         </pre>
                     </CardContent>

@@ -97,7 +97,7 @@ function FloatingCTA() {
     <div
       className={cn(
         'fixed z-50 transition-transform duration-300',
-        'bottom-0 left-0 right-0 border-t bg-background/95 p-3 backdrop-blur-sm',
+        'bottom-0 left-0 right-0 border-t bg-background/95 p-3 backdrop-blur-sm pb-safe',
         'md:bottom-6 md:left-auto md:right-6 md:border-0 md:bg-transparent md:p-0',
         visible ? 'translate-y-0' : 'translate-y-full'
       )}
@@ -194,7 +194,7 @@ function StatsSummary({ totalMunicipalities, dedicatedCount }: { totalMunicipali
           </div>
           <div>
             <p className="text-base font-bold leading-tight text-foreground sm:text-lg">{stat.value}</p>
-            <p className="text-[10px] text-muted-foreground sm:text-xs">{stat.label}</p>
+            <p className="text-xs text-muted-foreground sm:text-xs">{stat.label}</p>
           </div>
         </div>
       ))}

@@ -356,3 +356,99 @@ export function PageSection() {
 </div>
 ```
 
+
+---
+
+## 10. 2026年最新：AEO・高速配信・セキュリティルール（一括追加）
+
+### Bento Grid 2.0（グリッドUIの2026標準）
+
+```tsx
+// 角丸24px以上・Spatial UI（ガラスモーフィズム）を標準化
+<section className="grid grid-cols-12 gap-4">
+  {/* メインカード: 8/12 */}
+  <div className="col-span-12 md:col-span-8 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-8">
+    <h2>メインコンテンツ</h2>
+  </div>
+  {/* サイドカード: 4/12 */}
+  <div className="col-span-12 md:col-span-4 rounded-3xl bg-white/5 backdrop-blur-sm border border-white/10 p-6">
+    <p>サブコンテンツ</p>
+  </div>
+</section>
+```
+
+### AEO（AI回答エンジン最適化）— JSON-LD 必須実装
+
+**グループA（清蓮）必須スキーマ: LocalBusiness + Service + FAQPage + BreadcrumbList**
+
+```tsx
+// 全ページに埋め込む共通パターン
+export default function Page() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "清蓮 お墓じまいナビ",
+    "areaServed": [
+      { "@type": "City", "name": "横浜市" },
+      { "@type": "City", "name": "鎌倉市" },
+      { "@type": "AdministrativeArea", "name": "湘南" },
+    ],
+  }
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    </>
+  )
+}
+```
+
+### PPR（Partial Prerendering）+ AVIF デフォルト化
+
+```ts
+// next.config.ts
+const config: NextConfig = {
+  experimental: { ppr: true },
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 2592000,
+  },
+}
+```
+
+### Cloudflare Turnstile（reCAPTCHA代替・全フォーム必須）
+
+```bash
+npm install @marsidev/react-turnstile
+# .env.local に追加:
+# NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY=xxxx
+# CLOUDFLARE_TURNSTILE_SECRET_KEY=xxxx
+```
+
+```tsx
+// src/components/common/TurnstileWidget.tsx
+"use client"
+import { Turnstile } from "@marsidev/react-turnstile"
+export function TurnstileWidget({ onSuccess }: { onSuccess: (token: string) => void }) {
+  return <Turnstile siteKey={process.env.NEXT_PUBLIC_CLOUDFLARE_TURNSTILE_SITE_KEY!} onSuccess={onSuccess} options={{ theme: "light", language: "ja" }} />
+}
+
+// Server Action での検証
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ secret: process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY!, response: token }),
+  })
+  return ((await res.json()) as { success: boolean }).success
+}
+```
+
+### Lighthouse パフォーマンス目標
+
+| 指標 | 目標 |
+|------|------|
+| Performance | 90+ |
+| Accessibility | 95+ |
+| SEO | 100 |
+| LCP | < 2.5秒 |
+| CLS | < 0.1 |

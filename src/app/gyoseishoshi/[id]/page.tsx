@@ -233,7 +233,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                                     <MessageCircle className="h-4 w-4" />
                                     無料で相談する
                                 </Link>
-                                <p className="text-[10px] text-center text-neutral-400">
+                                <p className="text-xs text-center text-neutral-400">
                                     ※ 本サービスは広告掲載です。当社は行政書士業務の受任・仲介を行いません。
                                 </p>
                             </div>

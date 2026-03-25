@@ -126,7 +126,7 @@ function TestimonialCarousel() {
         {visible.map((t, i) => (
           <div key={`${page}-${i}`} className="flex flex-col rounded-2xl border border-neutral-200 bg-white p-7 shadow-sm">
             <div className="flex items-start justify-between gap-3">
-              <span className="inline-flex flex-wrap items-center rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold text-emerald-700">
+              <span className="inline-flex flex-wrap items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
                 {t.prefecture}・{t.situation}
               </span>
               <div className="flex shrink-0 gap-0.5">
@@ -404,7 +404,7 @@ export default function HomepageClient() {
               className="max-w-xl"
               style={{ animation: "fadeUp 0.9s ease-out both" }}
             >
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-700">全国対応・法令遵守</p>
               <h1 className="typography-heading mt-5 text-xl font-semibold leading-tight tracking-tight text-neutral-900 sm:text-3xl md:text-4xl lg:text-5xl">お墓じまいのすべてを、<br className="sm:hidden" />プロにお任せ。</h1>
               <p className="typography-body mt-6 max-w-[46ch] text-base font-medium leading-[1.85] text-neutral-700 md:text-lg">
                 改葬手続きの案内と書類サポート、提携行政書士の<br className="hidden md:block" />
@@ -608,7 +608,7 @@ export default function HomepageClient() {
                     />
                   </div>
                   <div className="p-8">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600">
                       {item.step}
                     </span>
                     <h3 className="mt-3 text-[20px] font-semibold text-neutral-900">{item.title}</h3>

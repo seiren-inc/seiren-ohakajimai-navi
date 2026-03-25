@@ -225,7 +225,7 @@ function NavDropdown({
                   )}
                 </span>
                 {item.badge && (
-                  <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-500">
+                  <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-500">
                     {item.badge}
                   </span>
                 )}
@@ -553,7 +553,7 @@ export function Header() {
                     <Phone className="h-4 w-4 shrink-0" />
                     <span className="flex flex-col">
                       <span className="text-sm font-bold">電話で相談する</span>
-                      <span className="text-[10px] text-emerald-500">0800-888-8788（フリーコール）9:00〜19:00</span>
+                      <span className="text-xs text-emerald-500">0800-888-8788（フリーコール）9:00〜19:00</span>
                     </span>
                   </a>
                   <Link
@@ -564,7 +564,7 @@ export function Header() {
                     <Mail className="h-4 w-4 shrink-0" />
                     <span className="flex flex-col">
                       <span className="text-sm font-bold">フォームで問い合わせ</span>
-                      <span className="text-[10px] text-emerald-100">24時間受付・2営業日以内に返信</span>
+                      <span className="text-xs text-emerald-100">24時間受付・2営業日以内に返信</span>
                     </span>
                   </Link>
                 </div>
@@ -588,7 +588,7 @@ export function Header() {
                       className="flex items-center justify-between rounded-lg px-2 py-3 text-left text-sm text-neutral-500 hover:bg-neutral-50"
                     >
                       <span>{service.label}</span>
-                      <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-400">
+                      <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-400">
                         準備中
                       </span>
                     </button>
