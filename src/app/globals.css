@@ -33,6 +33,15 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+    --font-sans:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Hiragino Sans",
+      "Hiragino Kaku Gothic ProN",
+      "Yu Gothic",
+      "YuGothic",
+      "Meiryo",
+      sans-serif;
   }
 
   .dark {

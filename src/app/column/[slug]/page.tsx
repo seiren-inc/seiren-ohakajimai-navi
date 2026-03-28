@@ -12,6 +12,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
+import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
@@ -39,20 +40,30 @@ export async function generateMetadata({ params }: PageProps) {
   })
 }
 
+type Heading2Props = ComponentPropsWithoutRef<'h2'>
+type Heading3Props = ComponentPropsWithoutRef<'h3'>
+type ParagraphProps = ComponentPropsWithoutRef<'p'>
+type UnorderedListProps = ComponentPropsWithoutRef<'ul'>
+type OrderedListProps = ComponentPropsWithoutRef<'ol'>
+type ListItemProps = ComponentPropsWithoutRef<'li'>
+type AnchorProps = ComponentPropsWithoutRef<'a'>
+type StrongProps = ComponentPropsWithoutRef<'strong'>
+type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>
+
 // MDX Components for custom styling
 const components = {
-  h2: (props: any) => <h2 className="mt-12 mb-6 text-2xl font-bold text-neutral-900 pb-2 border-b-2 border-emerald-100" {...props} />,
-  h3: (props: any) => <h3 className="mt-8 mb-4 text-xl font-bold text-neutral-800 flex items-center gap-2 before:content-[''] before:block before:w-1.5 before:h-5 before:bg-emerald-500 before:rounded-full" {...props} />,
-  p: (props: any) => <p className="mb-6 leading-relaxed text-neutral-700 text-[16px] md:text-[17px]" {...props} />,
-  ul: (props: any) => <ul className="mb-6 ml-6 list-disc [&>li]:mt-2 text-neutral-700" {...props} />,
-  ol: (props: any) => <ol className="mb-6 ml-6 list-decimal [&>li]:mt-2 text-neutral-700 font-medium" {...props} />,
-  li: (props: any) => <li className="leading-relaxed" {...props} />,
-  a: (props: any) => <a className="text-emerald-600 underline underline-offset-4 hover:text-emerald-700" {...props} />,
-  strong: (props: any) => <strong className="font-bold text-neutral-900 bg-amber-50 px-1 rounded" {...props} />,
-  blockquote: (props: any) => (
+  h2: (props: Heading2Props) => <h2 className="mt-12 mb-6 text-2xl font-bold text-neutral-900 pb-2 border-b-2 border-emerald-100" {...props} />,
+  h3: (props: Heading3Props) => <h3 className="mt-8 mb-4 text-xl font-bold text-neutral-800 flex items-center gap-2 before:content-[''] before:block before:w-1.5 before:h-5 before:bg-emerald-500 before:rounded-full" {...props} />,
+  p: (props: ParagraphProps) => <p className="mb-6 leading-relaxed text-neutral-700 text-[16px] md:text-[17px]" {...props} />,
+  ul: (props: UnorderedListProps) => <ul className="mb-6 ml-6 list-disc [&>li]:mt-2 text-neutral-700" {...props} />,
+  ol: (props: OrderedListProps) => <ol className="mb-6 ml-6 list-decimal [&>li]:mt-2 text-neutral-700 font-medium" {...props} />,
+  li: (props: ListItemProps) => <li className="leading-relaxed" {...props} />,
+  a: (props: AnchorProps) => <a className="text-emerald-600 underline underline-offset-4 hover:text-emerald-700" {...props} />,
+  strong: (props: StrongProps) => <strong className="font-bold text-neutral-900 bg-amber-50 px-1 rounded" {...props} />,
+  blockquote: (props: BlockquoteProps) => (
     <blockquote className="border-l-4 border-emerald-500 bg-emerald-50/50 p-4 my-6 rounded-r-lg text-neutral-700 italic" {...props} />
   ),
-  InfoBox: ({ children, title }: { children: React.ReactNode; title?: string }) => (
+  InfoBox: ({ children, title }: { children: ReactNode; title?: string }) => (
     <div className="my-8 rounded-xl border border-emerald-100 bg-emerald-50/50 p-5 overflow-hidden">
       {title && <h4 className="flex items-center gap-2 font-bold text-emerald-800 mb-3"><Info className="w-5 h-5" />{title}</h4>}
       <div className="text-neutral-700 text-sm leading-relaxed">{children}</div>
