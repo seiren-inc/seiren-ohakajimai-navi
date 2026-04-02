@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Resend } from 'resend'
+import { isRateLimited } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
   // Resend は環境変数が揃っているリクエスト時に初期化（ビルド時クラッシュ防止）
@@ -11,12 +12,27 @@ export async function POST(request: NextRequest) {
   const resend = new Resend(apiKey)
 
   try {
+    const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous'
+    const { limited, remaining, reset } = isRateLimited(`notify-ohakanavi:${ip}`)
+    const headers = {
+      'X-RateLimit-Limit': '60',
+      'X-RateLimit-Remaining': remaining.toString(),
+      'X-RateLimit-Reset': reset.toString(),
+    }
+
+    if (limited) {
+      return NextResponse.json(
+        { error: 'Too Many Requests' },
+        { status: 429, headers }
+      )
+    }
+
     const { email } = await request.json()
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json(
         { error: 'メールアドレスが無効です' },
-        { status: 400 }
+        { status: 400, headers }
       )
     }
 
@@ -45,7 +61,7 @@ export async function POST(request: NextRequest) {
       `,
     })
 
-    return NextResponse.json({ success: true })
+    return NextResponse.json({ success: true }, { headers })
   } catch (error) {
     console.error('[notify-ohakanavi] Error:', error)
     return NextResponse.json(

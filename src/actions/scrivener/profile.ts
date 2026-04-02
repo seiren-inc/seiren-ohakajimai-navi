@@ -36,5 +36,5 @@ export async function saveScrivenerProfile(formData: FormData) {
   }
 
   revalidatePath('/', 'layout')
-  redirect('/scrivener/dashboard') // 次のフェーズ(Payment)ですが、便宜上dashboardへ
+  redirect('/scrivener/onboarding/plan')
 }

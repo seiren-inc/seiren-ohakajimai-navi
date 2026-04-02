@@ -14,8 +14,15 @@ import { cn } from "@/lib/utils"
 
 type ButtonVariant = "primary" | "secondary" | "ghost" | "outline"
 type ButtonSize    = "sm" | "md" | "lg"
+type MotionConflictProps =
+  | "onDrag"
+  | "onDragStart"
+  | "onDragEnd"
+  | "onAnimationStart"
+  | "onAnimationEnd"
+  | "onAnimationIteration"
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, MotionConflictProps> {
   variant?: ButtonVariant
   size?:    ButtonSize
   loading?: boolean

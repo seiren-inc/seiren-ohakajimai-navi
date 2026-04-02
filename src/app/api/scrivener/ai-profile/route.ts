@@ -1,11 +1,45 @@
 import { openai } from '@ai-sdk/openai'
 import { streamText } from 'ai'
 import { NextResponse } from 'next/server'
+import { prisma } from '@/lib/prisma'
+import { isRateLimited } from '@/lib/rate-limit'
+import { createClient } from '@/lib/supabase/server'
 
 export const maxDuration = 30 // Set max duration for Vercel
 
 export async function POST(req: Request) {
     try {
+        const supabase = await createClient()
+        const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+        if (authError || !user) {
+            return NextResponse.json(
+                { error: 'Unauthorized' },
+                { status: 401 }
+            )
+        }
+
+        const scrivener = await prisma.administrativeScrivener.findUnique({
+            where: { authUserId: user.id },
+            select: { id: true },
+        })
+
+        if (!scrivener) {
+            return NextResponse.json(
+                { error: 'Forbidden' },
+                { status: 403 }
+            )
+        }
+
+        const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'anonymous'
+        const { limited } = isRateLimited(`ai-profile:${ip}`)
+        if (limited) {
+            return NextResponse.json(
+                { error: 'Too Many Requests' },
+                { status: 429 }
+            )
+        }
+
         const { keywords, officeName } = await req.json()
 
         const prompt = `あなたはSEOとWEBマーケティングの専門家であり、選ばれる行政書士プロフィールを作成するプロです。

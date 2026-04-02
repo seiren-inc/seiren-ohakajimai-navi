@@ -12,7 +12,6 @@ declare global {
       targetId: string,
       config?: ControlParams | EventParams | CustomParams
     ) => void;
-    dataLayer: Record<string, unknown>[];
   }
 }
 

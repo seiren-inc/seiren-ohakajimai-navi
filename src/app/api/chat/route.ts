@@ -20,7 +20,16 @@ export async function POST(req: Request) {
         }
 
         const { messages, sessionId } = await req.json()
-        const userMessage = messages[messages.length - 1].content.toString()
+        if (!Array.isArray(messages) || messages.length === 0) {
+            return NextResponse.json({ error: "messages must be a non-empty array" }, { status: 400 })
+        }
+
+        const lastMessage = messages[messages.length - 1]
+        if (!lastMessage || typeof lastMessage !== "object" || !("content" in lastMessage) || lastMessage.content == null) {
+            return NextResponse.json({ error: "last message content is required" }, { status: 400 })
+        }
+
+        const userMessage = String(lastMessage.content)
 
         // ログ記録用の変数 (T7-07)
         let detectedIntent = "UNKNOWN"

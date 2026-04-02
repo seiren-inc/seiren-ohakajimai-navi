@@ -1,3 +1,4 @@
+import { createServerClient } from "@supabase/ssr"
 import { NextRequest, NextResponse } from "next/server"
 import { getStripe, STRIPE_PRICE_IDS } from "@/lib/stripe"
 import { prisma } from "@/lib/prisma"
@@ -7,6 +8,41 @@ const db = prisma as any
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://seiren-ohakajimai-navi.vercel.app"
 
+async function requireAdmin(request: NextRequest) {
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                getAll() {
+                    return request.cookies.getAll()
+                },
+                setAll() {
+                    // Route Handler では認証確認のみ行う
+                },
+            },
+        }
+    )
+
+    const {
+        data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
+    }
+
+    const adminUser = await prisma.adminUser.findUnique({
+        where: { supabaseUserId: user.id },
+    })
+
+    if (!adminUser || !adminUser.isActive) {
+        return NextResponse.json({ error: "Forbidden" }, { status: 403 })
+    }
+
+    return null
+}
+
 /**
  * POST /api/stripe/checkout
  * 管理画面から行政書士向けの決済リンクを発行する
@@ -14,6 +50,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://seiren-ohakajimai-
  */
 export async function POST(req: NextRequest) {
     try {
+        const unauthorizedResponse = await requireAdmin(req)
+        if (unauthorizedResponse) {
+            return unauthorizedResponse
+        }
+
         const { scrivenerId } = await req.json()
         if (!scrivenerId) {
             return NextResponse.json({ error: "scrivenerId is required" }, { status: 400 })

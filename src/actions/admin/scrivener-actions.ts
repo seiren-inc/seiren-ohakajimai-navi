@@ -1,5 +1,7 @@
 'use server'
 
+import { createServerClient } from "@supabase/ssr"
+import { cookies } from "next/headers"
 import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -8,6 +10,40 @@ import { submitToIndexNow } from "@/lib/indexnow"
 // prisma generate 前は型未解決のため any 経由
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
+
+async function requireAdmin() {
+    const cookieStore = await cookies()
+    const supabase = createServerClient(
+        process.env.NEXT_PUBLIC_SUPABASE_URL!,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+        {
+            cookies: {
+                getAll() {
+                    return cookieStore.getAll()
+                },
+                setAll() {
+                    // Server Action では認証確認のみ行う
+                },
+            },
+        }
+    )
+
+    const {
+        data: { user },
+    } = await supabase.auth.getUser()
+
+    if (!user) {
+        throw new Error("Unauthorized")
+    }
+
+    const adminUser = await prisma.adminUser.findUnique({
+        where: { supabaseUserId: user.id },
+    })
+
+    if (!adminUser || !adminUser.isActive) {
+        throw new Error("Unauthorized")
+    }
+}
 
 /**
  * AuditLog記録ヘルパー（Doc-16 §8, Doc-17 §8）
@@ -40,6 +76,8 @@ async function recordAuditLog(
  * Doc-18 §4: isApproved=false（自動公開禁止）
  */
 export async function createScrivener(formData: FormData) {
+    await requireAdmin()
+
     const specialtiesRaw = formData.get("specialties") as string
     const specialties = specialtiesRaw
         ? specialtiesRaw.split(",").map((s: string) => s.trim()).filter(Boolean)
@@ -82,6 +120,8 @@ export async function createScrivener(formData: FormData) {
  * 行政書士情報更新
  */
 export async function updateScrivener(id: string, formData: FormData) {
+    await requireAdmin()
+
     const specialtiesRaw = formData.get("specialties") as string
     const specialties = specialtiesRaw
         ? specialtiesRaw.split(",").map((s: string) => s.trim()).filter(Boolean)
@@ -122,6 +162,8 @@ export async function updateScrivener(id: string, formData: FormData) {
  * 承認トグル（Doc-04 §4-2: AuditLog記録必須）
  */
 export async function toggleApproval(id: string, isApproved: boolean) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: { isApproved },
@@ -141,6 +183,8 @@ export async function toggleApproval(id: string, isApproved: boolean) {
  * 公開/停止トグル
  */
 export async function toggleActive(id: string, isActive: boolean) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: { isActive },
@@ -160,6 +204,8 @@ export async function toggleActive(id: string, isActive: boolean) {
  * 苦情フラグトグル（Doc-18 §7）
  */
 export async function toggleComplaintFlag(id: string, complaintFlag: boolean) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: { complaintFlag },
@@ -175,6 +221,8 @@ export async function toggleComplaintFlag(id: string, complaintFlag: boolean) {
  * 未払い時は自動非表示
  */
 export async function updatePaymentStatus(id: string, paymentStatus: string) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: { paymentStatus },
@@ -194,6 +242,8 @@ export async function updatePaymentStatus(id: string, paymentStatus: string) {
  * Stripe サブスクリプション ID の紐付け
  */
 export async function linkStripeSubscription(id: string, stripeSubscriptionId: string) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: { stripeSubscriptionId },
@@ -209,6 +259,8 @@ export async function linkStripeSubscription(id: string, stripeSubscriptionId: s
  * 物理削除は禁止。isActive=false で停止
  */
 export async function deleteScrivener(id: string) {
+    await requireAdmin()
+
     await db.administrativeScrivener.update({
         where: { id },
         data: {
