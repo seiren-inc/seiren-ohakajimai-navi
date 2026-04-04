@@ -12,6 +12,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
+import type React from 'react'
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
@@ -41,15 +42,15 @@ export async function generateMetadata({ params }: PageProps) {
 
 // MDX Components for custom styling
 const components = {
-  h2: (props: any) => <h2 className="mt-12 mb-6 text-2xl font-bold text-neutral-900 pb-2 border-b-2 border-emerald-100" {...props} />,
-  h3: (props: any) => <h3 className="mt-8 mb-4 text-xl font-bold text-neutral-800 flex items-center gap-2 before:content-[''] before:block before:w-1.5 before:h-5 before:bg-emerald-500 before:rounded-full" {...props} />,
-  p: (props: any) => <p className="mb-6 leading-relaxed text-neutral-700 text-[16px] md:text-[17px]" {...props} />,
-  ul: (props: any) => <ul className="mb-6 ml-6 list-disc [&>li]:mt-2 text-neutral-700" {...props} />,
-  ol: (props: any) => <ol className="mb-6 ml-6 list-decimal [&>li]:mt-2 text-neutral-700 font-medium" {...props} />,
-  li: (props: any) => <li className="leading-relaxed" {...props} />,
-  a: (props: any) => <a className="text-emerald-600 underline underline-offset-4 hover:text-emerald-700" {...props} />,
-  strong: (props: any) => <strong className="font-bold text-neutral-900 bg-amber-50 px-1 rounded" {...props} />,
-  blockquote: (props: any) => (
+  h2: (props: React.ComponentPropsWithoutRef<'h2'>) => <h2 className="mt-12 mb-6 text-2xl font-bold text-neutral-900 pb-2 border-b-2 border-emerald-100" {...props} />,
+  h3: (props: React.ComponentPropsWithoutRef<'h3'>) => <h3 className="mt-8 mb-4 text-xl font-bold text-neutral-800 flex items-center gap-2 before:content-[''] before:block before:w-1.5 before:h-5 before:bg-emerald-500 before:rounded-full" {...props} />,
+  p: (props: React.ComponentPropsWithoutRef<'p'>) => <p className="mb-6 leading-relaxed text-neutral-700 text-[16px] md:text-[17px]" {...props} />,
+  ul: (props: React.ComponentPropsWithoutRef<'ul'>) => <ul className="mb-6 ml-6 list-disc [&>li]:mt-2 text-neutral-700" {...props} />,
+  ol: (props: React.ComponentPropsWithoutRef<'ol'>) => <ol className="mb-6 ml-6 list-decimal [&>li]:mt-2 text-neutral-700 font-medium" {...props} />,
+  li: (props: React.ComponentPropsWithoutRef<'li'>) => <li className="leading-relaxed" {...props} />,
+  a: (props: React.ComponentPropsWithoutRef<'a'>) => <a className="text-emerald-600 underline underline-offset-4 hover:text-emerald-700" {...props} />,
+  strong: (props: React.ComponentPropsWithoutRef<'strong'>) => <strong className="font-bold text-neutral-900 bg-amber-50 px-1 rounded" {...props} />,
+  blockquote: (props: React.ComponentPropsWithoutRef<'blockquote'>) => (
     <blockquote className="border-l-4 border-emerald-500 bg-emerald-50/50 p-4 my-6 rounded-r-lg text-neutral-700 italic" {...props} />
   ),
   InfoBox: ({ children, title }: { children: React.ReactNode; title?: string }) => (
