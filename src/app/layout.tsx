@@ -10,6 +10,8 @@ import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleTagManager } from '@next/third-parties/google'
+// Doc-19 §2.8: 内部AI監査30日安定稼働の前提条件が満たされた場合のみ有効化する
+// NEXT_PUBLIC_ENABLE_RAG_CHAT=true を明示的に設定するまでは非表示
 import { RagChatbot } from '@/components/chat/RagChatbot'
 
 const fontSans = Noto_Sans_JP({
@@ -60,7 +62,7 @@ export default function RootLayout({
         <OrganizationJsonLd />
         <WebSiteJsonLd />
         <LocalBusinessJsonLd />
-        <RagChatbot />
+        {process.env.NEXT_PUBLIC_ENABLE_RAG_CHAT === 'true' && <RagChatbot />}
         <Analytics />
         <SpeedInsights />
       </body>

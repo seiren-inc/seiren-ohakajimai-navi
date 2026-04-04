@@ -64,3 +64,32 @@ data/imports/yasuda_municipality_links*.json
 !data/imports/pending.json
 !data/imports/municipality_map.json
 pnpm-lock.yaml
+
+# caches & build tools
+.turbo/
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+.swc
+
+# OS junk
+Thumbs.db
+
+# editor
+.idea/
+.vscode/workspace-settings.json
+
+# temp / swap
+*.tmp
+*.swp
+*.swo
+*~
+*.iml
+
+# python (monorepo safety)
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc

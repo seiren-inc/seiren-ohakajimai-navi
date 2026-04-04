@@ -112,9 +112,30 @@ export default async function AdminLayout({
 
             {/* Main Content */}
             <main className="flex-1 bg-slate-50 overflow-y-auto">
-                <header className="h-16 bg-white border-b flex items-center justify-between px-6 md:hidden">
-                    <h1 className="font-bold">管理画面</h1>
-                </header>
+                {/* Mobile header + horizontal nav bar */}
+                <div className="bg-white border-b md:hidden">
+                    <div className="h-16 flex items-center px-4">
+                        <AppWindow className="h-5 w-5 mr-2 text-slate-700" />
+                        <h1 className="font-bold text-slate-900">管理画面</h1>
+                    </div>
+                    <nav className="flex overflow-x-auto gap-1 px-3 pb-2 scrollbar-hide">
+                        <Link href="/admin/inquiries" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <MessageSquare className="h-3.5 w-3.5" />問い合わせ
+                        </Link>
+                        <Link href="/admin/municipalities" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <Building2 className="h-3.5 w-3.5" />自治体データ
+                        </Link>
+                        <Link href="/admin/municipalities/import" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <Upload className="h-3.5 w-3.5" />CSVインポート
+                        </Link>
+                        <Link href="/admin/gyoseishoshi" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <UserPlus className="h-3.5 w-3.5" />行政書士
+                        </Link>
+                        <Link href="/admin/link-check" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <ShieldAlert className="h-3.5 w-3.5" />リンク検査
+                        </Link>
+                    </nav>
+                </div>
                 <div className="p-6 md:p-10">
                     {children}
                 </div>

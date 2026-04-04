@@ -86,7 +86,25 @@ export default async function ScrivenerDashboardPage() {
             </aside>
 
             {/* メインコンテンツ */}
-            <main className="flex-1 p-6 md:p-8 lg:p-12 h-[calc(100vh-80px)] overflow-y-auto">
+            {/* Mobile nav bar: サイドバーが hidden の場合にモバイルで表示 */}
+            <div className="border-b bg-white md:hidden">
+                <nav className="flex overflow-x-auto gap-1 px-3 py-2 scrollbar-hide">
+                    <span className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-indigo-600 bg-indigo-50">
+                        <UserCircle className="h-3.5 w-3.5" />ダッシュボード
+                    </span>
+                    <form action={async () => { "use server"; await createScrivenerPortalSession() }}>
+                        <button type="submit" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <CreditCard className="h-3.5 w-3.5" />決済・プラン管理
+                        </button>
+                    </form>
+                    <form action={async () => { "use server"; await signOutScrivener() }}>
+                        <button type="submit" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">
+                            <LogOut className="h-3.5 w-3.5" />ログアウト
+                        </button>
+                    </form>
+                </nav>
+            </div>
+            <main className="flex-1 p-6 md:p-8 lg:p-12 overflow-y-auto">
                 <div className="mx-auto max-w-5xl space-y-8">
                     
                     {/* ヘッダーエリア */}

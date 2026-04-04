@@ -291,7 +291,7 @@ function ScrollToTop() {
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       className={cn(
         'fixed z-50 flex h-10 w-10 items-center justify-center rounded-full border bg-background shadow-md transition-all hover:bg-muted',
-        'bottom-20 right-4',
+        'bottom-36 right-4',
         'md:bottom-24 md:right-6'
       )}
       aria-label="ページの先頭に戻る"
@@ -391,7 +391,7 @@ export default function KaisoukyokaClient({ initialData }: KaisoukyokaClientProp
       : AREAS.find((a) => a.id === activeArea)?.prefectures ?? []
 
   return (
-    <div className="pb-28 md:pb-12">
+    <div className="pb-40 md:pb-12">
       {/* 改善8: 統計サマリーバー */}
       <StatsSummary totalMunicipalities={totalAll} dedicatedCount={dedicatedCount} />
 
