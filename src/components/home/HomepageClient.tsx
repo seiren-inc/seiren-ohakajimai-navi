@@ -533,6 +533,29 @@ export default function HomepageClient() {
           </div>
         </Reveal>
 
+        {/* 中間CTA */}
+        <section className="bg-emerald-600 py-16">
+          <div className="mx-auto max-w-4xl px-6 text-center text-white">
+            <h2 className="text-2xl font-bold md:text-3xl">まずはお電話・チャットで概算を確認しませんか？</h2>
+            <p className="mt-4 text-emerald-50 opacity-90">現地調査前でも、状況を伺えれば概算の費用感をお伝え可能です。</p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link
+                href="/contact"
+                className="inline-flex min-h-[50px] w-full items-center justify-center rounded-full bg-white px-8 text-base font-bold text-emerald-600 shadow-lg hover:bg-emerald-50 sm:w-auto"
+              >
+                無料相談・見積り依頼
+              </Link>
+              <a
+                href="tel:08008888788"
+                className="inline-flex min-h-[50px] w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-emerald-700/30 px-8 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-emerald-700/50 sm:w-auto"
+              >
+                <Phone className="h-5 w-5" />
+                0800-888-8788
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* ============================================================
             [E] サービス内容
         ============================================================ */}

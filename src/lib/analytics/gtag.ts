@@ -2,7 +2,7 @@
  * GA4 (Google Analytics 4) トラッキングユーティリティ
  */
 
-export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID;
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 // 型定義
 declare global {

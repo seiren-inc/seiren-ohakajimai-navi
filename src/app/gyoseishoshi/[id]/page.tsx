@@ -5,12 +5,37 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import Link from "next/link"
 import { MapPin, Globe, MessageCircle, ArrowLeft, Clock } from "lucide-react"
 import type { Metadata } from "next"
+import { cache } from "react"
 
-// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成
+export const revalidate = 3600
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
+
+// generateMetadata とページ本体で同じDBクエリを共有（N+1排除）
+const getScrivener = cache(async (id: string) => {
+  return db.administrativeScrivener.findUnique({
+    where: { id },
+    select: {
+      id: true,
+      officeName: true,
+      representativeName: true,
+      prefecture: true,
+      city: true,
+      websiteUrl: true,
+      priceRangeText: true,
+      specialties: true,
+      profileText: true,
+      businessHours: true,
+      planType: true,
+      isApproved: true,
+      isActive: true,
+      paymentStatus: true,
+      updatedAt: true,
+    },
+  })
+})
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
@@ -23,13 +48,10 @@ type PageProps = {
  * Doc-08 §8: phone/email非表示（公開側）
  */
 
-// Doc-09: 動的メタデータ
+// Doc-09: 動的メタデータ（getScrivener でページ本体とクエリ共有）
 export async function generateMetadata(props: PageProps): Promise<Metadata> {
     const params = await props.params
-    const scrivener = await db.administrativeScrivener.findUnique({
-        where: { id: params.id },
-        select: { officeName: true, prefecture: true, city: true, profileText: true },
-    })
+    const scrivener = await getScrivener(params.id)
 
     if (!scrivener) return constructMetadata({ title: "行政書士が見つかりません" })
 
@@ -46,26 +68,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
 
 export default async function ScrivenerDetailPage(props: PageProps) {
     const params = await props.params
-    const scrivener = await db.administrativeScrivener.findUnique({
-        where: { id: params.id },
-        select: {
-            id: true,
-            officeName: true,
-            representativeName: true,
-            prefecture: true,
-            city: true,
-            websiteUrl: true,
-            priceRangeText: true,
-            specialties: true,
-            profileText: true,
-            businessHours: true,
-            planType: true,
-            isApproved: true,
-            isActive: true,
-            paymentStatus: true,
-            updatedAt: true,
-        },
-    })
+    const scrivener = await getScrivener(params.id)
 
     // 未承認/未アクティブ/未払いは404
     if (!scrivener || !scrivener.isApproved || !scrivener.isActive || scrivener.paymentStatus !== "PAID") {

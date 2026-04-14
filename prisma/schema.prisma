@@ -143,8 +143,7 @@ model AdministrativeScrivener {
 
   @@index([prefecture, isApproved, isActive])
   @@index([planType, priorityScore])
-  @@index([isApproved, isActive])
-  @@index([paymentStatus])
+  @@index([isApproved, isActive, paymentStatus])
   @@map("administrative_scriveners")
 }
 

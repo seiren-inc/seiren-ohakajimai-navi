@@ -9,8 +9,8 @@ import { ArrowLeft } from "lucide-react"
 import type { PublicScrivener } from "@/lib/scrivener-types"
 import type { Metadata } from "next"
 
-// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成
+export const revalidate = 3600
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 

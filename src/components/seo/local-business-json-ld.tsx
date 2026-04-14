@@ -77,7 +77,7 @@ export function LocalBusinessJsonLd() {
         'Friday', 'Saturday', 'Sunday',
       ],
       opens: '09:00',
-      closes: '19:00',
+      closes: '17:00',
     },
     contactPoint: {
       '@type': 'ContactPoint',

@@ -10,8 +10,8 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { PREFECTURES, REGIONS } from "@/lib/prefectures"
 import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle, MapPin } from "lucide-react"
 
-// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成（行政書士一覧は頻繁に変わらないため）
+export const revalidate = 3600
 
 // Doc-09 §3-1: SEO Title/Description
 export const metadata = constructMetadata({
