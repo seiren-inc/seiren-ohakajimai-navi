@@ -38,6 +38,20 @@ export function LocalBusinessJsonLd() {
       latitude: '35.3960962',
       longitude: '139.5300272',
     },
+    hasMap: 'https://www.google.com/maps/place/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E6%B8%85%E8%93%AE/@35.3960962,139.5274523,16z',
+    // 半径での商圏エリア（GEO対策: 戸塚駅起点 50km圏内 = 関東全域対応）
+    serviceArea: {
+      '@type': 'GeoCircle',
+      geoMidpoint: {
+        '@type': 'GeoCoordinates',
+        latitude: '35.3960962',
+        longitude: '139.5300272',
+      },
+      geoRadius: '50000',
+    },
+    parentOrganization: {
+      '@id': `${BASE_URL}/#organization`,
+    },
     // 対象エリア：横浜・湘南エリアを明示（GEO検索最適化）
     areaServed: [
       {

@@ -25,24 +25,46 @@ export function OrganizationJsonLd() {
         },
         geo: {
             '@type': 'GeoCoordinates',
-            latitude: '35.395',
-            longitude: '139.534',
+            latitude: '35.3960962',
+            longitude: '139.5300272',
         },
-        contactPoint: {
-            '@type': 'ContactPoint',
-            telephone: '045-881-9952',
-            contactType: 'customer service',
-            areaServed: 'JP',
-            availableLanguage: 'Japanese',
-            hoursAvailable: {
-                '@type': 'OpeningHoursSpecification',
-                dayOfWeek: [
-                    'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-                    'Friday', 'Saturday', 'Sunday',
-                ],
-                opens: '00:00',
-                closes: '23:59',
+        contactPoint: [
+            {
+                '@type': 'ContactPoint',
+                telephone: '045-881-9952',
+                contactType: 'customer service',
+                areaServed: 'JP',
+                availableLanguage: 'Japanese',
+                hoursAvailable: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: [
+                        'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                        'Friday', 'Saturday', 'Sunday',
+                    ],
+                    opens: '09:00',
+                    closes: '17:00',
+                },
             },
+            {
+                '@type': 'ContactPoint',
+                telephone: '0800-888-8788',
+                contactType: 'customer service',
+                contactOption: 'TollFree',
+                areaServed: 'JP',
+                availableLanguage: 'Japanese',
+                hoursAvailable: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: [
+                        'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+                        'Friday', 'Saturday', 'Sunday',
+                    ],
+                    opens: '09:00',
+                    closes: '17:00',
+                },
+            },
+        ],
+        subOrganization: {
+            '@id': 'https://www.ohakajimai-navi.jp/#local-business',
         },
         areaServed: {
             '@type': 'Country',

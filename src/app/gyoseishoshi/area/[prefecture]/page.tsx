@@ -33,6 +33,7 @@ export async function generateMetadata(props: PageProps): Promise<Metadata> {
     return constructMetadata({
         title: `${pref.name}の行政書士一覧｜改葬許可申請サポート｜お墓じまいナビ`,
         description: `${pref.name}で改葬許可申請をサポートする行政書士を掲載しています。お墓じまい・改葬手続きでお困りの方はお気軽にご相談ください。`,
+        path: `/gyoseishoshi/area/${params.prefecture}`,
     })
 }
 
