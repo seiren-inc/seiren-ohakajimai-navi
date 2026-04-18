@@ -22,16 +22,12 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm ci --ignore-scripts
-
-      - name: Prisma generate
-        run: npx prisma generate
+        run: npm ci
 
       - name: Prisma validate
         run: npx prisma validate
 
       - name: Build
-        # next build includes TypeScript type checking
         run: npm run build
         env:
           DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy?pgbouncer=true"
@@ -40,23 +36,12 @@ jobs:
           NEXT_PUBLIC_SUPABASE_ANON_KEY: "dummy"
           NEXT_PUBLIC_BASE_URL: "https://dummy.example.com"
           NEXT_PUBLIC_SITE_URL: "https://dummy.example.com"
-          # Doc-19 §2.8: RAGチャットはデフォルト非表示。CIビルドで担保する
           NEXT_PUBLIC_ENABLE_RAG_CHAT: ""
 
-      # --- SEO 静的検証 (DB不要) ---
-      # T3-06: sitemap URL 整合チェック（PDF混入・重複・件数）
       - name: Verify SEO Sitemap (static)
         run: npx tsx scripts/verify_seo_sitemap.ts
         env:
           NEXT_PUBLIC_BASE_URL: "https://www.ohakajimai-navi.jp"
 
-      # T3-07: title・description 重複チェック（静的ファイル解析）
       - name: Verify SEO Meta (static)
         run: npx tsx scripts/verify_seo_meta.ts
-
-      # --- DB依存チェック（注意）---
-      # verify_quality_gate.ts / verify_invariants.ts は本番DBへの接続が必要。
-      # ダミーDB環境では実行不可なため CI には含めていない。
-      # テスト専用 Supabase プロジェクトを用意した際に以下を解除する:
-      # - run: npx tsx scripts/verify_invariants.ts
-      # - run: npx tsx scripts/verify_quality_gate.ts
