@@ -19,40 +19,25 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: false
-
-      - name: Get pnpm store directory
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Cache pnpm
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: ${{ runner.os }}-pnpm-store-
+          cache: "npm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Prisma generate
-        run: pnpm exec prisma generate
+        run: npx prisma generate
 
       - name: Prisma validate
-        run: pnpm exec prisma validate
+        run: npx prisma validate
 
       - name: TypeCheck
-        run: pnpm exec tsc --noEmit
+        run: npx tsc --noEmit
 
       - name: Lint
-        run: pnpm exec next lint
+        run: npx next lint
 
       - name: Build
-        run: pnpm run build
+        run: npm run build
         env:
           DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy?pgbouncer=true"
           DIRECT_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
@@ -66,17 +51,17 @@ jobs:
       # --- SEO 静的検証 (DB不要) ---
       # T3-06: sitemap URL 整合チェック（PDF混入・重複・件数）
       - name: Verify SEO Sitemap (static)
-        run: pnpm exec tsx scripts/verify_seo_sitemap.ts
+        run: npx tsx scripts/verify_seo_sitemap.ts
         env:
           NEXT_PUBLIC_BASE_URL: "https://www.ohakajimai-navi.jp"
 
       # T3-07: title・description 重複チェック（静的ファイル解析）
       - name: Verify SEO Meta (static)
-        run: pnpm exec tsx scripts/verify_seo_meta.ts
+        run: npx tsx scripts/verify_seo_meta.ts
 
       # --- DB依存チェック（注意）---
       # verify_quality_gate.ts / verify_invariants.ts は本番DBへの接続が必要。
       # ダミーDB環境では実行不可なため CI には含めていない。
       # テスト専用 Supabase プロジェクトを用意した際に以下を解除する:
-      # - run: pnpm exec tsx scripts/verify_invariants.ts
-      # - run: pnpm exec tsx scripts/verify_quality_gate.ts
+      # - run: npx tsx scripts/verify_invariants.ts
+      # - run: npx tsx scripts/verify_quality_gate.ts
