@@ -23,18 +23,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-
-      - name: Prisma generate
-        run: npx prisma generate
+        # postinstall automatically runs: prisma generate
 
       - name: Prisma validate
         run: npx prisma validate
 
       - name: TypeCheck
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Lint
-        run: npx next lint
+        run: npm run lint
 
       - name: Build
         run: npm run build
