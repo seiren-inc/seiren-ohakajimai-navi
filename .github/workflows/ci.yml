@@ -33,11 +33,32 @@ jobs:
       # [暫定措置] build ステップを GitHub CI から除外しています。
       # ビルド検証は Vercel Preview デプロイ（Vercel bot の check）で代替しています。
       # これは恒久対応ではありません。以下の条件が揃い次第、build を CI に戻してください:
-      #   1. DB不要で next build が完走できること
-      #      （Prisma Client 生成・Supabase 接続をビルド時に実行しない構成）
-      #   2. 必要 env（DATABASE_URL, DIRECT_URL 等）を GitHub Actions Secrets で安全に注入できること
-      #   3. prisma generate が postinstall で自動実行され、ビルド時に暴発しないこと
-      # 上記が整ったら next PR で "Build" ステップをこのコメントと差し替えてください。
+      #
+      #   1. DB不要ビルド
+      #      build 時に DB クエリが実際に発火するページを dynamic 化・runtime 化すること。
+      #      現在の要対応ファイル:
+      #        - kaisoukyoka/page.tsx      → revalidate なし → SSG → findMany(全市区町村) が発火
+      #        - gyoseishoshi/page.tsx     → revalidate あるが force-dynamic なし
+      #        - gyoseishoshi/area/[prefecture]/page.tsx → 同上・47都道府県分
+      #      対策: 上記に `export const dynamic = "force-dynamic"` または `revalidate` を追加する。
+      #      （Prisma Client の import 自体は問題なし。query の実行有無が管理対象）
+      #
+      #   2. env の安全な CI 注入
+      #      DB不要構成が実現できれば build 時の DATABASE_URL 接続は不要。
+      #      GitHub Actions Secrets に DATABASE_URL / DIRECT_URL / NEXT_PUBLIC_BASE_URL を登録し、
+      #      以下ステップを追加:
+      #        - name: Build
+      #          run: npm run build
+      #          env:
+      #            DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      #            DIRECT_URL: ${{ secrets.DIRECT_URL }}
+      #            NEXT_PUBLIC_BASE_URL: "https://www.ohakajimai-navi.jp"
+      #
+      #   3. prisma generate の安定化
+      #      npm ci 後に postinstall の prisma generate が完走すること。
+      #      build フェーズで不要な generate 再実行が起きないことを確認すること。
+      #
+      # 上記が整ったら next PR でこのコメントブロックを "Build" ステップに差し替えてください。
 
       # --- SEO 静的検証 (DB不要) ---
       # T3-06: sitemap URL 整合チェック（PDF混入・重複・件数）
