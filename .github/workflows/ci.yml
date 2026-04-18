@@ -30,9 +30,14 @@ jobs:
           DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
           DIRECT_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
 
-      # Build is validated by Vercel deployment (see Vercel Preview check).
-      # Running next build here with a dummy DATABASE_URL causes failures
-      # unrelated to code correctness. Vercel enforces build integrity.
+      # [暫定措置] build ステップを GitHub CI から除外しています。
+      # ビルド検証は Vercel Preview デプロイ（Vercel bot の check）で代替しています。
+      # これは恒久対応ではありません。以下の条件が揃い次第、build を CI に戻してください:
+      #   1. DB不要で next build が完走できること
+      #      （Prisma Client 生成・Supabase 接続をビルド時に実行しない構成）
+      #   2. 必要 env（DATABASE_URL, DIRECT_URL 等）を GitHub Actions Secrets で安全に注入できること
+      #   3. prisma generate が postinstall で自動実行され、ビルド時に暴発しないこと
+      # 上記が整ったら next PR で "Build" ステップをこのコメントと差し替えてください。
 
       # --- SEO 静的検証 (DB不要) ---
       # T3-06: sitemap URL 整合チェック（PDF混入・重複・件数）
