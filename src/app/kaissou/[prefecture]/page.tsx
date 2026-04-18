@@ -83,6 +83,24 @@ export default async function PrefecturePage(props: PageProps) {
         }
     ]
 
+    const geoJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}/kaissou/${params.prefecture}#service`,
+        name: `${prefName}の改葬手続きサポート`,
+        description: `${prefName}の市区町村別改葬許可申請書情報と手続きガイド。${prefName}のお墓じまい・改葬をワンストップでサポート。`,
+        url: `${SITE_URL}/kaissou/${params.prefecture}`,
+        serviceType: '改葬手続きサポート',
+        areaServed: {
+            '@type': 'AdministrativeArea',
+            name: prefName,
+        },
+        provider: {
+            '@id': `${SITE_URL}/#organization`,
+        },
+        inLanguage: 'ja',
+    }
+
     return (
         <div className="bg-white">
             <BreadcrumbJsonLd
@@ -91,6 +109,10 @@ export default async function PrefecturePage(props: PageProps) {
                     { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
                     { name: prefName, url: `${SITE_URL}/kaissou/${params.prefecture}` },
                 ]}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }}
             />
             <Breadcrumb items={[
                 { name: "改葬手続き情報", href: "/kaissou" },

@@ -69,6 +69,24 @@ export default async function PrefectureScrivenerPage(props: PageProps) {
         ],
     })
 
+    const geoJsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        '@id': `${SITE_URL}/gyoseishoshi/area/${pref.slug}#service`,
+        name: `${pref.name}の改葬許可申請サポート・行政書士紹介`,
+        description: `${pref.name}で改葬許可申請をサポートする行政書士の紹介サービス。お墓じまい・改葬手続きをワンストップでサポートします。`,
+        url: `${SITE_URL}/gyoseishoshi/area/${pref.slug}`,
+        serviceType: '行政書士紹介・改葬手続きサポート',
+        areaServed: {
+            '@type': 'AdministrativeArea',
+            name: pref.name,
+        },
+        provider: {
+            '@id': `${SITE_URL}/#organization`,
+        },
+        inLanguage: 'ja',
+    }
+
     return (
         <>
             <BreadcrumbJsonLd items={[
@@ -76,6 +94,10 @@ export default async function PrefectureScrivenerPage(props: PageProps) {
                 { name: "行政書士マッチング", url: `${SITE_URL}/gyoseishoshi` },
                 { name: pref.name, url: `${SITE_URL}/gyoseishoshi/area/${pref.slug}` },
             ]} />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(geoJsonLd) }}
+            />
 
             <div className="bg-slate-50 border-b">
                 <div className="container max-w-5xl px-4 py-3">

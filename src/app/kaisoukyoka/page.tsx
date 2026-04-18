@@ -70,6 +70,58 @@ export default async function KaisoukyokaPage() {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'HowTo',
+            '@id': `${SITE_URL}/kaisoukyoka#howto`,
+            name: '改葬許可申請書の取得・提出手順',
+            description: 'お墓じまい・改葬に必要な改葬許可申請書の取得から改葬許可証を受け取るまでの手順。',
+            totalTime: 'P14D',
+            inLanguage: 'ja',
+            supply: [
+              { '@type': 'HowToSupply', name: '埋蔵証明書（現在の墓地管理者が発行）' },
+              { '@type': 'HowToSupply', name: '受入証明書（改葬先が発行）' },
+            ],
+            step: [
+              {
+                '@type': 'HowToStep',
+                position: 1,
+                name: '申請書を入手する',
+                text: '現在のお墓がある市区町村の窓口（市民課・環境衛生課など）か、本ページから申請書をダウンロードします。',
+                url: `${SITE_URL}/kaisoukyoka`,
+              },
+              {
+                '@type': 'HowToStep',
+                position: 2,
+                name: '必要事項を記入する',
+                text: '申請書に故人の氏名・改葬元の墓地情報・改葬先の情報などを記入します。記入漏れがないよう確認してください。',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 3,
+                name: '添付書類を準備する',
+                text: '現在の墓地管理者から「埋蔵証明書」を、改葬先から「受入証明書」を取得します。自治体によって追加書類が必要な場合があります。',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 4,
+                name: '市区町村窓口へ提出する',
+                text: '申請書と添付書類をお墓のある市区町村の担当窓口へ提出します。審査が完了すると「改葬許可証」が交付されます。',
+              },
+              {
+                '@type': 'HowToStep',
+                position: 5,
+                name: '改葬許可証を改葬先へ提出する',
+                text: '交付された改葬許可証を新しい埋葬先（寺院・霊園など）または散骨業者へ提出し、改葬手続きが完了します。',
+              },
+            ],
+          }),
+        }}
+      />
+
       <Breadcrumb items={[{ name: '改葬許可申請書ダウンロード 全国一覧', href: '/kaisoukyoka' }]} />
 
       {/* ページタイトル + 説明文 */}

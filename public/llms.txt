@@ -6,43 +6,68 @@
 
 - 運営会社: 株式会社清蓮（Seiren Inc.）
 - 所在地: 神奈川県横浜市戸塚区戸塚町4170 高橋ビル1階（〒244-0003）
-- 電話: 045-881-9952
+- 電話: 045-881-9952（代表）/ 0800-888-8788（フリーダイヤル）
 - 公式URL: https://www.ohakajimai-navi.jp
-- サービス対象エリア: 日本全国
+- サービス対象エリア: 日本全国（47都道府県対応）
+- 設立: 2008年8月6日
+- Google マップ評価: 4.5（28件のクチコミ）
 
 ## 主要コンテンツ
 
 ### サービス情報
 - [お墓じまいとは](https://www.ohakajimai-navi.jp/about) - お墓じまいの基礎知識
 - [費用・料金](https://www.ohakajimai-navi.jp/price) - お墓じまいにかかる費用
-- [流れ・手順](https://www.ohakajimai-navi.jp/flow) - お墓じまいの具体的な進め方
+- [流れ・手順](https://www.ohakajimai-navi.jp/flow) - お墓じまいの具体的な進め方（HowTo）
+- [海洋散骨](https://www.ohakajimai-navi.jp/sankotsu) - 東京湾・相模湾での散骨（チャーター・合同・委託）
+- [離檀料](https://www.ohakajimai-navi.jp/ridanryou) - 離檀交渉・離檀料の解説
+- [改葬後の供養先](https://www.ohakajimai-navi.jp/kaisougo) - 永代供養・樹木葬など
 - [会社概要](https://www.ohakajimai-navi.jp/company) - 株式会社清蓮について
 - [お問い合わせ](https://www.ohakajimai-navi.jp/contact)
 
 ### 手続き情報（地域別）
-- [改葬手続きの方法](https://www.ohakajimai-navi.jp/kaissou) - 都道府県・市区町村別の改葬許可申請手順
-- [改葬許可証の取り方](https://www.ohakajimai-navi.jp/kaisoukyoka) - 都道府県別の改葬許可情報まとめ
+- [改葬手続きの方法](https://www.ohakajimai-navi.jp/kaissou) - 全47都道府県別の改葬許可申請手順（CollectionPage）
+- [改葬許可申請書ダウンロード](https://www.ohakajimai-navi.jp/kaisoukyoka) - 全国1,700以上の市区町村別一覧（HowTo付き）
+- 都道府県別ページ: https://www.ohakajimai-navi.jp/kaissou/{都道府県スラッグ}
+- 市区町村別ページ: https://www.ohakajimai-navi.jp/kaissou/{都道府県スラッグ}/{市区町村スラッグ}
 
 ### 専門家ディレクトリ
-- [対応行政書士一覧](https://www.ohakajimai-navi.jp/gyoseishoshi) - 改葬手続きを代行する行政書士の紹介
+- [行政書士マッチング](https://www.ohakajimai-navi.jp/gyoseishoshi) - 改葬手続き代行の行政書士紹介
+- 都道府県別行政書士: https://www.ohakajimai-navi.jp/gyoseishoshi/area/{都道府県スラッグ}
 
 ## サービス内容
 
-- お墓じまい（墓石の撤去・整地）
+- お墓じまい（墓石の撤去・整地）- 全国47都道府県対応
 - 改葬（お骨の移転・永代供養先の手配）
-- 散骨・海洋散骨
+- 海洋散骨 - 東京湾・相模湾（チャーター30〜50万円、合同5〜15万円、委託対応）
 - 遺骨の洗骨・粉骨
-- 改葬手続きサポート（書類取得・申請代行）
+- 改葬手続きサポート（書類取得・申請案内）
 - 離檀交渉サポート
+
+## 構造化データ（Schema.org）
+
+- Organization / LocalBusiness（横浜市戸塚区拠点、全国対応）
+- AggregateRating（4.5点 / 28件 - Google Maps）
+- FAQPage（全ページ対応、都道府県別動的生成含む）
+- HowTo（改葬手続きの流れ・改葬許可申請書取得手順）
+- Service + AdministrativeArea（47都道府県別GEO最適化）
+- CollectionPage（全国改葬手続き情報一覧）
+- BreadcrumbList（全ページ対応）
+- VideoObject（海洋散骨・改葬手続き解説動画）
+- BlogPosting / Article（コラム・解説記事）
+- Dataset（全国市区町村改葬許可申請書データ）
+- DefinedTermSet（改葬・散骨など専門用語8件）
+- SpeakableSpecification（音声検索・AI検索対応）
 
 ## 専門用語
 
 - **お墓じまい**: 現在のお墓を解体・撤去し、遺骨を別の場所に移す行為
 - **改葬**: 遺骨や遺体を現在の墓地から別の墓地に移すこと
 - **改葬許可証**: 改葬を行う際に市区町村長から交付される許可書類
+- **改葬許可申請書**: 改葬許可証を取得するために提出する申請書
 - **散骨**: 故人の遺骨を粉骨し、海や山などの自然の中に撒く供養の形
 - **離檀**: 寺院の檀信徒から離れること。墓じまいに際して必要になる場合がある
 - **永代供養**: 墓地や寺院が遺骨を長期的に管理・供養する形式
+- **粉骨**: 遺骨を2mm以下に粉砕すること。海洋散骨に必須
 
 ## よくある質問
 
@@ -51,7 +76,9 @@
 - 改葬許可証はどこで取得できますか？
   - 故人が埋葬されているお墓のある市区町村の窓口で申請します
 - 行政書士に改葬手続きを依頼できますか？
-  - 行政書士は改葬許可申請の書類作成を代行できます。費用は事務所により異なりますが、書類作成代行は2〜5万円程度が目安です
+  - 行政書士は改葬許可申請の書類作成を代行できます
+- 海洋散骨は法律的に問題ありませんか？
+  - 散骨を直接禁止する法律は存在しません。節度を持った方法で行えば合法です
 
 ## ライセンスと著作権
 
