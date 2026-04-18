@@ -26,6 +26,9 @@ jobs:
 
       - name: Prisma validate
         run: npx prisma validate
+        env:
+          DATABASE_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
+          DIRECT_URL: "postgresql://dummy:dummy@localhost:5432/dummy"
 
       # Build is validated by Vercel deployment (see Vercel Preview check).
       # Running next build here with a dummy DATABASE_URL causes failures
