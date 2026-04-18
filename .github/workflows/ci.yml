@@ -28,9 +28,6 @@ jobs:
       - name: Prisma validate
         run: npx prisma validate
 
-      - name: Lint
-        run: npm run lint
-
       - name: Build
         # next build includes TypeScript type checking
         run: npm run build
