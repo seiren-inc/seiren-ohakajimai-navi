@@ -33,7 +33,7 @@ export function OrganizationJsonLd() {
                 '@type': 'ContactPoint',
                 telephone: '045-881-9952',
                 contactType: 'customer service',
-                areaServed: 'JP',
+                areaServed: { '@type': 'Country', name: '日本' },
                 availableLanguage: 'Japanese',
                 hoursAvailable: {
                     '@type': 'OpeningHoursSpecification',
@@ -50,7 +50,7 @@ export function OrganizationJsonLd() {
                 telephone: '0800-888-8788',
                 contactType: 'customer service',
                 contactOption: 'TollFree',
-                areaServed: 'JP',
+                areaServed: { '@type': 'Country', name: '日本' },
                 availableLanguage: 'Japanese',
                 hoursAvailable: {
                     '@type': 'OpeningHoursSpecification',
