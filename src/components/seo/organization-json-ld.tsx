@@ -1,7 +1,7 @@
 export function OrganizationJsonLd() {
     const jsonLd = {
         '@context': 'https://schema.org',
-        '@type': ['Organization', 'LocalBusiness'],
+        '@type': 'Organization',
         '@id': 'https://www.ohakajimai-navi.jp/#organization',
         name: '株式会社清蓮',
         alternateName: ['お墓じまいナビ', 'Seiren'],
@@ -12,7 +12,7 @@ export function OrganizationJsonLd() {
             url: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         },
         image: 'https://www.ohakajimai-navi.jp/og-image.jpg',
-        telephone: '045-881-9952',
+        telephone: '0800-888-8788',
         email: 'contact@seiren.ne.jp',
         priceRange: 'お見積り無料',
         address: {
@@ -25,12 +25,12 @@ export function OrganizationJsonLd() {
         },
         geo: {
             '@type': 'GeoCoordinates',
-            latitude: '35.395',
-            longitude: '139.534',
+            latitude: '35.3960962',
+            longitude: '139.5300272',
         },
         contactPoint: {
             '@type': 'ContactPoint',
-            telephone: '045-881-9952',
+            telephone: '0800-888-8788',
             contactType: 'customer service',
             areaServed: 'JP',
             availableLanguage: 'Japanese',
@@ -40,8 +40,8 @@ export function OrganizationJsonLd() {
                     'Monday', 'Tuesday', 'Wednesday', 'Thursday',
                     'Friday', 'Saturday', 'Sunday',
                 ],
-                opens: '00:00',
-                closes: '23:59',
+                opens: '09:00',
+                closes: '17:00',
             },
         },
         areaServed: {
