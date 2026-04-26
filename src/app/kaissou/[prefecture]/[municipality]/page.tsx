@@ -123,6 +123,30 @@ export default async function MunicipalityPage(props: PageProps) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(datasetJsonLd) }}
             />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        '@context': 'https://schema.org',
+                        '@type': 'Service',
+                        '@id': `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}#service`,
+                        name: `${municipality.name}の改葬手続きサポート`,
+                        description: `${municipality.prefectureName}${municipality.name}でのお墓じまい・改葬手続きをワンストップでサポート。改葬許可申請書の取得から墓石撤去まで全対応。`,
+                        url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}`,
+                        serviceType: '改葬手続きサポート',
+                        areaServed: {
+                            '@type': 'AdministrativeArea',
+                            name: `${municipality.prefectureName}${municipality.name}`,
+                            containedInPlace: {
+                                '@type': 'AdministrativeArea',
+                                name: municipality.prefectureName,
+                            },
+                        },
+                        provider: { '@id': `${SITE_URL}/#organization` },
+                        inLanguage: 'ja',
+                    }),
+                }}
+            />
             <FaqJsonLd faqs={geoFaqs} />
 
             <div className="grid gap-12 lg:grid-cols-[1fr_350px] max-w-6xl mx-auto py-10 px-4 md:px-0">

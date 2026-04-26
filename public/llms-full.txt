@@ -10,11 +10,13 @@
 - 代表: 眞如 理恵（代表取締役）
 - 所在地: 〒244-0003 神奈川県横浜市戸塚区戸塚町4170 高橋ビル1階
 - 電話: 045-881-9952
-- フリーコール: 0800-888-8788
+- フリーコール: 0800-888-8788（24時間受付）
 - メール: contact@seiren.ne.jp
 - 公式URL: https://www.ohakajimai-navi.jp
 - 対象エリア: 日本全国47都道府県
 - 主な事業: お墓じまい（墓石撤去）、改葬手続きサポート、海洋散骨、遺骨の洗骨・粉骨、離檀交渉サポート
+- Google マップ評価: 4.5（28件のクチコミ）
+- 営業時間: 09:00〜17:00（月〜日・年中無休）
 
 ---
 
@@ -41,24 +43,27 @@
 
 ### 改葬手続き情報（全国）
 - URL: https://www.ohakajimai-navi.jp/kaissou
-- 概要: 47都道府県の改葬手続き情報ポータル。各都道府県をクリックすると市区町村一覧へ遷移。
+- 概要: 47都道府県の改葬手続き情報ポータル（CollectionPage）。各都道府県をクリックすると市区町村一覧へ遷移。
 - 都道府県ページ: https://www.ohakajimai-navi.jp/kaissou/{都道府県slug}
+  - 都道府県ごとのService + AdministrativeAreaスキーマ、地域FAQ3問を掲載。
 - 市区町村ページ: https://www.ohakajimai-navi.jp/kaissou/{都道府県slug}/{市区町村slug}
-  - 改葬許可申請書のダウンロードリンク、手続き窓口情報、自治体ごとのFAQ3問を掲載。
+  - 改葬許可申請書のダウンロードリンク、手続き窓口情報、市区町村レベルのService + AdministrativeAreaスキーマ、自治体ごとのFAQ3問を掲載。
 
 ### 改葬許可申請書ダウンロード
 - URL: https://www.ohakajimai-navi.jp/kaisoukyoka
-- 概要: 全国の市区町村の改葬許可申請書PDFダウンロードリンクを一覧掲載。自治体公式ページへのリンクも。
+- 概要: 全国1,700以上の市区町村の改葬許可申請書PDFダウンロードリンクを一覧掲載。HowToスキーマ（申請書取得→記入→添付書類→窓口提出→許可証受領の5ステップ）付き。
 
 ### 行政書士マッチング
 - URL: https://www.ohakajimai-navi.jp/gyoseishoshi
 - 概要: 改葬手続きの代行が可能な提携行政書士の検索・紹介。都道府県別の行政書士一覧。
 - エリアページ: https://www.ohakajimai-navi.jp/gyoseishoshi/area/{都道府県slug}
+  - 都道府県ごとのService + AdministrativeAreaスキーマを含む。
 - 個別ページ: https://www.ohakajimai-navi.jp/gyoseishoshi/{id}
 
 ### 海洋散骨（散骨クルーズ）
 - URL: https://www.ohakajimai-navi.jp/sankotsu
-- 概要: お墓じまい後の海洋散骨サービス案内。東京湾・相模湾などの海域に対応。チャーター・合同・委託散骨の情報。
+- 概要: お墓じまい後の海洋散骨サービス案内。東京湾・相模湾などの海域に対応。
+- プラン: チャーター散骨（30〜50万円）、合同散骨（5〜15万円）、委託散骨（代理散骨）の3種。Serviceスキーマ + hasOfferCatalog対応。
 
 ### 離檀料について
 - URL: https://www.ohakajimai-navi.jp/ridanryou

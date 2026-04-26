@@ -65,6 +65,60 @@ export default function SankotsuPage() {
       />
       {/* 海洋散骨 × 横浜・湘南エリアに特化した LocalBusiness */}
       <LocalBusinessJsonLd />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Service',
+            '@id': `${BASE_URL}/sankotsu#service`,
+            name: '海洋散骨サービス（東京湾・相模湾）',
+            description: '神奈川県横浜市を拠点に東京湾・相模湾で行う海洋散骨。チャーター・合同・委託の3プランに対応。粉骨サービス込み。',
+            url: `${BASE_URL}/sankotsu`,
+            serviceType: '海洋散骨',
+            areaServed: [
+              { '@type': 'AdministrativeArea', name: '神奈川県' },
+              { '@type': 'AdministrativeArea', name: '東京都' },
+              { '@type': 'Country', name: '日本' },
+            ],
+            provider: { '@id': `${BASE_URL}/#organization` },
+            inLanguage: 'ja',
+            hasOfferCatalog: {
+              '@type': 'OfferCatalog',
+              name: '海洋散骨プラン',
+              itemListElement: [
+                {
+                  '@type': 'Offer',
+                  name: 'チャーター散骨',
+                  description: 'ご家族だけで船を貸し切り行う海洋散骨。プライベートな時間をご家族でゆっくりお過ごしいただけます。',
+                  priceSpecification: {
+                    '@type': 'PriceSpecification',
+                    priceCurrency: 'JPY',
+                    minPrice: '300000',
+                    maxPrice: '500000',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  name: '合同散骨',
+                  description: '複数のご家族と共同で行う海洋散骨。費用を抑えながら海洋散骨を実現できるプランです。',
+                  priceSpecification: {
+                    '@type': 'PriceSpecification',
+                    priceCurrency: 'JPY',
+                    minPrice: '50000',
+                    maxPrice: '150000',
+                  },
+                },
+                {
+                  '@type': 'Offer',
+                  name: '委託散骨（代理散骨）',
+                  description: 'ご家族に代わってスタッフが散骨を行うプラン。遠方にお住まいの方や体調が優れない方にも対応。',
+                },
+              ],
+            },
+          }),
+        }}
+      />
 
       <div className="min-h-screen bg-white">
         <div className="border-b border-neutral-100 bg-neutral-50">
