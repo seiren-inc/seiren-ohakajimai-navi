@@ -9,8 +9,7 @@ import { ArrowLeft } from "lucide-react"
 import type { PublicScrivener } from "@/lib/scrivener-types"
 import type { Metadata } from "next"
 
-// ISR: 1時間ごとに再生成
-export const revalidate = 3600
+export const revalidate = 86400
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 

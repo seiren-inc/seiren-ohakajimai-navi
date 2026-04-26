@@ -17,7 +17,7 @@ export function LocalBusinessJsonLd() {
     description:
       '神奈川県横浜市戸塚区を拠点に、お墓じまい・改葬・海洋散骨・離檀交渉・墓石撤去を全国対応でワンストップサポート。横浜・湘南エリアの海洋散骨専門事業者。',
     url: BASE_URL,
-    telephone: '045-881-9952',
+    telephone: '0800-888-8788',
     email: 'contact@seiren.ne.jp',
     priceRange: 'お見積り無料',
     image: `${BASE_URL}/og-image.jpg`,

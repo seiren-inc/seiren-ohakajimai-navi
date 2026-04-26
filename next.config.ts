@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const cspHeader = `
     default-src 'self';
-    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.googletagmanager.com https://www.clarity.ms;
+    script-src 'self' 'unsafe-eval' 'unsafe-inline' https://*.googletagmanager.com https://www.clarity.ms https://challenges.cloudflare.com;
     style-src 'self' 'unsafe-inline';
     img-src 'self' blob: data: https: https://*.google-analytics.com https://*.googletagmanager.com;
     font-src 'self' data:;
@@ -11,7 +11,8 @@ const cspHeader = `
     form-action 'self';
     frame-ancestors 'none';
     upgrade-insecure-requests;
-    connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms;
+    frame-src https://challenges.cloudflare.com;
+    connect-src 'self' https://*.supabase.co https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.clarity.ms https://challenges.cloudflare.com;
 `;
 
 const securityHeaders = [
@@ -65,6 +66,20 @@ const nextConfig: NextConfig = {
   experimental: {
     // lucide-react の tree-shaking を強化し、未使用アイコンをバンドルから除外
     optimizePackageImports: ['lucide-react'],
+  },
+  // ─── HTTPSリダイレクト（二重防御） ──────────────────────────────
+  // Vercel は HTTP→HTTPS を自動処理するが、アプリ層でも明示的に対応する
+  async redirects() {
+    return process.env.NODE_ENV === 'production'
+      ? [
+          {
+            source: '/:path*',
+            has: [{ type: 'header' as const, key: 'x-forwarded-proto', value: 'http' }],
+            destination: 'https://www.ohakajimai-navi.jp/:path*',
+            permanent: true,
+          },
+        ]
+      : []
   },
   async headers() {
     return [

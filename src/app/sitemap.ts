@@ -23,7 +23,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${BASE_URL}/kaisougo`,     priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/company`,     priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/column`,      priority: 0.8, changeFrequency: 'weekly'  as const },
-        { url: `${BASE_URL}/contact`,     priority: 0.7, changeFrequency: 'monthly' as const },
+        { url: `${BASE_URL}/contact`,      priority: 0.7, changeFrequency: 'monthly' as const },
+        { url: `${BASE_URL}/estimation`,  priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/tokutei`,     priority: 0.4, changeFrequency: 'yearly'  as const },
     ].map((r) => ({ ...r, lastModified: now }))
 
