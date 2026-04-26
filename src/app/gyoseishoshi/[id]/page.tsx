@@ -8,7 +8,7 @@ import type { Metadata } from "next"
 import { cache } from "react"
 
 // ISR: 1時間ごとに再生成
-export const revalidate = 3600
+export const dynamic = "force-dynamic"
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any

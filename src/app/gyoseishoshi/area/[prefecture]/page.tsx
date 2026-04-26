@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react"
 import type { PublicScrivener } from "@/lib/scrivener-types"
 import type { Metadata } from "next"
 
-export const revalidate = 86400
+export const dynamic = "force-dynamic"
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 

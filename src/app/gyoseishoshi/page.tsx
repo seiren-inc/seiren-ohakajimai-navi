@@ -11,7 +11,7 @@ import { PREFECTURES, REGIONS } from "@/lib/prefectures"
 import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle, MapPin } from "lucide-react"
 
 // ISR: 1時間ごとに再生成（行政書士一覧は頻繁に変わらないため）
-export const revalidate = 3600
+export const dynamic = "force-dynamic"
 
 // Doc-09 §3-1: SEO Title/Description
 export const metadata = constructMetadata({
