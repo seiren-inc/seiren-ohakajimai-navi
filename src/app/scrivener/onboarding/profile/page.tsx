@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { ScrivenerProfileOnboardingForm } from "@/components/scrivener/ScrivenerProfileOnboardingForm"
 import { constructMetadata } from "@/lib/seo"
 import { createClient } from "@/lib/supabase/server"

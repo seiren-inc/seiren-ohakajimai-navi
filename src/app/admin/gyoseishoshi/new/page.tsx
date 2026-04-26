@@ -1,3 +1,6 @@
+export const dynamic = "force-dynamic"
+
+import { prisma } from "@/lib/prisma"
 import { createScrivener } from "@/actions/admin/scrivener-actions"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -7,7 +10,13 @@ import { PREFECTURES } from "@/lib/prefectures"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 
-export default function NewScrivenerPage() {
+export default async function NewScrivenerPage() {
+    const municipalities = await prisma.municipality.findMany({
+        select: { id: true, name: true, prefectureName: true },
+        where: { isPublished: true },
+        orderBy: [{ prefectureName: "asc" }, { name: "asc" }],
+    })
+
     return (
         <div className="space-y-6">
             <div className="flex items-center gap-4">
@@ -58,6 +67,22 @@ export default function NewScrivenerPage() {
                     <div>
                         <label className="text-sm font-medium">住所</label>
                         <Input name="addressLine" className="mt-1" />
+                    </div>
+                    <div>
+                        <label className="text-sm font-medium">紐付け市区町村（掲載ページ連携）</label>
+                        <Select name="municipalityId" defaultValue="__none__">
+                            <SelectTrigger className="mt-1">
+                                <SelectValue placeholder="未設定" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="__none__">未設定</SelectItem>
+                                {municipalities.map((m) => (
+                                    <SelectItem key={m.id} value={m.id}>
+                                        {m.prefectureName} / {m.name}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
 

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { constructMetadata } from "@/lib/seo"
 import { createClient } from "@/lib/supabase/server"
 import { prisma } from "@/lib/prisma"

@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic"
+
 import { prisma } from "@/lib/prisma"
 import { notFound } from "next/navigation"
 import {
@@ -29,15 +31,22 @@ type PageProps = {
 
 export default async function ScrivenerDetailPage(props: PageProps) {
     const params = await props.params
-    const scrivener = await db.administrativeScrivener.findUnique({
-        where: { id: params.id },
-        include: {
-            auditLogs: {
-                orderBy: { createdAt: 'desc' },
-                take: 20,
+    const [scrivener, municipalities] = await Promise.all([
+        db.administrativeScrivener.findUnique({
+            where: { id: params.id },
+            include: {
+                auditLogs: {
+                    orderBy: { createdAt: 'desc' },
+                    take: 20,
+                },
             },
-        },
-    })
+        }),
+        prisma.municipality.findMany({
+            select: { id: true, name: true, prefectureName: true },
+            where: { isPublished: true },
+            orderBy: [{ prefectureName: "asc" }, { name: "asc" }],
+        }),
+    ])
 
     if (!scrivener) notFound()
 
@@ -201,6 +210,22 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                     <div>
                         <label className="text-sm font-medium">住所</label>
                         <Input name="addressLine" defaultValue={scrivener.addressLine || ""} className="mt-1" />
+                    </div>
+                    <div>
+                        <label className="text-sm font-medium">紐付け市区町村（掲載ページ連携）</label>
+                        <Select name="municipalityId" defaultValue={scrivener.municipalityId ?? "__none__"}>
+                            <SelectTrigger className="mt-1">
+                                <SelectValue placeholder="未設定" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="__none__">未設定</SelectItem>
+                                {municipalities.map((m: { id: string; name: string; prefectureName: string }) => (
+                                    <SelectItem key={m.id} value={m.id}>
+                                        {m.prefectureName} / {m.name}
+                                    </SelectItem>
+                                ))}
+                            </SelectContent>
+                        </Select>
                     </div>
                 </div>
 
