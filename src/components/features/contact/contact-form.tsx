@@ -1,6 +1,7 @@
 'use client'
 
-import { useTransition } from "react"
+import { useTransition, useRef, useState, useEffect } from "react"
+import Script from "next/script"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
@@ -34,8 +35,39 @@ import {
 } from "@/lib/validations/inquiry"
 import { submitInquiry } from "@/actions/submit-inquiry"
 
-export function ContactForm() {
+type ContactFormProps = {
+    municipalityId?: string
+}
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ''
+
+export function ContactForm({ municipalityId }: ContactFormProps) {
     const [isPending, startTransition] = useTransition()
+    const [turnstileToken, setTurnstileToken] = useState<string>('')
+    const turnstileRef = useRef<HTMLDivElement>(null)
+    const widgetIdRef = useRef<string | null>(null)
+
+    const renderTurnstile = () => {
+        if (!turnstileRef.current || !window.turnstile || widgetIdRef.current) return
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+            sitekey: TURNSTILE_SITE_KEY,
+            callback: (token: string) => setTurnstileToken(token),
+            'expired-callback': () => setTurnstileToken(''),
+            theme: 'light',
+            language: 'ja',
+        })
+    }
+
+    useEffect(() => {
+        if (window.turnstile) renderTurnstile()
+        return () => {
+            if (widgetIdRef.current && window.turnstile) {
+                window.turnstile.remove(widgetIdRef.current)
+                widgetIdRef.current = null
+            }
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
     const form = useForm<InquiryFormData>({
         resolver: zodResolver(inquirySchema),
@@ -62,6 +94,11 @@ export function ContactForm() {
     })
 
     function onSubmit(data: InquiryFormData) {
+        if (!turnstileToken) {
+            toast.error('セキュリティ確認が完了していません。しばらくお待ちください。')
+            return
+        }
+
         startTransition(async () => {
             const formData = new FormData()
             Object.entries(data).forEach(([key, value]) => {
@@ -69,6 +106,10 @@ export function ContactForm() {
                     formData.append(key, value.toString())
                 }
             })
+            if (municipalityId) {
+                formData.append("municipalityId", municipalityId)
+            }
+            formData.append("cf-turnstile-response", turnstileToken)
 
             try {
                 const result = await submitInquiry(null, formData)
@@ -76,7 +117,6 @@ export function ContactForm() {
                 if (result.success) {
                     toast.success("お問い合わせを受け付けました")
                     trackFormSubmit("contact")
-                    // Redirect is handled in Server Action, but we can reset form here just in case
                     form.reset()
                 } else {
                     toast.error(result.message || "送信に失敗しました")
@@ -84,6 +124,11 @@ export function ContactForm() {
                         Object.entries(result.errors).forEach(([key, messages]) => {
                             form.setError(key as keyof InquiryFormData, { message: messages[0] })
                         })
+                    }
+                    // Reset Turnstile on failure so user can retry
+                    if (widgetIdRef.current && window.turnstile) {
+                        window.turnstile.reset(widgetIdRef.current)
+                        setTurnstileToken('')
                     }
                 }
             } catch {
@@ -95,6 +140,12 @@ export function ContactForm() {
 
 
     return (
+        <>
+        <Script
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            strategy="lazyOnload"
+            onLoad={renderTurnstile}
+        />
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
 
@@ -446,11 +497,14 @@ export function ContactForm() {
 
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+                <div ref={turnstileRef} className="my-2" />
+
+                <Button type="submit" size="lg" className="w-full" disabled={isPending || !turnstileToken}>
                     {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     {isPending ? "送信中..." : "送信する"}
                 </Button>
             </form>
         </Form>
+        </>
     )
 }

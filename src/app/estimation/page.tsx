@@ -33,6 +33,14 @@ export default function EstimationPage() {
       </div>
 
       <div className="container relative mx-auto px-4 py-16 md:py-24">
+        <div className="text-center mb-10">
+          <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl text-slate-800">
+            お墓じまいAI費用シミュレーター
+          </h1>
+          <p className="mt-3 text-slate-500 text-base md:text-lg">
+            4つの質問に答えるだけで、改葬費用の概算を無料で算出します。
+          </p>
+        </div>
         {/* ウィザード本体 */}
         <AIEstimationWizard />
       </div>

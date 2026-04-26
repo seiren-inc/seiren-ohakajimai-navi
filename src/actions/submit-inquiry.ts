@@ -8,6 +8,7 @@ import { redirect } from "next/navigation"
 import { sanitizeObject } from "@/lib/sanitize"
 
 const resend = new Resend(process.env.RESEND_API_KEY)
+const FROM_ADDRESS = process.env.MAIL_FROM_ADDRESS || 'noreply@ohakajimai-navi.jp'
 
 export type State = {
     success: boolean
@@ -38,8 +39,25 @@ export async function submitInquiry(prevState: State | null, formData: FormData)
 
     // Handle Honeypot
     if (rawData.confirmEmail && rawData.confirmEmail !== "") {
-        // Spam detected, pretend success
         return { success: true, message: "お問い合わせを受け付けました。" }
+    }
+
+    // Cloudflare Turnstile verification
+    const turnstileToken = formData.get("cf-turnstile-response")
+    if (!turnstileToken || typeof turnstileToken !== "string") {
+        return { success: false, message: "セキュリティ確認が完了していません。" }
+    }
+    const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY
+    if (turnstileSecret) {
+        const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+        })
+        const verifyData = await verifyRes.json() as { success: boolean }
+        if (!verifyData.success) {
+            return { success: false, message: "セキュリティ確認に失敗しました。もう一度お試しください。" }
+        }
     }
 
     // Sanitize input
@@ -59,6 +77,17 @@ export async function submitInquiry(prevState: State | null, formData: FormData)
     const { data } = validatedFields
     const ip = (await headers()).get("x-forwarded-for") || "unknown"
     const userAgent = (await headers()).get("user-agent") || "unknown"
+
+    // municipalityId: DB 存在確認のうえで保存。存在しない場合は null 扱い
+    const rawMunicipalityId = formData.get("municipalityId")
+    let verifiedMunicipalityId: string | null = null
+    if (typeof rawMunicipalityId === "string" && rawMunicipalityId.length > 0) {
+        const exists = await prisma.municipality.findUnique({
+            where: { id: rawMunicipalityId },
+            select: { id: true },
+        })
+        verifiedMunicipalityId = exists?.id ?? null
+    }
 
     // Simple Rate Limiting (IP base: max 3 requests per hour)
     try {
@@ -100,6 +129,7 @@ export async function submitInquiry(prevState: State | null, formData: FormData)
                 ipAddress: ip,
                 userAgent: userAgent,
                 status: "NEW", // Default
+                municipalityId: verifiedMunicipalityId,
             }
         })
 
@@ -153,7 +183,7 @@ ${data.content}
         // Send emails
         // Admin notification
         await resend.emails.send({
-            from: 'お墓じまいナビ <system@osohiki-navi.jp>', // TODO: Update with verified domain later
+            from: `お墓じまいナビ <${FROM_ADDRESS}>`, // TODO: Update with verified domain later
             to: process.env.ADMIN_EMAIL || 'info@seiren.jp', // Fallback
             subject: `【新規問合】${data.lastName} ${data.firstName}様より`,
             text: adminMailBody,
@@ -161,7 +191,7 @@ ${data.content}
 
         // User auto-reply
         await resend.emails.send({
-            from: 'お墓じまいナビ <system@osohiki-navi.jp>',
+            from: `お墓じまいナビ <${FROM_ADDRESS}>`,
             to: data.email,
             subject: `【自動返信】お問い合わせありがとうございます`,
             text: userMailBody,

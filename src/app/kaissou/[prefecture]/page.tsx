@@ -12,8 +12,7 @@ import { Card, CardContent } from "@/components/ui/card"
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
-// ビルド時のプリレンダリングを無効化（DBクエリを含むため）
-export const dynamic = "force-dynamic"
+export const revalidate = 86400
 
 // Correct type definition for params in Next.js 15
 type PageProps = {
