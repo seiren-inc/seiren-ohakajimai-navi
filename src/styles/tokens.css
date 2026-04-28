@@ -1,0 +1,103 @@
+@layer base {
+  /*
+   * Dashboard token architecture
+   * Layer 1: primitive tokens
+   * Layer 2: semantic tokens
+   * Layer 3: component tokens
+   */
+  .theme-terminal-ops-dark {
+    /* Layer 1: primitives */
+    --ds-color-slate-950: 229 48% 8%;
+    --ds-color-slate-900: 222 52% 10%;
+    --ds-color-slate-800: 220 45% 14%;
+    --ds-color-slate-700: 215 28% 20%;
+    --ds-color-slate-300: 217 20% 65%;
+    --ds-color-slate-100: 220 27% 91%;
+    --ds-color-cyan-500: 188 85% 53%;
+    --ds-color-violet-400: 258 90% 76%;
+    --ds-color-emerald-500: 160 84% 39%;
+    --ds-color-amber-500: 38 92% 50%;
+    --ds-color-rose-500: 347 89% 60%;
+
+    --ds-space-1: 0.25rem;
+    --ds-space-2: 0.5rem;
+    --ds-space-3: 0.75rem;
+    --ds-space-4: 1rem;
+    --ds-space-5: 1.25rem;
+    --ds-space-6: 1.5rem;
+    --ds-space-8: 2rem;
+
+    /* Layer 2: semantic */
+    --ds-color-bg-page: var(--ds-color-slate-950);
+    --ds-color-bg-surface: var(--ds-color-slate-900);
+    --ds-color-bg-surface-hover: var(--ds-color-slate-800);
+    --ds-color-border-default: var(--ds-color-slate-700);
+    --ds-color-text-primary: var(--ds-color-slate-100);
+    --ds-color-text-muted: var(--ds-color-slate-300);
+    --ds-color-text-secondary: 217 18% 76%;
+    --ds-color-accent-primary: var(--ds-color-cyan-500);
+    --ds-color-accent-secondary: var(--ds-color-violet-400);
+    --ds-color-bg-subtle: 222 40% 12%;
+    --ds-color-border-strong: 215 24% 28%;
+    --ds-color-focus-ring: 188 90% 56%;
+    --ds-status-success: 142 76% 48%;
+    --ds-status-warning: 38 95% 58%;
+    --ds-status-danger: 347 89% 64%;
+    --ds-status-info: 199 89% 60%;
+
+    /* Layer 3: component */
+    --ds-kpi-card-bg: var(--ds-color-bg-surface);
+    --ds-kpi-card-border: var(--ds-color-border-default);
+    --ds-kpi-title: var(--ds-color-text-muted);
+    --ds-kpi-value: var(--ds-color-text-primary);
+    --ds-kpi-positive: var(--ds-status-success);
+    --ds-kpi-warning: var(--ds-status-warning);
+    --ds-kpi-negative: var(--ds-status-danger);
+    --ds-filter-bg: var(--ds-color-bg-surface);
+    --ds-panel-bg: var(--ds-color-bg-surface);
+    --ds-filter-pill-bg: var(--ds-color-bg-subtle);
+    --ds-table-row-hover: 220 38% 15%;
+    --ds-radius-sm: 0.5rem;
+    --ds-radius-md: 0.625rem;
+    --ds-radius-lg: 0.75rem;
+    --ds-text-label: 0.75rem;
+    --ds-text-kpi: clamp(1.25rem, 1rem + 1vw, 1.875rem);
+    --ds-elev-1: 0 1px 2px hsl(0 0% 0% / 0.22);
+    --ds-elev-2: 0 6px 20px hsl(0 0% 0% / 0.32);
+  }
+
+  .theme-admin-gyoseishoshi-light {
+    --gyo-bg-page: 210 33% 98%;
+    --gyo-bg-surface: 0 0% 100%;
+    --gyo-bg-subtle: 210 20% 96%;
+    --gyo-border: 214 24% 88%;
+    --gyo-text-primary: 222 47% 12%;
+    --gyo-text-muted: 215 16% 42%;
+  }
+}
+
+@layer utilities {
+  .dashboard-heading {
+    font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .dashboard-kpi-grid {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  @media (min-width: 768px) {
+    .dashboard-kpi-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .dashboard-kpi-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+}

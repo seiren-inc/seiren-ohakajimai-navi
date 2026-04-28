@@ -13,6 +13,7 @@ export interface BlogMetadata {
   title: string
   description: string
   date: string
+  updatedAt?: string
   category: string
   slug: string
   tags: string[]

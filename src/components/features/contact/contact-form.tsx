@@ -156,7 +156,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                     render={({ field }) => (
                         <FormItem className="hidden">
                             <FormControl>
-                                <Input {...field} />
+                                <Input {...field} aria-label="確認用メールアドレス" tabIndex={-1} aria-hidden="true" />
                             </FormControl>
                         </FormItem>
                     )}
@@ -275,7 +275,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                     <FormLabel>都道府県 <span className="text-red-500">*</span></FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger aria-label="都道府県">
                                                 <SelectValue placeholder="選択してください" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -341,7 +341,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                         {Object.entries(CemeteryType).map(([key, label]) => (
                                             <FormItem key={key} className="flex items-center space-x-3 space-y-0">
                                                 <FormControl>
-                                                    <RadioGroupItem value={key} />
+                                                    <RadioGroupItem value={key} aria-label={label} />
                                                 </FormControl>
                                                 <FormLabel className="font-normal">{label}</FormLabel>
                                             </FormItem>
@@ -368,7 +368,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                         {Object.entries(ConsiderationPeriod).map(([key, label]) => (
                                             <FormItem key={key} className="flex items-center space-x-3 space-y-0">
                                                 <FormControl>
-                                                    <RadioGroupItem value={key} />
+                                                    <RadioGroupItem value={key} aria-label={label} />
                                                 </FormControl>
                                                 <FormLabel className="font-normal">{label}</FormLabel>
                                             </FormItem>
@@ -410,7 +410,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                 <FormLabel>改葬先（新しい供養先）</FormLabel>
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <FormControl>
-                                        <SelectTrigger>
+                                        <SelectTrigger aria-label="改葬先（新しい供養先）">
                                             <SelectValue placeholder="選択してください（任意）" />
                                         </SelectTrigger>
                                     </FormControl>
@@ -434,7 +434,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                     <FormLabel>遺骨サポート（洗骨・粉骨）</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger aria-label="遺骨サポート（洗骨・粉骨）">
                                                 <SelectValue placeholder="選択してください（任意）" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -456,7 +456,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                     <FormLabel>容器（骨壷・骨箱）</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger aria-label="容器（骨壷・骨箱）">
                                                 <SelectValue placeholder="選択してください（任意）" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -481,6 +481,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                     <Checkbox
                                         checked={field.value}
                                         onCheckedChange={field.onChange}
+                                        aria-label="離檀交渉のサポートを希望する"
                                     />
                                 </FormControl>
                                 <div className="space-y-1 leading-none">

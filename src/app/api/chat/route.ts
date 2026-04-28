@@ -85,8 +85,8 @@ export async function POST(req: Request) {
                         return {
                             found: true,
                             data: [
-                                { q: "料金はいくらですか？", a: "サービス一覧ページを御覧ください。散骨は5万円から、などのプランがあります。 https://ohakajimai-navi.jp/carrying" },
-                                { q: "行政書士に対応してもらえますか？", a: "はい、全国の行政書士を検索できるページをご用意しております。 https://ohakajimai-navi.jp/gyoseishoshi" }
+                                { q: "料金はいくらですか？", a: "サービス一覧ページを御覧ください。散骨は5万円から、などのプランがあります。 https://www.ohakajimai-navi.jp/carrying" },
+                                { q: "行政書士に対応してもらえますか？", a: "はい、全国の行政書士を検索できるページをご用意しております。 https://www.ohakajimai-navi.jp/gyoseishoshi" }
                             ]
                         }
                     },

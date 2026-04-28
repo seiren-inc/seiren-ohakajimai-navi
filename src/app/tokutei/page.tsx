@@ -125,14 +125,21 @@ export default function TokuteiPage() {
             <li>
               ・お墓じまいナビ（
               <a href="https://www.ohakajimai-navi.jp" className="underline">
-                ohakajimai-navi.jp
+                www.ohakajimai-navi.jp
               </a>
               ）
             </li>
             <li>
               ・お墓探しナビ（
               <a href="https://www.ohakanavi.jp" className="underline">
-                ohakanavi.jp
+                www.ohakanavi.jp
+              </a>
+              ）
+            </li>
+            <li>
+              ・株式会社清蓮 コーポレートサイト（
+              <a href="https://www.seiren-inc.co.jp" className="underline">
+                www.seiren-inc.co.jp
               </a>
               ）
             </li>

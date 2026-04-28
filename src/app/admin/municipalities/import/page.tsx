@@ -118,7 +118,7 @@ export default function ImportPage() {
     return (
         <div className="space-y-8 max-w-5xl mx-auto">
             <div>
-                <h2 className="text-2xl font-bold tracking-tight">自治体データインポート</h2>
+                <h1 className="text-2xl font-bold tracking-tight">自治体データインポート</h1>
                 <p className="text-muted-foreground">
                     CSVまたはJSONファイルをアップロードして、自治体データを一括登録・更新します。
                 </p>

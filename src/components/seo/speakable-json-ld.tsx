@@ -9,9 +9,10 @@ interface SpeakableJsonLdProps {
   cssSelector?: string[]
   xPath?: string[]
   pageUrl: string
+  name?: string
 }
 
-export function SpeakableJsonLd({ cssSelector, xPath, pageUrl }: SpeakableJsonLdProps) {
+export function SpeakableJsonLd({ cssSelector, xPath, pageUrl, name = "お墓じまいナビ" }: SpeakableJsonLdProps) {
   const speakable: Record<string, unknown> = {
     "@type": "SpeakableSpecification",
   }
@@ -21,6 +22,7 @@ export function SpeakableJsonLd({ cssSelector, xPath, pageUrl }: SpeakableJsonLd
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
+    name,
     url: pageUrl,
     speakable,
   }

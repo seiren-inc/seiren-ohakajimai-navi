@@ -184,7 +184,7 @@ export function ScrivenerEntryForm() {
                         render={({ field }) => (
                             <FormItem className="hidden" aria-hidden>
                                 <FormControl>
-                                    <Input {...field} tabIndex={-1} autoComplete="off" />
+                                    <Input {...field} aria-label="確認用メールアドレス" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                                 </FormControl>
                             </FormItem>
                         )}
@@ -343,7 +343,7 @@ export function ScrivenerEntryForm() {
                                                 <FormLabel>都道府県 <span className="text-red-500">*</span></FormLabel>
                                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                                     <FormControl>
-                                                        <SelectTrigger>
+                                                        <SelectTrigger aria-label="都道府県">
                                                             <SelectValue placeholder="選択してください" />
                                                         </SelectTrigger>
                                                     </FormControl>

@@ -30,20 +30,15 @@ export function AuthorJsonLd({
       "@type": "Organization",
       name: "株式会社清蓮",
       url: "https://www.ohakajimai-navi.jp",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.ohakajimai-navi.jp/og-image.jpg",
-      },
+      logo: "https://www.ohakajimai-navi.jp/og-image.jpg",
     },
     publisher: {
       "@type": "Organization",
       name: "株式会社清蓮",
       url: "https://www.ohakajimai-navi.jp",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.ohakajimai-navi.jp/og-image.jpg",
-      },
+      logo: "https://www.ohakajimai-navi.jp/og-image.jpg",
     },
+    image: "https://www.ohakajimai-navi.jp/og-image.jpg",
     // 監修者情報（専門家によるレビューを明示）
     reviewedBy: {
       "@type": "Person",

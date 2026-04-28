@@ -23,6 +23,7 @@ Antigravity は本チェックリストを通過しない限り
 - [ ] iCloudを使用していない
 - [ ] Node v22 である
 - [ ] lockファイルが一致している
+- [ ] production の `NEXT_PUBLIC_BASE_URL` が `https://www.ohakajimai-navi.jp` に固定されている
 
 ---
 
@@ -43,6 +44,7 @@ Antigravity は本チェックリストを通過しない限り
 ### 2.3 CI 成功確認
 
 - [ ] verify:ci 成功
+- [ ] verify:seo 成功（sitemap + meta）
 - [ ] 型チェック成功
 - [ ] テスト成功
 - [ ] 不変条件チェック成功
@@ -62,6 +64,7 @@ CI失敗状態でのリリースは絶対禁止。
 - [ ] description 重複なし
 - [ ] canonical 正常
 - [ ] robots.txt 正常
+- [ ] canonical / metadataBase / robots / sitemap が `https://www.ohakajimai-navi.jp` と整合している
 
 ---
 
@@ -175,3 +178,4 @@ CI失敗状態でのリリースは絶対禁止。
 | v1.0    | 初版                                                                                              |
 | v1.1    | AI機能確認セクションを強化（内部監査30日安定稼働の前提条件を追加し、公開RAG有効化ゲートを明示化） |
 | v1.2    | 30日未満の場合、公開RAGは無効化状態でなければならないことを明示                                   |
+| v1.3    | productionのBASE_URL固定確認、verify:seo必須化、wwwドメイン整合チェックを追記                     |

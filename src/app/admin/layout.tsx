@@ -13,6 +13,18 @@ import {
     UserPlus,
     ShieldAlert,
 } from "lucide-react"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: {
+        template: "%s | 管理画面",
+        default: "管理画面",
+    },
+    robots: {
+        index: false,
+        follow: false,
+    },
+}
 
 export default async function AdminLayout({
     children,
@@ -70,10 +82,10 @@ export default async function AdminLayout({
             {/* Sidebar */}
             <aside className="w-64 bg-slate-900 text-slate-50 shrink-0 hidden md:block">
                 <div className="p-6">
-                    <h1 className="text-xl font-bold flex items-center gap-2">
+                    <div className="text-xl font-bold flex items-center gap-2">
                         <AppWindow className="h-6 w-6" />
                         <span>管理画面</span>
-                    </h1>
+                    </div>
                     <p className="text-xs text-slate-400 mt-1">お墓じまいナビ</p>
                 </div>
                 <nav className="px-4 space-y-2">
@@ -116,7 +128,7 @@ export default async function AdminLayout({
                 <div className="bg-white border-b md:hidden">
                     <div className="h-16 flex items-center px-4">
                         <AppWindow className="h-5 w-5 mr-2 text-slate-700" />
-                        <h1 className="font-bold text-slate-900">管理画面</h1>
+                        <div className="font-bold text-slate-900">管理画面</div>
                     </div>
                     <nav className="flex overflow-x-auto gap-1 px-3 pb-2 scrollbar-hide">
                         <Link href="/admin/inquiries" className="flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-slate-100">

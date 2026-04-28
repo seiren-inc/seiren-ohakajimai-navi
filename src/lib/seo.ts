@@ -30,6 +30,8 @@ export function constructMetadata({
     path?: string
     /** og:typeの指定（デフォルト: 'website'、コラム記事は 'article'） */
     ogType?: 'website' | 'article'
+    publishedTime?: string
+    modifiedTime?: string
 } = {}): Metadata {
     const absoluteImageUrl = new URL(image, siteConfig.url).toString()
     const canonicalUrl = path
@@ -42,6 +44,7 @@ export function constructMetadata({
             template: `%s | ${siteConfig.name}`,
         },
         description,
+        authors: [{ name: '株式会社清蓮', url: siteConfig.url }],
         openGraph: {
             title: {
                 default: title,
@@ -57,6 +60,11 @@ export function constructMetadata({
             siteName: siteConfig.name,
             locale: 'ja_JP',
             type: ogType,
+            ...(ogType === 'article' && (publishedTime || modifiedTime) ? {
+                publishedTime,
+                modifiedTime,
+                authors: ['株式会社清蓮'],
+            } : {}),
         },
         twitter: {
             card: 'summary_large_image',

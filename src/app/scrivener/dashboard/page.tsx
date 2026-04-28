@@ -57,7 +57,7 @@ export default async function ScrivenerDashboardPage() {
     }
 
     return (
-        <div className="flex min-h-[calc(100vh-80px)] bg-slate-50">
+        <div className="theme-terminal-ops-dark flex min-h-[calc(100vh-80px)] bg-background">
             {/* サイドバー（簡易版） */}
             <aside className="hidden w-64 flex-col border-r bg-white md:flex">
                 <div className="flex h-16 items-center border-b px-6">
@@ -106,7 +106,7 @@ export default async function ScrivenerDashboardPage() {
                     </form>
                 </nav>
             </div>
-            <main className="flex-1 p-6 md:p-8 lg:p-12 overflow-y-auto">
+            <div className="flex-1 p-6 md:p-8 lg:p-12 overflow-y-auto">
                 <div className="mx-auto max-w-5xl space-y-8">
                     
                     {/* ヘッダーエリア */}
@@ -209,7 +209,7 @@ export default async function ScrivenerDashboardPage() {
                         <PasskeyManager />
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
     )
 }

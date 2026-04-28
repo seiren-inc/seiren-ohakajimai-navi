@@ -63,16 +63,14 @@ jobs:
           # Doc-19 §2.8: RAGチャットはデフォルト非表示。CIビルドで担保する
           NEXT_PUBLIC_ENABLE_RAG_CHAT: ""
 
-      # --- SEO 静的検証 (DB不要) ---
-      # T3-06: sitemap URL 整合チェック（PDF混入・重複・件数）
-      - name: Verify SEO Sitemap (static)
-        run: pnpm exec tsx scripts/verify_seo_sitemap.ts
+      # --- SEO 必須ゲート (DB不要) ---
+      # PR / main のどちらでもこのステップが失敗した場合はマージ不可
+      - name: Verify SEO Gate (required)
+        run: |
+          pnpm exec tsx scripts/verify_seo_sitemap.ts
+          pnpm exec tsx scripts/verify_seo_meta.ts
         env:
           NEXT_PUBLIC_BASE_URL: "https://www.ohakajimai-navi.jp"
-
-      # T3-07: title・description 重複チェック（静的ファイル解析）
-      - name: Verify SEO Meta (static)
-        run: pnpm exec tsx scripts/verify_seo_meta.ts
 
       # --- DB依存チェック（注意）---
       # verify_quality_gate.ts / verify_invariants.ts は本番DBへの接続が必要。

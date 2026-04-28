@@ -1,6 +1,8 @@
 {
   "name": "お墓じまいナビ",
   "short_name": "お墓じまいナビ",
+  "start_url": "/",
+  "id": "/",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
