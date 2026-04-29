@@ -185,6 +185,9 @@ export async function toggleApproval(id: string, isApproved: boolean) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -206,6 +209,9 @@ export async function toggleActive(id: string, isActive: boolean) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -244,6 +250,9 @@ export async function updatePaymentStatus(id: string, paymentStatus: string) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -280,5 +289,8 @@ export async function deleteScrivener(id: string) {
     await recordAuditLog(id, "DELETE_LOGICAL", null, { isActive: false, isApproved: false })
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
     redirect("/admin/gyoseishoshi")
 }

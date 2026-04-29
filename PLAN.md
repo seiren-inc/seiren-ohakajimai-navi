@@ -106,11 +106,11 @@
 
 ## Phase 4 — ISR 戦略の最適化（Phase 1〜3 完了後）
 
-- [ ] 行政書士承認・非承認時に `revalidatePath` を呼ぶ（管理画面 Server Action）
-- [ ] `/gyoseishoshi` を `force-dynamic` → `revalidate = 300` に変更
-- [ ] `/gyoseishoshi/area/[prefecture]` を `revalidate = 300` に変更
-- [ ] `/kaisoukyoka` を `revalidate = 3600` に変更
-- [ ] `npm run verify` 通過確認
+- [x] 行政書士承認・非承認時に `revalidatePath` を呼ぶ（管理画面 Server Action）
+- [x] `/gyoseishoshi` を `force-dynamic` → `revalidate = 300` に変更
+- [x] `/gyoseishoshi/area/[prefecture]` を `revalidate = 300` に変更
+- [x] `/kaisoukyoka` を `revalidate = 3600` に変更
+- [x] `npm run verify` 通過確認
 
 ---
 

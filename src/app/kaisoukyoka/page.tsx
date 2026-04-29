@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成（自治体データは頻繁に変わらない）
+export const revalidate = 3600
 
 import { Metadata } from 'next'
 import { prisma } from '@/lib/prisma'
