@@ -20,6 +20,8 @@ export function constructMetadata({
     noIndex = false,
     path,
     ogType = 'website',
+    publishedTime,
+    modifiedTime,
 }: {
     title?: string
     description?: string
