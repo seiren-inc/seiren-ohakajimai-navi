@@ -223,25 +223,47 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                             )}
                         </div>
 
-                        {/* 右カラム: CTA */}
+                        {/* 右カラム: CTA（ページ内フォームへスクロール） */}
                         <div className="md:col-span-1">
                             <div className="sticky top-24 rounded-xl border bg-white p-6 shadow-sm space-y-4">
                                 <h3 className="text-lg font-bold text-neutral-900">この行政書士に相談する</h3>
                                 <p className="text-xs text-neutral-500">
                                     改葬許可申請についてのご相談を受け付けています。
                                 </p>
-                                <Link
-                                    href="/gyoseishoshi#contact-form"
+                                <a
+                                    href="#contact-form"
                                     className="flex items-center justify-center gap-2 rounded-lg bg-emerald-600 px-4 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors w-full"
                                 >
                                     <MessageCircle className="h-4 w-4" />
                                     無料で相談する
-                                </Link>
+                                </a>
                                 <p className="text-xs text-center text-neutral-400">
                                     ※ 本サービスは広告掲載です。当社は行政書士業務の受任・仲介を行いません。
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ===== インライン問い合わせフォーム ===== */}
+            <section id="contact-form" className="py-16 md:py-20 bg-slate-50 scroll-mt-20">
+                <div className="container max-w-3xl px-4">
+                    <div className="text-center mb-10">
+                        <h2 className="text-lg font-bold tracking-tight text-neutral-900 md:text-2xl">
+                            {scrivener.officeName}に無料相談する
+                        </h2>
+                        <p className="mt-4 text-sm text-neutral-600 max-w-lg mx-auto">
+                            改葬許可申請についてのご相談を受け付けています。
+                            内容を確認の上、2営業日以内にご連絡いたします。
+                        </p>
+                        <p className="mt-2 text-xs text-neutral-500">
+                            ※ 本フォームは行政書士への直接依頼ではなく、相談の受付です。
+                            契約は利用者と行政書士の間で直接成立します。
+                        </p>
+                    </div>
+                    <div className="bg-white p-6 md:p-10 rounded-lg shadow-sm border">
+                        <GyoseishoshiInquiryForm scrivenerId={scrivener.id} />
                     </div>
                 </div>
             </section>
