@@ -78,10 +78,10 @@
 
 > スキーマ上の `scrivenerId` は実装済み。コード側の配線が未完。
 
-- [ ] `submitGyoseishoshiInquiry` に `scrivenerId` 保存を追加（`src/actions/submit-gyoseishoshi-inquiry.ts`）
-- [ ] `GyoseishoshiInquiryForm` に `scrivenerId?: string` prop を追加（`src/components/features/gyoseishoshi/GyoseishoshiInquiryForm.tsx`）
-- [ ] `/gyoseishoshi/[id]` にインライン問い合わせフォームを設置・`scrivenerId` を渡す（`src/app/gyoseishoshi/[id]/page.tsx`）
-- [ ] `npm run verify` 通過確認
+- [x] `submitGyoseishoshiInquiry` に `scrivenerId` 保存を追加（`src/actions/submit-gyoseishoshi-inquiry.ts`）
+- [x] `GyoseishoshiInquiryForm` に `scrivenerId?: string` prop を追加（`src/components/features/gyoseishoshi/GyoseishoshiInquiryForm.tsx`）
+- [x] `/gyoseishoshi/[id]` にインライン問い合わせフォームを設置・`scrivenerId` を渡す（`src/app/gyoseishoshi/[id]/page.tsx`）
+- [x] `npm run verify` 通過確認
 
 ---
 
@@ -90,17 +90,17 @@
 - [ ] Vercel 環境変数 `RESEND_API_KEY` の設定確認
 - [ ] Resend ダッシュボードで送信ドメイン認証（DNS設定）
 - [ ] ローカルでテスト問い合わせを送り、管理者・ユーザー双方のメール到達を確認
-- [ ] `scrivenerId` がある場合、行政書士本人にも問い合わせ通知メールを送信（`src/actions/submit-gyoseishoshi-inquiry.ts`）
+- [x] `scrivenerId` がある場合、行政書士本人にも問い合わせ通知メールを送信（`src/actions/submit-gyoseishoshi-inquiry.ts`）
 
 ---
 
 ## Phase 2 — ダッシュボードからのプロフィール編集
 
-- [ ] `updateScrivenerProfile` Server Action を追加（`src/actions/scrivener/profile.ts`）— `ScrivenerAuditLog` に変更前後を記録
-- [ ] `ScrivenerProfileEditForm` コンポーネント作成（`src/components/scrivener/ScrivenerProfileEditForm.tsx`）
-- [ ] プロフィール編集ページ作成（`src/app/scrivener/profile/edit/page.tsx`）
-- [ ] ダッシュボードの「登録情報」カードに「編集」リンク追加（`src/app/scrivener/dashboard/page.tsx`）
-- [ ] `npm run verify` 通過確認
+- [x] `updateScrivenerProfile` Server Action を追加（`src/actions/scrivener/profile.ts`）— `ScrivenerAuditLog` に変更前後を記録
+- [x] `ScrivenerProfileEditForm` コンポーネント作成（`src/components/scrivener/ScrivenerProfileEditForm.tsx`）
+- [x] プロフィール編集ページ作成（`src/app/scrivener/profile/edit/page.tsx`）
+- [x] ダッシュボードの「登録情報」カードに「編集」リンク追加（`src/app/scrivener/dashboard/page.tsx`）
+- [x] `npm run verify` 通過確認
 
 ---
 
