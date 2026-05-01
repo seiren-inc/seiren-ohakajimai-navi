@@ -16,6 +16,22 @@ export const metadata = constructMetadata({
   path: '/kaissou',
 })
 
+const collectionPageJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${SITE_URL}/kaissou#collectionpage`,
+    name: '全国都道府県別 改葬手続き情報',
+    description: '全国47都道府県・市区町村別の改葬許可申請書情報と手続きガイド。',
+    url: `${SITE_URL}/kaissou`,
+    inLanguage: 'ja',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    hasPart: PREFECTURES.map((p) => ({
+        '@type': 'WebPage',
+        name: `${p.name}の改葬手続き情報`,
+        url: `${SITE_URL}/kaissou/${p.slug}`,
+    })),
+}
+
 export default function KaissouPage() {
     const groupedPrefectures = REGIONS.map((regionName) => ({
         name: regionName,
@@ -29,6 +45,10 @@ export default function KaissouPage() {
                     { name: "ホーム", url: SITE_URL },
                     { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
                 ]}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageJsonLd) }}
             />
             <Breadcrumb items={[{ name: "改葬手続き情報", href: "/kaissou" }]} />
 

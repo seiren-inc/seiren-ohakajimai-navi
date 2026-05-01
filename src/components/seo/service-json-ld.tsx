@@ -56,7 +56,7 @@ export function ServiceJsonLd({ services }: ServiceJsonLdProps = {}) {
         },
         areaServed: {
           '@type': 'Country',
-          name: 'JP',
+          name: '日本',
         },
         ...(service.url && { url: service.url }),
         ...(service.price && {
