@@ -93,7 +93,6 @@ export async function submitGyoseishoshiInquiry(prevState: State | null, formDat
     }
 
     try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await (prisma.inquiry.create as (args: unknown) => Promise<unknown>)({ data: createData as unknown })
     } catch (dbError) {
         console.error("[submitGyoseishoshiInquiry] DB保存失敗:", dbError)

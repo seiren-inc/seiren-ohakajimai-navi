@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import { Header } from "./header"
 import { Footer } from "./footer"
+import { EcosystemShowcase } from "@/components/features/ecosystem/EcosystemShowcase"
 import { FixedCTA } from "@/components/ui/FixedCTA"
 
 /**
@@ -18,9 +19,14 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <Header />
+      {!hideGlobalLayout && <Header />}
       <main className={hideGlobalLayout ? "pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0" : "flex-1 pb-[calc(6rem+env(safe-area-inset-bottom))] md:pb-0"}>{children}</main>
-      {!hideGlobalLayout && <Footer />}
+      {!hideGlobalLayout && (
+        <>
+          <EcosystemShowcase />
+          <Footer />
+        </>
+      )}
       <FixedCTA />
     </>
   )

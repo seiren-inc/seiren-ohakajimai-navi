@@ -34,6 +34,7 @@ import {
     ContainerType
 } from "@/lib/validations/inquiry"
 import { submitInquiry } from "@/actions/submit-inquiry"
+import { PREFECTURES } from "@/lib/prefectures"
 
 type ContactFormProps = {
     municipalityId?: string
@@ -165,7 +166,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                 <div className="space-y-4">
                     <h3 className="text-lg font-bold border-b pb-2">お客様情報</h3>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField
                             control={form.control}
                             name="lastName"
@@ -194,7 +195,7 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                         />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <FormField
                             control={form.control}
                             name="lastNameKana"
@@ -280,12 +281,9 @@ export function ContactForm({ municipalityId }: ContactFormProps) {
                                             </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            {/* Populate pref list properly later, simplified for brevity */}
-                                            <SelectItem value="東京都">東京都</SelectItem>
-                                            <SelectItem value="神奈川県">神奈川県</SelectItem>
-                                            <SelectItem value="埼玉県">埼玉県</SelectItem>
-                                            <SelectItem value="千葉県">千葉県</SelectItem>
-                                            <SelectItem value="その他">その他</SelectItem>
+                                            {PREFECTURES.map((pref) => (
+                                                <SelectItem key={pref.code} value={pref.name}>{pref.name}</SelectItem>
+                                            ))}
                                         </SelectContent>
                                     </Select>
                                     <FormMessage />

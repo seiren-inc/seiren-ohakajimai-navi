@@ -167,7 +167,7 @@ export default function PricingPageClient() {
     e.preventDefault()
     const element = document.getElementById(id)
     if (element) {
-      const y = element.getBoundingClientRect().top + window.scrollY - 80 // Offset for sticky nav
+      const y = element.getBoundingClientRect().top + window.scrollY - 112 // Offset for header + sticky nav
       window.scrollTo({ top: y, behavior: "smooth" })
     }
   }
