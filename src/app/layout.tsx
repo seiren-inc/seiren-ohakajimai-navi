@@ -69,8 +69,7 @@ export default function RootLayout({
           href="/images/hero-garden-v3.webp"
           as="image"
           type="image/webp"
-          // @ts-expect-error: fetchpriority is valid HTML but not yet in React types
-          fetchpriority="high"
+          fetchPriority="high"
         />
         {/* Google Fonts の事前接続（フォント取得を高速化） */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
