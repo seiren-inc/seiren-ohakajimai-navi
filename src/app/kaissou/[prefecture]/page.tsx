@@ -1,11 +1,11 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 import { prisma } from "@/lib/prisma"
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { ChevronRight, FileText, MapPin, UserCheck } from "lucide-react"
-import { PREFECTURES } from "@/lib/prefectures"
+import { PREFECTURES, findPrefectureSlug } from "@/lib/prefectures"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { Card, CardContent } from "@/components/ui/card"
@@ -26,20 +26,40 @@ function getPrefectureData(slug: string) {
 
 export async function generateMetadata(props: PageProps) {
     const params = await props.params
-    const prefName = getPrefectureData(params.prefecture)
+    const prefectureSlug = findPrefectureSlug(params.prefecture)
 
-    if (!prefName) return constructMetadata({ title: "ページが見つかりません" })
+    if (!prefectureSlug) {
+        notFound()
+    }
+
+    if (prefectureSlug !== params.prefecture) {
+        permanentRedirect(`/kaissou/${prefectureSlug}`)
+    }
+
+    const prefName = getPrefectureData(prefectureSlug)
+
+    if (!prefName) notFound()
 
     return constructMetadata({
         title: `${prefName}でのお墓じまい・改葬手続き情報一覧｜行政書士・窓口対応`,
         description: `${prefName}内の各市区町村（自治体）の改葬許可申請書のダウンロード先や手続き窓口を掲載。${prefName}の改葬代行に対応可能な行政書士情報も紹介しています。お墓じまいのご相談は無料です。`,
-        path: `/kaissou/${params.prefecture}`
+        path: `/kaissou/${prefectureSlug}`
     })
 }
 
 export default async function PrefecturePage(props: PageProps) {
     const params = await props.params
-    const prefName = getPrefectureData(params.prefecture)
+    const prefectureSlug = findPrefectureSlug(params.prefecture)
+
+    if (!prefectureSlug) {
+        notFound()
+    }
+
+    if (prefectureSlug !== params.prefecture) {
+        permanentRedirect(`/kaissou/${prefectureSlug}`)
+    }
+
+    const prefName = getPrefectureData(prefectureSlug)
 
     if (!prefName) {
         notFound()
@@ -47,7 +67,7 @@ export default async function PrefecturePage(props: PageProps) {
 
     const municipalities = await prisma.municipality.findMany({
         where: {
-            prefectureSlug: params.prefecture,
+            prefectureSlug,
             isPublished: true,
         },
         select: {
@@ -85,10 +105,10 @@ export default async function PrefecturePage(props: PageProps) {
     const geoJsonLd = {
         '@context': 'https://schema.org',
         '@type': 'Service',
-        '@id': `${SITE_URL}/kaissou/${params.prefecture}#service`,
+        '@id': `${SITE_URL}/kaissou/${prefectureSlug}#service`,
         name: `${prefName}の改葬手続きサポート`,
         description: `${prefName}の市区町村別改葬許可申請書情報と手続きガイド。${prefName}のお墓じまい・改葬をワンストップでサポート。`,
-        url: `${SITE_URL}/kaissou/${params.prefecture}`,
+        url: `${SITE_URL}/kaissou/${prefectureSlug}`,
         serviceType: '改葬手続きサポート',
         areaServed: {
             '@type': 'AdministrativeArea',
@@ -106,7 +126,7 @@ export default async function PrefecturePage(props: PageProps) {
                 items={[
                     { name: "ホーム", url: SITE_URL },
                     { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
-                    { name: prefName, url: `${SITE_URL}/kaissou/${params.prefecture}` },
+                    { name: prefName, url: `${SITE_URL}/kaissou/${prefectureSlug}` },
                 ]}
             />
             <script
@@ -115,7 +135,7 @@ export default async function PrefecturePage(props: PageProps) {
             />
             <Breadcrumb items={[
                 { name: "改葬手続き情報", href: "/kaissou" },
-                { name: prefName, href: `/kaissou/${params.prefecture}` },
+                { name: prefName, href: `/kaissou/${prefectureSlug}` },
             ]} />
 
             <div className="max-w-4xl mx-auto space-y-10">

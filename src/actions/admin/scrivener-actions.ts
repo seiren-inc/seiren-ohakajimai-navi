@@ -294,3 +294,71 @@ export async function deleteScrivener(id: string) {
     revalidatePath("/gyoseishoshi/area", "layout")
     redirect("/admin/gyoseishoshi")
 }
+
+// ============================================================
+// 一括操作 Server Actions
+// ============================================================
+
+/**
+ * 一括承認 / 一括承認取消
+ * ids: 対象の行政書士 ID 配列
+ * isApproved: true = 承認, false = 承認取消
+ */
+export async function bulkToggleApproval(ids: string[], isApproved: boolean): Promise<void> {
+    if (ids.length === 0) return
+    await requireAdmin()
+
+    await db.administrativeScrivener.updateMany({
+        where: { id: { in: ids } },
+        data:  { isApproved },
+    })
+
+    // 監査ログを個別に記録
+    await Promise.all(
+        ids.map((id) =>
+            recordAuditLog(id, isApproved ? "APPROVE" : "UNAPPROVE", null, { isApproved })
+        )
+    )
+
+    // 承認時は IndexNow 通知
+    if (isApproved) {
+        const urls = ids.map((id) => `https://www.ohakajimai-navi.jp/gyoseishoshi/${id}`)
+        await submitToIndexNow(urls)
+    }
+
+    revalidatePath("/admin/gyoseishoshi")
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
+}
+
+/**
+ * 一括公開 / 一括停止
+ * ids: 対象の行政書士 ID 配列
+ * isActive: true = 公開, false = 停止
+ */
+export async function bulkToggleActive(ids: string[], isActive: boolean): Promise<void> {
+    if (ids.length === 0) return
+    await requireAdmin()
+
+    await db.administrativeScrivener.updateMany({
+        where: { id: { in: ids } },
+        data:  { isActive },
+    })
+
+    // 監査ログを個別に記録
+    await Promise.all(
+        ids.map((id) =>
+            recordAuditLog(id, isActive ? "ACTIVATE" : "SUSPEND", null, { isActive })
+        )
+    )
+
+    // 公開時は IndexNow 通知
+    if (isActive) {
+        const urls = ids.map((id) => `https://www.ohakajimai-navi.jp/gyoseishoshi/${id}`)
+        await submitToIndexNow(urls)
+    }
+
+    revalidatePath("/admin/gyoseishoshi")
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
+}

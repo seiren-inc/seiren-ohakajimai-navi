@@ -1,7 +1,8 @@
 # 実装計画書 — seiren-ohakajimai-navi
 
-> 最終更新: 2026-04-26
-> ルール: 各作業が完了したら `- [ ]` を `- [x]` に変更すること
+> 最終更新: 2026-04-26  
+> ルール: 作業項目は必ず `- [ ]` で記述し、完了したら `- [x]` に変更する（Markdown タスクリスト。Cursor / VS Code / GitHub でクリック切替可）。  
+> 新規の実装計画は [`docs/templates/implementation-plan-template.md`](docs/templates/implementation-plan-template.md) をコピーして使う。
 
 ---
 

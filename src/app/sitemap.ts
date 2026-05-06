@@ -3,9 +3,6 @@ import { prisma } from '@/lib/prisma'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const db = prisma as any
-
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const now = new Date()
 
@@ -50,15 +47,31 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 行政書士詳細ページ（承認済み・支払済みのみ）
     let scrivenerRoutes: MetadataRoute.Sitemap = []
     try {
-        const scriveners = await db.administrativeScrivener.findMany({
+        const scriveners = await prisma.administrativeScrivener.findMany({
             where: { isApproved: true, isActive: true, paymentStatus: 'PAID' },
             select: { id: true, updatedAt: true },
         })
-        scrivenerRoutes = scriveners.map((s: { id: string; updatedAt: Date }) => ({
+        scrivenerRoutes = scriveners.map((s) => ({
             url: `${BASE_URL}/gyoseishoshi/${s.id}`,
             lastModified: s.updatedAt,
             changeFrequency: 'weekly' as const,
             priority: 0.7,
+        }))
+    } catch {
+        // DB接続エラー時はスキップ
+    }
+
+    let municipalityRoutes: MetadataRoute.Sitemap = []
+    try {
+        const municipalities = await prisma.municipality.findMany({
+            where: { isPublished: true },
+            select: { prefectureSlug: true, municipalitySlug: true, updatedAt: true },
+        })
+        municipalityRoutes = municipalities.map((m) => ({
+            url: `${BASE_URL}/kaissou/${m.prefectureSlug}/${m.municipalitySlug}`,
+            lastModified: m.updatedAt,
+            changeFrequency: 'monthly' as const,
+            priority: 0.55,
         }))
     } catch {
         // DB接続エラー時はスキップ
@@ -79,7 +92,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         // blog モジュールが利用できない場合はスキップ
     }
 
-    return [...staticRoutes, ...prefectureRoutes, ...scrivenerRoutes, ...getGyoseishoshiPrefRoutes(BASE_URL, now), ...blogRoutes]
+    return [
+        ...staticRoutes,
+        ...prefectureRoutes,
+        ...municipalityRoutes,
+        ...scrivenerRoutes,
+        ...getGyoseishoshiPrefRoutes(BASE_URL, now),
+        ...blogRoutes,
+    ]
 }
 
 function getGyoseishoshiPrefRoutes(baseUrl: string, now: Date): MetadataRoute.Sitemap {

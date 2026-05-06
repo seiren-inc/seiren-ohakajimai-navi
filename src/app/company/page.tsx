@@ -86,6 +86,11 @@ const companyData = [
   },
   { label: "代表者", value: "代表取締役　眞如 理恵" },
   { label: "法人番号", value: "0200-01-058496" },
+  { 
+    label: "コーポレートサイト", 
+    value: "https://www.seiren-inc.co.jp/",
+    isLink: true 
+  },
 ]
 
 const stances = [
@@ -226,7 +231,18 @@ export default function CompanyPage() {
               <div key={item.label}>
                 <dt className="text-sm text-neutral-400">{item.label}</dt>
                 <dd className="mt-2 text-base text-neutral-900 whitespace-pre-line">
-                  {item.value}
+                  {('isLink' in item && item.isLink) ? (
+                    <a 
+                      href={item.value} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-emerald-600 underline underline-offset-4 hover:text-emerald-800 transition-colors"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
                 </dd>
               </div>
             ))}
@@ -334,13 +350,21 @@ export default function CompanyPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16">
+          <div className="mt-16 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-3.5 text-sm font-medium text-neutral-700 hover:border-neutral-400 hover:text-neutral-900 transition-colors"
+              className="inline-flex items-center justify-center rounded-full bg-[#1A1A1A] px-10 py-3.5 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors"
             >
               無料相談・お見積りフォームへ
             </Link>
+            <a
+              href="https://www.seiren-inc.co.jp/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-neutral-300 px-8 py-3.5 text-sm font-medium text-neutral-700 hover:border-neutral-400 hover:text-neutral-900 transition-colors"
+            >
+              株式会社清蓮 公式サイト
+            </a>
           </div>
         </div>
       </section>

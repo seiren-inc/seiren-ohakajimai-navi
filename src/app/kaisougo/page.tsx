@@ -5,6 +5,7 @@ import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { SeirenEcosystemNextSteps } from "@/components/features/ecosystem/SeirenEcosystemNextSteps"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
@@ -28,7 +29,7 @@ const faqs = [
     answer: "樹木葬とは、墓石の代わりに樹木や花を墓標として、遺骨を土に還す自然葬の一種です。里山型（自然の山林に埋葬）とガーデン型（整備された公園墓地）があります。費用は5万〜100万円程度と施設によって大きく異なります。",
   },
   {
-    question: "纳骨堂とはどのような施設ですか？",
+    question: "納骨堂とはどのような施設ですか？",
     answer: "納骨堂とは、遺骨を収蔵する施設です。ロッカー型・仏壇型・自動搬送型（機械式）などの種類があり、都市部を中心に普及しています。費用は20万〜100万円程度。年間管理費・のちの移動の可否などを確認したうえで選びましょう。",
   },
   {
@@ -129,6 +130,24 @@ export default function KaisougoPage() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-10 rounded-3xl bg-emerald-50 p-8 md:p-12 text-center">
+              <h3 className="text-lg font-bold text-neutral-900">新しい納骨先・霊園をお探しの方へ</h3>
+              <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+                「お墓探しナビ」では、全国の納骨堂、樹木葬、永代供養墓を条件に合わせて検索できます。
+                お墓じまい後の新しい供養先を比較検討したい方は、ぜひご活用ください。
+              </p>
+              <div className="mt-8">
+                <a 
+                  href="https://www.ohakanavi.jp/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-10 py-4 text-base font-bold text-white shadow-lg hover:bg-emerald-700 transition-all"
+                >
+                  お墓探しナビで霊園・納骨堂を検索 <ArrowRight className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
           </section>
 
           {/* FAQ */}
@@ -147,20 +166,27 @@ export default function KaisougoPage() {
             </div>
           </section>
 
+          <SeirenEcosystemNextSteps context="kaisougo" />
+
           {/* CTA */}
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
               お墓じまいの無料相談 <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/sankotsu" className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
-              海洋散骨について詳しく <ArrowRight className="h-4 w-4" />
-            </Link>
+            <a 
+              href="https://www.ohakanavi.jp/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-4 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+            >
+              お墓探しナビ（霊園・納骨堂検索） <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
 
           {/* 関連リンク */}
           <div className="pt-8 border-t border-neutral-100">
-            <p className="text-xs text-neutral-400 font-semibold uppercase tracking-widest mb-4">関連ページ</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-xs text-neutral-400 font-semibold uppercase tracking-widest mb-4">関連ページ・サービス</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
               {[
                 { href: "/about", label: "お墓じまいとは" },
                 { href: "/flow", label: "お墓じまいの流れ" },
@@ -168,10 +194,18 @@ export default function KaisougoPage() {
                 { href: "/ridanryou", label: "離檀料について" },
                 { href: "/price", label: "お墓じまいの料金" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-emerald-700 underline underline-offset-2 hover:text-emerald-900">
+                <Link key={link.href} href={link.href} className="text-sm text-emerald-700 underline underline-offset-4 hover:text-emerald-900">
                   {link.label}
                 </Link>
               ))}
+              <a 
+                href="https://www.ohakanavi.jp/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-emerald-700 underline underline-offset-4 hover:text-emerald-900 font-bold"
+              >
+                お墓探しナビ（全国霊園検索）
+              </a>
             </div>
           </div>
         </div>

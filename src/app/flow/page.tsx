@@ -21,6 +21,7 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { SeirenEcosystemNextSteps } from "@/components/features/ecosystem/SeirenEcosystemNextSteps"
 
 export const metadata = constructMetadata({
   title: "ご依頼の流れ｜お墓じまい・改葬・墓石撤去の手続きを7ステップで解説｜お墓じまいナビ",
@@ -294,6 +295,9 @@ export default function FlowPage() {
           行政書士に相談する（無料）
           <ArrowRight className="h-4 w-4" />
         </Link>
+        <div className="mt-10">
+          <SeirenEcosystemNextSteps context="flow" />
+        </div>
       </div>
 
       {/* ─── CTA ─── */}

@@ -6,6 +6,10 @@
 **対象リポジトリ:** seiren-ohakajimai-navi  
 **公開URL:** https://www.ohakajimai-navi.jp
 
+> **進捗の記録（チェックマーク）**  
+> 「## 実装計画」以降の Phase / Day 単位の項目は `- [ ]` / `- [x]` のタスクリスト。完了したら `[x]` に更新する。  
+> 監査・説明のための箇条書き（番号付き）はチェックリストにしなくてよい。テンプレ共通ルールは [`docs/templates/implementation-plan-template.md`](../templates/implementation-plan-template.md)。
+
 ---
 
 ## Used Skills

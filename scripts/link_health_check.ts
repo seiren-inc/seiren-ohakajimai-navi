@@ -104,7 +104,8 @@ async function main() {
             name: true,
             url: true,
             pdfUrl: true,
-        }
+        },
+        take: 5
     });
 
     console.log(`Auditing ${targets.length} municipalities...`);

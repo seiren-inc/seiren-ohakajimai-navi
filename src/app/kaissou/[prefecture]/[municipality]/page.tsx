@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound, permanentRedirect } from "next/navigation"
 import { prisma } from "@/lib/prisma"
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle, MapPin, UserCheck, ChevronRight } from "lucide-react"
 import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
+import { ContentProvenance } from "@/components/features/eeat/ContentProvenance"
+import { findPrefectureSlug } from "@/lib/prefectures"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
@@ -15,6 +17,14 @@ const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-nav
 
 type PageProps = {
     params: Promise<{ prefecture: string; municipality: string }>
+}
+
+function isSafeSlug(value: string): boolean {
+    return /^[a-z0-9-]{1,64}$/.test(value)
+}
+
+function isMunicipalityNameCandidate(value: string): boolean {
+    return value.length > 0 && value.length <= 64 && !value.includes("/") && !/[\u0000-\u001f]/.test(value)
 }
 
 async function getMunicipality(prefSlug: string, muniSlug: string) {
@@ -25,6 +35,26 @@ async function getMunicipality(prefSlug: string, muniSlug: string) {
             isPublished: true,
         },
     })
+}
+
+async function getMunicipalityByName(prefSlug: string, municipalityName: string) {
+    if (!isMunicipalityNameCandidate(municipalityName)) return null
+
+    return await prisma.municipality.findFirst({
+        where: {
+            prefectureSlug: prefSlug,
+            name: municipalityName,
+            isPublished: true,
+        },
+    })
+}
+
+async function resolveMunicipality(prefSlug: string, municipality: string) {
+    if (isSafeSlug(municipality)) {
+        return await getMunicipality(prefSlug, municipality)
+    }
+
+    return await getMunicipalityByName(prefSlug, municipality)
 }
 
 // Revalidate the page every 24 hours (86400 seconds)
@@ -39,23 +69,43 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: PageProps) {
     const params = await props.params
-    const municipality = await getMunicipality(params.prefecture, params.municipality)
+    const prefectureSlug = findPrefectureSlug(params.prefecture)
 
-    if (!municipality) return constructMetadata({ title: "ページが見つかりません" })
+    if (!prefectureSlug) {
+        notFound()
+    }
+
+    const municipality = await resolveMunicipality(prefectureSlug, params.municipality)
+
+    if (!municipality) notFound()
+
+    if (prefectureSlug !== params.prefecture || municipality.municipalitySlug !== params.municipality) {
+        permanentRedirect(`/kaissou/${prefectureSlug}/${municipality.municipalitySlug}`)
+    }
 
     return constructMetadata({
         title: `${municipality.name}の改葬許可申請書ダウンロード・手続きガイド｜お墓じまいナビ`,
         description: `${municipality.prefectureName}${municipality.name}での改葬（お墓じまい）に必要な「改葬許可申請書」のダウンロードや、手続き窓口の情報をまとめています。${municipality.name}でお墓の引越しでお悩みなら無料相談へ。`,
-        path: `/kaissou/${params.prefecture}/${params.municipality}`,
+        path: `/kaissou/${prefectureSlug}/${municipality.municipalitySlug}`,
     })
 }
 
 export default async function MunicipalityPage(props: PageProps) {
     const params = await props.params
-    const municipality = await getMunicipality(params.prefecture, params.municipality)
+    const prefectureSlug = findPrefectureSlug(params.prefecture)
+
+    if (!prefectureSlug) {
+        notFound()
+    }
+
+    const municipality = await resolveMunicipality(prefectureSlug, params.municipality)
 
     if (!municipality) {
         notFound()
+    }
+
+    if (prefectureSlug !== params.prefecture || municipality.municipalitySlug !== params.municipality) {
+        permanentRedirect(`/kaissou/${prefectureSlug}/${municipality.municipalitySlug}`)
     }
 
     // 自治体に紐づく提携行政書士を取得（municipalityId + 公開条件）
@@ -91,7 +141,7 @@ export default async function MunicipalityPage(props: PageProps) {
         '@type': 'Dataset',
         name: `${municipality.prefectureName}${municipality.name} 改葬許可申請書データ`,
         description: `${municipality.prefectureName}${municipality.name}でお墓じまい・改葬を行う際に必要な改葬許可申請書の公式ダウンロードリンクや手続き窓口情報をまとめたデータです。`,
-        url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}`,
+        url: `${SITE_URL}/kaissou/${prefectureSlug}/${municipality.municipalitySlug}`,
         creator: {
             '@type': 'Organization',
             name: '株式会社清蓮',
@@ -114,14 +164,14 @@ export default async function MunicipalityPage(props: PageProps) {
                 items={[
                     { name: "ホーム", url: SITE_URL },
                     { name: "改葬手続き情報", url: `${SITE_URL}/kaissou` },
-                    { name: municipality.prefectureName, url: `${SITE_URL}/kaissou/${params.prefecture}` },
-                    { name: municipality.name, url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}` },
+                    { name: municipality.prefectureName, url: `${SITE_URL}/kaissou/${prefectureSlug}` },
+                    { name: municipality.name, url: `${SITE_URL}/kaissou/${prefectureSlug}/${municipality.municipalitySlug}` },
                 ]}
             />
             <Breadcrumb items={[
                 { name: "改葬手続き情報", href: "/kaissou" },
-                { name: municipality.prefectureName, href: `/kaissou/${params.prefecture}` },
-                { name: municipality.name, href: `/kaissou/${params.prefecture}/${params.municipality}` },
+                { name: municipality.prefectureName, href: `/kaissou/${prefectureSlug}` },
+                { name: municipality.name, href: `/kaissou/${prefectureSlug}/${municipality.municipalitySlug}` },
             ]} />
             <script
                 type="application/ld+json"
@@ -133,10 +183,10 @@ export default async function MunicipalityPage(props: PageProps) {
                     __html: JSON.stringify({
                         '@context': 'https://schema.org',
                         '@type': 'Service',
-                        '@id': `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}#service`,
+                        '@id': `${SITE_URL}/kaissou/${prefectureSlug}/${municipality.municipalitySlug}#service`,
                         name: `${municipality.name}の改葬手続きサポート`,
                         description: `${municipality.prefectureName}${municipality.name}でのお墓じまい・改葬手続きをワンストップでサポート。改葬許可申請書の取得から墓石撤去まで全対応。`,
-                        url: `${SITE_URL}/kaissou/${params.prefecture}/${params.municipality}`,
+                        url: `${SITE_URL}/kaissou/${prefectureSlug}/${municipality.municipalitySlug}`,
                         serviceType: '改葬手続きサポート',
                         areaServed: {
                             '@type': 'AdministrativeArea',
@@ -260,6 +310,14 @@ export default async function MunicipalityPage(props: PageProps) {
                             </div>
                         </div>
                     </section>
+
+                    <div className="mt-12">
+                        <ContentProvenance
+                            localityLabel={`${municipality.prefectureName} ${municipality.name}`}
+                            updatedAt={municipality.updatedAt}
+                            officialUrl={municipality.url}
+                        />
+                    </div>
 
                     {/* 共通：改葬手続き完全ガイド */}
                     <ReKaisouGuide />
