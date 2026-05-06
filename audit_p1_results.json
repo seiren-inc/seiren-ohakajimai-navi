@@ -1,0 +1,510 @@
+Config: (none, using defaults)
+Auditing: http://localhost:3006
+Coverage: surface (max 100 pages)
+
+Database: /Users/takumashinnyo/.squirrel/projects/localhost-3006/project.db
+New crawl: http://localhost:3006
+✓ Audited 100 pages in 103.0s
+
+Audit stored in database. Use 'squirrel report' to view latest audit.
+Use 'squirrel report --list' to see all stored audits.
+
+
+──────────────────────────────────────────────────
+SQUIRRELSCAN REPORT
+http://localhost:3006 • 100 pages • 63/100 (D)
+──────────────────────────────────────────────────
+
+Health Score: 63/100 (D)
+
+Category Breakdown:
+──────────────────────────────────────────────────
+Security               ██████████████░░░░░░   71%   ✓ 273  ⚠  5  ✗99
+Accessibility          ██████████████████░░   90%   ✓2781  ⚠298  ✗21
+Content                ██████████████░░░░░░   71%   ✓ 289  ⚠111  ✗ 2
+Links                  █████████████░░░░░░░   66%   ✓ 679  ⚠  6  ✗ 1
+Structured Data        ████████████████████   99%   ✓  95  ⚠  0  ✗ 1
+Performance            █████████████████░░░   83%   ✓1484  ⚠493  ✗ 0
+Images                 ████████████████░░░░   82%   ✓ 502  ⚠104  ✗ 0
+Core SEO               █████████████████░░░   84%   ✓ 894  ⚠ 98  ✗ 0
+E-E-A-T                ████████████████░░░░   80%   ✓   5  ⚠  2  ✗ 0
+Crawlability           ███████████████████░   97%   ✓ 313  ⚠  2  ✗ 0
+Analytics              ████████████████████  100%   ✓  99  ⚠  0  ✗ 0
+Internationalization   ████████████████████  100%   ✓  99  ⚠  0  ✗ 0
+Legal Compliance       ████████████████████  100%   ✓   2  ⚠  0  ✗ 0
+Local SEO              ████████████████████  100%   ✓   1  ⚠  0  ✗ 0
+Mobile                 ████████████████████  100%   ✓ 394  ⚠  0  ✗ 0
+Social Media           ████████████████████  100%   ✓ 198  ⚠  0  ✗ 0
+URL Structure          ████████████████████  100%   ✓ 668  ⚠  0  ✗ 0
+
+Total: 8776 passed, 1119 warnings, 124 errors
+
+ISSUES
+
+┌ Crawlability (2 warnings)
+│
+│  crawl/sitemap-coverage Sitemap Coverage (warning)
+│    ⚠ sitemap-coverage: 99 indexable page(s) not in sitemap (99%)
+│      → http://localhost:3006/
+│      → http://localhost:3006/contact
+│      → http://localhost:3006/contact?type=gyoseishoshi
+│      → http://localhost:3006/company
+│      → http://localhost:3006/price
+│      ... +94 more
+│    ⚠ sitemap-orphans: 140 sitemap URL(s) were not crawled
+│      → https://localhost:3000/
+│      → https://localhost:3000/about
+│      → https://localhost:3000/flow
+│      → https://localhost:3000/price
+│      → https://localhost:3000/kaisoukyoka
+│      ... +135 more
+│
+└────────────────────────────────────────────────
+
+┌ Core SEO (98 warnings)
+│
+│  core/meta-description Meta Description (error)
+│    ⚠ meta-description: Description too short (96 pages)
+│      → /
+│      → /company
+│      → /price
+│      → /gyoseishoshi
+│      → /flow
+│      ... +91 more
+│      → お墓じまい・改葬・墓じまい・墓石撤去なら株式会社清蓮運営のお墓じまいナビ。改葬手続きの案内・書類サポ (117 chars)
+│      → 株式会社清蓮は神奈川県横浜市戸塚区を拠点に、お墓じまい・改葬・海洋散骨・離檀交渉・墓石撤去の専門サー (89 chars)
+│      → お墓じまいの料金プラン。行政手続き代行55,000円〜、基本プラン150,000円〜。見積り後の追加 (70 chars)
+│      → 改葬許可申請・墓じまい手続きに対応する行政書士を地域別に紹介。改葬許可申請書の作成・提出代行・離橉交 (115 chars)
+│      → お墓じまい（改葬）の流れを7ステップで解説。無料相談・書類確認・現地調査・ご契約・墓石撤去・遺骨ケア (101 chars)
+│      ... +91 more
+│
+│  core/canonical Canonical URL (warning)
+│    ⚠ canonical: Missing canonical URL
+│      → /
+│
+│  core/title-unique Title Uniqueness (warning)
+│    ⚠ title-unique: 1 duplicate title(s) affecting 2 pages
+│      → "お問い合わせ・無料相談・お見積り｜お墓じまいナビ | お墓じまいナビ..." (2 pages)
+│        from /contact
+│        from /contact?type=gyoseishoshi
+│
+└────────────────────────────────────────────────
+
+┌ Security (99 errors, 5 warnings)
+│
+│  security/https HTTPS (error)
+│    ✗ https: Page not served over HTTPS (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│
+│  security/csp Content Security Policy (warning)
+│    ⚠ csp-unsafe-scripts: CSP allows 'unsafe-inline' and 'unsafe-eval'
+│    ⚠ csp-wildcard: CSP script-src allows wildcard (*)
+│
+│  security/form-captcha Form CAPTCHA (warning)
+│    ⚠ form-captcha: 1 public form(s) without CAPTCHA (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → form[0]
+│
+└────────────────────────────────────────────────
+
+┌ Links (1 error, 6 warnings)
+│
+│  links/broken-links Broken Links (error)
+│    ✗ broken-links: 1 broken internal link(s) (4xx/5xx)
+│      → http://localhost:3006/kaiyousankotsuyaku (404)
+│        from /kaissou/tokyo/minato
+│        from /kaissou/tokyo/shinjuku
+│        ... +79 more pages
+│
+│  links/broken-external-links Broken External Links (warning)
+│    ⚠ broken-external-links: 12 broken external link(s): 3 failed, 9 with 404
+│      → https://yamada-gyosei.jp/ (Error: Was there a typo in the url or port?)
+│        from /gyoseishoshi
+│      → https://ito-gyosei.co.jp/ (Error: Was there a typo in the url or port?)
+│        from /gyoseishoshi
+│      → https://fukuoka-gyosei.jp/ (Error: Was there a typo in the url or port?)
+│        from /gyoseishoshi
+│      → https://www.city.minato.tokyo.jp/shibamado/kurashi/tetsuzuki/koseki/kaiso.html (404)
+│        from /kaissou/tokyo/minato
+│      → https://www.city.shinjuku.lg.jp/soshiki/261900kaiso.html (404)
+│        from /kaissou/tokyo/shinjuku
+│      ... +7 more
+│
+│  links/orphan-pages Orphan Pages (warning)
+│    ⚠ orphan-pages: 81 orphan page(s) with <2 incoming links
+│      → http://localhost:3006/kaissou/tokyo/minato
+│      → http://localhost:3006/kaissou/tokyo/shinjuku
+│      → http://localhost:3006/kaissou/tokyo/bunkyo-ku
+│      → http://localhost:3006/kaissou/tokyo/taito-ku
+│      → http://localhost:3006/kaissou/tokyo/sumida-ku
+│      ... +76 more
+│
+│  links/internal-links Internal Links (warning)
+│    ⚠ internal-links: Too many internal links (106, max 100)
+│      → /gyoseishoshi
+│      → Too many internal links (106, max 100)
+│
+│  links/weak-internal-links Weak Internal Links (warning)
+│    ⚠ weak-internal-links: 81 page(s) have only 1 internal link
+│      → http://localhost:3006/kaissou/tokyo/minato
+│      → http://localhost:3006/kaissou/tokyo/shinjuku
+│      → http://localhost:3006/kaissou/tokyo/bunkyo-ku
+│      → http://localhost:3006/kaissou/tokyo/taito-ku
+│      → http://localhost:3006/kaissou/tokyo/sumida-ku
+│      ... +76 more
+│
+│  links/tel-mailto Tel & Mailto Links (info)
+│    ⚠ tel-mismatch: 1 tel link(s) have mismatched phone number in href vs display text (2 pages)
+│      → /price
+│      → /flow
+│      → href "08008888788" ≠ text "0800-888-8788 に電話する"
+│        <a href="tel:08008888788" class="w-full sm:w-auto px-8 py-4 rounded-full border-2 border-white/30 text-white font-bold flex items-center justify-center hover:bg-white/10 transition duration-300 min-h-
+│
+└────────────────────────────────────────────────
+
+┌ Content (2 errors, 111 warnings)
+│
+│  content/meta-in-body Meta Tags in Body (error)
+│    ✗ meta-in-body: Found 13 meta tags in <body> (2 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → description="お墓じまい・改葬・墓じまい・墓石撤去・海洋散骨・離橉交渉のご相談・お見積りは無料。改葬許可申請・改葬..."
+│      → google-site-verification="google-site-verification=_P2nElnAz-2wkA-U0R3BXPd1f..."
+│      → og:title="お問い合わせ・無料相談・お見積り｜お墓じまいナビ | お墓じまいナビ"
+│      → og:description="お墓じまい・改葬・墓じまい・墓石撤去・海洋散骨・離橉交渉のご相談・お見積りは無料。改葬許可申請・改葬..."
+│      → og:url="https://localhost:3000/contact"
+│      ... +8 more
+│
+│  content/duplicate-title Duplicate Title (warning)
+│    ⚠ duplicate-title: 1 duplicate title(s) found across 2 pages
+│      → "お問い合わせ・無料相談・お見積り｜お墓じまいナビ | お墓じまいナビ..." (2 pages)
+│        from /contact
+│        from /contact?type=gyoseishoshi
+│
+│  content/duplicate-description Duplicate Description (warning)
+│    ⚠ duplicate-description: 1 duplicate description(s) found across 2 pages
+│      → "お墓じまい・改葬・墓じまい・墓石撤去・海洋散骨・離橉交渉のご相談・お見積りは無料..." (2 pages)
+│        from /contact
+│        from /contact?type=gyoseishoshi
+│
+│  content/heading-hierarchy Heading Hierarchy (warning)
+│    ⚠ heading-hierarchy: Skipped heading levels detected (8 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /flow
+│      → /kaissou
+│      → /privacy
+│      ... +3 more
+│      → H1 -> H3
+│      → H2 -> H4
+│
+│  content/article-links Article Link Density (warning)
+│    ⚠ external-links: short article has 0 external links (min 1) (2 pages)
+│      → /flow
+│      → /about
+│      → short article has 0 external links (min 1)
+│      → short article has 0 external links (min 1)
+│
+│  content/word-count Word Count (warning)
+│    ⚠ word-count: Thin content: N words (min N) (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → Thin content: 20 words (min 300)
+│      → Thin content: 39 words (min 300)
+│      → Thin content: 39 words (min 300)
+│      → Thin content: 32 words (min 300)
+│      → Thin content: 41 words (min 300)
+│      ... +94 more
+│
+└────────────────────────────────────────────────
+
+┌ Structured Data (1 error)
+│
+│  schema/json-ld-valid JSON-LD Valid (warning)
+│    ✗ json-ld-valid: Invalid JSON-LD syntax
+│      → /about
+│      → Validation: Article.publisher.name is required
+│      → Validation: Article.publisher.logo is required
+│      → Article missing publisher.name
+│      → Article missing publisher.logo
+│
+└────────────────────────────────────────────────
+
+┌ Images (104 warnings)
+│
+│  images/image-file-size Image File Size Too Large (error)
+│    ⚠ image-file-size-warn: 2 image(s) exceed 200.0 KB
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Fstep-acceptance-v3.jpg&w=3840&q=75
+│        from /
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Fhero-garden-v3.jpg&w=3840&q=75
+│        from /about
+│
+│  images/responsive-size Responsive Image Size (warning)
+│    ⚠ images-possibly-oversized: 2 small image(s) may be serving oversized files (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → image (36x36, no srcset)
+│      → image (28x28, no srcset)
+│
+│  images/dimensions Image Dimensions (warning)
+│    ⚠ image-dimensions: N image(s) missing width/height (causes CLS) (4 pages)
+│      → /
+│      → /company
+│      → /price
+│      → /about
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Fhero-garden-v3.webp&w=3840&q=75
+│        <img src="http://localhost:3006/_next/image?url=%2Fimages%2Fhero-garden-v3.webp&w=3840&q=75" alt="静かな日本の墓地の庭園風景。朝の柔らかい自然光と整然と並ぶ墓石">
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Freason-nationwide-v3.webp&w=3840&q=75
+│        <img src="http://localhost:3006/_next/image?url=%2Fimages%2Freason-nationwide-v3.webp&w=3840&q=75" alt="日本列島と全国ネットワークを象徴するインフォグラフィック風デザイン">
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Freason-compliance-v2.webp&w=3840&q=75
+│        <img src="http://localhost:3006/_next/image?url=%2Fimages%2Freason-compliance-v2.webp&w=3840&q=75" alt="デスクの上に整然と置かれた書類と万年筆">
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Freason-negotiation-v2.webp&w=3840&q=75
+│        <img src="http://localhost:3006/_next/image?url=%2Fimages%2Freason-negotiation-v2.webp&w=3840&q=75" alt="落ち着いた和室で交渉している様子">
+│      → http://localhost:3006/_next/image?url=%2Fimages%2Fstep-acceptance-v3.jpg&w=3840&q=75
+│        <img src="http://localhost:3006/_next/image?url=%2Fimages%2Fstep-acceptance-v3.jpg&w=3840&q=75" alt="書類を丁寧に受け取る手元のクローズアップ">
+│      ... +9 more
+│
+└────────────────────────────────────────────────
+
+┌ Performance (493 warnings)
+│
+│  perf/lcp-hints LCP Optimization Hints (warning)
+│    ⚠ lcp-preload: N potential LCP image(s) without preload (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → /_next/image?url=%2Fweb-app-manifest-192x192.png&w=96&q=75
+│      → /_next/image?url=%2Fimages%2Fhero-garden-v3.webp&w=3840&q=75
+│      → /_next/image?url=%2Fimages%2Fcompany-hero-zen.webp&w=3840&q=75
+│      → /_next/image?url=%2Fimages%2Fhero-pricing.webp&w=3840&q=75
+│      → /_next/image?url=%2Fimages%2Fhero-garden-v3.jpg&w=3840&q=75
+│
+│  perf/ttfb Time to First Byte (warning)
+│    ⚠ ttfb: Slow server response (Nms) (4 pages)
+│      → /kaisoukyoka
+│      → /kaissou/tokyo/minato
+│      → /kaissou/tokyo/shinjuku
+│      → /kaissou/kanagawa/kamakura-shi
+│      → Slow server response (732ms)
+│      → Slow server response (627ms)
+│      → Slow server response (849ms)
+│      → Slow server response (743ms)
+│
+│  perf/total-byte-weight Total Page Weight (warning)
+│    ⚠ total-byte-weight: Total tracked resources: 2096KB (heavy page)
+│
+│  perf/critical-request-chains Critical Request Chains (warning)
+│    ⚠ critical-request-chains: 3 critical request chain(s) found (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → CSS: /_next/static/css/89e0cf834ca02431.css
+│      → CSS: /_next/static/css/7a70ae0e18cb740d.css
+│      → JS: /_next/static/chunks/polyfills-42372ed130431b0a.js
+│
+│  perf/lazy-above-fold Lazy Loading Above Fold (warning)
+│    ⚠ lazy-above-fold: 1 above-fold image(s) with lazy loading (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → /_next/image?url=%2Fimages%2Freason-nationwide-v3.webp&w=3840&q=75
+│      → /_next/image?url=%2Fweb-app-manifest-192x192.png&w=64&q=75
+│      → /_next/image?url=%2Fimages%2Fcompany-office.webp&w=3840&q=75
+│      → /_next/image?url=%2Fimages%2Fpricing-before.webp&w=3840&q=75
+│
+│  perf/cache-headers Cache Headers (warning)
+│    ⚠ cache-control: Cache-Control without max-age (92 pages)
+│      → /
+│      → /company
+│      → /price
+│      → /flow
+│      → /kaissou
+│      ... +87 more
+│
+│  perf/http2 HTTP/2 (info)
+│    ⚠ http2-https-required: HTTP/2 requires HTTPS (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → HTTP/2 requires HTTPS
+│      → HTTP/2 requires HTTPS
+│      → HTTP/2 requires HTTPS
+│      → HTTP/2 requires HTTPS
+│      → HTTP/2 requires HTTPS
+│      ... +94 more
+│
+└────────────────────────────────────────────────
+
+┌ Accessibility (21 errors, 298 warnings)
+│
+│  a11y/duplicate-id-aria Duplicate ID ARIA (error)
+│    ✗ duplicate-id-aria: N problematic ID(s) in ARIA attributes (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → "radix-_R_1cpainpf8lb_" (not found)
+│      → "radix-_R_apqinpf8lb_" (not found)
+│      → "radix-_R_1atqinpf8lb_" (not found)
+│      → "radix-_R_1ctqinpf8lb_" (not found)
+│      → "radix-_R_llaqnpf8lb_" (not found)
+│
+│  a11y/select-name Select Name (error)
+│    ✗ select-name: N select element(s) without accessible names (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → select
+│      → select
+│      → select
+│      → select
+│
+│  a11y/aria-hidden-focus ARIA Hidden Focus (error)
+│    ✗ aria-hidden-focus: N focusable element(s) inside aria-hidden (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → input (self is focusable)
+│      → select (self is focusable)
+│      → input (self is focusable)
+│      → input (self is focusable)
+│      → input (self is focusable)
+│      ... +6 more
+│
+│  a11y/aria-input-field-name ARIA Input Field Name (error)
+│    ✗ aria-input-field-name: N input field(s) without accessible names (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → input[type="radio"]
+│      → input[type="radio"]
+│      → input[type="radio"]
+│      → input[type="radio"]
+│      → input[type="radio"]
+│      ... +6 more
+│
+│  a11y/aria-toggle-field-name ARIA Toggle Field Name (error)
+│    ✗ aria-toggle-field-name: N toggle field(s) without accessible names (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → checkbox
+│      → radio
+│      → radio
+│      → radio
+│      → radio
+│      ... +5 more
+│
+│  a11y/label-content-name-mismatch Label Content Name Mismatch (error)
+│    ✗ label-content-name-mismatch: N element(s) where visible text doesn't match accessible name (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → button: visible="選択してください" vs aria-label="都道府県"
+│      → button: visible="選択してください（任意）" vs aria-label="改葬先（新しい供養先）"
+│      → button: visible="選択してください（任意）" vs aria-label="遺骨サポート（洗骨・粉骨）"
+│      → button: visible="選択してください（任意）" vs aria-label="容器（骨壷・骨箱）"
+│
+│  a11y/form-labels Form Labels (error)
+│    ✗ form-labels: N form input(s) without labels (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│      → select
+│      → radio
+│      → radio
+│      → radio
+│      → radio
+│      ... +10 more
+│
+│  a11y/color-contrast Color Contrast (warning)
+│    ⚠ color-contrast: N potential color contrast issue(s) (99 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +94 more
+│      → p with class "jsx-56c864bcafb3458b mt-2 text..." may have low contrast
+│      → svg with class "lucide lucide-info mt-0.5 h-5 ..." may have low contrast
+│      → p with class "jsx-56c864bcafb3458b text-[14p..." may have low contrast
+│      → p with class "mt-4 text-[13px] font-semibold..." may have low contrast
+│      → span with class "text-sm text-neutral-400..." may have low contrast
+│      ... +49 more
+│
+│  a11y/focus-visible Focus Visible (warning)
+│    ⚠ focus-outline: outline:none found - ensure alternative focus styles exist (3 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /gyoseishoshi
+│
+│  a11y/heading-order Heading Order (warning)
+│    ⚠ heading-order: 1 heading level skip(s) detected (98 pages)
+│      → /
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      ... +93 more
+│      → H4 after H2
+│      → H3 after H1
+│
+│  a11y/identical-links-same-purpose Identical Links Same Purpose (warning)
+│    ⚠ identical-links-same-purpose: N link text(s) lead to different destinations (98 pages)
+│      → /contact
+│      → /contact?type=gyoseishoshi
+│      → /company
+│      → /price
+│      → /gyoseishoshi
+│      ... +93 more
+│      → "お墓じまいとは" → 2 different URLs
+│      → "埼玉県" → 2 different URLs
+│      → "千葉県" → 2 different URLs
+│      → "東京都" → 2 different URLs
+│      → "神奈川県" → 2 different URLs
+│      ... +5 more
+│
+└────────────────────────────────────────────────
+
+┌ E-E-A-T (2 warnings)
+│
+│  eeat/author-byline Author Bylines (warning)
+│    ⚠ author-byline: No content pages have author attribution
+│
+│  eeat/content-dates Content Dates (warning)
+│    ⚠ date-published: No content pages have datePublished
+│
+└────────────────────────────────────────────────
+
+──────────────────────────────────────────────────
+8776 passed • 1119 warnings • 124 failed
+──────────────────────────────────────────────────
+
+
+

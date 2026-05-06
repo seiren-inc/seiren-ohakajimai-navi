@@ -57,7 +57,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
     const deleteAction = deleteScrivener.bind(null, scrivener.id)
 
     return (
-        <div className="space-y-6">
+        <div className="theme-admin-gyoseishoshi-light space-y-6 bg-[hsl(var(--gyo-bg-page))] text-[hsl(var(--gyo-text-primary))]">
             <div className="flex items-center gap-4">
                 <Button variant="ghost" size="sm" asChild>
                     <Link href="/admin/gyoseishoshi">
@@ -65,11 +65,11 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                         一覧に戻る
                     </Link>
                 </Button>
-                <h2 className="text-2xl font-bold tracking-tight">行政書士 詳細</h2>
+                <h1 className="text-2xl font-bold tracking-tight">行政書士 詳細</h1>
             </div>
 
             {/* ステータスバー */}
-            <div className="flex items-center gap-3 flex-wrap rounded-lg border bg-white p-4">
+            <div className="flex items-center gap-3 flex-wrap rounded-lg border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))] p-4">
                 <Badge variant={scrivener.isApproved ? "default" : "destructive"}>
                     {scrivener.isApproved ? "承認済" : "未承認"}
                 </Badge>
@@ -138,7 +138,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
             </div>
 
             {/* Stripe 決済リンク発行 */}
-            <div className="rounded-lg border bg-white p-4 space-y-2">
+            <div className="rounded-lg border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))] p-4 space-y-2">
                 <div className="flex items-center gap-2 mb-2">
                     <CreditCard className="h-4 w-4 text-muted-foreground" />
                     <h3 className="text-sm font-semibold">Stripe 決済リンク発行</h3>
@@ -161,7 +161,10 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                 )}
             </div>
 
-            <form action={updateWithId} className="max-w-2xl space-y-6 rounded-lg border bg-white p-6">
+            <form
+                action={updateWithId}
+                className="max-w-2xl space-y-6 rounded-lg border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))] p-6"
+            >
                 <div className="space-y-4">
                     <h3 className="font-semibold border-b pb-2">基本情報</h3>
                     <div>
@@ -331,7 +334,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                 <Button type="submit" className="w-full">保存する</Button>
             </form>
             {/* ===== T5-05: 操作履歴（ScrivenerAuditLog） ===== */}
-            <div className="max-w-2xl rounded-lg border bg-white p-6">
+            <div className="max-w-2xl rounded-lg border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))] p-6">
                 <h3 className="flex items-center gap-2 text-base font-semibold border-b pb-3 mb-4">
                     <History className="h-4 w-4 text-muted-foreground" />
                     操作履歴（最新20件）
@@ -363,7 +366,7 @@ export default async function ScrivenerDetailPage(props: PageProps) {
                                             {format(log.createdAt, 'MM/dd HH:mm', { locale: ja })}
                                         </td>
                                         <td className="py-2 pr-4">
-                                            <span className="inline-block rounded bg-slate-100 px-1.5 py-0.5 font-mono font-semibold">
+                                            <span className="inline-block rounded bg-[hsl(var(--gyo-bg-subtle))] px-1.5 py-0.5 font-mono font-semibold">
                                                 {log.actionType}
                                             </span>
                                         </td>

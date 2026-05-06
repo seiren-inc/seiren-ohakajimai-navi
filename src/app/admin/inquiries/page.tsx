@@ -69,7 +69,7 @@ export default async function InquiriesPage(props: PageProps) {
     return (
         <div className="space-y-6">
             <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold tracking-tight">問い合わせ一覧</h2>
+                <h1 className="text-2xl font-bold tracking-tight">問い合わせ一覧</h1>
                 <div className="text-sm text-muted-foreground">
                     全 {totalCount} 件
                 </div>

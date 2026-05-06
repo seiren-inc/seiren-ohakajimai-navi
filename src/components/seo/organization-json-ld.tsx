@@ -7,10 +7,7 @@ export function OrganizationJsonLd() {
         alternateName: ['お墓じまいナビ', 'Seiren'],
         description: 'お墓じまい・改葬・海洋散骨など供養に関わる実務を専門に行う会社。法令遵守を最優先に、全国対応でご家族の不安に寄り添います。',
         url: 'https://www.ohakajimai-navi.jp',
-        logo: {
-            '@type': 'ImageObject',
-            url: 'https://www.ohakajimai-navi.jp/og-image.jpg',
-        },
+        logo: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         image: 'https://www.ohakajimai-navi.jp/og-image.jpg',
         telephone: '0800-888-8788',
         email: 'contact@seiren.ne.jp',
@@ -126,6 +123,8 @@ export function OrganizationJsonLd() {
             jobTitle: '代表取締役',
         },
         sameAs: [
+            'https://www.seiren-inc.co.jp',
+            'https://www.ohakanavi.jp',
             'https://line.me/R/ti/p/@956lieqb',
             'https://www.instagram.com/sankotu.cruise_seiren',
             'https://www.facebook.com/seirenjapan',

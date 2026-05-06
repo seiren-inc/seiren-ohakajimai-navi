@@ -31,6 +31,10 @@ function isFileUploadRequest(request: NextRequest): boolean {
 
 export async function middleware(request: NextRequest) {
     const isAdminRoute = request.nextUrl.pathname.startsWith("/admin");
+    const isScrivenerProtectedRoute =
+        request.nextUrl.pathname.startsWith("/scrivener") &&
+        !request.nextUrl.pathname.startsWith("/scrivener/login") &&
+        !request.nextUrl.pathname.startsWith("/scrivener/signup");
 
     // --- Section 2-2: ファイルアップロード拒否 ---
     if (isAdminRoute && isFileUploadRequest(request)) {
@@ -100,6 +104,13 @@ export async function middleware(request: NextRequest) {
         }
     }
 
+    // Protect /scrivener routes (except login/signup)
+    if (isScrivenerProtectedRoute) {
+        if (!user) {
+            return NextResponse.redirect(new URL("/scrivener/login", request.url));
+        }
+    }
+
     // Redirect /login to /admin if already logged in
     if (request.nextUrl.pathname === "/login") {
         if (user) {
@@ -115,4 +126,3 @@ export const config = {
         '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
     ],
 }
-

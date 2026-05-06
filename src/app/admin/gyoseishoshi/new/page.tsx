@@ -18,7 +18,7 @@ export default async function NewScrivenerPage() {
     })
 
     return (
-        <div className="space-y-6">
+        <div className="theme-admin-gyoseishoshi-light space-y-6 bg-[hsl(var(--gyo-bg-page))] text-[hsl(var(--gyo-text-primary))]">
             <div className="flex items-center gap-4">
                 <Button variant="ghost" size="sm" asChild>
                     <Link href="/admin/gyoseishoshi">
@@ -26,10 +26,13 @@ export default async function NewScrivenerPage() {
                         一覧に戻る
                     </Link>
                 </Button>
-                <h2 className="text-2xl font-bold tracking-tight">行政書士 新規登録</h2>
+                <h1 className="text-2xl font-bold tracking-tight">行政書士 新規登録</h1>
             </div>
 
-            <form action={createScrivener} className="max-w-2xl space-y-6 rounded-lg border bg-white p-6">
+            <form
+                action={createScrivener}
+                className="max-w-2xl space-y-6 rounded-lg border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))] p-6"
+            >
                 <div className="space-y-4">
                     <h3 className="font-semibold border-b pb-2">基本情報</h3>
                     <div>

@@ -60,9 +60,9 @@ export default async function AdminGyoseishoshiPage(props: PageProps) {
     const filterParam = filterType ? `&filter=${filterType}` : ""
 
     return (
-        <div className="space-y-6">
+        <div className="theme-admin-gyoseishoshi-light space-y-6 bg-[hsl(var(--gyo-bg-page))] text-[hsl(var(--gyo-text-primary))]">
             <div className="flex items-center justify-between">
-                <h2 className="text-2xl font-bold tracking-tight">行政書士管理</h2>
+                <h1 className="text-2xl font-bold tracking-tight">行政書士管理</h1>
                 <div className="flex items-center gap-3">
                     <span className="text-sm text-muted-foreground">全 {totalCount} 件</span>
                     <Button asChild>
@@ -96,7 +96,7 @@ export default async function AdminGyoseishoshiPage(props: PageProps) {
                 ))}
             </div>
 
-            <div className="rounded-md border bg-white">
+            <div className="rounded-md border border-[hsl(var(--gyo-border))] bg-[hsl(var(--gyo-bg-surface))]">
                 <Table>
                     <TableHeader>
                         <TableRow>

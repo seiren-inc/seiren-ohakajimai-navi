@@ -70,7 +70,6 @@ jobs:
       # T3-07: title・description 重複チェック（静的ファイル解析）
       - name: Verify SEO Meta (static)
         run: npx tsx scripts/verify_seo_meta.ts
-
       # --- DB依存チェック（注意）---
       # verify_quality_gate.ts / verify_invariants.ts は本番DBへの接続が必要。
       # テスト専用 Supabase プロジェクトを用意した際に以下を解除する:

@@ -4,9 +4,6 @@ import './globals.css'
 import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
-import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
-import { WebSiteJsonLd } from '@/components/seo/website-json-ld'
-import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
@@ -31,6 +28,33 @@ export const metadata: Metadata = {
   ...constructMetadata(),
 }
 
+const BASE_URL = 'https://www.ohakajimai-navi.jp'
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${BASE_URL}/#organization`,
+  "name": "株式会社清蓮",
+  "url": BASE_URL,
+  "description": "墓じまい・改葬の専門ナビゲーションサービス。行政書士情報・散骨・納骨堂も詳しく掲載。",
+  "sameAs": []
+}
+
+const localBusinessLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#localbusiness`,
+  "name": "お墓じまいナビ",
+  "url": BASE_URL,
+  "description": "墓じまい・改葬の手続き・費用・行政書士の情報を提供。相談無料。",
+  "areaServed": [{ "@type": "Country", "name": "Japan" }],
+  "serviceType": [
+    "墓じまい", "改葬", "散骨", "納骨堂", "行政書士紹介"
+  ],
+  "priceRange": "無料相談",
+  "parentOrganization": { "@type": "Organization", "@id": `${BASE_URL}/#organization` }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -45,8 +69,7 @@ export default function RootLayout({
           href="/images/hero-garden-v3.webp"
           as="image"
           type="image/webp"
-          // @ts-expect-error: fetchpriority is valid HTML but not yet in React types
-          fetchpriority="high"
+          fetchPriority="high"
         />
         {/* Google Fonts の事前接続（フォント取得を高速化） */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -56,12 +79,17 @@ export default function RootLayout({
         "min-h-screen bg-background font-sans antialiased flex flex-col",
         fontSans.variable
       )}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
+        />
         <ConditionalLayout>
           {children}
         </ConditionalLayout>
-        <OrganizationJsonLd />
-        <WebSiteJsonLd />
-        <LocalBusinessJsonLd />
         {process.env.NEXT_PUBLIC_ENABLE_RAG_CHAT === 'true' && <RagChatbot />}
         <Analytics />
         <SpeedInsights />

@@ -12,7 +12,7 @@ import { createScrivenerPortalSession } from "@/actions/scrivener/payment"
 import { signOutScrivener } from "@/actions/scrivener/auth"
 import { ScrivenerRealtimeInquiries } from "@/components/scrivener/ScrivenerRealtimeInquiries"
 import { PasskeyManager } from "@/components/scrivener/PasskeyManager"
-import { LogOut, ExternalLink, UserCircle, CreditCard, Clock, Shield } from "lucide-react"
+import { LogOut, ExternalLink, UserCircle, CreditCard, Clock, Shield, Pencil } from "lucide-react"
 
 export const metadata = constructMetadata({
     title: "マイページ（ダッシュボード）｜お墓じまいナビ",
@@ -57,7 +57,7 @@ export default async function ScrivenerDashboardPage() {
     }
 
     return (
-        <div className="flex min-h-[calc(100vh-80px)] bg-slate-50">
+        <div className="theme-terminal-ops-dark flex min-h-[calc(100vh-80px)] bg-background">
             {/* サイドバー（簡易版） */}
             <aside className="hidden w-64 flex-col border-r bg-white md:flex">
                 <div className="flex h-16 items-center border-b px-6">
@@ -106,7 +106,7 @@ export default async function ScrivenerDashboardPage() {
                     </form>
                 </nav>
             </div>
-            <main className="flex-1 p-6 md:p-8 lg:p-12 overflow-y-auto">
+            <div className="flex-1 p-6 md:p-8 lg:p-12 overflow-y-auto">
                 <div className="mx-auto max-w-5xl space-y-8">
                     
                     {/* ヘッダーエリア */}
@@ -147,9 +147,17 @@ export default async function ScrivenerDashboardPage() {
 
                     <div className="grid gap-6 md:grid-cols-2">
                         <Card>
-                            <CardHeader>
-                                <CardTitle>ご登録情報</CardTitle>
-                                <CardDescription>お客様に公開される基本プロフィール</CardDescription>
+                            <CardHeader className="flex flex-row items-start justify-between gap-4">
+                                <div>
+                                    <CardTitle>ご登録情報</CardTitle>
+                                    <CardDescription>お客様に公開される基本プロフィール</CardDescription>
+                                </div>
+                                <Button variant="outline" size="sm" asChild className="shrink-0">
+                                    <a href="/scrivener/profile/edit">
+                                        <Pencil className="mr-1.5 h-3.5 w-3.5" />
+                                        編集
+                                    </a>
+                                </Button>
                             </CardHeader>
                             <CardContent className="space-y-4 text-sm">
                                 <div className="grid grid-cols-3 gap-2 border-b pb-2">
@@ -209,7 +217,7 @@ export default async function ScrivenerDashboardPage() {
                         <PasskeyManager />
                     </div>
                 </div>
-            </main>
+            </div>
         </div>
     )
 }

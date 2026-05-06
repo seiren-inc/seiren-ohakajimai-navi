@@ -88,7 +88,7 @@ export function GyoseishoshiContactForm() {
                     render={({ field }) => (
                         <FormItem className="hidden">
                             <FormControl>
-                                <Input {...field} />
+                                <Input {...field} aria-label="確認用メールアドレス" tabIndex={-1} aria-hidden="true" />
                             </FormControl>
                         </FormItem>
                     )}
@@ -163,7 +163,7 @@ export function GyoseishoshiContactForm() {
                                     <FormLabel>都道府県 <span className="text-red-500">*</span></FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger aria-label="都道府県">
                                                 <SelectValue placeholder="選択してください" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -231,7 +231,7 @@ export function GyoseishoshiContactForm() {
                                         {Object.entries(PreferredContactLabels).map(([key, label]) => (
                                             <FormItem key={key} className="flex items-center space-x-3 space-y-0">
                                                 <FormControl>
-                                                    <RadioGroupItem value={key} />
+                                                    <RadioGroupItem value={key} aria-label={label} />
                                                 </FormControl>
                                                 <FormLabel className="font-normal">{label}</FormLabel>
                                             </FormItem>

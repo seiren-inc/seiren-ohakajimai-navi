@@ -65,8 +65,8 @@ export default function PricePage() {
       />
       <BreadcrumbJsonLd
         items={[
-          { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp" },
-          { name: "料金について", url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"}/price` },
+          { name: "ホーム", url: process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp" },
+          { name: "料金について", url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"}/price` },
         ]}
       />
       <div className="bg-[#F5F5F7]/80">

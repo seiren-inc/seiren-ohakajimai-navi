@@ -9,7 +9,8 @@ import { ArrowLeft } from "lucide-react"
 import type { PublicScrivener } from "@/lib/scrivener-types"
 import type { Metadata } from "next"
 
-export const dynamic = "force-dynamic"
+// ISR: 5分ごとに再生成。承認/非承認操作時は管理画面 Server Action から即時 revalidatePath で無効化。
+export const revalidate = 300
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 

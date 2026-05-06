@@ -39,14 +39,12 @@ export function VideoJsonLd({
     publisher: {
       "@type": "Organization",
       name: "株式会社清蓮",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://www.ohakajimai-navi.jp/og-image.jpg",
-      },
+      logo: "https://www.ohakajimai-navi.jp/og-image.jpg",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": pageUrl,
+      name,
     },
   }
 

@@ -10,8 +10,8 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { PREFECTURES, REGIONS } from "@/lib/prefectures"
 import { FileText, Scale, Phone, CheckCircle2, XCircle, HelpCircle, AlertTriangle, MapPin } from "lucide-react"
 
-// ISR: 1時間ごとに再生成（行政書士一覧は頻繁に変わらないため）
-export const dynamic = "force-dynamic"
+// ISR: 5分ごとに再生成。承認/非承認操作時は管理画面 Server Action から即時 revalidatePath で無効化。
+export const revalidate = 300
 
 // Doc-09 §3-1: SEO Title/Description
 export const metadata = constructMetadata({

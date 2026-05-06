@@ -24,7 +24,7 @@ export const metadata: Metadata = constructMetadata({
 
 export default function EstimationPage() {
   return (
-    <main className="min-h-screen bg-slate-50 relative overflow-hidden">
+    <div className="min-h-screen bg-slate-50 relative overflow-hidden">
       {/* 背景の装飾（モダンなグラデーション） */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden flex justify-center">
         <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-emerald-400/20 blur-[120px]"></div>
@@ -44,6 +44,6 @@ export default function EstimationPage() {
         {/* ウィザード本体 */}
         <AIEstimationWizard />
       </div>
-    </main>
+    </div>
   )
 }

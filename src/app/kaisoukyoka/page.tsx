@@ -1,4 +1,5 @@
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成（自治体データは頻繁に変わらない）
+export const revalidate = 3600
 
 import { Metadata } from 'next'
 import { prisma } from '@/lib/prisma'
@@ -45,7 +46,7 @@ export default async function KaisoukyokaPage() {
   })
 
   return (
-    <main className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background">
       <BreadcrumbJsonLd items={[
         { name: 'ホーム', url: SITE_URL },
         { name: '改葬許可申請書ダウンロード 全国一覧', url: `${SITE_URL}/kaisoukyoka` },
@@ -157,6 +158,6 @@ export default async function KaisoukyokaPage() {
           </Link>
         </div>
       </section>
-    </main>
+    </div>
   )
 }

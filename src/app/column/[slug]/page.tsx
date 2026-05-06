@@ -37,6 +37,8 @@ export async function generateMetadata({ params }: PageProps) {
     description: post.metadata.description,
     path: `/column/${slug}`,
     ogType: 'article',
+    publishedTime: post.metadata.date,
+    modifiedTime: post.metadata.updatedAt || post.metadata.date,
   })
 }
 
@@ -101,6 +103,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         description={metadata.description}
         url={pageUrl}
         datePublished={metadata.date}
+        dateModified={metadata.updatedAt || metadata.date}
         keywords={metadata.tags}
       />
       <AuthorJsonLd
@@ -108,6 +111,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         headline={metadata.title}
         description={metadata.description}
         datePublished={metadata.date}
+        dateModified={metadata.updatedAt || metadata.date}
       />
       {metadata.faqs && metadata.faqs.length > 0 && (
         <FaqJsonLd faqs={metadata.faqs} />
@@ -133,6 +137,11 @@ export default async function BlogPostPage({ params }: PageProps) {
               <time dateTime={metadata.date}>
                 公開日: {format(new Date(metadata.date), 'yyyy年MM月dd日')}
               </time>
+              {metadata.updatedAt && (
+                <time dateTime={metadata.updatedAt} className="ml-2 pl-2 border-l border-neutral-300">
+                  更新日: {format(new Date(metadata.updatedAt), 'yyyy年MM月dd日')}
+                </time>
+              )}
             </div>
           </div>
 
@@ -152,7 +161,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       </header>
 
       {/* Content */}
-      <main className="mx-auto max-w-3xl px-6 py-12">
+      <div className="mx-auto max-w-3xl px-6 py-12">
         <article className="prose prose-neutral md:prose-lg max-w-none">
           <MDXRemote source={content} components={components} />
         </article>
@@ -182,7 +191,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
         {/* 関連記事 */}
         <RelatedArticles currentSlug={metadata.slug} tags={metadata.tags} />
-      </main>
+      </div>
     </div>
   )
 }

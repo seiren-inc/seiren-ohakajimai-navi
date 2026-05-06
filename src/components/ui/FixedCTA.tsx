@@ -7,9 +7,12 @@ import { Phone, Mail } from "lucide-react"
 export function FixedCTA() {
   const pathname = usePathname()
   
-  // 非表示にするパスのリスト
-  const hidePaths = ["/estimation"]
-  if (hidePaths.includes(pathname)) return null
+  // 管理画面・行政書士ポータル・シミュレーションでは非表示
+  if (
+    pathname === "/estimation" ||
+    pathname.startsWith("/admin") ||
+    pathname.startsWith("/scrivener")
+  ) return null
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-gray-200 bg-white/95 p-3 backdrop-blur-xl md:hidden print:hidden pb-safe">

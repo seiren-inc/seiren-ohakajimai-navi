@@ -36,14 +36,16 @@ model Municipality {
   linkStatus       LinkStatus @default(UNKNOWN) @map("link_status")
   lastCheckedAt    DateTime?  @map("last_checked_at")
   notes            String?
-  linkType         LinkType   @default(GUIDE) @map("link_type")
   seoDescription   String?    @map("seo_description")
   createdAt        DateTime   @default(now()) @map("created_at")
   updatedAt        DateTime   @updatedAt @map("updated_at")
   hasDomainWarning Boolean    @default(false) @map("has_domain_warning")
+  linkType         LinkType   @default(GUIDE) @map("link_type")
   subLinks         Json?      @map("sub_links")
   dataQualityLevel Int        @default(0) @map("data_quality_level")
   auditLogs        AuditLog[]
+  inquiries        Inquiry[]
+  scriveners       AdministrativeScrivener[]
 
   @@unique([prefectureCode, municipalitySlug])
   @@index([prefectureCode])
@@ -73,45 +75,17 @@ model MunicipalityArchive {
   hasDomainWarning Boolean    @map("has_domain_warning")
   linkType         LinkType   @map("link_type")
   subLinks         Json?      @map("sub_links")
-  dataQualityLevel Int        @default(0) @map("data_quality_level")
   archivedAt       DateTime   @default(now()) @map("archived_at")
+  dataQualityLevel Int        @default(0) @map("data_quality_level")
 
   @@map("municipalities_archive")
-}
-
-// --- 行政書士マッチング ---
-
-enum InquiryType {
-  OHaka
-  GYoseishoshi
-}
-
-// Doc-35 + 実行計画に統一: BASIC / STANDARD / PREMIUM
-enum ScrivenerPlanType {
-  BASIC
-  STANDARD
-  PREMIUM
-}
-
-// Doc-10 §8, Doc-16 §5: 支払いステータス
-enum PaymentStatus {
-  UNPAID
-  PAID
-  SUSPENDED
-}
-
-enum OnboardingStep {
-  ACCOUNT_CREATED // アカウントのみ作成
-  PROFILE_INPUT // プロフィール情報入力完了
-  PAYMENT_COMPLETED // 決済完了（審査待ち）
-  APPROVED_ACTIVE // 承認済み・掲載中
 }
 
 model AdministrativeScrivener {
   id                   String              @id @default(cuid())
   officeName           String              @map("office_name")
   representativeName   String?             @map("representative_name")
-  registrationNumber   String?             @map("registration_number") // Doc-16 §3: 登録番号
+  registrationNumber   String?             @map("registration_number")
   prefecture           String
   city                 String?
   addressLine          String?             @map("address_line")
@@ -121,35 +95,33 @@ model AdministrativeScrivener {
   priceRangeText       String?             @map("price_range_text")
   specialties          String[]            @default([])
   profileText          String              @map("profile_text")
-  businessHours        String?             @map("business_hours") // Doc-16 §3: 営業時間
+  businessHours        String?             @map("business_hours")
   planType             ScrivenerPlanType   @default(BASIC) @map("plan_type")
   priorityScore        Int                 @default(0) @map("priority_score")
   isApproved           Boolean             @default(false) @map("is_approved")
   isActive             Boolean             @default(true) @map("is_active")
-  complaintFlag        Boolean             @default(false) @map("complaint_flag") // Doc-18 §7: 苦情フラグ
-  paymentStatus        PaymentStatus       @default(UNPAID) @map("payment_status") // Doc-10 §8
-  contractStartDate    DateTime?           @map("contract_start_date") // Doc-18 §5
+  complaintFlag        Boolean             @default(false) @map("complaint_flag")
+  paymentStatus        PaymentStatus       @default(UNPAID) @map("payment_status")
+  contractStartDate    DateTime?           @map("contract_start_date")
   contractEndDate      DateTime?           @map("contract_end_date")
-  stripeCustomerId     String?             @map("stripe_customer_id")
-  stripeSubscriptionId String?             @unique @map("stripe_subscription_id")
-  currentPeriodEnd     DateTime?           @map("current_period_end")
-  authUserId           String?             @unique @map("auth_user_id")
-  onboardingStep       OnboardingStep      @default(ACCOUNT_CREATED) @map("onboarding_step")
-  adminMemo            String?             @map("admin_memo")
   createdAt            DateTime            @default(now()) @map("created_at")
   updatedAt            DateTime            @updatedAt @map("updated_at")
+  currentPeriodEnd     DateTime?           @map("current_period_end")
+  stripeCustomerId     String?             @map("stripe_customer_id")
+  stripeSubscriptionId String?             @unique @map("stripe_subscription_id")
+  adminMemo            String?             @map("admin_memo")
+  authUserId           String?             @unique @map("auth_user_id")
+  onboardingStep       OnboardingStep      @default(ACCOUNT_CREATED) @map("onboarding_step")
+  municipalityId       String?             @map("municipality_id")
+  municipality         Municipality?       @relation(fields: [municipalityId], references: [id])
   inquiries            Inquiry[]
   auditLogs            ScrivenerAuditLog[]
 
   @@index([prefecture, isApproved, isActive])
   @@index([planType, priorityScore])
   @@index([isApproved, isActive, paymentStatus])
+  @@index([municipalityId])
   @@map("administrative_scriveners")
-}
-
-enum SimulationLogType {
-  AI_ESTIMATION
-  PRICING_SIMULATION
 }
 
 model SimulationLog {
@@ -165,30 +137,19 @@ model SimulationLog {
   @@map("simulation_logs")
 }
 
-// Doc-16 §8, Doc-17 §8: 監査ログ（削除禁止）
 model ScrivenerAuditLog {
   id          String                  @id @default(cuid())
   scrivenerId String                  @map("scrivener_id")
-  scrivener   AdministrativeScrivener @relation(fields: [scrivenerId], references: [id], onDelete: Cascade)
-  actionType  String                  @map("action_type") // APPROVE / SUSPEND / UPDATE / PLAN_CHANGE / PAYMENT_UPDATE
+  actionType  String                  @map("action_type")
   beforeValue Json?                   @map("before_value")
   afterValue  Json?                   @map("after_value")
   adminUserId String                  @map("admin_user_id")
   createdAt   DateTime                @default(now()) @map("created_at")
+  scrivener   AdministrativeScrivener @relation(fields: [scrivenerId], references: [id], onDelete: Cascade)
 
   @@index([scrivenerId])
   @@index([createdAt])
   @@map("scrivener_audit_logs")
-}
-
-// --- 既存 enum ---
-
-enum LinkType {
-  GUIDE
-  PDF
-  E_APPLY
-  REGULATION
-  OTHER
 }
 
 model ImportLog {
@@ -208,7 +169,6 @@ model ImportLog {
 
 model Inquiry {
   id                  String                   @id @default(uuid())
-  inquiryType         InquiryType              @default(OHaka) @map("inquiry_type")
   status              InquiryStatus            @default(NEW)
   lastName            String                   @map("last_name")
   firstName           String                   @map("first_name")
@@ -227,17 +187,21 @@ model Inquiry {
   boneServiceType     BoneServiceType?         @map("bone_service_type")
   containerType       ContainerType?           @map("container_type")
   ritanConsultation   Boolean?                 @map("ritan_consultation")
-  preferredContact    String?                  @map("preferred_contact")
   memo                String?
   ipAddress           String?                  @map("ip_address")
   userAgent           String?                  @map("user_agent")
-  scrivenerId         String?                  @map("scrivener_id")
-  scrivener           AdministrativeScrivener? @relation(fields: [scrivenerId], references: [id], onDelete: SetNull)
   createdAt           DateTime                 @default(now()) @map("created_at")
   updatedAt           DateTime                 @updatedAt @map("updated_at")
+  inquiryType         InquiryType              @default(OHaka) @map("inquiry_type")
+  preferredContact    String?                  @map("preferred_contact")
+  scrivenerId         String?                  @map("scrivener_id")
+  scrivener           AdministrativeScrivener? @relation(fields: [scrivenerId], references: [id])
+  municipalityId      String?                  @map("municipality_id")
+  municipality        Municipality?            @relation(fields: [municipalityId], references: [id])
 
   @@index([inquiryType, status, createdAt])
   @@index([scrivenerId])
+  @@index([municipalityId])
   @@map("inquiries")
 }
 
@@ -289,6 +253,169 @@ model RecoveryCandidate {
   @@map("recovery_candidates")
 }
 
+model RagChatLog {
+  id               String   @id @default(uuid())
+  sessionId        String
+  userMessage      String
+  detectedIntent   String?
+  referenceJisCode String?
+  aiResponse       String
+  isRejected       Boolean  @default(false)
+  ipAddress        String?
+  createdAt        DateTime @default(now())
+}
+
+model contracts {
+  id                   String    @id @default(dbgenerated("(gen_random_uuid())::text"))
+  temple_id            String
+  representative_name  String
+  representative_title String
+  contact_email        String
+  plan_type            String
+  agreed_at            DateTime  @db.Timestamptz(6)
+  agreed_ip            String
+  contract_version     String    @default("v1.0")
+  contract_hash        String
+  pdf_url              String?
+  status               String    @default("active")
+  terminated_at        DateTime? @db.Timestamptz(6)
+  created_at           DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at           DateTime  @default(now()) @db.Timestamptz(6)
+  temples              temples   @relation(fields: [temple_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model plans {
+  id              String   @id @default(dbgenerated("(gen_random_uuid())::text"))
+  temple_id       String
+  category        String
+  name            String
+  sub_description String?
+  price           Int
+  price_note      String?
+  management_fee  Int      @default(0)
+  availability    String   @default("available")
+  burial_method   String?
+  period_type     String   @default("perpetual")
+  period_years    Int?
+  capacity        String?
+  capacity_note   String?
+  pet_allowed     String?
+  images          String[] @default([])
+  note            String?
+  order           Int      @default(0)
+  created_at      DateTime @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime @default(now()) @db.Timestamptz(6)
+  temples         temples  @relation(fields: [temple_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model temple_users {
+  id                 String    @id @default(dbgenerated("(gen_random_uuid())::text"))
+  temple_id          String    @unique
+  email              String    @unique
+  supabase_uid       String?   @unique
+  password_hash      String?
+  name               String
+  title              String    @default("")
+  status             String    @default("pending")
+  stripe_customer_id String?
+  last_login_at      DateTime? @db.Timestamptz(6)
+  created_at         DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at         DateTime  @default(now()) @db.Timestamptz(6)
+  temples            temples   @relation(fields: [temple_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model temples {
+  id                       String        @id @default(dbgenerated("(gen_random_uuid())::text"))
+  name                     String
+  kana                     String?
+  type                     String
+  management_body          String?
+  religion                 String
+  buddhist_sect            String?
+  prefecture               String
+  prefecture_code          Int?
+  city_name                String?
+  address_line             String?
+  address                  String
+  lat                      Float?
+  lng                      Float?
+  access                   String?
+  parking_available        Boolean       @default(false)
+  parking                  String?
+  indoor_outdoor           String?
+  barrier_free             Boolean       @default(false)
+  barrier_free_label       String?
+  pet_allowed              String?
+  pet_support              String?
+  sects                    String[]      @default([])
+  supported_memorial_types String[]      @default([])
+  nearest_stations         Json?
+  price_agg_min            Int?
+  price_agg_max            Int?
+  management_fee_agg_type  String?
+  catchphrase              String?
+  overview                 String?
+  suitable_for             String[]      @default([])
+  notes_points             String[]      @default([])
+  tags                     String[]      @default([])
+  ai_summary               String?
+  main_image               String?
+  gallery_images           String[]      @default([])
+  phone                    String?
+  office_hours             String?
+  status                   String        @default("public")
+  listed_in_search         Boolean       @default(true)
+  successor_requirements   String?
+  seo                      Json?
+  calendar                 Json?
+  key_features             Json?
+  zip_code                 String?
+  is_pr_slot               Boolean       @default(false)
+  plan_type                String        @default("free")
+  created_at               DateTime      @default(now()) @db.Timestamptz(6)
+  updated_at               DateTime      @default(now()) @db.Timestamptz(6)
+  contracts                contracts[]
+  plans                    plans[]
+  temple_users             temple_users?
+}
+
+enum InquiryType {
+  OHaka
+  GYoseishoshi
+}
+
+enum ScrivenerPlanType {
+  BASIC
+  STANDARD
+  PREMIUM
+}
+
+enum PaymentStatus {
+  UNPAID
+  PAID
+  SUSPENDED
+}
+
+enum OnboardingStep {
+  ACCOUNT_CREATED
+  PROFILE_INPUT
+  PAYMENT_COMPLETED
+  APPROVED_ACTIVE
+}
+
+enum SimulationLogType {
+  AI_ESTIMATION
+  PRICING_SIMULATION
+}
+
+enum LinkType {
+  GUIDE
+  PDF
+  E_APPLY
+  REGULATION
+  OTHER
+}
+
 enum Role {
   ADMIN
   OPERATOR
@@ -296,10 +423,10 @@ enum Role {
 
 enum LinkStatus {
   OK
-  PDF_ONLY
   NEEDS_REVIEW
   BROKEN
   UNKNOWN
+  PDF_ONLY
 }
 
 enum LinkCheckStatus {
@@ -369,33 +496,4 @@ enum AuditResult {
   TIMEOUT
   DNS_ERROR
   UNKNOWN_ERROR
-}
-
-// ==========================================
-// Stage 7: AI Chat Logs
-// 公開RAGシステムでの会話履歴を保存・追跡するためのテーブル
-// ==========================================
-model RagChatLog {
-  id        String @id @default(uuid())
-  sessionId String // クライアント毎のセッション（匿名）
-
-  // 入力されたユーザーメッセージ
-  userMessage String @db.Text
-
-  // 意図分類結果（例: REGION_SEARCH, GENERAL_FAQ, UNKNOWN）
-  detectedIntent String?
-
-  // 検索ヒットした場合に根拠とした自治体のJISコード
-  referenceJisCode String?
-
-  // AIが返却したメッセージ
-  aiResponse String @db.Text
-
-  // 根拠不足等で回答を拒否（フォールバック）したかどうかのフラグ
-  isRejected Boolean @default(false)
-
-  // リクエスト元のIP（レート制限検証やスパム解析用）
-  ipAddress String?
-
-  createdAt DateTime @default(now())
 }

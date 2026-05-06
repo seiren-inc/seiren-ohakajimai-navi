@@ -23,9 +23,12 @@ export type State = {
 }
 
 export async function submitGyoseishoshiInquiry(prevState: State | null, formData: FormData): Promise<State> {
+    // scrivenerId はシステム設定値（ユーザー入力ではない）のでサニタイズ前に取得
+    const scrivenerId = (formData.get("scrivenerId") as string | null) || null
+
     const rawData: Record<string, unknown> = {}
     formData.forEach((value, key) => {
-        rawData[key] = value
+        if (key !== "scrivenerId") rawData[key] = value
     })
 
     // Honeypot（スパム検知）
@@ -86,10 +89,10 @@ export async function submitGyoseishoshiInquiry(prevState: State | null, formDat
         ipAddress: ip,
         userAgent: userAgent,
         status: "NEW",
+        ...(scrivenerId ? { scrivenerId } : {}),
     }
 
     try {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await (prisma.inquiry.create as (args: unknown) => Promise<unknown>)({ data: createData as unknown })
     } catch (dbError) {
         console.error("[submitGyoseishoshiInquiry] DB保存失敗:", dbError)
@@ -104,6 +107,24 @@ export async function submitGyoseishoshiInquiry(prevState: State | null, formDat
     // Doc-04 §5-1: メール失敗 → DB保存は成功、ログ記録
     const contactMethodLabel = PreferredContactLabels[data.preferredContact as keyof typeof PreferredContactLabels] ?? data.preferredContact
 
+    // scrivenerId がある場合は行政書士情報を取得（通知メール用）
+    let scrivenerName: string | null = null
+    let scrivenerEmail: string | null = null
+    if (scrivenerId) {
+        try {
+            const scrivener = await prisma.administrativeScrivener.findUnique({
+                where: { id: scrivenerId },
+                select: { officeName: true, email: true },
+            })
+            scrivenerName = scrivener?.officeName ?? null
+            scrivenerEmail = scrivener?.email ?? null
+        } catch (err) {
+            console.error("[submitGyoseishoshiInquiry] 行政書士情報取得失敗:", err)
+        }
+    }
+
+    const scrivenerLine = scrivenerName ? `担当行政書士: ${scrivenerName}\n` : ""
+
     const adminMailBody = `【行政書士マッチング】新しいご相談が届きました。
 
 ■お客様情報
@@ -112,7 +133,7 @@ Email: ${data.email}
 電話: ${data.phone}
 地域: ${data.prefecture} ${data.city}
 希望連絡方法: ${contactMethodLabel}
-
+${scrivenerLine}
 ■ご相談内容
 ${data.content}
 
@@ -133,12 +154,28 @@ ${data.content}
 
 株式会社清蓮 お墓じまいナビ運営事務局`
 
+    const scrivenerMailBody = `【お墓じまいナビ】新しいご相談が届きました。
+
+■お客様情報
+氏名: ${data.lastName} ${data.firstName}
+Email: ${data.email}
+電話: ${data.phone}
+地域: ${data.prefecture} ${data.city}
+希望連絡方法: ${contactMethodLabel}
+
+■ご相談内容
+${data.content}
+
+---
+このメールはお墓じまいナビ（https://www.ohakajimai-navi.jp）からの自動通知です。
+お客様に直接ご連絡をお願いいたします。`
+
     try {
-        await Promise.all([
+        const mailPromises: Promise<unknown>[] = [
             resend.emails.send({
                 from: `お墓じまいナビ <${FROM_ADDRESS}>`,
                 to: ADMIN_EMAIL ?? "info@seiren.jp",
-                subject: `【行政書士相談】${data.lastName} ${data.firstName}様より`,
+                subject: `【行政書士相談】${data.lastName} ${data.firstName}様より${scrivenerName ? ` — ${scrivenerName}宛` : ""}`,
                 text: adminMailBody,
             }),
             resend.emails.send({
@@ -147,7 +184,21 @@ ${data.content}
                 subject: "【自動返信】行政書士マッチングへのご相談ありがとうございます",
                 text: userMailBody,
             }),
-        ])
+        ]
+
+        // 行政書士本人への通知（メールアドレスが登録されている場合のみ）
+        if (scrivenerEmail) {
+            mailPromises.push(
+                resend.emails.send({
+                    from: `お墓じまいナビ <${FROM_ADDRESS}>`,
+                    to: scrivenerEmail,
+                    subject: `【新着相談】${data.lastName} ${data.firstName}様よりご相談が届きました`,
+                    text: scrivenerMailBody,
+                })
+            )
+        }
+
+        await Promise.all(mailPromises)
     } catch (mailError) {
         // Doc-04 §5-1: メール失敗はログ記録のみ。ユーザーには成功遷移
         console.error("[submitGyoseishoshiInquiry] メール送信失敗:", mailError)

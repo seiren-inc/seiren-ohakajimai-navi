@@ -119,7 +119,6 @@ function FloatingCTA() {
         {/* 既存：無料相談 */}
         <a
           href="/contact"
-          aria-label="無料相談・お見積りのお問い合わせ"
           className={cn(
             'flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 font-bold text-white shadow-lg transition-all hover:bg-emerald-700 hover:shadow-xl active:scale-[0.98]',
             'min-h-[52px] px-6 text-sm sm:text-base',

@@ -83,6 +83,9 @@ export async function createScrivener(formData: FormData) {
         ? specialtiesRaw.split(",").map((s: string) => s.trim()).filter(Boolean)
         : []
 
+    const municipalityIdRaw = formData.get("municipalityId") as string
+    const municipalityId = municipalityIdRaw && municipalityIdRaw !== "__none__" ? municipalityIdRaw : null
+
     const result = await db.administrativeScrivener.create({
         data: {
             officeName: formData.get("officeName") as string,
@@ -100,6 +103,7 @@ export async function createScrivener(formData: FormData) {
             businessHours: (formData.get("businessHours") as string) || null,
             planType: (formData.get("planType") as string) || "BASIC",
             priorityScore: Number(formData.get("priorityScore")) || 0,
+            municipalityId,
             // Doc-18 §4: デフォルトは未承認・未払い
             isApproved: false,
             isActive: true,
@@ -127,6 +131,9 @@ export async function updateScrivener(id: string, formData: FormData) {
         ? specialtiesRaw.split(",").map((s: string) => s.trim()).filter(Boolean)
         : []
 
+    const municipalityIdRaw = formData.get("municipalityId") as string
+    const municipalityId = municipalityIdRaw && municipalityIdRaw !== "__none__" ? municipalityIdRaw : null
+
     await db.administrativeScrivener.update({
         where: { id },
         data: {
@@ -145,6 +152,7 @@ export async function updateScrivener(id: string, formData: FormData) {
             businessHours: (formData.get("businessHours") as string) || null,
             planType: (formData.get("planType") as string) || "BASIC",
             priorityScore: Number(formData.get("priorityScore")) || 0,
+            municipalityId,
             stripeSubscriptionId: (formData.get("stripeSubscriptionId") as string) || null,
         },
     })
@@ -177,6 +185,9 @@ export async function toggleApproval(id: string, isApproved: boolean) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -198,6 +209,9 @@ export async function toggleActive(id: string, isActive: boolean) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -236,6 +250,9 @@ export async function updatePaymentStatus(id: string, paymentStatus: string) {
     }
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
 }
 
 /**
@@ -272,5 +289,8 @@ export async function deleteScrivener(id: string) {
     await recordAuditLog(id, "DELETE_LOGICAL", null, { isActive: false, isApproved: false })
 
     revalidatePath("/admin/gyoseishoshi")
+    // 公開側の ISR キャッシュを即時無効化
+    revalidatePath("/gyoseishoshi")
+    revalidatePath("/gyoseishoshi/area", "layout")
     redirect("/admin/gyoseishoshi")
 }

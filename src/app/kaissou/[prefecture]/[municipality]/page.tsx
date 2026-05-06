@@ -58,11 +58,15 @@ export default async function MunicipalityPage(props: PageProps) {
         notFound()
     }
 
-    // 都道府県対応の提携行政書士を取得
+    // 自治体に紐づく提携行政書士を取得（municipalityId + 公開条件）
     const scriveners = await prisma.administrativeScrivener.findMany({
-        where: { prefecture: municipality.prefectureName, isApproved: true, isActive: true },
+        where: {
+            municipalityId: municipality.id,
+            isApproved: true,
+            isActive: true,
+        },
         take: 3,
-        orderBy: { priorityScore: "desc" }
+        orderBy: { priorityScore: "desc" },
     })
 
     // 自治体固有のFAQ生成（GEO対策）
@@ -265,7 +269,7 @@ export default async function MunicipalityPage(props: PageProps) {
                         <div className="mt-16 pt-10 border-t">
                             <div className="flex items-center gap-2 mb-6">
                                 <UserCheck className="h-6 w-6 text-primary" />
-                                <h2 className="text-lg font-bold md:text-xl">{municipality.prefectureName}対応の提携行政書士</h2>
+                                <h2 className="text-lg font-bold md:text-xl">{municipality.name}エリアの提携行政書士</h2>
                             </div>
                             <p className="text-muted-foreground mb-6">
                                 {municipality.name}での改葬手続きに不安がある方は、対応エリアの専門家に代行を依頼することができます。
@@ -319,7 +323,7 @@ export default async function MunicipalityPage(props: PageProps) {
                                 </li>
                             </ul>
                             <Button className="w-full font-bold h-12 shadow-lg shadow-primary/20" asChild>
-                                <Link href="/contact">
+                                <Link href={`/contact?municipalityId=${municipality.id}`}>
                                     <Mail className="mr-2 h-4 w-4" /> 無料相談・お見積り
                                 </Link>
                             </Button>

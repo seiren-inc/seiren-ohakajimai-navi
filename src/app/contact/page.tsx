@@ -11,7 +11,14 @@ export const metadata = constructMetadata({
     path: '/contact',
 })
 
-export default function ContactPage() {
+type ContactPageProps = {
+    searchParams: Promise<{ municipalityId?: string }>
+}
+
+export default async function ContactPage({ searchParams }: ContactPageProps) {
+    const { municipalityId } = await searchParams
+    const resolvedMunicipalityId = typeof municipalityId === "string" ? municipalityId : undefined
+
     const contactPageJsonLd = {
         '@context': 'https://schema.org',
         '@type': 'ContactPage',
@@ -69,7 +76,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className="bg-white p-6 md:p-10 rounded-lg shadow-sm border">
-                        <ContactForm />
+                        <ContactForm municipalityId={resolvedMunicipalityId} />
                     </div>
                 </div>
             </div>

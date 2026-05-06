@@ -28,11 +28,16 @@ import {
 import { submitGyoseishoshiInquiry } from "@/actions/submit-gyoseishoshi-inquiry"
 import { PREFECTURES } from "@/lib/prefectures"
 
+type Props = {
+    /** 特定行政書士宛の問い合わせ時に設定。DB と通知メールの紐付けに使用。 */
+    scrivenerId?: string
+}
+
 /**
  * 行政書士相談フォーム（旧名: GyoseishoshiContactForm）
  * Doc-04 § 3-4: GyoseishoshiInquiryForm に名称統一
  */
-export function GyoseishoshiInquiryForm() {
+export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
     const [isPending, startTransition] = useTransition()
 
     const form = useForm<GyoseishoshiInquiryFormData>({
@@ -58,6 +63,10 @@ export function GyoseishoshiInquiryForm() {
                     formData.append(key, value.toString())
                 }
             })
+            // 行政書士紐付け（システム設定値 — ユーザー入力ではない）
+            if (scrivenerId) {
+                formData.append("scrivenerId", scrivenerId)
+            }
 
             try {
                 const result = await submitGyoseishoshiInquiry(null, formData)
@@ -88,7 +97,7 @@ export function GyoseishoshiInquiryForm() {
                     render={({ field }) => (
                         <FormItem className="hidden" aria-hidden>
                             <FormControl>
-                                <Input {...field} tabIndex={-1} autoComplete="off" />
+                                <Input {...field} aria-label="確認用メールアドレス" tabIndex={-1} autoComplete="off" aria-hidden="true" />
                             </FormControl>
                         </FormItem>
                     )}
@@ -163,7 +172,7 @@ export function GyoseishoshiInquiryForm() {
                                     <FormLabel>都道府県 <span className="text-red-500">*</span></FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
-                                            <SelectTrigger>
+                                            <SelectTrigger aria-label="都道府県">
                                                 <SelectValue placeholder="選択してください" />
                                             </SelectTrigger>
                                         </FormControl>
@@ -231,7 +240,7 @@ export function GyoseishoshiInquiryForm() {
                                         {(Object.entries(PreferredContactLabels) as [string, string][]).map(([key, label]) => (
                                             <FormItem key={key} className="flex items-center space-x-3 space-y-0">
                                                 <FormControl>
-                                                    <RadioGroupItem value={key} />
+                                                    <RadioGroupItem value={key} aria-label={label} />
                                                 </FormControl>
                                                 <FormLabel className="font-normal">{label}</FormLabel>
                                             </FormItem>
