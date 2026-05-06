@@ -63,3 +63,17 @@ export const REGIONS = [
     "中国・四国",
     "九州・沖縄",
 ] as const
+
+const PREFECTURE_SLUG_SET = new Set(PREFECTURES.map((prefecture) => prefecture.slug))
+
+export function isValidPrefectureSlug(slug: string): boolean {
+    return PREFECTURE_SLUG_SET.has(slug as (typeof PREFECTURES)[number]["slug"])
+}
+
+export function findPrefectureSlug(value: string): string | null {
+    const prefecture = PREFECTURES.find(
+        (prefecture) => prefecture.slug === value || prefecture.name === value || prefecture.name.replace(/[都道府県]$/, "") === value
+    )
+
+    return prefecture?.slug ?? null
+}

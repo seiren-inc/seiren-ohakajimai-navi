@@ -18,26 +18,28 @@ Use for: new features, new components, new routes, new API endpoints, new Server
 
 **Phase 2 — Implementation Plan**
 
+実装計画は **GitHub Flavored Markdown のタスクリスト** で書く（完了時に `- [x]` に更新できる形式）。テンプレート: `docs/templates/implementation-plan-template.md`。
+
 Present to the user:
 ```
 ## Implementation Plan
 
 ### Files to modify
-- src/components/features/X.tsx — [reason]
-- src/actions/x.ts — [reason]
+- [ ] src/components/features/X.tsx — [reason]
+- [ ] src/actions/x.ts — [reason]
 
 ### Files to create
-- src/components/features/Y.tsx — [reason]
+- [ ] src/components/features/Y.tsx — [reason]
 
-### Changes
-1. [Step 1 description]
-2. [Step 2 description]
+### Changes (check off when done)
+- [ ] [Step 1 description]
+- [ ] [Step 2 description]
 
 ### Skills to use
 - [skill-name] — [reason]
 
 ### Out of scope
-- [anything explicitly not changing]
+- [anything explicitly not changing — plain bullet, no checkbox]
 ```
 
 **Phase 3 — Wait for approval**

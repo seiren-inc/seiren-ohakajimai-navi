@@ -1,11 +1,15 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import {
+    FOOTER_SISTER_SITES,
+    SEIREN_CORPORATE_SITE_HREF,
+} from '@/config/seiren-ecosystem'
 
 export function Footer() {
     return (
         <footer className="border-t bg-muted/50">
             <div className="container py-10">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8">
                     <div className="space-y-4">
                         <Link href="/" className="inline-flex items-center gap-2">
                             <Image
@@ -43,10 +47,41 @@ export function Footer() {
                             <li><Link href="/kaissou/fukuoka" className="hover:underline">福岡県</Link></li>
                         </ul>
                     </div>
-                    <div>
-                        <h4 className="font-semibold mb-4">会社情報</h4>
+                    <div data-ecosystem-block="footer-related-services">
+                        <h4 className="font-semibold mb-4">関連サービス</h4>
                         <ul className="space-y-2 text-sm">
-                            <li><Link href="/company" className="hover:underline">運営会社</Link></li>
+                            {FOOTER_SISTER_SITES.map((site) => (
+                                <li key={site.href}>
+                                    <a
+                                        href={site.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:underline"
+                                        data-ecosystem-link={site.id}
+                                        data-ecosystem-from="footer-related-services"
+                                    >
+                                        {site.label}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 className="font-semibold mb-4">企業情報</h4>
+                        <ul className="space-y-2 text-sm">
+                            <li>
+                                <a
+                                    href={SEIREN_CORPORATE_SITE_HREF}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:underline"
+                                    data-ecosystem-link="seiren-corporate"
+                                    data-ecosystem-from="footer-company"
+                                >
+                                    株式会社清蓮 企業サイト
+                                </a>
+                            </li>
+                            <li><Link href="/company" className="hover:underline">運営会社について</Link></li>
                             <li><Link href="/privacy" className="hover:underline">プライバシーポリシー</Link></li>
                             <li><Link href="/contact" className="hover:underline">お問い合わせ</Link></li>
                         </ul>

@@ -34,12 +34,19 @@ import {
   Hammer,
 } from "lucide-react"
 
-// 関連サービスデータ（header.tsx と共通定義）
-const relatedServices = [
-  { label: "散骨クルーズ", href: "https://www.sankotu-cruise.com/", description: "海洋散骨の専門サービス", external: true, comingSoon: false },
-  { label: "遺骨ラボ", href: "https://ikotsu-lab.com/", description: "遺骨の専門処理・粉骨", external: true, comingSoon: false },
-  { label: "お墓探しナビ", href: "https://www.ohakanavi.jp", description: "全国の霊園・納骨堂を検索", external: true, comingSoon: false },
-]
+import { EcosystemShowcase } from "@/components/features/ecosystem/EcosystemShowcase"
+import {
+  FOOTER_SISTER_SITES,
+  SEIREN_CORPORATE_SITE_HREF,
+} from "@/config/seiren-ecosystem"
+
+/** トップ専用フッター表示ラベル（共通 Footer の短縮ラベルと差分のみ上書き） */
+const HOME_FOOTER_SISTER_LABELS = {
+  "sankotsu-cruise": "海洋散骨クルーズ",
+  "ikotsu-lab-sankotsu": "遺骨サポートLab（個人）",
+  "ikotsu-com": "遺骨.com（法人）",
+  "ohaka-navi": "お墓探しナビ",
+} as const satisfies Record<(typeof FOOTER_SISTER_SITES)[number]["id"], string>
 
 // ----------------------------------------------------------------
 // Reveal Hook (IntersectionObserver)
@@ -324,7 +331,6 @@ function HomepageComingSoonModal({ onClose }: { onClose: () => void }) {
 export default function HomepageClient() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [relatedOpen, setRelatedOpen] = useState(false)
   const [modalOpen, setModalOpen] = useState(false)
 
   useEffect(() => {
@@ -961,6 +967,8 @@ export default function HomepageClient() {
           </div>
         </section>
 
+        <EcosystemShowcase />
+
         {/* ============================================================
             [M] フッター
         ============================================================ */}
@@ -1002,28 +1010,43 @@ export default function HomepageClient() {
                 </ul>
               </div>
 
-              <div>
+              <div data-ecosystem-block="home-footer-related-services">
                 <h4 className="text-sm font-semibold text-neutral-900">関連サービス</h4>
                 <ul className="mt-4 space-y-3">
-                  {[
-                    { label: "海洋散骨クルーズ", href: "#" },
-                    { label: "遺骨サポートLab", href: "#" },
-                    { label: "改葬許可申請書DL", href: "/kaisoukyoka" },
-                  ].map((item) => (
-                    <li key={item.label}>
-                      <Link href={item.href} className="text-sm text-neutral-500 transition-colors hover:text-neutral-900">
-                        {item.label}
-                      </Link>
+                  {FOOTER_SISTER_SITES.map((site) => (
+                    <li key={site.id}>
+                      <a
+                        href={site.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                        data-ecosystem-link={site.id}
+                        data-ecosystem-from="home-footer-related-services"
+                      >
+                        {HOME_FOOTER_SISTER_LABELS[site.id]}
+                      </a>
                     </li>
                   ))}
                 </ul>
               </div>
 
               <div>
-                <h4 className="text-sm font-semibold text-neutral-900">会社情報</h4>
+                <h4 className="text-sm font-semibold text-neutral-900">企業情報</h4>
                 <ul className="mt-4 space-y-3">
+                  <li>
+                    <a
+                      href={SEIREN_CORPORATE_SITE_HREF}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-neutral-500 transition-colors hover:text-neutral-900"
+                      data-ecosystem-link="seiren-corporate"
+                      data-ecosystem-from="home-footer-company"
+                    >
+                      株式会社清蓮 企業サイト
+                    </a>
+                  </li>
                   {[
-                    { label: "運営会社", href: "#" },
+                    { label: "運営会社について", href: "/company" },
                     { label: "プライバシーポリシー", href: "/privacy" },
                     { label: "お問い合わせ", href: "/contact" },
                   ].map((item) => (

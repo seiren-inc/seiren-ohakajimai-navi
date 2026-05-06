@@ -7,6 +7,7 @@ import { LocalBusinessJsonLd } from "@/components/seo/local-business-json-ld"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, AlertCircle } from "lucide-react"
+import { SeirenEcosystemNextSteps } from "@/components/features/ecosystem/SeirenEcosystemNextSteps"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
@@ -155,7 +156,21 @@ export default function SankotsuPage() {
                 },
                 {
                   title: "粉骨（粉砕）の必要性",
-                  body: "海洋散骨を行う前に、遺骨を2mm以下の粉状に加工する「粉骨」が必要です。これはルールとして定着しており、粉骨せずに遺骨をそのまま海に撒くことは許可されていません。専門業者への依頼が一般的です。",
+                  body: (
+                    <>
+                      海洋散骨を行う前に、遺骨を2mm以下の粉状に加工する「粉骨」が必要です。これはルールとして定着しており、粉骨せずに遺骨をそのまま海に撒くことは許可されていません。
+                      専門サービス（
+                      <a 
+                        href="https://ikotsu-lab.com/sankotu.html" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-emerald-700 underline underline-offset-2 hover:text-emerald-900 font-medium"
+                      >
+                        遺骨サポートLab
+                      </a>
+                      ）への依頼が一般的です。
+                    </>
+                  ),
                 },
                 {
                   title: "改葬許可申請との関係",
@@ -201,20 +216,27 @@ export default function SankotsuPage() {
             </div>
           </section>
 
+          <SeirenEcosystemNextSteps context="sankotsu" />
+
           {/* CTA */}
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
               散骨・お墓じまいの無料相談 <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link href="/flow" className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
-              お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
-            </Link>
+            <a 
+              href="https://www.sankotu-cruise.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-4 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
+            >
+              散骨クルーズ 公式サイト <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
 
           {/* 関連リンク */}
           <div className="pt-8 border-t border-neutral-100">
-            <p className="text-xs text-neutral-400 font-semibold uppercase tracking-widest mb-4">関連ページ</p>
-            <div className="flex flex-wrap gap-3">
+            <p className="text-xs text-neutral-400 font-semibold uppercase tracking-widest mb-4">関連ページ・サービス</p>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
               {[
                 { href: "/about", label: "お墓じまいとは" },
                 { href: "/kaisoukyoka", label: "改葬許可申請書ダウンロード" },
@@ -222,10 +244,18 @@ export default function SankotsuPage() {
                 { href: "/kaisougo", label: "改葬後の供養先" },
                 { href: "/gyoseishoshi", label: "行政書士に相談する" },
               ].map((link) => (
-                <Link key={link.href} href={link.href} className="text-sm text-emerald-700 underline underline-offset-2 hover:text-emerald-900">
+                <Link key={link.href} href={link.href} className="text-sm text-emerald-700 underline underline-offset-4 hover:text-emerald-900">
                   {link.label}
                 </Link>
               ))}
+              <a 
+                href="https://www.sankotu-cruise.com/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-emerald-700 underline underline-offset-4 hover:text-emerald-900 font-bold"
+              >
+                散骨クルーズ（専門サービス）
+              </a>
             </div>
           </div>
         </div>

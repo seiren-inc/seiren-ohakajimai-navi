@@ -9,6 +9,7 @@ import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
 import KaisoukyokaClient from '@/components/kaisoukyoka/KaisoukyokaClient'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
+import { SeirenEcosystemNextSteps } from '@/components/features/ecosystem/SeirenEcosystemNextSteps'
 
 export const metadata: Metadata = constructMetadata({
   title: '改葬許可申請書ダウンロード｜全国自治体一覧・書き方・改葬 自分で手続きする方へ｜お墓じまいナビ',
@@ -58,7 +59,7 @@ export default async function KaisoukyokaPage() {
             '@context': 'https://schema.org',
             '@type': 'Dataset',
             name: '全国市区町村の改葬許可申請書情報データベース',
-            description: '全国47都道府県・1,700以上の市区町村の改葬許可申請書PDFダウンロードリンク・窓口情報を掃羅。また・西自治体別の申請書書式と記入方法を敒参記載。',
+            description: '全国47都道府県・1,700以上の市区町村の改葬許可申請書PDFダウンロードリンク・窓口情報を掲載。自治体別の書式や記入ポイントを個別に整理しています。',
             url: `${SITE_URL}/kaisoukyoka`,
             creator: {
               '@type': 'Organization',
@@ -142,6 +143,12 @@ export default async function KaisoukyokaPage() {
 
       {/* subLinks は Prisma が JsonValue で返すが、ランタイムでは SubLink[] 構造が保証されている */}
       <KaisoukyokaClient initialData={groupedData as React.ComponentProps<typeof KaisoukyokaClient>['initialData']} />
+
+      <div className="border-t bg-background px-4 py-10">
+        <div className="mx-auto max-w-3xl">
+          <SeirenEcosystemNextSteps context="kaisoukyoka" />
+        </div>
+      </div>
 
       {/* Doc-09 §7: 行政書士への導線 */}
       <section className="border-t bg-muted/30 px-4 py-10 text-center">
