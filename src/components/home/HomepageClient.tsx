@@ -469,7 +469,7 @@ export default function HomepageClient() {
             <div className="absolute inset-0 bg-seiren-bg/90" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-6xl px-6">
+          <div className="relative z-10 mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="grid min-h-[88vh] items-center py-28 md:grid-cols-2 md:py-36">
 
               {/* ── 左カラム: コピー＋CTA ── */}
@@ -592,7 +592,7 @@ export default function HomepageClient() {
               />
             </div>
 
-            <div className="relative mx-auto grid max-w-6xl items-center gap-0 md:grid-cols-2">
+            <div className="relative mx-auto grid max-w-[1320px] items-center gap-0 md:grid-cols-2">
               {/* 左: 写真（縦長・フル高さ） */}
               <div className="relative h-[380px] md:h-[540px]">
                 <Image
@@ -649,7 +649,7 @@ export default function HomepageClient() {
             [D] 選ばれる3つの理由
         ============================================================ */}
         <Reveal className="py-24 md:py-36">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">選ばれる3つの理由</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">安さだけではありません。法令遵守と確かな実績で選ばれています。</p>
@@ -728,7 +728,7 @@ export default function HomepageClient() {
 
         {/* 中間CTA */}
         <section className="border-y border-seiren-border bg-seiren-main py-16">
-          <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="mx-auto max-w-[980px] px-6 lg:px-12 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">まずは無料で</p>
             <h2 className="mt-4 font-zen text-[22px] font-bold text-white md:text-[28px]">
               現地調査前でも、概算費用をお伝えできます
@@ -758,7 +758,7 @@ export default function HomepageClient() {
             [E] サービス内容
         ============================================================ */}
         <Reveal className="bg-neutral-50 py-24 md:py-36">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">サービス内容</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お墓じまいに関わるすべての工程をサポートします。</p>
@@ -786,7 +786,7 @@ export default function HomepageClient() {
             [F] 改葬手続きとは
         ============================================================ */}
         <Reveal id="kaisou-steps" className="py-24 md:py-36">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">改葬手続きとは</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現在のお墓からご遺骨を移し、別の納骨先へ移す手続きです。墓じまいでは「改葬許可証」の取得が必要になります。</p>
@@ -852,7 +852,7 @@ export default function HomepageClient() {
             [G] 清蓮ができること / 行わないこと（最重要）
         ============================================================ */}
         <Reveal className="bg-neutral-50 py-24 md:py-36">
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">私たちの対応範囲</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">法令を遵守し、できることとできないことを明確にしています。</p>
@@ -923,7 +923,7 @@ export default function HomepageClient() {
             [H] ご依頼の流れ
         ============================================================ */}
         <Reveal id="flow" className="py-24 md:py-36">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-[980px] px-6 lg:px-12">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">ご依頼の流れ</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">お問い合わせから完了まで、5つのステップで進めます。</p>
@@ -1011,7 +1011,7 @@ export default function HomepageClient() {
             [I] 料金について
         ============================================================ */}
         <Reveal id="pricing" className="bg-white py-24 md:py-36">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-[980px] px-6 lg:px-12">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">料金について</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">現地状況で変動するため、まずは無料で概算をご案内します。追加費用が出やすいポイントも事前にご説明します。</p>
@@ -1067,7 +1067,7 @@ export default function HomepageClient() {
             [J] ご自分で手続きされる方へ
         ============================================================ */}
         <Reveal className="py-24 md:py-36">
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
             <div className="relative overflow-hidden rounded-3xl bg-seiren-bg p-10 md:p-20">
               <div className="relative z-10 mx-auto max-w-2xl text-center">
                 <h2 className="font-serif text-balance text-[28px] font-bold tracking-tight text-neutral-900 md:text-[36px]">ご自分で手続きされる方へ</h2>
@@ -1097,7 +1097,7 @@ export default function HomepageClient() {
             [K-pre] お客様の声
         ============================================================ */}
         <Reveal className="py-24 md:py-36">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="font-serif text-balance text-[22px] font-bold tracking-tight text-neutral-900 md:text-[34px] lg:text-[44px]">お客様の声</h2>
               <p className="mt-5 text-[17px] leading-[1.65] text-neutral-500">実際にご依頼いただいたお客様からいただいた声です。</p>
@@ -1112,7 +1112,7 @@ export default function HomepageClient() {
             [K] よくある質問
         ============================================================ */}
         <Reveal className="bg-neutral-50 py-24 md:py-36">
-          <div className="mx-auto max-w-3xl px-6">
+          <div className="mx-auto max-w-[760px] px-6 lg:px-10">
             <div className="text-center">
               <h2 className="font-serif text-balance text-[34px] font-bold tracking-tight text-neutral-900 md:text-[44px]">よくあるご質問</h2>
             </div>
@@ -1149,7 +1149,7 @@ export default function HomepageClient() {
             <div className="absolute inset-0 bg-seiren-main/80" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center md:py-36">
+          <div className="relative z-10 mx-auto max-w-[760px] px-6 lg:px-10 py-28 text-center md:py-36">
             {/* グラスカード */}
             <div className="rounded-3xl border border-white/20 bg-white/10 px-8 py-12 backdrop-blur-md md:px-14">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">
@@ -1163,20 +1163,29 @@ export default function HomepageClient() {
                 改葬のご相談は、ご家族の大切な決断です。
               </p>
 
-              <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <div className="mt-10 flex flex-col items-center gap-3 sm:gap-4">
+                {/* Tier 1: Primary amber fill */}
                 <Link
                   href="/contact"
                   className="inline-flex min-h-[56px] w-full items-center justify-center rounded-full bg-seiren-cta px-10 text-base font-bold text-white shadow-[0_4px_24px_rgba(217,119,6,0.5)] transition-all hover:bg-seiren-cta-hover hover:shadow-[0_6px_32px_rgba(217,119,6,0.6)] sm:w-auto"
                 >
                   <Mail className="mr-2 h-5 w-5" />
-                  無料相談・お見積りフォーム
+                  無料で相談する
                 </Link>
+                {/* Tier 2: Secondary white-border outline */}
+                <Link
+                  href="#flow"
+                  className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full border border-white/50 px-8 text-[15px] font-semibold text-white transition-all hover:bg-white/10 sm:w-auto"
+                >
+                  サービスの流れを見る
+                </Link>
+                {/* Tier 3: Ghost low-emphasis */}
                 <a
                   href="tel:08008888788"
-                  className="inline-flex min-h-[56px] w-full items-center justify-center gap-2 rounded-full border border-white/30 bg-white/10 px-8 text-base font-semibold text-white transition-all hover:bg-white/20 sm:w-auto"
+                  className="inline-flex min-h-[44px] items-center justify-center gap-2 text-sm font-medium text-white/60 transition-colors hover:text-white/90"
                 >
-                  <Phone className="h-5 w-5" />
-                  0800-888-8788
+                  <Phone className="h-4 w-4" />
+                  0800-888-8788（無料）
                 </a>
               </div>
 
@@ -1188,7 +1197,7 @@ export default function HomepageClient() {
         <EcosystemShowcase />
 
         <section className="bg-neutral-50 py-24 md:py-32">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">セルフチェック</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
@@ -1215,7 +1224,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-white py-24 md:py-32">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-sm">
               <div className="grid gap-0 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="border-b border-neutral-200 bg-neutral-50/70 px-7 py-8 md:px-10 md:py-10 lg:border-b-0 lg:border-r">
@@ -1261,7 +1270,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-neutral-50 py-24 md:py-32">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">詰まりやすい論点</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
@@ -1283,7 +1292,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-white py-24 md:py-32">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-[980px] px-6 lg:px-12">
             <div className="rounded-[32px] border border-neutral-200 bg-neutral-50 px-7 py-8 md:px-10 md:py-10">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">行政書士マッチング</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[36px]">
@@ -1310,7 +1319,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-neutral-50 py-24 md:py-32">
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
             <div className="rounded-[32px] bg-seiren-main px-7 py-10 text-white md:px-10 md:py-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">一括相談</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] md:text-[36px]">
@@ -1332,7 +1341,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-white py-24 md:py-32">
-          <div className="mx-auto max-w-4xl px-6">
+          <div className="mx-auto max-w-[980px] px-6 lg:px-12">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">FAQ</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
@@ -1357,7 +1366,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-neutral-50 py-24 md:py-32">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="mx-auto max-w-3xl text-center">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">関連サービス</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
@@ -1399,7 +1408,7 @@ export default function HomepageClient() {
         </section>
 
         <section className="bg-white pb-24 pt-8 md:pb-32 md:pt-10">
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-[1200px] px-6 lg:px-14">
             <div className="rounded-[32px] border border-seiren-border bg-seiren-surface px-7 py-9 text-center md:px-10 md:py-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">フッター直前CTA</p>
               <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
@@ -1430,7 +1439,7 @@ export default function HomepageClient() {
             [M] フッター
         ============================================================ */}
         <footer className="border-t bg-white py-16 print:hidden">
-          <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="grid gap-12 md:grid-cols-4">
               <div className="md:col-span-1">
                 <Link href="/" className="flex items-center gap-2.5">

@@ -33,6 +33,7 @@ const config = {
                     main:         "#1E2A38",
                     accent:       "#C8A96B",
                     "accent-dim": "#E8D9B8",
+                    gold:         "#B79A63",
                     cta:          "#D97706",
                     "cta-hover":  "#B45309",
                     body:         "#374151",

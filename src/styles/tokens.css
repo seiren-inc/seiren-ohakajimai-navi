@@ -1,4 +1,14 @@
 @layer base {
+  :root {
+    /* Motion tokens — landing page */
+    --motion-fast:   160ms;
+    --motion-base:   240ms;
+    --motion-slow:   420ms;
+    --ease-spring:   cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-smooth:   cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-loop:     ease-in-out;
+  }
+
   /*
    * Dashboard token architecture
    * Layer 1: primitive tokens
