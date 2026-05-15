@@ -1,52 +1,59 @@
-# seiren-ohakajimai-navi Project Guide
+{\rtf1\ansi\ansicpg932\cocoartf2869
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-## Overview
-Next.js 15 (App Router) application using npm, React 19, Tailwind CSS v4, and Supabase SSR auth.
-Auth includes WebAuthn (@simplewebauthn). Payment via Stripe. AI via Vercel AI SDK v6 (@ai-sdk/openai).
-
-## Non-Negotiables
-- Supabase RLS must remain enabled on all tables. Do not grant excessive permissions to the anon role.
-- Stripe Webhook: verify using constructEvent() on every incoming event. Do not skip signature validation.
-- Cloudflare Turnstile is required for all public forms. Do not use react-google-recaptcha.
-- Use getUser() for Supabase Auth. getSession() is forbidden.
-- Upstash Rate Limit must be applied to all AI API endpoints.
-- All user input must be sanitized with the xss package before sending to AI APIs.
-- PPR is enabled and must not be disabled.
-- WebAuthn (@simplewebauthn) must not be removed or bypassed without explicit approval.
-
-## Project-Specific Implementation Rules
-- Use npm for all commands. pnpm and yarn are forbidden.
-- Build runs prisma generate before next build. Do not remove that step.
-- Fonts are Noto Serif JP (--font-serif) and Noto Sans JP (--font-sans). Do not change font families without explicit approval.
-- Tailwind CSS v4. shadcn/ui components live in src/components/ui/.
-- Directory: src/app/ for pages only. src/components/features/ for business logic. src/actions/ for Server Actions. src/types/ for type definitions.
-- Three.js components must use dynamic import with ssr: false and Suspense.
-- Secrets must be in .env.local. CLOUDFLARE_TURNSTILE_SECRET_KEY must be set there.
-
-## Stop Conditions
-- If requirements are unclear, you must stop and ask for clarification.
-- If a change may affect RLS, Stripe webhook verification, or Turnstile, you must stop.
-- If a change may remove or bypass WebAuthn, you must stop.
-- If a change may affect auth flow, you must stop.
-- If a change may break existing UI or production build behavior, you must stop.
-- If you cannot verify the change, you must stop.
-
-## Local Commands
-- npm run dev
-- npm run build
-- npm run start
-- npm run lint
-- npm run typecheck
-- npm run verify
-- npm run verify:ci
-- npm run test
-- npm run test:e2e
-- npm run verify:perf
-- npx prisma migrate dev
-- npx prisma studio
-
-## Troubleshooting
-- Prisma schema change: run npx prisma generate and npx prisma migrate dev --name <name>.
-- Supabase session failure: replace getSession() with getUser(). Verify createServerClient cookieStore config.
-- Framer Motion: AnimatePresence requires key prop. Add "use client" if useReducedMotion errors occur.
-- Build errors: run typecheck, then lint, then verify:ci.
+\f0\fs24 \cf0 # CLAUDE.md\
+\
+## Role\
+\
+Claude Code acts as an implementation and verification agent for \uc0\u12362 \u22675 \u12376 \u12414 \u12356 \u12490 \u12499 .\
+\
+## Required Behavior\
+\
+Follow `AGENTS.md` first.\
+\
+Use this file only for Claude Code-specific behavior.\
+\
+## Implementation Rules\
+\
+- Prefer minimal diffs\
+- Do not perform broad refactors\
+- Do not change unrelated files\
+- Do not silently alter public routes\
+- Do not silently alter SEO behavior\
+- Do not silently alter municipality data structure\
+- Do not change database schema without an implementation plan\
+\
+## Before Editing\
+\
+Report:\
+\
+- Task understanding\
+- Files likely to be changed\
+- Risk level\
+- Whether a plan is required\
+\
+## After Editing\
+\
+Report:\
+\
+- Changed files\
+- Summary of changes\
+- Validation commands run\
+- Validation results\
+- Remaining risks\
+- Recommended next step\
+\
+## Validation\
+\
+Use available project commands.\
+\
+Common validation candidates:\
+\
+```bash\
+pnpm lint\
+pnpm build\
+pnpm test}

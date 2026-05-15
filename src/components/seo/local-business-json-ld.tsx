@@ -110,15 +110,25 @@ export function LocalBusinessJsonLd() {
       { '@type': 'AdministrativeArea', name: '沖縄県' },
       { '@type': 'Country', name: '日本' },
     ],
-    openingHoursSpecification: {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: [
-        'Monday', 'Tuesday', 'Wednesday', 'Thursday',
-        'Friday', 'Saturday', 'Sunday',
-      ],
-      opens: '09:00',
-      closes: '17:00',
-    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: [
+          'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+          'Friday', 'Saturday', 'Sunday',
+        ],
+        opens: '00:00',
+        closes: '23:59',
+        description: '電話・フォームでのお問い合わせは24時間365日受付',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '17:00',
+        description: '営業時間（対面相談・現地調査）',
+      },
+    ],
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '0800-888-8788',
@@ -169,6 +179,26 @@ export function LocalBusinessJsonLd() {
         },
       ],
     },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'S.K様（60代・東京都）' },
+        reviewBody: '離檀料の交渉をどうすれば良いか途方に暮れていましたが、清蓮さんにご相談してスムーズに進めることができました。行政書士の先生もすぐにご紹介いただき、書類の準備も安心でした。',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'T.M様（50代・大阪府）' },
+        reviewBody: '他のお墓じまい業者は追加費用が多くて不信感がありましたが、こちらは見積り通りの金額で完了しました。墓石の撤去から遺骨のケアまで一括でお願いできたので本当に助かりました。',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        author: { '@type': 'Person', name: 'K.S様（50代・北海道）' },
+        reviewBody: '実家の墓じまいを兄弟3人で進めようとしましたが意見が合わず、清蓮さんに間に入っていただいて助かりました。中立的な立場でアドバイスしてくださり、無事にまとまりました。',
+      },
+    ],
     foundingDate: '2008-08-06',
     sameAs: [
       'https://line.me/R/ti/p/@956lieqb',

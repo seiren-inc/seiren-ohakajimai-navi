@@ -1,5 +1,39 @@
 import type { Metadata, Viewport } from 'next'
+import { Noto_Serif_JP, Noto_Sans_JP, Zen_Kaku_Gothic_New, Inter } from 'next/font/google'
 import './globals.css'
+
+const notoSerifJP = Noto_Serif_JP({
+  weight: ['400', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+  preload: false,
+})
+
+const notoSansJP = Noto_Sans_JP({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+  preload: false,
+})
+
+// ヒーロー見出し用 — 「Zen Kaku Gothic New」は太字で行政的品格と現代感を両立する
+const zenKakuGothicNew = Zen_Kaku_Gothic_New({
+  weight: ['400', '500', '700', '900'],
+  subsets: ['latin'],
+  variable: '--font-zen',
+  display: 'swap',
+  preload: false,
+})
+
+// 英数字・数値表記用 — Inter は narrow で読みやすい
+const inter = Inter({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
@@ -9,8 +43,6 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 // Doc-19 §2.8: 内部AI監査30日安定稼働の前提条件が満たされた場合のみ有効化する
 // NEXT_PUBLIC_ENABLE_RAG_CHAT=true を明示的に設定するまでは非表示
 import { RagChatbot } from '@/components/chat/RagChatbot'
-import { SEIREN_ORGANIZATION_SAME_AS } from '@/config/seiren-ecosystem'
-
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -19,33 +51,6 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   ...constructMetadata(),
-}
-
-const BASE_URL = 'https://www.ohakajimai-navi.jp'
-
-const organizationLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": `${BASE_URL}/#organization`,
-  "name": "株式会社清蓮",
-  "url": BASE_URL,
-  "description": "墓じまい・改葬の専門ナビゲーションサービス。行政書士情報・散骨・納骨堂も詳しく掲載。",
-  "sameAs": [...SEIREN_ORGANIZATION_SAME_AS],
-}
-
-const localBusinessLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${BASE_URL}/#localbusiness`,
-  "name": "お墓じまいナビ",
-  "url": BASE_URL,
-  "description": "墓じまい・改葬の手続き・費用・行政書士の情報を提供。相談無料。",
-  "areaServed": [{ "@type": "Country", "name": "Japan" }],
-  "serviceType": [
-    "墓じまい", "改葬", "散骨", "納骨堂", "行政書士紹介"
-  ],
-  "priceRange": "無料相談",
-  "parentOrganization": { "@type": "Organization", "@id": `${BASE_URL}/#organization` }
 }
 
 export default function RootLayout({
@@ -67,16 +72,11 @@ export default function RootLayout({
       </head>
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased flex flex-col",
-        "font-[system-ui,-apple-system,BlinkMacSystemFont,'Hiragino_Kaku_Gothic_ProN','Yu_Gothic',sans-serif]"
+        notoSerifJP.variable,
+        notoSansJP.variable,
+        zenKakuGothicNew.variable,
+        inter.variable,
       )}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessLd) }}
-        />
         <ConditionalLayout>
           {children}
         </ConditionalLayout>

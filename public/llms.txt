@@ -93,3 +93,7 @@
 ## ライセンスと著作権
 
 Copyright © 株式会社清蓮 All Rights Reserved.
+
+## Optional
+
+- [詳細コンテキスト（llms-full.txt）](https://www.ohakajimai-navi.jp/llms-full.txt): サービス詳細・全FAQ・スキーマ語彙の拡張情報

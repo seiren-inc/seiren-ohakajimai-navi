@@ -6,6 +6,7 @@ import { DefinedTermSetJsonLd } from "@/components/seo/defined-term-json-ld"
 import { OrganizationJsonLd } from '@/components/seo/organization-json-ld'
 import { WebSiteJsonLd } from '@/components/seo/website-json-ld'
 import { LocalBusinessJsonLd } from '@/components/seo/local-business-json-ld'
+import { SpeakableJsonLd } from '@/components/seo/speakable-json-ld'
 
 export const metadata = constructMetadata({
   title: "お墓じまい・改葬手続きならお墓じまいナビ｜墓じまい・墓石撤去・全国対応",
@@ -26,6 +27,10 @@ export default function TopPage() {
       <OrganizationJsonLd />
       <WebSiteJsonLd />
       <LocalBusinessJsonLd />
+      <SpeakableJsonLd
+        pageUrl="https://www.ohakajimai-navi.jp"
+        cssSelector={["h1", ".typography-heading", "[data-speakable]"]}
+      />
       <HomepageClient />
     </>
   )

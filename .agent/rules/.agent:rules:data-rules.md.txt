@@ -1,0 +1,16 @@
+# Data Rules
+
+## Municipality Link Data
+
+Municipality data is high-risk.
+
+Do not casually rewrite, normalize, delete, or infer records.
+
+## URL Policy
+
+Normal web page:
+
+```txt
+url = Web page URL
+pdfUrl = null
+linkType = WEB

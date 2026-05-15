@@ -24,6 +24,10 @@ function getPrefectureData(slug: string) {
     return PREFECTURES.find((p) => p.slug === slug)?.name
 }
 
+function isSafeSlug(value: string): boolean {
+    return /^[a-z0-9-]{1,64}$/.test(value)
+}
+
 export async function generateMetadata(props: PageProps) {
     const params = await props.params
     const prefectureSlug = findPrefectureSlug(params.prefecture)

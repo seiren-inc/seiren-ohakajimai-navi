@@ -21,9 +21,25 @@ const config = {
         },
         extend: {
             fontFamily: {
-                sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+                sans:  ["var(--font-sans)",  ...defaultTheme.fontFamily.sans],
+                serif: ["var(--font-serif)", ...defaultTheme.fontFamily.serif],
+                zen:   ["var(--font-zen)",   ...defaultTheme.fontFamily.sans],
+                inter: ["var(--font-inter)", ...defaultTheme.fontFamily.sans],
             },
             colors: {
+                // Seiren brand palette (お墓じまいナビ公開サイト)
+                seiren: {
+                    bg:           "#F7F5F2",
+                    main:         "#1E2A38",
+                    accent:       "#C8A96B",
+                    "accent-dim": "#E8D9B8",
+                    cta:          "#D97706",
+                    "cta-hover":  "#B45309",
+                    body:         "#374151",
+                    sub:          "#6B7280",
+                    border:       "#E8E4DE",
+                    surface:      "#FDFCFB",
+                },
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
