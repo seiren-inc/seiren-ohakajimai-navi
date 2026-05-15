@@ -470,7 +470,7 @@ export default function HomepageClient() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1320px] px-6 lg:px-16">
-            <div className="grid min-h-[88vh] items-center py-28 md:grid-cols-2 md:py-36">
+            <div className="grid min-h-[88dvh] items-center py-28 md:grid-cols-2 md:py-36">
 
               {/* ── 左カラム: コピー＋CTA ── */}
               <div
@@ -1533,19 +1533,6 @@ export default function HomepageClient() {
         </footer>
       </div>
 
-      {/* Keyframe animation */}
-      <style jsx global>{`
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(32px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </>
   )
 }
