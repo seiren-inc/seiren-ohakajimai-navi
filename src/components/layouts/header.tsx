@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useRef } from "react"
 import { Phone, Menu, X, ChevronDown, Mail, ExternalLink } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 // ─── Navigation Data ──────────────────────────────────────────────────────────
 
@@ -289,11 +290,16 @@ export function Header() {
       </div>
 
       {/* ── Mobile Drawer ── */}
-      {menuOpen && (
-        <div
-          id="mobile-menu"
-          className="border-t border-seiren-border bg-white px-5 pb-8 pt-3 xl:hidden"
-        >
+      <div
+        id="mobile-menu"
+        aria-hidden={!menuOpen}
+        className={cn(
+          "overflow-hidden border-seiren-border bg-white xl:hidden",
+          "transition-[max-height,opacity] duration-300 ease-in-out",
+          menuOpen ? "border-t max-h-[80dvh] opacity-100" : "max-h-0 opacity-0 pointer-events-none",
+        )}
+      >
+        <div className="px-5 pb-8 pt-3">
           {/* Primary links */}
           <nav className="flex flex-col divide-y divide-seiren-border" aria-label="モバイルナビゲーション">
 
@@ -411,7 +417,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }

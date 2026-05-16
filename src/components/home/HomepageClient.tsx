@@ -1,9 +1,8 @@
-"use client"
-
-import React, { useState, useEffect, useRef } from "react"
 import { testimonials } from "@/lib/testimonials"
 import Link from "next/link"
 import Image from "next/image"
+import { Reveal, WorryList } from "./Reveal"
+import { TestimonialCarousel } from "./TestimonialCarousel"
 import {
   Phone,
   Mail,
@@ -18,8 +17,6 @@ import {
   AlertTriangle,
   Info,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   Download,
   ArrowRight,
   ShieldCheck,
@@ -29,7 +26,6 @@ import {
   CheckCircle,
   Eye,
   Undo2,
-  X,
   Hammer,
 } from "lucide-react"
 
@@ -48,62 +44,6 @@ const HOME_FOOTER_SISTER_LABELS = {
 } as const satisfies Record<(typeof FOOTER_SISTER_SITES)[number]["id"], string>
 
 // ----------------------------------------------------------------
-// Reveal Hook (IntersectionObserver)
-// ----------------------------------------------------------------
-function useReveal(threshold = 0.15) {
-  const ref = useRef<HTMLElement>(null)
-  const [visible, setVisible] = useState(false)
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-          obs.disconnect()
-        }
-      },
-      { threshold, rootMargin: "0px 0px -40px 0px" }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
-  return { ref, visible }
-}
-
-// ----------------------------------------------------------------
-// Reveal Section Wrapper
-// ----------------------------------------------------------------
-function Reveal({
-  children,
-  className = "",
-  delay = 0,
-  id,
-}: {
-  children: React.ReactNode
-  className?: string
-  delay?: number
-  id?: string
-}) {
-  const { ref, visible } = useReveal()
-  return (
-    <section
-      ref={ref}
-      id={id}
-      className={className}
-      style={{
-        transition: `opacity 0.7s ease-out ${delay}ms, transform 0.7s ease-out ${delay}ms`,
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(32px)",
-        willChange: "opacity, transform",
-      }}
-    >
-      {children}
-    </section>
-  )
-}
-
-// ----------------------------------------------------------------
 // Trust Bar Stats（静的表示。カウントアップは廃止）
 // ----------------------------------------------------------------
 const trustStats = [
@@ -111,62 +51,6 @@ const trustStats = [
   { value: "47", unit: "都道府県", label: "全国対応" },
   { value: "0", unit: "円", label: "お見積り" },
 ]
-
-// ----------------------------------------------------------------
-// Testimonial Carousel
-// ----------------------------------------------------------------
-const CARDS_PER_VIEW = 3
-
-function TestimonialCarousel() {
-  const [page, setPage] = useState(0)
-  const total = Math.ceil(testimonials.length / CARDS_PER_VIEW)
-
-  const prev = () => setPage((p) => (p === 0 ? total - 1 : p - 1))
-  const next = () => setPage((p) => (p === total - 1 ? 0 : p + 1))
-
-  const visible = testimonials.slice(page * CARDS_PER_VIEW, page * CARDS_PER_VIEW + CARDS_PER_VIEW)
-
-  return (
-    <div>
-      <div className="grid gap-5 md:grid-cols-3">
-        {visible.map((t, i) => (
-          <div key={`${page}-${i}`} className="flex flex-col rounded-2xl border border-neutral-100 bg-white p-7 shadow-sm">
-            <div className="flex items-start justify-between gap-3">
-              <span className="inline-flex flex-wrap items-center rounded-full bg-seiren-accent/10 px-3 py-1 text-xs font-semibold text-seiren-main">
-                {t.prefecture}・{t.situation}
-              </span>
-              <div className="flex shrink-0 gap-0.5">
-                {Array.from({ length: t.rating }).map((_, j) => (
-                  <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-            </div>
-            <p className="font-serif mt-4 flex-1 text-[14px] leading-[2] text-neutral-600">「{t.text}」</p>
-            <p className="mt-4 text-[13px] font-semibold text-neutral-400">{t.name}</p>
-          </div>
-        ))}
-      </div>
-      <div className="mt-8 flex items-center justify-center gap-4">
-        <button
-          onClick={prev}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-600 shadow-sm hover:bg-seiren-accent/10 hover:border-seiren-accent/40 transition-colors"
-          aria-label="前へ"
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <span className="text-sm text-neutral-400">{page + 1} / {total}</span>
-        <button
-          onClick={next}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-600 shadow-sm hover:bg-seiren-accent/10 hover:border-seiren-accent/40 transition-colors"
-          aria-label="次へ"
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-      </div>
-      <p className="mt-4 text-center text-xs text-neutral-400">※ 個人情報保護のため、一部内容を省略・修正しています。全{testimonials.length}件掲載</p>
-    </div>
-  )
-}
 
 // ----------------------------------------------------------------
 // Service Data
@@ -238,27 +122,6 @@ const faqs = [
   },
 ]
 
-const selfCheckCards = [
-  {
-    title: "自分で進めやすいケース",
-    description:
-      "書類がそろっている、墓地管理者と連絡が取れる、改葬先が決まっている",
-    icon: CheckCircle,
-  },
-  {
-    title: "相談した方がいいケース",
-    description:
-      "遠方のお墓、書類が不明、寺院とのやり取りが不安",
-    icon: MessageSquare,
-  },
-  {
-    title: "行政書士に依頼すべきケース",
-    description:
-      "代理提出が必要、相続人が複数、手続きが複雑",
-    icon: ShieldAlert,
-  },
-] as const
-
 const simulatorFields = [
   "都道府県を選択",
   "墓石の大きさ",
@@ -325,117 +188,11 @@ const relatedServiceCards = [
 ] as const
 
 // ----------------------------------------------------------------
-// Coming Soon Modal（お墓探しナビ）— 将来利用のために残存
-// ----------------------------------------------------------------
-// eslint-disable-next-line @typescript-eslint/no-unused-vars -- retained for planned "coming soon" handoff
-function HomepageComingSoonModal({ onClose }: { onClose: () => void }) {
-  const [email, setEmail] = useState("")
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState("")
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email) return
-    setLoading(true)
-    setError("")
-    try {
-      const res = await fetch("/api/notify-ohakanavi", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      })
-      if (!res.ok) throw new Error()
-      setSubmitted(true)
-    } catch {
-      setError("送信に失敗しました。しばらくしてから再度お試しください。")
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  return (
-    <div
-      className="fixed inset-0 z-100 flex items-center justify-center bg-black/40 px-4 backdrop-blur-sm"
-      onClick={onClose}
-    >
-      <div
-        className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
-        onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-title-homepage"
-      >
-        <div className="flex items-start justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-seiren-accent">Coming Soon</p>
-            <h2 id="modal-title-homepage" className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
-          </div>
-          <button onClick={onClose} className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700" aria-label="閉じる">
-            <X className="h-5 w-5" />
-          </button>
-        </div>
-        {submitted ? (
-          <div className="mt-6 rounded-xl bg-seiren-accent/10 py-6 text-center">
-            <p className="text-sm font-semibold text-seiren-main">登録しました ✓</p>
-            <p className="mt-1 text-xs text-seiren-accent">公開時にご連絡します</p>
-          </div>
-        ) : (
-          <>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-              全国の霊園・納骨堂・樹木葬を探せるサービスを準備中です。公開時にお知らせします。
-            </p>
-            <form onSubmit={handleSubmit} className="mt-6 space-y-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="メールアドレスを入力"
-                required
-                disabled={loading}
-                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-seiren-accent focus:ring-2 focus:ring-seiren-accent/20 disabled:opacity-60"
-              />
-              {error && <p className="text-xs text-red-500">{error}</p>}
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full rounded-full bg-seiren-cta py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors disabled:opacity-60"
-              >
-                {loading ? "送信中..." : "公開時に通知を受け取る"}
-              </button>
-            </form>
-          </>
-        )}
-      </div>
-    </div>
-  )
-}
-
-// ----------------------------------------------------------------
 // Main Component
 // ----------------------------------------------------------------
 export default function HomepageClient() {
-  // ----------------------------------------------------------------
-  // JSON-LD
-  // ----------------------------------------------------------------
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "お墓じまいナビ",
-    description: "改葬手続き案内から供養までの一括サポートサービス",
-    provider: { "@type": "Organization", name: "株式会社清蓮" },
-    areaServed: "JP",
-    telephone: "0800-888-8788",
-    priceRange: "お見積り無料",
-  }
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-
       <div className="flex flex-col min-h-screen text-neutral-900 selection:bg-[#E8D9B8] selection:text-seiren-main">
 
         {/* ============================================================
@@ -470,11 +227,11 @@ export default function HomepageClient() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-[1320px] px-6 lg:px-16">
-            <div className="grid min-h-[88dvh] items-center py-28 md:grid-cols-2 md:py-36">
+            <div className="grid grid-cols-1 min-h-[88dvh] items-center py-28 md:grid-cols-2 md:py-36">
 
               {/* ── 左カラム: コピー＋CTA ── */}
               <div
-                className="max-w-lg"
+                className="min-w-0 max-w-lg"
                 style={{ animation: "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both" }}
               >
                 {/* 上部バッジ */}
@@ -617,22 +374,15 @@ export default function HomepageClient() {
                   わからない」
                 </h2>
 
-                <div className="mt-8 space-y-4">
-                  {[
+                <WorryList
+                  items={[
                     "お寺との関係が悪くなるのでは？",
                     "費用がいくらかかるか不安",
                     "書類の手続きが複雑そう",
                     "家族の同意を得るのが難しい",
                     "墓石を撤去することへの後ろめたさ",
-                  ].map((worry) => (
-                    <div key={worry} className="flex items-start gap-3">
-                      <span className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-seiren-accent/15">
-                        <span className="h-1.5 w-1.5 rounded-full bg-seiren-accent" />
-                      </span>
-                      <p className="text-[15px] leading-[1.7] text-seiren-body">{worry}</p>
-                    </div>
-                  ))}
-                </div>
+                  ]}
+                />
 
                 <div className="mt-10 rounded-2xl border border-seiren-accent/20 bg-seiren-accent/5 px-6 py-5">
                   <p className="text-[14px] font-semibold leading-[1.7] text-seiren-main">
@@ -722,6 +472,33 @@ export default function HomepageClient() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* ============================================================
+            [D-post] お客様の声（ハイライト3件）
+        ============================================================ */}
+        <Reveal className="bg-neutral-50 py-16 md:py-24">
+          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
+            <p className="text-center text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">お客様の声</p>
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {([testimonials[0], testimonials[1], testimonials[2]] as typeof testimonials).map((t, i) => (
+                <div key={i} className="flex flex-col rounded-2xl border border-neutral-100 bg-white p-7 shadow-sm">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="inline-flex flex-wrap items-center rounded-full bg-seiren-accent/10 px-3 py-1 text-xs font-semibold text-seiren-main">
+                      {t.prefecture}・{t.situation}
+                    </span>
+                    <div className="flex shrink-0 gap-0.5">
+                      {Array.from({ length: t.rating }).map((_, j) => (
+                        <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
+                      ))}
+                    </div>
+                  </div>
+                  <p className="font-serif mt-4 flex-1 text-[14px] leading-[2] text-neutral-600">「{t.text}」</p>
+                  <p className="mt-4 text-[13px] font-semibold text-neutral-400">{t.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
@@ -1075,7 +852,7 @@ export default function HomepageClient() {
                 <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
                   <Link
                     href="/kaisoukyoka"
-                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-[#1A1A1A] px-8 text-base font-semibold text-white transition-colors hover:bg-gray-800 sm:w-auto"
+                    className="inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-seiren-main px-8 text-base font-semibold text-white transition-colors hover:bg-seiren-main/90 sm:w-auto"
                   >
                     <Download className="h-5 w-5" />
                     改葬許可申請書 全国一覧
@@ -1196,33 +973,6 @@ export default function HomepageClient() {
 
         <EcosystemShowcase />
 
-        <section className="bg-neutral-50 py-24 md:py-32">
-          <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
-            <div className="mx-auto max-w-3xl text-center">
-              <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">セルフチェック</p>
-              <h2 className="mt-4 font-zen text-balance text-[28px] font-bold leading-[1.25] text-seiren-main md:text-[38px]">
-                改葬許可申請、自分でできる？
-              </h2>
-              <p className="mt-5 text-[15px] leading-[1.9] text-neutral-500 md:text-[16px]">
-                改葬許可申請はご自身でも行えます。
-                ただし、墓地管理者との確認、埋葬証明書の取得、改葬先の受入証明書など、状況によって必要書類が変わる場合があります。
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-5 md:grid-cols-3">
-              {selfCheckCards.map((card) => (
-                <div key={card.title} className="rounded-3xl border border-neutral-200 bg-white p-7 shadow-sm">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-seiren-accent/10">
-                    <card.icon className="h-6 w-6 text-seiren-accent" />
-                  </div>
-                  <h3 className="mt-5 font-serif text-xl font-semibold text-neutral-900">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-[1.8] text-neutral-500">{card.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="bg-white py-24 md:py-32">
           <div className="mx-auto max-w-[1320px] px-6 lg:px-16">
             <div className="overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-sm">
@@ -1278,7 +1028,7 @@ export default function HomepageClient() {
               </h2>
             </div>
 
-            <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4">
               {stuckPoints.map((point) => (
                 <div key={point} className="rounded-3xl border border-neutral-200 bg-white p-6 shadow-sm">
                   <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-50">
