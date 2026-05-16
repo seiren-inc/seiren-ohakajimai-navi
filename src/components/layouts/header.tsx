@@ -5,7 +5,6 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState, useRef } from "react"
 import { Phone, Menu, X, ChevronDown, Mail, ExternalLink } from "lucide-react"
-import { cn } from "@/lib/utils"
 
 // ─── Navigation Data ──────────────────────────────────────────────────────────
 
@@ -289,15 +288,22 @@ export function Header() {
         </div>
       </div>
 
-      {/* ── Mobile Drawer ── */}
+      {/* ── Mobile Drawer ──
+           開閉は inline style で制御。理由: 本プロジェクトの本番 Tailwind
+           ビルドが一部の arbitrary/utility（例: max-h-0）を出力せず、
+           クラス依存だと本番でメニューが開かない事象が確認されたため。 */}
       <div
         id="mobile-menu"
         aria-hidden={!menuOpen}
-        className={cn(
-          "overflow-hidden border-seiren-border bg-white xl:hidden",
-          "transition-[max-height,opacity] duration-300 ease-in-out",
-          menuOpen ? "border-t max-h-[80dvh] opacity-100" : "max-h-0 opacity-0 pointer-events-none",
-        )}
+        className="overflow-hidden bg-white xl:hidden"
+        style={{
+          maxHeight: menuOpen ? "80dvh" : 0,
+          opacity: menuOpen ? 1 : 0,
+          overflowY: menuOpen ? "auto" : "hidden",
+          pointerEvents: menuOpen ? "auto" : "none",
+          borderTop: menuOpen ? "1px solid #E5E7EB" : "none",
+          transition: "max-height 300ms ease-in-out, opacity 300ms ease-in-out",
+        }}
       >
         <div className="px-5 pb-8 pt-3">
           {/* Primary links */}
