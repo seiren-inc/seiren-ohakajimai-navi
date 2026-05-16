@@ -93,3 +93,8 @@ env/
 .venv/
 __pycache__/
 *.pyc
+
+# archives / design handoffs (do not commit large binaries)
+*.tar.gz
+*.tgz
+*.zip
