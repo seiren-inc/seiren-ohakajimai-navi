@@ -196,110 +196,186 @@ export default function HomepageClient() {
       <div className="flex flex-col min-h-screen text-neutral-900 selection:bg-[#E8D9B8] selection:text-seiren-main">
 
         {/* ============================================================
-            [B] ヒーロー — 2カラム: 左コピー＋CTA / 右画像＋信頼グラスカード
+            [B] ヒーロー — Claude Design 忠実移植
+            48:52 split / テキスト左 + 箇条書き + デュアルCTA / 写真右
         ============================================================ */}
-        <section className="relative overflow-hidden bg-seiren-bg">
-          {/* 右半分の画像エリア（デスクトップのみ） */}
-          <div className="absolute inset-y-0 right-0 hidden w-[52%] md:block">
+        <section id="top" className="relative overflow-hidden bg-seiren-bg">
+          {/* スコープCSS: 写真の出し分け（Tailwind の md: 表示切替を環境非依存に） */}
+          <style>{`
+            .hero-photo-desktop{display:none}
+            .hero-photo-mobile{display:block;height:300px}
+            @media (min-width:480px){.hero-photo-mobile{height:380px}}
+            @media (min-width:768px){
+              .hero-photo-desktop{display:block}
+              .hero-photo-mobile{display:none}
+            }
+          `}</style>
+
+          {/* 右半分の写真（デスクトップ ≥768px） */}
+          <div
+            className="hero-photo-desktop"
+            style={{ position: "absolute", top: 0, bottom: 0, right: 0, width: "52%" }}
+          >
             <Image
-              src="/images/cemetery-flowers.jpg"
-              alt="整備された明るいお墓に色とりどりの花が供えられた風景"
+              src="/images/ohakajimai-hero-family-backview.png"
+              alt="新緑の中で並んでお墓の前に立つご家族3名"
               fill
               sizes="52vw"
-              className="object-cover object-center"
+              className="object-cover"
+              style={{ objectPosition: "30% center" }}
               priority
             />
-            {/* 左エッジへのフェードマスク */}
-            <div className="absolute inset-0 bg-linear-to-r from-seiren-bg via-seiren-bg/30 to-transparent" />
+            {/* 左エッジのクリームフェード */}
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to right,#FAFAF8 0%,rgba(250,250,248,0.55) 12%,rgba(250,250,248,0.15) 30%,rgba(250,250,248,0) 55%)" }}
+            />
+            {/* 下部の温かいビネット */}
+            <div
+              className="absolute inset-0"
+              style={{ background: "linear-gradient(to top,rgba(30,42,56,0.12),transparent 35%)" }}
+            />
           </div>
 
-          {/* モバイル用背景画像（全幅・フェードアウト） */}
-          <div className="absolute inset-0 md:hidden">
+          {/* モバイル写真（<768px・上部ブロック） */}
+          <div className="hero-photo-mobile relative">
             <Image
-              src="/images/cemetery-flowers.jpg"
-              alt=""
+              src="/images/ohakajimai-hero-family-backview.png"
+              alt="新緑の中で並んでお墓の前に立つご家族3名"
               fill
               sizes="100vw"
               className="object-cover object-center"
-              aria-hidden="true"
+              priority
             />
-            <div className="absolute inset-0 bg-seiren-bg/90" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-[1320px] px-6 lg:px-16">
-            <div className="grid grid-cols-1 min-h-[88dvh] items-center py-28 md:grid-cols-2 md:py-36">
+          <div className="relative z-[1] mx-auto max-w-[1320px] px-6 lg:px-16">
+            <div className="grid grid-cols-1 items-center gap-y-8 py-16 md:grid-cols-2 md:gap-x-14 md:py-24 md:min-h-[600px]">
 
-              {/* ── 左カラム: コピー＋CTA ── */}
-              <div
-                className="min-w-0 max-w-lg"
-                style={{ animation: "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both" }}
-              >
-                {/* 上部バッジ */}
-                <p className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-accent">
-                  <span className="h-px w-5 bg-seiren-accent/60" />
-                  全国対応・改葬実績300件以上
-                </p>
+              {/* ── 左カラム ── */}
+              <div className="min-w-0 max-w-[540px]">
+                {/* Eyebrow（green tone） */}
+                <span
+                  className="inline-flex items-center gap-2.5 text-[11px] font-bold uppercase tracking-[0.22em] text-[#7B9D6A]"
+                  style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both" }}
+                >
+                  <span className="inline-block h-px w-7 bg-[#7B9D6A] opacity-60" />
+                  SEIREN · OHAKAJIMAI NAVI
+                </span>
 
                 {/* ヘッドライン */}
-                <h1 className="mt-5 font-zen text-[34px] font-bold leading-[1.2] tracking-tight text-seiren-main sm:text-[42px] md:text-[50px] lg:text-[56px]">
+                <h1
+                  className="mt-6 font-serif"
+                  style={{
+                    animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.10s both",
+                    fontSize: "clamp(32px,4.2vw,54px)",
+                    fontWeight: 700,
+                    lineHeight: 1.32,
+                    letterSpacing: "-0.005em",
+                    color: "#1E2A38",
+                    textWrap: "balance",
+                    wordBreak: "keep-all",
+                  }}
+                >
                   お墓じまい、<br />
-                  誰に頼めばいいか<br className="hidden sm:block md:hidden" />迷っていませんか？
+                  何から始めれば<br className="hidden sm:block lg:hidden" />
+                  いいか<br className="sm:hidden" />
+                  わからない方へ。
                 </h1>
 
                 {/* サブコピー */}
                 <p
-                  className="mt-7 text-[15px] font-medium leading-[1.9] text-seiren-body md:text-[17px]"
+                  className="mt-7 max-w-[500px] font-sans text-base font-normal leading-[1.95] text-seiren-body [text-wrap:pretty]"
                   data-speakable="true"
-                  style={{ animation: "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.12s both" }}
+                  style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.10s both" }}
                 >
-                  改葬手続きから離檀交渉、墓石撤去、粉骨、<br className="hidden md:block" />
-                  ご納骨先まで。清蓮が一貫して対応します。
+                  改葬手続き、行政書士紹介、墓石撤去、粉骨、納骨先のご相談まで、まとめて整理します。
                 </p>
 
-                {/* CTA群 */}
+                {/* サービス箇条書き */}
+                <ul
+                  className="mt-8 flex flex-col gap-3.5"
+                  style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.20s both" }}
+                >
+                  {[
+                    "改葬手続きサポート",
+                    "提携行政書士のご紹介",
+                    "墓石撤去工事",
+                    "ご遺骨の洗骨・粉骨",
+                    "散骨・納骨先のご案内",
+                  ].map((b) => (
+                    <li key={b} className="flex items-start gap-3 font-sans text-base font-medium leading-[1.7] text-seiren-main">
+                      <span className="mt-1 inline-flex h-[22px] w-[22px] shrink-0 items-center justify-center rounded-full bg-[rgba(123,157,106,0.12)]">
+                        <Check className="h-[13px] w-[13px] text-[#7B9D6A]" strokeWidth={2.4} />
+                      </span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* デュアルCTA */}
                 <div
-                  className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
-                  style={{ animation: "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.22s both" }}
+                  className="mt-10 flex flex-col gap-3.5 sm:flex-row sm:flex-wrap sm:items-center"
+                  style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.30s both" }}
                 >
                   <Link
                     href="/contact"
-                    className="inline-flex min-h-[54px] items-center justify-center rounded-full bg-seiren-cta px-9 text-[17px] font-semibold text-white shadow-[0_4px_20px_rgba(217,119,6,0.35)] transition-all hover:bg-seiren-cta-hover hover:shadow-[0_6px_24px_rgba(217,119,6,0.45)] active:scale-[0.98]"
+                    className="inline-flex min-h-[58px] w-full items-center justify-center gap-2.5 rounded-full bg-seiren-cta px-8 text-base font-semibold tracking-[0.02em] text-white shadow-[0_4px_20px_rgba(201,138,46,0.28)] transition-all hover:bg-seiren-cta-hover hover:shadow-[0_6px_24px_rgba(201,138,46,0.38)] active:scale-[0.98] sm:w-auto"
                   >
-                    無料相談する
+                    <Mail className="h-[17px] w-[17px]" />
+                    無料で相談する
                   </Link>
                   <Link
-                    href="/kaisoukyoka"
-                    className="inline-flex min-h-[54px] items-center justify-center gap-2 rounded-full border border-seiren-border bg-white/70 px-8 text-[15px] font-semibold text-seiren-main backdrop-blur-sm transition-all hover:border-seiren-accent/50 hover:bg-white"
+                    href="/flow"
+                    className="inline-flex min-h-[58px] w-full items-center justify-center gap-2.5 rounded-full border border-[#E5E0D6] bg-white/75 px-8 text-base font-semibold tracking-[0.02em] text-seiren-main backdrop-blur-[6px] transition-all hover:border-seiren-accent/50 hover:bg-white sm:w-auto"
                   >
-                    <FileText className="h-4 w-4 text-seiren-accent" />
-                    改葬許可申請書を探す
+                    サービスの流れを見る
+                    <ArrowRight className="h-[15px] w-[15px] text-seiren-main" />
                   </Link>
                 </div>
 
-                <p className="mt-5 text-[12px] font-medium text-seiren-sub">
-                  0800-888-8788 / 24時間365日受付 / お見積り無料
-                </p>
+                {/* 安心ボックス */}
+                <div
+                  className="mt-[26px] flex max-w-[500px] items-start gap-3 rounded-[14px] border border-[rgba(123,157,106,0.20)] bg-[rgba(232,239,224,0.55)] px-[18px] py-4"
+                  style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.30s both" }}
+                >
+                  <ShieldCheck className="mt-0.5 h-[18px] w-[18px] shrink-0 text-[#7B9D6A]" />
+                  <p className="font-sans text-[13px] font-medium leading-[1.85] text-[#3F4A37]">
+                    状況整理から始められるので、何から手を付ければよいか分からない方でも進めやすい構成です。
+                  </p>
+                </div>
               </div>
 
-              {/* ── 右カラム: グラス信頼カード ── */}
+              {/* ── 右カラム: 半透明トラストカード ── */}
               <div
-                className="mt-10 flex justify-center md:mt-0 md:items-end md:justify-end md:pb-12"
-                style={{ animation: "fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.18s both" }}
+                className="flex h-full items-end justify-start md:pb-9"
+                style={{ animation: "fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.30s both" }}
               >
-                <div className="animate-floating rounded-2xl border border-white/60 bg-white/70 px-8 py-6 shadow-[0_8px_40px_rgba(30,42,56,0.10)] backdrop-blur-md">
-                  <p className="mb-5 text-[11px] font-bold uppercase tracking-[0.2em] text-seiren-sub">清蓮の実績</p>
-                  <div className="flex gap-8">
+                <div
+                  className="w-full rounded-[18px] border border-white/70 px-7 pt-[22px] pb-5 backdrop-blur-[10px] md:-ml-10 md:min-w-[400px]"
+                  style={{ background: "rgba(255,255,255,0.88)", boxShadow: "0 18px 50px rgba(30,42,56,0.16), 0 4px 12px rgba(30,42,56,0.06)" }}
+                >
+                  <div className="mb-4 flex items-center gap-2.5">
+                    <span className="inline-block h-px w-[22px] bg-seiren-gold" />
+                    <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-seiren-gold">
+                      清蓮の実績
+                    </span>
+                  </div>
+                  <div className="flex gap-[22px]">
                     {trustStats.map((item, i) => (
-                      <div key={item.label} className={`text-center ${i > 0 ? "border-l border-seiren-border pl-8" : ""}`}>
-                        <div className="flex items-baseline gap-0.5">
-                          <span className="font-inter text-[36px] font-bold leading-none tracking-tight text-seiren-main">
+                      <div
+                        key={item.label}
+                        className={`flex-1 text-center ${i > 0 ? "border-l border-[#E5E0D6] pl-[22px]" : ""}`}
+                      >
+                        <div className="flex items-baseline justify-center gap-0.5">
+                          <span className="font-inter text-[32px] font-bold leading-none tracking-[-0.02em] text-seiren-main">
                             {item.value}
                           </span>
-                          <span className="text-[13px] font-medium text-seiren-sub">{item.unit}</span>
+                          <span className="text-[12px] font-medium text-[#6B7280]">{item.unit}</span>
                         </div>
-                        <p className="mt-1.5 text-[12px] font-medium text-seiren-sub">{item.label}</p>
+                        <p className="mt-1.5 text-[12px] font-medium text-[#525762]">{item.label}</p>
                         {'footnote' in item && item.footnote && (
-                          <span className="mt-0.5 block text-[10px] text-seiren-sub/60">{item.footnote}</span>
+                          <span className="mt-0.5 block text-[10px] text-[rgba(107,114,128,0.7)]">{item.footnote}</span>
                         )}
                       </div>
                     ))}
