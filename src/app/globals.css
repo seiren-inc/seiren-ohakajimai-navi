@@ -124,6 +124,112 @@
   }
 }
 
+/* =============================================================
+   Seiren / お墓じまいナビ ブランドトークン
+   Premium Japanese minimalism — warm cream surfaces,
+   deep navy ink, antique gold accents, calm amber CTA.
+   ============================================================= */
+@layer base {
+  :root {
+    /* Surfaces */
+    --seiren-bg: #FAFAF8;
+    --seiren-surface: #FFFFFF;
+    --seiren-inset: #F5F6F7;
+
+    /* Foreground */
+    --seiren-main: #1E2A38;
+    --seiren-body: #374151;
+    --seiren-sub: #6B7280;
+
+    /* Brand accent (gold) */
+    --seiren-accent: #C8A96B;
+    --seiren-accent-micro: #B79A63;
+    --seiren-accent-dim: #E8D9B8;
+
+    /* Conversion CTA */
+    --seiren-cta: #C98A2E;
+    --seiren-cta-hover: #A66E1F;
+    --seiren-cta-soft: #F5E9D4;
+
+    /* Secondary green tones */
+    --seiren-green: #7B9D6A;
+    --seiren-green-soft: #E8EFE0;
+    --seiren-green-50: #F3F7EE;
+    --seiren-green-wreath: #B7CF63;
+    --seiren-line: #06C755;
+    --seiren-line-dark: #05A547;
+
+    /* Hairline border (warm dust) */
+    --seiren-border: #E8E4DE;
+
+    /* Shadows */
+    --seiren-shadow-card: 0 2px 8px rgba(30, 42, 56, 0.05);
+    --seiren-shadow-pop: 0 8px 30px rgba(30, 42, 56, 0.10);
+    --seiren-shadow-cta: 0 4px 20px rgba(201, 138, 46, 0.28);
+    --seiren-shadow-cta-hv: 0 6px 24px rgba(201, 138, 46, 0.38);
+  }
+
+  /* Senior-friendly base */
+  ::selection {
+    background: #E8D9B8;
+    color: #1E2A38;
+  }
+}
+
+/* Eyebrow caps */
+.t-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--seiren-accent-micro);
+}
+.t-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.7;
+}
+.t-eyebrow.green {
+  color: var(--seiren-green);
+}
+
+/* Reveal keyframe shared via class for no-JS fallback paths */
+@keyframes seirenFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.seiren-reveal {
+  animation: seirenFadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .seiren-reveal {
+    animation: none;
+  }
+}
+
+/* Mobile bottom spacer to clear the FixedCTA pill row */
+.mobile-cta-spacer {
+  display: none;
+  height: 92px;
+}
+@media (max-width: 768px) {
+  .mobile-cta-spacer {
+    display: block;
+  }
+}
+
 /* スクロールバー非表示（エリアタブのモバイル横スクロール用） */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

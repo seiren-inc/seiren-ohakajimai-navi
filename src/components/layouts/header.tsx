@@ -83,7 +83,7 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm rounded-2xl bg-white p-8 shadow-xl"
+        className="w-full max-w-sm rounded-2xl bg-seiren-surface p-8 shadow-xl"
         onClick={(e) => e.stopPropagation()}
         role="dialog"
         aria-modal="true"
@@ -91,14 +91,14 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
       >
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
+            <p className="text-xs font-semibold uppercase tracking-widest text-seiren-cta">
               Coming Soon
             </p>
-            <h2 id="modal-title-header" className="mt-2 text-xl font-bold text-neutral-900">お墓探しナビ</h2>
+            <h2 id="modal-title-header" className="mt-2 text-xl font-bold text-seiren-main">お墓探しナビ</h2>
           </div>
           <button
             onClick={onClose}
-            className="rounded-lg p-1 text-neutral-400 hover:text-neutral-700"
+            className="rounded-lg p-1 text-seiren-sub/70 hover:text-seiren-body"
             aria-label="閉じる"
           >
             <X className="h-5 w-5" />
@@ -106,13 +106,13 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
         </div>
 
         {submitted ? (
-          <div className="mt-6 rounded-xl bg-emerald-50 py-6 text-center">
-            <p className="text-sm font-semibold text-emerald-700">登録しました ✓</p>
-            <p className="mt-1 text-xs text-emerald-600">公開時にご連絡します</p>
+          <div className="mt-6 rounded-xl bg-seiren-cta-soft py-6 text-center">
+            <p className="text-sm font-semibold text-seiren-cta-hover">登録しました ✓</p>
+            <p className="mt-1 text-xs text-seiren-cta">公開時にご連絡します</p>
           </div>
         ) : (
           <>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-600">
+            <p className="mt-4 text-sm leading-relaxed text-seiren-body">
               全国の霊園・納骨堂・樹木葬を探せるサービスを準備中です。
               公開時にお知らせします。
             </p>
@@ -124,13 +124,13 @@ function ComingSoonModal({ onClose }: { onClose: () => void }) {
                 placeholder="メールアドレスを入力"
                 required
                 disabled={loading}
-                className="w-full rounded-full border border-neutral-200 px-4 py-3 text-sm outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 disabled:opacity-60"
+                className="w-full rounded-full border border-seiren-border-warm px-4 py-3 text-sm outline-none focus:border-seiren-accent focus:ring-2 focus:ring-seiren-accent/20 disabled:opacity-60"
               />
               {error && <p className="text-xs text-red-500">{error}</p>}
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full rounded-full bg-emerald-600 py-3 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors disabled:opacity-60"
+                className="w-full rounded-full bg-seiren-cta py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors disabled:opacity-60"
               >
                 {loading ? "送信中..." : "公開時に通知を受け取る"}
               </button>
@@ -176,8 +176,8 @@ function NavDropdown({
       <button
         className={`flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap ${
           isActive
-            ? "text-neutral-900"
-            : "text-neutral-600 hover:text-neutral-900"
+            ? "text-seiren-main"
+            : "text-seiren-body hover:text-seiren-main"
         }`}
         aria-expanded={open}
         aria-haspopup="true"
@@ -190,7 +190,7 @@ function NavDropdown({
 
       {open && (
         <div
-          className={`absolute top-full z-50 mt-2 w-56 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm ${
+          className={`absolute top-full z-50 mt-2 w-56 rounded-lg border border-seiren-border-warm bg-seiren-surface p-2 shadow-sm ${
             align === "right" ? "right-0" : "left-0"
           }`}
         >
@@ -202,30 +202,30 @@ function NavDropdown({
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+                className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm text-seiren-body hover:bg-seiren-inset hover:text-seiren-main transition-colors"
               >
                 <span className="flex flex-col">
                   <span className="font-medium">{item.label}</span>
                   {item.description && (
-                    <span className="text-xs text-neutral-400">{item.description}</span>
+                    <span className="text-xs text-seiren-sub/70">{item.description}</span>
                   )}
                 </span>
-                {item.external && <ExternalLink className="h-3 w-3 shrink-0 text-neutral-300" />}
+                {item.external && <ExternalLink className="h-3 w-3 shrink-0 text-seiren-sub/50" />}
               </Link>
             ) : (
               <button
                 key={i}
                 onClick={() => { setOpen(false); item.onClick() }}
-                className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+                className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm text-seiren-body hover:bg-seiren-inset hover:text-seiren-main transition-colors"
               >
                 <span className="flex flex-col">
                   <span className="font-medium">{item.label}</span>
                   {item.description && (
-                    <span className="text-xs text-neutral-400">{item.description}</span>
+                    <span className="text-xs text-seiren-sub/70">{item.description}</span>
                   )}
                 </span>
                 {item.badge && (
-                  <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-500">
+                  <span className="shrink-0 rounded-full bg-seiren-inset px-2 py-0.5 text-xs font-medium text-seiren-sub">
                     {item.badge}
                   </span>
                 )}
@@ -256,7 +256,7 @@ function CTADropdown() {
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <button
-        className="flex items-center gap-1 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+        className="flex items-center gap-1 rounded-full bg-seiren-cta px-4 py-2 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
         aria-expanded={open}
         aria-haspopup="true"
       >
@@ -267,37 +267,37 @@ function CTADropdown() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-2 w-60 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
+        <div className="absolute right-0 top-full z-50 mt-2 w-60 rounded-lg border border-seiren-border-warm bg-seiren-surface p-2 shadow-sm">
           {/* 電話相談 */}
           <a
             href="tel:08008888788"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 rounded-md px-3 py-3 text-sm text-neutral-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors"
+            className="flex items-center gap-3 rounded-md px-3 py-3 text-sm text-seiren-body hover:bg-seiren-cta-soft hover:text-seiren-cta-hover transition-colors"
           >
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100">
-              <Phone className="h-3.5 w-3.5 text-emerald-600" />
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-seiren-cta-soft">
+              <Phone className="h-3.5 w-3.5 text-seiren-cta" />
             </div>
             <span className="flex flex-col">
-              <span className="font-semibold text-emerald-700">電話で相談する</span>
-              <span className="text-xs text-neutral-400">0800-888-8788（フリーコール）</span>
-              <span className="text-xs text-neutral-400">9:00〜19:00</span>
+              <span className="font-semibold text-seiren-cta-hover">電話で相談する</span>
+              <span className="text-xs text-seiren-sub/70">0800-888-8788（フリーコール）</span>
+              <span className="text-xs text-seiren-sub/70">9:00〜19:00</span>
             </span>
           </a>
 
-          <div className="my-1 border-t border-neutral-100" />
+          <div className="my-1 border-t border-seiren-border-warm/60" />
 
           {/* フォーム */}
           <Link
             href="/contact"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-3 rounded-md px-3 py-3 text-sm text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900 transition-colors"
+            className="flex items-center gap-3 rounded-md px-3 py-3 text-sm text-seiren-body hover:bg-seiren-inset hover:text-seiren-main transition-colors"
           >
-            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-neutral-100">
-              <Mail className="h-3.5 w-3.5 text-neutral-500" />
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-seiren-inset">
+              <Mail className="h-3.5 w-3.5 text-seiren-sub" />
             </div>
             <span className="flex flex-col">
               <span className="font-semibold">フォームで問い合わせ</span>
-              <span className="text-xs text-neutral-400">24時間受付・2営業日以内に返信</span>
+              <span className="text-xs text-seiren-sub/70">24時間受付・2営業日以内に返信</span>
             </span>
           </Link>
         </div>
@@ -355,7 +355,7 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 w-full border-b border-neutral-200/70 bg-white/95 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 w-full border-b border-[rgba(232,228,222,0.6)] bg-[rgba(250,250,248,0.82)] backdrop-blur-[12px] saturate-[110%]">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 lg:px-6">
 
           {/* Logo */}
@@ -368,7 +368,7 @@ export function Header() {
               className="h-9 w-auto object-contain"
               priority
             />
-            <span className="text-sm font-bold tracking-tight text-neutral-900 lg:text-base">
+            <span className="text-sm font-bold tracking-tight text-seiren-main lg:text-base">
               お墓じまいナビ
             </span>
           </Link>
@@ -388,8 +388,8 @@ export function Header() {
               href="/gyoseishoshi"
               className={
                 pathname === "/gyoseishoshi"
-                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+                  ? "relative text-sm font-medium text-seiren-main after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-seiren-accent-micro"
+                  : "text-sm font-medium text-seiren-body hover:text-seiren-main transition-colors whitespace-nowrap"
               }
             >
               行政書士紹介
@@ -408,15 +408,15 @@ export function Header() {
               href="/company"
               className={
                 pathname === "/company"
-                  ? "relative text-sm font-medium text-neutral-900 after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-emerald-600"
-                  : "text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors whitespace-nowrap"
+                  ? "relative text-sm font-medium text-seiren-main after:absolute after:-bottom-px after:left-0 after:w-full after:h-[2px] after:bg-seiren-accent-micro"
+                  : "text-sm font-medium text-seiren-body hover:text-seiren-main transition-colors whitespace-nowrap"
               }
             >
               会社概要
             </Link>
 
             {/* セパレーター */}
-            <span className="h-4 w-px bg-neutral-200" aria-hidden="true" />
+            <span className="h-4 w-px bg-seiren-border-warm" aria-hidden="true" />
 
             {/* 関連サービス ▼ */}
             <NavDropdown
@@ -435,7 +435,7 @@ export function Header() {
           <div className="flex items-center gap-2 lg:hidden">
             <Link
               href="/contact"
-              className="rounded-full bg-emerald-600 px-3 py-2 text-xs font-semibold text-white hover:bg-emerald-700 transition-colors"
+              className="rounded-full bg-seiren-cta px-3 py-2 text-xs font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
             >
               無料相談
             </Link>
@@ -451,11 +451,11 @@ export function Header() {
 
         {/* Mobile/Tablet Drawer */}
         {menuOpen && (
-          <div className="border-t border-neutral-100 bg-white px-4 pb-6 pt-4 lg:hidden">
+          <div className="border-t border-seiren-border-warm/60 bg-seiren-surface px-4 pb-6 pt-4 lg:hidden">
             <nav className="flex flex-col">
               {/* サービス（モバイル） */}
-              <div className="border-b border-neutral-100">
-                <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
+              <div className="border-b border-seiren-border-warm/60">
+                <p className="flex min-h-[52px] items-center text-base font-medium text-seiren-body">
                   サービス
                 </p>
                 <div className="flex flex-col gap-1 pb-3 pl-4">
@@ -466,12 +466,12 @@ export function Header() {
                       onClick={() => setMenuOpen(false)}
                       className={`flex flex-col rounded-lg px-2 py-2.5 text-sm ${
                         pathname === item.href
-                          ? "bg-emerald-50 text-emerald-700 font-semibold"
-                          : "text-neutral-600 hover:bg-neutral-50"
+                          ? "bg-seiren-cta-soft text-seiren-cta-hover font-semibold"
+                          : "text-seiren-body hover:bg-seiren-inset"
                       }`}
                     >
                       <span>{item.label}</span>
-                      <span className="text-xs text-neutral-400">{item.description}</span>
+                      <span className="text-xs text-seiren-sub/70">{item.description}</span>
                     </Link>
                   ))}
                 </div>
@@ -481,18 +481,18 @@ export function Header() {
               <Link
                 href="/gyoseishoshi"
                 onClick={() => setMenuOpen(false)}
-                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                className={`flex min-h-[52px] items-center border-b border-seiren-border-warm/60 text-base ${
                   pathname === "/gyoseishoshi"
-                    ? "font-semibold text-emerald-600"
-                    : "font-medium text-neutral-700"
+                    ? "font-semibold text-seiren-cta"
+                    : "font-medium text-seiren-body"
                 }`}
               >
                 行政書士紹介
               </Link>
 
               {/* 改葬手続き関連 */}
-              <div className="border-b border-neutral-100">
-                <p className="flex min-h-[52px] items-center text-base font-medium text-neutral-700">
+              <div className="border-b border-seiren-border-warm/60">
+                <p className="flex min-h-[52px] items-center text-base font-medium text-seiren-body">
                   改葬手続き関連
                 </p>
                 <div className="flex flex-col gap-1 pb-3 pl-4">
@@ -503,12 +503,12 @@ export function Header() {
                       onClick={() => setMenuOpen(false)}
                       className={`flex flex-col rounded-lg px-2 py-2.5 text-sm ${
                         pathname === item.href
-                          ? "bg-emerald-50 text-emerald-700 font-semibold"
-                          : "text-neutral-600 hover:bg-neutral-50"
+                          ? "bg-seiren-cta-soft text-seiren-cta-hover font-semibold"
+                          : "text-seiren-body hover:bg-seiren-inset"
                       }`}
                     >
                       <span>{item.label}</span>
-                      <span className="text-xs text-neutral-400">{item.description}</span>
+                      <span className="text-xs text-seiren-sub/70">{item.description}</span>
                     </Link>
                   ))}
                 </div>
@@ -518,10 +518,10 @@ export function Header() {
               <Link
                 href="/company"
                 onClick={() => setMenuOpen(false)}
-                className={`flex min-h-[52px] items-center border-b border-neutral-100 text-base ${
+                className={`flex min-h-[52px] items-center border-b border-seiren-border-warm/60 text-base ${
                   pathname === "/company"
-                    ? "font-semibold text-emerald-600"
-                    : "font-medium text-neutral-700"
+                    ? "font-semibold text-seiren-cta"
+                    : "font-medium text-seiren-body"
                 }`}
               >
                 会社概要
@@ -530,13 +530,13 @@ export function Header() {
 
             {/* お問い合わせ選択 */}
             <div className="mt-5 flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+              <p className="text-xs font-semibold uppercase tracking-widest text-seiren-sub/70">
                 無料相談
               </p>
 
               <button
                 onClick={() => setMobileConsultOpen(!mobileConsultOpen)}
-                className="flex min-h-[52px] items-center justify-between rounded-xl border border-neutral-200 px-4 text-sm font-medium text-neutral-700"
+                className="flex min-h-[52px] items-center justify-between rounded-xl border border-seiren-border-warm px-4 text-sm font-medium text-seiren-body"
               >
                 <span>相談方法を選ぶ</span>
                 <ChevronDown
@@ -548,23 +548,23 @@ export function Header() {
                 <div className="flex flex-col gap-2">
                   <a
                     href="tel:08008888788"
-                    className="flex min-h-[52px] items-center gap-3 rounded-xl border-2 border-emerald-600 px-4 text-emerald-600"
+                    className="flex min-h-[52px] items-center gap-3 rounded-xl border-2 border-seiren-cta px-4 text-seiren-cta"
                   >
                     <Phone className="h-4 w-4 shrink-0" />
                     <span className="flex flex-col">
                       <span className="text-sm font-bold">電話で相談する</span>
-                      <span className="text-xs text-emerald-500">0800-888-8788（フリーコール）9:00〜19:00</span>
+                      <span className="text-xs text-seiren-cta/80">0800-888-8788（フリーコール）9:00〜19:00</span>
                     </span>
                   </a>
                   <Link
                     href="/contact"
                     onClick={() => setMenuOpen(false)}
-                    className="flex min-h-[52px] items-center gap-3 rounded-xl bg-emerald-600 px-4 text-white"
+                    className="flex min-h-[52px] items-center gap-3 rounded-xl bg-seiren-cta px-4 text-white"
                   >
                     <Mail className="h-4 w-4 shrink-0" />
                     <span className="flex flex-col">
                       <span className="text-sm font-bold">フォームで問い合わせ</span>
-                      <span className="text-xs text-emerald-100">24時間受付・2営業日以内に返信</span>
+                      <span className="text-xs text-seiren-cta-soft">24時間受付・2営業日以内に返信</span>
                     </span>
                   </Link>
                 </div>
@@ -572,8 +572,8 @@ export function Header() {
             </div>
 
             {/* 関連サービス（モバイル最下部） */}
-            <div className="mt-8 border-t border-neutral-100 pt-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-neutral-400">
+            <div className="mt-8 border-t border-seiren-border-warm/60 pt-6">
+              <p className="text-xs font-semibold uppercase tracking-widest text-seiren-sub/70">
                 関連サービス
               </p>
               <div className="mt-3 flex flex-col gap-1">
@@ -585,10 +585,10 @@ export function Header() {
                         setMenuOpen(false)
                         setModalOpen(true)
                       }}
-                      className="flex items-center justify-between rounded-lg px-2 py-3 text-left text-sm text-neutral-500 hover:bg-neutral-50"
+                      className="flex items-center justify-between rounded-lg px-2 py-3 text-left text-sm text-seiren-sub hover:bg-seiren-inset"
                     >
                       <span>{service.label}</span>
-                      <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-xs font-medium text-neutral-400">
+                      <span className="rounded-full bg-seiren-inset px-2 py-0.5 text-xs font-medium text-seiren-sub/70">
                         準備中
                       </span>
                     </button>
@@ -599,10 +599,10 @@ export function Header() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => setMenuOpen(false)}
-                      className="flex items-center justify-between rounded-lg px-2 py-3 text-sm text-neutral-500 hover:bg-neutral-50 hover:text-neutral-700"
+                      className="flex items-center justify-between rounded-lg px-2 py-3 text-sm text-seiren-sub hover:bg-seiren-inset hover:text-seiren-body"
                     >
                       <span>{service.label}</span>
-                      <ExternalLink className="h-3 w-3 text-neutral-300" />
+                      <ExternalLink className="h-3 w-3 text-seiren-sub/50" />
                     </a>
                   )
                 )}
