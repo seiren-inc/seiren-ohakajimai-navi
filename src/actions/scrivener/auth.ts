@@ -19,6 +19,24 @@ export async function signUpScrivener(prevState: AuthState | null, formData: For
     return { error: 'すべての必須項目を入力してください', success: false }
   }
 
+  // Cloudflare Turnstile 検証（CLAUDE.md Non-Negotiable）
+  const turnstileToken = formData.get('cf-turnstile-response') as string | null
+  const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY
+  if (turnstileSecret) {
+    if (!turnstileToken) {
+      return { error: 'セキュリティ確認が完了していません。しばらくお待ちください。', success: false }
+    }
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+    })
+    const verifyData = await verifyRes.json() as { success: boolean }
+    if (!verifyData.success) {
+      return { error: 'セキュリティ確認に失敗しました。もう一度お試しください。', success: false }
+    }
+  }
+
   const supabase = await createClient()
 
   // 1. Supabase Authでサインアップ

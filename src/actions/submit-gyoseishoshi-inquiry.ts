@@ -36,6 +36,24 @@ export async function submitGyoseishoshiInquiry(prevState: State | null, formDat
         return { success: true, message: "お問い合わせを受け付けました。" }
     }
 
+    // Cloudflare Turnstile 検証（CLAUDE.md Non-Negotiable）
+    const turnstileToken = formData.get("cf-turnstile-response")
+    if (!turnstileToken || typeof turnstileToken !== "string") {
+        return { success: false, message: "セキュリティ確認が完了していません。" }
+    }
+    const turnstileSecret = process.env.CLOUDFLARE_TURNSTILE_SECRET_KEY
+    if (turnstileSecret) {
+        const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams({ secret: turnstileSecret, response: turnstileToken }),
+        })
+        const verifyData = await verifyRes.json() as { success: boolean }
+        if (!verifyData.success) {
+            return { success: false, message: "セキュリティ確認に失敗しました。もう一度お試しください。" }
+        }
+    }
+
     // Sanitize（Doc-04 §3-4, §7）
     const sanitizedRawData = sanitizeObject(rawData)
 

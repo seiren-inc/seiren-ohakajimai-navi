@@ -1,10 +1,11 @@
 'use client'
 
-import { useTransition } from "react"
+import { useTransition, useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { toast } from "sonner"
 import { Loader2 } from "lucide-react"
+import { TurnstileWidget } from "@/components/ui/turnstile-widget"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -39,6 +40,7 @@ type Props = {
  */
 export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
     const [isPending, startTransition] = useTransition()
+    const [turnstileToken, setTurnstileToken] = useState<string>('')
 
     const form = useForm<GyoseishoshiInquiryFormData>({
         resolver: zodResolver(gyoseishoshiInquirySchema),
@@ -56,6 +58,11 @@ export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
     })
 
     function onSubmit(data: GyoseishoshiInquiryFormData) {
+        if (!turnstileToken) {
+            toast.error('セキュリティ確認が完了していません。しばらくお待ちください。')
+            return
+        }
+
         startTransition(async () => {
             const formData = new FormData()
             Object.entries(data).forEach(([key, value]) => {
@@ -67,6 +74,7 @@ export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
             if (scrivenerId) {
                 formData.append("scrivenerId", scrivenerId)
             }
+            formData.append("cf-turnstile-response", turnstileToken)
 
             try {
                 const result = await submitGyoseishoshiInquiry(null, formData)
@@ -78,10 +86,13 @@ export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
                             form.setError(key as keyof GyoseishoshiInquiryFormData, { message: messages[0] })
                         })
                     }
+                    // 失敗時はトークンをクリア（ウィジェットは次のインタラクションで更新）
+                    setTurnstileToken('')
                 }
                 // success時はServer ActionがredirectするためState管理不要
             } catch {
                 toast.error("予期せぬエラーが発生しました。しばらく時間をおいて再度お試しください。")
+                setTurnstileToken('')
             }
         })
     }
@@ -253,7 +264,13 @@ export function GyoseishoshiInquiryForm({ scrivenerId }: Props) {
                     />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={isPending}>
+                <TurnstileWidget
+                    onSuccess={setTurnstileToken}
+                    onExpire={() => setTurnstileToken('')}
+                    onError={() => setTurnstileToken('')}
+                />
+
+                <Button type="submit" size="lg" className="w-full" disabled={isPending || !turnstileToken}>
                     {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
                     {isPending ? "送信中..." : "無料相談を送信する"}
                 </Button>
