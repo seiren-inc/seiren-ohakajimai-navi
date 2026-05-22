@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { Mail, ArrowRight, Check } from "lucide-react"
 import { Eyebrow, PillLink, Reveal, Wrap } from "../primitives"
 
@@ -67,13 +68,13 @@ export function FinalCTA() {
               <Mail size={18} className="text-white" strokeWidth={1.75} />
               無料で相談する
             </PillLink>
-            <a
-              href="#flow"
+            <Link
+              href="/flow"
               className="inline-flex w-full min-h-[62px] items-center justify-center gap-2.5 rounded-full border border-white/45 bg-transparent px-7 py-4 text-base font-semibold leading-[1.2] tracking-[0.02em] text-white"
             >
               サービスの流れを見る
               <ArrowRight size={14} className="text-white" strokeWidth={1.75} />
-            </a>
+            </Link>
             <a
               href="#cases"
               className="inline-flex w-full min-h-[62px] items-center justify-center gap-2.5 rounded-full border border-white/15 bg-transparent px-7 py-4 text-base font-medium leading-[1.2] tracking-[0.02em] text-white/70"

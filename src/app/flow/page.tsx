@@ -4,6 +4,7 @@ import { HowToJsonLd, kaisouHowToSteps } from "@/components/seo/howto-json-ld"
 import { SpeakableJsonLd } from "@/components/seo/speakable-json-ld"
 import { AuthorJsonLd } from "@/components/seo/author-json-ld"
 import { VideoJsonLd } from "@/components/seo/video-json-ld"
+import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import {
   MessageCircle,
   FileText,
@@ -137,6 +138,29 @@ const steps = [
   },
 ]
 
+const flowFaqs = [
+  {
+    question: "お墓じまいの流れ・手順を教えてください",
+    answer: "お墓じまいは①無料相談、②書類確認・取得案内、③現地調査・お見積り、④ご契約、⑤墓石撤去工事・原状回復、⑥遺骨の取り出し・ケア、⑦改葬先への移送または海洋散骨の7ステップで進みます。全体期間は2〜4ヶ月が目安です。",
+  },
+  {
+    question: "お墓じまいにかかる期間はどのくらいですか？",
+    answer: "墓地の規模・寺院との交渉状況・自治体の審査スケジュールにより異なりますが、全体で2〜4ヶ月が一般的な目安です。改葬許可証の取得に1〜2週間、墓石撤去工事は通常1日で完了します。",
+  },
+  {
+    question: "改葬許可申請は自分でできますか？",
+    answer: "改葬許可申請書への記入・提出はご自身で行うことができます。清蓮では申請書のダウンロード先案内と一般的な記入ポイントの説明を無料で行います。書類作成の代行が必要な場合は、提携行政書士をご紹介します（契約は行政書士と直接締結）。",
+  },
+  {
+    question: "離檀交渉はどのように進めればいいですか？",
+    answer: "離檀交渉は、まず墓地管理者（寺院・霊園）へ意向を伝え、離檀料の有無・金額・撤去工事の条件を確認するところから始まります。清蓮では進め方の整理と情報提供を行います。法的代理交渉（弁護士業務）は当社では行いません。",
+  },
+  {
+    question: "墓石の撤去から海洋散骨まで一括でお願いできますか？",
+    answer: "はい、可能です。清蓮では墓石撤去工事、遺骨の洗骨・粉骨、海洋散骨の手配を一括でサポートします。東京湾・相模湾での海洋散骨はグループの散骨クルーズと連携して対応します。",
+  },
+]
+
 export default function FlowPage() {
   return (
     <div className="min-h-screen bg-white text-neutral-900">
@@ -172,6 +196,7 @@ export default function FlowPage() {
         embedUrl="https://www.youtube.com/@seiren-kaisou"
         pageUrl="https://www.ohakajimai-navi.jp/flow"
       />
+      <FaqJsonLd faqs={flowFaqs} />
 
       {/* ─── Hero ─── */}
       <div className="border-b border-neutral-100 bg-neutral-50 px-6 py-12 md:py-20 text-center">

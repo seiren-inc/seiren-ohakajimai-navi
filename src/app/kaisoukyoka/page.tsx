@@ -10,6 +10,7 @@ import KaisoukyokaClient from '@/components/kaisoukyoka/KaisoukyokaClient'
 import { ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 import { SeirenEcosystemNextSteps } from '@/components/features/ecosystem/SeirenEcosystemNextSteps'
+import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 
 export const metadata: Metadata = constructMetadata({
   title: '改葬許可申請書ダウンロード｜全国自治体一覧・書き方・改葬 自分で手続きする方へ｜お墓じまいナビ',
@@ -18,6 +19,29 @@ export const metadata: Metadata = constructMetadata({
 })
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
+
+const kaisoukyokaFaqs = [
+  {
+    question: "改葬許可申請書はどこで入手できますか？",
+    answer: "改葬許可申請書は、現在のお墓がある市区町村の窓口（市民課・環境衛生課など）で入手するか、当ページから各自治体の公式PDFをダウンロードできます。全国1,700以上の市区町村分を掲載しています。",
+  },
+  {
+    question: "改葬許可申請に必要な書類は何ですか？",
+    answer: "主に①改葬許可申請書、②埋蔵証明書（現在の墓地管理者が発行）、③受入証明書（改葬先が発行）の3点が必要です。自治体によって追加書類が求められる場合があります。",
+  },
+  {
+    question: "改葬許可証はどのくらいで取得できますか？",
+    answer: "申請から交付までの期間は自治体によって異なりますが、書類に不備がなければ数日〜2週間程度が目安です。事前に窓口へ電話確認することをおすすめします。",
+  },
+  {
+    question: "改葬許可申請の代行を依頼することはできますか？",
+    answer: "改葬許可申請書の作成・提出代行は行政書士が行える業務です。当サイトでは書類の取得方法の案内と一般的な記入ポイントの説明を無料で提供しています。代行が必要な場合は、提携行政書士をご紹介します。",
+  },
+  {
+    question: "散骨の場合でも改葬許可証は必要ですか？",
+    answer: "現在埋葬されているご遺骨を取り出して散骨する場合、改葬許可証が必要です。ただし散骨のみを目的とする場合（新たな埋葬先なし）でも多くの自治体では改葬許可証が必要になります。個別の状況については当社へご相談ください。",
+  },
+]
 
 export default async function KaisoukyokaPage() {
   const municipalities = await prisma.municipality.findMany({
@@ -52,6 +76,7 @@ export default async function KaisoukyokaPage() {
         { name: 'ホーム', url: SITE_URL },
         { name: '改葬許可申請書ダウンロード 全国一覧', url: `${SITE_URL}/kaisoukyoka` },
       ]} />
+      <FaqJsonLd faqs={kaisoukyokaFaqs} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
