@@ -24,6 +24,38 @@
 - [会社概要](https://www.ohakajimai-navi.jp/company) - 株式会社清蓮について
 - [お問い合わせ](https://www.ohakajimai-navi.jp/contact)
 
+### コラム・解説記事
+- [墓じまいの費用相場](https://www.ohakajimai-navi.jp/column/cost-of-hakajimai) - 墓石撤去・行政手続き・改葬先費用の内訳と、安く抑えるコツを解説
+- [永代供養とは](https://www.ohakajimai-navi.jp/column/eitaikuyo-toha) - 合祀型・個別型の種類・費用相場・選び方を後継者不在の方向けに解説
+- [遠方のお墓の管理](https://www.ohakajimai-navi.jp/column/enpo-ohaka-kanri) - 遠方墓地の維持か改葬かを判断するための対処法と費用比較
+- [粉骨とは](https://www.ohakajimai-navi.jp/column/funkotsu-toha) - 海洋散骨に必須な粉骨・洗骨の目的・手順・費用相場を解説
+- [お墓じまい業者の選び方](https://www.ohakajimai-navi.jp/column/hakajimai-gyosha-erabikata) - 悪質業者を避ける5つのチェックポイントと見積もりの注意点
+- [お墓じまいの流れ](https://www.ohakajimai-navi.jp/column/hakajimai-nagare) - 相談から工事完了まで7ステップで解説、所要期間の目安は2〜4ヶ月
+- [親族の反対への対処](https://www.ohakajimai-navi.jp/column/hakajimai-shinzoku-hantai) - 家族・兄弟に反対された場合の説得ポイントと円満解決のコツ
+- [改葬許可証の取得方法](https://www.ohakajimai-navi.jp/column/how-to-get-kaisoukyoka) - 必要書類（申請書・埋葬証明書・受入証明書）の揃え方と申請手順
+- [改葬を自分で行う方法](https://www.ohakajimai-navi.jp/column/kaisou-jibun-de) - 行政書士なしで改葬許可申請を進める全手順
+- [改葬と墓じまいの違い](https://www.ohakajimai-navi.jp/column/kaisou-vs-hakajimai) - 法的手続きが必要な「改葬」と物理作業の「墓じまい」の違いを解説
+- [海洋散骨ガイド](https://www.ohakajimai-navi.jp/column/kaiyou-sankotsu-guide) - チャーター・合同・委託の3種類の費用・手続き・注意点を総合解説
+- [離檀料の相場](https://www.ohakajimai-navi.jp/column/ridanryou-soba) - 法的義務なしの離檀料の相場と高額請求への対処法
+- [お墓じまいの費用負担](https://www.ohakajimai-navi.jp/column/hakajimai-hiyo-futan) - 誰が負担すべきか、家族間での分担ルールと話し合い方
+- [改葬許可申請書の書き方](https://www.ohakajimai-navi.jp/column/kaisoukyokashinseisho-kakikata) - 各記入欄の書き方を記入例付きで解説
+- [お墓じまいで後悔しないための注意点](https://www.ohakajimai-navi.jp/column/hakajimai-koukai) - よくある後悔パターンと回避のための5つのポイント
+- [樹木葬の費用・メリット・デメリット](https://www.ohakajimai-navi.jp/column/jumokusou-toha) - 費用10万〜80万円、継承者不要の樹木葬の選び方を解説
+- [納骨堂の選び方](https://www.ohakajimai-navi.jp/column/noukotsu-dou-erabikata) - ロッカー型・仏壇型・自動搬送型の費用・特徴・確認ポイント
+- [お墓じまい後の供養方法](https://www.ohakajimai-navi.jp/column/hakajimai-go-kuyo) - 永代供養・樹木葬・納骨堂・散骨・手元供養の5種類を比較
+- [手元供養とは](https://www.ohakajimai-navi.jp/column/temoto-kuyo) - 遺骨を自宅で保管する手元供養の合法性・費用・注意点
+- [閉眼法要（魂抜き）の費用・流れ](https://www.ohakajimai-navi.jp/column/heigan-houyo) - 墓石撤去前に行う宗教儀式の意味・お布施相場3万〜10万円
+- [改葬許可申請とは](https://www.ohakajimai-navi.jp/column/kaisou-kyoka-shinsei-toha) - 手続きの全体像を図解・ステップ形式でわかりやすく解説
+- [行政書士依頼の費用相場](https://www.ohakajimai-navi.jp/column/gyoseishoshi-itaku-hiyo-soba) - 改葬手続きを行政書士に依頼した場合の費用目安と依頼すべきケース
+- [行政書士と司法書士の違い](https://www.ohakajimai-navi.jp/column/gyoseishoshi-vs-shihoshoshi) - 墓じまいで頼むべき専門家の職域の違いと費用相場
+- [東京都の改葬手続きガイド](https://www.ohakajimai-navi.jp/column/kaisou-tokyo-guide) - 23区・多摩地域別の申請窓口・必要書類・注意点を解説
+- [神奈川県の改葬手続きガイド](https://www.ohakajimai-navi.jp/column/kaisou-kanagawa-guide) - 横浜市・川崎市・相模原市など政令市の申請手順と湘南エリアの注意点
+- [埼玉県の改葬手続きガイド](https://www.ohakajimai-navi.jp/column/kaisou-saitama-guide) - さいたま市・川越・秩父エリアの申請窓口・費用・寺院交渉の注意点
+- [千葉県の改葬手続きガイド](https://www.ohakajimai-navi.jp/column/kaisou-chiba-guide) - 市川・船橋・松戸・成田エリアの改葬手続きと費用を解説
+- [お墓じまいの時期・季節](https://www.ohakajimai-navi.jp/column/hakajimai-jiki-season) - 春彼岸・秋彼岸・お盆との関係、石材店繁忙期の避け方を解説
+- [お墓じまいと相続の関係](https://www.ohakajimai-navi.jp/column/hakajimai-souzoku-law) - 永代使用権の相続・費用負担・遺言での指定など法律知識を解説
+- [菩提寺に断られた時の対処法](https://www.ohakajimai-navi.jp/column/hakajimai-kyozetsu-taisho) - 離檀拒否・高額離檀料請求への正しい対処法と専門家への相談方法
+
 ### 手続き情報（地域別）
 - [改葬手続きの方法](https://www.ohakajimai-navi.jp/kaissou) - 全47都道府県別の改葬許可申請手順（CollectionPage）
 - [改葬許可申請書ダウンロード](https://www.ohakajimai-navi.jp/kaisoukyoka) - 全国1,700以上の市区町村別一覧（HowTo付き）
