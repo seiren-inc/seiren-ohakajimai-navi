@@ -181,9 +181,10 @@ export default async function KaisoukyokaPage() {
           <p className="text-sm leading-relaxed text-muted-foreground">
             申請書の書き方や提出方法に不安がある方は、改葬許可申請に詳しい行政書士にご相談いただけます。
           </p>
+          <p className="mt-2 text-xs text-muted-foreground">相談・ご紹介は無料。強引な勧誘はしません。</p>
           <Link
             href="/gyoseishoshi"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
           >
             行政書士に相談する
             <ChevronRight className="h-4 w-4" />

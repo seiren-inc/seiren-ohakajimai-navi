@@ -165,9 +165,10 @@ export default function RidanryouPage() {
 
           {/* CTA */}
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-8 py-4 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors">
+            <Link href="/contact" className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors">
               離檀交渉サポートを相談する <ArrowRight className="h-4 w-4" />
             </Link>
+            <p className="mt-3 text-xs text-neutral-500">相談・お見積りは無料。強引な勧誘はしません。</p>
             <Link href="/gyoseishoshi" className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors">
               行政書士に相談する <ArrowRight className="h-4 w-4" />
             </Link>

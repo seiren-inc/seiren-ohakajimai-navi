@@ -26,7 +26,7 @@ export function FixedCTA() {
         </a>
         <Link
           href="/contact"
-          className="flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white"
+          className="flex min-h-[48px] flex-1 items-center justify-center rounded-full bg-seiren-cta text-sm font-bold text-white"
         >
           <Mail className="mr-2 h-4 w-4" />
           無料相談フォーム

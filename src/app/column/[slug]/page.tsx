@@ -176,7 +176,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/price"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-emerald-700"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-seiren-cta px-6 py-3 font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
             >
               料金プランを見る <ChevronRight className="h-4 w-4" />
             </Link>

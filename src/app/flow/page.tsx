@@ -315,7 +315,7 @@ export default function FlowPage() {
         </p>
         <Link
           href="/gyoseishoshi"
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-neutral-200 px-5 py-2.5 text-sm font-medium text-neutral-700 hover:border-neutral-300 hover:text-neutral-900 transition-colors"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-seiren-green px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#6A8B59] transition-colors"
         >
           行政書士に相談する（無料）
           <ArrowRight className="h-4 w-4" />
@@ -336,7 +336,7 @@ export default function FlowPage() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/contact"
-              className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-emerald-600 px-8 text-base font-semibold text-white hover:bg-emerald-700 transition-colors sm:w-auto"
+              className="inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-seiren-cta px-8 text-base font-semibold text-white hover:bg-seiren-cta-hover transition-colors sm:w-auto"
             >
               無料相談フォームへ
             </Link>
