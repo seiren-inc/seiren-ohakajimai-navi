@@ -131,7 +131,7 @@ export default async function MunicipalityPage(props: PageProps) {
         },
         {
             question: `${municipality.name}の改葬手続きを専門家に代行してもらえますか？`,
-            answer: `はい、可能です。お墓じまいナビでは、${municipality.prefectureName}対応の行政書士をご紹介し、面倒な役所手続きを代行サポートします。また、墓石の解体撤去工事も全国対応で行っておりますので、ワンストップでお任せいただけます。`,
+            answer: `はい、可能です。改葬許可申請の書類作成・提出代行は行政書士に依頼できます。お墓じまいナビでは${municipality.prefectureName}エリアに対応した提携行政書士をご紹介します（紹介は無料）。また、墓石撤去工事は全国提携の石材店が対応します。`,
         }
     ]
 
@@ -322,6 +322,22 @@ export default async function MunicipalityPage(props: PageProps) {
                     {/* 共通：改葬手続き完全ガイド */}
                     <ReKaisouGuide />
 
+                    {/* 行政書士紹介CTA — 常時表示 */}
+                    <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
+                        <h3 className="text-base font-bold">{municipality.prefectureName}の改葬手続きを専門家に依頼したい方へ</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                            改葬許可申請の書類作成・提出代行は行政書士が行える業務です。お墓じまいナビでは{municipality.prefectureName}に対応した提携行政書士をご紹介しています。
+                        </p>
+                        <Link
+                            href={`/gyoseishoshi/area/${prefectureSlug}`}
+                            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                        >
+                            {municipality.prefectureName}の行政書士を探す
+                            <ChevronRight className="h-4 w-4" />
+                        </Link>
+                        <p className="mt-2 text-xs text-muted-foreground">ご紹介は無料。強引な勧誘はしません。</p>
+                    </div>
+
                     {/* E-E-A-T: 地元専門家の表示 */}
                     {scriveners.length > 0 && (
                         <div className="mt-16 pt-10 border-t">
@@ -351,8 +367,8 @@ export default async function MunicipalityPage(props: PageProps) {
                                 ))}
                             </div>
                             <div className="mt-4 text-center sm:text-right">
-                                <Link href="/gyoseishoshi" className="text-primary hover:underline text-sm font-medium">
-                                    すべての行政書士を見る →
+                                <Link href={`/gyoseishoshi/area/${prefectureSlug}`} className="text-primary hover:underline text-sm font-medium">
+                                    {municipality.prefectureName}の行政書士を探す →
                                 </Link>
                             </div>
                         </div>
@@ -374,7 +390,7 @@ export default async function MunicipalityPage(props: PageProps) {
                                     <span className="text-primary font-bold">✓</span> 全国どこでも対応
                                 </li>
                                 <li className="flex items-start gap-2">
-                                    <span className="text-primary font-bold">✓</span> 自治体手続き完全代行
+                                    <span className="text-primary font-bold">✓</span> 提携行政書士による手続きサポート
                                 </li>
                                 <li className="flex items-start gap-2">
                                     <span className="text-primary font-bold">✓</span> 追加費用なしの明朗会計

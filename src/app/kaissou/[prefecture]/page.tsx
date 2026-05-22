@@ -202,12 +202,27 @@ export default async function PrefecturePage(props: PageProps) {
                             ))}
                         </div>
                         <div className="mt-6 text-center">
-                            <Link href="/gyoseishoshi" className="text-primary hover:underline text-sm font-medium">
+                            <Link href={`/gyoseishoshi/area/${prefectureSlug}`} className="text-primary hover:underline text-sm font-medium">
                                 その他の行政書士を探す →
                             </Link>
                         </div>
                     </div>
                 )}
+
+                {/* 行政書士紹介CTA — 常時表示 */}
+                <div className="mt-10 rounded-xl border bg-slate-50 p-6">
+                  <h2 className="text-base font-bold">{prefName}の改葬手続きを専門家に任せたい方へ</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    改葬許可申請の書類作成・提出代行は行政書士に依頼できます。お墓じまいナビでは{prefName}エリアに対応した提携行政書士をご紹介しています。ご紹介は無料です。
+                  </p>
+                  <Link
+                    href={`/gyoseishoshi/area/${prefectureSlug}`}
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                  >
+                    {prefName}の行政書士を探す
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                </div>
             </div>
             {/* GEO対策用のFAQ構造化データ */}
             <FaqJsonLd faqs={geoFaqs} />
