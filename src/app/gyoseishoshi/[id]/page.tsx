@@ -8,11 +8,27 @@ import { MapPin, Globe, MessageCircle, ArrowLeft, Clock } from "lucide-react"
 import type { Metadata } from "next"
 import { cache } from "react"
 
-// ISR: 1時間ごとに再生成
-export const dynamic = "force-dynamic"
+// ISR: 1時間ごとに再生成。管理画面の承認/変更時は revalidatePath で即時反映。
+export const revalidate = 3600
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
+
+/**
+ * ビルド時に承認済み行政書士ページを全件プリレンダリング。
+ * DBが取得できない場合は空配列 → オンデマンドSSRにフォールバック。
+ */
+export async function generateStaticParams(): Promise<{ id: string }[]> {
+  try {
+    const scriveners = await db.administrativeScrivener.findMany({
+      where: { isApproved: true, isActive: true, paymentStatus: 'PAID' },
+      select: { id: true },
+    })
+    return scriveners.map((s: { id: string }) => ({ id: s.id }))
+  } catch {
+    return []
+  }
+}
 
 // generateMetadata とページ本体で同じDBクエリを共有（N+1排除）
 const getScrivener = cache(async (id: string) => {

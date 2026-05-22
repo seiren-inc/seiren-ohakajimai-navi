@@ -14,6 +14,14 @@ export const revalidate = 300
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
 
+/**
+ * 47都道府県分のページをビルド時にプリレンダリング。
+ * PREFECTURES は静的データなのでDBアクセス不要。
+ */
+export function generateStaticParams(): { prefecture: string }[] {
+  return PREFECTURES.map((p) => ({ prefecture: p.slug }))
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const db = prisma as any
 
