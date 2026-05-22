@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { ChevronRight, FileText, MapPin, UserCheck } from "lucide-react"
 import { PREFECTURES, findPrefectureSlug } from "@/lib/prefectures"
+import { getPrefectureContent } from "@/lib/prefecture-content"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { Card, CardContent } from "@/components/ui/card"
@@ -86,6 +87,10 @@ export default async function PrefecturePage(props: PageProps) {
         orderBy: { priorityScore: "desc" }
     })
 
+    // 都道府県固有コンテンツを取得
+    const prefContent = getPrefectureContent(prefectureSlug)
+    const additionalFaqs = prefContent?.uniqueFaqs ?? []
+
     // 都道府県ごとの動的FAQ
     const geoFaqs = [
         {
@@ -99,7 +104,8 @@ export default async function PrefecturePage(props: PageProps) {
         {
             question: `${prefName}の手続きで必要な書類は何ですか？`,
             answer: `基本的には①改葬許可申請書、②現在の墓地管理者が発行する「埋蔵証明書」、③新しい改葬先が発行する「受入証明書」の3点です。自治体によって独自の添付書類（申請者の戸籍謄本や墓地の写真など）が求められる場合がありますので、必ず各市区町村の規定をご確認ください。`,
-        }
+        },
+        ...additionalFaqs,
     ]
 
     const geoJsonLd = {
@@ -145,6 +151,12 @@ export default async function PrefecturePage(props: PageProps) {
                         手続きを行う市区町村を選択してください。
                     </p>
                 </div>
+
+                {prefContent?.introText && (
+                    <div className="mt-6 mb-8 rounded-lg bg-slate-50 p-5 text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
+                        {prefContent.introText}
+                    </div>
+                )}
 
                 <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
                     {municipalities.map((city) => (
