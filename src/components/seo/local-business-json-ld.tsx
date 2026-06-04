@@ -52,13 +52,6 @@ export function LocalBusinessJsonLd() {
     parentOrganization: {
       '@id': `${BASE_URL}/#organization`,
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.5',
-      reviewCount: '28',
-      bestRating: '5',
-      worstRating: '1',
-    },
     // 対象エリア：全47都道府県（GEO検索最適化）
     areaServed: [
       { '@type': 'AdministrativeArea', name: '北海道' },
