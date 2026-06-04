@@ -26,7 +26,6 @@ const NAV = [
   { label: "行政書士マッチング", href: "#gyosei" },
   { label: "墓石撤去実例", href: "#cases" },
   { label: "関連サービス", href: "#related" },
-  { label: "問い合わせ", href: "#contact" },
 ]
 
 const NAV_BENTO = [
@@ -279,18 +278,6 @@ export function HomeHeader() {
         </nav>
 
         <div className="hidden items-center gap-2.5 xl:flex">
-          <a
-            href="tel:08008888788"
-            className="inline-flex items-center gap-2 text-[13px] font-medium text-[#525762]"
-          >
-            <Phone size={15} strokeWidth={1.75} className="text-seiren-accent" />
-            <span
-              className="text-sm font-semibold text-seiren-main"
-              style={{ fontFamily: "var(--font-inter), Inter, sans-serif" }}
-            >
-              0800-888-8788
-            </span>
-          </a>
           <PillLink variant="cta" size="sm" href="/contact">
             無料で相談する
           </PillLink>

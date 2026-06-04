@@ -15,7 +15,10 @@ export const metadata = constructMetadata({
   path: "/",
 })
 
-export const revalidate = 86400
+// ConditionalLayout が usePathname() でグローバル Header/Footer を抑止するため、
+// 静的生成(SSG)時に pathname が null となり共通 Header が重複する問題を回避するため
+// このページのみ動的レンダリングに固定する。
+export const dynamic = 'force-dynamic'
 
 export default function TopPage() {
   return (
