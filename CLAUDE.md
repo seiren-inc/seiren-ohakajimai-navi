@@ -11,7 +11,7 @@ Auth includes WebAuthn (@simplewebauthn). Payment via Stripe. AI via Vercel AI S
 - Use getUser() for Supabase Auth. getSession() is forbidden.
 - Upstash Rate Limit must be applied to all AI API endpoints.
 - All user input must be sanitized with the xss package before sending to AI APIs.
-- PPR is enabled and must not be disabled.
+- PPR is NOT enabled (requires Next.js canary; this repo runs stable 15.5.12). Do not add experimental.ppr on stable — it breaks the production build. Re-evaluate when PPR ships in a stable release.
 - WebAuthn (@simplewebauthn) must not be removed or bypassed without explicit approval.
 
 ## Project-Specific Implementation Rules

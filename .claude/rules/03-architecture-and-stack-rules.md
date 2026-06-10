@@ -44,9 +44,12 @@ const fn = async () => {}  // missing return type
 
 ## PPR and Image Optimization
 
+PPR is NOT enabled: `experimental.ppr` requires a Next.js canary build and fails the production
+build on the pinned stable `next@15.5.12`. Do not add it to next.config.ts. Re-evaluate when PPR
+reaches a stable release.
+
 ```ts
 // next.config.ts
-experimental: { ppr: true }  // Partial Prerendering
 images: {
   formats: ["image/avif", "image/webp"],
   minimumCacheTTL: 60 * 60 * 24 * 30,
