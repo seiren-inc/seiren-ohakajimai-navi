@@ -138,9 +138,9 @@ export default function KaisougoPage() {
                 お墓じまい後の新しい供養先を比較検討したい方は、ぜひご活用ください。
               </p>
               <div className="mt-8">
-                <a 
-                  href="https://www.ohakanavi.jp/" 
-                  target="_blank" 
+                <a
+                  href="https://www.ohakanavi.jp/search"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-emerald-600 px-10 py-4 text-base font-bold text-white shadow-lg hover:bg-emerald-700 transition-all"
                 >
@@ -174,9 +174,9 @@ export default function KaisougoPage() {
               お墓じまいの無料相談 <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-xs text-neutral-500">相談・お見積りは無料。強引な勧誘はしません。</p>
-            <a 
-              href="https://www.ohakanavi.jp/" 
-              target="_blank" 
+            <a
+              href="https://www.ohakanavi.jp/search"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-600 px-8 py-4 text-sm font-semibold text-emerald-600 hover:bg-emerald-50 transition-colors"
             >

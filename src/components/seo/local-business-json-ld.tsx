@@ -164,10 +164,12 @@ export function LocalBusinessJsonLd() {
     },
     foundingDate: '2008-08-06',
     sameAs: [
+      'https://www.seiren-inc.co.jp',
+      'https://www.ohakanavi.jp',
       'https://line.me/R/ti/p/@956lieqb',
       'https://www.instagram.com/sankotu.cruise_seiren',
       'https://www.facebook.com/seirenjapan',
-      'https://twitter.com/seiren_official',
+      'https://x.com/seiren_official',
       'https://www.google.com/maps/place/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE%E6%B8%85%E8%93%AE/@35.3960962,139.5274523,16z',
     ],
     knowsAbout: [

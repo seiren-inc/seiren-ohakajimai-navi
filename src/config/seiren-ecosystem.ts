@@ -46,7 +46,7 @@ const IKOTSU_LAB: NextStepCard = {
 
 const OHAKA_NAVI: NextStepCard = {
     id: "ohaka-navi",
-    href: "https://www.ohakanavi.jp/",
+    href: "https://www.ohakanavi.jp/search",
     title: "お墓探しナビ（別サイト）",
     description: "全国の納骨堂・樹木葬・永代供養墓などを検索できます。",
 }
