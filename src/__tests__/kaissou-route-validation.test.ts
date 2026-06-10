@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest"
 import { findPrefectureSlug, isValidPrefectureSlug } from "@/lib/prefectures"
-import prefecturePage, { generateMetadata as generatePrefectureMetadata } from "@/app/kaissou/[prefecture]/page"
-import municipalityPage, { generateMetadata as generateMunicipalityMetadata } from "@/app/kaissou/[prefecture]/[municipality]/page"
+import prefecturePage, { generateMetadata as generatePrefectureMetadata } from "@/app/(site)/kaissou/[prefecture]/page"
+import municipalityPage, { generateMetadata as generateMunicipalityMetadata } from "@/app/(site)/kaissou/[prefecture]/[municipality]/page"
 
 const {
     notFoundMock,

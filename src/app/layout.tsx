@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
-import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
 import { constructMetadata } from '@/lib/seo'
 import { Analytics } from '@vercel/analytics/next'
@@ -54,9 +53,7 @@ export default function RootLayout({
       <body className={cn(
         "min-h-screen bg-background font-sans antialiased flex flex-col"
       )}>
-        <ConditionalLayout>
-          {children}
-        </ConditionalLayout>
+        {children}
         {process.env.NEXT_PUBLIC_ENABLE_RAG_CHAT === 'true' && <RagChatbot />}
         <Analytics />
         <SpeedInsights />
