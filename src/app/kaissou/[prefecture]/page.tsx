@@ -15,6 +15,11 @@ const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-nav
 
 export const revalidate = 86400
 
+// 47都道府県ページはビルド時に全件プリレンダリング（DB不要・定数から生成）
+export function generateStaticParams(): { prefecture: string }[] {
+    return PREFECTURES.map((p) => ({ prefecture: p.slug }))
+}
+
 // Correct type definition for params in Next.js 15
 type PageProps = {
     params: Promise<{ prefecture: string }>

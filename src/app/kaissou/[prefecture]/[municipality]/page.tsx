@@ -10,6 +10,7 @@ import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle, MapPin, U
 import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
 import { ContentProvenance } from "@/components/features/eeat/ContentProvenance"
 import { findPrefectureSlug } from "@/lib/prefectures"
+import { cache } from "react"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
@@ -49,21 +50,35 @@ async function getMunicipalityByName(prefSlug: string, municipalityName: string)
     })
 }
 
-async function resolveMunicipality(prefSlug: string, municipality: string) {
+// generateMetadata とページ本体で同じDBクエリを共有（N+1排除）
+const resolveMunicipality = cache(async (prefSlug: string, municipality: string) => {
     if (isSafeSlug(municipality)) {
         return await getMunicipality(prefSlug, municipality)
     }
 
     return await getMunicipalityByName(prefSlug, municipality)
-}
+})
 
 // Revalidate the page every 24 hours (86400 seconds)
 export const revalidate = 86400
 
-// ビルド時は静的生成しない（ISR: 初回アクセス時に生成）
-// Vercelビルド時のDB接続数上限超過を回避
-export async function generateStaticParams() {
-    return []
+/**
+ * ビルド時に公開済み自治体ページを全件プリレンダリング。
+ * DBが取得できない場合は空配列 → オンデマンドISRにフォールバック。
+ */
+export async function generateStaticParams(): Promise<{ prefecture: string; municipality: string }[]> {
+    try {
+        const municipalities = await prisma.municipality.findMany({
+            where: { isPublished: true },
+            select: { prefectureSlug: true, municipalitySlug: true },
+        })
+        return municipalities.map((m) => ({
+            prefecture: m.prefectureSlug,
+            municipality: m.municipalitySlug,
+        }))
+    } catch {
+        return []
+    }
 }
 
 
