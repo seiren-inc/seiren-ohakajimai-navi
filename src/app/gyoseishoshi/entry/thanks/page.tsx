@@ -6,6 +6,7 @@ import Link from "next/link"
 export const metadata: Metadata = constructMetadata({
     title: "掲載申込完了｜行政書士 お墓じまいナビ",
     description: "掲載申込が完了しました。審査完了後、掲載を開始いたします。",
+    noIndex: true,
 })
 
 export default function ScrivenerEntryThanksPage() {

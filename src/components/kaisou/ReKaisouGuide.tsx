@@ -270,7 +270,7 @@ export default function ReKaisouGuide() {
             </p>
           </div>
           <Link
-            href="/kaiyousankotsuyaku"
+            href="/sankotsu"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#1D1D1F] text-white text-sm font-semibold hover:bg-[#2d2d2f] transition-colors"
           >
             海洋散骨を検討する

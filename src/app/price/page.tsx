@@ -51,7 +51,6 @@ const priceFaqs = [
 export const metadata = constructMetadata({
   title: "料金について | お墓じまいナビ - 明確な料金体系で安心",
   description: "お墓じまいの料金プラン。行政手続き代行55,000円〜、基本プラン150,000円〜。見積り後の追加費用は原則なし。全国対応・現地調査無料。",
-  image: "/og/pricing.jpg",
   path: '/price',
 })
 
