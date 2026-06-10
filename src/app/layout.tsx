@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Noto_Sans_JP, Noto_Serif_JP } from 'next/font/google'
 import './globals.css'
 import { ConditionalLayout } from '@/components/layouts/ConditionalLayout'
 import { cn } from '@/lib/utils'
@@ -9,6 +10,19 @@ import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
 // Doc-19 §2.8: 内部AI監査30日安定稼働の前提条件が満たされた場合のみ有効化する
 // NEXT_PUBLIC_ENABLE_RAG_CHAT=true を明示的に設定するまでは非表示
 import { RagChatbot } from '@/components/chat/RagChatbot'
+
+// CLAUDE.md 指定フォント: Noto Sans JP (--font-sans) / Noto Serif JP (--font-serif)
+const notoSansJp = Noto_Sans_JP({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
+const notoSerifJp = Noto_Serif_JP({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+})
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -26,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" className={cn(notoSansJp.variable, notoSerifJp.variable)}>
       <head>
         {/* ─── LCP 最適化: Hero 画像を最優先で preload ─── */}
         <link
@@ -38,8 +52,7 @@ export default function RootLayout({
         />
       </head>
       <body className={cn(
-        "min-h-screen bg-background font-sans antialiased flex flex-col",
-        "font-[system-ui,-apple-system,BlinkMacSystemFont,'Hiragino_Kaku_Gothic_ProN','Yu_Gothic',sans-serif]"
+        "min-h-screen bg-background font-sans antialiased flex flex-col"
       )}>
         <ConditionalLayout>
           {children}

@@ -21,7 +21,8 @@ const config = {
         },
         extend: {
             fontFamily: {
-                sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
+                sans: ["var(--font-sans)", "Hiragino Kaku Gothic ProN", "Yu Gothic", ...defaultTheme.fontFamily.sans],
+                serif: ["var(--font-serif)", "Hiragino Mincho ProN", "Yu Mincho", ...defaultTheme.fontFamily.serif],
             },
             colors: {
                 border: "hsl(var(--border))",
