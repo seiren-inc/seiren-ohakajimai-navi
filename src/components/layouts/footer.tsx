@@ -127,6 +127,14 @@ export function Footer() {
                         </li>
                         <li>
                             <Link
+                                href="/estimation"
+                                className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
+                            >
+                                かんたん無料見積もり
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 href="/gyoseishoshi"
                                 className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
                             >
@@ -248,6 +256,14 @@ export function Footer() {
                                 className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
                             >
                                 プライバシーポリシー
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                href="/tokutei"
+                                className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
+                            >
+                                特定商取引法に基づく表記
                             </Link>
                         </li>
                         <li>
