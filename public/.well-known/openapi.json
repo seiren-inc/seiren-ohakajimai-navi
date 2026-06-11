@@ -1,0 +1,129 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "お墓じまいナビ 自治体データAPI",
+    "description": "全国市区町村の改葬許可申請に関する公開データ（窓口URL・申請書PDF・リンク状態・データ品質レベル）を提供するAPIです。利用には APIキー（X-API-KEY ヘッダー）が必要です。キーの発行はお問い合わせフォーム（https://www.ohakajimai-navi.jp/contact）からご相談ください。",
+    "version": "1.0.0",
+    "contact": {
+      "name": "株式会社清蓮 お墓じまいナビ",
+      "url": "https://www.ohakajimai-navi.jp/contact"
+    }
+  },
+  "servers": [{ "url": "https://www.ohakajimai-navi.jp" }],
+  "security": [{ "ApiKeyAuth": [] }],
+  "paths": {
+    "/api/v1/municipalities": {
+      "get": {
+        "summary": "自治体一覧の取得（ページネーション付き）",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 },
+            "description": "ページ番号"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "default": 100 },
+            "description": "1ページあたりの件数"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "公開中の自治体一覧（jisCode昇順）",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "items": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/MunicipalityListItem" }
+                    },
+                    "pagination": { "$ref": "#/components/schemas/Pagination" }
+                  }
+                }
+              }
+            }
+          },
+          "401": { "description": "APIキーが無効または未指定" },
+          "429": { "description": "レートリミット超過（60リクエスト単位、X-RateLimit-* ヘッダー参照）" },
+          "500": { "description": "サーバーエラー" }
+        }
+      }
+    },
+    "/api/v1/municipalities/{jisCode}": {
+      "get": {
+        "summary": "JISコード指定で単一自治体の詳細を取得",
+        "parameters": [
+          {
+            "name": "jisCode",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "description": "全国地方公共団体コード（JISコード）"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "自治体の全フィールドを含む詳細レコード",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [{ "$ref": "#/components/schemas/MunicipalityListItem" }],
+                  "description": "一覧の項目に加え、region・notes・seoDescription・linkType・subLinks・createdAt・updatedAt 等の管理フィールドを含みます",
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "401": { "description": "APIキーが無効または未指定" },
+          "404": { "description": "該当する公開自治体が存在しない" },
+          "429": { "description": "レートリミット超過" },
+          "500": { "description": "サーバーエラー" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
+    "schemas": {
+      "MunicipalityListItem": {
+        "type": "object",
+        "properties": {
+          "jisCode": { "type": "string", "description": "全国地方公共団体コード" },
+          "name": { "type": "string", "description": "市区町村名" },
+          "prefectureName": { "type": "string" },
+          "prefectureSlug": { "type": "string" },
+          "municipalitySlug": { "type": "string" },
+          "url": { "type": "string", "nullable": true, "description": "改葬許可申請の案内ページURL" },
+          "pdfUrl": { "type": "string", "nullable": true, "description": "改葬許可申請書PDFのURL" },
+          "linkStatus": {
+            "type": "string",
+            "enum": ["OK", "NEEDS_REVIEW", "BROKEN", "UNKNOWN", "PDF_ONLY"],
+            "description": "リンクの検証状態"
+          },
+          "lastCheckedAt": { "type": "string", "format": "date-time", "nullable": true },
+          "dataQualityLevel": { "type": "integer", "description": "データ品質レベル（0=未検証）" }
+        }
+      },
+      "Pagination": {
+        "type": "object",
+        "properties": {
+          "total": { "type": "integer" },
+          "page": { "type": "integer" },
+          "limit": { "type": "integer" },
+          "totalPages": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

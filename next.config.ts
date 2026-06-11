@@ -87,6 +87,16 @@ const nextConfig: NextConfig = {
         source: '/(.*)',
         headers: securityHeaders,
       },
+      // RFC 8288 Link ヘッダー — エージェントに API カタログ（RFC 9727）の所在を公示
+      {
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: '</.well-known/api-catalog>; rel="api-catalog"',
+          },
+        ],
+      },
       // 静的アセット（画像・フォント・JS/CSS）に長期キャッシュを設定
       {
         source: '/images/(.*)',
