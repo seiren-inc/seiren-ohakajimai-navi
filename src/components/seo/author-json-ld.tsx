@@ -42,7 +42,7 @@ export function AuthorJsonLd({
     // 監修者情報（専門家によるレビューを明示）
     reviewedBy: {
       "@type": "Person",
-      name: "眞如 理恵",
+      name: "眞如理恵",
       jobTitle: "代表取締役",
       description: "株式会社清蓮 代表取締役。2008年創業。お墓じまい・改葬・海洋散骨の実務を専門とし、全国対応のワンストップサービスを提供。法令遵守を最優先に、ご家族に寄り添うサポートを行っている。",
       url: "https://www.ohakajimai-navi.jp/company",

@@ -4,8 +4,8 @@ import { constructMetadata } from '@/lib/seo'
 import { Breadcrumb } from '@/components/ui/Breadcrumb'
 import { BreadcrumbJsonLd } from '@/components/seo/breadcrumb-json-ld'
 import { ArticleJsonLd } from '@/components/seo/page-json-ld'
-import { AuthorJsonLd } from '@/components/seo/author-json-ld'
 import { FaqJsonLd } from '@/components/seo/faq-json-ld'
+import { CANONICAL_AUTHOR } from '@/lib/authors'
 import { RelatedArticles } from '@/components/blog/RelatedArticles'
 import { ExpertBadge } from '@/components/seo/expert-badge'
 import { MDXRemote } from 'next-mdx-remote/rsc'
@@ -105,13 +105,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         datePublished={metadata.date}
         dateModified={metadata.updatedAt || metadata.date}
         keywords={metadata.tags}
-      />
-      <AuthorJsonLd
-        pageUrl={pageUrl}
-        headline={metadata.title}
-        description={metadata.description}
-        datePublished={metadata.date}
-        dateModified={metadata.updatedAt || metadata.date}
+        author={metadata.author}
       />
       {metadata.faqs && metadata.faqs.length > 0 && (
         <FaqJsonLd faqs={metadata.faqs} />
@@ -166,12 +160,14 @@ export default async function BlogPostPage({ params }: PageProps) {
           <MDXRemote source={content} components={components} />
         </article>
 
-        {/* Author block */}
+        {/* Author block — 既定は CANONICAL_AUTHOR、frontmatter の author で上書き可（JSON-LD と同一ソース） */}
         <div className="mt-16 rounded-2xl bg-white p-8 border border-neutral-200 shadow-sm text-center">
           <h4 className="text-xl font-bold text-neutral-900 mb-4">この記事の執筆・監修</h4>
-          <p className="font-semibold text-neutral-800 mb-2">株式会社清蓮 代表取締役 眞如理恵</p>
+          <p className="font-semibold text-neutral-800 mb-2">
+            {`${CANONICAL_AUTHOR.company} ${metadata.author?.jobTitle ?? CANONICAL_AUTHOR.jobTitle} ${metadata.author?.name ?? CANONICAL_AUTHOR.name}`}
+          </p>
           <p className="text-sm text-neutral-600 leading-relaxed mb-6 max-w-lg mx-auto">
-            2008年の設立以来、お墓じまい・改葬の専門会社として全国のご家族をサポート。法令遵守と誠実な対応を理念に、書類手続きの案内から墓石撤去、海洋散骨までワンストップで支援しています。
+            {metadata.author?.bio ?? CANONICAL_AUTHOR.bio}
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link

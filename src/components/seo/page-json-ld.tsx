@@ -1,3 +1,5 @@
+import { CANONICAL_AUTHOR } from '@/lib/authors'
+
 /**
  * WebSite JSON-LD with Sitelinks SearchBox
  * https://schema.org/WebSite
@@ -36,6 +38,8 @@ export function WebSiteJsonLd() {
 /**
  * Article JSON-LD — コラム記事（BlogPosting）用
  * https://schema.org/BlogPosting
+ * 記事ページの唯一の Article 系スキーマ（旧 AuthorJsonLd の E-E-A-T 情報を統合済み）。
+ * 著者の既定値は src/lib/authors.ts の CANONICAL_AUTHOR を単一ソースとする。
  */
 interface ArticleJsonLdProps {
     headline: string
@@ -45,6 +49,7 @@ interface ArticleJsonLdProps {
     dateModified?: string
     imagePath?: string
     keywords?: string[]
+    author?: { name: string; jobTitle?: string }
 }
 
 export function ArticleJsonLd({
@@ -55,8 +60,33 @@ export function ArticleJsonLd({
     dateModified,
     imagePath = '/og-image.jpg',
     keywords = [],
+    author,
 }: ArticleJsonLdProps) {
     const BASE = 'https://www.ohakajimai-navi.jp'
+    // 既定（CANONICAL_AUTHOR と同一人物）の場合のみ E-E-A-T 詳細を付与し、
+    // frontmatter で別著者が指定された場合は本人に確認できる情報のみ出力する
+    const isCanonicalAuthor = !author || author.name === CANONICAL_AUTHOR.name
+    const authorNode = isCanonicalAuthor
+        ? {
+            '@type': 'Person',
+            name: CANONICAL_AUTHOR.name,
+            jobTitle: CANONICAL_AUTHOR.jobTitle,
+            description: CANONICAL_AUTHOR.schemaDescription,
+            url: CANONICAL_AUTHOR.url,
+            sameAs: [...CANONICAL_AUTHOR.sameAs],
+            knowsAbout: [...CANONICAL_AUTHOR.knowsAbout],
+            worksFor: {
+                '@id': `${BASE}/#organization`,
+            },
+        }
+        : {
+            '@type': 'Person',
+            name: author.name,
+            ...(author.jobTitle && { jobTitle: author.jobTitle }),
+            worksFor: {
+                '@id': `${BASE}/#organization`,
+            },
+        }
     const jsonLd = {
         '@context': 'https://schema.org',
         '@type': 'BlogPosting',
@@ -68,14 +98,13 @@ export function ArticleJsonLd({
         dateModified: dateModified ?? datePublished,
         inLanguage: 'ja-JP',
         ...(keywords.length > 0 && { keywords: keywords.join(', ') }),
-        author: {
+        author: authorNode,
+        // 監修者（記事下の「執筆・監修」ブロックと対応）
+        reviewedBy: {
             '@type': 'Person',
-            name: '眞如理恵',
-            jobTitle: '代表取締役',
-            worksFor: {
-                '@id': `${BASE}/#organization`,
-            },
-            url: `${BASE}/company`,
+            name: CANONICAL_AUTHOR.name,
+            jobTitle: CANONICAL_AUTHOR.jobTitle,
+            url: CANONICAL_AUTHOR.url,
         },
         publisher: {
             '@id': `${BASE}/#organization`,

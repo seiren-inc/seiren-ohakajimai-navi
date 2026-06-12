@@ -119,7 +119,7 @@ export function OrganizationJsonLd() {
         foundingDate: '2008-08-06',
         employee: {
             '@type': 'Person',
-            name: '眞如 理恵',
+            name: '眞如理恵',
             jobTitle: '代表取締役',
             description: '株式会社清蓮 代表取締役。2008年創業。お墓じまい・改葬・海洋散骨の実務を専門とする。',
             url: 'https://www.ohakajimai-navi.jp/company',

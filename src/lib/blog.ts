@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import type { BlogAuthor } from '@/lib/authors'
 
 const blogDir = path.join(process.cwd(), 'src/content/blog')
 
@@ -18,6 +19,8 @@ export interface BlogMetadata {
   slug: string
   tags: string[]
   faqs?: BlogFaq[]
+  /** frontmatter で個別指定がない場合は CANONICAL_AUTHOR（眞如理恵）を表示・スキーマに使用 */
+  author?: BlogAuthor
 }
 
 export function getBlogSummaries(): BlogMetadata[] {
