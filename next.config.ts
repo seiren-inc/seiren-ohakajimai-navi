@@ -69,6 +69,11 @@ const nextConfig: NextConfig = {
     // 約1,300ページの一括プリレンダリング中、Supabase pooler への接続が
     // 瞬断するとビルド全体が落ちるため、ページ単位で再試行する
     staticGenerationRetryCount: 3,
+    // Vercel ビルドは高コア数のためワーカー数 × Prisma プールが膨らみ、
+    // Supabase pooler の上限 (EMAXCONN limit: 200) を食い潰してビルドが落ちる。
+    // ワーカー数を絞り(minPagesPerWorker↑)、ワーカー内の同時生成も絞る。
+    staticGenerationMaxConcurrency: 2,
+    staticGenerationMinPagesPerWorker: 500,
   },
   // ─── Vercelビルドのクラッシュ回避 ────────────────────────────────
   // 2026-06-10 以降、Vercel ビルドイメージの Node 22.22.2 で webpack の
