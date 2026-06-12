@@ -66,6 +66,9 @@ const nextConfig: NextConfig = {
   experimental: {
     // lucide-react の tree-shaking を強化し、未使用アイコンをバンドルから除外
     optimizePackageImports: ['lucide-react'],
+    // 約1,300ページの一括プリレンダリング中、Supabase pooler への接続が
+    // 瞬断するとビルド全体が落ちるため、ページ単位で再試行する
+    staticGenerationRetryCount: 3,
   },
   // ─── HTTPSリダイレクト（二重防御） ──────────────────────────────
   // Vercel は HTTP→HTTPS を自動処理するが、アプリ層でも明示的に対応する
