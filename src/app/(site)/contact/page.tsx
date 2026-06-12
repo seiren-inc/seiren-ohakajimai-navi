@@ -28,7 +28,6 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         url: `${SITE_URL}/contact`,
         inLanguage: 'ja',
         isPartOf: { '@id': `${SITE_URL}/#website` },
-        breadcrumb: { '@id': `${SITE_URL}/contact#breadcrumb` },
         mainEntity: {
             '@type': 'Organization',
             '@id': `${SITE_URL}/#organization`,
