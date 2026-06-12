@@ -11,48 +11,6 @@ import {
 } from "lucide-react"
 
 // --------------------------------
-// FAQ 構造化データ（JSON-LD）
-// --------------------------------
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "改葬（お墓じまい）には許可が必要ですか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "はい、改葬には「改葬許可証」が必要です。墓地埋葬法第5条により、現在のお墓が所在する市区町村に改葬許可申請書を提出し、許可を受ける必要があります。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "改葬許可申請書は誰が作成・提出できますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "申請書の作成・提出自体はお客様（申請者）が行うものです。行政書士法により、申請書の作成代理・提出代理は行政書士のみが行える業務です。清蓮では書き方のご説明と提携行政書士のご紹介を行っています。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "海洋散骨に改葬許可は必要ですか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "海洋散骨（粉骨の上、海洋にて散骨）は改葬に該当しないため、改葬許可証は不要です。ただし、節度ある方法での実施が求められます。清蓮では海洋散骨のご相談・実施も承っています。",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "改葬手続きにどのくらいの期間がかかりますか？",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "改葬許可申請書の受理から許可証発行まで、自治体によって異なりますが数日〜2週間程度が目安です。郵送申請の場合は追加の日数が必要です。お墓じまい全体の流れでは、準備から完了まで1〜3ヶ月程度を見ていただくとよいでしょう。",
-      },
-    },
-  ],
-}
-
-// --------------------------------
 // STEP データ
 // --------------------------------
 const steps = [
@@ -99,12 +57,9 @@ const canDoList = [
 export default function ReKaisouGuide() {
   return (
     <>
-      {/* JSON-LD: FAQPage */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-
+      {/* FAQPage JSON-LD はここに置かない:
+          自治体ページが <FaqJsonLd faqs={geoFaqs} /> を持つため、ここで出すと
+          1ページ2個の FAQPage になり GSC で「項目が重複しています」エラーになる */}
       <section
         aria-labelledby="reKaisouGuide-heading"
         className="mt-16 space-y-16"
