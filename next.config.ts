@@ -70,6 +70,15 @@ const nextConfig: NextConfig = {
     // 瞬断するとビルド全体が落ちるため、ページ単位で再試行する
     staticGenerationRetryCount: 3,
   },
+  // ─── Vercelビルドのクラッシュ回避 ────────────────────────────────
+  // 2026-06-10 以降、Vercel ビルドイメージの Node 22.22.2 で webpack の
+  // WASM ハッシュ (xxhash64) が `WasmHash._updateWithBuffer ... reading 'length'`
+  // でクラッシュしビルド全滅。WASM 非依存の sha256 に切り替えて回避する。
+  // ローカル(22.22.1)では再現しないが、環境差をなくすため無条件に適用。
+  webpack: (config) => {
+    config.output.hashFunction = 'sha256'
+    return config
+  },
   // ─── HTTPSリダイレクト（二重防御） ──────────────────────────────
   // Vercel は HTTP→HTTPS を自動処理するが、アプリ層でも明示的に対応する
   async redirects() {
