@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, ExternalLink, Phone, Mail, Download, AlertTriangle, MapPin, UserCheck, ChevronRight } from "lucide-react"
 import ReKaisouGuide from "@/components/kaisou/ReKaisouGuide"
+import { FaqSection } from "@/components/kaisou/FaqSection"
 import { ContentProvenance } from "@/components/features/eeat/ContentProvenance"
 import { findPrefectureSlug } from "@/lib/prefectures"
 import { cache } from "react"
@@ -124,15 +125,34 @@ export default async function MunicipalityPage(props: PageProps) {
     }
 
     // 自治体に紐づく提携行政書士を取得（municipalityId + 公開条件）
-    const scriveners = await prisma.administrativeScrivener.findMany({
-        where: {
-            municipalityId: municipality.id,
-            isApproved: true,
-            isActive: true,
-        },
-        take: 3,
-        orderBy: { priorityScore: "desc" },
-    })
+    // DB瞬断時はセクション非表示で続行する（ページ全体を500にしない。
+    // メインの resolveMunicipality は throw のまま — 404化はインデックス喪失リスクがあるため）
+    const scriveners = await prisma.administrativeScrivener
+        .findMany({
+            where: {
+                municipalityId: municipality.id,
+                isApproved: true,
+                isActive: true,
+            },
+            take: 3,
+            orderBy: { priorityScore: "desc" },
+        })
+        .catch(() => [])
+
+    // 同一都道府県の近隣自治体（JISコード近接）への内部リンク。
+    // 各ページが互いにリンクし合うメッシュを形成し、クロール経路と内部評価の伝播を改善する。
+    // DB瞬断時はセクション非表示で続行
+    const prefSiblings = await prisma.municipality
+        .findMany({
+            where: { prefectureSlug, isPublished: true },
+            select: { id: true, name: true, municipalitySlug: true },
+            orderBy: { jisCode: "asc" },
+        })
+        .catch(() => [])
+    const selfIndex = prefSiblings.findIndex((m) => m.id === municipality.id)
+    const otherMunicipalities = prefSiblings.filter((m) => m.id !== municipality.id)
+    const nearbyStart = Math.max(0, Math.min(selfIndex - 5, otherMunicipalities.length - 10))
+    const nearbyMunicipalities = otherMunicipalities.slice(nearbyStart, nearbyStart + 10)
 
     // 自治体固有のFAQ生成（GEO対策）
     const geoFaqs = [
@@ -337,6 +357,9 @@ export default async function MunicipalityPage(props: PageProps) {
                     {/* 共通：改葬手続き完全ガイド */}
                     <ReKaisouGuide />
 
+                    {/* FAQ（FAQPage JSON-LD と同一内容の可視表示） */}
+                    <FaqSection faqs={geoFaqs} title={`${municipality.name}の改葬・お墓じまい よくある質問`} />
+
                     {/* 行政書士紹介CTA — 常時表示 */}
                     <div className="mt-10 rounded-xl border border-slate-200 bg-slate-50 p-6">
                         <h3 className="text-base font-bold">{municipality.prefectureName}の改葬手続きを専門家に依頼したい方へ</h3>
@@ -387,6 +410,31 @@ export default async function MunicipalityPage(props: PageProps) {
                                 </Link>
                             </div>
                         </div>
+                    )}
+
+                    {/* 近隣自治体への内部リンク */}
+                    {nearbyMunicipalities.length > 0 && (
+                        <nav aria-label={`${municipality.prefectureName}の他の市区町村`} className="mt-16 pt-10 border-t">
+                            <h2 className="text-lg font-bold md:text-xl">{municipality.prefectureName}の他の市区町村の改葬手続き</h2>
+                            <ul className="mt-6 grid gap-2 sm:grid-cols-2">
+                                {nearbyMunicipalities.map((m) => (
+                                    <li key={m.id}>
+                                        <Link
+                                            href={`/kaissou/${prefectureSlug}/${m.municipalitySlug}`}
+                                            className="group flex items-center justify-between rounded-lg border bg-white px-4 py-3 text-sm font-medium hover:border-primary/50 hover:text-primary transition-colors"
+                                        >
+                                            {m.name}の改葬手続き
+                                            <ChevronRight className="h-4 w-4 text-slate-300 group-hover:text-primary" />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                            <p className="mt-4 text-sm">
+                                <Link href={`/kaissou/${prefectureSlug}`} className="text-primary hover:underline font-medium">
+                                    {municipality.prefectureName}の市区町村一覧を見る →
+                                </Link>
+                            </p>
+                        </nav>
                     )}
                 </div>
 

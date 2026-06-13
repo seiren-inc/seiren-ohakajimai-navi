@@ -13,7 +13,9 @@ interface Municipality {
   jisCode: string
   name: string
   prefectureName: string
+  prefectureSlug: string
   municipalitySlug: string
+  isPublished: boolean
   url: string | null
   pdfUrl: string | null
   subLinks: SubLink[] | null

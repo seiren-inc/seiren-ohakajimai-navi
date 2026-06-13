@@ -1,7 +1,8 @@
 'use client'
 
 import React from 'react'
-import { ExternalLink, FileCheck, FileText, Search, AlertCircle } from 'lucide-react'
+import Link from 'next/link'
+import { ExternalLink, FileCheck, FileText, Search, AlertCircle, ChevronRight } from 'lucide-react'
 
 interface SubLink {
   name: string
@@ -12,7 +13,9 @@ interface Municipality {
   jisCode: string
   name: string
   prefectureName: string
+  prefectureSlug: string
   municipalitySlug: string
+  isPublished: boolean
   url: string | null
   pdfUrl: string | null
   subLinks: SubLink[] | null
@@ -133,6 +136,17 @@ export default function MunicipalityList({ municipalities, onLinkClick }: Munici
                   </div>
                 </div>
               </div>
+            )}
+
+            {/* 内部ガイドへのリンク（公開済み自治体のみ — 非公開は404になるため除外） */}
+            {m.isPublished && (
+              <Link
+                href={`/kaissou/${m.prefectureSlug}/${m.municipalitySlug}`}
+                className="ml-11 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
+              >
+                {m.name}の手続きガイド（窓口・流れ・FAQ）
+                <ChevronRight className="h-3 w-3" />
+              </Link>
             )}
 
             {/* SubLinks (Wards/Districts) */}

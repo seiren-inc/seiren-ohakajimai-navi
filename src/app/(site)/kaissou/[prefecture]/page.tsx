@@ -6,6 +6,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
 import { FaqJsonLd } from "@/components/seo/faq-json-ld"
 import { ChevronRight, FileText, MapPin, UserCheck } from "lucide-react"
 import { PREFECTURES, findPrefectureSlug } from "@/lib/prefectures"
+import { FaqSection } from "@/components/kaisou/FaqSection"
 import { getPrefectureContent } from "@/lib/prefecture-content"
 
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
@@ -240,6 +241,9 @@ export default async function PrefecturePage(props: PageProps) {
                     <ChevronRight className="h-4 w-4" />
                   </Link>
                 </div>
+
+                {/* FAQ（FAQPage JSON-LD と同一内容の可視表示） */}
+                <FaqSection faqs={geoFaqs} title={`${prefName}の改葬・お墓じまい よくある質問`} />
             </div>
             {/* GEO対策用のFAQ構造化データ */}
             <FaqJsonLd faqs={geoFaqs} />

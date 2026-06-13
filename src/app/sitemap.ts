@@ -4,9 +4,9 @@ import { prisma } from '@/lib/prisma'
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const now = new Date()
-
     // 静的ページ（優先度・更新頻度を明示）
+    // lastModified は意図的に省略 — ビルドごとに now を刻むと全URLが「毎日更新」に見え、
+    // lastmod 全体の信頼性が下がる（Google は不正確な lastmod を無視するようになる）
     const staticRoutes: MetadataRoute.Sitemap = [
         { url: `${BASE_URL}/`,            priority: 1.0, changeFrequency: 'weekly'  as const },
         { url: `${BASE_URL}/about`,       priority: 0.9, changeFrequency: 'monthly' as const },
@@ -24,7 +24,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${BASE_URL}/estimation`,  priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/tokutei`,     priority: 0.4, changeFrequency: 'yearly'  as const },
         { url: `${BASE_URL}/privacy`,     priority: 0.4, changeFrequency: 'yearly'  as const },
-    ].map((r) => ({ ...r, lastModified: now }))
+    ]
+
+    // 都道府県ハブの lastmod = 配下自治体の最新 updatedAt（実データ由来の日付）
+    let prefectureLastmod = new Map<string, Date>()
+    try {
+        const groups = await prisma.municipality.groupBy({
+            by: ['prefectureSlug'],
+            where: { isPublished: true },
+            _max: { updatedAt: true },
+        })
+        prefectureLastmod = new Map(
+            groups.flatMap((g) => (g._max.updatedAt ? [[g.prefectureSlug, g._max.updatedAt] as const] : []))
+        )
+    } catch {
+        // DB接続エラー時は lastmod なしで続行
+    }
 
     // 改葬手続き情報の都道府県ページ
     const prefectures = [
@@ -38,12 +53,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         'fukuoka', 'saga', 'nagasaki', 'kumamoto', 'oita', 'miyazaki', 'kagoshima', 'okinawa',
     ]
 
-    const prefectureRoutes: MetadataRoute.Sitemap = prefectures.map((pref) => ({
-        url: `${BASE_URL}/kaissou/${pref}`,
-        lastModified: now,
-        changeFrequency: 'monthly' as const,
-        priority: 0.6,
-    }))
+    const prefectureRoutes: MetadataRoute.Sitemap = prefectures.map((pref) => {
+        const lastModified = prefectureLastmod.get(pref)
+        return {
+            url: `${BASE_URL}/kaissou/${pref}`,
+            ...(lastModified ? { lastModified } : {}),
+            changeFrequency: 'monthly' as const,
+            priority: 0.6,
+        }
+    })
 
     // 行政書士詳細ページ（承認済み・支払済みのみ）
     let scrivenerRoutes: MetadataRoute.Sitemap = []
@@ -98,12 +116,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         ...prefectureRoutes,
         ...municipalityRoutes,
         ...scrivenerRoutes,
-        ...getGyoseishoshiPrefRoutes(BASE_URL, now),
+        ...getGyoseishoshiPrefRoutes(BASE_URL),
         ...blogRoutes,
     ]
 }
 
-function getGyoseishoshiPrefRoutes(baseUrl: string, now: Date): MetadataRoute.Sitemap {
+function getGyoseishoshiPrefRoutes(baseUrl: string): MetadataRoute.Sitemap {
     const prefectures = [
         'hokkaido', 'aomori', 'iwate', 'miyagi', 'akita', 'yamagata', 'fukushima',
         'ibaraki', 'tochigi', 'gunma', 'saitama', 'chiba', 'tokyo', 'kanagawa',
@@ -116,7 +134,6 @@ function getGyoseishoshiPrefRoutes(baseUrl: string, now: Date): MetadataRoute.Si
     ]
     return prefectures.map((pref) => ({
         url: `${baseUrl}/gyoseishoshi/area/${pref}`,
-        lastModified: now,
         changeFrequency: 'monthly' as const,
         priority: 0.6,
     }))
