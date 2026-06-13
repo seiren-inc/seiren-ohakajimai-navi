@@ -27,8 +27,8 @@ function LinePreview() {
           <MessageSquare size={18} strokeWidth={1.75} />
         </div>
         <div className="flex-1 leading-[1.2]">
-          <div className="text-[13px] font-bold">お墓じまいナビ</div>
-          <div className="text-[10px] opacity-85">by 株式会社 清蓮 · 公式</div>
+          <div className="text-[13px] font-bold">株式会社清蓮</div>
+          <div className="text-[10px] opacity-85">公式アカウント</div>
         </div>
       </div>
 
