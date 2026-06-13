@@ -268,6 +268,14 @@ export function Footer() {
                         </li>
                         <li>
                             <Link
+                                href="/terms"
+                                className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
+                            >
+                                コンテンツ利用条件
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
                                 href="/contact"
                                 className="text-[13px] text-[#525762] hover:text-seiren-main hover:underline"
                             >

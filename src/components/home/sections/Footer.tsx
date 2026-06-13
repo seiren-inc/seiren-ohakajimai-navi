@@ -39,6 +39,7 @@ const FOOTER_NAV: Array<{ h: string; items: Array<{ label: string; href: string;
       { label: "お問い合わせ", href: "/contact" },
       { label: "プライバシーポリシー", href: "/privacy" },
       { label: "特定商取引法表記", href: "/tokutei" },
+      { label: "コンテンツ利用条件", href: "/terms" },
     ],
   },
 ]

@@ -183,6 +183,7 @@ export default async function MunicipalityPage(props: PageProps) {
             url: SITE_URL,
         },
         inLanguage: 'ja-JP',
+        license: `${SITE_URL}/terms`,
         keywords: [municipality.name, '改葬許可申請書', 'ダウンロード', 'お墓じまい', municipality.prefectureName],
         ...(municipality.pdfUrl ? {
             distribution: [{

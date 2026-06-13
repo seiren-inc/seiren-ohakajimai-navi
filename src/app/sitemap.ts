@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         { url: `${BASE_URL}/estimation`,  priority: 0.7, changeFrequency: 'monthly' as const },
         { url: `${BASE_URL}/tokutei`,     priority: 0.4, changeFrequency: 'yearly'  as const },
         { url: `${BASE_URL}/privacy`,     priority: 0.4, changeFrequency: 'yearly'  as const },
+        { url: `${BASE_URL}/terms`,       priority: 0.4, changeFrequency: 'yearly'  as const },
     ]
 
     // 都道府県ハブの lastmod = 配下自治体の最新 updatedAt（実データ由来の日付）
