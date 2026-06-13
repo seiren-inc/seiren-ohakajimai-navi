@@ -29,7 +29,7 @@ export async function createScrivenerCheckoutSession(prevState: unknown, formDat
     }
 
     const priceId = STRIPE_PRICE_IDS[planType]
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
     
     let checkoutUrl: string
 
@@ -96,7 +96,7 @@ export async function createScrivenerPortalSession() {
     }
 
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://ohakajimai-navi.jp"
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.ohakajimai-navi.jp"
         const session = await getStripe().billingPortal.sessions.create({
             customer: scrivener.stripeCustomerId,
             return_url: `${baseUrl}/scrivener/dashboard`,

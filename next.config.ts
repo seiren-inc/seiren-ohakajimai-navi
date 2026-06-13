@@ -87,8 +87,18 @@ const nextConfig: NextConfig = {
   // ─── HTTPSリダイレクト（二重防御） ──────────────────────────────
   // Vercel は HTTP→HTTPS を自動処理するが、アプリ層でも明示的に対応する
   async redirects() {
+    // 旧・行政書士エントリーページ → セルフサーブ登録へ恒久リダイレクト
+    // （ページ内 redirect() の 307 だと Google が URL を統合せず GSC に残り続ける）
+    const permanentRoutes = [
+      {
+        source: '/gyoseishoshi/entry',
+        destination: '/scrivener/signup',
+        permanent: true,
+      },
+    ]
     return process.env.NODE_ENV === 'production'
       ? [
+          ...permanentRoutes,
           {
             source: '/:path*',
             has: [{ type: 'header' as const, key: 'x-forwarded-proto', value: 'http' }],
@@ -96,7 +106,7 @@ const nextConfig: NextConfig = {
             permanent: true,
           },
         ]
-      : []
+      : permanentRoutes
   },
   async headers() {
     return [
