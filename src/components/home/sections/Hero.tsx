@@ -110,7 +110,7 @@ export function Hero() {
             <Reveal as="div" delay={0.3} className="mt-10 flex flex-wrap items-center gap-3.5">
               <PillLink variant="cta" size="lg" href="#contact">
                 <Mail size={17} className="text-white" strokeWidth={1.75} />
-                無料で相談する
+                清蓮に無料相談する
               </PillLink>
               <PillLink variant="ghost" size="lg" href="#flow">
                 サービスの流れを見る

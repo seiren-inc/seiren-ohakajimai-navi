@@ -25,9 +25,9 @@ import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { SeirenEcosystemNextSteps } from "@/components/features/ecosystem/SeirenEcosystemNextSteps"
 
 export const metadata = constructMetadata({
-  title: "ご依頼の流れ｜お墓じまい・改葬・墓石撤去の手続きを7ステップで解説｜お墓じまいナビ",
+  title: "お墓じまいの流れ｜改葬手続き・墓石撤去・納骨先相談まで解説",
   description:
-    "お墓じまい（改葬）の流れを7ステップで解説。無料相談・書類確認・現地調査・ご契約・墓石撤去・遺骨ケア・改葬先移送まで。改葬許可申請の案内と行政書士紹介を法令に基づき提供。株式会社清蓮（横浜・全国対応）。",
+    "お墓じまいの流れを、無料相談、必要書類確認、現地調査、契約、墓石撤去、遺骨ケア、納骨先相談まで清蓮が分かりやすく解説します。",
   path: '/flow',
 })
 
