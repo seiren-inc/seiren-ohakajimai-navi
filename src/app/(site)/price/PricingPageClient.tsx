@@ -90,12 +90,12 @@ function ScrollProgress() {
 
 // --- Page Data ---
 const comparisonRows = [
-  { label: "行政手続き代行", ours: "込み", compA: "別途費用", compB: "非対応" },
+  { label: "改葬手続きサポート", ours: "込み", compA: "別途費用", compB: "非対応" },
   { label: "見積り後の追加費用", ours: "原則なし", compA: "あり", compB: "あり" },
   { label: "現地調査", ours: "無料", compA: "有料", compB: "無料" },
   { label: "全国対応", ours: "47都道府県", compA: "関東のみ", compB: "主要都市のみ" },
   { label: "撤去後の写真報告", ours: "あり", compA: "なし", compB: "オプション" },
-  { label: "離檀交渉サポート", ours: "あり", compA: "なし", compB: "なし" },
+  { label: "寺院連絡・整理サポート", ours: "あり", compA: "なし", compB: "なし" },
 ]
 
 const pricingFaqs = [
@@ -148,9 +148,9 @@ const INCLUDED_SERVICES = [
   "石材撤去・整地工事",
   "工程管理・日程調整",
   "写真付き完了報告書",
-  "行政手続き確認サポート",
+  "改葬手続きの確認サポート",
   "近隣・管理者対応",
-  "離檀交渉サポート",
+  "寺院連絡・整理サポート",
 ]
 
 
@@ -343,8 +343,8 @@ export default function PricingPageClient() {
                 </div>
               </div>
               <div className="flex flex-col flex-1 p-8 md:p-10">
-                <p className="text-xs font-semibold tracking-widest text-[#6E6E73] uppercase mb-2">Administrative</p>
-                <h3 className="text-2xl font-bold text-[#1D1D1F] mb-4">行政手続き代行</h3>
+                <p className="text-xs font-semibold tracking-widest text-[#6E6E73] uppercase mb-2">Procedure Support</p>
+                <h3 className="text-2xl font-bold text-[#1D1D1F] mb-4">改葬手続きサポート</h3>
                 <div className="flex items-baseline gap-2 mb-6">
                   <span aria-label="55,000円から">
                     <span className="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-600">55,000</span>
@@ -356,10 +356,10 @@ export default function PricingPageClient() {
                 <div className="space-y-3 mb-8 flex-1">
                   <h4 className="text-sm font-semibold text-[#1D1D1F] mb-4">含まれるサービス</h4>
                   {[
-                    "改葬許可申請書の作成・提出代行",
-                    "埋蔵証明書の取得サポート",
-                    "受入証明書の手配サポート",
-                    "自治体窓口との交渉・確認"
+                    "必要書類の確認・取得方法のご案内",
+                    "埋蔵証明書の取得方法のご案内",
+                    "受入証明書の確認・取得方法のご案内",
+                    "自治体窓口の確認事項整理"
                   ].map(item => (
                     <div key={item} className="flex items-center gap-3 text-sm text-[#6E6E73]">
                       <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-100">
@@ -369,6 +369,9 @@ export default function PricingPageClient() {
                     </div>
                   ))}
                 </div>
+                <p className="text-xs leading-relaxed text-[#86868B] border-t border-gray-100 pt-4">
+                  改葬許可申請書の作成・提出代理は、行政書士等の有資格者が行う業務です。清蓮は手続きの流れのご説明・必要書類の確認・取得方法のご案内を行い、代理申請が必要な場合は提携行政書士をご紹介します。
+                </p>
               </div>
             </div>
 
@@ -793,6 +796,48 @@ export default function PricingPageClient() {
               </details>
             ))}
           </div>
+        </div>
+      </Section>
+
+      {/* 清蓮 / 行政書士 役割分担表 */}
+      <Section className="py-16 bg-[#F5F5F7]/60">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-xl font-bold text-[#1D1D1F] mb-2 text-center md:text-2xl">清蓮ができること・行政書士が行うこと</h2>
+          <p className="text-sm text-[#6E6E73] text-center mb-8 max-w-[52ch] mx-auto leading-relaxed">
+            お墓じまいは複数の専門領域にまたがります。清蓮の対応範囲と、行政書士が行う手続きを整理しました。
+          </p>
+          <div className="overflow-hidden rounded-2xl border border-gray-200 bg-white">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-[#F5F5F7] text-[#1D1D1F]">
+                  <th className="px-4 py-3 text-left font-semibold">項目</th>
+                  <th className="px-3 py-3 text-center font-semibold whitespace-nowrap">清蓮</th>
+                  <th className="px-3 py-3 text-center font-semibold whitespace-nowrap">行政書士</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { item: "お墓じまい全体の流れ整理", seiren: "対応可", gyosei: "必要に応じて連携" },
+                  { item: "墓石撤去・原状回復", seiren: "対応可", gyosei: "対象外" },
+                  { item: "遺骨の取り出し後の相談", seiren: "対応可", gyosei: "対象外" },
+                  { item: "粉骨・洗骨", seiren: "対応可", gyosei: "対象外" },
+                  { item: "散骨・永代供養・納骨先相談", seiren: "対応可", gyosei: "対象外" },
+                  { item: "改葬許可申請の一般的な説明", seiren: "対応可", gyosei: "対応可" },
+                  { item: "改葬許可申請書の作成・提出代理", seiren: "対応不可", gyosei: "対応可" },
+                  { item: "自治体への代理申請", seiren: "対応不可", gyosei: "対応可" },
+                ].map((row) => (
+                  <tr key={row.item}>
+                    <td className="px-4 py-3 text-[#1D1D1F]">{row.item}</td>
+                    <td className={`px-3 py-3 text-center font-medium ${row.seiren === "対応不可" ? "text-[#86868B]" : "text-emerald-600"}`}>{row.seiren}</td>
+                    <td className={`px-3 py-3 text-center ${row.gyosei === "対象外" ? "text-[#86868B]" : "text-[#1D1D1F]"}`}>{row.gyosei}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-sm text-[#6E6E73] leading-relaxed max-w-[56ch] mx-auto">
+            清蓮では、無資格での代理申請は行いません。手続き全体の整理と必要書類の確認を行い、代理申請が必要な場合は提携行政書士をご紹介します。
+          </p>
         </div>
       </Section>
 

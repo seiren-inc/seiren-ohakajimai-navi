@@ -66,7 +66,7 @@ export function FinalCTA() {
               className="w-full !min-h-[62px]"
             >
               <Mail size={18} className="text-white" strokeWidth={1.75} />
-              無料で相談する
+              清蓮に無料相談する
             </PillLink>
             <Link
               href="/flow"
