@@ -210,20 +210,20 @@ export default function AboutPage() {
           </section>
 
           {/* CTA */}
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/flow"
-              className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
-            >
-              改葬・お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
-            </Link>
-            <p className="mt-3 text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            >
+              無料相談・お見積りはこちら <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/flow"
               className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors"
             >
-              無料相談・お見積り <ArrowRight className="h-4 w-4" />
+              お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
             </Link>
+            <p className="text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
           </div>
 
           {/* 関連ページ */}
