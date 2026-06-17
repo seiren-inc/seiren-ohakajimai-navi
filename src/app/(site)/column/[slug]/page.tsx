@@ -171,16 +171,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
-              href="/price"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-seiren-cta px-6 py-3 font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
             >
-              料金プランを見る <ChevronRight className="h-4 w-4" />
+              無料相談・見積もりはこちら <ChevronRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="/price"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
             >
-              無料相談してみる
+              料金・費用を確認する
             </Link>
           </div>
         </div>
