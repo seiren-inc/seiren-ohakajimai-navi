@@ -188,6 +188,24 @@ export default function AboutPage() {
             </div>
           </section>
 
+          {/* 中盤 CTA */}
+          <div className="rounded-2xl bg-emerald-50 border border-emerald-100 p-8 text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 mb-2">相談無料</p>
+            <h2 className="text-lg font-bold text-neutral-900 md:text-xl">お墓じまい・改葬で迷ったら清蓮へご相談ください</h2>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-600 max-w-[52ch] mx-auto">
+              お墓じまいは、改葬許可申請だけでなく、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。清蓮では全体の流れを整理し、ご状況に合わせてご案内します。
+            </p>
+            <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+              >
+                清蓮にお墓じまいを無料相談する <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <p className="mt-3 text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
+          </div>
+
           {/* FAQ ミニ */}
           <section>
             <h2 className="text-lg font-bold text-neutral-900 md:text-2xl">よくある質問</h2>
@@ -210,21 +228,21 @@ export default function AboutPage() {
           </section>
 
           {/* CTA */}
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link
-              href="/flow"
-              className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
-            >
-              改葬・お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
-            </Link>
-            <p className="mt-3 text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link
               href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            >
+              清蓮に無料相談・お見積り <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/flow"
               className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors"
             >
-              無料相談・お見積り <ArrowRight className="h-4 w-4" />
+              お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+          <p className="text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
 
           {/* 関連ページ */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
