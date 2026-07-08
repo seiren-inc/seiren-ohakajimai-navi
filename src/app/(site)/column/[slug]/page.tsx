@@ -9,7 +9,7 @@ import { CANONICAL_AUTHOR } from '@/lib/authors'
 import { RelatedArticles } from '@/components/blog/RelatedArticles'
 import { ExpertBadge } from '@/components/seo/expert-badge'
 import { MDXRemote } from 'next-mdx-remote/rsc'
-import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
+import { Clock, Tag, ChevronRight, Info, ArrowRight } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
 import type React from 'react'
@@ -59,6 +59,34 @@ const components = {
     <div className="my-8 rounded-xl border border-emerald-100 bg-emerald-50/50 p-5 overflow-hidden">
       {title && <h4 className="flex items-center gap-2 font-bold text-emerald-800 mb-3"><Info className="w-5 h-5" />{title}</h4>}
       <div className="text-neutral-700 text-sm leading-relaxed">{children}</div>
+    </div>
+  ),
+  SeirenCTA: ({ showGyosei }: { showGyosei?: boolean }) => (
+    <div className="my-10 rounded-2xl border border-emerald-200 bg-emerald-50/60 p-6 not-prose">
+      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-2">お墓じまいの相談</p>
+      <h3 className="text-lg font-bold text-neutral-900 mb-3">
+        お墓じまい・改葬で迷ったら清蓮へご相談ください
+      </h3>
+      <p className="text-sm text-neutral-600 leading-relaxed mb-5">
+        お墓じまいは、改葬許可申請だけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。清蓮では、全体の流れを整理し、ご状況に合わせて必要な手続きや供養先をご案内します。
+      </p>
+      <div className="flex flex-col sm:flex-row items-center gap-3">
+        <Link
+          href="/contact"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 px-6 py-3 font-semibold text-white text-sm hover:bg-emerald-700 transition-colors w-full sm:w-auto"
+        >
+          清蓮にお墓じまいを無料相談する
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+        {showGyosei && (
+          <Link
+            href="/gyoseishoshi"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-700 text-sm hover:bg-neutral-50 transition-colors w-full sm:w-auto"
+          >
+            行政書士に無料相談する
+          </Link>
+        )}
+      </div>
     </div>
   ),
   ExpertBadge: ({ name, qualification, officeName, comment, profileUrl }: {
@@ -171,16 +199,16 @@ export default async function BlogPostPage({ params }: PageProps) {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
-              href="/price"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-seiren-cta px-6 py-3 font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
             >
-              料金プランを見る <ChevronRight className="h-4 w-4" />
+              清蓮に無料相談する <ChevronRight className="h-4 w-4" />
             </Link>
             <Link
-              href="/contact"
+              href="/price"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
             >
-              無料相談してみる
+              料金プランを見る
             </Link>
           </div>
         </div>
