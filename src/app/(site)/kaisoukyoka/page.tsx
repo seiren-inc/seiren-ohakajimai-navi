@@ -214,7 +214,25 @@ export default async function KaisoukyokaPage() {
         </div>
       </div>
 
-      {/* Doc-09 §7: 行政書士への導線 */}
+      {/* 清蓮への相談CTA（主導線） */}
+      <section className="border-t bg-emerald-50 px-4 py-10 text-center">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-lg font-bold text-emerald-900 md:text-xl">お墓じまい・改葬で迷ったら清蓮へご相談ください</h2>
+          <p className="mt-3 text-sm leading-relaxed text-emerald-800 max-w-[52ch] mx-auto">
+            改葬許可申請書の準備だけでなく、墓石撤去・閉眼供養・遺骨の取り出し・粉骨・洗骨・次の納骨先選びまで、お墓じまい全体を整理してご案内します。
+          </p>
+          <Link
+            href="/contact"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+          >
+            清蓮にお墓じまいを無料相談する
+            <ChevronRight className="h-4 w-4" />
+          </Link>
+          <p className="mt-3 text-xs text-emerald-700">相談・お見積りは無料。強引な勧誘はしません。</p>
+        </div>
+      </section>
+
+      {/* 行政書士への導線（補助導線） */}
       <section className="border-t bg-muted/30 px-4 py-10 text-center">
         <div className="mx-auto max-w-2xl">
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -223,7 +241,7 @@ export default async function KaisoukyokaPage() {
           <p className="mt-2 text-xs text-muted-foreground">相談・ご紹介は無料。強引な勧誘はしません。</p>
           <Link
             href="/gyoseishoshi"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-slate-100 transition-colors"
           >
             行政書士に相談する
             <ChevronRight className="h-4 w-4" />
