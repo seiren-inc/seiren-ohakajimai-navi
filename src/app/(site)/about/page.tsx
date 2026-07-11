@@ -212,23 +212,25 @@ export default function AboutPage() {
           {/* CTA */}
           <div className="flex flex-col gap-4 sm:flex-row">
             <Link
-              href="/flow"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-4 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
             >
-              改葬・お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
+              清蓮にお墓じまいを無料相談する <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="mt-3 text-xs text-neutral-500">ご相談・お見積りは無料。強引な勧誘はしません。</p>
             <Link
-              href="/contact"
+              href="/flow"
               className="inline-flex items-center gap-2 rounded-full border-2 border-neutral-200 px-8 py-4 text-sm font-semibold text-neutral-700 hover:border-neutral-300 transition-colors"
             >
-              無料相談・お見積り <ArrowRight className="h-4 w-4" />
+              改葬・お墓じまいの流れを見る <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           {/* 関連ページ */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
             <Link href="/price" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-900">お墓じまいの費用・料金</Link>
+            <Link href="/kaissou" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-900">改葬手続き・申請書の進め方</Link>
+            <Link href="/kaisoukyoka" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-900">改葬許可申請書ダウンロード</Link>
             <Link href="/gyoseishoshi" className="text-emerald-700 underline underline-offset-4 hover:text-emerald-900">改葬手続きと行政書士について</Link>
           </div>
         </div>
