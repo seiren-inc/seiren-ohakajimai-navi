@@ -48,8 +48,8 @@ export async function generateMetadata(props: PageProps) {
     if (!prefName) notFound()
 
     return constructMetadata({
-        title: `${prefName}でのお墓じまい・改葬手続き情報一覧｜行政書士・窓口対応`,
-        description: `${prefName}内の各市区町村（自治体）の改葬許可申請書のダウンロード先や手続き窓口を掲載。${prefName}の改葬代行に対応可能な行政書士情報も紹介しています。お墓じまいのご相談は無料です。`,
+        title: `${prefName}でのお墓じまい・改葬手続き情報一覧｜清蓮・行政書士対応`,
+        description: `${prefName}の改葬許可申請書・手続き窓口を市区町村別に掲載。墓石撤去・遺骨の供養先まで清蓮にまとめてご相談可能。${prefName}対応の行政書士もご紹介。お墓じまいのご相談は無料です。`,
         path: `/kaissou/${prefectureSlug}`
     })
 }
@@ -227,9 +227,25 @@ export default async function PrefecturePage(props: PageProps) {
                     </div>
                 )}
 
-                {/* 行政書士紹介CTA — 常時表示 */}
-                <div className="mt-10 rounded-xl border bg-slate-50 p-6">
-                  <h2 className="text-base font-bold">{prefName}の改葬手続きを専門家に任せたい方へ</h2>
+                {/* 清蓮への相談CTA — 主導線 */}
+                <div className="mt-10 rounded-xl border border-emerald-200 bg-emerald-50 p-6">
+                  <h2 className="text-base font-bold text-neutral-900">{prefName}のお墓じまい・改葬を清蓮にご相談ください</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+                    改葬は、許可申請書の手続きだけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の供養先選びまで関係します。清蓮では、{prefName}のお墓じまい全体をトータルでサポートします。
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-emerald-700 transition-colors"
+                  >
+                    清蓮にお墓じまいを無料相談する
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">ご相談・お見積り無料。全国対応。2営業日以内に返信。</p>
+                </div>
+
+                {/* 行政書士紹介CTA — 補助導線 */}
+                <div className="mt-4 rounded-xl border bg-slate-50 p-6">
+                  <h2 className="text-base font-bold">{prefName}の改葬許可申請書類を専門家に任せたい方へ</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                     改葬許可申請の書類作成・提出代行は行政書士に依頼できます。お墓じまいナビでは{prefName}エリアに対応した提携行政書士をご紹介しています。ご紹介は無料です。
                   </p>
