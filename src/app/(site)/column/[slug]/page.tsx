@@ -13,6 +13,7 @@ import { Clock, Tag, ChevronRight, Info } from 'lucide-react'
 import { format } from 'date-fns'
 import Link from 'next/link'
 import type React from 'react'
+import { SeirenCTA } from '@/components/mdx/SeirenCTA'
 
 const SITE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ohakajimai-navi.jp'
 
@@ -75,6 +76,9 @@ const components = {
       comment={comment}
       profileUrl={profileUrl}
     />
+  ),
+  SeirenCTA: ({ heading }: { heading?: string }) => (
+    <SeirenCTA heading={heading} />
   ),
 }
 
