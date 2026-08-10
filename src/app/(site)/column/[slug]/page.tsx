@@ -76,6 +76,28 @@ const components = {
       profileUrl={profileUrl}
     />
   ),
+  SeirenCTA: () => (
+    <div className="not-prose my-8 rounded-xl border border-[var(--seiren-border)] bg-[var(--seiren-cta-soft)] p-6">
+      <p className="mb-1 text-base font-bold text-[var(--seiren-main)]">
+        お墓じまい・改葬のご相談は清蓮へ
+      </p>
+      <p className="mb-4 text-sm leading-relaxed text-[var(--seiren-body)]">
+        墓石撤去・閉眼供養・遺骨の取り出し・粉骨・洗骨から次の納骨先選びまで、お墓じまい全体の流れを整理してご案内します。横浜を拠点に全国対応。まずは無料相談からどうぞ。
+      </p>
+      <Link
+        href="/contact"
+        className="inline-flex items-center gap-1.5 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
+      >
+        清蓮にお墓じまいを無料相談する
+        <ChevronRight className="h-4 w-4" />
+      </Link>
+      <p className="mt-3 text-xs text-[var(--seiren-sub)]">
+        改葬許可申請の書類作成に不安がある方は、
+        <Link href="/gyoseishoshi" className="underline hover:no-underline">行政書士に相談する</Link>
+        こともできます。
+      </p>
+    </div>
+  ),
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
