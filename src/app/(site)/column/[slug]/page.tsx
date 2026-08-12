@@ -76,6 +76,30 @@ const components = {
       profileUrl={profileUrl}
     />
   ),
+  ConsultCTA: ({ message }: { message?: string }) => (
+    <div className="my-10 rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 to-orange-50/60 p-6">
+      <p className="mb-1 font-bold text-amber-900 md:text-base">
+        お墓じまい・改葬で迷ったら清蓮へご相談ください
+      </p>
+      <p className="mb-4 text-sm leading-relaxed text-neutral-700">
+        {message ??
+          'お墓じまいは、改葬許可申請だけでなく、墓石撤去・閉眼供養・遺骨の取り出し・粉骨・洗骨・次の納骨先選びまで関係します。清蓮では、全体の流れを整理し、ご状況に合わせた進め方をご案内します。'}
+      </p>
+      <Link
+        href="/contact"
+        className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
+      >
+        清蓮にお墓じまいを無料相談する <ChevronRight className="h-4 w-4" />
+      </Link>
+      <p className="mt-3 text-xs text-neutral-500">
+        書類作成・改葬許可申請に不安がある場合は、
+        <Link href="/gyoseishoshi" className="text-emerald-600 underline">
+          行政書士への相談
+        </Link>
+        も選択肢です。
+      </p>
+    </div>
+  ),
 }
 
 export default async function BlogPostPage({ params }: PageProps) {
