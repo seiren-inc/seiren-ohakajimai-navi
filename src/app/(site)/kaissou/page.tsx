@@ -83,15 +83,36 @@ export default function KaissouPage() {
                     ))}
                 </div>
 
+                {/* 清蓮CTA */}
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50 p-6 text-center">
+                  <h2 className="text-lg font-bold text-neutral-900">お墓じまい全体を清蓮に相談する</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[52ch] mx-auto">
+                    改葬許可申請の手続き確認だけでなく、墓石撤去・閉眼供養・遺骨の取り出し・粉骨・洗骨・散骨・次の供養先選びまで、お墓じまい全体を清蓮にご相談いただけます。費用の見積りは無料。追加請求は原則ありません。
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                  >
+                    お墓じまいを清蓮に無料相談する
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">相談・見積りは無料。強引な勧誘はしません。</p>
+                  <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs">
+                    <Link href="/price" className="text-emerald-700 underline underline-offset-2 hover:text-emerald-900">費用について</Link>
+                    <Link href="/flow" className="text-emerald-700 underline underline-offset-2 hover:text-emerald-900">お墓じまいの流れ</Link>
+                    <Link href="/about" className="text-emerald-700 underline underline-offset-2 hover:text-emerald-900">清蓮のサービス</Link>
+                  </div>
+                </div>
+
                 {/* 行政書士紹介CTA */}
                 <div className="rounded-xl border bg-slate-50 p-6 text-center">
-                  <h2 className="text-lg font-bold text-neutral-900">手続きに不安がある方は行政書士に相談できます</h2>
+                  <h2 className="text-lg font-bold text-neutral-900">書類作成・申請代行は行政書士に相談できます</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[48ch] mx-auto">
                     改葬許可申請の書類作成・提出代行は行政書士が行える業務です。お墓じまいナビでは全国の提携行政書士をご紹介しています。
                   </p>
                   <Link
                     href="/gyoseishoshi"
-                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-neutral-700 px-6 py-3 text-sm font-semibold text-white hover:bg-neutral-800 transition-colors"
                   >
                     行政書士マッチングを利用する
                     <ChevronRight className="h-4 w-4" />
