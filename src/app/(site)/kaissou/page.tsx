@@ -83,6 +83,22 @@ export default function KaissouPage() {
                     ))}
                 </div>
 
+                {/* 清蓮CTA */}
+                <div className="rounded-xl border border-emerald-200 bg-emerald-50/60 p-6 text-center">
+                  <h2 className="text-lg font-bold text-neutral-900">お墓じまい全体の相談は清蓮へ</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[52ch] mx-auto">
+                    改葬許可申請書の準備だけでなく、墓石撤去・閉眼供養・遺骨の取り出し・粉骨・洗骨・次の納骨先選びまで、お墓じまい全体をまとめてご相談ください。現地調査・見積もりは無料。全国47都道府県対応。
+                  </p>
+                  <Link
+                    href="/"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                  >
+                    清蓮にお墓じまいを無料相談する
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">相談・見積もり無料。強引な勧誘は一切行いません。</p>
+                </div>
+
                 {/* 行政書士紹介CTA */}
                 <div className="rounded-xl border bg-slate-50 p-6 text-center">
                   <h2 className="text-lg font-bold text-neutral-900">手続きに不安がある方は行政書士に相談できます</h2>
