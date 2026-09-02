@@ -83,15 +83,31 @@ export default function KaissouPage() {
                     ))}
                 </div>
 
+                {/* 清蓮お墓じまい相談CTA */}
+                <div className="rounded-xl border border-emerald-100 bg-emerald-50 p-6 text-center">
+                  <h2 className="text-lg font-bold text-neutral-900">お墓じまい・改葬でお困りの方は清蓮へご相談ください</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[52ch] mx-auto">
+                    改葬許可申請だけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで、清蓮ではお墓じまい全体の流れをご案内します。横浜を拠点に全国対応。
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                  >
+                    清蓮にお墓じまいを無料相談する
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">相談・見積り無料。強引な勧誘はしません。</p>
+                </div>
+
                 {/* 行政書士紹介CTA */}
                 <div className="rounded-xl border bg-slate-50 p-6 text-center">
-                  <h2 className="text-lg font-bold text-neutral-900">手続きに不安がある方は行政書士に相談できます</h2>
+                  <h2 className="text-lg font-bold text-neutral-900">書類作成・申請代行に不安がある方は行政書士へ</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[48ch] mx-auto">
                     改葬許可申請の書類作成・提出代行は行政書士が行える業務です。お墓じまいナビでは全国の提携行政書士をご紹介しています。
                   </p>
                   <Link
                     href="/gyoseishoshi"
-                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                    className="mt-5 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-6 py-3 text-sm font-semibold text-neutral-700 hover:bg-neutral-50 transition-colors"
                   >
                     行政書士マッチングを利用する
                     <ChevronRight className="h-4 w-4" />
