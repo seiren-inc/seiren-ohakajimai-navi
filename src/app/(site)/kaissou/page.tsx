@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { constructMetadata } from "@/lib/seo"
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld"
-import { MapPin, ChevronRight } from "lucide-react"
+import { MapPin, ChevronRight, Phone } from "lucide-react"
 import { PREFECTURES, REGIONS } from "@/lib/prefectures"
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 
@@ -59,6 +59,11 @@ export default function KaissouPage() {
                         都道府県から該当の市区町村を選択してください。
                         各自治体の改葬許可申請書のダウンロード先や、窓口情報を確認できます。
                     </p>
+                    <p className="typography-body mx-auto max-w-[52ch] text-muted-foreground text-sm">
+                        手続きの流れ全体の整理や、墓石撤去・遺骨の供養先まで含めた相談は
+                        <Link href="/contact" className="text-primary underline underline-offset-2 hover:no-underline">清蓮（お墓じまい専門）</Link>
+                        にご相談ください。
+                    </p>
                 </div>
 
                 <div className="grid gap-8">
@@ -83,20 +88,58 @@ export default function KaissouPage() {
                     ))}
                 </div>
 
-                {/* 行政書士紹介CTA */}
+                {/* 清蓮への相談CTA（第1優先） */}
+                <div className="rounded-xl border-2 border-primary/20 bg-primary/5 p-6 text-center space-y-3">
+                  <h2 className="text-lg font-bold text-neutral-900">お墓じまい・改葬で迷ったら清蓮へご相談ください</h2>
+                  <p className="text-sm leading-relaxed text-muted-foreground max-w-[52ch] mx-auto">
+                    改葬は許可申請だけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。
+                    清蓮では<Link href="/about" className="underline underline-offset-2 hover:no-underline">お墓じまい</Link>全体の流れを整理し、ご状況に合わせて必要な手続きや供養先をご案内します。
+                  </p>
+                  <div>
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                    >
+                      <Phone className="h-4 w-4" />
+                      清蓮にお墓じまいを無料相談する
+                      <ChevronRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                  <p className="text-xs text-muted-foreground">相談・お見積りは無料。強引な勧誘はしません。</p>
+                </div>
+
+                {/* 行政書士紹介CTA（補助導線） */}
                 <div className="rounded-xl border bg-slate-50 p-6 text-center">
-                  <h2 className="text-lg font-bold text-neutral-900">手続きに不安がある方は行政書士に相談できます</h2>
+                  <h2 className="text-base font-bold text-neutral-900">書類作成・申請代行に不安がある方は行政書士へ</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground max-w-[48ch] mx-auto">
-                    改葬許可申請の書類作成・提出代行は行政書士が行える業務です。お墓じまいナビでは全国の提携行政書士をご紹介しています。
+                    改葬許可申請書の書類作成・提出代行は行政書士が行える業務です。お墓じまいナビでは全国の提携行政書士をご紹介しています。
                   </p>
                   <Link
                     href="/gyoseishoshi"
-                    className="mt-5 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full border border-neutral-300 bg-white px-5 py-2.5 text-sm font-semibold text-neutral-700 hover:bg-slate-100 transition-colors"
                   >
                     行政書士マッチングを利用する
                     <ChevronRight className="h-4 w-4" />
                   </Link>
                   <p className="mt-3 text-xs text-muted-foreground">ご紹介は無料。強引な勧誘はしません。</p>
+                </div>
+
+                {/* 関連ページリンク */}
+                <div className="pt-2 border-t border-neutral-100">
+                  <p className="text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-3 text-center">関連ページ</p>
+                  <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+                    {[
+                      { href: "/about", label: "お墓じまいとは" },
+                      { href: "/flow", label: "お墓じまいの流れ" },
+                      { href: "/price", label: "費用・料金" },
+                      { href: "/kaisougo", label: "改葬後の供養先" },
+                      { href: "/kaisoukyoka", label: "改葬許可申請書ダウンロード" },
+                    ].map((link) => (
+                      <Link key={link.href} href={link.href} className="text-sm text-primary underline underline-offset-4 hover:no-underline">
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
             </div>
         </div>
