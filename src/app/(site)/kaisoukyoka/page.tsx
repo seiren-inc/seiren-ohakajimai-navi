@@ -214,16 +214,42 @@ export default async function KaisoukyokaPage() {
         </div>
       </div>
 
-      {/* Doc-09 §7: 行政書士への導線 */}
-      <section className="border-t bg-muted/30 px-4 py-10 text-center">
+      {/* 清蓮への主導線（CTA優先順位1）— 改葬許可申請ページから清蓮の無料相談へ */}
+      <section className="border-t bg-emerald-50 dark:bg-emerald-950/20 px-4 py-12">
+        <div className="mx-auto max-w-2xl text-center">
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+            お墓じまいの相談先
+          </p>
+          <h2 className="mt-3 text-lg font-bold text-foreground md:text-xl">
+            改葬許可申請だけでなく、お墓じまい全体の相談は清蓮へ
+          </h2>
+          <p className="mt-4 max-w-lg mx-auto text-sm leading-relaxed text-muted-foreground">
+            お墓じまいは、改葬許可申請だけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。
+            清蓮では、お墓じまい全体の流れを整理し、ご状況に合わせて必要な手続きや供養先をご案内します。
+          </p>
+          <div className="mt-6">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-seiren-cta px-8 py-3 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            >
+              清蓮にお墓じまいを無料相談する
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <p className="mt-3 text-xs text-muted-foreground">相談・お見積りは無料。強引な勧誘はしません。</p>
+        </div>
+      </section>
+
+      {/* Doc-09 §7: 行政書士への補助導線 */}
+      <section className="border-t bg-muted/30 px-4 py-8 text-center">
         <div className="mx-auto max-w-2xl">
           <p className="text-sm leading-relaxed text-muted-foreground">
             申請書の書き方や提出方法に不安がある方は、改葬許可申請に詳しい行政書士にご相談いただけます。
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">相談・ご紹介は無料。強引な勧誘はしません。</p>
+          <p className="mt-1 text-xs text-muted-foreground">相談・ご紹介は無料。強引な勧誘はしません。</p>
           <Link
             href="/gyoseishoshi"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            className="mt-4 inline-flex items-center gap-2 rounded-full border border-border px-6 py-2.5 text-sm font-medium text-foreground hover:bg-muted transition-colors"
           >
             行政書士に相談する
             <ChevronRight className="h-4 w-4" />
