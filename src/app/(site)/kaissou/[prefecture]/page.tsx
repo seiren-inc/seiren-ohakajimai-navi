@@ -227,15 +227,31 @@ export default async function PrefecturePage(props: PageProps) {
                     </div>
                 )}
 
-                {/* 行政書士紹介CTA — 常時表示 */}
-                <div className="mt-10 rounded-xl border bg-slate-50 p-6">
-                  <h2 className="text-base font-bold">{prefName}の改葬手続きを専門家に任せたい方へ</h2>
+                {/* 清蓮への無料相談CTA（主導線） */}
+                <div className="mt-10 rounded-xl border border-primary/20 bg-primary/5 p-6">
+                  <h2 className="text-base font-bold">{prefName}のお墓じまい・改葬を清蓮にご相談ください</h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    改葬許可申請の書類作成・提出代行は行政書士に依頼できます。お墓じまいナビでは{prefName}エリアに対応した提携行政書士をご紹介しています。ご紹介は無料です。
+                    お墓じまいは改葬許可申請だけでなく、墓地管理者への確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。清蓮では、{prefName}を含む全国のお墓じまい全体の流れを整理し、ご状況に合わせた進め方をご案内します。
+                  </p>
+                  <Link
+                    href="/contact"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                  >
+                    清蓮にお墓じまいを無料相談する
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-muted-foreground">無料相談・見積もり受付中。強引な勧誘はしません。</p>
+                </div>
+
+                {/* 行政書士紹介CTA（補助導線） */}
+                <div className="mt-6 rounded-xl border bg-slate-50 p-6">
+                  <h2 className="text-base font-bold">{prefName}の改葬許可申請を専門家に任せたい方へ</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    改葬許可申請書の書類作成・提出代行は行政書士に依頼できます。お墓じまいナビでは{prefName}エリアに対応した提携行政書士をご紹介しています。ご紹介は無料です。
                   </p>
                   <Link
                     href={`/gyoseishoshi/area/${prefectureSlug}`}
-                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-5 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+                    className="mt-4 inline-flex items-center gap-2 rounded-full bg-muted px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted/80 transition-colors border"
                   >
                     {prefName}の行政書士を探す
                     <ChevronRight className="h-4 w-4" />

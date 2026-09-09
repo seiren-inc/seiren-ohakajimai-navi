@@ -90,6 +90,12 @@ export const ECOSYSTEM_NEXT_STEPS_BY_CONTEXT: Record<EcosystemNextStepsContext, 
     kaisougo: [OHAKA_NAVI, CRUISE, IKOTSU_LAB],
     kaisoukyoka: [
         {
+            id: "seiren-contact",
+            href: "/contact",
+            title: "清蓮にお墓じまいを無料相談する",
+            description: "墓石撤去・遺骨取り出し・粉骨・洗骨・納骨先選びまで、お墓じまい全体を相談できます。",
+        },
+        {
             id: "gyoseishoshi-internal",
             href: "/gyoseishoshi",
             title: "行政書士マッチング（当サイト）",
