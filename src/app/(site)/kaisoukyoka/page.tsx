@@ -208,13 +208,31 @@ export default async function KaisoukyokaPage() {
       {/* subLinks は Prisma が JsonValue で返すが、ランタイムでは SubLink[] 構造が保証されている */}
       <KaisoukyokaClient initialData={groupedData as React.ComponentProps<typeof KaisoukyokaClient>['initialData']} />
 
+      {/* 清蓮への無料相談CTA（主導線） */}
+      <section className="border-t bg-primary/5 px-4 py-10 text-center">
+        <div className="mx-auto max-w-2xl">
+          <h2 className="text-lg font-bold text-neutral-900">お墓じまい・改葬で迷ったら清蓮へご相談ください</h2>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            改葬許可申請は、お墓じまい全体の一部です。墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで、清蓮では全体の流れを整理し、ご状況に合わせた進め方をご案内します。
+          </p>
+          <p className="mt-2 text-xs text-muted-foreground">無料相談・見積もり受付中。強引な勧誘はしません。</p>
+          <Link
+            href="/contact"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+          >
+            清蓮にお墓じまいを無料相談する
+            <ChevronRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
       <div className="border-t bg-background px-4 py-10">
         <div className="mx-auto max-w-3xl">
           <SeirenEcosystemNextSteps context="kaisoukyoka" />
         </div>
       </div>
 
-      {/* Doc-09 §7: 行政書士への導線 */}
+      {/* 行政書士への導線（補助導線） */}
       <section className="border-t bg-muted/30 px-4 py-10 text-center">
         <div className="mx-auto max-w-2xl">
           <p className="text-sm leading-relaxed text-muted-foreground">
@@ -223,7 +241,7 @@ export default async function KaisoukyokaPage() {
           <p className="mt-2 text-xs text-muted-foreground">相談・ご紹介は無料。強引な勧誘はしません。</p>
           <Link
             href="/gyoseishoshi"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-seiren-cta px-6 py-2.5 text-sm font-semibold text-white hover:bg-seiren-cta-hover transition-colors"
+            className="mt-4 inline-flex items-center gap-2 rounded-full bg-muted px-6 py-2.5 text-sm font-semibold text-foreground hover:bg-muted/80 transition-colors border"
           >
             行政書士に相談する
             <ChevronRight className="h-4 w-4" />
