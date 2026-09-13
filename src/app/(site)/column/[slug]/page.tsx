@@ -160,6 +160,34 @@ export default async function BlogPostPage({ params }: PageProps) {
           <MDXRemote source={content} components={components} />
         </article>
 
+        {/* 清蓮への相談CTA — 全記事に表示 */}
+        <div className="mt-16 rounded-2xl bg-emerald-50 border border-emerald-200 p-8">
+          <h3 className="text-xl font-bold text-neutral-900 mb-3">
+            お墓じまい・改葬で迷ったら清蓮へご相談ください
+          </h3>
+          <p className="text-neutral-700 leading-relaxed mb-2">
+            お墓じまいは、改葬許可申請だけでなく、墓地管理者との確認、墓石撤去、閉眼供養、遺骨の取り出し、粉骨・洗骨、次の納骨先選びまで関係します。
+          </p>
+          <p className="text-neutral-700 leading-relaxed mb-6">
+            清蓮では、お墓じまい全体の流れを整理し、ご状況に合わせて必要な手続きや供養先をご案内します。
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-seiren-cta px-6 py-3 font-semibold text-white transition-colors hover:bg-seiren-cta-hover"
+            >
+              清蓮にお墓じまいを無料相談する <ChevronRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/gyoseishoshi"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-emerald-300 bg-white px-6 py-3 font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+            >
+              行政書士に無料相談する <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <p className="mt-3 text-xs text-neutral-500">相談・見積もりは無料です。強引な勧誘は一切行いません。</p>
+        </div>
+
         {/* Author block — 既定は CANONICAL_AUTHOR、frontmatter の author で上書き可（JSON-LD と同一ソース） */}
         <div className="mt-16 rounded-2xl bg-white p-8 border border-neutral-200 shadow-sm text-center">
           <h4 className="text-xl font-bold text-neutral-900 mb-4">この記事の執筆・監修</h4>
